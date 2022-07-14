@@ -1,0 +1,53 @@
+Deep learning models, like traditional software sys-
+tems, provide a large number of configuration options.
+{{background}}
+A deep
+learning model can be configured with different hyperparameters
+and neural architectures.
+{{background}}
+Recently, AutoML (Automated Machine
+Learning) has been widely adopted to automate model training by
+systematically exploring diverse configurations.
+{{background}}
+However, current
+AutoML approaches do not take into consideration the computa-
+tional constraints imposed by various resources such as available
+memory, computing power of devices, or execution time.
+{{background}}
+The
+training with non-conforming configurations could lead to many
+failed AutoML trial jobs or inappropriate models, which cause
+significant resource waste and severely slow down development
+productivity.
+{{background}}
+In this paper, we propose DnnSAT, a resource-guided AutoML
+approach for deep learning models to help existing AutoML tools
+efficiently reduce the configuration space ahead of time.
+{{objective}}
+DnnSAT
+can speed up the search process and achieve equal or even better
+model learning performance because it excludes trial jobs not
+satisfying the constraints and saves resources for more trials.
+{{claim}}
+We formulate the resource-guided configuration space reduction
+as a constraint satisfaction problem.
+{{design}}
+DnnSAT includes a unified
+analytic cost model to construct common constraints with respect
+to the model weight size, number of floating-point operations,
+model inference time, and GPU memory consumption.
+{{design}}
+It then
+utilizes an SMT solver to obtain the satisfiable configurations of
+hyperparameters and neural architectures.
+{{design}}
+Our evaluation results
+demonstrate the effectiveness of DnnSAT in accelerating state-
+of-the-art AutoML methods (Hyperparameter Optimization and
+Neural Architecture Search) with an average speedup from 1.19X
+to 3.95X on public benchmarks.
+{{result}}
+We believe that DnnSAT can
+make AutoML more practical in a real-world environment with
+constrained resources.
+{{conclusion}}

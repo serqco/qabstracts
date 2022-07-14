@@ -1,0 +1,48 @@
+Developers frequently move into new teams or
+environments across software companies.
+{{background}}
+Their onboarding ex-
+perience is correlated with productivity, job satisfaction, and
+other short-term and long-term outcomes.
+{{background}}
+The majority of the
+onboarding process comprises engineering tasks such as fixing
+bugs or implementing small features.
+{{background}}
+Nevertheless, we do not
+have a systematic view of how tasks influence onboarding.
+{{background}}
+In
+this paper, we present a case study of Microsoft, where we
+interviewed 32 developers moving into a new team and 15
+engineering managers onboarding a new developer into their
+team – to understand and characterize developers’ onboarding
+experience and expectations in relation to the tasks performed
+by them while onboarding.
+{{objective,method}}
+We present how tasks interact with
+new developers through three representative themes:
+{{X}}
+learning,
+confidence building, and socialization.
+{{X}}
+We also discuss three
+onboarding strategies as inferred from the interviews that
+managers commonly use unknowingly, and discuss their pros
+and cons and offer situational recommendations.
+{{announce-result}}
+Furthermore,
+we triangulate our interview findings with a developer survey
+(N = 189) and a manager survey (N = 37) and find that
+survey results suggest that our findings are representative and
+our recommendations are actionable.
+{{method,result}}
+Practitioners could use
+our findings to improve their onboarding processes, while re-
+searchers could find new research directions from this study
+to advance the understanding of developer onboarding.
+{{conclusion}}
+Our
+research instruments and anonymous data are available at
+https://zenodo.org/record/4455937#.YCOQCs 0lFd.
+{{resourcepointer}}
