@@ -1,7 +1,7 @@
 # Codebook and coding rules for qabstracts study
 
 created: Lutz Prechelt, 2022-07-14
-changed: Lutz Prechelt, 2022-07-14
+changed: Lutz Prechelt, 2022-07-15
 
 
 ## Coding rules
@@ -29,37 +29,28 @@ changed: Lutz Prechelt, 2022-07-14
    append a '?' to the respective code.
 
 
-## Codebook
+## Codebook: Codes for sentences
 
 Note: Our annotation checking script gathers the set of codes to check
 for from this file by looking for strings of the form
 "code `something`".
-A declaration of the form 
-"code `something-else` = `something`" 
-introduces `something-else` as a synonym for `something`.
+(Allowing synonyms for the codes would be nice for graders in the beginning,
+but appears to have a bad cost/benefit tradeoff, so we do not do this.)
 
 Make sure all code declarations take this form and no other things do.
 
-Codes (in alphabetical order; all codes are singular; semicolon means OR):
-- code `aim` = `objective`
-- code `announce-conclusion`:  
+Codes for sentences (in alphabetical order; all codes are singular; 
+semicolon means OR):
+- code `announce-<xyz>`:  
   A statement announcing that the article body will contain information
-  of the `conclusion` type, 
+  of the `<xyz>` type, 
   but this and the next statement do not contain such information.
-- code `announce-design`:  
-  Ditto for `design` information.
-- code `announce-futurework`:  
-  Ditto for `futurework` information.
-- code `announce-method`:  
-  Ditto for `method` information.
-- code `announce-result`:  
-  Ditto for `result` information.
-- code `announce-conclusion`:  
-  A statement announcing that the article body will contain information
-  of the `conclusion` type, 
-  where the statement itself does not contain such information.
-- code `announce-design`:  
-  Ditto for `design`
+  - code `announce-background` (hopefully never to be seen)
+  - code `announce-conclusion`
+  - code `announce-design`
+  - code `announce-futurework`
+  - code `announce-method`
+  - code `announce-result`
 - code `background`:  
   Information about the larger topic area of the work;  
   information leading towards the research interest of the work;  
@@ -70,7 +61,6 @@ Codes (in alphabetical order; all codes are singular; semicolon means OR):
 - code `conclusion`:  
   A take-home message that is less specific than one or more results.
   Either a generalization from the results or an existence proof statement.
-- code `context` = `background`
 - code `design`:  
   information about the design, design process, and designed features of 
   an artifact, such as software, a process, or a method.
@@ -79,20 +69,17 @@ Codes (in alphabetical order; all codes are singular; semicolon means OR):
   Top-level design goals and non-goals are `objective`.)
 - code `futurework`:  
   information about suggested future research.
-- code `h-background`:  
-  A section intro term "Background:", "Context:", or the like,
-  that announces subsequent `background` information.
+- code `h-<xyz>`:  
+  A section intro term "<Xyz>:" or some synonym of that,
+  that announces subsequent `<xyz>` information.
   It does not matter whether the announcement is correct.
-- code `h-conclusion`:  
-  Ditto for `conclusion` information.
-- code `h-futurework`:  
-  Ditto for `futurework` information.
-- code `h-method`:  
-  Ditto for `method` information.
-- code `h-objective`:  
-  Ditto for `objective` information.
-- code `h-result`:  
-  Ditto for `result` information.
+  - code `h-background`: "Background:", "Context:", etc.
+  - code `h-conclusion`
+  - code `h-design`: "Approach:" etc. (probably rare)
+  - code `h-futurework`
+  - code `h-method`: "Method:", "Approach:" etc.
+  - code `h-objective`: "Objective:", "Aim:", "Goal:", "Question:", etc.
+  - code `h-result`
 - code `method`:  
   information about the approach or setup of an empirical study.
 - code `objective`:  
@@ -105,14 +92,3 @@ Codes (in alphabetical order; all codes are singular; semicolon means OR):
   or similar item.
 - code `X`:  
   Unknown class. The sentence needs to be revisited and classified.
-  
-- code ``:  
-  
-- code `` = ``
-- code `` = ``
-- code `` = ``
-- code `` = ``
-- code `` = ``
-- code `` = ``
-- code `` = ``
-  
