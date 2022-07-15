@@ -1,0 +1,43 @@
+Deep learning models are increasingly used in mo-
+bile applications as critical components.
+{{background}}
+Unlike the program
+bytecode whose vulnerabilities and threats have been widely-
+discussed, whether and how the deep learning models deployed
+in the applications can be compromised are not well-understood
+since neural networks are usually viewed as a black box.
+{{background}}
+In this
+paper, we introduce a highly practical backdoor attack achieved
+with a set of reverse-engineering techniques over compiled deep
+learning models.
+{{objective,design}}
+The core of the attack is a neural conditional
+branch constructed with a trigger detector and several operators
+and injected into the victim model as a malicious payload.
+{{design}}
+The attack is effective as the conditional logic can be flexibly
+customized by the attacker, and scalable as it does not require
+any prior knowledge from the original model.
+{{claim?}}
+We evaluated
+the attack effectiveness using 5 state-of-the-art deep learning
+models and real-world samples collected from 30 users.
+{{method}}
+The
+results demonstrated that the injected backdoor can be triggered
+with a success rate of 93.5%, while only brought less than 2ms
+latency overhead and no more than 1.4% accuracy decrease.
+{{result}}
+We
+further conducted an empirical study on real-world mobile deep
+learning apps collected from Google Play.
+{{method}}
+We found 54 apps that
+were vulnerable to our attack, including popular and security-
+critical ones.
+{{result}}
+The results call for the awareness of deep learning
+application developers and auditors to enhance the protection of
+deployed models.
+{{conclusion}}

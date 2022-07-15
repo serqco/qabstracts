@@ -1,0 +1,52 @@
+Customization is a general trend in software engi-
+neering, demanding systems that support variable stakeholder
+requirements.
+{{background}}
+Two opposing strategies are commonly used to
+create variants:
+{{background}}
+software clone&own and software configuration
+with an integrated platform.
+{{background}}
+Organizations often start with the
+former, which is cheap, agile, and supports quick innovation, but
+does not scale.
+{{background}}
+The latter scales by establishing an integrated
+platform that shares software assets between variants, but re-
+quires high up-front investments or risky migration processes.
+{{background}}
+So,
+could we have a method that allows an easy transition or even
+combine the benefits of both strategies?
+{{objective}}
+We propose a method and
+tool that supports a truly incremental development of variant-
+rich systems, exploiting a spectrum between both opposing
+strategies.
+{{objective}}
+We design, formalize, and prototype the variability-
+management framework virtual platform.
+{{design}}
+It bridges clone&own
+and platform-oriented development.
+{{design}}
+Relying on programming-
+language-independent conceptual structures representing soft-
+ware assets, it offers operators for engineering and evolving a sys-
+tem, comprising:
+{{design}}
+traditional, asset-oriented operators and novel,
+feature-oriented operators for incrementally adopting concepts
+of an integrated platform.
+{{design}}
+The operators record meta-data that
+is exploited by other operators to support the transition.
+{{design}}
+Among
+others, they eliminate expensive feature-location effort or the
+need to trace clones.
+{{claim}}
+Our evaluation simulates the evolution of a
+real-world, clone-based system, measuring its costs and benefits.
+{{method,announce-result}}
