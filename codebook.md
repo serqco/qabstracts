@@ -92,3 +92,55 @@ semicolon means OR):
   or similar item.
 - code `X`:  
   Unknown class. The sentence needs to be revisited and classified.
+
+
+## Informativeness and elementary facts
+
+At least for `method`, `design`, and `result` information, the informativeness
+of an abstract will likely become better if more details are provided.
+We measure this aspect by counting the number of "new elementary facts"
+that are mentioned in such a statement.
+
+A fact is not new if it was mentioned before or is obvious from 
+previous material.
+For example, if the `objective` said "We explore A and B",
+then A and B are not new when they are mentioned in `result`,
+but a subconcept B' would be new, even if it is well-known in principle,
+unless it is the only subconcept of B that we expect to see studied at all.
+
+Now what is an elementary fact?
+!!!
+
+
+## Codebook: Codes for entire abstracts
+
+We grade abstracts as a hole in a subjective manner.
+If both graders agree, the grading becomes credible.
+So our grade definitions need to make agreement likely.
+
+We grade two aspects, each on a three-point scale:
+- informativeness: How much information the abstract provides.
+- understandability: The abstract's level of non-ambiguity.
+
+These codes follow after a "----" separator line after the annotated abstract.
+To mark their global nature, they use a different syntax:
+`#mycode` rather than `{{mycode}}`
+
+Codes for entire abstracts:
+- Code `#inf-high`:  
+  The abstract appears to summarize the article well.
+- Code `#inf-ok`:  
+  The abstract is somewhat informative, but 
+  appears to miss several opportunities to summarize the article better.
+- Code `#inf-low`:  
+  The abstract feels hardly informative and 
+  appears to miss most opportunities to summarize the article better.
+- Code `#und-high`:  
+  The abstract is readily readable. It's content is hardly ambiguous.
+- Code `#und-ok`:  
+  The abstract is somewhat difficult to read and follow 
+  or contains at least one relevant ambiguity.
+- Code `#und-low`:  
+  The abstract is difficult to read and follow and tends to be ambiguous
+  or has one of these problems massively.
+  
