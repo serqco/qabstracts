@@ -1,32 +1,22 @@
-#!/bin/env python3
-
 import os.path
 import re
 import sys
 import typing as tg
 
-usage = """prepannot outputdir rawtext...
-  Prepares files for annotation.
-  Reads and converts rawtext files one-by-one and writes their
-  converted version to path 'outputdir/rawtext'.
+usage = """Prepares files for annotation.
+  Reads and converts text files such as 'abc.txt' one-by-one and writes their
+  converted version to path 'outputdir/abc.txt'.
   Breaks lines after each sentence (using simple heuristics to determine
   the end of sentences) and inserts empty annotation braces {{}}
   on the next line.
 """
 
-def main(args: tg.Sequence[str]):
-  wrong_argcount = len(args)-1 < 2
-  if wrong_argcount or not os.path.isdir(args[1]):
-      print(usage)
-      sys.exit(1)
-  else:
-      outputdir = args[1]
-      inputfiles = args[2:]
+def prepare_annotations(outputdir: str, inputfiles: tg.Sequence[str]):
   for inputfile in inputfiles:
-      prepannot(inputfile, outputdir)
+      prepare_one_file(inputfile, outputdir)
 
 
-def prepannot(inputfile: str, outputdir: str):
+def prepare_one_file(inputfile: str, outputdir: str):
     with open(inputfile, mode='rt', encoding="utf8") as f:
         inputstring = f.read()
     inputfilename = os.path.basename(inputfile)
@@ -73,7 +63,3 @@ def replacement_for(candidate: str) -> str:
         result += "\n{{}}\n"
     # print(f"replacement_for(({candidate}))  {nonend_match and 1 or 0}==>  {result}")
     return result
-
-
-if __name__ == '__main__':
-    main(sys.argv)

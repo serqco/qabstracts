@@ -2,7 +2,7 @@
 
 import pytest
 
-import prepannot as p
+import qabs.prepare_ann as p
 
 ann = "\n{{}}\n"
 tests = [
