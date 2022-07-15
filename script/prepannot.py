@@ -42,11 +42,11 @@ def prepannot(inputfile: str, outputdir: str):
 def prepared(input: str) -> str:
     """
     Splits into sentences and inserts '{{}}' pairs.
-    Possible sentence ends are '. ' and ': ', but instead of a space
-    there can be '\n' or end-of-file.
+    Possible sentence ends are . : ? ! followed by a blank,
+    but instead of a blank there can be '\n' or end-of-file.
     Replacements enforce '\n' there and another after the '{{}}'.
     """
-    possible_end = r'[.:]\s*[ \n$]'
+    possible_end = r'[.:?!]\s*[ \n$]'
     result = ""
     while len(input) > 0:
         end_match = re.search(possible_end, input)
