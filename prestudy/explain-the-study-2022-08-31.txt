@@ -1,5 +1,27 @@
 # qabstracts: Quality of abstracts study
 
+created: Lutz Prechelt, 2022-08-31 morning
+changed: Lutz Prechelt, 2022-08-31 afternoon
+
+This file was used as a kind of presentation to introduce the
+current ideas for the study design to
+Martin Shepperd, Lloyd Montgomery, Gunnar Bergersen.
+The following section was added afterwards:
+
+
+## post-hoc: Meeting results
+
+We talked for 55 minutes.
+- We agreed on the basic approach as proposed
+- We will add a code {{limitations}}
+- We will add a code {{hype}} to be used as an additional attribute
+  of a sentence (not an overall classification).
+- All four of us will to be coders in this study. Others are welcome.
+- We will all code a first batch (or two) of 10 abstracts and
+  each try to come up with some rule for counting pieces of
+  relevant information in a sentence. Then discuss those ideas.
+  (Lutz will organize this.)
+
 
 ## Overall design of study
 
