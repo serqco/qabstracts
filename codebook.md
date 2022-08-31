@@ -1,7 +1,7 @@
 # Codebook and coding rules for qabstracts study
 
 created: Lutz Prechelt, 2022-07-14
-changed: Lutz Prechelt, 2022-07-15
+changed: Lutz Prechelt, 2022-08-31
 
 
 ## Coding rules
@@ -32,16 +32,15 @@ changed: Lutz Prechelt, 2022-07-15
 ## Codebook: Codes for sentences
 
 Note: Our annotation checking script gathers the set of codes to check
-for from this file by looking for strings of the form
+for directly from this file by looking for strings of the form
 "code `something`".
-(Allowing synonyms for the codes would be nice for graders in the beginning,
-but appears to have a bad cost/benefit tradeoff, so we do not do this.)
-
 Make sure all code declarations take this form and no other things do.
+(Allowing synonyms for the codes may be nice for graders in the beginning,
+but appears to have a bad cost/benefit tradeoff, so we do not do this.)
 
 Codes for sentences (in alphabetical order; all codes are singular; 
 semicolon means OR):
-- code `announce-<xyz>`:  
+- codes of the form `announce-<xyz>`:  
   A statement announcing that the article body will contain information
   of the `<xyz>` type, 
   but this and the next statement do not contain such information.
@@ -49,6 +48,7 @@ semicolon means OR):
   - code `announce-conclusion`
   - code `announce-design`
   - code `announce-futurework`
+  - code `announce-limitations`
   - code `announce-method`
   - code `announce-result`
 - code `background`:  
@@ -69,17 +69,28 @@ semicolon means OR):
   Top-level design goals and non-goals are `objective`.)
 - code `futurework`:  
   information about suggested future research.
-- code `h-<xyz>`:  
+- codes of the form `h-<xyz>`:  
   A section intro term "<Xyz>:" or some synonym of that,
   that announces subsequent `<xyz>` information.
-  It does not matter whether the announcement is correct.
+  It does _not_ matter whether the announcement is correct.
+  Singular and plural are considered equivalent.
   - code `h-background`: "Background:", "Context:", etc.
-  - code `h-conclusion`
+  - code `h-conclusion`: "Conclusion:" etc.
   - code `h-design`: "Approach:" etc. (probably rare)
-  - code `h-futurework`
+  - code `h-futurework`: "Future work:" etc.
   - code `h-method`: "Method:", "Approach:" etc.
   - code `h-objective`: "Objective:", "Aim:", "Goal:", "Question:", etc.
-  - code `h-result`
+  - code `h-result`: "Result:" etc.
+- code `hype`:  
+  The praises the work beyond what a factual statement might state.
+  Plain positive properties do not qualify ("This is helpful because..."),
+  only emphasized ones do ("This is tremendously helpful because...").
+  This code is not a classification of a sentence, but an additional attribute.
+  It can never occur alone, only in conjunction with one of the others and
+  should be given last.
+- code `limitation`:  
+  information about limitations, threats to validity, and the like
+  of the study or its results.
 - code `method`:  
   information about the approach or setup of an empirical study.
 - code `objective`:  
@@ -90,6 +101,9 @@ semicolon means OR):
   A concrete reference to a concrete external resource such as 
   a software artifact, materials package, data package, appendix,
   or similar item.
+- code `results`:  
+  information about the immediate outcome of a study in the form of
+  empirical results. See `claim`.
 - code `X`:  
   Unknown class. The sentence needs to be revisited and classified.
 
@@ -105,11 +119,16 @@ A fact is not new if it was mentioned before or is obvious from
 previous material.
 For example, if the `objective` said "We explore A and B",
 then A and B are not new when they are mentioned in `result`,
-but a subconcept B' would be new, even if it is well-known in principle,
-unless it is the only subconcept of B that we expect to see studied at all.
+but a subconcept B' would be new (even if it is well-known in principle).
 
 Now what is an elementary fact?
-!!!
+
+Decision as of 2022-08-31:
+Everybody tries to develop an idea of this that appears appropriate
+and then attempts to formulate some coding rules that operationalize the idea.
+Then we discuss those and decide what we are going to use.
+The goal is a definition that promises relevance for quality
+and a reasonably (if not perfectly) repeatable operationalization.
 
 
 ## Codebook: Codes for entire abstracts
@@ -144,3 +163,14 @@ Codes for entire abstracts:
   The abstract is difficult to read and follow and tends to be ambiguous
   or has one of these problems massively.
   
+A third global aspect was proposed: appeal.
+How much does an abstract trigger a reader's interest in learning 
+more about the work?
+
+This is likely too dependent on the specific grader's interests spectrum
+to lead to useful results: If I am interested in the topic area,
+an abstract can have more appeal or less.
+But if I am not interested in the topic area (and in our grading process,
+this will be the usual case), even the best abstract will not have 
+much appeal to me.
+Decision: We do not grade appeal.

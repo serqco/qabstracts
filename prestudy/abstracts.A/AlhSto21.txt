@@ -27,6 +27,6 @@ effort estimates that are of similar accuracy to those of a single
 expert.
 {{conclusion}}
 ----
-#readabStrong
-#infoOK
+#und-high
+#inf-ok
 My free-text remark here
