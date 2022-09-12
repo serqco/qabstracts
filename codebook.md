@@ -140,31 +140,42 @@ We grade abstracts as a hole in a subjective manner.
 If both graders agree, the grading becomes credible.
 So our grade definitions need to make agreement likely.
 
-We grade two aspects, each on a three-point scale:
+We grade two **aspects**, each on a three-point scale:
 - informativeness: How much information the abstract provides.
 - understandability: The abstract's level of non-ambiguity.
 
-These codes follow after a "----" separator line after the annotated abstract.
+**Goals:** What we want to assess by these is: 
+- Is the space used efficiently to convey a lot of information in the abstract?
+- Do I (as a reader) find it easy to understand the information?
+What we do _not_ want to assess is:
+- Does the information conveyed cover the most _relevant_ things to be said
+  about the article?
+- Is the understanding I have achieved actually correct?
+
+**Syntax:** The codes used to express the two aspects follow after 
+a "----" separator line after the annotated abstract.
 To mark their global nature, they use a different syntax:
 `#mycode` rather than `{{mycode}}`
 
-Codes for entire abstracts:
+**Codes for entire abstracts:**
 - Code `#inf-high`:  
   The abstract appears to summarize the article well.
 - Code `#inf-ok`:  
-  The abstract is somewhat informative, but 
+  The abstract feels somewhat informative, but 
   appears to miss several opportunities to summarize the article better.
 - Code `#inf-low`:  
   The abstract feels hardly informative and 
   appears to miss most opportunities to summarize the article better.
 - Code `#und-high`:  
-  The abstract is readily readable. It's content is hardly ambiguous.
+  The abstract is readily readable for me. 
+  I did not encounter relevant ambiguity in it and so 
+  I am not scratching my head now.
 - Code `#und-ok`:  
-  The abstract is somewhat difficult to read and follow 
-  or contains at least one relevant ambiguity.
+  I find the abstract somewhat difficult to read and follow 
+  or see at least one relevant ambiguity.
 - Code `#und-low`:  
-  The abstract is difficult to read and follow and tends to be ambiguous
-  or has one of these problems massively.
+  I find the abstract difficult to read and follow and/or 
+  several relevant things in it are ambiguous to me.
   
 A third global aspect was proposed: appeal.
 How much does an abstract trigger a reader's interest in learning 
