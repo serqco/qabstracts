@@ -1,7 +1,7 @@
 # Codebook and coding rules for qabstracts study
 
 created: Lutz Prechelt, 2022-07-14
-changed: Lutz Prechelt, 2022-08-31
+changed: Lutz Prechelt, 2022-09-12
 
 
 ## Coding rules
@@ -40,17 +40,20 @@ but appears to have a bad cost/benefit tradeoff, so we do not do this.)
 
 Codes for sentences (in alphabetical order; all codes are singular; 
 semicolon means OR):
-- codes of the form `announce-<xyz>`:  
-  A statement announcing that the article body will contain information
-  of the `<xyz>` type, 
+- codes of the form `a-<xyz>`:  
+  A statement announcing (hence the `a-`) that the article body will 
+  contain information of the `<xyz>` type, 
   but this and the next statement do not contain such information.
-  - code `announce-background` (hopefully never to be seen)
-  - code `announce-conclusion`
-  - code `announce-design`
-  - code `announce-futurework`
-  - code `announce-limitations`
-  - code `announce-method`
-  - code `announce-result`
+  - code `a-background` (hopefully never to be seen)
+  - code `a-claim` (hopefully never to be seen)
+  - code `a-conclusion`
+  - code `a-design`
+  - code `a-futurework`
+  - code `a-limitations`
+  - code `a-method`
+  - code `a-objective`
+  - code `a-result`
+  - code `a-resourcepointer`
 - code `background`:  
   Information about the larger topic area of the work;  
   information leading towards the research interest of the work;  
@@ -69,7 +72,7 @@ semicolon means OR):
   Top-level design goals and non-goals are `objective`.)
 - code `futurework`:  
   information about suggested future research.
-- codes of the form `h-<xyz>`:  
+- codes of the form `h-<xyz>` ("header"):  
   A section intro term "<Xyz>:" or some synonym of that,
   that announces subsequent `<xyz>` information.
   It does _not_ matter whether the announcement is correct.
@@ -101,7 +104,7 @@ semicolon means OR):
   A concrete reference to a concrete external resource such as 
   a software artifact, materials package, data package, appendix,
   or similar item.
-- code `results`:  
+- code `result`:  
   information about the immediate outcome of a study in the form of
   empirical results. See `claim`.
 - code `X`:  
