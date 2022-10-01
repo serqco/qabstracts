@@ -1,5 +1,9 @@
 #--- our stuff:
 *~
+prestudy/pdf/
+prestudy/testdata.git
+volumes/*/*.pdf
+volumes/log/
 #*#
 
 .idea/
