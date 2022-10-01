@@ -1,6 +1,5 @@
 import os.path
 import re
-import sys
 import typing as tg
 
 usage = """Prepares files for annotation.
@@ -10,6 +9,13 @@ usage = """Prepares files for annotation.
   the end of sentences) and inserts empty annotation braces {{}}
   on the next line.
 """
+
+def configure_argparser(p_prepare_ann):
+    p_prepare_ann.add_argument('outputdir',
+                               help="Directory where prepared files will be placed")
+    p_prepare_ann.add_argument('textfile', nargs='+',
+                               help="*.txt file into which to line-split by sentence and insert empty {{}}")
+
 
 def prepare_annotations(outputdir: str, inputfiles: tg.Sequence[str]):
   for inputfile in inputfiles:

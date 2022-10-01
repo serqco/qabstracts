@@ -40,6 +40,17 @@ layouttypes = dict(  # None means "We have no clue!"
         end=r"\n+Keywords\s"),
 )
 
+
+def configure_argparser(p_extract_abs):
+    p_extract_abs.add_argument('--layout', type=str, required=True,
+                               choices=layouttypes.keys(),
+                               help="Article layout type used in the PDFs.")
+    p_extract_abs.add_argument('outputdir',
+                               help="Directory where abstracts files will be placed")
+    p_extract_abs.add_argument('inputfile',
+                               help="PDF file to scan for its abstract")
+
+
 def extract_abstracts(outputdir: str, layouttype: str, inputfile: str):
     if inputfile.endswith('.pdf'):
         extract_abstract(inputfile, layouttype, outputdir)
