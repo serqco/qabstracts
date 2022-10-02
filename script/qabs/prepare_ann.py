@@ -44,6 +44,7 @@ def prepared(input: str) -> str:
     """
     possible_end = r'[.:?!]\s*[ \n$]'
     result = ""
+    #----- process abstract text:
     while len(input) > 0:
         end_match = re.search(possible_end, input)
         if end_match:
@@ -56,6 +57,8 @@ def prepared(input: str) -> str:
             # print("## remainder ")
             result += replacement_for(input)
             input = ""
+    #----- add global area at end:
+    
     return result
 
 

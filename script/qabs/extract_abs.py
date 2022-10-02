@@ -3,6 +3,8 @@ import re
 import subprocess as sub
 import typing as tg
 
+import qabs.listfiles as lf
+
 usage = """Heuristically obtains abstracts from PDF files.
   Works on one given PDF file or each local PDF file whose basename is
   listed in the given '*.list' file.
@@ -12,35 +14,6 @@ usage = """Heuristically obtains abstracts from PDF files.
   Creates abstract text file with same basename in outputdir.
 """
 
-
-layouttypes = dict(  # None means "We have no clue!"
-    acmconf=dict(
-        cols=2,
-        start=r"\nABSTRACT\s",
-        end=r"\nCCS CONCEPTS\s"),
-    acmtrans=dict(
-        cols=1,
-        start=None,  # a horizontal line not represented in the text format
-        end=r"\n+CCS Concepts:|\n+Additional Key Words and Phrases:|\n+ACM Reference format:"),
-    elsevier=dict(
-        cols=1,  # much easier to handle this way. Abstract is in right col!
-        start=r"\nABSTRACT\n+",
-        end=r"\n+1.\s|\sCorresponding Author\s|\n+Received \d|\n+Available online \d|Elsevier B.V."),
-    ieeeconf=dict(
-        cols=2,
-        start=r"\nAbstract—",
-        end=r"\n+I\. "),
-    ieeetrans=dict(
-        cols=1,  # abtract and index terms are single-column
-        start=r"\nAbstract—",
-        end=r"\n+Index Terms—"),
-    springer=dict(
-        cols=1,
-        start=r"\nAbstract\s+",
-        end=r"\n+Keywords\s"),
-)
-
-
 def configure_argparser(p_extract_abs):
     p_extract_abs.add_argument('--layout', type=str, required=True,
                                choices=layouttypes.keys(),
@@ -49,6 +22,71 @@ def configure_argparser(p_extract_abs):
                                help="Directory where abstracts files will be placed")
     p_extract_abs.add_argument('inputfile',
                                help="PDF file to scan for its abstract")
+
+
+def is_icse_in_year(volume: str, years: tg.Set[int]) -> bool:
+    """Knows which ICSE years use ACM layout (versus IEEE CS layout)."""
+    path, name, year = volume_path_name_year(volume)
+    if name != "ICSE":
+        return False
+    return year in years
+
+def is_acmconf_icse(volume: str) -> bool:
+    """Knows some ICSE years that use acmconf layout."""
+    return is_icse_in_year(volume, {2020, 2018, 2016})
+
+
+def is_ieeeconf_icse(volume: str) -> bool:
+    """Knows some ICSE years that use ieeeconf layout."""
+    return is_icse_in_year(volume, {2021, 2019, 2017})
+
+
+# Map from a layouttype name to a layout description and list of venues where it applies:
+layouttypes = dict(  # None means "We have no clue!"
+    acmconf=dict(
+        cols=2,
+        start=r"\nABSTRACT\s",
+        end=r"\nCCS CONCEPTS\s",
+        applies_to=[is_acmconf_icse, ]),
+    acmtrans=dict(
+        cols=1,
+        start=None,  # a horizontal line not represented in the text format
+        end=r"\n+CCS Concepts:|\n+Additional Key Words and Phrases:|\n+ACM Reference format:",
+        applies_to=["TOSEM", ]),
+    elsevier=dict(
+        cols=1,  # much easier to handle this way. Abstract is in right col!
+        start=r"\nABSTRACT\n+",
+        end=r"\n+1.\s|\sCorresponding Author\s|\n+Received \d|\n+Available online \d|Elsevier B.V.",
+        applies_to=["IST", ]),
+    ieeeconf=dict(
+        cols=2,
+        start=r"\nAbstract—",
+        end=r"\n+I\. ",
+        applies_to=[is_ieeeconf_icse, ]),
+    ieeetrans=dict(
+        cols=1,  # abtract and index terms are single-column
+        start=r"\nAbstract—",
+        end=r"\n+Index Terms—",
+        applies_to=["TSE", ]),
+    springer=dict(
+        cols=1,
+        start=r"\nAbstract\s+",
+        end=r"\n+Keywords\s",
+        applies_to=["EMSE", ]),
+)
+
+
+def decide_layouttype(entry: lf.Entry) -> str:
+    volume = lf.volume(entry)
+    venue = volume_path_name_year(volume)[1]
+    for key, descriptor in layouttypes.items():
+        for candidate in descriptor['applies_to']:
+            if candidate == venue:
+                return key
+            elif callable(candidate) and candidate(volume):
+                return candidate
+    raise ValueError(f"cannot find layouttype for volume '{volume}'")
+    return "???"
 
 
 def extract_abstracts(outputdir: str, layouttype: str, inputfile: str):
@@ -98,7 +136,7 @@ def page1_from_pdf(pdffile: str, keeplayout: bool) -> str:
         args = ["pdftotext", "-f", "1", "-l", "1", pdffile, "-"]
     result = sub.run(args, text=True, stdout=sub.PIPE)
     page1 = result.stdout
-    print(f">>>>>>>>>>>>>>> page1: {page1}\n")
+    # print(f">>>>>>>>>>>>>>> page1: {page1}\n")
     return page1
 
 
@@ -117,7 +155,7 @@ def left_column(rawpage: str) -> str:
     rightcol_re = r"(\S)    .*\n| {30,}.*\n"  # with left col | empty left col
     fluffypage, repls2 = re.subn(rightcol_re, r"\1\n", marginless_page)  # 2.
     compactpage, repls3 = re.subn(r"\n+", r"\n", fluffypage)  # 3.
-    print(f">>>>>>>>>>>>>>> sub'd page({repls1},{repls2},{repls3}): {compactpage}\n")
+    # print(f">>>>>>>>>>>>>>> sub'd page({repls1},{repls2},{repls3}): {compactpage}\n")
     return compactpage
 
 
@@ -131,6 +169,13 @@ def abstract_from_page(page: str, layouttype: str) -> str:
     m_end = re_end and re.search(re_end, page[startpos+1:]) or None
     endpos = m_end and startpos+1+m_end.start() or len(page)
     #--- return best approximation to abstract:
-    print(f"abstract_from_page: len={len(page)}, start={startpos}, end={endpos}")
-    print(f"  start: '{page[startpos:startpos+30]}', end: '{page[endpos+1:endpos+30]}'")
+    # print(f"  abstract_from_page: len={len(page)}, start={startpos}, end={endpos}")
+    # print(f"  start: '{page[startpos:startpos+30]}', end: '{page[endpos+1:endpos+30]}'")
     return page[startpos:endpos]
+
+
+def volume_path_name_year(volumepath: str) -> tg.Tuple[str, str, int]:
+    volumename_regexp = r"(.+/)?([A-Za-z]+)-(\d\d\d\d)"  # {perhaps_path}/{name}-{year}
+    mm = re.fullmatch(volumename_regexp, volumepath) 
+    path, name, year = (mm.group(1), mm.group(2), int(mm.group(3)))
+    return (path, name, year)

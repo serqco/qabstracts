@@ -3,8 +3,9 @@
 import argparse
 
 import qabs.select_sample
+import qabs.prepare_sample
 import qabs.extract_abs
-import qabs.prepare_ann
+import qabs.prepare_ann 
 
 def main():  # uses sys.argv
     argparser = setup_argparser()
@@ -12,13 +13,15 @@ def main():  # uses sys.argv
     subcmd = pargs.subcmd
     if subcmd == "select-sample":
         qabs.select_sample.select_sample(pargs.size, pargs.blocksize, pargs.to, pargs.volume)
+    elif subcmd == "prepare-sample":
+        qabs.prepare_sample.prepare_sample(pargs.workdir, pargs.volumedir)
     elif subcmd == "extract-abs":
         qabs.extract_abs.extract_abstracts(pargs.outputdir, pargs.layout, 
                                            pargs.inputfile)
     elif subcmd == "prepare-ann":
         qabs.prepare_ann.prepare_annotations(pargs.outputdir, pargs.textfile)
     else:
-        assert False  # the above list is not complete
+        assert False, f"unknown command: {subcmd}"  # the above list is not complete
 
 
 def setup_argparser():
@@ -26,17 +29,21 @@ def setup_argparser():
     parser = argparse.ArgumentParser(description=description)
     subparsers = parser.add_subparsers(dest='subcmd', required=True)
 
-    p_select_sample = subparsers.add_parser('select-sample',
+    subparser = subparsers.add_parser('select-sample',
             help="Get block-randomized articles list of given size")
-    qabs.select_sample.configure_argparser(p_select_sample)
+    qabs.select_sample.configure_argparser(subparser)
 
-    p_extract_abs = subparsers.add_parser('extract-abs',
+    subparser = subparsers.add_parser('prepare-sample',
+            help="Get and prepare abstracts (after select-sample)")
+    qabs.prepare_sample.configure_argparser(subparser)
+
+    subparser = subparsers.add_parser('extract-abs',
             help="Extract abstracts from PDF files")
-    qabs.extract_abs.configure_argparser(p_extract_abs)
+    qabs.extract_abs.configure_argparser(subparser)
 
-    p_prepare_ann = subparsers.add_parser('prepare-ann',
+    subparser = subparsers.add_parser('prepare-ann',
             help=qabs.prepare_ann.usage)  # insert empty annotations in abstracts files
-    qabs.prepare_ann.configure_argparser(p_prepare_ann)
+    qabs.prepare_ann.configure_argparser(subparser)
 
     return parser
 
