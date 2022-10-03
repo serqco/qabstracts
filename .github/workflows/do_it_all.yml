@@ -1,0 +1,17 @@
+name: qabstracts tests and data checks
+run-name: ${{ github.actor }} runs qabstracts tests and data checks
+on: [push]
+jobs:
+  Do-It-All:
+    runs-on: debian-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
+      - name: Run tests and checks
+        run: |
+          ls ${{ github.workspace }}
+          git log -1
+          PYTHONPATH=script pytest -v
+          python script/qabstracts.py check-codings prestudy
+      - run: echo "Job status: ${{ job.status }}"
