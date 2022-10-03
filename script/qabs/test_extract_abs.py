@@ -1,12 +1,10 @@
 # pytest tests
 
-import os.path
-
 import pytest
 
 import qabs.extract_abs
 
-datadir = f"{os.path.dirname(__file__)}/../testdata"
+datadir = "script/testdata"
 
 tests = [
     ("AlhSto21-ieeeconf.pdf", "ieeeconf",

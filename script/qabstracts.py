@@ -4,6 +4,7 @@ import argparse
 
 import qabs.select_sample
 import qabs.prepare_sample
+import qabs.check_codings
 import qabs.extract_abs
 import qabs.prepare_ann 
 
@@ -15,6 +16,8 @@ def main():  # uses sys.argv
         qabs.select_sample.select_sample(pargs.size, pargs.blocksize, pargs.to, pargs.volume)
     elif subcmd == "prepare-sample":
         qabs.prepare_sample.prepare_sample(pargs.workdir, pargs.volumedir)
+    elif subcmd == "check-codings":
+        qabs.check_codings.check_codings(pargs.codebook, pargs.workdir)
     elif subcmd == "extract-abs":
         qabs.extract_abs.extract_abstracts(pargs.outputdir, pargs.layout, 
                                            pargs.inputfile)
@@ -36,6 +39,10 @@ def setup_argparser():
     subparser = subparsers.add_parser('prepare-sample',
             help="Get and prepare abstracts (after select-sample)")
     qabs.prepare_sample.configure_argparser(subparser)
+
+    subparser = subparsers.add_parser('check-codings',
+            help="Check annotated abstracts for unallowed syntax and undefined codes")
+    qabs.check_codings.configure_argparser(subparser)
 
     subparser = subparsers.add_parser('extract-abs',
             help="Extract abstracts from PDF files")
