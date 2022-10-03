@@ -12,6 +12,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
           git log -1
+          pip install pytest
           PYTHONPATH=script pytest -v
           python script/qabstracts.py check-codings prestudy
-      - run: echo "Job status: ${{ job.status }}"
+          echo "Job status: ${{ job.status }}"
