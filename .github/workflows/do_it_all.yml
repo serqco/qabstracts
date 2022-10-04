@@ -3,7 +3,7 @@ run-name: ${{ github.actor }}
 on: [push]
 jobs:
   Do-It-All:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
