@@ -1,5 +1,5 @@
-name: qabstracts tests and data checks
-run-name: ${{ github.actor }} runs qabstracts tests and data checks
+name: qabstracts data checks
+run-name: ${{ github.actor }}
 on: [push]
 jobs:
   Do-It-All:
