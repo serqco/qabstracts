@@ -14,5 +14,5 @@ jobs:
           # sudo apt install poppler-utils
           # pip -q install pytest
           # PYTHONPATH=script pytest -v
-          python script/qabstracts.py check-codings prestudy
+          python script/qabstracts.py check-codings prestudy2
           echo "Job status: ${{ job.status }}"
