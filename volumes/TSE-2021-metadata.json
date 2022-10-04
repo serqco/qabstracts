@@ -1,0 +1,2799 @@
+[
+  {
+    "authors": [
+      "Rabe Abdalkareem",
+      "Suhaib Mujahid",
+      "Emad Shihab"
+    ],
+    "doi": "10.1109/TSE.2020.2967380",
+    "identifier": "AbdMujShi21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/08961089/1gDHka7CysM",
+    "title": "A Machine Learning Approach to Improve the Detection of CI Skip Commits.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Rabe Abdalkareem",
+      "Suhaib Mujahid",
+      "Emad Shihab",
+      "Juergen Rilling"
+    ],
+    "doi": "10.1109/TSE.2019.2897300",
+    "identifier": "AbdMujShi21a",
+    "number": "3",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/03/08633335/17D45W1Oa1V",
+    "title": "Which Commits Can Be CI Skipped?",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Afsoon Afzal",
+      "Manish Motwani",
+      "Kathryn T. Stolee",
+      "Yuriy Brun",
+      "Claire Le Goues"
+    ],
+    "doi": "10.1109/TSE.2019.2944914",
+    "identifier": "AfzMotSto21",
+    "number": "10",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/10/08854217/1dM2hE9IfKM",
+    "title": "SOSRepair: Expressive Semantic Search for Real-World Program Repair.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Emad Aghajani",
+      "Gabriele Bavota",
+      "Mario Linares-Vásquez",
+      "Michele Lanza"
+    ],
+    "doi": "10.1109/TSE.2018.2890652",
+    "identifier": "AghBavLin21",
+    "number": "1",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/01/08598894/17D45VsBU6l",
+    "title": "Automated Documentation of Android Apps.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Amritanshu Agrawal",
+      "Wei Fu",
+      "Di Chen",
+      "Xipeng Shen",
+      "Tim Menzies"
+    ],
+    "doi": "10.1109/TSE.2019.2945020",
+    "identifier": "AgrFuChe21",
+    "number": "10",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/10/08854183/1dM2hVjAPgA",
+    "title": "How to &quot;DODGE&quot; Complex Software Analytics.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Afnan A. Al-Subaihin",
+      "Federica Sarro",
+      "Sue Black",
+      "Licia Capra",
+      "Mark Harman"
+    ],
+    "doi": "10.1109/TSE.2019.2891715",
+    "identifier": "Al-SarBla21",
+    "number": "2",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/02/08606261/17D45VsBU5F",
+    "title": "App Store Effects on Software Engineering Practices.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Karim Ali",
+      "Xiaoni Lai",
+      "Zhaoyi Luo",
+      "Ondrej Lhoták",
+      "Julian Dolby",
+      "Frank Tip"
+    ],
+    "doi": "10.1109/TSE.2019.2956925",
+    "identifier": "AliLaiLuo21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/08944149/1g6v82iimIM",
+    "title": "A Study of Call Graph Construction for JVM-Hosted Languages.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "David Ameller",
+      "Xavier Franch",
+      "Cristina Gómez",
+      "Silverio Martínez-Fernández",
+      "João Araújo",
+      "Stefan Biffl",
+      "Jordi Cabot",
+      "Vittorio Cortellessa",
+      "Daniel Méndez Fernández",
+      "Ana Moreira",
+      "Henry Muccini",
+      "Antonio Vallecillo",
+      "Manuel Wimmer",
+      "Vasco Amaral",
+      "Wolfgang Böhm",
+      "Hugo Brunelière",
+      "Loli Burgueño",
+      "Miguel Goulão",
+      "Sabine Teufl",
+      "Luca Berardinelli"
+    ],
+    "doi": "10.1109/TSE.2019.2904476",
+    "identifier": "AmeFraGóm21",
+    "number": "4",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/04/08665968/18l6LikUPde",
+    "title": "Dealing with Non-Functional Requirements in Model-Driven Development: A Survey.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Hugo Sica de Andrade",
+      "Jan Schroeder",
+      "Ivica Crnkovic"
+    ],
+    "doi": "10.1109/TSE.2019.2932665",
+    "identifier": "AndSchCrn21",
+    "number": "8",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/08/08786134/1carZteRF8k",
+    "title": "Software Deployment on Heterogeneous Platforms: A Systematic Mapping Study.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Andrea Aquino",
+      "Giovanni Denaro",
+      "Mauro Pezzè"
+    ],
+    "doi": "10.1109/TSE.2019.2898199",
+    "identifier": "AquDenPez21",
+    "number": "5",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/05/08681653/18XhwvrMQi4",
+    "title": "Reusing Solutions Modulo Theories.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Lingfeng Bao",
+      "Xin Xia",
+      "David Lo",
+      "Gail C. Murphy"
+    ],
+    "doi": "10.1109/TSE.2019.2918536",
+    "identifier": "BaoXiaLo21",
+    "number": "6",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/06/08721092/1mq8n2C4RH2",
+    "title": "A Large Scale Study of Long-Time Contributor Prediction for GitHub Projects.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Gianluca Barbon",
+      "Vincent Leroy",
+      "Gwen Salaün"
+    ],
+    "doi": "10.1109/TSE.2019.2915303",
+    "identifier": "BarLerSal21",
+    "number": "6",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/06/08708934/19Q3oSkS2je",
+    "title": "Debugging of Behavioural Models using Counterexample Analysis.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Luciano Baresi",
+      "Alberto Leva",
+      "Giovanni Quattrocchi"
+    ],
+    "doi": "10.1109/TSE.2019.2931537",
+    "identifier": "BarLevQua21",
+    "number": "8",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/08/08778680/1mq8njd2McU",
+    "title": "Fine-Grained Dynamic Resource Allocation for Big-Data Applications.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Antonia Bertolino",
+      "Breno Miranda",
+      "Roberto Pietrantuono",
+      "Stefano Russo"
+    ],
+    "doi": "10.1109/TSE.2019.2906187",
+    "identifier": "BerMirPie21",
+    "number": "5",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/05/08669842/18wJDQcjRGo",
+    "title": "Adaptive Test Case Allocation, Selection and Generation Using Coverage Spectrum and Operational Profile.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Simon Butler",
+      "Jonas Gamalielsson",
+      "Björn Lundell",
+      "Christoffer Brax",
+      "Johan Sjöberg",
+      "Anders Mattsson",
+      "Tomas Gustavsson",
+      "Jonas Feist",
+      "Erik Lönroth"
+    ],
+    "doi": "10.1109/TSE.2019.2919305",
+    "identifier": "ButGamLun21",
+    "number": "7",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/07/08737777/1bmERsc9pe0",
+    "title": "On Company Contributions to Community Open Source Software Projects.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Haipeng Cai",
+      "Barbara G. Ryder"
+    ],
+    "doi": "10.1109/TSE.2020.2975176",
+    "identifier": "CaiRyd21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/09003217/1hy85map36E",
+    "title": "A Longitudinal Study of Application Structure and Behaviors in Android.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Radu Calinescu",
+      "Colin Paterson",
+      "Kenneth Johnson"
+    ],
+    "doi": "10.1109/TSE.2019.2912958",
+    "identifier": "CalPatJoh21",
+    "number": "6",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/06/08698796/19w9zPu2Dba",
+    "title": "Efficient Parametric Model Checking Using Domain Knowledge.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Xiang Chen",
+      "Chunyang Chen",
+      "Dun Zhang",
+      "Zhenchang Xing"
+    ],
+    "doi": "10.1109/TSE.2019.2940439",
+    "identifier": "CheCheZha21",
+    "number": "9",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/09/08827962/1ddbmBXzI5y",
+    "title": "SEthesaurus: WordNet in Software Engineering.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Haowen Chen",
+      "Xiao-Yuan Jing",
+      "Zhiqiang Li",
+      "Di Wu",
+      "Yi Peng",
+      "Zhiguo Huang"
+    ],
+    "doi": "10.1109/TSE.2020.2968520",
+    "identifier": "CheJinLi21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/08964460/1gM07Ds7fKU",
+    "title": "An Empirical Study on Heterogeneous Defect Prediction Approaches.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Zimin Chen",
+      "Steve Kommrusch",
+      "Michele Tufano",
+      "Louis-Noël Pouchet",
+      "Denys Poshyvanyk",
+      "Martin Monperrus"
+    ],
+    "doi": "10.1109/TSE.2019.2940179",
+    "identifier": "CheKomTuf21",
+    "number": "9",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/09/08827954/1ddbmnbiydi",
+    "title": "SequenceR: Sequence-to-Sequence Learning for End-to-End Program Repair.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Liushan Chen",
+      "Yu Pei",
+      "Carlo A. Furia"
+    ],
+    "doi": "10.1109/TSE.2020.2970009",
+    "identifier": "ChePeiFur21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/08972483/1gXC1GbhZ7O",
+    "title": "Contract-Based Program Repair Without The Contracts: An Extended Study.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Junjie Chen",
+      "Guancheng Wang",
+      "Dan Hao",
+      "Yingfei Xiong",
+      "Hongyu Zhang",
+      "Lu Zhang",
+      "Bing Xie"
+    ],
+    "doi": "10.1109/TSE.2018.2889771",
+    "identifier": "CheWanHao21",
+    "number": "2",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/02/08588375/17D45Xtvp8m",
+    "title": "Coverage Prediction for Accelerating Compiler Testing.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Chunyang Chen",
+      "Zhenchang Xing",
+      "Yang Liu",
+      "Kent Ong Long Xiong"
+    ],
+    "doi": "10.1109/TSE.2019.2896123",
+    "identifier": "CheXinLiu21",
+    "number": "3",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/03/08630054/17D45WXIkGj",
+    "title": "Mining Likely Analogical APIs Across Third-Party Libraries via Large-Scale Unsupervised API Semantics Embedding.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Filipe Roseiro Côgo",
+      "Gustavo Ansaldi Oliva",
+      "Ahmed E. Hassan"
+    ],
+    "doi": "10.1109/TSE.2019.2952130",
+    "identifier": "CôgOliHas21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08894401/1eNbwvth14s",
+    "title": "An Empirical Study of Dependency Downgrades in the npm Ecosystem.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Diego Costa",
+      "Cor-Paul Bezemer",
+      "Philipp Leitner",
+      "Artur Andrzejak"
+    ],
+    "doi": "10.1109/TSE.2019.2925345",
+    "identifier": "CosBezLei21",
+    "number": "7",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/07/08747433/1bcHuLLeety",
+    "title": "What&apos;s Wrong with My Benchmark Results? Studying Bad Practices in JMH Benchmarks.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Catarina Costa",
+      "Jair Figueiredo",
+      "João Felipe Pimentel",
+      "Anita Sarma",
+      "Leonardo Murta"
+    ],
+    "doi": "10.1109/TSE.2019.2917191",
+    "identifier": "CosFigPim21",
+    "number": "6",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/06/08716294/1aeWSaT9mGk",
+    "title": "Recommending Participants for Collaborative Merge Sessions.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Luis Cruz",
+      "Rui Abreu"
+    ],
+    "doi": "10.1109/TSE.2019.2946163",
+    "identifier": "CruAbr21",
+    "number": "10",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/10/08862921/1dXER6B9edq",
+    "title": "On the Energy Footprint of Mobile Testing Frameworks.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Hoa Khanh Dam",
+      "Truyen Tran",
+      "Trang Pham",
+      "Shien Wee Ng",
+      "John Grundy",
+      "Aditya Ghose"
+    ],
+    "doi": "10.1109/TSE.2018.2881961",
+    "identifier": "DamTraPha21",
+    "number": "1",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/01/08540022/17D45X0yjSs",
+    "title": "Automatic Feature Learning for Predicting Vulnerable Software Components.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Andreas Dann",
+      "Ben Hermann",
+      "Eric Bodden"
+    ],
+    "doi": "10.1109/TSE.2019.2931331",
+    "identifier": "DanHerBod21",
+    "number": "8",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/08/08778721/1mq8rI7N8YM",
+    "title": "ModGuard : Identifying Integrity &amp; Confidentiality Violations in Java Modules.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Alexandre Decan",
+      "Tom Mens"
+    ],
+    "doi": "10.1109/TSE.2019.2918315",
+    "identifier": "DecMen21",
+    "number": "6",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/06/08721084/1mq8qXnWg48",
+    "title": "What Do Package Dependencies Tell Us About Semantic Versioning?",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Ali Ebnenasir",
+      "Alex P. Klinkhamer"
+    ],
+    "doi": "10.1109/TSE.2019.2901485",
+    "identifier": "EbnKli21",
+    "number": "3",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/03/08651426/17WX57VxzoY",
+    "title": "Topology-Specific Synthesis of Self-Stabilizing Parameterized Systems with Constant-Space Processes.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Khaled El-Fakih",
+      "Gregor v. Bochmann"
+    ],
+    "doi": "10.1109/TSE.2018.2878728",
+    "identifier": "El-Boc21",
+    "number": "1",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/01/08515084/14NIz8skL9T",
+    "title": "Symbolic Refinement of Extended State Machines with Applications to the Automatic Derivation of Sub-Components and Controllers.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Khaled El-Fakih",
+      "Robert M. Hierons",
+      "Uraz Cengiz Türker"
+    ],
+    "doi": "10.1109/TSE.2019.2911076",
+    "identifier": "El-HieTür21",
+    "number": "5",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/05/08691615/1jeDeETPNqo",
+    "title": "$\\mathcal K$K-Branching UIO Sequences for Partially Specified Observable Non-Deterministic FSMs.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Yuanrui Fan",
+      "Xin Xia",
+      "Daniel Alencar da Costa",
+      "David Lo",
+      "Ahmed E. Hassan",
+      "Shanping Li"
+    ],
+    "doi": "10.1109/TSE.2019.2929761",
+    "identifier": "FanXiaCos21",
+    "number": "8",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/08/08765743/1bLyugSu9J6",
+    "title": "The Impact of Mislabeled Changes by SZZ on Just-in-Time Defect Prediction.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Fábio de Almeida Farzat",
+      "Márcio de Oliveira Barros",
+      "Guilherme H. Travassos"
+    ],
+    "doi": "10.1109/TSE.2019.2928293",
+    "identifier": "FarBarTra21",
+    "number": "8",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/08/08762190/1bIeMSkpMeA",
+    "title": "Evolving JavaScript Code to Reduce Load Time.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Farhaan Fowze",
+      "Dave Tian",
+      "Grant Hernandez",
+      "Kevin R. B. Butler",
+      "Tuba Yavuz"
+    ],
+    "doi": "10.1109/TSE.2019.2939526",
+    "identifier": "FowTiaHer21",
+    "number": "9",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/09/08823941/1d3e8aWI9fW",
+    "title": "ProXray: Protocol Model Learning and Guided Firmware Analysis.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Carlo A. Furia",
+      "Robert Feldt",
+      "Richard Torkar"
+    ],
+    "doi": "10.1109/TSE.2019.2935974",
+    "identifier": "FurFelTor21",
+    "number": "9",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/09/08807222/1cG6wA2gsms",
+    "title": "Bayesian Data Analysis in Empirical Software Engineering Research.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Jian Gao",
+      "Yu Jiang",
+      "Zhe Liu",
+      "Xin Yang",
+      "Cong Wang",
+      "Xun Jiao",
+      "Zijiang Yang",
+      "Jiaguang Sun"
+    ],
+    "doi": "10.1109/TSE.2019.2956932",
+    "identifier": "GaoJiaLiu21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08918305/1jeDdijn2co",
+    "title": "Semantic Learning and Emulation Based Cross-Platform Binary Vulnerability Seeker.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Zhipeng Gao",
+      "Lingxiao Jiang",
+      "Xin Xia",
+      "David Lo",
+      "John Grundy"
+    ],
+    "doi": "10.1109/TSE.2020.2971482",
+    "identifier": "GaoJiaXia21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/08979435/1h7zqKhSMne",
+    "title": "Checking Smart Contracts With Structural Code Embedding.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Carlos Gavidia-Calderon",
+      "Federica Sarro",
+      "Mark Harman",
+      "Earl T. Barr"
+    ],
+    "doi": "10.1109/TSE.2019.2944608",
+    "identifier": "GavSarHar21",
+    "number": "10",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/10/08852726/1mq8pY4iz04",
+    "title": "The Assessor&apos;s Dilemma: Improving Bug Repair via Empirical Game Theory.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Taher Ahmed Ghaleb",
+      "Daniel Alencar da Costa",
+      "Ying Zou",
+      "Ahmed E. Hassan"
+    ],
+    "doi": "10.1109/TSE.2019.2941880",
+    "identifier": "GhaCosZou21",
+    "number": "9",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/09/08839858/1dn8CyMAa76",
+    "title": "Studying the Impact of Noises in Build Breakage Data.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Elaheh Ghassabani",
+      "Michael W. Whalen",
+      "Andrew Gacek",
+      "Mats Per Erik Heimdahl"
+    ],
+    "doi": "10.1109/TSE.2019.2891709",
+    "identifier": "GhaWhaGac21",
+    "number": "2",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/02/08606278/17D45XeKgu3",
+    "title": "Inductive Validity Cores.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Giovanni Grano",
+      "Christoph Laaber",
+      "Annibale Panichella",
+      "Sebastiano Panichella"
+    ],
+    "doi": "10.1109/TSE.2019.2946773",
+    "identifier": "GraLaaPan21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08865437/1e2Dl4EONW0",
+    "title": "Testing with Fewer Resources: An Adaptive Approach to Performance-Aware Test Case Generation.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Giovanni Grano",
+      "Fabio Palomba",
+      "Harald C. Gall"
+    ],
+    "doi": "10.1109/TSE.2019.2903057",
+    "identifier": "GraPalGal21",
+    "number": "4",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/04/08658120/187ZDceMxP2",
+    "title": "Lightweight Assessment of Test-Case Effectiveness Using Source-Code-Quality Indicators.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Safiollah Heidari",
+      "Rajkumar Buyya"
+    ],
+    "doi": "10.1109/TSE.2019.2934849",
+    "identifier": "HeiBuy21",
+    "number": "8",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/08/08798698/1cun0oXpLR6",
+    "title": "A Cost-Efficient Auto-Scaling Algorithm for Large-Scale Graph Processing in Cloud Environments with Heterogeneous Resources.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Robert Heinrich",
+      "Misha Strittmatter",
+      "Ralf H. Reussner"
+    ],
+    "doi": "10.1109/TSE.2019.2903797",
+    "identifier": "HeiStrReu21",
+    "number": "4",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/04/08662719/18cSQQDqZAQ",
+    "title": "A Layered Reference Architecture for Metamodels to Tailor Quality Modeling and Analysis.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Steffen Herbold"
+    ],
+    "doi": "10.1109/TSE.2019.2957794",
+    "identifier": "Herbold21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08924628/1fvZn9AwDoQ",
+    "title": "On the Costs and Profit of Software Defect Prediction.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Thong Hoang",
+      "Julia Lawall",
+      "Yuan Tian",
+      "Richard Jayadi Oentaryo",
+      "David Lo"
+    ],
+    "doi": "10.1109/TSE.2019.2952614",
+    "identifier": "HoaLawTia21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08896061/1eS9NsgT3Pi",
+    "title": "PatchNet: Hierarchical Deep Learning-Based Stable Patch Identification for the Linux Kernel.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Yikun Hu",
+      "Hui Wang",
+      "Yuanyuan Zhang",
+      "Bodong Li",
+      "Dawu Gu"
+    ],
+    "doi": "10.1109/TSE.2019.2918326",
+    "identifier": "HuWanZha21",
+    "number": "6",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/06/08721093/1mq8psKKhiM",
+    "title": "A Semantics-Based Hybrid Approach on Binary Code Similarity Comparison.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Rubing Huang",
+      "Weifeng Sun",
+      "Yinyin Xu",
+      "Haibo Chen",
+      "Dave Towey",
+      "Xin Xia"
+    ],
+    "doi": "10.1109/TSE.2019.2942921",
+    "identifier": "HuaSunXu21",
+    "number": "10",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/10/08846002/1eX8DY1Yju0",
+    "title": "A Survey on Adaptive Random Testing.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Xuan Huo",
+      "Ferdian Thung",
+      "Ming Li",
+      "David Lo",
+      "Shu-Ting Shi"
+    ],
+    "doi": "10.1109/TSE.2019.2920771",
+    "identifier": "HuoThuLi21",
+    "number": "7",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/07/08736995/1aR7UlAJws0",
+    "title": "Deep Transfer Bug Localization.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Rahul N. Iyer",
+      "S. Alex Yun",
+      "Meiyappan Nagappan",
+      "Jesse Hoey"
+    ],
+    "doi": "10.1109/TSE.2019.2960357",
+    "identifier": "IyeYunNag21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08935389/1fPUhns9Zlu",
+    "title": "Effects of Personality Traits on Pull Request Acceptance.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Gunel Jahangirova",
+      "David Clark",
+      "Mark Harman",
+      "Paolo Tonella"
+    ],
+    "doi": "10.1109/TSE.2019.2934409",
+    "identifier": "JahClaHar21",
+    "number": "8",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/08/08794642/1jeDf0iyVnW",
+    "title": "An Empirical Validation of Oracle Improvement.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Pankaj Jalote",
+      "Damodaram Kamma"
+    ],
+    "doi": "10.1109/TSE.2019.2904230",
+    "identifier": "JalKam21",
+    "number": "4",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/04/08664196/1mq8mkdh0fm",
+    "title": "Studying Task Processes for Improving Programmer Productivity.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Shujuan Jiang",
+      "Miao Zhang",
+      "Yanmei Zhang",
+      "Rongcun Wang",
+      "Qiao Yu",
+      "Jacky Wai Keung"
+    ],
+    "doi": "10.1109/TSE.2019.2921965",
+    "identifier": "JiaZhaZha21",
+    "number": "7",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/07/08734013/1aZqdvFknm0",
+    "title": "An Integration Test Order Strategy to Consider Control Coupling.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Jirayus Jiarpakdee",
+      "Chakkrit Tantithamthavorn",
+      "Ahmed E. Hassan"
+    ],
+    "doi": "10.1109/TSE.2019.2891758",
+    "identifier": "JiaTanHas21",
+    "number": "2",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/02/08608002/17D45W2Wyy6",
+    "title": "The Impact of Correlated Metrics on the Interpretation of Defect Models.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Wuxia Jin",
+      "Ting Liu",
+      "Yuanfang Cai",
+      "Rick Kazman",
+      "Ran Mo",
+      "Qinghua Zheng"
+    ],
+    "doi": "10.1109/TSE.2019.2910531",
+    "identifier": "JinLiuCai21",
+    "number": "5",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/05/08686152/19G5SpWkxDG",
+    "title": "Service Candidate Identification from Monolithic Systems Based on Execution Traces.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Brittany Johnson",
+      "Thomas Zimmermann",
+      "Christian Bird"
+    ],
+    "doi": "10.1109/TSE.2019.2903053",
+    "identifier": "JohZimBir21",
+    "number": "4",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/04/08658138/187ZCMEkrQs",
+    "title": "The Effect of Work Environments on Productivity and Satisfaction of Software Engineers.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Magne Jørgensen",
+      "Gunnar Rye Bergersen",
+      "Knut Liestøl"
+    ],
+    "doi": "10.1109/TSE.2020.2973638",
+    "identifier": "JørBerLie21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/08999628/1hpPFQ59F0k",
+    "title": "Relations Between Effort Estimates, Skill Indicators, and Measured Programming Skill.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Georgia M. Kapitsaki",
+      "Georgia Charalambous"
+    ],
+    "doi": "10.1109/TSE.2019.2909021",
+    "identifier": "KapCha21",
+    "number": "5",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/05/08680684/18TYgdMQnok",
+    "title": "Modeling and Recommending Open Source Licenses with findOSSLicense.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Itir Karac",
+      "Burak Turhan",
+      "Natalia Juristo"
+    ],
+    "doi": "10.1109/TSE.2019.2920377",
+    "identifier": "KarTurJur21",
+    "number": "7",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/07/08727972/1mq8lX8WhOg",
+    "title": "A Controlled Experiment with Novice Developers on the Impact of Task Description Granularity on Software Quality in Test-Driven Development.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Eriks Klotins",
+      "Michael Unterkalmsteiner",
+      "Panagiota Chatzipetrou",
+      "Tony Gorschek",
+      "Rafael Prikladnicki",
+      "Nirnaya Tripathi",
+      "Leandro Bento Pompermaier"
+    ],
+    "doi": "10.1109/TSE.2019.2900213",
+    "identifier": "KloUntCha21",
+    "number": "3",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/03/08643804/17PYEkOuVCY",
+    "title": "A Progression Model of Software Engineering Goals, Challenges, and Practices in Start-Ups.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Patrick W. Koch",
+      "Konstantin Schekotihin",
+      "Dietmar Jannach",
+      "Birgit Hofer",
+      "Franz Wotawa"
+    ],
+    "doi": "10.1109/TSE.2019.2944604",
+    "identifier": "KocSchJan21",
+    "number": "10",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/10/08859280/1dR0VrZapC8",
+    "title": "Metric-Based Fault Prediction for Spreadsheets.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Pavneet Singh Kochhar",
+      "Eirini Kalliamvakou",
+      "Nachiappan Nagappan",
+      "Thomas Zimmermann",
+      "Christian Bird"
+    ],
+    "doi": "10.1109/TSE.2019.2937025",
+    "identifier": "KocKalNag21",
+    "number": "9",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/09/08812899/1cPXLGHVYty",
+    "title": "Moving from Closed to Open Source: Observations from Six Transitioned Projects to GitHub.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Rahul Krishna",
+      "Vivek Nair",
+      "Pooyan Jamshidi",
+      "Tim Menzies"
+    ],
+    "doi": "10.1109/TSE.2020.2983927",
+    "identifier": "KriNaiJam21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/09050841/1iCrTNamLxS",
+    "title": "Whence to Learn? Transferring Knowledge in Configurable Systems Using BEETLE.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Stefan Krüger",
+      "Johannes Späth",
+      "Karim Ali",
+      "Eric Bodden",
+      "Mira Mezini"
+    ],
+    "doi": "10.1109/TSE.2019.2948910",
+    "identifier": "KrüSpäAli21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08880510/1emyjandtgA",
+    "title": "CrySL: An Extensible Approach to Validating the Correct Usage of Cryptographic APIs.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Seonah Lee",
+      "Rongxin Wu",
+      "Shing-Chi Cheung",
+      "Sungwon Kang"
+    ],
+    "doi": "10.1109/TSE.2019.2901459",
+    "identifier": "LeeWuChe21",
+    "number": "4",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/04/08651318/17WX58qcfrW",
+    "title": "Automatic Detection and Update Suggestion for Outdated API Names in Documentation.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Li Li",
+      "Tegawendé F. Bissyandé",
+      "Jacques Klein"
+    ],
+    "doi": "10.1109/TSE.2019.2901679",
+    "identifier": "LiBisKle21",
+    "number": "4",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/04/08653409/17YCN5xhPt6",
+    "title": "Rebooting Research on Detecting Repackaged Android Apps: Literature Review and Benchmark.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Heng Li",
+      "Weiyi Shang",
+      "Bram Adams",
+      "Mohammed Sayagh",
+      "Ahmed E. Hassan"
+    ],
+    "doi": "10.1109/TSE.2020.2970422",
+    "identifier": "LiShaAda21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/08976297/1h0W84dD2Zq",
+    "title": "A Qualitative Study of the Benefits and Costs of Logging From Developers&apos; Perspectives.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Hui Liu",
+      "Jiahao Jin",
+      "Zhifeng Xu",
+      "Yanzhen Zou",
+      "Yifan Bu",
+      "Lu Zhang"
+    ],
+    "doi": "10.1109/TSE.2019.2936376",
+    "identifier": "LiuJinXu21",
+    "number": "9",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/09/08807230/1cG6wpDDpXW",
+    "title": "Deep Learning Based Code Smell Detection.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Kui Liu",
+      "Dongsun Kim",
+      "Tegawendé F. Bissyandé",
+      "Shin Yoo",
+      "Yves Le Traon"
+    ],
+    "doi": "10.1109/TSE.2018.2884955",
+    "identifier": "LiuKimBis21",
+    "number": "1",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/01/08565907/17D45XreC6t",
+    "title": "Mining Fix Patterns for FindBugs Violations.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Zhongxin Liu",
+      "Xin Xia",
+      "David Lo",
+      "Zhenchang Xing",
+      "Ahmed E. Hassan",
+      "Shanping Li"
+    ],
+    "doi": "10.1109/TSE.2019.2941943",
+    "identifier": "LiuXiaLo21",
+    "number": "9",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/09/08840982/1doNBqz6ncY",
+    "title": "Which Variables Should I Log?",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Giovanni Liva",
+      "Muhammad Taimoor Khan",
+      "Martin Pinzger",
+      "Francesco Spegni",
+      "Luca Spalazzi"
+    ],
+    "doi": "10.1109/TSE.2019.2948351",
+    "identifier": "LivKhaPin21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08877769/1mq8lHA7IGY",
+    "title": "Automatic Repair of Timestamp Comparisons.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Suyu Ma",
+      "Zhenchang Xing",
+      "Chunyang Chen",
+      "Cheng Chen",
+      "Lizhen Qu",
+      "Guoqiang Li"
+    ],
+    "doi": "10.1109/TSE.2019.2946830",
+    "identifier": "MaXinChe21",
+    "number": "10",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/10/08865646/1e2DkToxzXi",
+    "title": "Easy-to-Deploy API Extraction by Multi-Level Feature Embedding and Transfer Learning.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Patrick Mäder",
+      "Tobias Kuschke",
+      "Mario Janke"
+    ],
+    "doi": "10.1109/TSE.2019.2924886",
+    "identifier": "MädKusJan21",
+    "number": "7",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/07/08745532/1bJTz7heriU",
+    "title": "Reactive Auto-Completion of Modeling Activities.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Kulani Mahadewa",
+      "Kailong Wang",
+      "Guangdong Bai",
+      "Ling Shi",
+      "Yan Liu",
+      "Jin Song Dong",
+      "Zhenkai Liang"
+    ],
+    "doi": "10.1109/TSE.2019.2960690",
+    "identifier": "MahWanBai21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/08936860/1fTdXXhZF1m",
+    "title": "Scrutinizing Implementations of Smart Home Integrations.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Valentin J. M. Manès",
+      "HyungSeok Han",
+      "Choongwoo Han",
+      "Sang Kil Cha",
+      "Manuel Egele",
+      "Edward J. Schwartz",
+      "Maverick Woo"
+    ],
+    "doi": "10.1109/TSE.2019.2946563",
+    "identifier": "ManHanHan21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08863940/1e0YnO3GyJO",
+    "title": "The Art, Science, and Engineering of Fuzzing: A Survey.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Abhinav Mehrotra",
+      "Veljko Pejovic",
+      "Mirco Musolesi"
+    ],
+    "doi": "10.1109/TSE.2019.2943554",
+    "identifier": "MehPejMus21",
+    "number": "10",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/10/08847471/1dAq6Yq1Uv6",
+    "title": "FutureWare: Designing a Middleware for Anticipatory Mobile Computing.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Luis Melo",
+      "Igor Wiese",
+      "Marcelo d&apos;Amorim"
+    ],
+    "doi": "10.1109/TSE.2019.2956919",
+    "identifier": "MelWied&a21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08918334/1gKtNDsz5i8",
+    "title": "Using Docker to Assist Q&amp;A Forum Users.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Claudio Menghi",
+      "Christos Tsigkanos",
+      "Patrizio Pelliccione",
+      "Carlo Ghezzi",
+      "Thorsten Berger"
+    ],
+    "doi": "10.1109/TSE.2019.2945329",
+    "identifier": "MenTsiPel21",
+    "number": "10",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/10/08859226/1dR0V3888rS",
+    "title": "Specification Patterns for Robotic Missions.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "André N. Meyer",
+      "Earl T. Barr",
+      "Christian Bird",
+      "Thomas Zimmermann"
+    ],
+    "doi": "10.1109/TSE.2019.2904957",
+    "identifier": "MeyBarBir21",
+    "number": "5",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/05/08666786/18mLKBXxMhq",
+    "title": "Today Was a Good Day: The Daily Life of Software Developers.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "André N. Meyer",
+      "Gail C. Murphy",
+      "Thomas Zimmermann",
+      "Thomas Fritz"
+    ],
+    "doi": "10.1109/TSE.2019.2938525",
+    "identifier": "MeyMurZim21",
+    "number": "9",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/09/08823032/1d1yVXwZqne",
+    "title": "Enabling Good Work Habits in Software Developers through Reflective Goal-Setting.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Ran Mo",
+      "Yuanfang Cai",
+      "Rick Kazman",
+      "Lu Xiao",
+      "Qiong Feng"
+    ],
+    "doi": "10.1109/TSE.2019.2910856",
+    "identifier": "MoCaiKaz21",
+    "number": "5",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/05/08691586/19utN8Vpl8Q",
+    "title": "Architecture Anti-Patterns: Automatically Detectable Violations of Design Principles.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Rahul Mohanani",
+      "Burak Turhan",
+      "Paul Ralph"
+    ],
+    "doi": "10.1109/TSE.2019.2909033",
+    "identifier": "MohTurRal21",
+    "number": "5",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/05/08680661/18TYg4pehS8",
+    "title": "Requirements Framing Affects Design Creativity.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Rodrigo Morales",
+      "Rubén Saborido",
+      "Yann-Gaël Guéhéneuc"
+    ],
+    "doi": "10.1109/TSE.2020.2968061",
+    "identifier": "MorSabGué21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/08966499/1gNELA0WeCA",
+    "title": "MoMIT: Porting a JavaScript Interpreter on a Quarter Coin.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Dongliang Mu",
+      "Yunlan Du",
+      "Jianhao Xu",
+      "Jun Xu",
+      "Xinyu Xing",
+      "Bing Mao",
+      "Peng Liu"
+    ],
+    "doi": "10.1109/TSE.2019.2939528",
+    "identifier": "MuDuXu21",
+    "number": "9",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/09/08823943/1d3e8oP4kvu",
+    "title": "POMP++: Facilitating Postmortem Program Diagnosis with Value-Set Analysis.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Paul Muntean",
+      "Martin Monperrus",
+      "Hao Sun",
+      "Jens Grossklags",
+      "Claudia Eckert"
+    ],
+    "doi": "10.1109/TSE.2019.2946148",
+    "identifier": "MunMonSun21",
+    "number": "10",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/10/08862860/1dXEPR9d6M0",
+    "title": "IntRepair: Informed Repairing of Integer Overflows.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Emerson R. Murphy-Hill",
+      "Ciera Jaspan",
+      "Caitlin Sadowski",
+      "David C. Shepherd",
+      "Michael Phillips",
+      "Collin Winter",
+      "Andrea Knight",
+      "Edward K. Smith",
+      "Matthew Jorde"
+    ],
+    "doi": "10.1109/TSE.2019.2900308",
+    "identifier": "MurJasSad21",
+    "number": "3",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/03/08643844/17PYElnHbL7",
+    "title": "What Predicts Software Developers&apos; Productivity?",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Maleknaz Nayebi",
+      "Guenther Ruhe",
+      "Thomas Zimmermann"
+    ],
+    "doi": "10.1109/TSE.2019.2892956",
+    "identifier": "NayRuhZim21",
+    "number": "2",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/02/08620369/17D45WK5AjH",
+    "title": "Mining Treatment-Outcome Constructs from Sequential Software Engineering Data.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Ehsan Noei",
+      "Feng Zhang",
+      "Ying Zou"
+    ],
+    "doi": "10.1109/TSE.2019.2893171",
+    "identifier": "NoeZhaZou21",
+    "number": "2",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/02/08613795/17D45WaTkmc",
+    "title": "Too Many User-Reviews! What Should App Developers Look at First?",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Matheus Paixão",
+      "Jens Krinke",
+      "DongGyun Han",
+      "Chaiyong Ragkhitwetsagul",
+      "Mark Harman"
+    ],
+    "doi": "10.1109/TSE.2019.2912113",
+    "identifier": "PaiKriHan21",
+    "number": "5",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/05/08697147/19sOR3DTqVO",
+    "title": "The Impact of Code Review on Architectural Changes.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Fabio Palomba",
+      "Damian Andrew Tamburri",
+      "Francesca Arcelli Fontana",
+      "Rocco Oliveto",
+      "Andy Zaidman",
+      "Alexander Serebrenik"
+    ],
+    "doi": "10.1109/TSE.2018.2883603",
+    "identifier": "PalTamFon21",
+    "number": "1",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/01/08546762/17D45WB0qbu",
+    "title": "Beyond Technical Aspects: How Do Community Smells Influence the Intensity of Code Smells?",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Weifeng Pan",
+      "Ming Hua",
+      "Carl K. Chang",
+      "Zijiang Yang",
+      "Dae-Kyoo Kim"
+    ],
+    "doi": "10.1109/TSE.2019.2946357",
+    "identifier": "PanHuaCha21",
+    "number": "10",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/10/08862895/1dXEQNyBwf6",
+    "title": "ElementRank: Ranking Java Software Classes and Packages using a Multilayer Complex Network-Based Approach.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "José Ignacio Panach",
+      "Oscar Dieste",
+      "Beatriz Marín",
+      "Sergio España",
+      "Sira Vegas",
+      "Oscar Pastor",
+      "Natalia Juristo"
+    ],
+    "doi": "10.1109/TSE.2018.2884706",
+    "identifier": "PanDieMar21",
+    "number": "1",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/01/08565892/17D45W2WyxN",
+    "title": "Evaluating Model-Driven Development Claims with Respect to Quality: A Family of Experiments.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Marco Paolieri",
+      "Marco Biagi",
+      "Laura Carnevali",
+      "Enrico Vicario"
+    ],
+    "doi": "10.1109/TSE.2019.2917202",
+    "identifier": "PaoBiaCar21",
+    "number": "6",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/06/08719961/1aeWS5iQJZC",
+    "title": "The ORIS Tool: Quantitative Evaluation of Non-Markovian Systems.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Alessandro Vittorio Papadopoulos",
+      "Laurens Versluis",
+      "André Bauer",
+      "Nikolas Herbst",
+      "Jóakim von Kistowski",
+      "Ahmed Ali-Eldin",
+      "Cristina L. Abad",
+      "José Nelson Amaral",
+      "Petr Tuma",
+      "Alexandru Iosup"
+    ],
+    "doi": "10.1109/TSE.2019.2927908",
+    "identifier": "PapVerBau21",
+    "number": "8",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/08/08758926/1byhjeU9YGI",
+    "title": "Methodological Principles for Reproducible Performance Evaluation in Cloud Computing.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Leonardo Teixeira Passos",
+      "Rodrigo Queiroz",
+      "Mukelabai Mukelabai",
+      "Thorsten Berger",
+      "Sven Apel",
+      "Krzysztof Czarnecki",
+      "Jesús Alejandro Padilla"
+    ],
+    "doi": "10.1109/TSE.2018.2884911",
+    "identifier": "PasQueMuk21",
+    "number": "1",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/01/08565973/17D45X2fUFk",
+    "title": "A Study of Feature Scattering in the Linux Kernel.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Andrés Paz",
+      "Ghizlane El-Boussaidi",
+      "Hafedh Mili"
+    ],
+    "doi": "10.1109/TSE.2020.2966994",
+    "identifier": "PazEl-Mil21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/08960313/1gC2rB8utfW",
+    "title": "checsdm: A Method for Ensuring Consistency in Heterogeneous Safety-Critical System Design.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Alexandre Perez",
+      "Rui Abreu",
+      "Arie van Deursen"
+    ],
+    "doi": "10.1109/TSE.2019.2895640",
+    "identifier": "PerAbrDeu21",
+    "number": "2",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/02/08627980/1mq8mxchp8k",
+    "title": "A Theoretical and Empirical Analysis of Program Spectra Diagnosability.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Danilo Dominguez Perez",
+      "Wei Le"
+    ],
+    "doi": "10.1109/TSE.2019.2893207",
+    "identifier": "PerLe21",
+    "number": "2",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/02/08613913/17D45WrVgcJ",
+    "title": "Specifying Callback Control Flow of Mobile Apps Using Finite Automata.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Van-Thuan Pham",
+      "Marcel Böhme",
+      "Andrew E. Santosa",
+      "Alexandru Razvan Caciulescu",
+      "Abhik Roychoudhury"
+    ],
+    "doi": "10.1109/TSE.2019.2941681",
+    "identifier": "PhaBöhSan21",
+    "number": "9",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/09/08839290/1mq8l9ojlja",
+    "title": "Smart Greybox Fuzzing.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Dipesh Pradhan",
+      "Shuai Wang",
+      "Shaukat Ali",
+      "Tao Yue",
+      "Marius Liaaen"
+    ],
+    "doi": "10.1109/TSE.2018.2882176",
+    "identifier": "PraWanAli21",
+    "number": "1",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/01/08540431/17D45XfSETX",
+    "title": "CBGA-ES+: A Cluster-Based Genetic Algorithm with Non-Dominated Elitist Selection for Supporting Multi-Objective Test Optimization.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Yu Qu",
+      "Qinghua Zheng",
+      "Jianlei Chi",
+      "Yangxu Jin",
+      "Ancheng He",
+      "Di Cui",
+      "Hengshan Zhang",
+      "Ting Liu"
+    ],
+    "doi": "10.1109/TSE.2019.2892959",
+    "identifier": "QuZheChi21",
+    "number": "2",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/02/08611396/17D45WaTkdX",
+    "title": "Using K-core Decomposition on Class Dependency Networks to Improve Bug Prediction Model&apos;s Practical Performance.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Sruti Srinivasa Ragavan",
+      "Mihai Codoban",
+      "David Piorkowski",
+      "Danny Dig",
+      "Margaret Burnett"
+    ],
+    "doi": "10.1109/TSE.2019.2931296",
+    "identifier": "RagCodPio21",
+    "number": "8",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/08/08778723/1mq8lirLUAM",
+    "title": "Version Control Systems: An Information Foraging Perspective.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Chaiyong Ragkhitwetsagul",
+      "Jens Krinke",
+      "Matheus Paixão",
+      "Giuseppe Bianco",
+      "Rocco Oliveto"
+    ],
+    "doi": "10.1109/TSE.2019.2900307",
+    "identifier": "RagKriPai21",
+    "number": "3",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/03/08643998/17PYElVL3mG",
+    "title": "Toxic Code Snippets on Stack Overflow.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Gopi Krishnan Rajbahadur",
+      "Shaowei Wang",
+      "Yasutaka Kamei",
+      "Ahmed E. Hassan"
+    ],
+    "doi": "10.1109/TSE.2019.2924371",
+    "identifier": "RajWanKam21",
+    "number": "7",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/07/08744330/1bJTzJF3nPO",
+    "title": "Impact of Discretization Noise of the Dependent Variable on Machine Learning Classifiers in Software Engineering.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Maria Salama",
+      "Rami Bahsoon",
+      "Patricia Lago"
+    ],
+    "doi": "10.1109/TSE.2019.2925616",
+    "identifier": "SalBahLag21",
+    "number": "7",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/07/08747478/1bcHuA2hwmk",
+    "title": "Stability in Software Engineering: Survey of the State-of-the-Art and Research Directions.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Adrian Santos",
+      "Sira Vegas",
+      "Markku Oivo",
+      "Natalia Juristo"
+    ],
+    "doi": "10.1109/TSE.2019.2935720",
+    "identifier": "SanVegOiv21",
+    "number": "9",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/09/08805425/1cG4N3SZ3Yk",
+    "title": "A Procedure and Guidelines for Analyzing Groups of Software Engineering Replications.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Mohammed Sayagh",
+      "Ahmed E. Hassan"
+    ],
+    "doi": "10.1109/TSE.2020.2973997",
+    "identifier": "SayHas21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/08999583/1hpPFHzKXks",
+    "title": "ConfigMiner: Identifying the Appropriate Configuration Options for Config-Related User Questions by Mining Online Forums.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Simone Scalabrino",
+      "Gabriele Bavota",
+      "Christopher Vendome",
+      "Mario Linares-Vásquez",
+      "Denys Poshyvanyk",
+      "Rocco Oliveto"
+    ],
+    "doi": "10.1109/TSE.2019.2901468",
+    "identifier": "ScaBavVen21",
+    "number": "3",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/03/08651396/17WX59ViG76",
+    "title": "Automatically Assessing Code Understandability.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Gian Luca Scoccia",
+      "Ivano Malavolta",
+      "Marco Autili",
+      "Amleto Di Salle",
+      "Paola Inverardi"
+    ],
+    "doi": "10.1109/TSE.2019.2941936",
+    "identifier": "ScoMalAut21",
+    "number": "10",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/10/08844813/1ds7qOLVrMc",
+    "title": "Enhancing Trustability of Android Applications via User-Centric Flexible Permissions.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Vaibhav Sharma",
+      "Kesha Hietala",
+      "Stephen McCamant"
+    ],
+    "doi": "10.1109/TSE.2019.2931000",
+    "identifier": "ShaHieMcC21",
+    "number": "8",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/08/08776650/1bXaISDeMJq",
+    "title": "Finding Substitutable Binary Code By Synthesizing Adapters.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Danilo Silva",
+      "João Paulo da Silva",
+      "Gustavo Jansen de Souza Santos",
+      "Ricardo Terra",
+      "Marco Túlio Valente"
+    ],
+    "doi": "10.1109/TSE.2020.2968072",
+    "identifier": "SilSilSan21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/08966516/1gNELpZiHLi",
+    "title": "RefDiff 2.0: A Multi-Language Refactoring Detection Tool.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Elder Vicente de Paulo Sobrinho",
+      "Andrea De Lucia",
+      "Marcelo de Almeida Maia"
+    ],
+    "doi": "10.1109/TSE.2018.2880977",
+    "identifier": "SobLucMai21",
+    "number": "1",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/01/08532309/17D45WHONjQ",
+    "title": "A Systematic Literature Review on Bad Smells-5 W&apos;s: Which, When, What, Who, Where.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Jeongju Sohn",
+      "Shin Yoo"
+    ],
+    "doi": "10.1109/TSE.2019.2930977",
+    "identifier": "SohYoo21",
+    "number": "8",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/08/08772166/1bXaJ6HewjC",
+    "title": "Empirical Evaluation of Fault Localisation Using Code and Change Metrics.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Andrea Di Sorbo",
+      "Sebastiano Panichella",
+      "Corrado Aaron Visaggio",
+      "Massimiliano Di Penta",
+      "Gerardo Canfora",
+      "Harald C. Gall"
+    ],
+    "doi": "10.1109/TSE.2019.2930519",
+    "identifier": "SorPanVis21",
+    "number": "8",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/08/08769918/1bTRg47AuOs",
+    "title": "Exploiting Natural Language Structures in Software Informal Documentation.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Diomidis Spinellis",
+      "Paris Avgeriou"
+    ],
+    "doi": "10.1109/TSE.2019.2892149",
+    "identifier": "SpiAvg21",
+    "number": "6",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/06/08704965/19HKUhJMVAQ",
+    "title": "Evolution of the Unix System Architecture: An Exploratory Case Study.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Margaret-Anne D. Storey",
+      "Thomas Zimmermann",
+      "Christian Bird",
+      "Jacek Czerwonka",
+      "Brendan Murphy",
+      "Eirini Kalliamvakou"
+    ],
+    "doi": "10.1109/TSE.2019.2944354",
+    "identifier": "StoZimBir21",
+    "number": "10",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/10/08851296/1dFoIui3Qc0",
+    "title": "Towards a Theory of Software Developer Job Satisfaction and Perceived Productivity.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Chang-Ai Sun",
+      "An Fu",
+      "Pak-Lok Poon",
+      "Xiaoyuan Xie",
+      "Huai Liu",
+      "Tsong Yueh Chen"
+    ],
+    "doi": "10.1109/TSE.2019.2934848",
+    "identifier": "SunFuPoo21",
+    "number": "9",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/09/08807231/1cG6wNpXXz2",
+    "title": "METRIC${+}$+: A Metamorphic Relation Identification Technique Based on Input Plus Output Domains.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Jeffrey Svajlenko",
+      "Chanchal K. Roy"
+    ],
+    "doi": "10.1109/TSE.2019.2912962",
+    "identifier": "SvaRoy21",
+    "number": "5",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/05/08695849/19sORerdzDW",
+    "title": "The Mutation and Injection Framework: Evaluating Clone Detection Tools with Mutation Analysis.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Damian A. Tamburri",
+      "Fabio Palomba",
+      "Rick Kazman"
+    ],
+    "doi": "10.1109/TSE.2019.2901490",
+    "identifier": "TamPalKaz21",
+    "number": "3",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/03/08651329/17WX57S8nQd",
+    "title": "Exploring Community Smells in Open-Source: An Automated Approach.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Paul Temple",
+      "Mathieu Acher",
+      "Jean-Marc Jézéquel"
+    ],
+    "doi": "10.1109/TSE.2019.2926971",
+    "identifier": "TemAchJéz21",
+    "number": "7",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/07/08755468/1bojSrLn9sY",
+    "title": "Empirical Assessment of Multimorphic Testing.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Patanamon Thongtanunam",
+      "Ahmed E. Hassan"
+    ],
+    "doi": "10.1109/TSE.2020.2964660",
+    "identifier": "ThoHas21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/08951283/1goL6LAULDO",
+    "title": "Review Dynamics and Their Impact on Software Quality.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Haonan Tong",
+      "Bin Liu",
+      "Shihai Wang"
+    ],
+    "doi": "10.1109/TSE.2019.2939303",
+    "identifier": "TonLiuWan21",
+    "number": "9",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/09/08823052/1d1yVMGg66k",
+    "title": "Kernel Spectral Embedding Transfer Ensemble for Heterogeneous Defect Prediction.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Ayse Tosun",
+      "Oscar Dieste",
+      "Sira Vegas",
+      "Dietmar Pfahl",
+      "Kerli Rungi",
+      "Natalia Juristo"
+    ],
+    "doi": "10.1109/TSE.2019.2949811",
+    "identifier": "TosDieVeg21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08884172/1mq8naMbEC4",
+    "title": "Investigating the Impact of Development Task on External Quality in Test-Driven Development: An Industry Experiment.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Gias Uddin",
+      "Olga Baysal",
+      "Latifa Guerrouj",
+      "Foutse Khomh"
+    ],
+    "doi": "10.1109/TSE.2019.2903039",
+    "identifier": "UddBayGue21",
+    "number": "4",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/04/08658125/187ZD32O0Du",
+    "title": "Understanding How and Why Developers Seek and Analyze API-Related Opinions.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Gias Uddin",
+      "Foutse Khomh"
+    ],
+    "doi": "10.1109/TSE.2019.2900245",
+    "identifier": "UddKho21",
+    "number": "3",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/03/08643972/17PYEjG6pmZ",
+    "title": "Automatic Mining of Opinions Expressed About APIs in Stack Overflow.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Sakshi Udeshi",
+      "Sudipta Chattopadhyay"
+    ],
+    "doi": "10.1109/TSE.2019.2953066",
+    "identifier": "UdeCha21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08907363/1f75VuEDS7K",
+    "title": "Grammar Based Directed Testing of Machine Learning Systems.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Michael Vierhauser",
+      "Sean Bayley",
+      "Jane Wyngaard",
+      "Wandi Xiong",
+      "Jinghui Cheng",
+      "Joshua Huseman",
+      "Robyn R. Lutz",
+      "Jane Cleland-Huang"
+    ],
+    "doi": "10.1109/TSE.2019.2907595",
+    "identifier": "VieBayWyn21",
+    "number": "5",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/05/08674543/18IlAJ3Spdm",
+    "title": "Interlocking Safety Cases for Unmanned Autonomous Systems in Shared Airspaces.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Giovanni Viviani",
+      "Michalis Famelis",
+      "Xin Xia",
+      "Calahan Janik-Jones",
+      "Gail C. Murphy"
+    ],
+    "doi": "10.1109/TSE.2019.2924006",
+    "identifier": "VivFamXia21",
+    "number": "7",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/07/08742578/1b15pDt2SLC",
+    "title": "Locating Latent Design Information in Developer Discussions: A Study on Pull Requests.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Zhiyuan Wan",
+      "Xin Xia",
+      "Ahmed E. Hassan"
+    ],
+    "doi": "10.1109/TSE.2019.2921343",
+    "identifier": "WanXiaHas21",
+    "number": "7",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/07/08732384/1aDQvofs2ha",
+    "title": "What Do Programmers Discuss About Blockchain? A Case Study on the Use of Balanced LDA and the Reference Architecture of a Domain to Capture Online Discussions About Blockchain Platforms Across Stack Exchange Communities.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Zhiyuan Wan",
+      "Xin Xia",
+      "David Lo",
+      "Gail C. Murphy"
+    ],
+    "doi": "10.1109/TSE.2019.2937083",
+    "identifier": "WanXiaLo21",
+    "number": "9",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/09/08812912/1mq8oUpz8CQ",
+    "title": "How does Machine Learning Change Software Development Practices?",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Guanhua Wang",
+      "Sudipta Chattopadhyay",
+      "Ivan Gotovchits",
+      "Tulika Mitra",
+      "Abhik Roychoudhury"
+    ],
+    "doi": "10.1109/TSE.2019.2953709",
+    "identifier": "WanChaGot21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08902081/1eYNcd6NYys",
+    "title": "oo7: Low-Overhead Defense Against Spectre Attacks via Program Analysis.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Haijun Wang",
+      "Yun Lin",
+      "Zijiang Yang",
+      "Jun Sun",
+      "Yang Liu",
+      "Jin Song Dong",
+      "Qinghua Zheng",
+      "Ting Liu"
+    ],
+    "doi": "10.1109/TSE.2019.2949568",
+    "identifier": "WanLinYan21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08883062/1epRUHmP0NW",
+    "title": "Explaining Regressions via Alignment Slicing and Mending.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Jingyi Wang",
+      "Jun Sun",
+      "Shengchao Qin",
+      "Cyrille Jégourel"
+    ],
+    "doi": "10.1109/TSE.2018.2886898",
+    "identifier": "WanSunQin21",
+    "number": "1",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/01/08576657/17D45W1Oa2d",
+    "title": "Automatically &apos;Verifying&apos; Discrete-Time Complex Systems through Learning, Abstraction and Refinement.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Junjie Wang",
+      "Song Wang",
+      "Jianfeng Chen",
+      "Tim Menzies",
+      "Qiang Cui",
+      "Miao Xie",
+      "Qing Wang"
+    ],
+    "doi": "10.1109/TSE.2019.2918520",
+    "identifier": "WanWanChe21",
+    "number": "6",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/06/08721154/1mq8pEDllQc",
+    "title": "Characterizing Crowds to Better Optimize Worker Recommendation in Crowdsourced Testing.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Huiyan Wang",
+      "Chang Xu",
+      "Bingying Guo",
+      "Xiaoxing Ma",
+      "Jian Lu"
+    ],
+    "doi": "10.1109/TSE.2019.2898976",
+    "identifier": "WanXuGuo21",
+    "number": "3",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/03/08640044/17D45WIXbPi",
+    "title": "Generic Adaptive Scheduling for Efficient Context Inconsistency Detection.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Ming Wen",
+      "Junjie Chen",
+      "Yongqiang Tian",
+      "Rongxin Wu",
+      "Dan Hao",
+      "Shi Han",
+      "Shing-Chi Cheung"
+    ],
+    "doi": "10.1109/TSE.2019.2948158",
+    "identifier": "WenCheTia21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08873606/1ecAT7HONpK",
+    "title": "Historical Spectrum Based Fault Localization.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Karl Werder",
+      "Ye Li",
+      "Alexander Maedche",
+      "Balasubramaniam Ramesh"
+    ],
+    "doi": "10.1109/TSE.2019.2904571",
+    "identifier": "WerLiMae21",
+    "number": "4",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/04/08665932/18l6L2MFsm4",
+    "title": "Software Development Process Ambidexterity and Project Performance: A Coordination Cost-Effectiveness View.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Huayao Wu",
+      "Changhai Nie",
+      "Justyna Petke",
+      "Yue Jia",
+      "Mark Harman"
+    ],
+    "doi": "10.1109/TSE.2019.2955687",
+    "identifier": "WuNiePet21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08913600/1fh3bXiqu9G",
+    "title": "Comparative Analysis of Constraint Handling Techniques for Constrained Combinatorial Testing.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Yinxing Xue",
+      "Zhengzi Xu",
+      "Mahinthan Chandramohan",
+      "Yang Liu"
+    ],
+    "doi": "10.1109/TSE.2021.3069529",
+    "identifier": "XueXuCha21",
+    "number": "5",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/05/09430780/1tzunZupaUg",
+    "title": "Erratum to &quot;Accurate and Scalable Cross-Architecture Cross-OS Binary Code Search With Emulation&quot;.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Yoriyuki Yamagata",
+      "Shuang Liu",
+      "Takumi Akazaki",
+      "Yihai Duan",
+      "Jianye Hao"
+    ],
+    "doi": "10.1109/TSE.2020.2969178",
+    "identifier": "YamLiuAka21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/08967146/1gPjBwdGq5y",
+    "title": "Falsification of Cyber-Physical Systems Using Deep Reinforcement Learning.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Zhongxing Yu",
+      "Chenggang Bai",
+      "Lionel Seinturier",
+      "Martin Monperrus"
+    ],
+    "doi": "10.1109/TSE.2019.2910516",
+    "identifier": "YuBaiSei21",
+    "number": "5",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/05/08686056/1jeDebumDPW",
+    "title": "Characterizing the Usage, Evolution and Impact of Java Annotations in Practice.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Le Yu",
+      "Xiapu Luo",
+      "Jiachi Chen",
+      "Hao Zhou",
+      "Tao Zhang",
+      "Henry Chang",
+      "Hareton K. N. Leung"
+    ],
+    "doi": "10.1109/TSE.2018.2886875",
+    "identifier": "YuLuoChe21",
+    "number": "2",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/02/08576579/17D45VtKixa",
+    "title": "PPChecker: Towards Accessing the Trustworthiness of Android Apps&apos; Privacy Policies.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Zhe Yu",
+      "Christopher Theisen",
+      "Laurie A. Williams",
+      "Tim Menzies"
+    ],
+    "doi": "10.1109/TSE.2019.2949275",
+    "identifier": "YuTheWil21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08883076/1epRUoii6Va",
+    "title": "Improving Vulnerability Inspection Efficiency Using Active Learning.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Tao Zhang",
+      "Jiachi Chen",
+      "Xian Zhan",
+      "Xiapu Luo",
+      "David Lo",
+      "He Jiang"
+    ],
+    "doi": "10.1109/TSE.2019.2956941",
+    "identifier": "ZhaCheZha21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08924692/1fvZmUm9bEc",
+    "title": "Where2Change: Change Request Localization for App Reviews.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Jingxuan Zhang",
+      "He Jiang",
+      "Zhilei Ren",
+      "Tao Zhang",
+      "Zhiqiu Huang"
+    ],
+    "doi": "10.1109/TSE.2019.2919304",
+    "identifier": "ZhaJiaRen21",
+    "number": "6",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/06/08723145/1mq8mSdJqqA",
+    "title": "Enriching API Documentation with Code Samples and Usage Scenarios from Crowd Knowledge.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Jie M. Zhang",
+      "Feng Li",
+      "Dan Hao",
+      "Meng Wang",
+      "Hao Tang",
+      "Lu Zhang",
+      "Mark Harman"
+    ],
+    "doi": "10.1109/TSE.2019.2961897",
+    "identifier": "ZhaLiHao21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/08941305/1g1GeuCC6Ji",
+    "title": "A Study of Bug Resolution Characteristics in Popular Programming Languages.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Mengshi Zhang",
+      "Yaoxian Li",
+      "Xia Li",
+      "Lingchao Chen",
+      "Yuqun Zhang",
+      "Lingming Zhang",
+      "Sarfraz Khurshid"
+    ],
+    "doi": "10.1109/TSE.2019.2911283",
+    "identifier": "ZhaLiLi21",
+    "number": "6",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/06/08698881/19w9AbeCS9G",
+    "title": "An Empirical Study of Boosting Spectrum-Based Fault Localization via PageRank.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Long Zhang",
+      "Brice Morin",
+      "Philipp Haller",
+      "Benoit Baudry",
+      "Martin Monperrus"
+    ],
+    "doi": "10.1109/TSE.2019.2954871",
+    "identifier": "ZhaMorHal21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08908767/1f8KLOFHN6g",
+    "title": "A Chaos Engineering System for Live Analysis and Falsification of Exception-Handling in the JVM.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Haoxiang Zhang",
+      "Shaowei Wang",
+      "Tse-Hsun Chen",
+      "Ahmed E. Hassan"
+    ],
+    "doi": "10.1109/TSE.2019.2954319",
+    "identifier": "ZhaWanChe21",
+    "number": "11",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/11/08906075/1f5qNZyV8oo",
+    "title": "Reading Answers on Stack Overflow: Not Enough!",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Haoxiang Zhang",
+      "Shaowei Wang",
+      "Tse-Hsun Chen",
+      "Ying Zou",
+      "Ahmed E. Hassan"
+    ],
+    "doi": "10.1109/TSE.2019.2906315",
+    "identifier": "ZhaWanChe21a",
+    "number": "4",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/04/08669958/18wJE10dcEE",
+    "title": "An Empirical Study of Obsolete Answers on Stack Overflow.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Yuxia Zhang",
+      "Minghui Zhou",
+      "Audris Mockus",
+      "Zhi Jin"
+    ],
+    "doi": "10.1109/TSE.2019.2946156",
+    "identifier": "ZhaZhoMoc21",
+    "number": "10",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/10/08862903/1dXEPGCDiJG",
+    "title": "Companies&apos; Participation in OSS Development-An Empirical Study of OpenStack.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Xiang Zhou",
+      "Xin Peng",
+      "Tao Xie",
+      "Jun Sun",
+      "Chao Ji",
+      "Wenhai Li",
+      "Dan Ding"
+    ],
+    "doi": "10.1109/TSE.2018.2887384",
+    "identifier": "ZhoPenXie21",
+    "number": "2",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/02/08580420/17D45W9KVH4",
+    "title": "Fault Analysis and Debugging of Microservice Systems: Industrial Survey, Benchmark System, and Empirical Study.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Yu Zhou",
+      "Yanqi Su",
+      "Taolue Chen",
+      "Zhiqiu Huang",
+      "Harald C. Gall",
+      "Sebastiano Panichella"
+    ],
+    "doi": "10.1109/TSE.2020.2967383",
+    "identifier": "ZhoSuChe21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/08961125/1gDHkpPeGC4",
+    "title": "User Review-Based Change File Localization for Mobile Applications.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Zhi Quan Zhou",
+      "T. H. Tse",
+      "Matt Witheridge"
+    ],
+    "doi": "10.1109/TSE.2019.2915065",
+    "identifier": "ZhoTseWit21",
+    "number": "6",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/06/08708940/19Q3oGEc7ew",
+    "title": "Metamorphic Robustness Testing: Exposing Hidden Defects in Citation Statistics and Journal Impact Factors.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Jiayuan Zhou",
+      "Shaowei Wang",
+      "Cor-Paul Bezemer",
+      "Ying Zou",
+      "Ahmed E. Hassan"
+    ],
+    "doi": "10.1109/TSE.2020.2974469",
+    "identifier": "ZhoWanBez21",
+    "number": "12",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/12/09000923/1huO96hw2CQ",
+    "title": "Studying the Association Between Bountysource Bounties and the Issue-Addressing Likelihood of GitHub Issue Reports.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Weiqin Zou",
+      "David Lo",
+      "Pavneet Singh Kochhar",
+      "Xuan-Bach Dinh Le",
+      "Xin Xia",
+      "Yang Feng",
+      "Zhenyu Chen",
+      "Baowen Xu"
+    ],
+    "doi": "10.1109/TSE.2019.2942301",
+    "identifier": "ZouLoKoc21",
+    "number": "10",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/10/08847638/1dAq6LEEfRe",
+    "title": "Smart Contract Development: Challenges and Opportunities.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  },
+  {
+    "authors": [
+      "Daming Zou",
+      "Jingjing Liang",
+      "Yingfei Xiong",
+      "Michael D. Ernst",
+      "Lu Zhang"
+    ],
+    "doi": "10.1109/TSE.2019.2892102",
+    "identifier": "ZouLiaXio21",
+    "number": "2",
+    "pdf": false,
+    "resolved_doi": "https://www.computer.org/csdl/journal/ts/2021/02/08607117/17D45WaTkla",
+    "title": "An Empirical Study of Fault Localization Families and Their Combinations.",
+    "venue": "IEEE Transactions on Software Engineering",
+    "volume": "47",
+    "year": "2021"
+  }
+]
