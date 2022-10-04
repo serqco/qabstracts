@@ -23,7 +23,7 @@ def volume(list_line: Entry) -> str:
 
 def read_list(filename: str) -> tg.Sequence[Entry]:
     with open(filename, 'rt', encoding='utf-8') as lst:
-        mylist = lst.read().split()
+        mylist = lst.read().split('\n')
         mylist.pop()  # file ends with \n, so last item is empty
     return mylist
 

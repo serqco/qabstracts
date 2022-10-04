@@ -77,19 +77,24 @@ def select_sample(size: int, blocksize: int, to: str, volumes: tg.Sequence[str])
     sample = Sample(blocksize)
     for i in range(size):
         sample.add(pop.draw1())
+    if os.path.exists(f"{to}/sample.list"):
+        print(f"{to}/sample.list already exists. I will not overwrite it. Exiting.")
+        return
     lf.write_list(f"{to}/sample.list", sample.entries)
+    print(f"wrote '{to}/sample.list'")
     write_who_what(to, sample, blocksize)
     write_titles(to, sample, volumes)
 
 
 def write_who_what(to: str, sample: Sample, blocksize: int):
-    with open(f"{to}/sample-who-what.txt", 'w', encoding='utf8') as who:
+    filename = f"{to}/sample-who-what.txt"
+    with open(filename, 'w', encoding='utf8') as who:
         who.write("# what      abstracts.A   abstracts.B\n")
         for i, citekey in enumerate(sample.citekeys):
             if i % blocksize == 0:
                 who.write("#----- Block %d\n" % (int(i/blocksize)+1))
             who.write(f"{citekey}   \n")
-
+        print(f"wrote '{filename}'")
 
 def write_titles(to: str, sample: Sample, volumes: tg.Sequence[str]):
     alltitles = dict()
@@ -101,5 +106,7 @@ def write_titles(to: str, sample: Sample, volumes: tg.Sequence[str]):
     for entry in sample.entries:
         volume, citekey = lf.split_entry(entry)
         titles[citekey] = alltitles[citekey]
-    with open(f"{to}/sample-titles.json", 'w', encoding='utf8') as j:
+    filename = f"{to}/sample-titles.json"
+    with open(filename, 'w', encoding='utf8') as j:
         json.dump(titles, j, indent=2)
+        print(f"wrote '{filename}'")

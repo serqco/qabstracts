@@ -18,14 +18,14 @@ def prepare_sample(workdir: str, volumedir: str):
     targetdir = f"{workdir}/abstracts.A"
     #----- prepare directories:
     if os.path.exists(targetdir):
-        raise ValueError(f"'{targetdir}' already exists. I will not overwrite it.")
+        raise ValueError(f"'{targetdir}' already exists. I will not overwrite it. Exiting.")
     os.mkdir(targetdir)
     #----- obtain data:
     sample = lf.read_list(f'{workdir}/sample.list')
     with open(f"{workdir}/sample-titles.json") as f:
         titles = json.load(f)
     #----- create abstracts files:
-    for article in sample[:2]:
+    for article in sample:
         prepare_article(targetdir, volumedir, article, titles)
 
 
@@ -34,7 +34,7 @@ def prepare_article(targetdir: str, volumedir: str, article: lf.Entry, titles: t
     targetfile = f"{targetdir}/{citekey}.txt"
     #----- obtain abstract:
     layouttype = qabs.extract_abs.decide_layouttype(article)
-    print(f"{article}  (layouttype {layouttype})\t-> {targetfile}")
+    print(f"{article}  ({layouttype})\t-> {targetfile}")
     abstract = qabs.extract_abs.abstract_from_pdf(f"{volumedir}/{article}", layouttype)  # may not be pure
     #----- annotate abstract and write abstract file:
     title = titles[citekey]
