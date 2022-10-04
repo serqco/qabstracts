@@ -1,0 +1,66 @@
+Correction to: Wait for it: identifying &quot;On-Hold&quot; self-admitted technical debt.
+
+Empirical Software Engineering (2021) 26:
+{{}}
+33
+https://doi.org/10.1007/s10664-021-09939-7
+CORRECTION
+
+Correction to:
+{{}}
+Wait for it:
+{{}}
+identifying “On-Hold”
+self-admitted technical debt
+Rungroj Maipradit 1 & Christoph Treude 2 & Hideaki Hata 1 & Kenichi Matsumoto 1
+Published online:
+{{}}
+16 March 2021
+# The Author(s) 2021
+
+Correction to:
+{{}}
+Empirical Software Engineering (2020) 25:3770–3798
+https://doi.org/10.1007/s10664-020-09854-3
+The article “Wait for it:
+{{}}
+identifying “On-Hold” self-admitted technical debt”, written by
+Rungroj Maipradit, Christoph Treude, Hideaki Hata, Kenichi Matsumoto, was originally
+published Online First without Open Access.
+{{}}
+After publication in volume 25, issue 5, pages
+3770–3798, the author decided to opt for Open Choice and to make the article an Open Access
+publication.
+{{}}
+Therefore, the copyright of the article has been changed to © The Author(s) 2021
+and the article is forthwith distributed under the terms of the Creative Commons license CC
+BY, which allows readers to copy, distribute and transmit the Article as long as it is attributed
+back to the author.
+{{}}
+Readers are permitted to alter, transform or build upon the Article, and to
+use the Article for commercial purposes.
+{{}}
+Please read the full license for further details at http://creativecommons.org/licenses/by/4.0/.
+{{}}
+The online version of the original article can be found at https://doi.org/10.1007/s10664-020-09854-3
+
+* Rungroj Maipradit
+maipradit.rungroj.mm6@is.naist.jp
+Christoph Treude
+christoph.treude@adelaide.edu.au
+Hideaki Hata
+hata@is.naist.jp
+Kenichi Matsumoto
+matumoto@is.naist.jp
+
+1
+
+Nara Institute of Science and Technology, Ikoma, Japan
+
+2
+
+University of Adelaide, Adelaide, Australia
+{{}}
+---
+#inf-?
+#und-?

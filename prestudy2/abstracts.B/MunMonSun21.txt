@@ -1,0 +1,28 @@
+IntRepair: Informed Repairing of Integer Overflows.
+
+Integer overflows have threatened software applications for decades.
+{{}}
+Thus, in this paper, we propose a novel technique to
+provide automatic repairs of integer overflows in C source code.
+{{}}
+Our technique, based on static symbolic execution, fuses detection,
+repair generation and validation.
+{{}}
+This technique is implemented in a prototype named INTREPAIR.
+{{}}
+We applied INTREPAIR to 2,052 C
+programs (approx.
+{{}}
+1 million lines of code) contained in SAMATE’s Juliet test suite and 50 synthesized programs that range up to
+20 KLOC.
+{{}}
+Our experimental results show that INTREPAIR is able to effectively detect integer overflows and successfully repair them,
+while only increasing the source code (LOC) and binary (Kb) size by around 1 percent, respectively.
+{{}}
+Further, we present the results of
+a user study with 30 participants which shows that INTREPAIR repairs are more than 10x efficient as compared to manually generated
+code repairs.
+{{}}
+---
+#inf-?
+#und-?

@@ -1,0 +1,70 @@
+Understanding and improving the quality and reproducibility of Jupyter notebooks.
+
+Jupyter Notebooks have been widely adopted by many different communities, both in
+science and industry.
+{{}}
+They support the creation of literate programming documents that
+combine code, text, and execution results with visualizations and other rich media.
+{{}}
+The
+self-documenting aspects and the ability to reproduce results have been touted as significant benefits of notebooks.
+{{}}
+At the same time, there has been growing criticism that the way
+in which notebooks are being used leads to unexpected behavior, encourages poor coding
+practices, and makes it hard to reproduce its results.
+{{}}
+To better understand good and bad
+practices used in the development of real notebooks, in prior work we studied 1.4 million
+notebooks from GitHub.
+{{}}
+We presented a detailed analysis of their characteristics that impact
+reproducibility, proposed best practices that can improve the reproducibility, and discussed
+open challenges that require further research and development.
+{{}}
+In this paper, we extended
+the analysis in four different ways to validate the hypothesis uncovered in our original study.
+{{}}
+First, we separated a group of popular notebooks to check whether notebooks that get more
+attention have more quality and reproducibility capabilities.
+{{}}
+Second, we sampled notebooks
+from the full dataset for an in-depth qualitative analysis of what constitutes the dataset and
+which features they have.
+{{}}
+Third, we conducted a more detailed analysis by isolating library
+dependencies and testing different execution orders.
+{{}}
+We report how these factors impact the
+reproducibility rates.
+{{}}
+Finally, we mined association rules from the notebooks.
+{{}}
+We discuss
+patterns we discovered, which provide additional insights into notebook reproducibility.
+{{}}
+Based on our findings and best practices we proposed, we designed Julynter, a Jupyter
+Lab extension that identifies potential issues in notebooks and suggests modifications that
+improve their reproducibility.
+{{}}
+We evaluate Julynter with a remote user experiment with the
+goal of assessing Julynter recommendations and usability.
+{{}}
+This article belongs to the Topical Collection:
+{{}}
+Mining Software Repositories (MSR)
+This work is partially supported by CAPES, CNPq, FAPERJ, and the NYU Moore-Sloan Data Science
+Environment
+Communicated by:
+{{}}
+Bram Adams and Sonia Haiduc
+ João Felipe Pimentel
+
+jpimentel@ic.uff.br
+
+Extended author information available on the last page of the article.
+{{}}
+
+{{}}
+---
+#inf-?
+#und-?
