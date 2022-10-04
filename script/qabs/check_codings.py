@@ -1,5 +1,6 @@
 import glob
 import re
+import sys
 import typing as tg
 
 usage = """Checks annotated (and unannotated) abstracts files for errors.
@@ -18,15 +19,12 @@ def configure_argparser(subparser):
 
 def check_codings(codebookname: str, workdir: str):
     codes, globalcodes = allowed_codes(codebookname)
-    # print("codes:", codes)
-    # print("globalcodes:", globalcodes)
     files = sorted(glob.glob(f"{workdir}/abstracts.?/*.txt"))
     print(f"checking {len(files)} files")
     errors: int = 0
     for file in files:
-        # print(f"checking {file}")
         errors += report_errors(file, codes, globalcodes)
-
+    sys.exit(errors)  # 0 if no errors, number of errors otherwise
 
 def allowed_codes(codebookname: str) -> tg.Tuple[tg.Set[str], tg.Set[str]]:
     with open(codebookname, 'rt', encoding='utf8') as cb:
@@ -42,13 +40,11 @@ def report_errors(file: str, codes: tg.Set[str], globalcodes: tg.Set[str]) -> in
             print(f"---- {file}:\n" + '\n'.join(errors))
     with open(file, 'rt', encoding='utf8') as f:
         content = f.read()
-        # print(f"content: {content[:120]}")
     #----- check annotation-ish stuff:
     allstuff = re.findall(r"\n(\{\{[^}]*\})\n|\n(\{[^{]*\}\})\n|\n(.+\{\{.*\}\})|\n(\{\{.*\}\})\n", content)
         # 4 cases: brace missing at end, or at start, no complete line, valid pattern
     errors = []
     for closing1, opening1, other, valid  in allstuff:
-        # print(f"4 parts: {closing1},{opening1},{other},{valid}.")
         # only one of the four is non-empty
         if closing1:
             errors.append(f"second closing brace appears to be missing: '{closing1}'\n")

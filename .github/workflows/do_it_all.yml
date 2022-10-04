@@ -2,18 +2,17 @@ name: qabstracts data checks
 run-name: ${{ github.actor }}
 on: [push]
 jobs:
-  Do-It-All:
+  Check-Codings:
     runs-on: ubuntu-22.04
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
-      - name: Run tests and checks
+      - name: check-codings
         run: |
           # ls ${{ github.workspace }}
           git log -1
-          sudo apt install poppler-utils
-          pip -q install pytest
-          PYTHONPATH=script pytest -v
+          # sudo apt install poppler-utils
+          # pip -q install pytest
+          # PYTHONPATH=script pytest -v
           python script/qabstracts.py check-codings prestudy
           echo "Job status: ${{ job.status }}"
