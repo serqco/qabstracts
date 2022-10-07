@@ -242,7 +242,7 @@ later ones take more and more things counting 0 for granted and do not spell the
 - <i>"We describe the design of a Crowd Planning Poker (CPP) process implemented on Amazon Mechanical Turk 
   and the results of a substantial set of trials, involving more than 5000 crowd workers and 
   39 diverse software tasks."</i> `{{design:3,method:7}}`
-  - Design part (up to "end"):
+  - Design part (up to "and"):
     - 1: "We describe the design": noun
     - 1: "Crowd Planning Poker (CPP) process": compound noun
     - 1: "Amazon Mechanical Turk": proper noun
