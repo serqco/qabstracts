@@ -75,9 +75,13 @@ The final version will talk of `abstracts/` instead of `prestudy2/`.
       conclusion) and count the information particles. Enter the counts.
 5. If you have Python set up, run
    `python script/qabstracts.py check-codings prestudy2`  
-   If all it says is something like "checking 80 files", all is well.  
+   If all it says is something like "checking 80 files", all is well.
+   Otherwise, repair any problems you find, even if you have not produced them (if the solution is obvious).  
+   This checked the codings in isolation. Next is checking them against those of your fellow coder:  
+   `python script/qabstracts.py compare-codings prestudy2`  
+   If problems occur here, consult with your fellow coder and resolve them together.  
    If you have no Python, skip this step.
-   If your Python is not found, try `python3` in the command above.
+   If your Python is not found, try `python3` in the commands above.
 6. Now add the files of the block to the git index
    using either `git add -i` or (preferably) the git GUI of your choice.
 7. `git commit -m"<firstname> has coded block <B> <C>"`

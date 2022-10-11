@@ -96,6 +96,10 @@ semicolon means OR):
   This code is not a classification of a sentence, but an additional attribute.
   It can never occur alone, only in conjunction with one of the others and
   should be given last.
+- code `-ignorediff`:
+  If the script flags a coding discrepancy that after discussion you and your fellow coder
+  agree should be left in (because the two codings represent two different reasonable interpretations),
+  add this code in one (and only one) of the codings to mark the discrepancy as resolved.
 - code `limitation:N`:  
   information about limitations, threats to validity, and the like
   of the study or its results.
@@ -115,7 +119,7 @@ semicolon means OR):
 - code `X`:  
   Undecided class. The sentence needs to be revisited and classified;
   consider using `fgrep {{X}}` to find these cases.
-  Use `X` only when you cannot _yet_ make up your mind.
+  Use `X` only rarely and only when you cannot _yet_ make up your mind.
   Such a code will likely result in a discrepancy with your fellow coder.
 
 

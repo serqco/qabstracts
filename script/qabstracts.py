@@ -5,6 +5,7 @@ import argparse
 import qabs.select_sample
 import qabs.prepare_sample
 import qabs.check_codings
+import qabs.compare_codings
 import qabs.extract_abs
 import qabs.prepare_ann 
 
@@ -18,9 +19,10 @@ def main():  # uses sys.argv
         qabs.prepare_sample.prepare_sample(pargs.workdir, pargs.volumedir)
     elif subcmd == "check-codings":
         qabs.check_codings.check_codings(pargs.codebook, pargs.workdir)
+    elif subcmd == "compare-codings":
+        qabs.compare_codings.compare_codings(pargs.maxcountdiff, pargs.workdir)
     elif subcmd == "extract-abs":
-        qabs.extract_abs.extract_abstracts(pargs.outputdir, pargs.layout, 
-                                           pargs.inputfile)
+        qabs.extract_abs.extract_abstracts(pargs.outputdir, pargs.layout, pargs.inputfile)
     elif subcmd == "prepare-ann":
         qabs.prepare_ann.prepare_annotations(pargs.outputdir, pargs.textfile)
     else:
@@ -43,6 +45,10 @@ def setup_argparser():
     subparser = subparsers.add_parser('check-codings',
             help="Check annotated abstracts for unallowed syntax and undefined codes")
     qabs.check_codings.configure_argparser(subparser)
+
+    subparser = subparsers.add_parser('compare-codings',
+            help="Cross-check pairs of corresponding annotated abstracts from different coders")
+    qabs.compare_codings.configure_argparser(subparser)
 
     subparser = subparsers.add_parser('extract-abs',
             help="Extract abstracts from PDF files")
