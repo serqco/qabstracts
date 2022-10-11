@@ -1,7 +1,7 @@
 # what       abstracts.A   abstracts.B   abstracts.C   abstracts.D
 #----- Block 1
 LiuKimBis21   Lloyd        Lutz
-MaiTreHat21   Lloyd        Lutz
+# MaiTreHat21 is a copyright change notice, not an abstract. Ignore.
 ShaHodAmo21   Lloyd        Lutz
 #----- Block 2
 ManHanHan21   
