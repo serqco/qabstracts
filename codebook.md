@@ -32,19 +32,67 @@ changed: Lutz Prechelt, 2022-10-04
 
 ## 2. Codebook: Codes for sentences
 
-Note: Our annotation checking script gathers the set of codes to check
+Subsequent subsections define codes for sentences. 
+All codes are singular; semicolon means OR.
+The meanings of ":N" code suffixes are explained in Section 4.
+
+Our annotation checking script gathers the set of codes to check
 for directly from this file by looking for strings of the form
 "code `something-or-other`".
 Make sure all code declarations take this form and no other things do.
-(Allowing synonyms for the codes may be nice for graders in the beginning,
-but appears to have a bad cost/benefit tradeoff, so we do not do this.)
 
-The meanings of starting with a dash or ending with ":N" are explained
-in subsequent sections.
 
-Codes for sentences (in alphabetical order; all codes are singular; 
-semicolon means OR):
-- codes of the form `a-<xyz>`:  
+
+
+### 2.1 The basics: background, objective, method (or design), results, conclusion
+
+The above list sketches the default structure of a structured abstract.
+
+- code `background`:  
+  Information about the larger topic area of the work;  
+  information leading towards the research interest of the work;  
+  information about related work or the state of knowledge.  
+- code `objective`:  
+  this work's research goal;  
+  this work's specific research interest;  
+  this work's research question.  
+- code `method:N`:  
+  information about the approach or setup of an empirical study.
+- code `design:N`:  
+  information about the design, design process, and designed features of 
+  an artifact, such as software, a process, or a method.
+  This occurs instead of (or in addition to) `method` when the article
+  is artifact-centric instead of purely empirical.
+  (Designed features are known at design time, in contrast to emerging features,
+  which can only be determined empirically and are classified as `result`.
+  Top-level design _goals_ (and non-goals) are classified as `objective`.)
+- code `result:N`:  
+  information about the immediate outcome of a study in the form of
+  empirical results. See `claim`.
+- code `conclusion:N`:  
+  A take-home message that is less specific than one or more results.
+  Either a generalization from the results or an existence proof statement.
+
+
+### 2.2 Less common codes
+
+- code `claim`:  
+  A non-empirical would-be result statement.
+  If position and phrasing allow it to be considered `objective`, use that.
+- code `futurework`:  
+  information about suggested future research.
+- code `limitation`:  
+  information about limitations, threats to validity, and the like
+  of the study or its results.
+- code `resourcepointer`:  
+  A concrete reference to a concrete external resource such as 
+  a software artifact, materials package, data package, appendix,
+  or similar item.
+
+
+### 2.3 Headings and announcements
+
+- codes of the form `a-<xyz>` designate announcements:  
   A statement announcing (hence the `a-`) that the article body will 
   contain information of the `<xyz>` type, 
   but this and the next statement do not contain such information.
@@ -58,25 +106,7 @@ semicolon means OR):
   - code `a-objective`
   - code `a-result`
   - code `a-resourcepointer`
-- code `background`:  
-  Information about the larger topic area of the work;  
-  information leading towards the research interest of the work;  
-  information about related work or the state of knowledge.  
-- code `claim`:  
-  A non-empirical would-be result statement.
-  If position and phrasing allow it to be considered `objective`, use that.
-- code `conclusion:N`:  
-  A take-home message that is less specific than one or more results.
-  Either a generalization from the results or an existence proof statement.
-- code `design:N`:  
-  information about the design, design process, and designed features of 
-  an artifact, such as software, a process, or a method.
-  (Designed features are known at design time, in contrast to emerging features,
-  which can only be determined empirically and are classified as `result`.
-  Top-level design goals and non-goals are `objective`.)
-- code `futurework`:  
-  information about suggested future research.
-- codes of the form `h-<xyz>` ("header"):  
+- codes of the form `h-<xyz>` designate internal headings that occur in structured abstracts: 
   A section intro term "<Xyz>:" or some synonym of that,
   that announces subsequent `<xyz>` information.
   It does _not_ matter whether the announcement is correct.
@@ -88,6 +118,10 @@ semicolon means OR):
   - code `h-method`: "Method:", "Approach:" etc.
   - code `h-objective`: "Objective:", "Aim:", "Goal:", "Question:", etc.
   - code `h-result`: "Result:" etc.
+
+
+### 2.4 Extra codes
+
 - code `-hype`:  
   The sentence praises the work beyond what a factual statement might state.
   Plain positive properties do not qualify ("This is helpful because..."),
@@ -97,25 +131,9 @@ semicolon means OR):
   It can never occur alone, only in conjunction with one of the others and
   should be given last.
 - code `-ignorediff`:
-  If the script flags a coding discrepancy that after discussion you and your fellow coder
+  If the script flags a coding discrepancy that, after discussion, you and your fellow coder
   agree should be left in (because the two codings represent two different reasonable interpretations),
   add this code in one (and only one) of the codings to mark the discrepancy as resolved.
-- code `limitation:N`:  
-  information about limitations, threats to validity, and the like
-  of the study or its results.
-- code `method:N`:  
-  information about the approach or setup of an empirical study.
-- code `objective`:  
-  this work's research goal;  
-  this work's specific research interest;  
-  this work's research question.  
-- code `resourcepointer`:  
-  A concrete reference to a concrete external resource such as 
-  a software artifact, materials package, data package, appendix,
-  or similar item.
-- code `result:N`:  
-  information about the immediate outcome of a study in the form of
-  empirical results. See `claim`.
 - code `X`:  
   Undecided class. The sentence needs to be revisited and classified;
   consider using `fgrep {{X}}` to find these cases.
