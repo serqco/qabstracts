@@ -60,7 +60,7 @@ def compare_codings2(file1: str, name1: str, codings1: tg.Sequence[tg.Tuple[str,
                      maxcountdiff: int):
     msgcount = 0
     def printmsg(msg: str, item1: str, item2: str, afterline: tg.Optional[str]=None):
-        print("#####", msg)
+        print("\n#####", msg)
         print("%s, (%s)\n   %s" % (file1, name1, item1))
         print("%s, (%s)\n   %s" % (file2, name2, item2))
         if afterline:
