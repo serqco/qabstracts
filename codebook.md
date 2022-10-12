@@ -53,7 +53,7 @@ semicolon means OR):
   - code `a-conclusion`
   - code `a-design`
   - code `a-futurework`
-  - code `a-limitations`
+  - code `a-limitation`
   - code `a-method`
   - code `a-objective`
   - code `a-result`
