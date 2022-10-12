@@ -10,9 +10,10 @@ jobs:
       - name: check-codings
         run: |
           # ls ${{ github.workspace }}
-          git log -1
+          git log --oneline -10
           # sudo apt install poppler-utils
           # pip -q install pytest
           # PYTHONPATH=script pytest -v
           python script/qabstracts.py check-codings prestudy2
+          python script/qabstracts.py compare-codings prestudy2
           echo "Job status: ${{ job.status }}"
