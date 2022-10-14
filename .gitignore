@@ -23,3 +23,6 @@ venv/
 ipython_config.py
 pip-log.txt
 #Pipfile.lock
+
+#--- IDE stuff
+.vscode/*
