@@ -15,5 +15,5 @@ jobs:
           # pip -q install pytest
           # PYTHONPATH=script pytest -v
           python script/qabstracts.py check-codings prestudy2
-          python script/qabstracts.py compare-codings prestudy2
+          # python script/qabstracts.py compare-codings prestudy2  # must yet learn about IU suffixes
           echo "Job status: ${{ job.status }}"

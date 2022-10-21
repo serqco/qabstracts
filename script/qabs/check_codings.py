@@ -92,7 +92,7 @@ def check_code(code: str, iu_suffix: str, codes: tg.Set[str]) -> tg.Optional[str
             return None  # known code without suffix: done
     else:  # has iu_suffix
         if not code_exists_with_suffix:
-            return (f"%s: '{code}:{iu_suffix}'" % ("should not have ann IU suffix" if code_exists_bare else "unknown code"))
+            return (f"%s: '{code}:{iu_suffix}'" % ("should not have an IU suffix" if code_exists_bare else "unknown code"))
     #----- report malformed suffixes:
     mm = re.fullmatch(r'i\d+|u\d+|i\d+u\d+', iu_suffix)
     if not mm:
