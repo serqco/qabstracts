@@ -1,19 +1,19 @@
 Spearheading agile: the role of the scrum master in agile projects.
 
 Scrum innovated the role of the scrum master in software engineering.
-{{}}
+{{background}}
 The scrum master
 is envisioned in agile literature as the “servant leader” who serves the team in a multitude
 of different ways, which include promoting scrum, facilitating the team’s functioning, and
 removing obstacles.
-{{}}
+{{background}}
 However, empirical studies focusing on the role of the scrum master
 in practice are scarce.
-{{}}
+{{background}}
 To address this gap, a Grounded Theory study with a mixed
 methods approach was carried out which included semi-structured interviews with 39
 software practitioners and a questionnaire with 47 respondents.
-{{}}
+{{method}}
 In this study, we present
 and describe the scrum master’s role in agile projects in terms of (a) the grounded theory
 of the role of the scrum master which involves everyday activities of facilitating,
@@ -21,11 +21,9 @@ mentoring, negotiating, process adapting, coordinating, and protecting; (b) the 
 involvement of the scrum master in selected agile practices carried out by the team; and
 (c) a positive association between the presence of the scrum master and the frequency
 with which agile practices are carried out by the team.
-{{}}
+{{result}}
 This study presents for the first
 time a multifaceted study of the multiple dimensions of the scrum master role and will
 enable practitioners to better manage expectations of this role in practice.
-{{}}
+{{conclusion}}
 ---
-#inf-?
-#und-?

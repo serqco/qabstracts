@@ -21,22 +21,20 @@ reasons of leading violations and how to fix them.
 {{background}}
 In this paper, we first collect and track a large number of fixed and unfixed violations across
 revisions of software.
-{{method:7}}
+{{method:i1}}
 The empirical analyses reveal that there are discrepancies in the distributions of violations that are detected and those
 that are fixed, in terms of occurrences, spread and categories, which can provide insights into prioritizing violations.
-{{result:10}}
+{{result}}
 To automatically identify
 patterns in violations and their fixes, we propose an approach that utilizes convolutional neural networks to learn features and clustering to
 regroup similar instances.
-{{design:8}}
+{{design:u1}}
 We then evaluate the usefulness of the identified fix patterns by applying them to unfixed violations.
-{{method:3}}
+{{method:i2}}
 The results
 show that developers will accept and merge a majority (69/116) of fixes generated from the inferred fix patterns.
-{{result:7}}
+{{result}}
 It is also noteworthy that
 the yielded patterns are applicable to four real bugs in the Defects4J major benchmark for software testing and automated repair.
-{{result:7}}
+{{result}}
 ---
-#inf-ok
-#und-ok
