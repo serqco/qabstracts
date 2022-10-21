@@ -18,23 +18,22 @@ def configure_argparser(subparser):
 
 
 def check_codings(codebookname: str, workdir: str):
-    codes, globalcodes = allowed_codes(codebookname)
+    codes = allowed_codes(codebookname)
     files = sorted(glob.glob(f"{workdir}/abstracts.?/*.txt"))
     print(f"checking {len(files)} files")
     errors: int = 0
     for file in files:
-        errors += report_errors(file, codes, globalcodes)
+        errors += report_errors(file, codes)
     sys.exit(errors)  # 0 if no errors, number of errors otherwise
 
-def allowed_codes(codebookname: str) -> tg.Tuple[tg.Set[str], tg.Set[str]]:
+def allowed_codes(codebookname: str) -> tg.Set[str]:
     with open(codebookname, 'rt', encoding='utf8') as cb:
         codebook = cb.read()
-    codes = re.findall(r"code `([\w-]+(?::N)?)`", codebook, flags=re.IGNORECASE)
-    globalcodes = re.findall(r"Code `#([\w-]+)`", codebook, flags=re.IGNORECASE)
-    return (codes, globalcodes)
+    codes = re.findall(r"code `([\w-]+(?::iu)?)`", codebook, flags=re.IGNORECASE)
+    return codes
 
 
-def report_errors(file: str, codes: tg.Set[str], globalcodes: tg.Set[str]) -> int:
+def report_errors(file: str, codes: tg.Set[str]) -> int:
     def report():
         if errors:
             print(f"---- {file}:\n" + '\n'.join(errors))
@@ -60,8 +59,6 @@ def report_errors(file: str, codes: tg.Set[str], globalcodes: tg.Set[str]) -> in
             errors.append("too many problems in this file, stopping.\n")
             report()
             return len(errors)
-    #----- check global codes:
-    errors.extend(report_errors_in_globalcodes(content, globalcodes))
     #----- finish:
     report()
     return len(errors)
@@ -69,28 +66,35 @@ def report_errors(file: str, codes: tg.Set[str], globalcodes: tg.Set[str]) -> in
 
 def report_errors_within_braces(annotation: str, codes: tg.Set[str]) -> tg.Sequence[str]:
     annotation = annotation[2:-2]  # strip off the braces front and back
-    annotation_regexp = r"([\w-]+\??)(:\d+)?"  # we simply ignore commas and blanks (and any non-word garbage symbols)
+    annotation_regexp = r"([\w-]+\??)(:[\w\d]*)?"  # we simply ignore commas and blanks (and any non-word garbage symbols)
     allcodes = re.findall(annotation_regexp, annotation)
     errors = []
-    for code, num in allcodes:
-        result = check_code(code, num, codes)
+    for code, iu_suffix in allcodes:
+        result = check_code(code, iu_suffix, codes)
         if result:
             errors.append(result)
     return errors
 
 
-def check_code(code: str, num: str, codes: tg.Set[str]) -> tg.Optional[str]:
-    # print(f"check_code({code}, {num})")
-    if not num and code[-1] == '?':
+def check_code(code: str, iu_suffix: str, codes: tg.Set[str]) -> tg.Optional[str]:
+    # print(f"check_code({code}, {iu_suffix})")
+    #----- prepare suffix and base code:
+    if iu_suffix:
+        iu_suffix = iu_suffix[1:]  # strip off initial ':'
+    if not iu_suffix and code[-1] == '?':
         code = code[:-1]  # strip off trailing question mark
-    exists_bare, exists_with_num = (code in codes), (f"{code}:N" in codes)
-    if num and not exists_with_num:
-        return (f"%s: '{code}:{num}'" % ("should not have a count" if exists_bare else "unknown code (with count)"))
-    if not num and not exists_bare:
-        return (f"%s: '{code}'" % ("needs a count" if exists_with_num else "unknown code"))
+    #----- report non-existing codes:
+    code_exists_bare, code_exists_with_suffix = (code in codes), (f"{code}:iu" in codes)
+    if not iu_suffix:
+        if not code_exists_bare and not code_exists_with_suffix:
+            return f"unknown code: '{code}'"
+        else:
+            return None  # known code without suffix: done
+    else:  # has iu_suffix
+        if not code_exists_with_suffix:
+            return (f"%s: '{code}:{iu_suffix}'" % ("should not have ann IU suffix" if code_exists_bare else "unknown code"))
+    #----- report malformed suffixes:
+    mm = re.fullmatch(r'i\d+|u\d+|i\d+u\d+', iu_suffix)
+    if not mm:
+        return f"IU suffix does not match one of the patterns :i1, :u2, :i3u4 : '{code}:{iu_suffix}'"
     return None
-
-
-def report_errors_in_globalcodes(content: str, globalcodes: tg.Set[str]) -> tg.Sequence[str]:
-    ...  # TODO
-    return []
