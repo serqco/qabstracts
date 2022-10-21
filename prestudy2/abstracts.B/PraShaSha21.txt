@@ -2,38 +2,36 @@ Out of sight, out of mind? How vulnerable dependencies affect open-source projec
 
 Context Software developers often use open-source libraries in their project to improve
 development speed.
-{{}}
+{{h-background,background}}
 However, such libraries may contain security vulnerabilities, and this
 has resulted in several high-profile incidents in recent years.
-{{}}
+{{background}}
 As usage of open-source
 libraries grows, understanding of these dependency vulnerabilities becomes increasingly
 important.
-{{}}
+{{background}}
 Objective In this work, we analyze vulnerabilities in open-source libraries used by 450
 software projects written in Java, Python, and Ruby.
-{{}}
+{{h-objective,objective}}
 Our goal is to examine types, distribution, severity, and persistence of the vulnerabilities, along with relationships between their
 prevalence and project as well as commit attributes.
-{{}}
+{{objective}}
 Method Our data is obtained by scanning versions of the sample projects after each commit made between November 1, 2017 and October 31, 2018 using an industrial software
 composition analysis tool, which provides information such as library names and versions,
 dependency types (direct or transitive), and known vulnerabilities.
-{{}}
+{{h-method,method:i2}}
 Results Among other findings, we found that project activity level, popularity, and developer experience do not translate into better or worse handling of dependency vulnerabilities.
-{{}}
+{{h-result,result:i1}}
 We also found “Denial of Service” and “Information Disclosure” types of vulnerabilities
 being common across the languages studied.
-{{}}
+{{result:i2}}
 Further, we found that most dependency vulnerabilities persist throughout the observation period (mean of 78.4%, 97.7%, and 66.4%
 for publicly-known vulnerabilities in our Java, Python, and Ruby datasets respectively), and
 the resolved ones take 3-5 months to fix.
-{{}}
+{{result}}
 Conclusion Our results highlight the importance of managing the number of dependencies
 and performing timely updates, and indicate some areas that can be prioritized to improve
 security in wide range of projects, such as prevention and mitigation of Denial-of-Service
 attacks.
-{{}}
+{{h-conclusion,conclusion}}
 ---
-#inf-?
-#und-?
