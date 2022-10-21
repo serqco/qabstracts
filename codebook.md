@@ -118,6 +118,8 @@ The above list sketches the default structure of a structured abstract.
   that announces subsequent `<xyz>` information.
   It does _not_ matter whether the announcement is correct.
   Singular and plural are considered equivalent.
+  If the heading is not terminated with a colon or period, the sentence will have multiple
+  codings, but the heading must be first in the sentence.
   - code `h-background`: "Background:", "Context:", etc.
   - code `h-conclusion`: "Conclusion:" etc.
   - code `h-design`: "Approach:" etc. (probably rare)
@@ -127,7 +129,22 @@ The above list sketches the default structure of a structured abstract.
   - code `h-result`: "Result:" etc.
 
 
-### 2.4 Extra codes
+### 2.4 Codes for special circumstances
+
+- code `cruft`:  
+  This sentence is not part of the abstract.
+  It is garbage that should have been removed during the preparation of the abstract files.
+- code `X`:  
+  Undecided class. The sentence needs to be revisited and classified;
+  consider using `fgrep {{X}}` to find these cases.
+  Use `X` only rarely and only when you cannot _yet_ make up your mind.
+  Such a code will likely result in a discrepancy with your fellow coder.
+
+
+### 2.5 Extra codes
+
+These codes can never occur alone, only in conjunction with one of the others.
+They start with a dash to signal this and should be given last. 
 
 - code `-hype`:  
   The sentence praises the work beyond what a factual statement might state.
@@ -135,17 +152,10 @@ The above list sketches the default structure of a structured abstract.
   only emphasized ones do ("This is tremendously helpful because...").
   "very" does not count as hype.
   This code is not a classification of a sentence, but an additional attribute.
-  It can never occur alone, only in conjunction with one of the others and
-  should be given last.
 - code `-ignorediff`:
   If the script flags a coding discrepancy that, after discussion, you and your fellow coder
   agree should be left in (because the two codings represent two different reasonable interpretations),
   add this code in one (and only one) of the codings to mark the discrepancy as resolved.
-- code `X`:  
-  Undecided class. The sentence needs to be revisited and classified;
-  consider using `fgrep {{X}}` to find these cases.
-  Use `X` only rarely and only when you cannot _yet_ make up your mind.
-  Such a code will likely result in a discrepancy with your fellow coder.
 
 
 ## 3. Coding rules: Avoiding inter-coder discrepancies
@@ -213,12 +223,22 @@ additional space and, in my opinion, should have provided.
 
 Typical cases:
 - Each indefinite or qualitative statement that should have been a quantitative one (giving a number) counts as 1.
-  Examples: !!!
+  Examples: 
+  _"...we first collect and track a large number of fixed and unfixed violations..."_ 
+  should say how many violations (`:i1`, asking for two numbers would be exaggerated; see 4.3);
+  _""_ !!!
+- Each other formulation that I think could and should have been more concrete counts as 1.
+  Examples:
+  _"We conducted a qualitative analysis of 99 artifacts from..."_ 
+  should mention what the qualitative analysis aims at (`:i1`);
+  _"...using an industrial software composition analysis tool"_:
+  Which tool? Or is it internal only? (`:i1`);
+  _"Our results suggest that the factors that most strongly correlate with self-rated productivity were 
+  non-technical factors, such as..."_: 
+  Out of how many factors overall? (`:i1`) 
+- Any `claim` annotation is a candidate for counting 1 or more; see 4.3 for hints.
 - Each `a-*` annotation will automatically count as 1
   without needing an extra annotation to state this.
-- Each other formulation that I think could have been more concrete counts as 1.
-  Examples: !!!
-- Any `claim` annotation is a candidate for counting 1.
 
 
 ### 4.2 Understandability gaps: `u`
@@ -229,17 +249,29 @@ is ambiguous ("I wonder whether this means A or B") or downright unclear ("Huh?"
 Typical cases:
 - Each referent of a qualifier (such as a relative clause or prepositional phrase) 
   that is ambiguous counts as 1.
-  Examples: !!!
+  Examples: 
+  !!!
 - Each important term with two or more plausible meanings counts as 1.
-  Examples: !!!
-- Each unsure coding (where the code is decorated with a `?`) will automatically count as 1
-  without needing an extra annotation to state this.
+  Examples:
+  _"...this research developed [a solution to monitor developers'] code review effectiveness."_:
+  This is the second mention of effectiveness, but still no definition, although the background
+  suggests we are more concerned with efficiency here (`:u1`).
+  !!!
+- Each important term for which not even an approximate meaning comes to mind counts as 1.
+  Examples: 
+  _"...that utilizes convolutional neural networks to learn features and clustering 
+  to regroup similar instances."_: 
+  No groups were mentioned or are obvious so far, so "regrouping" is a mysterious notion. 
 
 
 ### 4.3 What to count or not to count
 
 Do not ask too much from an abstract.
 Count only gaps that are likely to be fillable in a straightforward manner.
+
+But if you furrow your brows while reading, that is a good sign there is an
+understandability gap somewhere.
+If you get annoyed, that suggests an informativeness gap.
 
 If you have deep knowledge in the article's subject matter,
 grade as if you were only normally knowledgable
