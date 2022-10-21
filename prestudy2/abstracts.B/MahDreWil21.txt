@@ -13,7 +13,7 @@ For example, the erroneous
 repurposing of an old feature toggle caused Knight Capital Group, an American global
 financial services firm, to go bankrupt due to the implications of the resultant incorrect
 system behavior.
-{{backgroound}}
+{{background}}
 Aim The goal of this research project is to aid software practitioners in the use of practices
 to support software development with feature toggles through an empirical study of feature
 toggle practice usage by practitioners.
