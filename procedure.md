@@ -59,7 +59,8 @@ The final version will talk of `abstracts/` instead of `prestudy2/`.
 1. `git pull`
 2. Edit `prestudy2/sample-who-what.txt`.
    Find the first block B that has an empty column C and that you have not yet worked on.
-   Enter your firstname in all rows of the leftmost column C of block B.
+   Enter your firstname with a leading dash in all rows of the leftmost column C of block B,
+   e.g. `-Lutz`. This reserves those files for you to annotate so that nobody else works on them.
 3. `git add prestudy2/sample-who-what.txt; git commit -m"<firstname> will code block <B> <C>"; git push`    
    For instance, if you are Lutz and you picked column `abstracts.A` in block 3, 
    the commit message is "Lutz will code block 3 A".  
@@ -75,7 +76,7 @@ The final version will talk of `abstracts/` instead of `prestudy2/`.
       conclusion) and count the information particles. Enter the counts.
 5. If you have Python set up, run
    `python script/qabstracts.py check-codings prestudy2`  
-   If all it says is something like "checking 80 files", all is well.
+   If all it says is a list of coders, all is well.
    Otherwise, repair any problems you find, even if you have not produced them (if the solution is obvious).  
    This checked the codings in isolation. Next is checking them against those of your fellow coder:  
    `python script/qabstracts.py compare-codings prestudy2`  
@@ -84,8 +85,10 @@ The final version will talk of `abstracts/` instead of `prestudy2/`.
    If your Python is not found, try `python3` in the commands above.
 6. Now add the files of the block to the git index
    using either `git add -i` or (preferably) the git GUI of your choice.
-7. `git commit -m"<firstname> has coded block <B> <C>"`
-8. Make sure you got the commit message right.
-   Use `git commit --amend ...` if not.
-9. `git push`  
-   (Took a while? Yes. But the next block will be so much quicker!)
+7. Edit `prestudy2/sample-who-what.txt` and remove the dashes you inserted in step 2,
+   leaving your name only. This reports that the annotations of those files are done.
+8. `git add prestudy2/sample-who-what.txt; git commit -m"<firstname> has coded block <B> <C>"`
+9. Make sure you got the commit message right.
+   Use `git commit --amend -m"<firstname> has coded block <B> <C>"` if not.
+10. `git push`  
+    (Took a while? Yes. But the next block will be so much quicker!)
