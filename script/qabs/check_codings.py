@@ -1,7 +1,8 @@
-import glob
 import re
 import sys
 import typing as tg
+
+import qabs.metadata
 
 usage = """Checks annotated (and unannotated) abstracts files for errors.
   Knows about annotation syntax. 
@@ -12,18 +13,19 @@ usage = """Checks annotated (and unannotated) abstracts files for errors.
 
 def configure_argparser(subparser):
     subparser.add_argument('workdir',
-                           help="Directory where sample-who-what.txt and abstracts.?/* live")
+                           help="Directory where metadata and abstracts.?/* live")
     subparser.add_argument('--codebook', type=str, default="codebook.md",
                            help="filename of codebook to check against")
 
 
 def check_codings(codebookname: str, workdir: str):
     codes = allowed_codes(codebookname)
-    files = sorted(glob.glob(f"{workdir}/abstracts.?/*.txt"))
-    print(f"checking {len(files)} files")
+    what = qabs.metadata.WhoWhat(workdir)
     errors: int = 0
-    for file in files:
-        errors += report_errors(file, codes)
+    for coder in sorted(what.coders):
+        print(f"\n########## {coder}'s:\n")
+        for file in what.files_of(coder):
+            errors += report_errors(file, coder, codes)
     sys.exit(errors)  # 0 if no errors, number of errors otherwise
 
 def allowed_codes(codebookname: str) -> tg.Set[str]:
@@ -33,10 +35,10 @@ def allowed_codes(codebookname: str) -> tg.Set[str]:
     return codes
 
 
-def report_errors(file: str, codes: tg.Set[str]) -> int:
+def report_errors(file: str, coder: str, codes: tg.Set[str]) -> int:
     def report():
         if errors:
-            print(f"---- {file}:\n" + '\n'.join(errors))
+            print(f"---- {file}  ({coder}):\n" + '\n'.join(errors))
     with open(file, 'rt', encoding='utf8') as f:
         content = f.read()
     #----- check annotation-ish stuff:

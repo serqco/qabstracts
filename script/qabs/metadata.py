@@ -1,0 +1,104 @@
+"""Reading and a little bit writing the various metadata files."""
+import re
+import typing as tg
+
+Entry = str  # Pseudo type for strings of form "mypath/EMSE-2021/AbuDab21.pdf"
+Filepair = tg.Tuple[str, str, str, str]  # (file1, coder1, file2, coder2)
+
+def citekey(list_line: Entry) -> str:
+    """From a line like EMSE-2021/AbuDab21.pdf return AbuDab21"""
+    return split_entry(list_line)[1]
+
+
+def split_entry(list_line: Entry) -> tg.Tuple[str, str]:
+    """From a line like EMSE-2021/AbuDab21.pdf return its semantic parts EMSE-2021 and AbuDab21"""
+    mm = re.fullmatch(r"(.+)/(.+)\.pdf", list_line)
+    assert mm
+    return (mm.group(1), mm.group(2))
+
+
+def volume(list_line: Entry) -> str:
+    """From a line like EMSE-2021/AbuDab21.pdf return EMSE-2021"""
+    return split_entry(list_line)[0]
+
+
+def read_list(filename: str) -> tg.Sequence[Entry]:
+    with open(filename, 'rt', encoding='utf-8') as lst:
+        mylist = lst.read().split('\n')
+        mylist.pop()  # file ends with \n, so last item is empty
+    return mylist
+
+
+def write_list(to: str, entries: tg.Iterator[Entry]):
+    with open(to, 'w', encoding='utf8') as lst:
+        for elem in entries:
+            lst.write(f"{elem}\n")
+
+
+class WhoWhat:
+    """
+    Can tell which coder annotated which file and which pairs of files to compare.
+    Hides the following secrets :
+    1. The filename of the who/what file.
+    2. The format of that file (for reading only)
+    3. The meaning of the entries in that file (reservations, implied filenames)
+    4. Which pairs of annotated files should be compared
+    """
+    FILENAME = "sample-who-what.txt"  # in workdir
+
+    def __init__(self, workdir: str):
+        self.workdir = workdir
+        self.coders = set()
+        self._coder_of = dict()  # filename -> codername
+        self._pairs: tg.Sequence[Filepair] = [] 
+        with open(f"{workdir}/{self.FILENAME}", 'r', encoding='utf8') as f:
+            lines = f.readlines()
+        for line in lines:
+            if line.startswith("#"):
+                continue
+            parts = line.strip().split()  # splits on single or multiple whitespace after removing trailing \n
+            citekey = parts[0]
+            columns = parts[1:]  # list of coder names or reservations
+            #--- collect coders and single-file entries:
+            for index, coder in enumerate(columns):
+                if self.is_reservation(coder):
+                    continue  # reservations are non-entries
+                self.coders.add(coder)
+                self._coder_of[self._implied_filename(citekey, index)] = coder
+            #--- collect filepair entries:
+            for next_pair in self._build_pairs(columns):
+                self._pairs.append(next_pair)
+
+    def files_of(self, coder: str) -> tg.Generator[str, None, None]:
+        for myfile, mycoder in self._coder_of.items():
+            if mycoder == coder:
+                yield myfile
+
+    def is_reservation(self, codername: str) -> bool:
+        return codername.startswith('-')
+
+    def pairs_of(self, coder: str) -> tg.Generator[str, None, None]:
+        for file1, coder1, file2, coder2 in self._pairs:
+            if not self.is_reservation(coder1) and not self.is_reservation(coder2):
+                yield (file1, coder1, file2, coder2)
+
+    def _implied_filename(self, citekey: str, columnindex: int) -> str:
+        """Knows the abstracts.A, abstracts.B dirname convention. First such column has index 0."""
+        char = chr(ord('A') + columnindex)  # 26 columns maximum (we'll never need more than 10)
+        return f"{self.workdir}/abstracts.{char}/{citekey}.txt"
+
+    def _build_pairs(self, columns: tg.Sequence[str]) -> tg.Generator[Filepair, None, None]:
+        """
+        Generator for pairs of non-reservation entries in the columns; need not be adjacent.
+        """
+        firstentry = None  # we return a pair whenever we have a first and find another entry
+        for index, coder in enumerate(columns):
+            if self.is_reservation(coder):
+                continue
+            if firstentry:
+                mypair = (firstentry[0], firstentry[1], self._implied_filename(citekey, index), coder)
+                firstentry = None
+                yield mypair
+            else:
+                firstentry = (self._implied_filename(citekey, index), coder)
+        # firstentry may be set when the loop finishes, leaving an unpaired entry. C'est la vie!

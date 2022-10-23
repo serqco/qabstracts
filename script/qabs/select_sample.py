@@ -3,7 +3,7 @@ import os.path
 import random
 import typing as tg
 
-import qabs.listfiles as lf
+import qabs.metadata as metadata
 
 def configure_argparser(p_select_sample):
     p_select_sample.add_argument('--size', metavar="N", type=int, required=True,
@@ -22,7 +22,7 @@ class Population:
         self.volumenames = []  # volume can have a multi-part path
         for volume in volumes:
             self.volumenames.append(os.path.basename(volume))
-            this_pop = lf.read_list(f"{volume}.list")
+            this_pop = metadata.read_list(f"{volume}.list")
             random.shuffle(this_pop)
             self.subpopulations.append(this_pop)
         self.next_subpopI = 0  # where to attempt to draw from next time
@@ -69,7 +69,7 @@ class Sample:
     @property
     def citekeys(self):
         for elem in self._elems:
-            yield lf.citekey(elem)
+            yield metadata.citekey(elem)
 
 
 def select_sample(size: int, blocksize: int, to: str, volumes: tg.Sequence[str]):
@@ -80,7 +80,7 @@ def select_sample(size: int, blocksize: int, to: str, volumes: tg.Sequence[str])
     if os.path.exists(f"{to}/sample.list"):
         print(f"{to}/sample.list already exists. I will not overwrite it. Exiting.")
         return
-    lf.write_list(f"{to}/sample.list", sample.entries)
+    metadata.write_list(f"{to}/sample.list", sample.entries)
     print(f"wrote '{to}/sample.list'")
     write_who_what(to, sample, blocksize)
     write_titles(to, sample, volumes)
@@ -104,7 +104,7 @@ def write_titles(to: str, sample: Sample, volumes: tg.Sequence[str]):
                 alltitles[entry['identifier']] = entry['title']  # make titles accessible by citekey
     titles = dict()
     for entry in sample.entries:
-        volume, citekey = lf.split_entry(entry)
+        volume, citekey = metadata.split_entry(entry)
         titles[citekey] = alltitles[citekey]
     filename = f"{to}/sample-titles.json"
     with open(filename, 'w', encoding='utf8') as j:

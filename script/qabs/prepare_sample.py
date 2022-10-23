@@ -4,7 +4,7 @@ import random
 import typing as tg
 
 import qabs.extract_abs
-import qabs.listfiles as lf
+import qabs.metadata as metadata
 import qabs.prepare_ann
 
 def configure_argparser(subparser):
@@ -21,7 +21,7 @@ def prepare_sample(workdir: str, volumedir: str):
         raise ValueError(f"'{targetdir}' already exists. I will not overwrite it. Exiting.")
     os.mkdir(targetdir)
     #----- obtain data:
-    sample = lf.read_list(f'{workdir}/sample.list')
+    sample = metadata.read_list(f'{workdir}/sample.list')
     with open(f"{workdir}/sample-titles.json") as f:
         titles = json.load(f)
     #----- create abstracts files:
@@ -29,8 +29,8 @@ def prepare_sample(workdir: str, volumedir: str):
         prepare_article(targetdir, volumedir, article, titles)
 
 
-def prepare_article(targetdir: str, volumedir: str, article: lf.Entry, titles: tg.Mapping[str,str]):
-    citekey = lf.citekey(article)
+def prepare_article(targetdir: str, volumedir: str, article: metadata.Entry, titles: tg.Mapping[str, str]):
+    citekey = metadata.citekey(article)
     targetfile = f"{targetdir}/{citekey}.txt"
     #----- obtain abstract:
     layouttype = qabs.extract_abs.decide_layouttype(article)

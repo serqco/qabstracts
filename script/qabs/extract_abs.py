@@ -3,7 +3,7 @@ import re
 import subprocess as sub
 import typing as tg
 
-import qabs.listfiles as lf
+import qabs.metadata as metadata
 
 usage = """Heuristically obtains abstracts from PDF files.
   Works on one given PDF file or each local PDF file whose basename is
@@ -76,8 +76,8 @@ layouttypes = dict(  # None means "We have no clue!"
 )
 
 
-def decide_layouttype(entry: lf.Entry) -> str:
-    volume = lf.volume(entry)
+def decide_layouttype(entry: metadata.Entry) -> str:
+    volume = metadata.volume(entry)
     venue = volume_path_name_year(volume)[1]
     for key, descriptor in layouttypes.items():
         for candidate in descriptor['applies_to']:
