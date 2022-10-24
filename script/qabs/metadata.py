@@ -66,7 +66,7 @@ class WhoWhat:
                 self.coders.add(coder)
                 self._coder_of[self._implied_filename(citekey, index)] = coder
             #--- collect filepair entries:
-            for next_pair in self._build_pairs(columns):
+            for next_pair in self._build_pairs(citekey, columns):
                 self._pairs.append(next_pair)
 
     def files_of(self, coder: str) -> tg.Generator[str, None, None]:
@@ -87,7 +87,7 @@ class WhoWhat:
         char = chr(ord('A') + columnindex)  # 26 columns maximum (we'll never need more than 10)
         return f"{self.workdir}/abstracts.{char}/{citekey}.txt"
 
-    def _build_pairs(self, columns: tg.Sequence[str]) -> tg.Generator[Filepair, None, None]:
+    def _build_pairs(self, citekey: str, columns: tg.Sequence[str]) -> tg.Generator[Filepair, None, None]:
         """
         Generator for pairs of non-reservation entries in the columns; need not be adjacent.
         """

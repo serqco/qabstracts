@@ -18,7 +18,7 @@ def main():  # uses sys.argv
     elif subcmd == "prepare-sample":
         qabs.prepare_sample.prepare_sample(pargs.workdir, pargs.volumedir)
     elif subcmd == "check-codings":
-        qabs.check_codings.check_codings(pargs.codebook, pargs.workdir)
+        qabs.check_codings.check_codings(pargs.workdir)
     elif subcmd == "compare-codings":
         qabs.compare_codings.compare_codings(pargs.maxcountdiff, pargs.workdir)
     elif subcmd == "extract-abs":
