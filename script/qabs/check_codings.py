@@ -1,4 +1,3 @@
-import re
 import sys
 import typing as tg
 
@@ -7,7 +6,6 @@ import qabs.annotations as annot
 
 usage = """Checks annotated (and unannotated) abstracts files for errors.
   Knows about annotation syntax. 
-  Reads codebook.md for list of allowed codes (pattern: "code `name-of-code`").
   Reads all abstracts files and checks for syntax errors and undefined codes.
   Reports problems on stdout.
 """

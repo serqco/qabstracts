@@ -1,4 +1,3 @@
-import re
 import sys
 import typing as tg
 
@@ -11,7 +10,7 @@ usage = """Compares annotations between coders and flags discrepancies.
   Reports problems on stdout.
 """
 
-IGNORE = '-ignorediff'  # code that signals not to report coding differences
+IGNORE = annot.Codebook.IGNORECODE
 
 def configure_argparser(subparser):
     subparser.add_argument('workdir',
