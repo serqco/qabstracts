@@ -6,6 +6,7 @@ import qabs.select_sample
 import qabs.prepare_sample
 import qabs.check_codings
 import qabs.compare_codings
+import qabs.export
 import qabs.extract_abs
 import qabs.prepare_ann 
 
@@ -21,6 +22,8 @@ def main():  # uses sys.argv
         qabs.check_codings.check_codings(pargs.workdir)
     elif subcmd == "compare-codings":
         qabs.compare_codings.compare_codings(pargs.maxcountdiff, pargs.workdir)
+    elif subcmd == "export":
+        qabs.export.export(pargs.workdir)
     elif subcmd == "extract-abs":
         qabs.extract_abs.extract_abstracts(pargs.outputdir, pargs.layout, pargs.inputfile)
     elif subcmd == "prepare-ann":
@@ -49,6 +52,10 @@ def setup_argparser():
     subparser = subparsers.add_parser('compare-codings',
             help="Cross-check pairs of corresponding annotated abstracts from different coders")
     qabs.compare_codings.configure_argparser(subparser)
+
+    subparser = subparsers.add_parser('export',
+            help="Create TSV data file with one record per coding")
+    qabs.export.configure_argparser(subparser)
 
     subparser = subparsers.add_parser('extract-abs',
             help="Extract abstracts from PDF files")

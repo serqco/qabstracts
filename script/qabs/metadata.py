@@ -35,13 +35,39 @@ def write_list(to: str, entries: tg.Iterator[Entry]):
             lst.write(f"{elem}\n")
 
 
+class Venue:
+    """Understands sample.list and can determine which venue or volume a citekey belongs to."""
+    FILENAME = "sample.list"
+    ENTRY_REGEXP = r"(\w+)-(\d+)/([\w-]+)\."  # e.g. TSE-2021/LiuKimBis21.pdf
+
+    def __init__(self, workdir: str):
+        self.workdir = workdir
+        self.venue = dict()  # citekey -> venue name (e.g. TSE)
+        self.volume = dict()  # citekey -> volume name (e.g. TSE22 for TSE-2022 or TSE48 for TSE-48)
+        with open(f"{workdir}/{self.FILENAME}", 'r', encoding='utf8') as f:
+            lines = f.readlines()
+        for line in lines:
+            mm = re.match(self.ENTRY_REGEXP, line)
+            venue, number, citekey = (mm.group(1), mm.group(2), mm.group(3))
+            if re.fullmatch(r"20\d\d", number):
+                number = number[2:]  # remove century, leaving only a two-digit year
+            self.venue[citekey] = venue
+            self.volume[citekey] = f"{venue}{number}"
+
+    def venue_of(self, citekey: str) -> str:
+        return self.venue[citekey]
+
+    def volume_of(self, citekey: str) -> str:
+        return self.volume[citekey]
+
+
 class WhoWhat:
     """
     Can tell which coder annotated which file and which pairs of files to compare.
     Hides the following secrets :
     1. The filename of the who/what file.
     2. The format of that file (for reading only)
-    3. The meaning of the entries in that file (reservations, implied filenames)
+    3. The meaning of the entries in that file (reservations, implied filenames, coder_letters)
     4. Which pairs of annotated files should be compared
     """
     FILENAME = "sample-who-what.txt"  # in workdir
@@ -68,6 +94,16 @@ class WhoWhat:
             #--- collect filepair entries:
             for next_pair in self._build_pairs(citekey, columns):
                 self._pairs.append(next_pair)
+
+    def citekey(self, filename: str) -> str:
+        """Partial inverse of _implied_filename()"""
+        mm = re.search(r"/abstracts\.[A-Z]/(\w+)\.txt", filename)
+        return mm.group(1)
+
+    def coder_letter(self, filename: str) -> str:
+        """Partial inverse of _implied_filename()"""
+        mm = re.search(r"/abstracts\.([A-Z])/", filename)
+        return mm.group(1)
 
     def files_of(self, coder: str) -> tg.Generator[str, None, None]:
         for myfile, mycoder in self._coder_of.items():

@@ -16,18 +16,28 @@ import typing as tg
 OStr = tg.Optional[str]
 AnnotationishMatches = tg.Tuple[OStr, OStr, OStr, OStr]
 
+
 class Codebook:
     CODEBOOK_PATH = 'codebook.md'  # in project rootdir
     CODEDEF_REGEXP = r"code `([\w-]+(?::iu)?)`"  # what code definitions look like in codebook
+    IGNORECODE = '-ignorediff'  # code that indicates not to report coding differences
 
     def __init__(self):
         self.codes = self._allowed_codes(self.CODEBOOK_PATH)
 
     def exists_bare(self, code: str) -> bool:
+        """Whether this code can never have an UI suffix."""
         return code in self.codes
 
-    def exists_with_suffix(self, code: str) -> bool:
-        return f"{code}:iu" in self.codes
+    def exists_with_suffix(self, coding: str) -> bool:
+        """Whether this coding with no IU suffix could have had one."""
+        return f"{coding}:iu" in self.codes
+
+    def is_extra_code(self, code: str) -> bool:
+        return code.startswith('-')
+
+    def is_heading_code(self, code: str) -> bool:
+        return code.startswith('h-')
 
     def _allowed_codes(self, codebookfile: str) -> tg.Set[str]:
         with open(codebookfile, 'rt', encoding='utf8') as cb:
@@ -39,9 +49,11 @@ class Codebook:
 class Annotations:
     ALLOWED_SUFFIX_REGEXP = r"i\d+|u\d+|i\d+u\d+"
     ANNOTATIONISH_REGEXP = r"\n(\{\{[^}]*\})\n|\n(\{[^{]*\}\})\n|\n(.+\{\{.*\}\})|\n(\{\{.*\}\})\n"  # 4 cases, matches only 1 
-    ANNOTATION_CONTENT_REGEXP = r"([\w-]+\??)(:[\w\d]*)?"  # we simply ignore commas and blanks (and any non-word garbage symbols)
+    ANNOTATION_CONTENT_REGEXP = r"([\w-]+)(:[\w\d]*)?"  # we simply ignore commas and blanks (and any non-word garbage symbols)
+    BARE_CODENAME_REGEXP = r"-?([\w-]+)(:[\w\d]*)?"
     EMPTY_ANNOTATION_REGEXP = "{{\s*}}"
     LINE_AND_ANNOTATION_PAIR_REGEXP = "(.*)\n({{.*}})"
+    SENTENCE_AND_ANNOTATION_PAIR_REGEXP = "(?:\n\n|}}\n)(.*?)\n({{.*?}})"
     SPLIT_SUFFIX_REGEXP = r":?(?:i(\d+))?(?:u(\d+))?"  # works for suffix or csuffix
 
     def __init__(self):
@@ -52,6 +64,14 @@ class Annotations:
 
     def find_all_line_and_annotation_pairs(self, content: str) -> tg.Sequence[tg.Tuple[str, str]]:
         return re.findall(self.LINE_AND_ANNOTATION_PAIR_REGEXP, content)
+
+    def find_all_sentence_and_annotation_pairs(self, content: str) -> tg.Sequence[tg.Tuple[str, str]]:
+        return re.findall(self.SENTENCE_AND_ANNOTATION_PAIR_REGEXP, content, flags=re.DOTALL)
+
+    def bare_codename(self, coding: str) -> str:
+        """Strips off leading dashes and trailing IU suffixes where present"""
+        mm = re.match(self.BARE_CODENAME_REGEXP, coding)
+        return mm.group(1)
 
     def check_annotationish(self, matches: AnnotationishMatches) -> tg.Tuple[OStr, OStr]:
         """Return (message, None) if annotationish is ill-formatted or (None, annotation) otherwise"""
@@ -102,6 +122,10 @@ class Annotations:
         return allcodes
 
     def split_suffix(self, suffix: str) -> tg.Tuple[int, int]:
+        """
+        Return a pair (icount, ucount) from 
+        an IU suffix (or csuffix) in i form, u form, iu form or even a missing one.
+        """
         if not suffix:
             return (0, 0)
         mm = re.fullmatch(self.SPLIT_SUFFIX_REGEXP, suffix)
