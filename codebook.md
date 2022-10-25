@@ -1,7 +1,7 @@
 # Codebook and coding rules for qabstracts study
 
 created: Lutz Prechelt, 2022-07-14  
-changed: Lutz Prechelt, 2022-10-21
+changed: Lutz Prechelt, 2022-10-25
 
 
 ## 1. Coding rules: Fundamentals
@@ -25,10 +25,6 @@ changed: Lutz Prechelt, 2022-10-21
    backward and forward context, not in isolation.
    In particular, when a sentence can be an A or a B, but only a B is expected
    in this position, it is interpreted as a B.
-6. If a classification requires a guess about what is (or is not) in 
-   the article and that guess is estimated to be less than 75% reliable,
-   append a `?` to the respective code. 
-   Use this sparingly.
 
 
 ## 2. Codebook: Codes for sentences
@@ -177,9 +173,6 @@ They start with a dash to signal this and should be given last.
   of the `{{}}` pairs' occurrence and expected to be equivalent.
 - _Exception:_ Codes starting with a dash ("minor codes"), such as `-hype`, 
   may be present in one coding without being present in the other.
-- _Exception 2:_ If a code is marked as unsure, `somecode?`,
-  it is considered compatible with `somecode` as well as with a lack of it.
-  This is applicable only to codes without an information particle count (see below).
 - A GitHub action will check for discrepancies after every push and notify
   the committer if any problem is found.
   Please correct such problems promptly, because the next person doing a push
