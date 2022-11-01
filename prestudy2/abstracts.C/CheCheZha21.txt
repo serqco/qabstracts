@@ -41,5 +41,4 @@ thesaurus by developing three applications and also verify the generality of our
 other domains.
 {{}}
 ---
-#inf-?
-#und-?
+
