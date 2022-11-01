@@ -4,6 +4,8 @@ prestudy/pdf/
 prestudy/testdata.git
 volumes/*/*.pdf
 volumes/log/
+.RData
+.Rhistory
 #*#
 
 .idea/
