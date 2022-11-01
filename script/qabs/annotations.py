@@ -51,9 +51,9 @@ class Annotations:
     ANNOTATIONISH_REGEXP = r"\n(\{\{[^}]*\})\n|\n(\{[^{]*\}\})\n|\n(.+\{\{.*\}\})|\n(\{\{.*\}\})\n"  # 4 cases, matches only 1 
     ANNOTATION_CONTENT_REGEXP = r"([\w-]+)(:[\w\d]*)?"  # we simply ignore commas and blanks (and any non-word garbage symbols)
     BARE_CODENAME_REGEXP = r"-?([\w-]+)(:[\w\d]*)?"
-    EMPTY_ANNOTATION_REGEXP = "{{\s*}}"
-    LINE_AND_ANNOTATION_PAIR_REGEXP = "(.*)\n({{.*}})"
-    SENTENCE_AND_ANNOTATION_PAIR_REGEXP = "(?:\n\n|}}\n)(.*?)\n({{.*?}})"
+    EMPTY_ANNOTATION_REGEXP = r"{{\s*}}"
+    LINE_AND_ANNOTATION_PAIR_REGEXP = r"(.*)\n({{.*}})"
+    SENTENCE_AND_ANNOTATION_PAIR_REGEXP = r"(?:\n\n|}}\n)(.*?)\n({{.*?}})"
     SPLIT_SUFFIX_REGEXP = r":?(?:i(\d+))?(?:u(\d+))?"  # works for suffix or csuffix
 
     def __init__(self):
