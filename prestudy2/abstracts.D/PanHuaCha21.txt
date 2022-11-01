@@ -55,5 +55,4 @@ other approaches in the related work.
 Empirical results also show that ElementRank can be applied to large software systems.
 {{}}
 ---
-#inf-?
-#und-?
+

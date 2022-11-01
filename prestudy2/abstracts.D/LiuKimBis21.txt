@@ -38,5 +38,4 @@ It is also noteworthy that
 the yielded patterns are applicable to four real bugs in the Defects4J major benchmark for software testing and automated repair.
 {{}}
 ---
-#inf-?
-#und-?
+

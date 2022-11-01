@@ -35,5 +35,4 @@ security in wide range of projects, such as prevention and mitigation of Denial-
 attacks.
 {{}}
 ---
-#inf-?
-#und-?
+
