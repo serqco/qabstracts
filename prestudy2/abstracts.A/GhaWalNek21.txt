@@ -29,5 +29,4 @@ ModelKB currently supports TensorFlow
 2.0, Keras, and PyTorch, and it can be extended to other deep learning frameworks easily.
 {{}}
 ---
-#inf-?
-#und-?
+

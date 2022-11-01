@@ -27,5 +27,4 @@ product sampling can lead to models as precise as those learned by exhaustive an
 hence, reduce the costs for family model learning.
 {{}}
 ---
-#inf-?
-#und-?
+

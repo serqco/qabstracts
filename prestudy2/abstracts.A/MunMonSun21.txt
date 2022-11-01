@@ -24,5 +24,4 @@ a user study with 30 participants which shows that INTREPAIR repairs are more th
 code repairs.
 {{}}
 ---
-#inf-?
-#und-?
+
