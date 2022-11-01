@@ -92,3 +92,48 @@ The final version will talk of `abstracts/` instead of `prestudy2/`.
    Use `git commit --amend -m"<firstname> has coded block <B> <C>"` if not.
 10. `git push`  
     (Took a while? Yes. But the next block will be so much quicker!)
+
+
+## 4. Evaluators: Questions to answer
+
+Here is a list of questions that might be interesting to investigate
+during the  evaluation of the coding data:
+
+### 4.1 Statistical evaluation
+
+We ask most of these questions both globally and per venue.  
+We ask most of these questions also separately for structured abstracts vs. unstructured ones.    
+For density measures, use three denominators: #sentences, #words, #chars.  
+...
+
+- Fraction of space devoted to each of the basics
+- How often each of the basics is missing completely
+- How often multiple basics are missing
+- Distribution of number of i and u problems overall in an abstract
+- Relative frequency of i and u problems per basic code
+- Frequency of `a-*` codes
+- Frequency of `claim` and `-hype`
+- Frequency of unresolved intercoder differences (`ignorediff`)
+- Common abstracts structures (clustering) in terms of their basics stretches sequence
+
+### 4.2 Qualitative evaluation
+
+Discuss examples of the following:
+
+- Very long sentences
+- Recurring coder disagreements
+- Sentences with particularly many i problems
+- Sentences with particularly many u problems
+
+Especially these curiosities:
+
+- Sentences with rare combinations of codes
+- First sentences with rare codes
+- Last sentences with rare codes
+
+
+## 5. SERQco members: Ideas for subsequent studies
+
+- A study of conclusions could start with abstracts sentences annotated as `conclusion`
+  and focus on the corresponding parts of the article body.
+- ...
