@@ -31,5 +31,4 @@ Finally, we conducted interviews with five professional developers to understand
 influence their ability to understand code snippets, aiming at identifying possible new metrics.
 {{}}
 ---
-#inf-?
-#und-?
+

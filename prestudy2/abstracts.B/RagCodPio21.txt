@@ -31,5 +31,4 @@ Finally, the results of using an IFT lens on these data provides some evidence a
 to IFT’s scoping and utility for the version control domain.
 {{}}
 ---
-#inf-?
-#und-?
+

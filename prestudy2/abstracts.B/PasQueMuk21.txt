@@ -32,5 +32,4 @@ While developers do not consciously enforce scattering limits, they actually imp
 system design and refactor code, thereby mitigating pre-processor idiosyncrasies or reducing its use.
 {{}}
 ---
-#inf-?
-#und-?
+
