@@ -1,7 +1,7 @@
 # Codebook and coding rules for qabstracts study
 
 created: Lutz Prechelt, 2022-07-14  
-changed: Lutz Prechelt, 2022-10-25
+changed: Lutz Prechelt, 2022-11-01
 
 
 ## 1. Coding rules: Fundamentals
@@ -25,6 +25,11 @@ changed: Lutz Prechelt, 2022-10-25
    backward and forward context, not in isolation.
    In particular, when a sentence can be an A or a B, but only a B is expected
    in this position, it is interpreted as a B.
+6. We are gentle in detecting negative aspects:
+   We annotate them only where they are _clearly_ present.
+
+Only by applying rules 4, 5, 6 carefully will we be able to come out
+with a good intercoder agreement.
 
 
 ## 2. Codebook: Codes for sentences
@@ -56,9 +61,10 @@ The above list sketches the default structure of a structured abstract.
   information leading towards the research interest of the work;  
   information about related work or the state of knowledge.  
 - code `objective:iu`:  
-  this work's research goal;  
-  this work's specific research interest;  
-  this work's research question.  
+  one or more of this work's 
+  top-level research goals,
+  specific top-level research interests, or
+  top-level research questions.  
 - code `method:iu`:  
   information about the approach or setup of an empirical study.
 - code `design:iu`:  
@@ -259,12 +265,15 @@ Typical cases:
 
 ### 4.3 What to count or not to count
 
+Information or understanding that are provided by a subsequent sentence in the abstract
+do not count as gaps.
+
 Do not ask too much from an abstract.
 Count only gaps that are likely to be fillable in a straightforward manner.
 
 But if you furrow your brows while reading, that is a good sign there is an
 understandability gap somewhere.
-If you get annoyed, that suggests an informativeness gap.
+If you get annoyed because you want to know more, that suggests an informativeness gap.
 
 If you have deep knowledge in the article's subject matter,
 grade as if you were only normally knowledgable
