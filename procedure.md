@@ -68,12 +68,10 @@ The final version will talk of `abstracts/` instead of `prestudy2/`.
    unlikely that your edit conflicts with somebody else's.
 4. For each abstracts file in your block (e.g. `prestudy2/abstracts.A/AbcDefGhi21.txt`):
    1. Classify each sentence with usually one or sometimes two or even three codes.
-      Do not add counts (because that is distracting).
-   2. Step back. Add the global codes `#inf-...` and `#und-...`.
-   3. Is anything special about this abstract that we should remember?
+      Do not add `:iu` suffixes (because that is distracting).
+   2. Step back. Is anything special about this abstract that we should remember?
       Then add a remark below (but usually not).
-   4. Now revisit your codes in need of counting (see `codebook.md`, e.g. design, method, result, limitation,
-      conclusion) and count the information particles. Enter the counts.
+   3. Now revisit your codes in need of `:iu` suffixes (see `codebook.md`, e.g. objective, method, design, result, claim) and add the `:iu` suffixes and counts.
 5. If you have Python set up, run
    `python script/qabstracts.py check-codings prestudy2`  
    If all it says is a list of coders, all is well.
