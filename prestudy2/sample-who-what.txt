@@ -10,12 +10,12 @@ MurJasSad21   Lloyd       Lutz
 PraShaSha21   Lloyd       Lutz
 MahDreWil21   Lloyd       Lutz
 #----- Block 3
-CheCheZha21   Lutz
-JohZimBir21   Lutz
-GhaWalNek21   Lutz
-ScaBavVen21   Lutz
-MacBeyMcI21   Lutz
-RagCodPio21   Lutz
+CheCheZha21   Lutz        -Lloyd
+JohZimBir21   Lutz        -Lloyd
+GhaWalNek21   Lutz        -Lloyd
+ScaBavVen21   Lutz        -Lloyd
+MacBeyMcI21   Lutz        -Lloyd
+RagCodPio21   Lutz        -Lloyd
 #----- Block 4
 PimMurBra21   
 PanHuaCha21   
