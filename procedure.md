@@ -67,11 +67,10 @@ The final version will talk of `abstracts/` instead of `prestudy2/`.
    Make sure the pull and the push are no more than 3 minutes apart so that it becomes
    unlikely that your edit conflicts with somebody else's.
 4. For each abstracts file in your block (e.g. `prestudy2/abstracts.A/AbcDefGhi21.txt`):
-   1. Classify each sentence with usually one or sometimes two or even three codes.
-      Do not add `:iu` suffixes (because that is distracting).
+   1. Classify each sentence with usually one or sometimes two or three codes.
    2. Step back. Is anything special about this abstract that we should remember?
+      For instance, does it contain anything that makes a good example in the article?
       Then add a remark below (but usually not).
-   3. Now revisit your codes in need of `:iu` suffixes (see `codebook.md`, e.g. objective, method, design, result, claim) and add the `:iu` suffixes and counts.
 5. If you have Python set up, run
    `python script/qabstracts.py check-codings prestudy2`  
    If all it says is a list of coders, all is well.
