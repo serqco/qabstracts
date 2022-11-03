@@ -23,6 +23,9 @@ def compare_codings(maxcountdiff: int, workdir: str):
     msgcount = 0
     what = qabs.metadata.WhoWhat(workdir)
     annots = annot.Annotations()
+    print("=========================================================================================")
+    print("=== check pairs of files (consult with your fellow coder except for obvious mistakes) ===")
+    print("=========================================================================================")
     for coder in sorted(what.coders):
         print(f"\n\n#################### {coder}'s: ####################\n")
         for file1, coder1, file2, coder2 in what.pairs_of(coder):

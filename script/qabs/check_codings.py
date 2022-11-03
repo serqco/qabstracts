@@ -16,6 +16,9 @@ def configure_argparser(subparser):
 
 
 def check_codings(workdir: str):
+    print("===============================================================================")
+    print("=== check individual files (correct mistakes even if they are not your own) ===")
+    print("===============================================================================")
     annots = annot.Annotations()
     what = qabs.metadata.WhoWhat(workdir)
     errors: int = 0
