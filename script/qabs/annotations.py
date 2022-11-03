@@ -21,6 +21,7 @@ class Codebook:
     CODEBOOK_PATH = 'codebook.md'  # in project rootdir
     CODEDEF_REGEXP = r"code `([\w-]+(?::iu)?)`"  # what code definitions look like in codebook
     IGNORECODE = '-ignorediff'  # code that indicates not to report coding differences
+    GARBAGE_CODES = ['cruft']
 
     def __init__(self):
         self.codes = self._allowed_codes(self.CODEBOOK_PATH)
@@ -38,6 +39,9 @@ class Codebook:
 
     def is_heading_code(self, code: str) -> bool:
         return code.startswith('h-')
+
+    def is_wordcountable_bare_code(self, code: str) -> bool:
+        return not self.is_extra_code(code) and code not in self.GARBAGE_CODES
 
     def _allowed_codes(self, codebookfile: str) -> tg.Set[str]:
         with open(codebookfile, 'rt', encoding='utf8') as cb:

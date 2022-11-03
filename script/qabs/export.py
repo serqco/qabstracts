@@ -65,7 +65,7 @@ def process_sentence(idx: int, sentence: str, annotation: str, abstract: Abstrac
     words = _count_words(sentence2)
     chars = len(sentence2)
     codings = set(abstract.annots.split_into_codings(annotation)) - set([abstract.codebook.IGNORECODE])  # forget IGNORECODEs
-    codes_done = set()
+    codes_done = set(abstract.codebook.GARBAGE_CODES)  # consider them done right from the start
     multiple = len(codings) > 1  # whether there are multiple codings at this sentence
     #----- process extra codes (which involve no length):
     for code, csuffix in codings:
@@ -87,7 +87,7 @@ def process_sentence(idx: int, sentence: str, annotation: str, abstract: Abstrac
         chars = chars / remaining  # ditto
     #----- process remaining codes with inherently no IU suffix:
     for code, csuffix in codings:
-        if code not in codes_done and abstract.codebook.exists_bare(code):
+        if code not in codes_done and abstract.codebook.is_wordcountable_bare_code(code):
             codes_done.add(code)
             prt_record(abstract, idx, words, chars, code, math.nan, math.nan)
     #----- process remaining codes with explicit or implicit IU suffix:
