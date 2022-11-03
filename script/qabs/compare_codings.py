@@ -39,42 +39,46 @@ def compare_files(file1: str, name1: str, file2: str, name2: str, maxcountdiff: 
         content1 = f1.read()
     with open(file2, 'r', encoding='utf8') as f2:
         content2 = f2.read()
-    la_pairs1 = annots.find_all_line_and_annotation_pairs(content1)  # list of pairs (previousline, annotation)
-    la_pairs2 = annots.find_all_line_and_annotation_pairs(content2)  # list of pairs (previousline, annotation)
-    return compare_codings2(file1, name1, la_pairs1, file2, name2, la_pairs2, maxcountdiff, annots)
+    sa_pairs1 = annots.find_all_sentence_and_annotation_pairs(content1)  # list of pairs (previous sentence, annotation)
+    sa_pairs2 = annots.find_all_sentence_and_annotation_pairs(content2)  # list of pairs (previous sentence, annotation)
+    return compare_codings2(file1, name1, sa_pairs1, file2, name2, sa_pairs2, maxcountdiff, annots)
 
 
-def compare_codings2(file1: str, name1: str, la_pairs1: tg.Sequence[tg.Tuple[str, str]],
-                     file2: str, name2: str, la_pairs2: tg.Sequence[tg.Tuple[str, str]],
+def compare_codings2(file1: str, name1: str, sa_pairs1: tg.Sequence[tg.Tuple[str, str]],
+                     file2: str, name2: str, sa_pairs2: tg.Sequence[tg.Tuple[str, str]],
                      maxcountdiff: int, annots: annot.Annotations):
     msgcount = 0
-    def printmsg(msg: str, item1: str, item2: str, afterline: tg.Optional[str]=None):
+    def printmsg(msg: str, *items: tg.Sequence[str]):
         print("\n#####", msg)
-        print("%s, (%s)\n   %s" % (file1, name1, item1))
-        print("%s, (%s)\n   %s" % (file2, name2, item2))
-        if afterline:
-            print(f"after line '{line1}'")
+        print(of_1(file1))
+        print(of_2(file2))
+        for item in items:
+            print(item)
         return 1
+    def of_1(msg: str) -> str:
+        return f"{msg}  ({name1})"
+    def of_2(msg: str) -> str:
+        return f"{msg}  ({name2})"
 
-    for pair1, pair2 in zip(la_pairs1, la_pairs2):
-        line1, annotation1 = pair1
-        line2, annotation2 = pair2
+    for pair1, pair2 in zip(sa_pairs1, sa_pairs2):
+        sentence1, annotation1 = pair1
+        sentence2, annotation2 = pair2
         # ----- check for non-parallel codings:
-        if line1 != line2:
+        if sentence1 != sentence2:
             msgcount += printmsg("Annotations should be at parallel points in the files, but are at different points here:",
-                                 f"\"{line1}\"", f"\"{line2}\"")
+                                 of_1(f"\"{sentence1}\""), of_2(f"\"{sentence2}\""))
             break
         # ----- check for incomplete annotation:
         if annots.is_empty_annotation(annotation1) or annots.is_empty_annotation(annotation2):
             msgcount += printmsg("Incomplete annotation found, skipping rest of this file pair:",
-                                 annotation1, annotation2, line1)
+                                 sentence1, of_1(annotation1), of_2(annotation2))
             break
         # ----- check for double IGNORE:
         set1 = annots.codings_of(annotation1, strip_suffixes=True)
         set2 = annots.codings_of(annotation2, strip_suffixes=True)
         if IGNORE in set1 and IGNORE in set2:
             msgcount += printmsg(f"Code '{IGNORE}' should only appear in one coding, never in both as it does here:",
-                                 annotation1, annotation2, line1)
+                                 sentence1, of_1(annotation1), of_2(annotation2))
             continue
         # ----- check for IGNORE:
         if IGNORE in (set1 | set2):
@@ -82,13 +86,20 @@ def compare_codings2(file1: str, name1: str, la_pairs1: tg.Sequence[tg.Tuple[str
         # ----- check for code discrepancies:
         if set1 ^ set2:  # code sets are different
             msgcount += printmsg(f"The sets of codes applied are different, please check:",
-                                 "{%s}" % ", ".join(sorted(set1)), "{%s}" % ", ".join(sorted(set2)), line1)
+                                 sentence1, 
+                                 of_1("{%s}" % ", ".join(sorted(set1))), 
+                                 of_2("{%s}" % ", ".join(sorted(set2))))
             continue
         # ----- check for count discrepancies:
         minfactor = (100 - maxcountdiff - 1) / 100
         for code, counts in annots.codes_with_suffixes(annotation1, annotation2).items():
             icount1, ucount1, icount2, ucount2 = counts
             if (abs(icount1 - icount2) > maxcountdiff):
-                msgcount += printmsg(f"{code}: Very different informativeness counts, please reconsider:",
-                                     f"{code}:i{icount1} vs :i{icount2}", line1)
+                msgcount += printmsg(f"{code}: Very different numbers of informativeness gaps, please reconsider:",
+                                     sentence1, 
+                                     "%s   vs.   %s" % (of_1(f"{code}:i{icount1}"), of_2(f":i{icount2}")))
+            if (abs(ucount1 - ucount2) > maxcountdiff):
+                msgcount += printmsg(f"{code}: Very different numbers of understandability gaps, please reconsider:",
+                                     sentence1,
+                                     "%s   vs.   %s" % (of_1(f"{code}:u{ucount1}"), of_2(f":u{ucount2}")))
     return msgcount
