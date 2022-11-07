@@ -228,7 +228,14 @@ Typical cases:
   Examples: 
   _"...we first collect and track a large number of fixed and unfixed violations..."_ 
   should say how many violations (`:i1`, asking for two numbers would be exaggerated; see 4.3);
-  _""_ !!!
+  _"We learned that the ratio of scattered features remained nearly constant
+  and that most features were introduced without scattering."_ should state what the ratio is
+  and what fraction is "most" (`:i2`).  
+  Generally, many uses of vague qualifiers such as "many", "large", "most" etc. call for a number
+  (if that number is presumably known) and should provoke an `i` suffix.   
+  Even unqualified nouns should get a number if they talk about a discrete number of types.
+  Example: "Our tool suggests modifications" should be 
+  "Our tool suggests 11 different types of modifications". 
 - Each other formulation that I think could and should have been more concrete counts as 1.
   Examples:
   _"We conducted a qualitative analysis of 99 artifacts from..."_ 
@@ -251,16 +258,13 @@ is ambiguous ("I wonder whether this means A or B") or downright unclear ("Huh?"
 Typical cases:
 - Each referent of a qualifier (such as a relative clause or prepositional phrase) 
   that is ambiguous counts as 1.
-  Examples: 
-  !!!
 - Each important term with two or more plausible meanings counts as 1.
-  Examples:
+  Example:
   _"...this research developed [a solution to monitor developers'] code review effectiveness."_:
   This is the second mention of effectiveness, but still no definition, although the background
   suggests we are more concerned with efficiency here (`:u1`).
-  !!!
 - Each important term for which not even an approximate meaning comes to mind counts as 1.
-  Examples: 
+  Example: 
   _"...that utilizes convolutional neural networks to learn features and clustering 
   to regroup similar instances."_: 
   No groups were mentioned or are obvious so far, so "regrouping" is a mysterious notion. 
@@ -274,9 +278,30 @@ do not count as gaps.
 Do not ask too much from an abstract.
 Count only gaps that are likely to be fillable in a straightforward manner.
 
-But if you furrow your brows while reading, that is a good sign there is an
+Example 1: Consider these two sentences:
+> The results show that the top-10 most frequent change types account for 51% of the build changes.
+> Among them, changes to version numbers and changes to dependencies of the projects occur 
+> most frequently.
+
+the second of these should be annotated `:i2`, because we could have learned how common
+these two types are, specifically. For instance like this (the numbers are fictive):
+> The results show that the top-10 most frequent change types account for 51% of the build changes, 
+> the top types being changes to version numbers (13%) and 
+> changes to dependencies of the projects (11%).
+
+Generally, if you get annoyed because you want to know more, that suggests an informativeness gap.
+If little space will be needed by the additional information (or none at all, like above),
+add an `i` suffix.
+
+Example 2: In the abstract containing this sentence
+> We try to (i) correlate each metric with understandability and 
+> (ii) build models combining metrics to assess understandability.
+
+the key term "understandability" has so far been taken for granted, but for a statement
+like this, we need to know how it was operationalized, resulting in a big fat `:u1`.
+
+Generally, if you furrow your brows while reading, that is a good sign there is an
 understandability gap somewhere.
-If you get annoyed because you want to know more, that suggests an informativeness gap.
 
 If you have deep knowledge in the article's subject matter,
 grade as if you were only normally knowledgable
