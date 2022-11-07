@@ -1,7 +1,7 @@
 # Codebook and coding rules for qabstracts study
 
 created: Lutz Prechelt, 2022-07-14  
-changed: Lutz Prechelt, 2022-11-01
+changed: Lutz Prechelt, 2022-11-07
 
 
 ## 1. Coding rules: Fundamentals
@@ -13,7 +13,10 @@ changed: Lutz Prechelt, 2022-11-01
 2. Annotation granularity is by sentence.
    Sentences are terminated by a colon or a period.
 3. Each sentence receives an annotation
-   (marked by `{{}}`) with at least one code.
+   (marked by `{{}}`) with at least one code.  
+   If a sentence has been inappropriately broken into several
+   (typically because of an abbreviation such as "approx. "),
+   apply the same codes to each part and consider them one.
 4. If necessary, a sentence (in particular a long one) can
    receive two or more codes.
    This means that some substantial part(s) of the sentence pertain to one code
@@ -22,7 +25,7 @@ changed: Lutz Prechelt, 2022-11-01
    No part of any sentence pertains to two codes at once
    (except the "extra codes", see below)
 5. For annotation, a sentence is interpreted in its 
-   backward and forward context, not in isolation.
+   backward and forward context, not in isolation.  
    In particular, when a sentence can be an A or a B, but only a B is expected
    in this position, it is interpreted as a B.
 6. We are gentle in detecting negative aspects:
@@ -66,7 +69,7 @@ The above list sketches the default structure of a structured abstract.
   specific top-level research interests, or
   top-level research questions.  
 - code `method:iu`:  
-  information about the approach or setup of an empirical study.
+  information about the approach or setup of an empirical (or possibly purely mathematical) study.
 - code `design:iu`:  
   information about the design, design process, and designed features of 
   an artifact, such as software, a process, or a method.
@@ -104,11 +107,11 @@ The above list sketches the default structure of a structured abstract.
 - codes of the form `a-<xyz>` designate announcements:  
   A statement announcing (hence the `a-`) that the article body will 
   contain information of the `<xyz>` type, 
-  but this and the next statement do not contain such information.
+  but this and the next sentence do not contain such information.
   - code `a-background` (hopefully never to be seen)
   - code `a-claim` (hopefully never to be seen)
   - code `a-conclusion`
-  - code `a-design`
+  - code `a-design` (e.g. "We present our system XYZ.")
   - code `a-futurework`
   - code `a-limitation`
   - code `a-method`
