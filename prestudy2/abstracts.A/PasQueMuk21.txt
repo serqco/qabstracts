@@ -1,35 +1,35 @@
 A Study of Feature Scattering in the Linux Kernel.
 
 Feature code is often scattered across a software system.
-{{}}
+{{background}}
 Scattering is not necessarily bad if used with care, as
 witnessed by systems with highly scattered features that evolved successfully.
-{{}}
+{{background}}
 Feature scattering, often realized with a pre-processor,
 circumvents limitations of programming languages and software architectures.
-{{}}
+{{background}}
 Unfortunately, little is known about the principles
 governing scattering in large and long-living software systems.
-{{}}
+{{background}}
 We present a longitudinal study of feature scattering in the Linux kernel,
 complemented by a survey with 74, and interviews with nine Linux kernel developers.
-{{}}
+{{method:u1}}
 We analyzed almost eight years of the kernel’s
 history, focusing on its largest subsystem:
-{{}}
+{{method}}
 device drivers.
-{{}}
+{{method}}
 We learned that the ratio of scattered features remained nearly constant
 and that most features were introduced without scattering.
-{{}}
+{{result:i2}}
 Yet, scattering easily crosses subsystem boundaries, and highly scattered
 outliers exist.
-{{}}
+{{result:i1}}
 Scattering often addresses a performance-maintenance tradeoff (alleviating complicated APIs), hardware design
 limitations, and avoids code duplication.
-{{}}
+{{result:i1}}
 While developers do not consciously enforce scattering limits, they actually improve the
 system design and refactor code, thereby mitigating pre-processor idiosyncrasies or reducing its use.
-{{}}
+{{result}}
 ---
 
