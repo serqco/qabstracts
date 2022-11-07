@@ -17,9 +17,9 @@ ScaBavVen21   Lutz        -Lloyd
 MacBeyMcI21   Lutz        -Lloyd
 RagCodPio21   Lutz        -Lloyd
 #----- Block 4
-PimMurBra21   
-PanHuaCha21   
-PasQueMuk21   
-ChoDamTra21   
-MunMonSun21   
-DamMouSim21   
+PimMurBra21   -Lutz
+PanHuaCha21   -Lutz
+PasQueMuk21   -Lutz
+ChoDamTra21   -Lutz
+MunMonSun21   -Lutz
+DamMouSim21   -Lutz
