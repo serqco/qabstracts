@@ -71,7 +71,8 @@ layouttypes = dict(  # None means "We have no clue!"
     springer=dict(
         cols=1,
         start=r"\nAbstract\s+",
-        end=r"\n+Keywords\s",
+        end=r"\n+Keywords\s|\n+Communicated by:",  # TODO 2: Let the latter come through: 
+        # Abstract will be incomplete and need fixing; the string is helpful for finding those cases!
         applies_to=["EMSE", ]),
 )
 
