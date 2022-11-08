@@ -18,13 +18,14 @@ In this paper, we first present a family-based behavioral model learning techniq
 called F F SMDiff .
 {{a-design}}
 Subsequently, we report on our experience on learning family models by employing product sampling.
-{{result}}
+{{a-result}}
 Using 105 products of six product lines expressed in
 terms of Mealy machines, we evaluate the precision of family models learned from products selected from different settings of the T-wise product sampling criterion.
-{{result:u1}}
+{{method:u1}}
 We show that
 product sampling can lead to models as precise as those learned by exhaustive analysis and
 hence, reduce the costs for family model learning.
+{{result:i1}}
 {{conclusion}}
 ---
 
