@@ -3,28 +3,28 @@ Learning by sampling: learning behavioral family models from software product li
 Family-based behavioral analysis operates on a single specification artifact, referred to as
 family model, annotated with feature constraints to express behavioral variability in terms
 of conditional states and transitions.
-{{}}
+{{background}}
 Family-based behavioral modeling paves the way for
 efficient model-based analysis of software product lines.
-{{}}
+{{background}}
 Family-based behavioral model
 learning incorporates feature model analysis and model learning principles to efficiently
 unify product models into a family model and integrate the behavior of various products into a behavioral family model.
-{{}}
+{{background}}
 Albeit reasonably effective, the exhaustive analysis of
 product lines is often infeasible due to the potentially exponential number of valid configurations.
-{{}}
+{{background}}
 In this paper, we first present a family-based behavioral model learning techniques,
 called F F SMDiff .
-{{}}
+{{a-design}}
 Subsequently, we report on our experience on learning family models by employing product sampling.
-{{}}
+{{design}}
 Using 105 products of six product lines expressed in
 terms of Mealy machines, we evaluate the precision of family models learned from products selected from different settings of the T-wise product sampling criterion.
-{{}}
+{{method}}
 We show that
 product sampling can lead to models as precise as those learned by exhaustive analysis and
 hence, reduce the costs for family model learning.
-{{}}
+{{result:i2}}
 ---
 
