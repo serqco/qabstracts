@@ -34,7 +34,7 @@ survey respondents use a dedicated tool to create and manage feature toggles in 
 {{result:i1}}
 Documenting feature toggle’s metadata, setting up the default value for feature toggles, and
 logging the changes made on feature toggles are also frequently-observed practices.
-{{result}}
+{{result:i3}}
 Conclusions The feature toggle development practices discovered and enumerated in this
 work can help practitioners more effectively use feature toggles.
 {{h-conclusion, conclusion}}
