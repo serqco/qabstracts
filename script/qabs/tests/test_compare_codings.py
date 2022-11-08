@@ -38,6 +38,6 @@ def test_compare_codings2(capsys):
     check([("line", "{{a, b, c}}")], [("line", "{{a, b, %s}}" % cc.IGNORE)], 
           "sets of codes applied are different", appears=False)
     check([("line", "{{a, design:i4}}")], [("line", "{{a, design:i7}}")], 
-          "Very different informativeness counts")
+          "Very different numbers of informativeness gaps")
     check([("line", "{{a, result:u1}}")], [("line", "{{a, result:u4}}")], 
           "counts are more different than allowed", appears=False)

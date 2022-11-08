@@ -84,7 +84,7 @@ def compare_codings2(file1: str, name1: str, sa_pairs1: tg.Sequence[tg.Tuple[str
         if IGNORE in (set1 | set2):
             continue  # do not report possible discrepancies
         # ----- check for code discrepancies:
-        if set1 ^ set2:  # code sets are different
+        if set1 != set2:  # code sets are different
             msgcount += printmsg(f"The sets of codes applied are different, please check:",
                                  sentence1, 
                                  of_1("{%s}" % ", ".join(sorted(set1))), 
