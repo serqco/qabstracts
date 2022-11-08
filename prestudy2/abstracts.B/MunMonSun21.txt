@@ -19,7 +19,7 @@ programs (approx.
 Our experimental results show that INTREPAIR is able to effectively detect integer overflows and successfully repair them,
 while only increasing the source code (LOC) and binary (Kb) size by around 1 percent, respectively.
 {{result}}
-Further, we present the resulsts of
+Further, we present the results of
 a user study with 30 participants which shows that INTREPAIR repairs are more than 10x efficient as compared to manually generated
 code repairs.
 {{method, result}}
