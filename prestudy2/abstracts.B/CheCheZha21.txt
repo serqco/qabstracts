@@ -2,43 +2,43 @@ SEthesaurus: WordNet in Software Engineering.
 
 Informal discussions on social platforms (e.g., Stack Overflow, CodeProject) have accumulated a large body of programming
 knowledge in the form of natural language text.
-{{}}
+{{background}}
 Natural language process (NLP) techniques can be utilized to harvest this knowledge base
 for software engineering tasks.
-{{}}
+{{background}}
 However, consistent vocabulary for a concept is essential to make an effective use of these NLP techniques.
-{{}}
+{{background}}
 Unfortunately, the same concepts are often intentionally or accidentally mentioned in many different morphological forms (such as
 abbreviations, synonyms and misspellings) in informal discussions.
-{{}}
+{{background}}
 Existing techniques to deal with such morphological forms are either
 designed for general English or mainly resort to domain-specific lexical rules.
-{{}}
+{{background}}
 A thesaurus, which contains software-specific terms and
 commonly-used morphological forms, is desirable to perform normalization for software engineering text.
-{{}}
+{{background}}
 However, constructing this
 thesaurus in a manual way is a challenge task.
-{{}}
+{{background}}
 In this paper, we propose an automatic unsupervised approach to build such a thesaurus.
-{{}}
+{{objective:u1}}
 In particular, we first identify software-specific terms by utilizing a software-specific corpus (e.g., Stack Overflow) and a general corpus
 (e.g., Wikipedia).
-{{}}
+{{design:i1}}
 Then we infer morphological forms of software-specific terms by combining distributed word semantics, domain-specific
 lexical rules and transformations.
-{{}}
+{{design}}
 Finally, we perform graph analysis on morphological relations.
-{{}}
+{{design}}
 We evaluate the coverage and accuracy of
 our constructed thesaurus against community-cumulated lists of software-specific terms, abbreviations and synonyms.
-{{}}
+{{method:i1}}
 We also manually
 examine the correctness of the identified abbreviations and synonyms in our thesaurus.
-{{}}
+{{method:u1}}
 We demonstrate the usefulness of our constructed
 thesaurus by developing three applications and also verify the generality of our approach in constructing thesauruses from data sources in
 other domains.
-{{}}
+{{conclusion}}
 ---
 

@@ -1,34 +1,34 @@
 Automatically Assessing Code Understandability.
 
 Understanding software is an inherent requirement for many maintenance and evolution tasks.
-{{}}
+{{background}}
 Without a thorough
 understanding of the code, developers would not be able to fix bugs or add new features timely.
-{{}}
+{{background}}
 Measuring code understandability
 might be useful to guide developers in writing better code, and could also help in estimating the effort required to modify code
 components.
-{{}}
+{{background}}
 Unfortunately, there are no metrics designed to assess the understandability of code snippets.
-{{}}
+{{background}}
 In this work, we perform
 an extensive evaluation of 121 existing as well as new code-related, documentation-related, and developer-related metrics.
-{{}}
+{{objective}}
 We try to (i)
 correlate each metric with understandability and (ii) build models combining metrics to assess understandability.
-{{}}
+{{method:u1}}
 To do this, we use 444
 human evaluations from 63 developers and we obtained a bold negative result:
-{{}}
+{{method, result}}
 none of the 121 experimented metrics is able to capture
 code understandability, not even the ones assumed to assess quality attributes apparently related, such as code readability and
 complexity.
-{{}}
+{{result:u2, claim}}
 While we observed some improvements while combining metrics in models, their effectiveness is still far from making them
 suitable for practical applications.
-{{}}
+{{result}}
 Finally, we conducted interviews with five professional developers to understand the factors that
 influence their ability to understand code snippets, aiming at identifying possible new metrics.
-{{}}
+{{method, objective:i1}}
 ---
 
