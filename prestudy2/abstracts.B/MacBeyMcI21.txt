@@ -12,7 +12,7 @@ build changing or not).
 {{background}}
 In this paper, we present BUILDDIFF, an approach to extract detailed
 build changes from MAVEN build files and classify them into 143 change types.
-{{objective}}
+{{objective, result}}
 In a manual evaluation of 400 build-changing commits, we show that BUILDDIFF can extract and
 classify build changes with average precision, recall, and f1-scores of 0.97, 0.98, and 0.97,
 respectively.

@@ -10,7 +10,7 @@ work investigated empirically how and why developers seek information in VCS:
 {{background}}
 in this paper, we complement and enrich our prior findings
 by reanalyzing the data via a theory’s lens.
-{{objective}}
+{{objective, method}}
 Using the lens of Information Foraging Theory (IFT), we present new insights not revealed by
 the prior empirical work.
 {{method}}

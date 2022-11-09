@@ -24,7 +24,7 @@ modeling lifecycle end-to-end, including (1) monitoring and tracking experiments
 and on the cloud; and (4) sharing and publishing trained models.
 {{claim}}
 Moreover, our system provides a stepping-stone for enhanced reproducibility.
-{{conclusion}}
+{{claim}}
 ModelKB currently supports TensorFlow
 2.0, Keras, and PyTorch, and it can be extended to other deep learning frameworks easily.
 {{design:u1, claim}}

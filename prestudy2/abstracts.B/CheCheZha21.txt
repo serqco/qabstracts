@@ -39,6 +39,6 @@ examine the correctness of the identified abbreviations and synonyms in our thes
 We demonstrate the usefulness of our constructed
 thesaurus by developing three applications and also verify the generality of our approach in constructing thesauruses from data sources in
 other domains.
-{{conclusion}}
+{{a-result, method}}
 ---
 

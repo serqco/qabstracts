@@ -53,6 +53,6 @@ ElementRank and that of the approaches in the related work, and the benefits of 
 other approaches in the related work.
 {{a-result, result}}
 Empirical results also show that ElementRank can be applied to large software systems.
-{{conclusion}}
+{{a-result}}
 ---
 

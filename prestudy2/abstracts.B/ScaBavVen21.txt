@@ -16,7 +16,7 @@ an extensive evaluation of 121 existing as well as new code-related, documentati
 {{objective}}
 We try to (i)
 correlate each metric with understandability and (ii) build models combining metrics to assess understandability.
-{{method:u1}}
+{{objective:u1}}
 To do this, we use 444
 human evaluations from 63 developers and we obtained a bold negative result:
 {{method, result}}

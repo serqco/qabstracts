@@ -5,7 +5,7 @@ the work done.
 {{background}}
 To better understand the factors of the environment that affect productivity and satisfaction of software engineers, we
 explored different work environments at Microsoft.
-{{objective}}
+{{objective, method}}
 We used a mixed-methods, multiple stage research design with a total of 1,159
 participants:
 {{method}}
