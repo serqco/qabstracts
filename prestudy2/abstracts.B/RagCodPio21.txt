@@ -16,7 +16,7 @@ the prior empirical work.
 {{method}}
 First, while looking for specific information, participants’ foraging behaviors were consistent with other foraging
 situations in SE; therefore, prior research on IFT-based SE tool design can be leveraged for VCS.
-{{result, claim}}
+{{result, conclusion}}
 Second, in change awareness foraging,
 participants consumed similar diets, but in subtly different ways than in other situations; this calls for further investigations into change
 awareness foraging.
