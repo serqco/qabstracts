@@ -45,7 +45,7 @@ patterns we discovered, which provide additional insights into notebook reproduc
 Based on our findings and best practices we proposed, we designed Julynter, a Jupyter
 Lab extension that identifies potential issues in notebooks and suggests modifications that
 improve their reproducibility.
-{{result:i2}}
+{{design}}
 We evaluate Julynter with a remote user experiment with the
 goal of assessing Julynter recommendations and usability.
 {{method:i1}}

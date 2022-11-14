@@ -22,6 +22,6 @@ while only increasing the source code (LOC) and binary (Kb) size by around 1 per
 Further, we present the results of
 a user study with 30 participants which shows that INTREPAIR repairs are more than 10x efficient as compared to manually generated
 code repairs.
-{{result}}
+{{method,result}}
 ---
 
