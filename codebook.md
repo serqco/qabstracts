@@ -90,7 +90,7 @@ The above list sketches the default structure of a structured abstract.
 
 - code `claim:iu`:  
   A non-empirical would-be result statement.
-  If position and phrasing allow it to be considered `objective`, use that.
+  If position and phrasing allow it to be considered `objective` or `conclusion`, use these.
 - code `futurework`:  
   information about suggested future research.
 - code `limitation`:  
