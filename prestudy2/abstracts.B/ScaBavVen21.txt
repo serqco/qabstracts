@@ -23,7 +23,7 @@ human evaluations from 63 developers and we obtained a bold negative result:
 none of the 121 experimented metrics is able to capture
 code understandability, not even the ones assumed to assess quality attributes apparently related, such as code readability and
 complexity.
-{{result:u2, claim}}
+{{result:u2}}
 While we observed some improvements while combining metrics in models, their effectiveness is still far from making them
 suitable for practical applications.
 {{result}}
