@@ -86,20 +86,15 @@ def compare_codings2(file1: str, name1: str, sa_pairs1: tg.Sequence[tg.Tuple[str
         # ----- check for code discrepancies:
         if set1 != set2:  # code sets are different
             msgcount += printmsg(f"The sets of codes applied are different, please check:",
-                                 sentence1, 
-                                 of_1("{%s}" % ", ".join(sorted(set1))), 
-                                 of_2("{%s}" % ", ".join(sorted(set2))))
+                                 sentence1, of_1(annotation1), of_2(annotation2))
             continue
         # ----- check for count discrepancies:
-        minfactor = (100 - maxcountdiff - 1) / 100
         for code, counts in annots.codes_with_suffixes(annotation1, annotation2).items():
             icount1, ucount1, icount2, ucount2 = counts
-            if (abs(icount1 - icount2) > maxcountdiff):
+            if abs(icount1 - icount2) > maxcountdiff:
                 msgcount += printmsg(f"{code}: Very different numbers of informativeness gaps, please reconsider:",
-                                     sentence1, 
-                                     "%s   vs.   %s" % (of_1(f"{code}:i{icount1}"), of_2(f":i{icount2}")))
-            if (abs(ucount1 - ucount2) > maxcountdiff):
+                                     sentence1, annotation1, annotation2)
+            if abs(ucount1 - ucount2) > maxcountdiff:
                 msgcount += printmsg(f"{code}: Very different numbers of understandability gaps, please reconsider:",
-                                     sentence1,
-                                     "%s   vs.   %s" % (of_1(f"{code}:u{ucount1}"), of_2(f":u{ucount2}")))
+                                     sentence1, annotation1, annotation2)
     return msgcount
