@@ -12,7 +12,7 @@ important.
 {{background}}
 Objective In this work, we analyze vulnerabilities in open-source libraries used by 450
 software projects written in Java, Python, and Ruby.
-{{h-objective,objective}}
+{{h-objective,method}}
 Our goal is to examine types, distribution, severity, and persistence of the vulnerabilities, along with relationships between their
 prevalence and project as well as commit attributes.
 {{objective}}
