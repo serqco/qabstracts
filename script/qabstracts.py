@@ -34,7 +34,8 @@ def main():  # uses sys.argv
 
 def setup_argparser():
     description = "Handles PDF files, abstracts files, and annotations in various ways."
-    parser = argparse.ArgumentParser(description=description)
+    parser = argparse.ArgumentParser(description=description,
+                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)  # TODO: does nothing?
     subparsers = parser.add_subparsers(dest='subcmd', required=True)
 
     subparser = subparsers.add_parser('select-sample',
