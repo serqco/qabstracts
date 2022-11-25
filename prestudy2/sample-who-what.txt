@@ -10,8 +10,8 @@ MurJasSad21   Lloyd        Lutz          GunnaR
 PraShaSha21   Lloyd        Lutz          GunnaR
 MahDreWil21   Lloyd        Lutz          GunnaR
 #----- Block 3
-CheCheZha21   Lutz         Lloyd
-JohZimBir21   Lutz         Lloyd
+CheCheZha21   Lutz         Lloyd         Martin
+JohZimBir21   Lutz         Lloyd         Martin
 GhaWalNek21   Lutz         Lloyd
 ScaBavVen21   Lutz         Lloyd
 MacBeyMcI21   Lutz         Lloyd
