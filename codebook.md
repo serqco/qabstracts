@@ -114,9 +114,9 @@ The above list sketches the default structure of a structured abstract.
   - code `a-design` (e.g. "We present our system XYZ.")
   - code `a-futurework`
   - code `a-limitation`
-  - code `a-method`
+  - code `a-method` (e.g. "We describe the approach used for our survey.")
   - code `a-objective`
-  - code `a-result`
+  - code `a-result` (e.g. "We report on our empirical results in detail.")
   - code `a-resourcepointer`
 - codes of the form `h-<xyz>` designate internal headings that occur in structured abstracts: 
   A section intro term "<Xyz>:" or some synonym of that,
