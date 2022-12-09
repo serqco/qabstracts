@@ -96,11 +96,11 @@ totalNWC_by_sent = with.order(sqldf(sprintf("
     ", no.duplicates, primary.code)))
 
 cat("pctNWC_by_code_ven_struc:\n")
-pctNWC_by_code_ven_struc = with.order(sqldf(sprintf("
+pctNWC_by_code_ven_struc_dsgn = with.order(sqldf(sprintf("
     select round(100 * sum(1) / T.codingsN, 1) as codingspct,
            round(100 * sum(C.words) / T.words, 1) as wordspct,
            round(100 * sum(C.chars) / T.chars, 1) as charspct,
-           C.code, C.venue, is_struc, has_design
+           C.code, C.topic, C.venue, is_struc, has_design
     from codings_by_sent C, totalNWC_by_art A, totalNWC_by_ven T
     where C.citekey == A.citekey and C.venue == T.venue and %s and %s
     group by C.code, C.venue, A.is_struc, A.has_design
