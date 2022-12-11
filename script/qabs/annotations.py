@@ -40,9 +40,6 @@ class Codebook:
     def is_heading_code(self, code: str) -> bool:
         return code.startswith('h-')
 
-    def is_wordcountable_bare_code(self, code: str) -> bool:
-        return not self.is_extra_code(code) and code not in self.GARBAGE_CODES
-
     def _allowed_codes(self, codebookfile: str) -> tg.Set[str]:
         with open(codebookfile, 'rt', encoding='utf8') as cb:
             codebook = cb.read()
@@ -133,8 +130,8 @@ class Annotations:
         if not suffix:
             return (0, 0)
         mm = re.fullmatch(self.SPLIT_SUFFIX_REGEXP, suffix)
-        if not mm:  # force malformed suffixes to (0, 0)
-            return (0, 0)
+        # if not mm:  # force malformed suffixes to (0, 0)
+        #     return (0, 0)
         return (int(mm.group(1)) if mm.group(1) else 0,
                 int(mm.group(2)) if mm.group(2) else 0,)
 
