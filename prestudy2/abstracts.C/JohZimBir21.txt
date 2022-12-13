@@ -2,36 +2,36 @@ The Effect of Work Environments on Productivity and Satisfaction of Software Eng
 
 The physical work environment of software engineers can have various effects on their satisfaction and the ability to get
 the work done.
-{{}}
+{{background}}
 To better understand the factors of the environment that affect productivity and satisfaction of software engineers, we
 explored different work environments at Microsoft.
-{{}}
+{{objective}}
 We used a mixed-methods, multiple stage research design with a total of 1,159
 participants:
-{{}}
+{{method}}
 two surveys with 297 and 843 responses respectively and interviews with 19 employees.
-{{}}
+{{method}}
 We found several factors that
 were considered as important for work environments:
-{{}}
+{{a-result}}
 personalization, social norms and signals, room composition and atmosphere,
 work-related environment affordances, work area and furniture, and productivity strategies.
-{{}}
+{{result}}
 We built statistical models for satisfaction
 with the work environment and perceived productivity of software engineers and compared them to models for employees in the Program
 Management, IT Operations, Marketing, and Business Program & Operations disciplines.
-{{}}
+{{method}}
 In the satisfaction models, the ability to work
 privately with no interruptions and the ability to communicate with the team and leads were important factors among all disciplines.
-{{}}
+{{result}}
 In
 the productivity models, the overall satisfaction with the work environment and the ability to work privately with no interruptions were
 important factors among all disciplines.
-{{}}
+{{result}}
 For software engineers, another important factor for perceived productivity was the ability to
 communicate with the team and leads.
-{{}}
+{{result}}
 We found that private offices were linked to higher perceived productivity across all disciplines.
-{{}}
+{{result}}
 ---
 

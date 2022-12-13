@@ -1,34 +1,34 @@
 Version Control Systems: An Information Foraging Perspective.
 
 Version Control Systems (VCS) are an important source of information for developers.
-{{}}
+{{background}}
 This calls for a principled understanding
 of developers’ information seeking in VCS—both for improving existing tools and for understanding requirements for new tools.
-{{}}
+{{background}}
 Our prior
 work investigated empirically how and why developers seek information in VCS:
-{{}}
+{{background}}
 in this paper, we complement and enrich our prior findings
 by reanalyzing the data via a theory’s lens.
-{{}}
+{{design}}
 Using the lens of Information Foraging Theory (IFT), we present new insights not revealed by
 the prior empirical work.
-{{}}
+{{method, a-result}}
 First, while looking for specific information, participants’ foraging behaviors were consistent with other foraging
 situations in SE; therefore, prior research on IFT-based SE tool design can be leveraged for VCS.
-{{}}
+{{result, claim}}
 Second, in change awareness foraging,
 participants consumed similar diets, but in subtly different ways than in other situations; this calls for further investigations into change
 awareness foraging.
-{{}}
+{{result:u1}}
 Third, while committing changes, participants attempted to enable future foragers, but the competing needs of
 different foraging situations led to tensions that participants failed to balance:
-{{}}
+{{result:u1}}
 this opens up a new avenue for research at the intersection
 of IFT and SE, namely, creating forageable information.
-{{}}
+{{claim}}
 Finally, the results of using an IFT lens on these data provides some evidence as
 to IFT’s scoping and utility for the version control domain.
-{{}}
+{{a-result, conclusion}}
 ---
 
