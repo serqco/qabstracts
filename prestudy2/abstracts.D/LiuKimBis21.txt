@@ -28,9 +28,9 @@ that are fixed, in terms of occurrences, spread and categories, which can provid
 To automatically identify
 patterns in violations and their fixes, we propose an approach that utilizes convolutional neural networks to learn features and clustering to
 regroup similar instances.
-{{a-method}}
+{{method}}
 We then evaluate the usefulness of the identified fix patterns by applying them to unfixed violations.
-{{}}
+{{result}}
 The results
 show that developers will accept and merge a majority (69/116) of fixes generated from the inferred fix patterns.
 {{result}}
