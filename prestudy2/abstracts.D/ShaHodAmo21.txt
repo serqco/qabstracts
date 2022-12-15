@@ -25,6 +25,6 @@ with which agile practices are carried out by the team.
 This study presents for the first
 time a multifaceted study of the multiple dimensions of the scrum master role and will
 enable practitioners to better manage expectations of this role in practice.
-{{conclusion,claim}}
+{{conclusion, claim}}
 ---
 My 2nd abstract, 6 mins
