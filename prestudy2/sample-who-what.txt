@@ -17,9 +17,9 @@ ScaBavVen21   Lutz         Lloyd         Gunnar
 MacBeyMcI21   Lutz         Lloyd         Gunnar
 RagCodPio21   Lutz         Lloyd         Gunnar
 #----- Block 4
-PimMurBra21   Lutz         Lloyd         -Gunnar
-PanHuaCha21   Lutz         Lloyd         -Gunnar
-PasQueMuk21   Lutz         Lloyd         -Gunnar
-ChoDamTra21   Lutz         Lloyd         -Gunnar
-MunMonSun21   Lutz         Lloyd         -Gunnar
-DamMouSim21   Lutz         Lloyd         -Gunnar
+PimMurBra21   Lutz         Lloyd         Gunnar
+PanHuaCha21   Lutz         Lloyd         Gunnar
+PasQueMuk21   Lutz         Lloyd         Gunnar
+ChoDamTra21   Lutz         Lloyd         Gunnar
+MunMonSun21   Lutz         Lloyd         Gunnar
+DamMouSim21   Lutz         Lloyd         Gunnar
