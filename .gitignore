@@ -6,6 +6,7 @@ volumes/*/*.pdf
 volumes/log/
 .RData
 .Rhistory
+.DS_Store
 #*#
 
 .idea/
