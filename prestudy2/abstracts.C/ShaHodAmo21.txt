@@ -13,7 +13,7 @@ in practice are scarce.
 To address this gap, a Grounded Theory study with a mixed
 methods approach was carried out which included semi-structured interviews with 39
 software practitioners and a questionnaire with 47 respondents.
-{{design:i7}}
+{{method}}
 In this study, we present
 and describe the scrum master’s role in agile projects in terms of (a) the grounded theory
 of the role of the scrum master which involves everyday activities of facilitating,
@@ -21,9 +21,9 @@ mentoring, negotiating, process adapting, coordinating, and protecting; (b) the 
 involvement of the scrum master in selected agile practices carried out by the team; and
 (c) a positive association between the presence of the scrum master and the frequency
 with which agile practices are carried out by the team.
-{{result:i16}}
+{{result:i2}}
 This study presents for the first
 time a multifaceted study of the multiple dimensions of the scrum master role and will
 enable practitioners to better manage expectations of this role in practice.
-{{conclusion}}
+{{conclusion, claim}}
 ---
