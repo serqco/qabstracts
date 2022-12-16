@@ -8,6 +8,7 @@ import qabs.check_codings
 import qabs.compare_codings
 import qabs.export
 import qabs.extract_abs
+import qabs.plot
 import qabs.prepare_ann 
 
 def main():  # uses sys.argv
@@ -26,6 +27,8 @@ def main():  # uses sys.argv
         qabs.export.export(pargs.workdir)
     elif subcmd == "extract-abs":
         qabs.extract_abs.extract_abstracts(pargs.outputdir, pargs.layout, pargs.inputfile)
+    elif subcmd == "plot":
+        qabs.plot.plot(pargs.datafile, pargs.outputdir)
     elif subcmd == "prepare-ann":
         qabs.prepare_ann.prepare_annotations(pargs.outputdir, pargs.textfile)
     else:
@@ -61,6 +64,10 @@ def setup_argparser():
     subparser = subparsers.add_parser('extract-abs',
             help="Extract abstracts from PDF files")
     qabs.extract_abs.configure_argparser(subparser)
+
+    subparser = subparsers.add_parser('plot',
+            help=qabs.plot.usage)
+    qabs.plot.configure_argparser(subparser)
 
     subparser = subparsers.add_parser('prepare-ann',
             help=qabs.prepare_ann.usage)  # insert empty annotations in abstracts files
