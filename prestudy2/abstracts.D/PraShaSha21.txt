@@ -33,6 +33,6 @@ Conclusion Our results highlight the importance of managing the number of depend
 and performing timely updates, and indicate some areas that can be prioritized to improve
 security in wide range of projects, such as prevention and mitigation of Denial-of-Service
 attacks.
-{{h-conclusion,conclusion:i1}}
+{{h-conclusion,conclusion}}
 ---
 
