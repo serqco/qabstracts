@@ -16,6 +16,6 @@ the current fuzzing literature.
 {{a-design}}
 We methodically explore the design decisions at every stage of our model fuzzer by surveying the related
 literature and innovations in the art, science, and engineering that make modern-day fuzzers effective.
-{{a-design,a-method}}
+{{method}}
 ---
 
