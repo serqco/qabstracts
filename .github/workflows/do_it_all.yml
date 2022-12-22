@@ -12,7 +12,7 @@ jobs:
           # ls ${{ github.workspace }}
           git log --oneline -10
           # sudo apt install poppler-utils
-          # pip -q install pytest
+          pip -q install -r requirements.txt
           # PYTHONPATH=script pytest -v
           python script/qabstracts.py check-codings prestudy2
           python script/qabstracts.py compare-codings prestudy2  # must yet learn about IU suffixes
