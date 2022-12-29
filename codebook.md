@@ -1,7 +1,7 @@
 # Codebook and coding rules for qabstracts study
 
 created: Lutz Prechelt, 2022-07-14  
-changed: Lutz Prechelt, 2022-11-07
+changed: Lutz Prechelt, 2022-12-29
 
 
 ## 1. Coding rules: Fundamentals
@@ -161,6 +161,12 @@ They start with a dash to signal this and should be given last.
   If the script flags a coding discrepancy that, after discussion, you and your fellow coder
   agree should be left in (because the two codings represent two different reasonable interpretations),
   add this code in one (and only one) of the codings to mark the discrepancy as resolved.
+- code `-problemstmt`:
+  The sentence formulates a statement of a problem to be solved that is more general
+  than the study's `objective`. Typically only found in `background` statements.  
+  (This code is for collecting data for a possible future research interest.
+  We only want to find some examples, so not everybody needs to apply this code all the time.
+  Feel free to overlook as many instances as needed to avoid slowing you down.)
 
 
 ## 3. Coding rules: Avoiding inter-coder discrepancies
