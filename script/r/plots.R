@@ -1,7 +1,7 @@
 
 
-dd=pctNWC_by_code_ven_struc
-where=(as.character(dd$code) %in% (core.codes))
+dd=pctNWC_by_code_ven_struc_dsgn
+where=(dd$topic != 'none')
 
 ggplot(dd[where,], aes(x=paste(venue), y=wordspct, fill=code)) + 
        geom_col() + theme_light()

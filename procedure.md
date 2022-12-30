@@ -103,11 +103,17 @@ We ask most of these questions also separately for structured abstracts vs. unst
 For density measures, use three denominators: #sentences, #words, #chars.  
 ...
 
-- Fraction of space devoted to each of the basics
+- Fraction of space devoted to each of the basics:
+  - empirical articles devote almost as much space to `background` than to `results`,
+    design articles devote twice as much to `background` than to `results`.
+  - structured abstracts have a better length balance of the core parts
+    than unstructured ones
 - How often each of the basics is missing completely
 - How often multiple basics are missing
 - Distribution of number of i and u problems overall in an abstract
 - Relative frequency of i and u problems per basic code
+  - design articles appear to have most of their gaps in `method`, 
+    empirical ones in `result`
 - Frequency of `a-*` codes
 - Frequency of `claim` and `-hype`
 - Frequency of unresolved intercoder differences (`ignorediff`)
