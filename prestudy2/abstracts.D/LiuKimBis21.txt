@@ -36,6 +36,6 @@ show that developers will accept and merge a majority (69/116) of fixes generate
 {{result}}
 It is also noteworthy that
 the yielded patterns are applicable to four real bugs in the Defects4J major benchmark for software testing and automated repair.
-{{conclusion}}
+{{result}}
 ---
 This is my first abstract analysis.  It took ~45 minutes.
