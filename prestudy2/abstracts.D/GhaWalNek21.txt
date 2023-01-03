@@ -2,31 +2,31 @@ Automated end-to-end management of the modeling lifecycle in deep learning.
 
 Deep learning has improved the state-of-the-art results in an ever-growing number of
 domains.
-{{}}
+{{background}}
 This success heavily relies on the development and training of deep learning
 models–an experimental, iterative process that produces tens to hundreds of models before
 arriving at a satisfactory result.
-{{}}
+{{background}}
 While there has been a surge in the number of tools and
 frameworks that aim at facilitating deep learning, the process of managing the models
 and their artifacts is still surprisingly challenging and time-consuming.
-{{}}
+{{background,claim}}
 Existing modelmanagement solutions are either tailored for commercial platforms or require significant
 code changes.
-{{}}
+{{background}}
 Moreover, most of the existing solutions address a single phase of the modeling lifecycle, such as experiment monitoring, while ignoring other essential tasks, such
 as model deployment.
-{{}}
+{{background}}
 In this paper, we present a software system to facilitate and accelerate the deep learning lifecycle, named ModelKB.
-{{}}
+{{a-design}}
 ModelKB can automatically manage the
 modeling lifecycle end-to-end, including (1) monitoring and tracking experiments; (2) visualizing, searching for, and comparing models and experiments; (3) deploying models locally
 and on the cloud; and (4) sharing and publishing trained models.
-{{}}
+{{design}}
 Moreover, our system provides a stepping-stone for enhanced reproducibility.
-{{}}
+{{design,claim}}
 ModelKB currently supports TensorFlow
 2.0, Keras, and PyTorch, and it can be extended to other deep learning frameworks easily.
-{{}}
+{{design,claim}}
 ---
 
