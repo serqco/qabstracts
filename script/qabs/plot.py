@@ -1,9 +1,8 @@
 import argparse
-import re
+import math
 import traceback
 import typing as tg
 
-import numpy as np
 import pandas as pd
 import matplotlib as mpl
 from matplotlib import pyplot as plt
@@ -50,12 +49,14 @@ def df_primary1(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def df_by_ab(df: pd.DataFrame) -> pd.DataFrame:
-    res = df.groupby(['citekey', 'venue']) \
-        .agg(dict(sidx='max', words='sum', chars='sum', 
+    res = df.groupby(['citekey', 'coder']) \
+        .agg(dict(venue='min', volume='min', coder='min', codername='min',
+                  sidx='max', words='sum', chars='sum', 
                   code='count', topic='nunique', 
                   icount='sum', ucount='sum',
                   is_struc='any'))
-    res.columns = ['sentences', 'words', 'chars', 'codes', 'utopics', 'icount', 'ucount', 
+    res.columns = ['venue', 'volume', 'coder', 'codername',
+                   'sentences', 'words', 'chars', 'codes', 'utopics', 'icount', 'ucount', 
                    'is_struc']
     return res
 
@@ -94,10 +95,14 @@ def print_iu_sum_means(df: pd.DataFrame):
 
 def create_all_plots(datasets: argparse.Namespace, outputdir: str):
     mpl.use('PDF')
-    plot_ab_topicstructure_freqs(datasets.ab_structures, outputdir)
-
+    # plot_ab_topicstructure_freqs(datasets.ab_structures, outputdir)
+    # plot_boxplots(datasets.by_ab, 'words', outputdir)
+    # plot_boxplots(datasets.by_ab, 'icount', outputdir)
+    # plot_boxplots(datasets.by_ab, 'ucount', outputdir)
+    plot_boxplots(datasets.by_ab, 'sentences', outputdir)
 
 def plot_ab_topicstructure_freqs(df: pd.DataFrame, outputdir: str):
+    """Barplot of how often the most common train-of-thought structures occur."""
     freqs = df.topicstructure.value_counts()
     topfreqs = freqs[freqs > 1]
     plt.grid(axis='y', linewidth=0.1)
@@ -110,20 +115,65 @@ def plot_ab_topicstructure_freqs(df: pd.DataFrame, outputdir: str):
     plt.savefig(_plotfilename(outputdir))
 
 
+def plot_boxplots(df: pd.DataFrame, which: tg.Union[str, tg.Tuple[callable, str]], outputdir: str):
+    """Draw boxplots for all abstracts, structured/unstructured ones, and per venue."""
+    #----- prepare data:
+    vals = df[which] if isinstance(which, str) else which[0](df)
+    name_suffix = which if isinstance(which, str) else which[1]
+    groups = df.groupby('venue')
+    wherewhat = [ # the list of boxplots to be made, extended by the loop below:
+                  (1, "all", vals), 
+                  (2.5, "struc", vals[df.is_struc]), (3.5, "unstruc", vals[~df.is_struc]),
+                ]
+    x = 5  # third group of plots starts after a gap
+    for name, group in groups:
+        myvals = vals[group.index]
+        wherewhat.append((x, name, myvals))
+        x += 1
+    #----- configure boxplots:
+    theplot = plt.boxplot([vals for x, lab, vals in wherewhat], 
+                notch=False, whis=(5, 95), 
+                positions=[x for x, lab, vals in wherewhat], 
+                labels=[lab for x, lab, vals in wherewhat], 
+                widths=0.7, capwidths=0.2,
+                showfliers=False, showmeans=True,
+                patch_artist=True, boxprops=dict(facecolor="yellow"),
+                medianprops=dict(color='black'),
+                meanprops=dict(marker='o', markerfacecolor='mediumblue', markeredgecolor='mediumblue'))
+    plt.ylim(bottom=0)
+    plt.grid(axis='y', linewidth=0.1)
+    #----- add "n=123" at the bottom:
+    for x, lab, vals in wherewhat:
+        plt.text(x, 0, "n=%d" % len(vals), 
+                 verticalalignment='bottom', horizontalalignment='center', color='mediumblue', fontsize=8)
+    #----- add error bars for the mean:
+    for x, lab, vals in wherewhat:
+        mymean = vals.mean()
+        se = vals.std() / math.sqrt(len(vals))  # standard error of the mean
+        plt.vlines(x+0.1, mymean-se, mymean+se, 
+                   colors='red', linestyles='solid', linewidth=0.7)
+    plt.savefig(_plotfilename(outputdir, name_suffix=name_suffix))
+
+
 def _funcname(levels_up: int) -> str:
     """The name of the function levels_up levels further up on the stack"""
     return traceback.extract_stack(limit=levels_up+1)[0].name
 
 
 def _nagg(colname, func) -> pd.NamedAgg:
+    """Abbreviation for pd.NamedAgg."""
     return pd.NamedAgg(column=colname, aggfunc=func)
 
 
-def _plotfilename(outputdir: str) -> str:
-    return "%s/%s.pdf" % (outputdir, _funcname(2).replace('plot_', ''))
+def _plotfilename(outputdir: str, name_suffix="") -> str:
+    """Filename derived from function name two stackframes up."""
+    if name_suffix:
+        name_suffix = "_" + name_suffix
+    return "%s/%s%s.pdf" % (outputdir, _funcname(2).replace('plot_', ''), name_suffix)
 
 
 def _printheader():
+    """Print separator header giving the function name from two stackframes up."""
     print("##########", _funcname(2))
 
 
