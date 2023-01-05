@@ -29,4 +29,4 @@ and managers indicated that they found our solution as useful and it provided th
 important insights to help their decision makings.
 {{result:u1}}
 ---
-
+lines 10-13 (i) background because ("Since ... questions") is context for the study and (ii) "this research developed ..." explains how the research is undertaken?  

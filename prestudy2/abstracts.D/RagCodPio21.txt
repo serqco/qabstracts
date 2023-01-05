@@ -16,11 +16,11 @@ the prior empirical work.
 {{method,a-result}}
 First, while looking for specific information, participants’ foraging behaviors were consistent with other foraging
 situations in SE; therefore, prior research on IFT-based SE tool design can be leveraged for VCS.
-{{result}}
+{{result,conclusion}}
 Second, in change awareness foraging,
 participants consumed similar diets, but in subtly different ways than in other situations; this calls for further investigations into change
 awareness foraging.
-{{result,futurework}}
+{{result:i1,futurework}}
 Third, while committing changes, participants attempted to enable future foragers, but the competing needs of
 different foraging situations led to tensions that participants failed to balance:
 {{result}}
@@ -29,6 +29,6 @@ of IFT and SE, namely, creating forageable information.
 {{conclusion,futurework}}
 Finally, the results of using an IFT lens on these data provides some evidence as
 to IFT’s scoping and utility for the version control domain.
-{{result:i1}}
+{{result:i1,conclusion}}
 ---
 
