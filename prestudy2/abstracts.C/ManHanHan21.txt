@@ -13,7 +13,7 @@ years, this surge of work has also made it difficult to gain a comprehensive and
 To help preserve and bring
 coherence to the vast literature of fuzzing, this paper presents a unified, general-purpose model of fuzzing together with a taxonomy of
 the current fuzzing literature.
-{{objective}}
+{{objective,-ignorediff}}
 We methodically explore the design decisions at every stage of our model fuzzer by surveying the related
 literature and innovations in the art, science, and engineering that make modern-day fuzzers effective.
 {{method}}

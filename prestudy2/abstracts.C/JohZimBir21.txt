@@ -5,7 +5,7 @@ the work done.
 {{background}}
 To better understand the factors of the environment that affect productivity and satisfaction of software engineers, we
 explored different work environments at Microsoft.
-{{objective}}
+{{objective, method}}
 We used a mixed-methods, multiple stage research design with a total of 1,159
 participants:
 {{method}}
@@ -13,7 +13,7 @@ two surveys with 297 and 843 responses respectively and interviews with 19 emplo
 {{method}}
 We found several factors that
 were considered as important for work environments:
-{{a-result}}
+{{result}}
 personalization, social norms and signals, room composition and atmosphere,
 work-related environment affordances, work area and furniture, and productivity strategies.
 {{result}}

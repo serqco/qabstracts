@@ -28,18 +28,18 @@ for the software comprehension process at the class (or package) level.
 {{design}}
 First, we introduce two kinds of multilayer software networks to
 describe the topological structure of software at the class level and package level, respectively.
-{{method}}
+{{design}}
 Second, we propose a weighted
 PageRank algorithm to calculate the weighted PageRank value of classes (or packages) in each layer of the corresponding multilayer
 software network.
-{{method}}
+{{design}}
 Then, we use AHP (Analytic Hierarchy Process) to weigh each layer in the corresponding multilayer software network,
 and further aggregate the weighted PageRank value to obtain the global weighted PageRank value for each class (or package).
-{{method}}
+{{design}}
 Finally,
 all the classes (or packages) are ranked according to their global weighted PageRank values in a descending order, and the top-ranked
 classes (or packages) can serve as the starting points for the software comprehension process at the class (or package) level.
-{{method}}
+{{design}}
 ElementRank is validated theoretically using the widely accepted Weyuker’s criteria.
 {{method}}
 Theoretical results show that the global weighted
@@ -47,12 +47,12 @@ PageRank value for classes (or packages) satisfies most of Weyuker’s propertie
 {{result}}
 Furthermore, ElementRank is evaluated empirically
 using a set of twelve open source software systems.
-{{a-result}}
+{{method}}
 Through a set of experiments, we show the rank correlation between the results of
 ElementRank and that of the approaches in the related work, and the benefits of ElementRank are also illustrated in comparison with
 other approaches in the related work.
-{{a-result}}
-Empirical results also show that ElementRank can be applied to large software systems.
 {{result}}
+Empirical results also show that ElementRank can be applied to large software systems.
+{{conclusion}}
 ---
 

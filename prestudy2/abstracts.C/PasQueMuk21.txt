@@ -13,7 +13,7 @@ governing scattering in large and long-living software systems.
 {{background}}
 We present a longitudinal study of feature scattering in the Linux kernel,
 complemented by a survey with 74, and interviews with nine Linux kernel developers.
-{{design}}
+{{method}}
 We analyzed almost eight years of the kernel’s
 history, focusing on its largest subsystem:
 {{method}}
@@ -27,9 +27,9 @@ outliers exist.
 {{result}}
 Scattering often addresses a performance-maintenance tradeoff (alleviating complicated APIs), hardware design
 limitations, and avoids code duplication.
-{{claim}}
+{{background}}
 While developers do not consciously enforce scattering limits, they actually improve the
 system design and refactor code, thereby mitigating pre-processor idiosyncrasies or reducing its use.
-{{result}}
+{{claim,result}}
 ---
 

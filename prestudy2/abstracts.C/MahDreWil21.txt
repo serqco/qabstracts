@@ -20,7 +20,7 @@ toggle practice usage by practitioners.
 {{h-objective,objective}}
 Method We conducted a qualitative analysis of 99 artifacts from the grey literature and 10
 peer-reviewed papers about feature toggles.
-{{h-method}}
+{{h-method,method}}
 We conducted a survey of practitioners from 38
 companies.
 {{method}}

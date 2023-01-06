@@ -16,11 +16,11 @@ practices, and makes it hard to reproduce its results.
 To better understand good and bad
 practices used in the development of real notebooks, in prior work we studied 1.4 million
 notebooks from GitHub.
-{{background}}
+{{objective,background}}
 We presented a detailed analysis of their characteristics that impact
 reproducibility, proposed best practices that can improve the reproducibility, and discussed
 open challenges that require further research and development.
-{{background}}
+{{background,-ignorediff}}
 In this paper, we extended
 the analysis in four different ways to validate the hypothesis uncovered in our original study.
 {{method:u1}}
@@ -45,10 +45,10 @@ patterns we discovered, which provide additional insights into notebook reproduc
 Based on our findings and best practices we proposed, we designed Julynter, a Jupyter
 Lab extension that identifies potential issues in notebooks and suggests modifications that
 improve their reproducibility.
-{{method}}
+{{design}}
 We evaluate Julynter with a remote user experiment with the
 goal of assessing Julynter recommendations and usability.
-{{a-result}}
+{{method}}
 This article belongs to the Topical Collection:
 {{cruft}}
 Mining Software Repositories (MSR)
@@ -66,6 +66,7 @@ Extended author information available on the last page of the article.
 
 {{cruft}}
 ---
+Martin-Gunnar differences: Gunnar sees "We presented a detailed analysis of their characteristics that impact reproducibility, proposed... " as a reference to prior work (previous sentence), not something that relates to the current study
 "... we extended the analysis" should it be "this", as that is implied by the extending?
 "... of what constitutes the dataset" - Huh?
 "... and best practices we proposed" unclear. Is it "we proposed"?

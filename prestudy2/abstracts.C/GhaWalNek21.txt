@@ -10,7 +10,7 @@ arriving at a satisfactory result.
 While there has been a surge in the number of tools and
 frameworks that aim at facilitating deep learning, the process of managing the models
 and their artifacts is still surprisingly challenging and time-consuming.
-{{background}}
+{{background, claim}}
 Existing modelmanagement solutions are either tailored for commercial platforms or require significant
 code changes.
 {{background}}
@@ -22,11 +22,11 @@ In this paper, we present a software system to facilitate and accelerate the dee
 ModelKB can automatically manage the
 modeling lifecycle end-to-end, including (1) monitoring and tracking experiments; (2) visualizing, searching for, and comparing models and experiments; (3) deploying models locally
 and on the cloud; and (4) sharing and publishing trained models.
-{{claim}}
+{{design}}
 Moreover, our system provides a stepping-stone for enhanced reproducibility.
 {{claim}}
 ModelKB currently supports TensorFlow
 2.0, Keras, and PyTorch, and it can be extended to other deep learning frameworks easily.
-{{claim}}
+{{design,claim}}
 ---
 

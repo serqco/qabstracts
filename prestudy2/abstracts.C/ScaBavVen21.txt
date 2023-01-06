@@ -13,13 +13,13 @@ Unfortunately, there are no metrics designed to assess the understandability of 
 {{background}}
 In this work, we perform
 an extensive evaluation of 121 existing as well as new code-related, documentation-related, and developer-related metrics.
-{{design, -hype}}
+{{method}}
 We try to (i)
 correlate each metric with understandability and (ii) build models combining metrics to assess understandability.
 {{method}}
 To do this, we use 444
 human evaluations from 63 developers and we obtained a bold negative result:
-{{method}}
+{{method,result,-ignorediff}}
 none of the 121 experimented metrics is able to capture
 code understandability, not even the ones assumed to assess quality attributes apparently related, such as code readability and
 complexity.
@@ -29,6 +29,6 @@ suitable for practical applications.
 {{result}}
 Finally, we conducted interviews with five professional developers to understand the factors that
 influence their ability to understand code snippets, aiming at identifying possible new metrics.
-{{method}}
+{{method,objective}}
 ---
-
+Usure about this: "... and we obtained a bold negative result:"
