@@ -12,7 +12,7 @@ usage = """Computes derived data and creates plots and stats outputs.
   Creates plots in outputdir.
 """
 
-# Terminology: ab=abstract(s)  df=dataframe  freq=frequency
+# Terminology: ab=abstract(s)  df=dataframe  freq=frequency  struc=structured
 
 def configure_argparser(p_prepare_ann: argparse.ArgumentParser):
     p_prepare_ann.add_argument('datafile',
@@ -50,18 +50,34 @@ def df_primary1(df: pd.DataFrame) -> pd.DataFrame:
     return res
 
 
-def df_by_ab(df: pd.DataFrame) -> pd.DataFrame:
-    res = df.groupby(['citekey', 'coder']) \
-        .agg(dict(venue='min', volume='min', coder='min', codername='min',
-                  sidx='max', words='sum', chars='sum', 
-                  code='count', topic='nunique', 
-                  icount='sum', ucount='sum',
-                  is_struc='any', is_design='any'))
-    res.columns = ['venue', 'volume', 'coder', 'codername',
-                   'sentences', 'words', 'chars', 'codes', 'utopics', 'icount', 'ucount', 
-                   'is_struc', 'is_design']
+def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
+    #----- do basic aggregation from codings to abstracts:
+    res = primary.groupby(['citekey', 'coder']) \
+        .agg(venue=_nagg('venue', 'min'),
+             volume=_nagg('volume', 'min'),
+             codername=_nagg('codername', 'min'),
+             sentences=_nagg('sidx', 'max'),
+             words=_nagg('words', 'sum'), 
+             chars=_nagg('chars', 'sum'), 
+             codes=_nagg('code', 'count'), 
+             utopics=_nagg('topic', 'nunique'),
+             icount=_nagg('icount', 'sum'), 
+             ucount=_nagg('ucount', 'sum'),
+             is_struc=_nagg('is_struc', 'any'), 
+             is_design=_nagg('is_design', 'any'))
+    #----- add derived variables:
+    topicparts = primary.groupby(['citekey', 'coder', 'topic']).agg(
+            topicwords=_nagg('words', 'sum'),
+    )
+    def add_fraction_x(res: pd.DataFrame, x: str) -> pd.DataFrame:
+        res = pd.merge(res, topicparts.query(f"topic=='{x}'"), 'left', on=('citekey','coder'))
+        res = res.rename(columns=dict(topicwords=f'words_{x}'), errors="raise")
+        res[f'fraction_{x}'] = (100 * res[f'words_{x}'] / res.words).fillna(0)
+        return res
+    res = add_fraction_x(res, 'background')
+    res = add_fraction_x(res, 'conclusion')
+    res = add_fraction_x(res, 'other')
     return res
-
 
 def ser_ab_structures(df: pd.DataFrame) -> pd.DataFrame:
     strucs = df[df['topic'] != 'other'] \
@@ -69,7 +85,6 @@ def ser_ab_structures(df: pd.DataFrame) -> pd.DataFrame:
         .aggregate(
             topicstructure=_nagg('topic', firstletters),
             is_struc=_nagg('is_struc', 'any'))
-    # print(strucs)
     return strucs
 
 
@@ -88,7 +103,6 @@ def print_all_stats(datasets: argparse.Namespace):
     # print_abtype_table(datasets.by_ab)
     ...
 
-
 def print_abtype_table(df: pd.DataFrame):
     _printheader()
     res = df.groupby(['is_struc', 'is_design']).count()["venue"]  # pick _any_ 1 column
@@ -98,10 +112,13 @@ def print_abtype_table(df: pd.DataFrame):
 def create_all_plots(datasets: argparse.Namespace, outputdir: str):
     mpl.use('PDF')
     # plot_ab_topicstructure_freqs(datasets.ab_structures, outputdir)
-    plot_boxplots(datasets.by_ab, 'words', outputdir)
-    plot_boxplots(datasets.by_ab, 'icount', outputdir, ymax=10)
-    plot_boxplots(datasets.by_ab, 'ucount', outputdir, ymax=10)
-    plot_boxplots(datasets.by_ab, 'sentences', outputdir, ymax=20)
+    # plot_boxplots(datasets.by_ab, 'words', outputdir)
+    # plot_boxplots(datasets.by_ab, 'icount', outputdir, ymax=10)
+    # plot_boxplots(datasets.by_ab, 'ucount', outputdir, ymax=10)
+    # plot_boxplots(datasets.by_ab, 'sentences', outputdir, ymax=20)
+    plot_boxplots(datasets.by_ab, 'fraction_background', outputdir, ymax=100)
+    plot_boxplots(datasets.by_ab, 'fraction_conclusion', outputdir, ymax=100)
+    plot_boxplots(datasets.by_ab, 'fraction_other', outputdir, ymax=100)
 
 def plot_ab_topicstructure_freqs(df: pd.DataFrame, outputdir: str):
     """Barplot of how often the most common train-of-thought structures occur."""
