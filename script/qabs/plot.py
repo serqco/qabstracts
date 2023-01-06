@@ -43,8 +43,10 @@ def create_all_datasets(df: pd.DataFrame):
 
 
 def df_primary1(df: pd.DataFrame) -> pd.DataFrame:
-    res = df.query('words > 0').copy()  # no auxiliary codes
+    """Input data w/o 'extra' codes, plus some helper columns"""
+    res = df.query('words > 0').copy()  # suppress the auxiliary codes (extra codes)
     res['is_struc'] = res.code.str.contains('^h-')  # per-sentence entry, must be aggregated
+    res['is_design'] = res.code == 'design'  # per-sentence entry, must be aggregated
     return res
 
 
@@ -54,10 +56,10 @@ def df_by_ab(df: pd.DataFrame) -> pd.DataFrame:
                   sidx='max', words='sum', chars='sum', 
                   code='count', topic='nunique', 
                   icount='sum', ucount='sum',
-                  is_struc='any'))
+                  is_struc='any', is_design='any'))
     res.columns = ['venue', 'volume', 'coder', 'codername',
                    'sentences', 'words', 'chars', 'codes', 'utopics', 'icount', 'ucount', 
-                   'is_struc']
+                   'is_struc', 'is_design']
     return res
 
 
@@ -83,26 +85,27 @@ def firstletters(vals: pd.Series) -> str:
 
 
 def print_all_stats(datasets: argparse.Namespace):
-    print_iu_sum_means(datasets.by_ab)
+    # print_abtype_table(datasets.by_ab)
+    ...
 
 
-def print_iu_sum_means(df: pd.DataFrame):
+def print_abtype_table(df: pd.DataFrame):
     _printheader()
-    res = df.groupby('is_struc').agg(dict(icount=['mean', 'median', 'max'], 
-                                          ucount=['mean', 'median', 'max']))
+    res = df.groupby(['is_struc', 'is_design']).count()["venue"]  # pick _any_ 1 column
     print(res)
 
 
 def create_all_plots(datasets: argparse.Namespace, outputdir: str):
     mpl.use('PDF')
     # plot_ab_topicstructure_freqs(datasets.ab_structures, outputdir)
-    # plot_boxplots(datasets.by_ab, 'words', outputdir)
-    # plot_boxplots(datasets.by_ab, 'icount', outputdir)
-    # plot_boxplots(datasets.by_ab, 'ucount', outputdir)
-    plot_boxplots(datasets.by_ab, 'sentences', outputdir)
+    plot_boxplots(datasets.by_ab, 'words', outputdir)
+    plot_boxplots(datasets.by_ab, 'icount', outputdir, ymax=10)
+    plot_boxplots(datasets.by_ab, 'ucount', outputdir, ymax=10)
+    plot_boxplots(datasets.by_ab, 'sentences', outputdir, ymax=20)
 
 def plot_ab_topicstructure_freqs(df: pd.DataFrame, outputdir: str):
     """Barplot of how often the most common train-of-thought structures occur."""
+    plt.figure()
     freqs = df.topicstructure.value_counts()
     topfreqs = freqs[freqs > 1]
     plt.grid(axis='y', linewidth=0.1)
@@ -115,32 +118,34 @@ def plot_ab_topicstructure_freqs(df: pd.DataFrame, outputdir: str):
     plt.savefig(_plotfilename(outputdir))
 
 
-def plot_boxplots(df: pd.DataFrame, which: tg.Union[str, tg.Tuple[callable, str]], outputdir: str):
+def plot_boxplots(df: pd.DataFrame, which: str, outputdir: str, *, ymax=None):
     """Draw boxplots for all abstracts, structured/unstructured ones, and per venue."""
     #----- prepare data:
-    vals = df[which] if isinstance(which, str) else which[0](df)
-    name_suffix = which if isinstance(which, str) else which[1]
+    vals = df[which]
     groups = df.groupby('venue')
     wherewhat = [ # the list of boxplots to be made, extended by the loop below:
                   (1, "all", vals), 
-                  (2.5, "struc", vals[df.is_struc]), (3.5, "unstruc", vals[~df.is_struc]),
+                  (2.5, "struc", vals[df.is_struc & ~df.is_design]),
+                  (3.5, "unstruc", vals[~df.is_struc & ~df.is_design]),
+                  (4.5, "design", vals[df.is_design]),
                 ]
-    x = 5  # third group of plots starts after a gap
+    x = 6  # third group of plots starts after a gap
     for name, group in groups:
-        myvals = vals[group.index]
-        wherewhat.append((x, name, myvals))
+        wherewhat.append((x, name, vals[group.index]))
         x += 1
     #----- configure boxplots:
-    theplot = plt.boxplot([vals for x, lab, vals in wherewhat], 
-                notch=False, whis=(5, 95), 
-                positions=[x for x, lab, vals in wherewhat], 
-                labels=[lab for x, lab, vals in wherewhat], 
-                widths=0.7, capwidths=0.2,
-                showfliers=False, showmeans=True,
-                patch_artist=True, boxprops=dict(facecolor="yellow"),
-                medianprops=dict(color='black'),
-                meanprops=dict(marker='o', markerfacecolor='mediumblue', markeredgecolor='mediumblue'))
-    plt.ylim(bottom=0)
+    plt.figure()
+    plt.boxplot([vals for x, lab, vals in wherewhat], 
+            notch=False, whis=(5, 95), 
+            positions=[x for x, lab, vals in wherewhat], 
+            labels=[lab for x, lab, vals in wherewhat], 
+            widths=0.7, capwidths=0.2,
+            showfliers=False, showmeans=True,
+            patch_artist=True, boxprops=dict(facecolor="yellow"),
+            medianprops=dict(color='black'),
+            meanprops=dict(marker='o', markerfacecolor='mediumblue', markeredgecolor='mediumblue'))
+    plt.ylim(bottom=0, top=ymax)
+    plt.ylabel(which)
     plt.grid(axis='y', linewidth=0.1)
     #----- add "n=123" at the bottom:
     for x, lab, vals in wherewhat:
@@ -152,7 +157,7 @@ def plot_boxplots(df: pd.DataFrame, which: tg.Union[str, tg.Tuple[callable, str]
         se = vals.std() / math.sqrt(len(vals))  # standard error of the mean
         plt.vlines(x+0.1, mymean-se, mymean+se, 
                    colors='red', linestyles='solid', linewidth=0.7)
-    plt.savefig(_plotfilename(outputdir, name_suffix=name_suffix))
+    plt.savefig(_plotfilename(outputdir, name_suffix=which))
 
 
 def _funcname(levels_up: int) -> str:
