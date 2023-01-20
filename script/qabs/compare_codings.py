@@ -28,7 +28,7 @@ def compare_codings(maxcountdiff: int, workdir: str):
     print("=========================================================================================")
     for coder in sorted(what.coders):
         print(f"\n\n#################### {coder}'s: ####################\n")
-        for file1, coder1, file2, coder2 in what.pairs_of(coder):
+        for file1, coder1, file2, coder2 in what.pairs:
             if coder in (coder1, coder2):
                 msgcount += compare_files(file1, coder1, file2, coder2, maxcountdiff, annots)
     sys.exit(msgcount)  # 0 if no errors, number of errors otherwise

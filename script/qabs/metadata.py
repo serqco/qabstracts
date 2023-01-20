@@ -91,8 +91,8 @@ class WhoWhat:
                     continue  # reservations are non-entries
                 self.coders.add(coder)
                 self._coder_of[self._implied_filename(citekey, index)] = coder
-            #--- collect filepair entries:
-            for next_pair in self._build_pairs(citekey, columns):
+            #--- collect filepair entries, using either _build_pairs_with_A oder _build_neighboring_pairs:
+            for next_pair in self._build_pairs_with_A(citekey, columns):
                 self._pairs.append(next_pair)
 
     def citekey(self, filename: str) -> str:
@@ -113,7 +113,8 @@ class WhoWhat:
     def is_reservation(self, codername: str) -> bool:
         return codername.startswith('-')
 
-    def pairs_of(self, coder: str) -> tg.Generator[str, None, None]:
+    @property
+    def pairs(self) -> tg.Generator[str, None, None]:
         for file1, coder1, file2, coder2 in self._pairs:
             if not self.is_reservation(coder1) and not self.is_reservation(coder2):
                 yield (file1, coder1, file2, coder2)
@@ -123,14 +124,12 @@ class WhoWhat:
         char = chr(ord('A') + columnindex)  # 26 columns maximum (we'll never need more than 10)
         return f"{self.workdir}/abstracts.{char}/{citekey}.txt"
 
-    def _build_pairs(self, citekey: str, columns: tg.Sequence[str]) -> tg.Generator[Filepair, None, None]:
+    def _build_neighboring_pairs(self, citekey: str, columns: tg.Sequence[str]) -> tg.Generator[Filepair, None, None]:
         """
-        Generator for pairs of non-reservation entries in the columns; need not be adjacent.
+        Generator for pairs of neighboring entries A/B, C/D etc. (whether reservation or not).
         """
         firstentry = None  # we return a pair whenever we have a first and find another entry
         for index, coder in enumerate(columns):
-            if self.is_reservation(coder):
-                continue
             if firstentry:
                 mypair = (firstentry[0], firstentry[1], self._implied_filename(citekey, index), coder)
                 firstentry = None
@@ -138,3 +137,12 @@ class WhoWhat:
             else:
                 firstentry = (self._implied_filename(citekey, index), coder)
         # firstentry may be set when the loop finishes, leaving an unpaired entry. C'est la vie!
+
+    def _build_pairs_with_A(self, citekey: str, columns: tg.Sequence[str]) -> tg.Generator[Filepair, None, None]:
+        """
+        Generator for pairs A/B, A/C, A/D etc. (whether reservation or not).
+        """
+        coder_A = columns[0]
+        file_of_A = self._implied_filename(citekey, 0)
+        for index, coder in enumerate(columns[1:]):
+            yield (file_of_A, coder_A, self._implied_filename(citekey, index+1), coder)
