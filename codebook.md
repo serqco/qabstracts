@@ -1,7 +1,7 @@
 # Codebook and coding rules for qabstracts study
 
 created: Lutz Prechelt, 2022-07-14  
-changed: Lutz Prechelt, 2022-12-29
+changed: Lutz Prechelt, 2023-01-20
 
 
 ## 1. Coding rules: Fundamentals
@@ -108,6 +108,8 @@ The above list sketches the default structure of a structured abstract.
   A statement announcing (hence the `a-`) that the article body will 
   contain information of the `<xyz>` type, 
   but this and the next sentence do not contain such information.
+  Besides explicit announcements there may be implicit ones, 
+  so watch out where there is indeed no useful information in a sentence. 
   - code `a-background` (hopefully never to be seen)
   - code `a-claim` (hopefully never to be seen)
   - code `a-conclusion`
@@ -116,7 +118,9 @@ The above list sketches the default structure of a structured abstract.
   - code `a-limitation`
   - code `a-method` (e.g. "We describe the approach used for our survey.")
   - code `a-objective`
-  - code `a-result` (e.g. "We report on our empirical results in detail.")
+  - code `a-result` (e.g. "We report on our empirical results in detail.",
+    "For various parameters, we study the correlations."
+    In some contexts, the latter could also be `a-method` or `method`.)
   - code `a-resourcepointer`
 - codes of the form `h-<xyz>` designate internal headings that occur in structured abstracts: 
   A section intro term "<Xyz>:" or some synonym of that,
