@@ -1,0 +1,37 @@
+Learning from what we know: How to perform vulnerability prediction using noisy historical data.
+
+Vulnerability prediction refers to the problem of identifying system components that are
+most likely to be vulnerable.
+{{}}
+Typically, this problem is tackled by training binary classifiers
+on historical data.
+{{}}
+Unfortunately, recent research has shown that such approaches underperform due to the following two reasons:
+{{}}
+a) the imbalanced nature of the problem, and b) the
+inherently noisy historical data, i.e., most vulnerabilities are discovered much later than they
+are introduced.
+{{}}
+This misleads classifiers as they learn to recognize actual vulnerable components as non-vulnerable.
+{{}}
+To tackle these issues, we propose TROVON, a technique that
+learns from known vulnerable components rather than from vulnerable and non-vulnerable
+components, as typically performed.
+{{}}
+We perform this by contrasting the known vulnerable,
+and their respective fixed components.
+{{}}
+This way, TROVON manages to learn from the things
+we know, i.e., vulnerabilities, hence reducing the effects of noisy and unbalanced data.
+{{}}
+We
+evaluate TROVON by comparing it with existing techniques on three security-critical open
+source systems, i.e., Linux Kernel, OpenSSL, and Wireshark, with historical vulnerabilities that have been reported in the National Vulnerability Database (NVD).
+{{}}
+Our evaluation
+demonstrates that the prediction capability of TROVON significantly outperforms existing
+vulnerability prediction techniques such as Software Metrics, Imports, Function Calls, Text
+Mining, Devign, LSTM, and LSTM-RF with an improvement of 40.84% in Matthews Correlation Coefficient (MCC) score under Clean Training Data Settings, and an improvement
+of 35.52% under Realistic Training Data Settings.
+{{}}
+---

@@ -1,0 +1,97 @@
+BEDIVFUZZ: Integrating Behavioral Diversity into Generator-based Fuzzing.
+
+A popular metric to evaluate the performance of fuzzers is branch
+coverage.
+{{}}
+However, we argue that focusing solely on covering many
+different branches (i.e., the richness) is not sufficient since the ma-
+jority of the covered branches may have been exercised only once,
+which does not inspire a high confidence in the reliability of the
+covered code.
+{{}}
+Instead, the distribution of the executed branches
+(i.e., the evenness) should also be considered.
+{{}}
+That is, behavioral
+diversity is only given if the generated inputs not only trigger
+many different branches, but also trigger them evenly often with
+diverse inputs.
+{{}}
+We introduce BeDivFuzz, a feedback-driven fuzzing
+technique for generator-based fuzzers.
+{{}}
+BeDivFuzz distinguishes
+between structure-preserving and structure-changing mutations in
+the space of syntactically valid inputs, and biases its mutation strat-
+egy towards validity and behavioral diversity based on the received
+program feedback.
+{{}}
+We have evaluated BeDivFuzz on Ant, Maven,
+Rhino, Closure, Nashorn, and Tomcat.
+{{}}
+The results show that Be-
+DivFuzz achieves better behavioral diversity than the state of the
+art, measured by established biodiversity metrics, namely the Hill
+numbers, from the field of ecology.
+{{}}
+KEYWORDS
+Structure-aware fuzzing, behavioral diversity, random testing
+ACM Reference Format:
+{{}}
+Hoang Lam Nguyen and Lars Grunske.
+{{}}
+2022.
+{{}}
+BeDivFuzz:
+{{}}
+Integrating Behav-
+ioral Diversity into Generator-based Fuzzing.
+{{}}
+In 44th International Confer-
+ence on Software Engineering (ICSE ’22), May 21–29, 2022, Pittsburgh, PA, USA.
+{{}}
+ACM, New York, NY, USA, 13 pages.
+{{}}
+https://doi.org/10.1145/3510003.3510182
+1
+Traditionally, fuzzing tools (e.g., [9, 26, 33, 34, 43, 47, 53]) have
+been used to evaluate the software under test (SUT) with respect
+to security and robustness properties.
+{{}}
+Typically, vulnerabilities are
+found by feeding the SUT malformed inputs, potentially resulting
+in unexpected program behavior, which can be identified using
+e.g., memory and safety oracles [29, 37, 41].
+{{}}
+Since most of the
+vulnerabilities emerge due to incorrect handling of unexpected
+inputs, security-oriented fuzzers usually target the input parsing
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for components of this work owned by others than ACM
+must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Association for Computing Machinery.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3510182
+{{}}
+---

@@ -1,0 +1,90 @@
+Ambiguity in user stories: A systematic literature review.
+
+Information and Software Technology 145 (2022) 106824
+
+Contents lists available at ScienceDirect
+
+Information and Software Technology
+journal homepage:
+{{}}
+www.elsevier.com/locate/infsof
+
+Ambiguity in user stories:
+{{}}
+A systematic literature review
+Anis R.
+{{}}
+Amna a, b, *, Geert Poels a, c
+a
+
+Department of Business Informatics and Operations Management, Ghent University, Belgium
+Department of Informatics Engineering, University of 17 Agustus 1945 Surabaya, Indonesia
+c
+FlandersMake@UGent – corelab CVAMO, Ghent, Belgium
+b
+
+A R T I C L E I N F O
+
+A B S T R A C T
+
+Keywords:
+{{}}
+Requirements engineering
+Agile software development
+User story
+Ambiguity
+Systematic Literature Review
+
+Context:
+{{}}
+Ambiguity in user stories is a problem that has received little research attention.
+{{}}
+Due to the absence of
+review studies, it is not known how and to what extent this problem, which impacts the effectiveness of user
+stories in supporting systems development, has been solved.
+{{}}
+Objectives:
+{{}}
+We review the studies that investigate or develop solutions for problems related to ambiguity in user
+stories.
+{{}}
+We investigate how these problems manifest themselves, what their causes and consequences are, what
+solutions have been proposed and what evidence of their effectiveness has been presented.
+{{}}
+Based on the insights
+we obtain from this review, we identify research gaps and suggest opportunities for future research.
+{{}}
+Methods:
+{{}}
+We followed Systematic Literature Review guidelines to review problems investigated, solutions pro­
+posed, and validation/evaluation methods used.
+{{}}
+We classified the reviewed studies according to the four lin­
+guistic levels of ambiguity (i.e., lexical, syntactic, semantic, pragmatic) proposed by Berry and Kamsties to obtain
+insights from patterns that we observe in the classification of problems and solutions.
+{{}}
+Results:
+{{}}
+A total of 36 studies published in 2001–2020 investigated ambiguity in user stories.
+{{}}
+Based on four
+patterns we discern, we identify three research gaps.
+{{}}
+First, we need more research on human behaviors and
+cognitive factors causing ambiguity.
+{{}}
+Second, ambiguity is seldom studied as a problem of a set of related user
+stories, like a theme or epic in Scrum.
+{{}}
+Third, there is a lack of holistic solution approaches that consider am­
+biguity at multiple linguistic levels.
+{{}}
+Conclusion:
+{{}}
+Ambiguity in user stories is a known problem.
+{{}}
+However, a comprehensive solution for addressing
+ambiguity in a set of related user stories as it manifests itself at different linguistic levels as a cognitive problem is
+lacking.
+{{}}
+---

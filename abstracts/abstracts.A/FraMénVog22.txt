@@ -1,0 +1,56 @@
+How do Practitioners Perceive the Relevance of Requirements Engineering Research?
+
+Context:
+{{}}
+The relevance of Requirements Engineering (RE) research to practitioners is vital for a long-term dissemination of
+research results to everyday practice.
+{{}}
+Some authors have speculated about a mismatch between research and practice in the RE
+discipline.
+{{}}
+However, there is not much evidence to support or refute this perception.
+{{}}
+Objective:
+{{}}
+This article presents the results of a
+study aimed at gathering evidence from practitioners about their perception of the relevance of RE research and at understanding the
+factors that influence that perception.
+{{}}
+Method:
+{{}}
+We conducted a questionnaire-based survey of industry practitioners with expertise in
+RE.
+{{}}
+The participants rated the perceived relevance of 435 scientific papers presented at five top RE-related conferences.
+{{}}
+Results:
+{{}}
+The
+153 participants provided a total of 2,164 ratings.
+{{}}
+The practitioners rated RE research as essential or worthwhile in a majority of cases.
+{{}}
+However, the percentage of non-positive ratings is still higher than we would like.
+{{}}
+Among the factors that affect the perception of
+relevance are the research’s links to industry, the research method used, and respondents’ roles.
+{{}}
+The reasons for positive perceptions
+were primarily related to the relevance of the problem and the soundness of the solution, while the causes for negative perceptions
+were more varied.
+{{}}
+The respondents also provided suggestions for future research, including topics researchers have studied for
+decades, like elicitation or requirement quality criteria.
+{{}}
+Conclusions:
+{{}}
+The study is valuable for both researchers and practitioners.
+{{}}
+Researchers can use the reasons respondents gave for positive and negative perceptions and the suggested research topics to help
+make their research more appealing to practitioners and thus more prone to industry adoption.
+{{}}
+Practitioners can benefit from the overall
+view of contemporary RE research by learning about research topics that they may not be familiar with, and compare their perception
+with those of their colleagues to self-assess their positioning towards more academic research.
+{{}}
+---

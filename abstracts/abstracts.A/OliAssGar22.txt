@@ -1,0 +1,47 @@
+Developers&apos; perception matters: machine learning to detect developer-sensitive smells.
+
+Code smells are symptoms of poor design that hamper software evolution and maintenance.
+{{}}
+Hence, code smells should be detected as early as possible to avoid software quality degradation.
+{{}}
+However, the notion of whether a design and/or implementation choice is smelly
+is subjective, varying for different projects and developers.
+{{}}
+In practice, developers may
+have different perceptions about the presence (or not) of a smell, which we call developersensitive smell detection.
+{{}}
+Although Machine Learning (ML) techniques are promising to
+detect smells, there is little knowledge regarding the accuracy of these techniques to detect
+developer-sensitive smells.
+{{}}
+Besides, companies may change developers frequently, and the
+models should adapt quickly to the preferences of new developers, i.e., using few training
+instances.
+{{}}
+Based on that, we present an investigation of the behavior of ML techniques in
+detecting developer-sensitive smells.
+{{}}
+We evaluated seven popular ML techniques based on
+their accuracy and efficiency for identifying 10 smell types according to individual perceptions of 63 developers, with some divergent agreement on the presence of smells.
+{{}}
+The
+results showed that five out of seven techniques had statistically similar behavior, being
+able to properly detect smells.
+{{}}
+However, the accuracy of all ML techniques was affected by
+developers’ opinion agreement and smell types.
+{{}}
+We also observed that the detection rules
+generated for developers individually have more metrics than in related studies.
+{{}}
+We can
+conclude that code smells detection tools should consider the individual perception of each
+developer to reach higher accuracy.
+{{}}
+However, untrained developers or developers with high
+disagreement can introduce bias in the smell detection, which can be risky for overall software quality.
+{{}}
+Moreover, our findings shed light on improving the state of the art and practice
+for the detection of code smells, contributing to multiple stakeholders.
+{{}}
+---

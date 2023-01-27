@@ -1,0 +1,97 @@
+Generating and Visualizing Trace Link Explanations.
+
+Recent breakthroughs in deep-learning (DL) approaches have re-
+sulted in the dynamic generation of trace links that are far more
+accurate than was previously possible.
+{{}}
+However, DL-generated
+links lack clear explanations, and therefore non-experts in the do-
+main can find it difficult to understand the underlying semantics of
+the link, making it hard for them to evaluate the link’s correctness
+or suitability for a specific software engineering task.
+{{}}
+In this paper
+we present a novel NLP pipeline for generating and visualizing
+trace link explanations.
+{{}}
+Our approach identifies domain-specific
+concepts, retrieves a corpus of concept-related sentences, mines
+concept definitions and usage examples, and identifies relations be-
+tween cross-artifact concepts in order to explain the links.
+{{}}
+It applies
+a post-processing step to prioritize the most likely acronyms and
+definitions and to eliminate non-relevant ones.
+{{}}
+We evaluate our
+approach using project artifacts from three different domains of
+interstellar telescopes, positive train control, and electronic health-
+care systems, and then report coverage, correctness, and potential
+utility of the generated definitions.
+{{}}
+We design and utilize an expla-
+nation interface which leverages concept definitions and relations
+to visualize and explain trace link rationales, and we report results
+from a user study that was conducted to evaluate the effectiveness
+of the explanation interface.
+{{}}
+Results show that the explanations
+presented in the interface helped non-experts to understand the
+underlying semantics of a trace link and improved their ability to
+vet the correctness of the link.
+{{}}
+KEYWORDS
+Software traceability, explanation interface, concept mining
+ACM Reference Format:
+{{}}
+Yalin Liu, Jinfeng Lin, Oghenemaro Anuyah, Ronald Metoyer, Jane Cleland-
+Huang .
+{{}}
+2022.
+{{}}
+Generating and Visualizing Trace Link Explanations.
+{{}}
+In
+44th International Conference on Software Engineering (ICSE ’22), May 21–
+29, 2022, Pittsburgh, PA, USA.
+{{}}
+ACM, New York, NY, USA, 12 pages.
+{{}}
+https:
+{{}}
+//doi.org/10.1145/3510003.3510129
+1
+Software traceability establishes connections between related arti-
+facts, and then utilizes those links to support numerous software
+engineering tasks such as safety assurance, impact analysis, and
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for components of this work owned by others than the
+author(s) must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior specific permission
+and/or a fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Copyright held by the owner/author(s).
+{{}}
+Publication rights licensed to ACM.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3510129
+{{}}
+---

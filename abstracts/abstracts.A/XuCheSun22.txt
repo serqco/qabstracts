@@ -1,0 +1,48 @@
+Memory-Safety Challenge Considered Solved? An In-Depth Study with All Rust CVEs.
+
+Memory-Safety Challenge Considered Solved?
+{{}}
+An In-Depth
+Study with All Rust CVEs
+HUI XU, School of Computer Science, Fudan University
+ZHUANGBIN CHEN, Department of CSE, The Chinese University of Hong Kong
+MINGSHEN SUN, Baidu Security
+YANGFAN ZHOU, School of Computer Science, Fudan University and Shanghai Key Laboratory
+of Intelligent Information Processing
+MICHAEL R.
+{{}}
+LYU, Department of CSE, The Chinese University of Hong Kong
+Rust is an emerging programming language that aims at preventing memory-safety bugs without sacrificing
+much efficiency.
+{{}}
+The claimed property is very attractive to developers, and many projects start using the
+language.
+{{}}
+However, can Rust achieve the memory-safety promise?
+{{}}
+This article studies the question by
+surveying 186 real-world bug reports collected from several origins, which contain all existing Rust common
+vulnerability and exposures (CVEs) of memory-safety issues by 2020-12-31.
+{{}}
+We manually analyze each bug
+and extract their culprit patterns.
+{{}}
+Our analysis result shows that Rust can keep its promise that all memorysafety bugs require unsafe code, and many memory-safety bugs in our dataset are mild soundness issues
+that only leave a possibility to write memory-safety bugs without unsafe code.
+{{}}
+Furthermore, we summarize
+three typical categories of memory-safety bugs, including automatic memory reclaim, unsound function, and
+unsound generic or trait.
+{{}}
+While automatic memory claim bugs are related to the side effect of Rust newlyadopted ownership-based resource management scheme, unsound function reveals the essential challenge of
+Rust development for avoiding unsound code, and unsound generic or trait intensifies the risk of introducing
+unsoundness.
+{{}}
+Based on these findings, we propose two promising directions toward improving the security
+of Rust development, including several best practices of using specific APIs and methods to detect particular
+bugs involving unsafe code.
+{{}}
+Our work intends to raise more discussions regarding the memory-safety issues
+of Rust and facilitate the maturity of the language.
+{{}}
+---

@@ -1,0 +1,41 @@
+Self-Admitted Technical Debt and comments&apos; polarity: an empirical study.
+
+Self-Admitted Technical Debt (SATD) consists of annotations—typically, but not only,
+source code comments—pointing out incomplete features, maintainability problems, or, in
+general, portions of a program not-ready yet.
+{{}}
+The way a SATD comment is written, and
+specifically its polarity, may be a proxy indicator of the severity of the problem and, to some
+extent, of the priority with which it should be addressed.
+{{}}
+In this paper, we study the relationship between different types of SATD comments in source code and their polarity, to
+understand in which circumstances (and why) developers use negative or rather neutral comments to highlight an SATD.
+{{}}
+To address this goal, we combine a manual analysis of 1038
+SATD comments from a curated dataset with a survey involving 46 professional developers.
+{{}}
+First of all, we categorize SATD content into its types.
+{{}}
+Then, we study the extent to which
+developers express negative sentiment in different types of SATD as a proxy for priority,
+and whether they believe this can be considered as an acceptable practice.
+{{}}
+Finally, we look
+at whether such annotations contain additional details such as bug references and developers’ names/initials.
+{{}}
+Results of the study indicate that SATD comments are mainly used
+for annotating poor implementation choices (41%) and partially implemented functionality (22%).
+{{}}
+The latter may depend from “waiting” for other features being implemented,
+and this makes SATD comments more negatives than in other cases.
+{{}}
+Around 30% of the
+survey respondents agree on using/interpreting negative sentiment as a proxy for priority,
+while 50% of them indicate that it would be better to discuss SATD on issue trackers and
+not in the source code.
+{{}}
+However, while our study indicates that open-source developers use
+links to external systems, such as bug identifiers, to annotate high-priority SATD, better tool
+support is required for SATD management.
+{{}}
+---

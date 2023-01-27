@@ -1,0 +1,47 @@
+TraceSim: An Alignment Method for Computing Stack Trace Similarity.
+
+Software systems can automatically submit crash reports to a repository for investigation
+when program failures occur.
+{{}}
+A significant portion of these crash reports are duplicate, i.e.,
+they are caused by the same software issue.
+{{}}
+Therefore, if the volume of submitted reports is
+very large, automatic grouping of duplicate crash reports can significantly ease and speed up
+analysis of software failures.
+{{}}
+This task is known as crash report deduplication.
+{{}}
+Given a huge
+volume of incoming reports, increasing quality of deduplication is an important task.
+{{}}
+The
+majority of studies address it via information retrieval or sequence matching methods based
+on the similarity of stack traces from two crash reports.
+{{}}
+While information retrieval methods disregard the position of a frame in a stack trace, the existing works based on sequence
+matching algorithms do not fully consider subroutine global frequency and unmatched
+frames.
+{{}}
+Besides, due to data distribution differences among software projects, parameters
+that are learned using machine learning algorithms are necessary to provide more flexibility
+to the methods.
+{{}}
+In this paper, we propose TraceSim – an approach for crash report deduplication which combines TF-IDF, optimum global alignment, and machine learning (ML)
+in a novel way.
+{{}}
+Moreover, we propose a new evaluation methodology for this task that is
+more comprehensive and robust than previously used evaluation approaches.
+{{}}
+TraceSim significantly outperforms seven baselines and state-of-the-art methods in the majority of the
+scenarios.
+{{}}
+It is the only approach that achieves competitive results on all datasets regarding
+all considered metrics.
+{{}}
+Moreover, we conduct an extensive ablation study that demonstrates
+the importance of each TraceSim’s element to its final performance and robustness.
+{{}}
+Finally,
+{{}}
+---

@@ -1,0 +1,62 @@
+Experimental Evaluation of Test-Driven Development With Interns Working on a Real Industrial Project.
+
+Context:
+{{}}
+There is still little evidence on differences between Test-Driven Development and Test-Last Development,
+especially for real-world projects, so their impact on code/test quality is an ongoing research trend.
+{{}}
+An empirical comparison is
+presented, with 19 participants working on an industrial project developed for an energy market software company, implementing realworld requirements for one of the company’s customers.
+{{}}
+Objective:
+{{}}
+Examine the impact of TDD and TLD on quality of the code and the
+tests.
+{{}}
+The aim is to evaluate if there is a significant difference in external code quality and test quality between these techniques.
+{{}}
+Method:
+{{}}
+The experiment is based on a randomized within-subjects block design, with participants working for three months on the
+same requirements using different techniques, changed from week to week, within three different competence blocks:
+{{}}
+Intermediate,
+Novice and Mixed.
+{{}}
+The resulting code was verified for process conformance.
+{{}}
+The participants developed only business logic and were
+separated from infrastructural concerns.
+{{}}
+A separate group of code repositories was used to work without unit tests, to verify that the
+requirements were not too easy for the participants.
+{{}}
+Also, it was analysed if there is any difference between the code created by shared
+efforts of developers with different competences and the code created by participants isolated in the competence blocks.
+{{}}
+The resulting
+implementations had LOC order of magnitude of 10k.
+{{}}
+Results:
+{{}}
+Statistically significant advantage of TDD in terms of external code
+quality (1.8 fewer bugs) and test quality (5 percentage points higher) than TLD.
+{{}}
+Additionally, TDD narrows the gap in code coverage
+between developers from different competence blocks.
+{{}}
+At the same time, TDD proved to have a considerable entry barrier and was
+hard to follow strictly, especially by Novices.
+{{}}
+Still, no significant difference w.r.t.
+{{}}
+code coverage has been observed between the
+Intermediate and the Novice developers - as opposed to TLD, which was easier to follow.
+{{}}
+Lastly, isolating the Intermediate developers
+from the Novices had significant impact on the code quality.
+{{}}
+Conclusion:TDD is a recommended technique for software projects with a
+long horizon or when it is critical to minimize the number of bugs and achieve high code coverage.
+{{}}
+---

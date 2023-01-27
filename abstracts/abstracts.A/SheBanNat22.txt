@@ -1,0 +1,91 @@
+DeepAnalyze: Learning to Localize Crashes at Scale.
+
+Crash localization, an important step in debugging crashes, is chal-
+lenging when dealing with an extremely large number of diverse
+applications and platforms and underlying root causes.
+{{}}
+Large-scale
+error reporting systems, e.g., Windows Error Reporting (WER),
+commonly rely on manually developed rules and heuristics to lo-
+calize blamed frames causing the crashes.
+{{}}
+As new applications and
+features are routinely introduced and existing applications are run
+under new environments, developing new rules and maintaining
+existing ones become extremely challenging.
+{{}}
+We propose a data-driven solution to address the problem.
+{{}}
+We
+start with the first large-scale empirical study of 362𝐾 crashes and
+their blamed methods reported to WER by tens of thousands of ap-
+plications running in the field.
+{{}}
+The analysis provides valuable in-
+sights on where and how the crashes happen and what methods to
+blame for the crashes.
+{{}}
+These insights enable us to develop Deep-
+Analyze, a novel multi-task sequence labeling approach for identi-
+fying blamed frames in stack traces.
+{{}}
+We evaluate our model with
+over a million real-world crashes from four popular Microsoft ap-
+plications and show that DeepAnalyze, trained with crashes from
+one set of applications, not only accurately localizes crashes of the
+same applications, but also bootstrap crash localization for other
+applications with zero to very little additional training data.
+{{}}
+ACM Reference Format:
+{{}}
+Manish Shetty, Chetan Bansal, Suman Nath, Sean Bowles, Henry Wang,
+Ozgur Arman, and Siamak Ahari.
+{{}}
+2022.
+{{}}
+DeepAnalyze:
+{{}}
+Learning to Localize
+Crashes at Scale.
+{{}}
+In 44th International Conference on Software Engineering
+(ICSE ’22), May 21–29, 2022, Pittsburgh, PA, USA.
+{{}}
+ACM, New York, NY, USA,
+12 pages.
+{{}}
+https://doi.org/10.1145/3510003.3512759
+1
+When software crashes in the wild, often the primary sources of
+information available for debugging are crash stacks – stack traces
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for components of this work owned by others than the
+author(s) must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior specific permission
+and/or a fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Copyright held by the owner/author(s).
+{{}}
+Publication rights licensed to ACM.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3512759
+{{}}
+---

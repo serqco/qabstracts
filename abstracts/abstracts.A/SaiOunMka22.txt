@@ -1,0 +1,38 @@
+Detecting Continuous Integration Skip Commits Using Multi-Objective Evolutionary Search.
+
+Continuous Integration (CI) consists of integrating the changes introduced by different developers more frequently through
+the automation of build process.
+{{}}
+Nevertheless, the CI build process is seen as a major barrier that causes delays in the product release
+dates.
+{{}}
+One of the main reasons for such delays is that some simple changes (i.e., can be skipped) trigger the build, which represents
+an unnecessary overhead and particularly painful for large projects.
+{{}}
+In order to cut off the expenses of CI build time, we propose in this
+paper, SKIPCI, a novel search-based approach to automatically detect CI Skip commits based on the adaptation of Strength-Pareto
+Evolutionary Algorithm (SPEA-2).
+{{}}
+Our approach aims to provide the optimal trade-off between two conflicting objectives to deal with
+both skipped and non-skipped commits.
+{{}}
+We evaluate our approach and investigate the performance of both within and cross-project
+validations on a benchmark of 14,294 CI commits from 15 projects that use Travis CI system.
+{{}}
+The statistical tests revealed that our
+approach shows a clear advantage over the baseline approaches with average scores of 92% and 84% in terms of AUC for crossvalidation and cross-project validations respectively.
+{{}}
+Furthermore, the features analysis reveals that documentation changes, terms
+appearing in the commit message and the committer experience are the most prominent features in CI skip detection.
+{{}}
+When it comes to
+the cross-project scenario, the results reveal that besides the documentation changes, there is a strong link between current and
+previous commits results.
+{{}}
+Moreover, we deployed and evaluated the usefulness of SKIPCI with our industrial partner.
+{{}}
+Qualitative results
+demonstrate the effectiveness of SKIPCI in providing relevant CI skip commit recommendations to developers for two large software
+projects from practitioner’s point of view.
+{{}}
+---

@@ -1,0 +1,34 @@
+Opinion Mining for Software Development: A Systematic Literature Review.
+
+Opinion Mining for Software Development:
+{{}}
+A Systematic
+Literature Review
+BIN LIN, Software Institute - Università della Svizzera italiana, Switzerland
+NATHAN CASSEE and ALEXANDER SEREBRENIK, Eindhoven University of Technology,
+The Netherlands
+
+GABRIELE BAVOTA, Software Institute - Università della Svizzera italiana, Switzerland
+NICOLE NOVIELLI, University of Bari, Italy
+MICHELE LANZA, Software Institute - Università della Svizzera italiana, Switzerland
+Opinion mining, sometimes referred to as sentiment analysis, has gained increasing attention in software
+engineering (SE) studies.
+{{}}
+SE researchers have applied opinion mining techniques in various contexts, such
+as identifying developers’ emotions expressed in code comments and extracting users’ critics toward mobile apps.
+{{}}
+Given the large amount of relevant studies available, it can take considerable time for researchers
+and developers to figure out which approaches they can adopt in their own studies and what perils these
+approaches entail.
+{{}}
+We conducted a systematic literature review involving 185 papers.
+{{}}
+More specifically, we present (1) welldefined categories of opinion mining-related software development activities, (2) available opinion mining approaches, whether they are evaluated when adopted in other studies, and how their performance is compared,
+(3) available datasets for performance evaluation and tool customization, and (4) concerns or limitations SE
+researchers might need to take into account when applying/customizing these opinion mining techniques.
+{{}}
+The results of our study serve as references to choose suitable opinion mining tools for software development
+activities and provide critical insights for the further development of opinion mining techniques in the SE
+domain.
+{{}}
+---

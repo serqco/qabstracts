@@ -1,0 +1,80 @@
+Dealing with imbalanced data for interpretable defect prediction.
+
+Information and Software Technology 151 (2022) 107016
+
+Contents lists available at ScienceDirect
+
+Information and Software Technology
+journal homepage:
+{{}}
+www.elsevier.com/locate/infsof
+
+Dealing with imbalanced data for interpretable defect prediction
+Yuxiang Gao a, Yi Zhu a, b, *, Yu Zhao a
+a
+b
+
+School of Computer Science and Technology, Jiangsu Normal University, China
+Key Laboratory of Safety-Critical Software, Nanjing University of Aeronautics and Astronautics, China
+
+A R T I C L E I N F O
+
+A B S T R A C T
+
+Keywords:
+{{}}
+Software defect prediction
+Class imbalance
+Interpretable machine learning
+Rule-based models
+
+Context:
+{{}}
+Interpretation has been considered as a key factor to apply defect prediction in practice.
+{{}}
+As interpre­
+tation from rule-based interpretable models can provide insights about past defects with high quality, many prior
+studies attempt to construct interpretable models for both accurate prediction and comprehensible interpreta­
+tion.
+{{}}
+However, class imbalance is usually ignored, which may bring huge negative impact on interpretation.
+{{}}
+Objective:
+{{}}
+In this paper, we are going to investigate resampling techniques, a popular solution to deal with
+imbalanced data, on interpretation for interpretable models.
+{{}}
+We also investigate the feasibility to construct
+interpretable defect prediction models directly on original data.
+{{}}
+Further, we are going to propose a rule-based
+interpretable model which can deal with imbalanced data directly.
+{{}}
+Method:
+{{}}
+We conduct an empirical study on 47 publicly available datasets to investigate the impact of resampling
+techniques on rule-based interpretable models and the feasibility to construct such models directly on original
+data.
+{{}}
+We also improve gain function and tolerate lower confidence based on rule induction algorithms to deal
+with imbalanced data.
+{{}}
+Results:
+{{}}
+We find that (1) resampling techniques impact on interpretable models heavily from both feature
+importance and model complexity, (2) it is not feasible to construct meaningful interpretable models on original
+but imbalanced data due to low coverage of defects and poor performance, and (3) our proposed approach is
+effective to deal with imbalanced data compared with other rule-based models.
+{{}}
+Conclusion:
+{{}}
+Imbalanced data heavily impacts on the interpretable defect prediction models.
+{{}}
+Resampling tech­
+niques tend to shift the learned concept, while constructing rule-based interpretable models on original data may
+also be infeasible.
+{{}}
+Thus, it is necessary to construct rule-based models which can deal with imbalanced data well
+in further studies.
+{{}}
+---

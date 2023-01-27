@@ -1,0 +1,84 @@
+SAPIENTML: Synthesizing Machine Learning Pipelines by Learning from Human-Written Solutions.
+
+Automatic machine learning, or AutoML, holds the promise of truly
+democratizing the use of machine learning (ML), by substantially
+automating the work of data scientists.
+{{}}
+However, the huge com-
+binatorial search space of candidate pipelines means that current
+AutoML techniques, generate sub-optimal pipelines, or none at
+all, especially on large, complex datasets.
+{{}}
+In this work we propose
+an AutoML technique SapientML, that can learn from a corpus
+of existing datasets and their human-written pipelines, and effi-
+ciently generate a high-quality pipeline for a predictive task on
+a new dataset.
+{{}}
+To combat the search space explosion of AutoML,
+SapientML employs a novel divide-and-conquer strategy realized
+as a three-stage program synthesis approach, that reasons on suc-
+cessively smaller search spaces.
+{{}}
+The first stage uses meta-learning
+to predict a set of plausible ML components to constitute a pipeline.
+{{}}
+In the second stage, this is then refined into a small pool of vi-
+able concrete pipelines using a pipeline dataflow model derived
+from the corpus.
+{{}}
+Dynamically evaluating these few pipelines, in the
+third stage, provides the best solution.
+{{}}
+We instantiate SapientML
+as part of a fully automated tool-chain that creates a cleaned, la-
+beled learning corpus by mining Kaggle, learns from it, and uses
+the learned models to then synthesize pipelines for new predictive
+tasks.
+{{}}
+We have created a training corpus of 1,094 pipelines spanning
+170 datasets, and evaluated SapientML on a set of 41 benchmark
+datasets, including 10 new, large, real-world datasets from Kaggle,
+and against 3 state-of-the-art AutoML tools and 4 baselines.
+{{}}
+Our
+evaluation shows that SapientML produces the best or comparable
+accuracy on 27 of the benchmarks while the second best tool fails
+to even produce a pipeline on 9 of the instances.
+{{}}
+This difference
+is amplified on the 10 most challenging benchmarks, where Sapi-
+entML wins on 9 instances with the other tools failing to produce
+pipelines on 4 or more benchmarks.
+{{}}
+¶   These authors contributed to this work as interns at Fujitsu Research of America.
+{{}}
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for components of this work owned by others than ACM
+must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Association for Computing Machinery.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3510226
+{{}}
+---

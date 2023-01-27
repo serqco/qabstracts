@@ -1,0 +1,83 @@
+Practitioners&apos; Expectations on Automated Code Comment Generation.
+
+Good comments are invaluable assets to software projects, as they
+help developers understand and maintain projects.
+{{}}
+However, due
+to some poor commenting practices, comments are often missing
+or inconsistent with the source code.
+{{}}
+Software engineering practi-
+tioners often spend a significant amount of time and effort reading
+and understanding programs without or with poor comments.
+{{}}
+To
+counter this, researchers have proposed various techniques to au-
+tomatically generate code comments in recent years, which can
+not only save developers time writing comments but also help
+them better understand existing software projects.
+{{}}
+However, it is
+unclear whether these techniques can alleviate comment issues
+and whether practitioners appreciate this line of research.
+{{}}
+To fill
+this gap, we performed an empirical study by interviewing and
+surveying practitioners about their expectations of research in code
+comment generation.
+{{}}
+We then compared what practitioners need
+and the current state-of-the-art research by performing a literature
+review of papers on code comment generation techniques pub-
+lished in the premier publication venues from 2010 to 2020.
+{{}}
+From
+this comparison, we highlighted the directions where researchers
+need to put effort to develop comment generation techniques that
+matter to practitioners.
+{{}}
+KEYWORDS
+Code Comment Generation, Empirical Study, Practitioners’ Expec-
+tations
+ACM Reference Format:
+{{}}
+Xing Hu, Xin Xia, David Lo, Zhiyuan Wan, Qiuyuan Chen, and Thomas Zim-
+mermann.
+{{}}
+2022.
+{{}}
+Practitioners’ Expectations on Automated Code Comment
+Generation.
+{{}}
+In The 44th International Conference on Software Engineering,
+∗ Corresponding   Author.
+{{}}
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for components of this work owned by others than ACM
+must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+ICSE 2022, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Association for Computing Machinery.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3510152
+{{}}
+---

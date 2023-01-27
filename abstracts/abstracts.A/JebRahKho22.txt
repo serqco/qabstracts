@@ -1,0 +1,57 @@
+Clones in deep learning code: what, where, and why?
+
+Deep Learning applications are becoming increasingly popular worldwide.
+{{}}
+Developers of
+deep learning systems like in every other context of software development strive to write
+more efficient code in terms of performance, complexity, and maintenance.
+{{}}
+The continuous evolution of deep learning systems imposing tighter development timelines and their
+increasing complexity may result in bad design decisions by the developers.
+{{}}
+Besides, due to
+the use of common frameworks and repetitive implementation of similar tasks, deep learning developers are likely to use the copy-paste practice leading to clones in deep learning
+code.
+{{}}
+Code clone is considered to be a bad software development practice since developers can inadvertently fail to properly propagate changes to all clones fragments during a
+maintenance activity.
+{{}}
+However, to the best of our knowledge, no study has investigated code
+cloning practices in deep learning development.
+{{}}
+The majority of research on deep learning
+systems mostly focusing on improving the dependability of the models.
+{{}}
+Given the negative
+impacts of clones on software quality reported in the studies on traditional systems and the
+inherent complexity of maintaining deep learning systems (e.g., bug fixing), it is very important to understand the characteristics and potential impacts of code clones on deep learning
+systems.
+{{}}
+This paper examines the frequency, distribution, and impacts of code clones and
+the code cloning practices in deep learning systems.
+{{}}
+To accomplish this, we use the NiCad
+clone detection tool to detect clones from 59 Python, 14 C#, and 6 Java based deep learning
+systems and an equal number of traditional software systems.
+{{}}
+We then analyze the comparative frequency and distribution of code clones in deep learning systems and the traditional
+ones.
+{{}}
+Further, we study the distribution of the detected code clones by applying a location
+based taxonomy.
+{{}}
+In addition, we study the correlation between bugs and code clones to
+assess the impacts of clones on the quality of the studied systems.
+{{}}
+Finally, we introduce a
+code clone taxonomy related to deep learning programs based on 6 DL software systems
+(from 59 DL systems) and identify the deep learning system development phases in which
+cloning has the highest risk of faults.
+{{}}
+Our results show that code cloning is a frequent practice in deep learning systems and that deep learning developers often clone code from files
+contain in distant repositories in the system.
+{{}}
+In addition, we found that code cloning occurs
+more frequently during DL model construction, model training, and data pre-processing.
+{{}}
+---

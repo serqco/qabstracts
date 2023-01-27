@@ -1,0 +1,40 @@
+A Tale of Two Cities: Software Developers Working from Home during the COVID-19 Pandemic.
+
+A Tale of Two Cities:
+{{}}
+Software Developers Working from
+Home during the COVID-19 Pandemic
+DENAE FORD, Microsoft Research
+MARGARET-ANNE STOREY, University of Victoria
+THOMAS ZIMMERMANN and CHRISTIAN BIRD, Microsoft Research
+SONIA JAFFE, Microsoft Corp.
+{{}}
+CHANDRA MADDILA and JENNA L.
+{{}}
+BUTLER, Microsoft Research
+BRIAN HOUCK, Microsoft Corp.
+{{}}
+NACHIAPPAN NAGAPPAN, Microsoft Research
+The COVID-19 pandemic has shaken the world to its core and has provoked an overnight exodus of developers who normally worked in an office setting to working from home.
+{{}}
+The magnitude of this shift and the
+factors that have accompanied this new unplanned work setting go beyond what the software engineering
+community has previously understood to be remote work.
+{{}}
+To find out how developers and their productivity were affected, we distributed two surveys (with a combined total of 3,634 responses that answered all
+required questions) weeks apart to understand the presence and prevalence of the benefits, challenges, and
+opportunities to improve this special circumstance of remote work.
+{{}}
+From our thematic qualitative analysis
+and statistical quantitative analysis, we find that there is a dichotomy of developer experiences influenced by
+many different factors (that for some are a benefit, while for others a challenge).
+{{}}
+For example, a benefit for
+some was being close to family members but for others having family members share their working space
+and interrupting their focus, was a challenge.
+{{}}
+Our surveys led to powerful narratives from respondents and
+revealed the scale at which these experiences exist to provide insights as to how the future of (pandemic)
+remote work can evolve.
+{{}}
+---

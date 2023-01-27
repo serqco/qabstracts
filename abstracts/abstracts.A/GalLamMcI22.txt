@@ -1,0 +1,81 @@
+Lessons from Eight Years of Operational Data from a Continuous Integration Service: An Exploratory Case Study of CircleCI.
+
+Continuous Integration (CI) is a popular practice that enables the
+rapid pace of modern software development.
+{{}}
+Cloud-based CI ser-
+vices have made CI ubiquitous by relieving software teams of the
+hassle of maintaining a CI infrastructure.
+{{}}
+To improve these CI ser-
+vices, prior research has focused on analyzing historical CI data to
+help service consumers.
+{{}}
+However, finding areas of improvement
+for CI service providers could also improve the experience for ser-
+vice consumers.
+{{}}
+To search for these opportunities, we conduct an
+empirical study of 22.2 million builds spanning 7,795 open-source
+projects that used CircleCI from 2012 to 2020.
+{{}}
+First, we quantitatively analyze the builds (i.e., invocations of
+the CI service) with passing or failing outcomes.
+{{}}
+We observe that
+the heavy and typical service consumer groups spend significantly
+different proportions of time on seven of the nine build actions
+(e.g., dependency retrieval).
+{{}}
+On the other hand, the compilation and
+testing actions consistently consume a large proportion of build
+time across consumer groups (median 33%).
+{{}}
+Second, we study builds
+that terminate prior to generating a pass or fail signal.
+{{}}
+Through a
+systematic manual analysis, we find that availability issues, config-
+uration errors, user cancellation, and exceeding time limits are key
+reasons that lead to premature build termination.
+{{}}
+Our observations suggest that (1) heavy service consumers would
+benefit most from build acceleration approaches that tackle long
+build durations (e.g., skipping build steps) or high throughput rates
+(e.g., optimizing CI service job queues), (2) efficiency in CI pipelines
+can be improved for most CI consumers by focusing on the compi-
+lation and testing stages, and (3) avoiding misconfigurations and
+tackling service availability issues present the largest opportunities
+for improving the robustness of CI services.
+{{}}
+KEYWORDS
+Automated Builds, Build Systems, Continuous Integration
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for components of this work owned by others than ACM
+must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Association for Computing Machinery.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3510211
+{{}}
+---

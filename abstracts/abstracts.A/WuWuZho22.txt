@@ -1,0 +1,45 @@
+Time-travel Investigation: Toward Building a Scalable Attack Detection Framework on Ethereum.
+
+Time-travel Investigation:
+{{}}
+Toward Building a Scalable Attack
+Detection Framework on Ethereum
+SIWEI WU, Zhejiang University & Key Laboratory of Blockchain and Cyberspace Governance
+of Zhejiang Province
+
+LEI WU, YAJIN ZHOU, and RUNHUAI LI, Zhejiang University
+ZHI WANG, Florida State University
+XIAPU LUO, The Hong Kong Polytechnic University
+CONG WANG, City University of Hong Kong
+KUI REN, Zhejiang University
+Ethereum has been attracting lots of attacks, hence there is a pressing need to perform timely investigation
+and detect more attack instances.
+{{}}
+However, existing systems suffer from the scalability issue due to the following reasons.
+{{}}
+First, the tight coupling between malicious contract detection and blockchain data importing
+makes them infeasible to repeatedly detect different attacks.
+{{}}
+Second, the coarse-grained archive data makes
+them inefficient to replay transactions.
+{{}}
+Third, the separation between malicious contract detection and runtime state recovery consumes lots of storage.
+{{}}
+In this article, we propose a scalable attack detection framework named EthScope, which overcomes the
+scalability issue by neatly re-organizing the Ethereum state and efficiently locating suspicious transactions.
+{{}}
+It
+leverages the fine-grained state to support the replay of arbitrary transactions and proposes a well-designed
+schema to optimize the storage consumption.
+{{}}
+The performance evaluation shows that EthScope can solve the
+scalability issue, i.e., efficiently performing a large-scale analysis on billions of transactions, and a speedup of
+around 2,300× when replaying transactions.
+{{}}
+It also has lower storage consumption compared with existing
+systems.
+{{}}
+Further analysis shows that EthScope can help analysts understand attack behaviors and detect
+more attack instances.
+{{}}
+---

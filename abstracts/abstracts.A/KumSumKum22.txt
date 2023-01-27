@@ -1,0 +1,102 @@
+Predicting reliability of software in industrial systems using a Petri net based approach: A case study on a safety system used in nuclear power plant.
+
+Information and Software Technology 146 (2022) 106895
+
+Contents lists available at ScienceDirect
+
+Information and Software Technology
+journal homepage:
+{{}}
+www.elsevier.com/locate/infsof
+
+Predicting reliability of software in industrial systems using a Petri net
+based approach:
+{{}}
+A case study on a safety system used in nuclear
+power plant
+Kuldeep Kumar a, 1, Sumit b, 1, Sandeep Kumar b, *, Lalit Kumar Singh c, Alok Mishra d, e
+a
+
+Department of Computer Science and Engineering, Dr B R Ambedkar National Institute of Technology, Jalandhar, India
+Department of Computer Science and Engineering, Indian Institute of Technology Roorkee, Roorkee, India
+Department of Computer Science and Engineering, Indian Institute of Technology (Banaras Hindu University), Varanasi, India
+d
+Informatics and Digitalization, Molde University College - Specialized University in Logistics, Molde, Norway
+e
+Department of Software Engineering, Atilim University, Turkey
+b
+c
+
+A R T I C L E I N F O
+
+A B S T R A C T
+
+Keywords:
+{{}}
+Software reliability
+Safety-critical systems
+Petri net
+Reliability model
+
+Context:
+{{}}
+Software reliability prediction in the early stages of development can be propitious in many ways.
+{{}}
+The
+combinatorial models used to predict reliability using architectures such as fault trees, binary decision diagrams,
+etc.
+{{}}
+have limitations in modeling complex system behavior.
+{{}}
+On the other hand, state-based models such as
+Markov chains suffer from the state-space explosion problem, and they need transition probability among
+different system states to measure reliability.
+{{}}
+These probabilities are usually assumed or are obtained from the
+operational profile for which the system should be used in the field.
+{{}}
+Objective:
+{{}}
+The objective of this paper is to present a method for predicting the reliability of software in industrial
+systems using a generalized stochastic Petri nets based approach.
+{{}}
+The key idea is to violate the assumption of
+state transition probabilities in the Markov chain.
+{{}}
+The state transition probabilities are calculated using Petri net
+transitions’ throughput by performing stationary analysis under the consideration to identify and handle dead
+markings in the Petri net.
+{{}}
+Method:
+{{}}
+Initially, a generalized stochastic Petri net of the system under consideration is generated from the
+standard system’s specification.
+{{}}
+Thereafter, dead markings are identified in the Petri net which are further
+removed to perform steady-state analysis.
+{{}}
+At last, a Markov model is generated based on the reachability graph of
+the Petri net, which is further used to predict the system reliability.
+{{}}
+Results:
+{{}}
+The presented method has been applied to a safety-critical system, Shut Down System-1, of a nuclear
+power plant, which is operational in the Canada Deuterium Uranium reactor.
+{{}}
+The predicted reliability of the
+system using this method is 99.99966% which has been validated using the specified system requirements.
+{{}}
+To
+further validate and generalize the results, sensitivity analysis is performed by varying different system
+parameters.
+{{}}
+Conclusions:
+{{}}
+The method discussed in this paper presents a step of performing structural analysis on the Petri net
+of the system under consideration to identify and handle dead markings on the Petri net.
+{{}}
+It further handles the
+issue of assuming transition probabilities among the system states by calculating them using Petri net transitions’
+throughput.
+{{}}
+---

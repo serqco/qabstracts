@@ -1,0 +1,28 @@
+Hashing Fuzzing: Introducing Input Diversity to Improve Crash Detection.
+
+The utility of a test set of program inputs is strongly influenced by its diversity and its size.
+{{}}
+Syntax coverage has become a
+standard proxy for diversity.
+{{}}
+Although more sophisticated measures exist, such as proximity of a sample to a uniform distribution,
+methods to use them tend to be type dependent.
+{{}}
+We use r-wise hash functions to create a novel, semantics preserving, testability
+transformation for C programs that we call HashFuzz.
+{{}}
+Use of HashFuzz improves the diversity of test sets produced by
+instrumentation-based fuzzers.
+{{}}
+We evaluate the effect of the HashFuzz transformation on eight programs from the Google Fuzzer Test
+Suite using four state-of-the-art fuzzers that have been widely used in previous research.
+{{}}
+We demonstrate pronounced improvements
+in the performance of the test sets for the transformed programs across all the fuzzers that we used.
+{{}}
+These include strong
+improvements in diversity in every case, maintenance or small improvement in branch coverage – up to 4.8 perent improvement in the
+best case, and significant improvement in unique crash detection numbers – between 28 to 97 perent increases compared to test sets
+for untransformed programs.
+{{}}
+---

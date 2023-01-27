@@ -1,0 +1,76 @@
+Correction to: Can Offline Testing of Deep Neural Networks Replace Their Online Testing?
+
+Empirical Software Engineering (2022) 27:
+{{}}
+141
+https://doi.org/10.1007/s10664-022-10172-z
+
+CORRECTION
+
+Correction to:
+{{}}
+Can Offline Testing of Deep Neural
+Networks Replace Their Online Testing?
+{{}}
+Fitash Ul Haq 1
+
+& Donghwan Shin
+
+1
+
+& Shiva Nejati
+
+1,2
+
+& Lionel Briand
+
+1,2
+
+Published online:
+{{}}
+6 August 2022
+# The Author(s) 2022
+
+Correction to:
+{{}}
+Empir Software Eng (2021) 26:
+{{}}
+90
+https://doi.org/10.1007/s10664-021-09982-4
+The article “Can Offline Testing of Deep Neural Networks Replace Their Online Testing?”,
+written by Fitash Ul Haq, Donghwan Shin, Shiva Nejati, and Lionel Briand, was originally
+published Online First without Open Access.
+{{}}
+After publication in volume 26, issue 5, article
+90, the author decided to opt for Open Choice and to make the article an Open Access
+publication.
+{{}}
+Therefore, the copyright of the article has been changed to ©The Author(s) 2021
+and the article is forthwith distributed under the terms of the Creative Commons Attribution
+4.0 International License, which permits use, sharing, adaptation, distribution and reproduction
+in any medium or format, as long as you give appropriate credit to the original author(s) and
+the source, provide a link to the Creative Commons license, and indicate if changes were
+made.
+{{}}
+The images or other third party material in this article are included in the article’s
+Creative Commons license, unless indicated otherwise in a credit line to the material.
+{{}}
+If
+material is not included in the article’s Creative Commons license and your intended use is
+not permitted by statutory regulation or exceeds the permitted use, you will need to obtain
+permission directly from the copyright holder.
+{{}}
+To view a copy of this license, visit http://
+creativecommons.org/licenses/by/4.0/.
+{{}}
+The original article has been corrected.
+{{}}
+The online version of the original article can be found at https://doi.org/10.1007/s10664-021-09982-4
+
+* Donghwan Shin
+donghwan.shin@uni.lu
+Extended author information available on the last page of the article.
+{{}}
+
+{{}}
+---

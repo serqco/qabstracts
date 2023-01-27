@@ -1,0 +1,26 @@
+Static detection of equivalent mutants in real-time model-based mutation testing.
+
+Model-based mutation testing has the potential to effectively drive test generation to reveal
+faults in software systems.
+{{}}
+However, it faces a typical efficiency issue since it could produce
+many mutants that are equivalent to the original system model, making it impossible to generate test cases from them.
+{{}}
+We consider this problem when model-based mutation testing is
+applied to real-time system product lines, represented as timed automata.
+{{}}
+We define novel,
+time-specific mutation operators and formulate the equivalent mutant problem in the frame
+of timed refinement relations.
+{{}}
+Further, we study in which cases a mutation yields an equivalent mutant.
+{{}}
+Our theoretical results provide guidance to system engineers, allowing them
+to eliminate mutations from which no test case can be produced.
+{{}}
+Our empirical evaluation,
+based on a proof-of-concept implementation and a set of benchmarks from the literature,
+confirms the validity of our theory and demonstrates that in general our approach can avoid
+the generation of a significant amount of the equivalent mutants.
+{{}}
+---

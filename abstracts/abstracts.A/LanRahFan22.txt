@@ -1,0 +1,49 @@
+Model Transformation Development Using Automated Requirements Analysis, Metamodel Matching, and Transformation by Example.
+
+18
+Model Transformation Development Using Automated
+Requirements Analysis, Metamodel Matching, and
+Transformation by Example
+K.
+{{}}
+LANO, Dept.
+{{}}
+of Informatics, King’s College London, UK
+S.
+{{}}
+KOLAHDOUZ-RAHIMI, Dept.
+{{}}
+of Software Engineering, Iran
+S.
+{{}}
+FANG, Dept.
+{{}}
+of Informatics, King’s College London, UK
+In this article, we address how the production of model transformations (MT) can be accelerated by automation of transformation synthesis from requirements, examples, and metamodels.
+{{}}
+We introduce a synthesis
+process based on metamodel matching, correspondence patterns between metamodels, and completeness and
+consistency analysis of matches.
+{{}}
+We describe how the limitations of metamodel matching can be addressed by
+combining matching with automated requirements analysis and model transformation by example (MTBE)
+techniques.
+{{}}
+We show that in practical examples a large percentage of required transformation functionality can usually
+be constructed automatically, thus potentially reducing development effort.
+{{}}
+We also evaluate the efficiency
+of synthesised transformations.
+{{}}
+Our novel contributions are:
+{{}}
+• The concept of correspondence patterns between metamodels of a transformation.
+{{}}
+• Requirements analysis of transformations using natural language processing (NLP) and machine learning (ML).
+{{}}
+• Symbolic MTBE using “predictive specification” to infer transformations from examples.
+{{}}
+• Transformation generation in multiple MT languages and in Java, from an abstract intermediate
+language.
+{{}}
+---

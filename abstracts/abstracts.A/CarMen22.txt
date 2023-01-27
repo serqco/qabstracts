@@ -1,0 +1,64 @@
+Programming language implementations for context-oriented self-adaptive systems.
+
+Information and Software Technology 143 (2022) 106789
+
+Contents lists available at ScienceDirect
+
+Information and Software Technology
+journal homepage:
+{{}}
+www.elsevier.com/locate/infsof
+
+Programming language implementations for context-oriented
+self-adaptive systems
+Nicolás Cardozo a, *, Kim Mens b
+a
+b
+
+Systems and Computing Engineering Department, Universidad de los Andes, FLAG Laboratory, Bogotá, Colombia
+ICTEAM, Université Catholique de Louvain, Louvain-la-Neuve, Belgium
+
+A R T I C L E I N F O
+
+A B S T R A C T
+
+Keywords:
+{{}}
+Context-oriented programming
+Self-adaptive systems
+Language engineering
+Programming language abstractions
+
+Context:
+{{}}
+The context-oriented programming paradigm is designed to enable self-adaptation, or dynamic behavior
+modification of software systems, in response to changes in their surrounding environment.
+{{}}
+Contextoriented
+programming offers an adaptation model, from a programming language perspective, that maintains a clean
+modularisation between the application and adaptation logic, as well as between the components providing
+adaptations.
+{{}}
+Objective:
+{{}}
+We use three implementation techniques for context-oriented programming languages to assess their
+appropriateness to foster self-adaptive systems.
+{{}}
+These approaches take advantage of the capabilities offered by
+the host programming language to realize self-adaptation as proposed by context-oriented languages.
+{{}}
+Method:
+{{}}
+We evaluate each of these approaches by assessing their modularity and complexity when defining
+adaptations, and by comparing their run-time performance on a simple benchmark.
+{{}}
+Results:
+{{}}
+Our results show a higher modularity than that for common architecture based self-adaptive systems,
+while maintaining comparable performance.
+{{}}
+Conclusion:
+{{}}
+We conclude that context-oriented programming is an appropriate paradigm to realize selfadaptation.
+{{}}
+---

@@ -1,0 +1,88 @@
+Green AI: Do Deep Learning Frameworks Have Different Costs?
+
+The use of Artificial Intelligence (ai), and more specifically of Deep
+Learning (dl), in modern software systems, is nowadays widespread
+and continues to grow.
+{{}}
+At the same time, its usage is energy de-
+manding and contributes to the increased CO2 emissions, and has
+a great financial cost as well.
+{{}}
+Even though there are many studies
+that examine the capabilities of dl, only a few focus on its green
+aspects, such as energy consumption.
+{{}}
+This paper aims at raising awareness of the costs incurred when
+using different dl frameworks.
+{{}}
+To this end, we perform a thor-
+ough empirical study to measure and compare the energy con-
+sumption and run-time performance of six different dl models
+written in the two most popular dl frameworks, namely PyTorch
+and TensorFlow.
+{{}}
+We use a well-known benchmark of dl models,
+DeepLearningExamples, created by nvidia, to compare both the
+training and inference costs of dl.
+{{}}
+Finally, we manually investigate
+the functions of these frameworks that took most of the time to
+execute in our experiments.
+{{}}
+The results of our empirical study reveal that there is a statisti-
+cally significant difference between the cost incurred by the two
+dl frameworks in 94% of the cases studied.
+{{}}
+While TensorFlow
+achieves significantly better energy and run-time performance than
+PyTorch, and with large effect sizes in 100% of the cases for the
+training phase, PyTorch instead exhibits significantly better en-
+ergy and run-time performance than TensorFlow in the inference
+phase for 66% of the cases, always, with large effect sizes.
+{{}}
+Such a
+large difference in performance costs does not, however, seem to
+affect the accuracy of the models produced, as both frameworks
+achieve comparable scores under the same configurations.
+{{}}
+Our man-
+ual analysis, of the documentation and source code of the functions
+examined, reveals that such a difference in performance costs is
+under-documented, in these frameworks.
+{{}}
+This suggests that devel-
+opers need to improve the documentation of their dl frameworks,
+the source code of the functions used in these frameworks, as well
+as to enhance existing dl algorithms.
+{{}}
+∗ The   first two authors contributed equally to this work.
+{{}}
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for components of this work owned by others than ACM
+must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Association for Computing Machinery.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3510221
+{{}}
+---

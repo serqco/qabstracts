@@ -1,0 +1,115 @@
+Revisiting Supervised and Unsupervised Methods for Effort-Aware Cross-Project Defect Prediction.
+
+Just-In-Time Defect Prediction on JavaScript Projects:
+{{}}
+A Replication Study
+CHAO NI, School of Software Technology, Zhejiang University, China
+XIN XIA, Software Engineering Application Technology Lab, Huawei, China
+DAVID LO, Singapore Management University, Singapore
+XIAOHU YANG, Zhejiang University, China
+AHMED E.
+{{}}
+HASSAN, Queen’s University, Canada
+Change-level defect prediction is widely referred to as just-in-time (JIT) defect prediction since it identifies a defect-inducing change at the check-in time, and researchers have proposed many approaches based
+on the language-independent change-level features.
+{{}}
+These approaches can be divided into two types:
+{{}}
+supervised approaches and unsupervised approaches, and their effectiveness has been verified on Java or
+C++ projects.
+{{}}
+However, whether the language-independent change-level features can effectively identify
+the defects of JavaScript projects is still unknown.
+{{}}
+Additionally, many researches have confirmed that supervised approaches outperform unsupervised approaches on Java or C++ projects when considering inspection effort.
+{{}}
+However, whether supervised JIT defect prediction approaches can still perform best on
+JavaScript projects is still unknown.
+{{}}
+Lastly, prior proposed change-level features are programming language–
+independent, whether programming language–specific change-level features can further improve the performance of JIT approaches on identifying defect-prone changes is also unknown.
+{{}}
+To address the aforementioned gap in knowledge, in this article, we collect and label the top-20 most starred
+JavaScript projects on GitHub.
+{{}}
+JavaScript is an extremely popular and widely used programming language
+in the industry.
+{{}}
+We propose five JavaScript-specific change-level features and conduct a large-scale empirical
+study (i.e., involving a total of 176,902 changes) and find that (1) supervised JIT defect prediction approaches
+(i.e., CBS+) still statistically significantly outperform unsupervised approaches on JavaScript projects when
+considering inspection effort; (2) JavaScript-specific change-level features can further improve the performance of approach built with language-independent features on identifying defect-prone changes; (3) the
+change-level features in the dimension of size (i.e., LT), diffusion (i.e., NF), and JavaScript-specific (i.e., SO and
+TC) are the most important features for indicating the defect-proneness of a change on JavaScript projects;
+and (4) project-related features (i.e., Stars, Branches, Def Ratio, Changes, Files, Defective, and Forks) have a
+high association with the probability of a change to be a defect-prone one on JavaScript projects.
+{{}}
+This research/project is partially supported by the National Science Foundation of China (Grant No.
+{{}}
+U20A20173), Key
+Research and Development Program of Zhejiang Province (Grant No.
+{{}}
+2021C01014), and the National Research Foundation,
+Singapore under its Industry Alignment Fund – Pre-positioning (IAF-PP) Funding Initiative.
+{{}}
+Authors’ addresses:
+{{}}
+C.
+{{}}
+Ni, School of Software Technology, Zhejiang University; Zheda Road 38 West Lake District,
+Hangzhou, Zhejiang, China; email:
+{{}}
+chaoni@zju.edu.cn; X.
+{{}}
+Xia (corresponding author), Software Engineering Application
+Technology Lab, Huawei, Jianghong Road 410, Binjiang District, Hangzhou, Zhejiang, China; email:
+{{}}
+xin.xia@acm.org;
+D.
+{{}}
+Lo, Singapore Management University, 80 Stamford Road, Singapore; email:
+{{}}
+davidlo@smu.edu.sg; X.
+{{}}
+Yang, College
+of Computer Science and Technology, Zhejiang University; Road 38 West Lake District, Hangzhou, Zhejiang, China;
+email:
+{{}}
+yangxh@zju.edu.cn; A.
+{{}}
+E.
+{{}}
+Hassan, Queen’s University, 25 Union St, Queen’s University, Kingston, Canada; email:
+{{}}
+ahmed@cs.queensu.ca.
+{{}}
+Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee
+provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and
+the full citation on the first page.
+{{}}
+Copyrights for components of this work owned by others than ACM must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or republish, to post on servers or to redistribute to lists, requires
+prior specific permission and/or a fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+© 2022 Association for Computing Machinery.
+{{}}
+1049-331X/2022/08-ART76 $15.00
+https://doi.org/10.1145/3508479
+ACM Transactions on Software Engineering and Methodology, Vol.
+{{}}
+31, No.
+{{}}
+4, Article 76.
+{{}}
+Publication date:
+{{}}
+August 2022.
+{{}}
+76
+{{}}
+---

@@ -1,0 +1,163 @@
+UX professionals&apos; learning and usage of UX methods in agile.
+
+Information and Software Technology 151 (2022) 107005
+
+Contents lists available at ScienceDirect
+
+Information and Software Technology
+journal homepage:
+{{}}
+www.elsevier.com/locate/infsof
+
+UX professionals’ learning and usage of UX methods in agile
+Åsa Cajander a, *, Marta Larusdottir b, Johannes L.
+{{}}
+Geiser a
+a
+b
+
+Uppsala University, Uppsala, Sweden
+Reykjavik University, Reykjavik, Iceland
+
+A R T I C L E I N F O
+
+A B S T R A C T
+
+Keywords:
+{{}}
+User experience
+UX
+Agile development
+UX professionals
+UX methods
+Lifelong learning
+
+Context:
+{{}}
+The usage of User Experience (UX) methods has been studied through the years.
+{{}}
+However, little is known
+about UX professionals’ lifelong learning processes related to UX methods in Agile, choosing what UX methods to
+use, and the enablers and hindrances for using the UX methods.
+{{}}
+Objective:
+{{}}
+The study aims to broaden current knowledge about UX professionals’ lifelong learning practices to
+understand their work situations better.
+{{}}
+The paper describes how UX professionals learn about and choose UX
+methods, their frequency of use, and the enablers and barriers when using the UX methods in Agile.
+{{}}
+Method:
+{{}}
+An interview study was conducted with 13 UX professionals from various industries and two countries
+working with Agile and UX.
+{{}}
+We used a qualitative approach, and a thematic analysis was carried out to answer
+the research questions.
+{{}}
+Results:
+{{}}
+The results show that support from colleagues is an essential component for learning about the methods
+and how to use UX methods.
+{{}}
+Time pressure makes UX professionals choose methods they know will deliver their
+desired results.
+{{}}
+Prototyping, user testing, user journeys, and workshops are the most frequently used UX
+methods.
+{{}}
+Additionally, the results show that UX professionals think that the UX methods are often too compli­
+cated and take too long to learn.
+{{}}
+Additionally, they find it challenging to integrate UX methods into Agile.
+{{}}
+Conclusion:
+{{}}
+These findings indicate that UX methods might work better if designed to be less complicated and
+deliver results more efficiently.
+{{}}
+Moreover, collegial and peer learning is central to UX professionals.
+{{}}
+The HCI
+community could be more active in supporting this culture by sharing information and learning.
+{{}}
+Finally, the
+usability and UX of the tools affect which UX methods are used.
+{{}}
+Introduction
+Researchers and practitioners have introduced many new theories
+and UX methods to support UX professionals in their focus on work [16,
+18,26,33,41].
+{{}}
+This has resulted in a continuous learning journey for UX
+professionals [51,71].
+{{}}
+In parallel to this, UX work has increased in
+complexity.
+{{}}
+What started as usability testing involving one user in front
+of a computer has developed into a sociotechnical problem space.
+{{}}
+This
+problem space includes numerous software and hardware, presenting
+UX professionals with multiple challenges.
+{{}}
+The problem space is
+accompanied by barriers to UX work in Agile software development
+processes.
+{{}}
+Examples of problems are lack of UX awareness, organisa­
+tional inconveniences and limiting time constraints [5]12,51,62] even
+though there is a stronger focus on UX today than 20 years ago [22].
+{{}}
+Additionally, a significant issue has been the increasing gap between
+research and practice because research lacks knowledge of UX methods
+used in practice [34,35].
+{{}}
+Across industries, professionals focusing on UX use a range of titles
+such as UX Designer, UI Developer, and Usability Designer [9].
+{{}}
+Some
+also claim that UX specialists have increasingly worked as business an­
+alysts and coaching development teams [22].
+{{}}
+In their work, they use UX
+methods, which are methods (e.g., surveys, interviews, observations) for
+improving the user experience (UX) of products or services.
+{{}}
+Their life­
+long learning can be best described as the continuous learning of skills,
+acquisition of knowledge, a need for growth, and the application of
+knowledge creatively in different environments [36,59].
+{{}}
+Traditionally,
+learning is performed formally, for example, through training and lec­
+tures or informally through, for example, self-study [24,37].
+{{}}
+This paper contributes knowledge about User eXperience Design
+(UXD) approaches within Agile processes, abbreviated as Agile UXD.
+{{}}
+Agile UXD has been studied over the last twenty years [1122,38,46,48].
+{{}}
+A literature study from 2015 found 83 published papers on usability and
+Agile [8].
+{{}}
+Other literature studies have concluded that within research
+on agile, the theme of usability was the second largest in the number of
+
+* Corresponding author.
+{{}}
+E-mail addresses:
+{{}}
+asa.cajander@it.uu.se (Å.
+{{}}
+Cajander), marta@ru.is (M.
+{{}}
+Larusdottir), jogeiser@icloud.com (J.L.
+{{}}
+Geiser).
+{{}}
+https://doi.org/10.1016/j.infsof.2022.107005
+{{}}
+---

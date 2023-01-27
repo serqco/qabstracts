@@ -1,0 +1,57 @@
+A Methodology for Analyzing Uptake of Software Technologies Among Developers.
+
+Motivation:
+{{}}
+The question of what combination of attributes drives the adoption of a particular software technology is critical to
+developers.
+{{}}
+It determines both those technologies that receive wide support from the community and those which may be abandoned,
+thus rendering developers’ investments worthless.
+{{}}
+Aim and Context:
+{{}}
+We model software technology adoption by developers and provide
+insights on specific technology attributes that are associated with better visibility among alternative technologies.
+{{}}
+Thus, our findings have
+practical value for developers seeking to increase the adoption rate of their products.
+{{}}
+Approach:
+{{}}
+We leverage social contagion theory and
+statistical modeling to identify, define, and test empirically measures that are likely to affect software adoption.
+{{}}
+More specifically, we
+leverage a large collection of open source version control repositories (containing over 4 billion unique versions) to construct a software
+dependency chain for a specific set of R language source-code files.
+{{}}
+We formulate logistic regression models, where developers’
+software library choices are modeled, to investigate the combination of technological attributes that drive adoption among competing
+data frame (a core concept for a data science languages) implementations in the R language:
+{{}}
+tidy and data.table.
+{{}}
+To describe each
+technology, we quantify key project attributes that might affect adoption (e.g., response times to raised issues, overall deployments,
+number of open defects, knowledge base) and also characteristics of developers making the selection (performance needs, scale, and
+their social network).
+{{}}
+Results:
+{{}}
+We find that a quick response to raised issues, a larger number of overall deployments, and a larger
+number of high-score StackExchange questions are associated with higher adoption.
+{{}}
+Decision makers tend to adopt the technology that
+is closer to them in the technical dependency network and in author collaborations networks while meeting their performance needs.
+{{}}
+To
+gauge the generalizability of the proposed methodology, we investigate the spread of two popular web JavaScript frameworks Angular
+and React, and discuss the results.
+{{}}
+Future work:
+{{}}
+We hope that our methodology encompassing social contagion that captures both
+rational and irrational preferences and the elucidation of key measures from large collections of version control data provides a general
+path toward increasing visibility, driving better informed decisions, and producing more sustainable and widely adopted software.
+{{}}
+---

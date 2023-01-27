@@ -1,0 +1,36 @@
+A teamwork effectiveness model for agile software development.
+
+Teamwork is crucial in software development, particularly in agile development teams
+which are cross-functional and where team members work intensively together to develop
+a cohesive software solution.
+{{}}
+Effective teamwork is not easy; prior studies indicate
+challenges with communication, learning, prioritization, and leadership.
+{{}}
+Nevertheless,
+there is much advice available for teams, from agile methods, practitioner literature, and
+general studies on teamwork to a growing body of empirical studies on teamwork in the
+specific context of agile software development.
+{{}}
+This article presents the agile teamwork
+effectiveness model (ATEM) for colocated agile development teams.
+{{}}
+The model is based
+on evidence from focus groups, case studies, and multi-vocal literature and is a revision of
+a general team effectiveness model.
+{{}}
+Our model of agile teamwork effectiveness is
+composed of shared leadership, team orientation, redundancy, adaptability, and peer
+feedback.
+{{}}
+Coordinating mechanisms are needed to facilitate these components.
+{{}}
+The
+coordinating mechanisms are shared mental models, communication, and mutual trust.
+{{}}
+We critically examine the model and discuss extensions for very small, multi-team,
+distributed, and safety-critical development contexts.
+{{}}
+The model is intended for researchers, team members, coaches, and leaders in the agile community.
+{{}}
+---

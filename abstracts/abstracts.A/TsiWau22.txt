@@ -1,0 +1,48 @@
+A model-driven framework to support strategic agility: Value-added perspective.
+
+Context:
+{{}}
+The Covid-19 pandemic has shown the entire world that the habits of work, freedom, and consumption can change quickly and significantly for an undetermined amount of time.
+{{}}
+A dynamic environment as
+such, prompts organizations to move fast in order to leverage changing circumstances as sources of opportunity
+rather than deadly threats.
+{{}}
+Drastic changes in work organization, consumption habits, compliance, etc., may
+require firms to quickly adopt new technology delivering all sorts of added value.
+{{}}
+Objective:
+{{}}
+The development and adoption of new technology – structurally impacting the way the organization
+conducts its activities – requires a considerable amount of effort in a short time frame, thus rendering it a
+governance decision where the alignment of the technology’s adoption and use to the long term strategy
+needs to be evaluated.
+{{}}
+The short time frame requiring fast response implies that agility should not remain a
+development or management/operational concept but should also be adopted onto the strategic layer.
+{{}}
+Method:
+{{}}
+Design Science Research (DSR) has been applied to build-up a framework supporting strategic agility
+in a model-driven fashion called Strategic Agile Model Driven IT Governance (StratAMoDrIGo).
+{{}}
+The relevance,
+rigor and design cycles of DSR have been applied and presented.
+{{}}
+Results:
+{{}}
+StratAMoDrIGo is based on the identification of sources of value for the organization’s strategy, its
+stakeholders and the users of the implemented/adopted technology.
+{{}}
+Relevant concepts are consolidated in an
+ontology of which the application uses the NFR Model at strategic-level and the i* Strategic Rationale Model
+at management-level.
+{{}}
+The proposal is applied on the case of an hospital facing the Covid-19 pandemic.
+{{}}
+Conclusion:
+{{}}
+The value brought by strategic opportunities’ adoption to the organization, stakeholders and users
+can be evaluated ex ante through conceptual models.
+{{}}
+---

@@ -1,0 +1,60 @@
+How far are we from reproducible research on code smell detection? A systematic literature review.
+
+Context:
+{{}}
+Code smells are symptoms of wrong design decisions or coding shortcuts that may increase defect
+rate and decrease maintainability.
+{{}}
+Research on code smells is accelerating, focusing on code smell detection
+and using code smells as defect predictors.
+{{}}
+Recent research shows that even between software developers,
+agreement on what constitutes a code smell is low, but several publications claim the high performance of
+detection algorithms—which seems counterintuitive, considering that algorithms should be taught on data
+labeled by developers.
+{{}}
+Objective:
+{{}}
+This paper aims to investigate the possible reasons for the inconsistencies between studies in the
+performance of applied machine learning algorithms compared to developers.
+{{}}
+It focuses on the reproducibility
+of existing studies.
+{{}}
+Methods:
+{{}}
+A systematic literature review was performed among conference and journal articles published
+between 1999 and 2020 to assess the state of reproducibility of the research performed in those papers.
+{{}}
+A
+quasi-gold standard procedure was used to validate the search.
+{{}}
+Modeling process descriptions, reproduction
+scripts, data sets, and techniques used for their creation were analyzed.
+{{}}
+Results:
+{{}}
+We obtained data from 46 publications.
+{{}}
+22 of them contained a detailed description of the modeling
+process, 17 included any reproduction data (data set, results, or scripts) and 15 used existing data sets.
+{{}}
+In
+most of the publications, analyzed projects were hand-picked by the researchers.
+{{}}
+Conclusion:
+{{}}
+Most studies do not include any form of an online reproduction package, although this has started
+to change recently—8% of analyzed studies published before 2018 included a full reproduction package,
+compared to 22% in years 2018–2019.
+{{}}
+Ones that do include a package usually use a research group website
+or even a personal one.
+{{}}
+Dedicated archives are still rarely used for data packages.
+{{}}
+We recommend that
+researchers include complete reproduction packages for their studies and use well-established research data
+archives instead of their own websites.
+{{}}
+---

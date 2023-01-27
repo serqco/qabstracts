@@ -1,0 +1,38 @@
+Automating App Review Response Generation Based on Contextual Knowledge.
+
+Automating App Review Response Generation Based on
+Contextual Knowledge
+CUIYUN GAO, Harbin Institute of Technology, Shenzhen, China
+WENJIE ZHOU, The Key Laboratory for Computer Systems of State Ethnic Affairs Commission,
+Southwest Minzu University, China
+XIN XIA, Software Engineering Application Technology Lab, Huawei, China
+DAVID LO, Singapore Management University, Singapore
+QI XIE, The Key Laboratory for Computer Systems of State Ethnic Affairs Commission, Southwest Minzu
+University, China
+MICHAEL R.
+{{}}
+LYU, The Chinese University of Hong Kong, China
+User experience of mobile apps is an essential ingredient that can influence the user base and app revenue.
+{{}}
+To ensure good user experience and assist app development, several prior studies resort to analysis of app
+reviews, a type of repository that directly reflects user opinions about the apps.
+{{}}
+Accurately responding to
+the app reviews is one of the ways to relieve user concerns and thus improve user experience.
+{{}}
+However,
+the response quality of the existing method relies on the pre-extracted features from other tools, including
+manually labelled keywords and predicted review sentiment, which may hinder the generalizability and flexibility of the method.
+{{}}
+In this article, we propose a novel neural network approach, named CoRe, with the
+contextual knowledge naturally incorporated and without involving external tools.
+{{}}
+Specifically, CoRe integrates two types of contextual knowledge in the training corpus, including official app descriptions from app
+store and responses of the retrieved semantically similar reviews, for enhancing the relevance and accuracy
+of the generated review responses.
+{{}}
+Experiments on practical review data show that CoRe can outperform the
+state-of-the-art method by 12.36% in terms of BLEU-4, an accuracy metric that is widely used to evaluate text
+generation systems.
+{{}}
+---

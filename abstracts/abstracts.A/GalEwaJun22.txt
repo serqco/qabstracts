@@ -1,0 +1,45 @@
+Accelerating Continuous Integration by Caching Environments and Inferring Dependencies.
+
+To facilitate the rapid release cadence of modern software (on the order of weeks, days, or even hours), software development
+organizations invest in practices like Continuous Integration (CI), where each change submitted by developers is built (e.g., compiled,
+tested, linted) to detect problematic changes early.
+{{}}
+A fast and efficient build process is crucial to provide timely CI feedback to developers.
+{{}}
+If CI feedback is too slow, developers may switch contexts to other tasks, which is known to be a costly operation for knowledge workers.
+{{}}
+Thus, minimizing the build execution time for CI services is an important task.
+{{}}
+While recent work has made several important advances in
+the acceleration of CI builds, optimizations often depend upon explicitly defined build dependency graphs (e.g., make, Gradle, CloudBuild,
+Bazel).
+{{}}
+These hand-maintained graphs may be (a) underspecified, leading to incorrect build behaviour; or (b) overspecified, leading to
+missed acceleration opportunities.
+{{}}
+In this paper, we propose KOTINOS—a language-agnostic approach to infer data from which build
+acceleration decisions can be made without relying upon build specifications.
+{{}}
+After inferring this data, our approach accelerates CI builds
+by caching the build environment and skipping unaffected build steps.
+{{}}
+KOTINOS is at the core of a commercial CI service with a growing
+customer base.
+{{}}
+To evaluate KOTINOS, we mine 14,364 historical CI build records spanning three proprietary and seven open-source
+software projects.
+{{}}
+We find that:
+{{}}
+(1) at least 87.9 percent of the builds activate at least one KOTINOS acceleration; and (2) 74 percent of
+accelerated builds achieve a speed-up of two-fold with respect to their non-accelerated counterparts.
+{{}}
+Moreover, (3) the benefits of KOTINOS
+can also be replicated in open source software systems; and (4) KOTINOS imposes minimal resource overhead (i.e., < 1 percent median
+CPU usage, 2 MB – 2.2 GB median memory usage, and 0.4 GB – 5.2 GB median storage overhead) and does not compromise build
+outcomes.
+{{}}
+Our results suggest that migration to KOTINOS yields substantial benefits with minimal investment of effort (e.g., no migration
+of build systems is necessary).
+{{}}
+---

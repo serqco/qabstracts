@@ -1,0 +1,47 @@
+Aligned metric representation based balanced multiset ensemble learning for heterogeneous defect prediction.
+
+Context:
+{{}}
+Heterogeneous defect prediction (HDP) refers to the defect prediction across projects with different
+metrics.
+{{}}
+Most existing HDP methods map source and target data into a common metric space where each
+dimension has no actual meaning, which weakens their interpretability.
+{{}}
+Besides, HDP always suffers from the
+class imbalance problem.
+{{}}
+Objective:
+{{}}
+For deficiencies of current HDP methods, we intend to propose a novel HDP approach that can
+reduce the heterogeneity of source and target data and deal with imbalanced data while retaining the actual
+meaning for each dimension of constructed common metric space.
+{{}}
+Method:
+{{}}
+We propose an Aligned Metric Representation based Balanced Multiset Ensemble learning (BMEL+
+AMR) approach for HDP.
+{{}}
+AMR consists of shared, source-specific, and target-specific metrics.
+{{}}
+It is built by
+learning the translation from shared to specific metrics and reducing the distribution difference.
+{{}}
+To deal with
+imbalanced data, we design BMEL that constructs multiple balanced subsets for source data and produces an
+aggregated classifier for predicting labels of target data.
+{{}}
+Result:
+{{}}
+Experimental results on 22 public projects indicate that (1) among all competing methods, BMEL+AMR
+achieves the best performance on all indicators except Popt, followed by AMR; (2) compared with AMR, the
+introduction of BMEL improves the performance on non-effort-aware indicators statistically significantly except
+F1-score; compared with BMEL, the introduction of AMR improves the performance throughout all indicators
+statistically significantly.
+{{}}
+Conclusion:
+{{}}
+BMEL+AMR can effectively improve HDP performance by eliminating heterogeneity and dealing
+with imbalanced data, and AMR is helpful to explain the prediction model.
+{{}}
+---

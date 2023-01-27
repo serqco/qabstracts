@@ -1,0 +1,26 @@
+GUI-Guided Test Script Repair for Mobile Apps.
+
+Graphical User Interface (GUI) testing is widely used to test mobile apps.
+{{}}
+As mobile apps are frequently updated and need
+repeated testing, to reduce the test cost, their test cases are often coded as scripts to enable automated execution using test harnesses/
+tools.
+{{}}
+When those mobile apps evolve, many of the test scripts, however, may become broken due to changes made to the app GUIs.
+{{}}
+While it is desirable that the broken scripts get repaired, doing it manually can be preventively expensive if the number of tests need
+repairing is large.
+{{}}
+We propose in this paper a novel approach named METER to repairing broken GUI test scripts automatically when mobile
+apps evolve.
+{{}}
+METER leverages computer vision techniques to infer GUI changes between two versions of a mobile app and uses the
+inferred changes to guide the repair of GUI test scripts.
+{{}}
+Since METER only relies on screenshots to repair GUI tests, it is applicable to apps
+targeting open or closed source mobile platforms.
+{{}}
+In experiments conducted on 22 Android apps and 6 iOS apps, repairs produced by
+METER helped preserve 63.7 and 38.8 percent of all the test actions broken by the GUI changes, respectively.
+{{}}
+---

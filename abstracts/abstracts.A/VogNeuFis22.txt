@@ -1,0 +1,28 @@
+MICOSE4aPS: Industrially Applicable Maturity Metric to Improve Systematic Reuse of Control Software.
+
+MICOSE4aPS:
+{{}}
+Industrially Applicable Maturity Metric
+to Improve Systematic Reuse of Control Software
+BIRGIT VOGEL-HEUSER, EVA-MARIA NEUMANN, and JULIANE FISCHER,
+Institute of Automation and Information Systems, Technical University of Munich, Germany
+automated Production Systems (aPS) are highly complex, mechatronic systems that usually have to operate reliably for many decades.
+{{}}
+Standardization and reuse of control software modules is a core prerequisite
+to achieve the required system quality in increasingly shorter development cycles.
+{{}}
+However, industrial case
+studies in aPS show that many aPS companies still struggle with strategically reusing software.
+{{}}
+This paper
+proposes a metric-based approach to objectively measure the maturity of industrial IEC 61131-based
+control software in aPS (MICOSE4aPS) to identify potential weaknesses and quality issues hampering
+systematic reuse.
+{{}}
+Module developers in the machine and plant manufacturing industry can directly benefit
+as the metric calculation is integrated into the software engineering workflow.
+{{}}
+An in-depth industrial evaluation in a top-ranked machine manufacturing company in food packaging and an expert evaluation with
+different companies confirmed the benefit of efficiently managing the quality of control software.
+{{}}
+---

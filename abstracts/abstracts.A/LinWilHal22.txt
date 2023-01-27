@@ -1,0 +1,37 @@
+The Impact of Surface Features on Choice of (in)Secure Answers by Stackoverflow Readers.
+
+Existing research has shown that developers will use StackOverflow to answer programming questions:
+{{}}
+but what draws
+them to one particular answer over any other?
+{{}}
+The choice of answer they select can mean the difference between a secure application
+and insecure one, as the quality of supposedly secure answers can vary.
+{{}}
+Prior work has studied people posting on Stack Overflow—a
+two-way communication between the original poster and the Stack Overflow community.
+{{}}
+Instead, we study the situation of one-way
+communication, where people only read a Stack Overflow thread without being actively involved in it, sometimes long after a thread has
+closed.
+{{}}
+We report on a mixed-method study including a controlled between-groups experiment and qualitative analysis of participants’
+rationale (N=1188), investigating whether explanation detail, answer scoring, accepted answer marks, as well as the security of the
+code snippet itself affect the answers participants accept.
+{{}}
+Our findings indicate that explanation detail affects what answers
+participants reading a thread select (p<0.01), while answer score and acceptance do not (p>0.05)—the inverse of what research has
+shown for those asking and answering questions.
+{{}}
+The qualitative analysis of participants’ rationale further explains how several
+cognitive biases underpin these findings.
+{{}}
+Correspondence bias, in particular, plays an important role in instilling readers with a false
+sense of confidence in an answer through the way it looks, regardless of whether it works, is secure, or if the community agrees with
+it.
+{{}}
+As a result, we argue that StackOverflow’s use as a knowledge base by people not actively involved in threads—when there is only
+one-way-communication—may inadvertently contribute to the spread of insecure code, as the community’s voting mechanisms hold
+little power to deter them from answers.
+{{}}
+---

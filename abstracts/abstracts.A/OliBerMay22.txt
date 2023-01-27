@@ -1,0 +1,64 @@
+A Delphi study to recognize and assess systems of systems vulnerabilities.
+
+Information and Software Technology 146 (2022) 106874
+
+Contents lists available at ScienceDirect
+
+Information and Software Technology
+journal homepage:
+{{}}
+www.elsevier.com/locate/infsof
+
+A Delphi study to recognize and assess systems of systems vulnerabilities
+Miguel A.
+{{}}
+Olivero a, *, Antonia Bertolino b, Francisco José Dominguez-Mayo a, Ilaria Matteucci c,
+María José Escalona a
+a
+
+University of Seville, Seville, Spain
+Istituto di Scienza e Tecnologie dell’Informazione, Pisa, Italy
+c
+Istituto di Informatica e Telematica in Consiglio Nazionalle delle Ricerche, Pisa, Italy
+b
+
+A R T I C L E I N F O
+
+A B S T R A C T
+
+Keywords:
+{{}}
+Delphi
+Expert judgment
+Security
+Systems of systems
+
+Context:
+{{}}
+System of Systems (SoS) is an emerging paradigm by which independent systems collaborate by sharing
+resources and processes to achieve objectives that they could not achieve on their own.
+{{}}
+In this context, a number
+of emergent behaviors may arise that can undermine the security of the constituent systems.
+{{}}
+Objective:
+{{}}
+We apply the Delphi method with the aims to improve our understanding of SoS security and related
+problems, and to investigate their possible causes and remedies.
+{{}}
+Method:
+{{}}
+Experts on SoS expressed their opinions and reached consensus in a series of rounds by following a
+structured questionnaire.
+{{}}
+Results:
+{{}}
+The results show that the experts found more consensus in disagreement than in agreement about some
+SoS characteristics, and on how SoS vulnerabilities could be identified and prevented.
+{{}}
+Conclusions:
+{{}}
+From this study we learn that more work is needed to reach a shared understanding of SoS vul­
+nerabilities, and we leverage expert feedback to outline some future research directions.
+{{}}
+---

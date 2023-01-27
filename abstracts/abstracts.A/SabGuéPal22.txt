@@ -1,0 +1,40 @@
+A Mixed-Method Approach to Recommend Corrections and Correct REST Antipatterns.
+
+Many companies, e.g., Facebook and YouTube, use the REST architecture and provide REST APIs to their clients.
+{{}}
+Like any
+other software systems, REST APIs need maintenance and must evolve to improve and stay relevant.
+{{}}
+Antipatterns—poor design
+practices—hinder this maintenance and evolution.
+{{}}
+Although the literature defines many antipatterns and proposes approaches for their
+(automatic) detection, their correction did not receive much attention.
+{{}}
+Therefore, we apply a mixed-method approach to study REST
+APIs and REST antipatterns with the objectives to recommend corrections or, when possible, actually correct the REST antipatterns.
+{{}}
+Qualitatively, via case studies, we analyse the evolution of 11 REST APIs, including Facebook, Twitter, and YouTube, over six years.
+{{}}
+We
+detect occurrences of eight REST antipatterns in the years 2014, 2017, and 2020 in 17 versions of 11 REST APIs.
+{{}}
+Thus, we show that
+(1) REST APIs and antipatterns evolve over time and (2) developers seem to remove antipatterns.
+{{}}
+Qualitatively via a discourse
+analysis, we analyse developers’ forums and report that developers are concerned with the occurrences of REST antipatterns and
+discuss corrections to these antipatterns.
+{{}}
+Following these qualitative studies, using an engineering-research approach, we propose the
+following novel and unique contributions:
+{{}}
+(1) we describe and compare the corrections of eight REST antipatterns from the academic
+literature and from developers’ forums; (2) we devise and describe algorithms to recommend corrections to some of these antipatterns;
+(3) we present algorithms and a tool to correct some of these antipatterns by intercepting and modifying responses from REST APIs;
+and, (4) we validate the recommendations and the corrections manually and via a survey answered by 24 REST developers.
+{{}}
+Thus, we
+propose to REST API developers and researchers the first, grounded approach to correct REST antipatterns.
+{{}}
+---

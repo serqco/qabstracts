@@ -1,0 +1,90 @@
+The practical roles of enterprise architecture artifacts: A classification and relationship.
+
+Information and Software Technology 147 (2022) 106897
+
+Contents lists available at ScienceDirect
+
+Information and Software Technology
+journal homepage:
+{{}}
+www.elsevier.com/locate/infsof
+
+The practical roles of enterprise architecture artifacts:
+{{}}
+A classification
+and relationship
+Svyatoslav Kotusev a, *, Sherah Kurnia b, Rod Dilnutt b
+a
+b
+
+HSE University, Russia
+University of Melbourne, Australia
+
+A R T I C L E I N F O
+
+A B S T R A C T
+
+Keywords:
+{{}}
+Enterprise architecture (EA)
+Artifacts
+Roles
+Usage
+CSVLOD taxonomy
+Grounded theory
+
+Context:
+{{}}
+Enterprise architecture (EA) is a description of an enterprise from an integrated business and IT
+perspective.
+{{}}
+EA is typically defined as a comprehensive blueprint of an organization covering its business, data,
+applications and technology domains and consisting of diverse EA artifacts.
+{{}}
+EA has numerous potential stake­
+holders and usage scenarios in organizations.
+{{}}
+However, the existing EA literature does not offer any consistent
+theories explaining the practical roles of individual EA artifacts and fails to explain how exactly different types of
+EA artifacts are used in practice.
+{{}}
+Objective:
+{{}}
+This study intends to explore the roles of different EA artifacts in organizations and develop a generic
+descriptive theory explaining these roles.
+{{}}
+The theory purports to cover various properties of EA artifacts as well
+as the relationships between them.
+{{}}
+Method:
+{{}}
+The research method of this study follows two consecutive phases:
+{{}}
+theory construction and theory
+validation.
+{{}}
+First, theory construction is based on the qualitative in-depth analysis of five case organizations with
+established EA practices.
+{{}}
+Next, theory validation includes confirmatory interviews with ten EA experts.
+{{}}
+Results:
+{{}}
+This study develops a descriptive theory explaining the roles of different EA artifacts in an EA practice.
+{{}}
+The resulting theory defines six general types of EA artifacts (Considerations, Standards, Visions, Landscapes,
+Outlines and Designs, CSVLOD) and explains their type-specific practical roles, including their informational
+contents, typical usage, ensuing organizational benefits and interrelationships with each other.
+{{}}
+Conclusions:
+{{}}
+This study presents the first systematic theory describing the usage of EA artifacts in organizations.
+{{}}
+Our theory facilitates better theoretical understanding of the concept of EA and also provides evidence-based
+solutions to the commonly reported practical problems with EA.
+{{}}
+This study suggests that the EA research
+community should focus on studying individual EA artifacts instead of studying EA in general and calls for
+further research on EA artifacts and their usage as part of EA practices.
+{{}}
+---

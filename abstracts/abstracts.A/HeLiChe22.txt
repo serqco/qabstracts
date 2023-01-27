@@ -1,0 +1,33 @@
+Diversified Third-Party Library Prediction for Mobile App Development.
+
+The rapid growth of mobile apps has significantly promoted the use of third-party libraries in mobile app development.
+{{}}
+However,
+mobile app developers are now facing the challenge of finding useful third-party libraries for improving their apps, e.g., to enhance user
+interfaces, to add social features, etc.
+{{}}
+An effective approach is to leverage collaborative filtering (CF) to predict useful third-party libraries for
+developers.
+{{}}
+We employed Matrix Factorization (MF) approaches - the classic CF-based prediction approaches - to make the predictions
+based on a total of 31,432 Android apps from Google Play.
+{{}}
+However, our investigation shows that there is a significant lack of diversity in
+the prediction results - a small fraction of popular third-party libraries dominate the prediction results while most other libraries are ill-served.
+{{}}
+The low diversity in the prediction results limits the usefulness of the prediction because it lacks novelty and serendipity which are much
+appreciated by mobile app developers.
+{{}}
+In order to increase the diversity in the prediction results, we designed an innovative MF-based
+approach, namely LibSeek, specifically for predicting useful third-party libraries for mobile apps.
+{{}}
+It employs an adaptive weighting
+mechanism to neutralize the bias caused by the popularity of third-party libraries.
+{{}}
+In addition, it introduces neighborhood information, i.e.,
+information about similar apps and similar third-party libraries, to personalize the predictions for individual apps.
+{{}}
+The experimental results
+show that LibSeek can significantly diversify the prediction results, and in the meantime, increase the prediction accuracy.
+{{}}
+---

@@ -1,0 +1,35 @@
+Towards Robustness of Deep Program Processing Models - Detection, Estimation, and Enhancement.
+
+50
+Towards Robustness of Deep Program Processing
+Models—Detection, Estimation, and Enhancement
+HUANGZHAO ZHANG, ZHIYI FU, and GE LI, Peking University, China
+LEI MA, University of Alberta, Canada
+ZHEHAO ZHAO, HUA’AN YANG, and YIZHE SUN, Peking University, China
+YANG LIU, Nanyang Technological University, Singapore
+ZHI JIN, Peking University, China
+Deep learning (DL) has recently been widely applied to diverse source code processing tasks in the software engineering (SE) community, which achieves competitive performance (e.g., accuracy).
+{{}}
+However, the
+robustness, which requires the model to produce consistent decisions given minorly perturbed code inputs,
+still lacks systematic investigation as an important quality indicator.
+{{}}
+This article initiates an early step and
+proposes a framework CARROT for robustness detection, measurement, and enhancement of DL models
+for source code processing.
+{{}}
+We first propose an optimization-based attack technique CARROTA to generate valid adversarial source code examples effectively and efficiently.
+{{}}
+Based on this, we define the robustness
+metrics and propose robustness measurement toolkit CARROTM , which employs the worst-case performance
+approximation under the allowable perturbations.
+{{}}
+We further propose to improve the robustness of the DL
+models by adversarial training (CARROTT ) with our proposed attack techniques.
+{{}}
+Our in-depth evaluations
+on three source code processing tasks (i.e., functionality classification, code clone detection, defect prediction) containing more than 3 million lines of code and the classic or SOTA DL models, including GRU, LSTM,
+ASTNN, LSCNN, TBCNN, CodeBERT, and CDLH, demonstrate the usefulness of our techniques for ❶ effective and efficient adversarial example detection, ❷ tight robustness estimation, and ❸ effective robustness
+enhancement.
+{{}}
+---

@@ -1,0 +1,123 @@
+A Common Terminology for Software Risk Management.
+
+A Common Terminology for Software Risk Management
+JHON MASSO, Alarcos Research Group, Institute of Technologies and Information Systems, University of
+Castilla-La Mancha, Spain and GTI Research Group.
+{{}}
+Electronic and Telecommunications Engineering Faculty,
+University of Cauca, Colombia
+FÉLIX GARCÍA, Alarcos Research Group, Institute of Technologies and Information Systems, University
+of Castilla-La Mancha, Spain
+CÉSAR PARDO, GTI Research Group.
+{{}}
+Electronic and Telecommunications Engineering Faculty, University of Cauca, Colombia
+FRANCISCO J.
+{{}}
+PINO, IDIS Research Group.
+{{}}
+Electronic and Telecommunications Engineering Faculty,
+University of Cauca, Colombia
+MARIO PIATTINI, Alarcos Research Group, Institute of Technologies and Information Systems, University of Castilla-La Mancha, Spain
+In order to improve and sustain their competitiveness over time, organisations nowadays need to undertake
+different initiatives to adopt frameworks, models and standards that will allow them to align and improve
+their business processes.
+{{}}
+In spite of these efforts, organisations may still encounter governance and management problems.
+{{}}
+This is where Risk Management (RM) can play a major role, since its purpose is to
+contribute to the creation and preservation of value in the context of the organisation’s processes.
+{{}}
+RM is a
+complex and subjective activity that requires experience and a high level of knowledge about risks, and it is
+for this reason that standardisation institutions and researchers have made great efforts to define initiatives
+to overcome these challenges.
+{{}}
+However, the RM field nevertheless presents a lack of uniformity in its terms
+and concepts, due to the different contexts and scopes of application, a situation that can generate ambiguities and misunderstandings.
+{{}}
+To address these issues, this paper aims to present an ontology called SRMO
+(Software Risk Management Ontology), which seeks to unify the terms and concepts associated with RM
+and provide an integrated and holistic view of risk.
+{{}}
+In doing so, the Pipeline framework has been applied
+in order to assure and verify the quality of the proposed ontology, and it has been implemented in Protégé
+and validated by means of competency questions.
+{{}}
+Three application scenarios of this ontology demonstrating
+their usefulness in the software engineering field are presented in this paper.
+{{}}
+We believe that this ontology
+
+Professors Félix García and Mario Piattini acknowledge that this work has been funded by:
+{{}}
+BIZDEVOPS-GLOBAL project
+(Ministerio de Ciencia, Innovación y Universidades, y Fondo Europeo de Desarrollo Regional FEDER, RTI2018-098309-BC31); and G3SOFT project (Consejería de Educación, Cultura y Deportes de la Junta de Comunidades de Castilla La Mancha,
+y Fondo Europeo de Desarrollo Regional FEDER, SBPLY/17/180501/000150).
+{{}}
+Authors’ addresses:
+{{}}
+J.
+{{}}
+Masso, Alarcos Research Group, Institute of Technologies and Information Systems, University of
+Castilla-La Mancha, Spain and GTI Research Group.
+{{}}
+Electronic and Telecommunications Engineering Faculty, University of
+Cauca, Calle 5 # 4 – 70, Popayán, Cauca, 190002, Colombia; email:
+{{}}
+masso@unicauca.edu.co; F.
+{{}}
+García and M.
+{{}}
+Piattini, Alarcos
+Research Group, Institute of Technologies and Information Systems, University of Castilla-La Mancha, Paseo de la Universidad, Ciudad Real, Castilla la Mancha, 13071, Spain; emails:
+{{}}
+{felix.garcia, mario.piattini}@uclm.es; C.
+{{}}
+Pardo, GTI Research
+Group.
+{{}}
+Electronic and Telecommunications Engineering Faculty, University of Cauca, Calle 5 # 4 – 70, Popayán, Cauca,
+190002, Colombia; email:
+{{}}
+cpardo@unicauca.edu.co; F.
+{{}}
+J.
+{{}}
+Pino, IDIS Research Group.
+{{}}
+Electronic and Telecommunications Engineering Faculty, University of Cauca, Calle 5 # 4 – 70, Popayán, Cauca, 190002, Colombia; email:
+{{}}
+fjpino@unicauca.edu.co.
+{{}}
+Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee
+provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and
+the full citation on the first page.
+{{}}
+Copyrights for components of this work owned by others than ACM must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or republish, to post on servers or to redistribute to lists, requires
+prior specific permission and/or a fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+© 2022 Association for Computing Machinery.
+{{}}
+1049-331X/2022/07-ART59 $15.00
+https://doi.org/10.1145/3498539
+ACM Transactions on Software Engineering and Methodology, Vol.
+{{}}
+31, No.
+{{}}
+4, Article 59.
+{{}}
+Pub.
+{{}}
+date:
+{{}}
+July 2022.
+{{}}
+59
+{{}}
+---

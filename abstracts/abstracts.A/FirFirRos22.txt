@@ -1,0 +1,41 @@
+Engineering Web Augmentation software: A development method for enabling end-user maintenance.
+
+Nowadays, end-users are able to adapt Web applications when some of their requirements have not been taken
+into account by developers.
+{{}}
+One possible way to do adaptations is by using Web Augmentation techniques.
+{{}}
+Web
+Augmentation allows end-users to modify the Web sites’ user interfaces once these are loaded on the clientside, i.e., in the browser.
+{{}}
+They achieve these adaptations by developing and/or installing Web browser plugins
+(‘‘augmenters’’) that modify the user interface with new functionalities.
+{{}}
+This particular kind of software artifacts
+requires special attention regarding maintenance as–in most cases–they depend on third-party resources, such
+as HTML pages.
+{{}}
+When these resources are upgraded, unexpected results during the augmentation process may
+occur.
+{{}}
+Many communities have arisen around Web Augmentation, and today there are large repositories where
+developers share their augmenters; end-users may give feedback about existing augmentations and even ask for
+new ones.
+{{}}
+Maintenance is a key phase in the augmenters’ life-cycle, and currently, this task falls (as usual) on
+the developers.
+{{}}
+In this paper, we present a participatory approach for allowing end-users without programming
+skills to participate in the augmenters’ maintenance phase.
+{{}}
+In order to allow this, we also provide support for
+the development phase to bootstrap a first version of the augmenter and to reduce the load on developers in
+both phases, development and maintenance.
+{{}}
+We present an analysis of more than eight thousand augmenters,
+which helped us devise the approach.
+{{}}
+Finally, we present an experiment with 48 participants to validate our
+approach.
+{{}}
+---

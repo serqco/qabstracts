@@ -1,0 +1,115 @@
+What You See is What it Means! Semantic Representation Learning of Code based on Visualization and Transfer Learning.
+
+What You See is What it Means!
+{{}}
+Semantic Representation
+Learning of Code based on Visualization and Transfer
+Learning
+PATRICK KELLER, University of Luxembourg
+ABDOUL KADER KABORÉ, University of Luxembourg, CITADEL at Université Virtuelle du
+Burkina Faso
+
+LAURA PLEIN, Saarland University
+JACQUES KLEIN, YVES LE TRAON, and TEGAWENDÉ F.
+{{}}
+BISSYANDÉ,
+University of Luxembourg
+Recent successes in training word embeddings for Natural Language Processing (NLP) tasks have encouraged a wave of research on representation learning for source code, which builds on similar NLP methods.
+{{}}
+The overall objective is then to produce code embeddings that capture the maximum of program semantics.
+{{}}
+State-of-the-art approaches invariably rely on a syntactic representation (i.e., raw lexical tokens, abstract
+syntax trees, or intermediate representation tokens) to generate embeddings, which are criticized in the literature as non-robust or non-generalizable.
+{{}}
+In this work, we investigate a novel embedding approach based
+on the intuition that source code has visual patterns of semantics.
+{{}}
+We further use these patterns to address
+the outstanding challenge of identifying semantic code clones.
+{{}}
+We propose the WySiWiM (‘‘What You See
+Is What It Means”) approach where visual representations of source code are fed into powerful pre-trained
+image classification neural networks from the field of computer vision to benefit from the practical advantages of transfer learning.
+{{}}
+We evaluate the proposed embedding approach on the task of vulnerable code
+prediction in source code and on two variations of the task of semantic code clone identification:
+{{}}
+code clone
+detection (a binary classification problem), and code classification (a multi-classification problem).
+{{}}
+We show
+with experiments on the BigCloneBench (Java), Open Judge (C) that although simple, our WySiWiM approach
+performs as effectively as state-of-the-art approaches such as ASTNN or TBCNN.
+{{}}
+We also showed with data
+from NVD and SARD that WySiWiM representation can be used to learn a vulnerable code detector with
+reasonable performance (accuracy ∼90%).
+{{}}
+We further explore the influence of different steps in our approach,
+such as the choice of visual representations or the classification algorithm, to eventually discuss the promises
+and limitations of this research direction.
+{{}}
+This work was partly supported (1) by the Luxembourg National Research Fund (FNR)—NERVE project, ref.
+{{}}
+14591304 and
+CHARACTERIZE project, ref.
+{{}}
+11693861; (2) by the Luxembourg Ministry of Foreign and European Affairs through their
+Digital4Development (D4D) portfolio under project LuxWAyS; and (3) by the European Research Council (ERC) under the
+European Union’s Horizon 2020 research and innovation programme (Project NATURAL—grant agreement No.
+{{}}
+949014).
+{{}}
+Authors’ addresses:
+{{}}
+P.
+{{}}
+Keller, J.
+{{}}
+Klein, Y.
+{{}}
+Le Traon, and T.
+{{}}
+F.
+{{}}
+Bissyandé, University of Luxembourg, Interdisciplinary Centre
+for Security, Reliability and Trust, Block E, 6, rue Richard Coudenhove-Kalergi L-1359 Luxembourg; emails:
+{{}}
+{patrick.keller,
+jacques.klein, yves.letraon, tegawende.bissyande}@uni.lu; A.
+{{}}
+K.
+{{}}
+Kaboré (corresponding author), University of Luxembourg,
+Interdisciplinary Centre for Security, Reliability and Trust, Block E, 6, rue Richard Coudenhove-Kalergi L-1359 Luxembourg;
+email:
+{{}}
+abdoulkader.kabore@uni.lu; L.
+{{}}
+Plein, University of Luxembourg, Interdisciplinary Centre for Security, Reliability and
+Trust, Block E, 6, rue Richard Coudenhove-Kalergi L-1359 Luxembourg; email:
+{{}}
+laura_plein_1996@hotmail.fr.
+{{}}
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike International
+4.0 License.
+{{}}
+© 2021 Copyright held by the owner/author(s).
+{{}}
+1049-331X/2021/12-ART31 $15.00
+https://doi.org/10.1145/3485135
+ACM Transactions on Software Engineering and Methodology, Vol.
+{{}}
+31, No.
+{{}}
+2, Article 31.
+{{}}
+Pub.
+{{}}
+date:
+{{}}
+December 2021.
+{{}}
+31
+{{}}
+---

@@ -1,0 +1,70 @@
+Correction to: Uniform and scalable sampling of highly configurable systems.
+
+Empirical Software Engineering (2022) 27:
+{{}}
+57
+https://doi.org/10.1007/s10664-022-10141-6
+
+AUTHOR CORRECTION
+
+Correction to:
+{{}}
+Uniform and scalable sampling of highly
+configurable systems
+Ruben Heradio 1 & David Fernandez-Amoros 1 & José A.
+{{}}
+Galindo 2 &
+David Benavides 2 & Don Batory 3
+Published online:
+{{}}
+14 March 2022
+# The Author(s) 2022
+
+Correction to:
+{{}}
+Empir Software Eng (2022) 27:
+{{}}
+44
+https://doi.org/10.1007/s10664-021-10102-5
+The original version of this article, unfortunately, contained mistakes.
+{{}}
+The title of Section 2.2.3
+should be "Method 3:
+{{}}
+Measure the distance between the theoretical variable probabilities with
+the empirical variable frequencies in a sample", and the title of Section 2.2.4 should be
+"Method 4:
+{{}}
+A statistical goodness-of-fit test that compares the theoretical variable probabilities
+with the empirical variable frequencies in a sample".
+{{}}
+The original article has been corrected.
+{{}}
+The online version of the original article can be found at https://doi.org/10.1007/s10664-021-10102-5
+
+* Ruben Heradio
+rheradio@issi.uned.es
+David Fernandez-Amoros
+david@issi.uned.es
+José A.
+{{}}
+Galindo
+jagalindo@us.es
+David Benavides
+benavides@us.es
+Don Batory
+batory@cs.utexas.edu
+
+1
+
+Universidad Nacional de Educación a Distancia, Madrid, Spain
+
+2
+
+University of Seville, Seville, Spain
+
+3
+
+University of Texas at Austin, Austin, TX, USA
+{{}}
+---

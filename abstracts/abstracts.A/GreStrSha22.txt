@@ -1,0 +1,77 @@
+An onboarding model for integrating newcomers into agile project teams.
+
+Information and Software Technology 143 (2022) 106792
+
+Contents lists available at ScienceDirect
+
+Information and Software Technology
+journal homepage:
+{{}}
+www.elsevier.com/locate/infsof
+
+An onboarding model for integrating newcomers into agile project teams
+Peggy Gregory a, *, Diane E.
+{{}}
+Strode b, Helen Sharp c, Leonor Barroca c
+a
+
+School of Psychology & Computer Science, University of Central Lancashire, Preston, UK
+School of Information Technology, Whitireia Polytechnic, Wellington, New Zealand
+c
+School of Computing and Communications, The Open University, Milton Keynes, UK
+b
+
+A R T I C L E I N F O
+
+A B S T R A C T
+
+Keywords:
+{{}}
+Agile onboarding adjustments
+Onboarding activities
+Scrum
+Self-organizing team onboarding
+Sustaining agile
+Team onboarding
+Newcomers
+
+Context:
+{{}}
+A stable team is deemed optimal for agile software development project success; however, all teams
+change membership over time.
+{{}}
+Newcomers joining an agile project team must rapidly assimilate into the
+organisational and project environment.
+{{}}
+They must do this while learning how to contribute effectively and
+without seriously interrupting project progress.
+{{}}
+Objective:
+{{}}
+This paper addresses how newcomers integrate into an established agile project team and how agile
+practices assist with onboarding.
+{{}}
+Method:
+{{}}
+A single, qualitative case study approach was used, investigating a co-located agile project team in a
+large IT department who regularly onboard inexperienced newcomers.
+{{}}
+Analysis was abductive, consisting of
+inductive coding and theming using categories from an existing onboarding theory.
+{{}}
+Results:
+{{}}
+We describe the team’s onboarding practices and adjustments and present an agile onboarding model
+that encompasses onboarding activities, individual adjustments, and workplace adjustments.
+{{}}
+Conclusions:
+{{}}
+A mixture of general and specific agile onboarding practices contribute to successful onboarding in
+an agile team.
+{{}}
+We provide practical guidelines to improve onboarding practice in agile teams.
+{{}}
+Our major new
+contribution is an extended model of onboarding for agile teams.
+{{}}
+---

@@ -1,0 +1,34 @@
+Assessing and Improving an Evaluation Dataset for Detecting Semantic Code Clones via Deep Learning.
+
+Assessing and Improving an Evaluation Dataset for
+Detecting Semantic Code Clones via Deep Learning
+HAO YU, School of Software and Microelectronics, Peking University, Beijing, China
+XING HU, School of Software Technology, Zhejiang University, Ningbo, China
+GE LI, Key Laboratory of High Confidence Software Technologies (Peking University), Ministry of
+Education, China
+
+YING LI, National Research Center of Software Engineering, Peking University, Beijing, China
+QIANXIANG WANG, Huawei Technologies Co., Ltd., China
+TAO XIE, Key Laboratory of High Confidence Software Technologies (Peking University), Ministry of
+Education, China
+In recent years, applying deep learning to detect semantic code clones has received substantial attention from
+the research community.
+{{}}
+Accordingly, various evaluation benchmark datasets, with the most popular one as
+BigCloneBench, are constructed and selected as benchmarks to assess and compare different deep learning
+models for detecting semantic clones.
+{{}}
+However, there is no study to investigate whether an evaluation benchmark dataset such as BigCloneBench is properly used to evaluate models for detecting semantic code clones.
+{{}}
+In this article, we present an experimental study to show that BigCloneBench typically includes semantic
+clone pairs that use the same identifier names, which however are not used in non-semantic-clone pairs.
+{{}}
+Subsequently, we propose an undesirable-by-design Linear-Model that considers only which identifiers appear
+in a code fragment; this model can achieve high effectiveness for detecting semantic clones when evaluated
+on BigCloneBench, even comparable to state-of-the-art deep learning models recently proposed for detecting semantic clones.
+{{}}
+To alleviate these issues, we abstract a subset of the identifier names (including type,
+variable, and method names) in BigCloneBench to result in AbsBigCloneBench and use AbsBigCloneBench
+to better assess the effectiveness of deep learning models on the task of detecting semantic clones.
+{{}}
+---

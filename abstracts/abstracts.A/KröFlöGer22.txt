@@ -1,0 +1,30 @@
+Incremental software product line verification - A performance analysis with dead variable code.
+
+Verification approaches for Software Product Lines (SPL) aim at detecting variabilityrelated defects and inconsistencies.
+{{}}
+In general, these analyses take a significant amount of
+time to provide complete results for an entire, complex SPL.
+{{}}
+If the SPL evolves, these
+results potentially become invalid, which requires a time-consuming re-verification of the
+entire SPL for each increment.
+{{}}
+However, in previous work we showed that variabilityrelated changes occur rather infrequently and typically only affect small parts of a SPL.
+{{}}
+In
+this paper, we utilize this observation and present an incremental dead variable code
+analysis as an example for incremental SPL verification, which achieves significant
+performance improvements.
+{{}}
+It explicitly considers changes and partially updates its
+previous results by re-verifying changed artifacts only.
+{{}}
+We apply this approach to the
+Linux kernel demonstrating that our fastest incremental strategy takes only 3.20 seconds
+or less for most of the changes, while the non-incremental approach takes 1,020 seconds
+in median.
+{{}}
+We also discuss the impact of different variants of our strategy on the overall
+performance, providing insights into optimizations that are worthwhile.
+{{}}
+---

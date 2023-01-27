@@ -1,0 +1,83 @@
+JuCify: A Step Towards Android Code Unification for Enhanced Static Analysis.
+
+Native code is now commonplace within Android app packages
+where it co-exists and interacts with Dex bytecode through the Java
+Native Interface to deliver rich app functionalities.
+{{}}
+Yet, state-of-the-
+art static analysis approaches have mostly overlooked the presence
+of such native code, which, however, may implement some key sen-
+sitive, or even malicious, parts of the app behavior.
+{{}}
+This limitation
+of the state of the art is a severe threat to validity in a large range of
+static analyses that do not have a complete view of the executable
+code in apps.
+{{}}
+To address this issue, we propose a new advance in
+the ambitious research direction of building a unified model of all
+code in Android apps.
+{{}}
+The JuCify approach presented in this paper
+is a significant step towards such a model, where we extract and
+merge call graphs of native code and bytecode to make the final
+model readily-usable by a common Android analysis framework:
+{{}}
+in our implementation, JuCify builds on the Soot internal inter-
+mediate representation.
+{{}}
+We performed empirical investigations to
+highlight how, without the unified model, a significant amount
+of Java methods called from the native code are “unreachable” in
+apps’ call-graphs, both in goodware and malware.
+{{}}
+Using JuCify, we
+were able to enable static analyzers to reveal cases where malware
+relied on native code to hide invocation of payment library code
+or of other sensitive code in the Android framework.
+{{}}
+Additionally,
+JuCify’s model enables state-of-the-art tools to achieve better preci-
+sion and recall in detecting data leaks through native code.
+{{}}
+Finally,
+we show that by using JuCify we can find sensitive data leaks that
+pass through native code.
+{{}}
+ACM Reference Format:
+{{}}
+Jordan Samhi1 , Jun Gao1 , Nadia Daoudi1 , Pierre Graux1,3 , Henri Hoyez4 ,
+Xiaoyu Sun2 , Kevin Allix1 , Tegawendé F.
+{{}}
+Bissyandé1 , Jacques Klein1 .
+{{}}
+2022.
+{{}}
+JuCify:
+{{}}
+A Step Towards Android Code Unification for Enhanced Static
+Analysis.
+{{}}
+In 44th International Conference on Software Engineering (ICSE ’22),
+May 21–29, 2022, Pittsburgh, PA, USA.
+{{}}
+ACM, New York, NY, USA, 13 pages.
+{{}}
+https://doi.org/10.1145/3510003.3512766
+Permission to make digital or hard copies of part or all of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for third-party components of this work must be honored.
+{{}}
+For all other uses, contact the owner/author(s).
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Copyright held by the owner/author(s).
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+https://doi.org/10.1145/3510003.3512766
+{{}}
+---

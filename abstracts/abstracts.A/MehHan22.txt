@@ -1,0 +1,96 @@
+Imperative versus Declarative Collection Processing: An RCT on the Understandability of Traditional Loops versus the Stream API in Java.
+
+Java introduced in version 8 with the Stream API means to operate
+on collections using lambda expressions.
+{{}}
+Since then, this API is an
+alternative way to handle collections in a more declarative manner
+instead of the traditional, imperative style using loops.
+{{}}
+However,
+whether the Stream API is beneficial in comparison to loops in terms
+of usability is unclear.
+{{}}
+The present paper introduces a randomized
+control trial (RCT) on the understandability of collection operations
+performed on 20 participants with the dependent variables response
+time and correctness.
+{{}}
+As tasks, subjects had to determine the results
+for collection operations (either defined with the Stream API or with
+loops).
+{{}}
+The results indicate that the Stream API has a significant
+  𝑀𝑙𝑜𝑜𝑝
+(p<.001) and large (𝜂𝑝2 =.695; 𝑀𝑠𝑡𝑟𝑒𝑎𝑚   ∼ 178%) positive effect on the
+response times.
+{{}}
+Furthermore, the usage of the Stream API caused
+significantly less errors.
+{{}}
+And finally, the participants perceived their
+speed with the Stream API higher compared to the loop-based code
+and the participants considered the code based on the Stream API
+as more readable.
+{{}}
+Hence, while existing studies found a negative
+effect of declarative constructs (in terms of lambda expressions) on
+the usability of a main stream programming language, the present
+study found the opposite:
+{{}}
+the present study gives evidence that
+declarative code on collections using the Stream API based on
+lambda expressions has a large, positive effect in comparison to
+traditional loops.
+{{}}
+KEYWORDS
+Programming Languages, Lambda Expressions, Declarative, Imper-
+ative, Java, Streams
+ACM Reference Format:
+{{}}
+Nils Mehlhorn and Stefan Hanenberg.
+{{}}
+2022.
+{{}}
+Imperative versus Declarative
+Collection Processing:
+{{}}
+An RCT on the Understandability of Traditional
+Loops versus the Stream API in Java.
+{{}}
+In 44th International Conference on
+Software Engineering (ICSE ’22), May 21–29, 2022, Pittsburgh, PA, USA.
+{{}}
+ACM,
+New York, NY, USA, 12 pages.
+{{}}
+https://doi.org/10.1145/3510003.3519016
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for components of this work owned by others than ACM
+must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Association for Computing Machinery.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3519016
+{{}}
+---

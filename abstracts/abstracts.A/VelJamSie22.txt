@@ -1,0 +1,82 @@
+On Debugging the Performance of Configurable Software Systems: Developer Needs and Tailored Tool Support.
+
+Determining whether a configurable software system has a per-
+formance bug or it was misconfigured is often challenging.
+{{}}
+While
+there are numerous debugging techniques that can support devel-
+opers in this task, there is limited empirical evidence of how useful
+the techniques are to address the actual needs that developers have
+when debugging the performance of configurable software systems;
+most techniques are often evaluated in terms of technical accuracy
+instead of their usability.
+{{}}
+In this paper, we take a human-centered
+approach to identify, design, implement, and evaluate a solution to
+support developers in the process of debugging the performance
+of configurable software systems.
+{{}}
+We first conduct an exploratory
+study with 19 developers to identify the information needs that
+developers have during this process.
+{{}}
+Subsequently, we design and
+implement a tailored tool, adapting techniques from prior work, to
+support those needs.
+{{}}
+Two user studies, with a total of 20 developers,
+validate and confirm that the information that we provide helps de-
+velopers debug the performance of configurable software systems.
+{{}}
+ACM Reference Format:
+{{}}
+Miguel Velez, Pooyan Jamshidi, Norbert Siegmund, Sven Apel, and Christian
+Kästner.
+{{}}
+2022.
+{{}}
+On Debugging the Performance of Configurable Software Sys-
+tems:
+{{}}
+Developer Needs and Tailored Tool Support.
+{{}}
+In 44th International Con-
+ference on Software Engineering (ICSE ’22), May 21–29, 2022, Pittsburgh, PA,
+USA.
+{{}}
+ACM, New York, NY, USA, 13 pages.
+{{}}
+https://doi.org/10.1145/3510003.
+{{}}
+3510043
+1
+Developers often spend a substantial amount of time diagnosing a
+configurable software system to localize and fix a performance bug,
+or to determine that the system was misconfigured [8, 11, 26, 30,
+32, 33, 55, 58, 59, 86].
+{{}}
+This struggle is quite common when main-
+taining configurable software systems.
+{{}}
+Some empirical studies find
+that 59 percent of performance issues are related to configuration
+errors, 88 percent of these issues require fixing the code [26, 27],
+of which 61 percent take an average of 5 weeks to fix [41], and that
+50 percent of patches in open-source cloud systems and 30 percent
+Permission to make digital or hard copies of part or all of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for third-party components of this work must be honored.
+{{}}
+For all other uses, contact the owner/author(s).
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Copyright held by the owner/author(s).
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+https://doi.org/10.1145/3510003.3510043
+{{}}
+---

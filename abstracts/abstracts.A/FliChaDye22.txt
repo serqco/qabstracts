@@ -1,0 +1,31 @@
+Pitfalls and guidelines for using time-based Git data.
+
+Many software engineering research papers rely on time-based data (e.g., commit timestamps, issue report creation/update/close dates, release dates).
+{{}}
+Like most real-world data
+however, time-based data is often dirty.
+{{}}
+To date, there are no studies that quantify how frequently such data is used by the software engineering research community, or investigate
+sources of and quantify how often such data is dirty.
+{{}}
+Depending on the research task and
+method used, including such dirty data could affect the research results.
+{{}}
+This paper presents
+an extended survey of papers that utilize time-based data, published in the Mining Software
+Repositories (MSR) conference series.
+{{}}
+Out of the 754 technical track and data papers published in MSR 2004–2021, we saw at least 290 (38%) papers utilized time-based data.
+{{}}
+We
+also observed that most time-based data used in research papers comes in the form of Git
+commits, often from GitHub.
+{{}}
+Based on those results, we then used the Boa and Software
+Heritage infrastructures to help identify and quantify several sources of dirty Git timestamp
+data.
+{{}}
+Finally we provide guidelines/best practices for researchers utilizing time-based data
+from Git repositories.
+{{}}
+---

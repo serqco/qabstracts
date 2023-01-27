@@ -1,0 +1,50 @@
+Keyword-guided abstractive code summarization via incorporating structural and contextual information.
+
+Context:
+{{}}
+Source code summarization is a crucial yet far from settled task for describing structured code
+snippets in natural language.
+{{}}
+High-quality code summaries could effectively facilitate program comprehension
+and software maintenance.
+{{}}
+A good code summary is supposed to have the following characteristics:
+{{}}
+complete
+information, correct meaning, and consistent description.
+{{}}
+In recent years, numerous approaches have been
+proposed for code summarization, but it is still very challenging for developers to automatically learn the
+complex semantics from the source code and generate complete, correct and consistent code summaries.
+{{}}
+Objective:
+{{}}
+In this paper, we propose KGCodeSum, a novel keyword-guided abstractive code summarization
+approach that incorporates structural and contextual information.
+{{}}
+Methods:
+{{}}
+To improve summaries’ quality, we leverage both the structural information embedded in code
+itself and the contextual information from related code snippets.
+{{}}
+Meanwhile, we make use of keywords to
+guide summaries’ generation to guarantee the code summaries contain key information.
+{{}}
+Finally, we propose a
+new dynamic vocabulary strategy which can effectively resolve the UNK problems in code summaries.
+{{}}
+Results:
+{{}}
+Through our evaluation on the large-scale benchmark datasets with 2.1 million java method-comment
+pairs and 1.1 million C/C++ function-summary pairs, We have observed that our approach could generate
+better code summaries than existing state-of-the-art approaches in terms of completeness, correctness and
+consistency.
+{{}}
+In addition, we also find that incorporating the dynamic vocabulary strategy into our approach
+could significantly save time and space in the model training process.
+{{}}
+Conclusion:
+{{}}
+Our KGCodeSum approach could effectively generate code summaries.
+{{}}
+---

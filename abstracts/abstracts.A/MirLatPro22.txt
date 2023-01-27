@@ -1,0 +1,98 @@
+Type4Py: Practical Deep Similarity Learning-Based Type Inference for Python.
+
+2022 IEEE/ACM 44th International Conference on Software Engineering (ICSE)
+Type4Py:
+{{}}
+Practical Deep Similarity Learning-Based Type
+Inference for Python
+      Amir M.
+{{}}
+Mir
+s.a.m.mir@tudelft.nl
+Delft University of Technology
+Delft, The Netherlands
+ Sebastian Proksch
+s.proksch@tudelft.nl
+Delft University of Technology
+Delft, The Netherlands
+Abstract
+Dynamic languages, such as Python and Javascript, trade static
+typing for developer flexibility and productivity.
+{{}}
+Lack of static typ-
+ing can cause run-time exceptions and is a major factor for weak
+IDE support.
+{{}}
+To alleviate these issues, PEP 484 introduced optional
+type annotations for Python.
+{{}}
+As retrofitting types to existing code-
+bases is error-prone and laborious, machine learning (ML)-based
+approaches have been proposed to enable automatic type infer-
+ence based on existing, partially annotated codebases.
+{{}}
+However,
+previous ML-based approaches are trained and evaluated on human-
+provided type annotations, which might not always be sound, and
+hence this may limit the practicality for real-world usage.
+{{}}
+In this
+paper, we present Type4Py, a deep similarity learning-based hier-
+archical neural network model.
+{{}}
+It learns to discriminate between
+similar and dissimilar types in a high-dimensional space, which
+results in clusters of types.
+{{}}
+Likely types for arguments, variables,
+and return values can then be inferred through the nearest neigh-
+bor search.
+{{}}
+Unlike previous work, we trained and evaluated our
+model on a type-checked dataset and used mean reciprocal rank
+(MRR) to reflect the performance perceived by users.
+{{}}
+The obtained
+results show that Type4Py achieves an MRR of 77.1%, which is a
+substantial improvement of 8.1% and 16.7% over the state-of-the-
+art approaches Typilus and TypeWriter, respectively.
+{{}}
+Finally, to
+aid developers with retrofitting types, we released a Visual Stu-
+dio Code extension, which uses Type4Py to provide ML-based type
+auto-completion for Python.
+{{}}
+Keywords
+Type Inference, Similarity Learning, Machine Learning, Mean Re-
+ciprocal Rank, Python
+ACM Reference Format:
+{{}}
+Amir M.
+{{}}
+Mir, Evaldas Latoškinas, Sebastian Proksch, and Georgios Gousios.
+{{}}
+2022.
+{{}}
+Type4Py:
+{{}}
+Practical Deep Similarity Learning-Based Type Inference for
+Python.
+{{}}
+In 44th International Conference on Software Engineering (ICSE ’22),
+Permission to make digital or hard copies of part or all of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for third-party components of this work must be honored.
+{{}}
+For all other uses, contact the owner/author(s).
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Copyright held by the owner/author(s).
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+https://doi.org/10.1145/3510003.3510124
+{{}}
+---

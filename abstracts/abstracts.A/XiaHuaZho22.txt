@@ -1,0 +1,74 @@
+Search-based Diverse Sampling from Real-world Software Product Lines.
+
+Real-world software product lines (SPLs) often encompass
+enormous valid configurations that are impossible to enu-
+merate.
+{{}}
+To understand properties of the space formed by
+all valid configurations, a feasible way is to select a smal-
+l and valid sample set.
+{{}}
+Even though a number of sampling
+strategies have been proposed, they either fail to produce
+diverse samples with respect to the number of selected fea-
+tures (an important property to characterize behaviors of
+configurations), or achieve diverse sampling but with lim-
+ited scalability (the handleable configuration space size is
+limited to 1013 ).
+{{}}
+To resolve this dilemma, we propose a scal-
+able diverse sampling strategy, which uses a distance metric
+in combination with the novelty search algorithm to produce
+diverse samples in an incremental way.
+{{}}
+The distance metric
+is carefully designed to measure similarities between config-
+urations, and further diversity of a sample set.
+{{}}
+The novelty
+search incrementally improves diversity of samples through
+the search for novel configurations.
+{{}}
+We evaluate our sam-
+pling algorithm on 39 real-world SPLs.
+{{}}
+It is able to generate
+the required number of samples for all the SPLs, including
+those which cannot be counted by sharpSAT, a state-of-the-
+art model counting solver.
+{{}}
+Moreover, it performs better than
+∗
+Corresponding authors.
+{{}}
+Permission to make digital or hard copies of all or part of this work
+for personal or classroom use is granted without fee provided that
+copies are not made or distributed for profit or commercial advan-
+tage and that copies bear this notice and the full citation on the first
+page.
+{{}}
+Copyrights for components of this work owned by others than
+ACM must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy
+otherwise, or republish, to post on servers or to redistribute to lists,
+requires prior specific permission and/or a fee.
+{{}}
+Request permissions
+from permissions@acm.org.
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Association for Computing Machinery.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3510053
+{{}}
+---

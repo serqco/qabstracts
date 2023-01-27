@@ -1,0 +1,74 @@
+SPT-Code: Sequence-to-Sequence Pre-Training for Learning Source Code Representations.
+
+Recent years have seen the successful application of large pre-
+trained models to code representation learning, resulting in sub-
+stantial improvements on many code-related downstream tasks.
+{{}}
+But there are issues surrounding their application to SE tasks.
+{{}}
+First,
+the majority of the pre-trained models focus on pre-training only
+the encoder of the Transformer.
+{{}}
+For generation tasks that are ad-
+dressed using models with the encoder-decoder architecture, how-
+ever, there is no reason why the decoder should be left out during
+pre-training.
+{{}}
+Second, many existing pre-trained models, including
+state-of-the-art models such as T5-learning, simply reuse the pre-
+training tasks designed for natural languages.
+{{}}
+Moreover, to learn
+the natural language description of source code needed eventually
+for code-related tasks such as code summarization, existing pre-
+training tasks require a bilingual corpus composed of source code
+and the associated natural language description, which severely
+limits the amount of data for pre-training.
+{{}}
+To this end, we propose
+SPT-Code, a sequence-to-sequence pre-trained model for source
+code.
+{{}}
+In order to pre-train SPT-Code in a sequence-to-sequence
+manner and address the aforementioned weaknesses associated
+with existing pre-training tasks, we introduce three pre-training
+tasks that are specifically designed to enable SPT-Code to learn
+knowledge of source code, the corresponding code structure, as well
+as a natural language description of the code without relying on
+any bilingual corpus, and eventually exploit these three sources of
+information when it is applied to downstream tasks.
+{{}}
+Experimental
+results demonstrate that SPT-Code achieves state-of-the-art perfor-
+mance on five code-related downstream tasks after fine-tuning.
+{{}}
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for components of this work owned by others than ACM
+must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Association for Computing Machinery.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3510096
+{{}}
+---

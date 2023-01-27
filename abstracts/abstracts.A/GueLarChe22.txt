@@ -1,0 +1,27 @@
+Property Satisfiability Analysis for Product Lines of Modelling Languages.
+
+Software engineering uses models throughout most phases of the development process.
+{{}}
+Models are defined using modelling
+languages.
+{{}}
+To make these languages applicable to a wider set of scenarios and customizable to specific needs, researchers have
+proposed using product lines to specify modelling language variants.
+{{}}
+However, there is currently a lack of efficient techniques for ensuring
+correctness with respect to properties of the models accepted by a set of language variants.
+{{}}
+This may prevent detecting problematic
+combinations of language variants that produce undesired effects at the model level.
+{{}}
+To attack this problem, we first present a
+classification of instantiability properties for language product lines.
+{{}}
+Then, we propose a novel approach to lifting the satisfiability
+checking of model properties of individual language variants, to the product line level.
+{{}}
+Finally, we report on an implementation of our
+proposal in the MERLIN tool, and demonstrate the efficiency gains of our lifted analysis method compared to an enumerative analysis of
+each individual language variant.
+{{}}
+---

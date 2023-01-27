@@ -1,0 +1,94 @@
+Learning Probabilistic Models for Static Analysis Alarms.
+
+We present BayeSmith, a general framework for automatically
+learning probabilistic models of static analysis alarms.
+{{}}
+Several prob-
+abilistic reasoning techniques have recently been proposed which
+incorporate external feedback on semantic facts and thereby reduce
+the user’s alarm inspection burden.
+{{}}
+However, these approaches are
+fundamentally limited to models with pre-defined structure, and are
+therefore unable to learn or transfer knowledge regarding an anal-
+ysis from one program to another.
+{{}}
+Furthermore, these probabilistic
+models often aggressively generalize from external feedback and
+falsely suppress real bugs.
+{{}}
+To address these problems, we propose
+BayeSmith that learns the structure and weights of the probabilistic
+model.
+{{}}
+Starting from an initial model and a set of training programs
+with bug labels, BayeSmith refines the model to effectively priori-
+tize real bugs based on feedback.
+{{}}
+We evaluate the approach with
+two static analyses on a suite of C programs.
+{{}}
+We demonstrate that
+the learned models significantly improve the performance of three
+state-of-the-art probabilistic reasoning systems.
+{{}}
+1
+To deal with the challenges of accuracy and alarm relevance, various
+probabilistic program reasoning mechanisms have been proposed
+for static program analyzers.
+{{}}
+Such systems initially report a set of
+alarms in the target program using the underlying analysis and com-
+pute the probability of each alarm based on a probabilistic model.
+{{}}
+Then, they prioritize static analysis alarms by incorporating exter-
+nal feedback on semantic facts from various sources such as the
+users [23, 39, 50], the old version of the program [15], or dynamic
+analysis results [5].
+{{}}
+Upon receiving a response, they generalize
+from the feedback and prioritize the remaining alarms depend-
+ing on their relevance to those inspected by the user.
+{{}}
+By rapidly
+focusing attention on the real bugs in the target program, these
+systems achieve a dramatic improvement in the usability of the
+static analyzer.
+{{}}
+Despite their experimental success, much of this previous re-
+search has focused on the problem of inference, rather than on
+learning.
+{{}}
+Existing approaches based on probabilistic reasoning such
+as alarm ranking [5, 15, 39] only learn limited forms of transfer-
+able knowledge—such as the assignment of weights to the under-
+lying probabilistic model—using standard methods such as the
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for components of this work owned by others than ACM
+must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Association for Computing Machinery.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3510098
+{{}}
+---

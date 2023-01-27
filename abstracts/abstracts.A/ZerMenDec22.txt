@@ -1,0 +1,41 @@
+On the impact of security vulnerabilities in the npm and RubyGems dependency networks.
+
+The increasing interest in open source software has led to the emergence of large languagespecific package distributions of reusable software libraries, such as npm and RubyGems.
+{{}}
+These software packages can be subject to vulnerabilities that may expose dependent packages through explicitly declared dependencies.
+{{}}
+Using Snyk’s vulnerability database, this
+article empirically studies vulnerabilities affecting npm and RubyGems packages.
+{{}}
+We analyse how and when these vulnerabilities are disclosed and fixed, and how their prevalence
+changes over time.
+{{}}
+We also analyse how vulnerable packages expose their direct and indirect
+dependents to vulnerabilities.
+{{}}
+We distinguish between two types of dependents:
+{{}}
+packages
+distributed via the package manager, and external GitHub projects depending on npm packages.
+{{}}
+We observe that the number of vulnerabilities in npm is increasing and being disclosed
+faster than vulnerabilities in RubyGems.
+{{}}
+For both package distributions, the time required
+to disclose vulnerabilities is increasing over time.
+{{}}
+Vulnerabilities in npm packages affect a
+median of 30 package releases, while this is 59 releases in RubyGems packages.
+{{}}
+A large
+proportion of external GitHub projects is exposed to vulnerabilities coming from direct or
+indirect dependencies.
+{{}}
+33% and 40% of dependency vulnerabilities to which projects and
+packages are exposed, respectively, have their fixes in more recent releases within the same
+major release range of the used dependency.
+{{}}
+Our findings reveal that more effort is needed
+to better secure open source package distributions.
+{{}}
+---

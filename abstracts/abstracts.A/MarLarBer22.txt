@@ -1,0 +1,26 @@
+Injecting software faults in Python applications.
+
+Software fault injection techniques have been largely used as means for evaluating the
+dependability of systems in presence of certain types of faults.
+{{}}
+Despite the large diversity
+of tools offering the possibility of emulating the presence of software faults, there is little practical support for emulating the presence of software faults in Python applications,
+which are increasingly being used to support business critical cloud services.
+{{}}
+In this paper,
+we present FIT4Python, a tool for injecting software faults in Python code and then use
+it, in a mutation testing campaign, to analyse the effectiveness of OpenStack’s test suite
+against new probable software faults.
+{{}}
+We begin by analysing the types of faults affecting
+Nova Compute, the core component of OpenStack.
+{{}}
+We use our tool to emulate the presence of new faults in Nova Compute API to understand how well OpenStack’s battery of
+unit, functional, and integration tests cover these new, but probable, situations.
+{{}}
+Results show
+clear limitations in the effectiveness of OpenStack developers’ test suites, with many cases
+of injected faults passing undetected through all three types of tests and that nearly half of
+the analysed problems could be detected with trivial changes or additions to the unit tests.
+{{}}
+---

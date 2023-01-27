@@ -1,0 +1,97 @@
+The essential competencies of software professionals: A unified competence framework.
+
+Information and Software Technology 151 (2022) 107020
+
+Contents lists available at ScienceDirect
+
+Information and Software Technology
+journal homepage:
+{{}}
+www.elsevier.com/locate/infsof
+
+The essential competencies of software professionals:
+{{}}
+A unified
+competence framework
+Nana Assyne a, d, *, Hadi Ghanbari b, c, Mirja Pulkkinen a
+a
+
+University of Jyväskylä, Faculty of Information Technology, P.O.
+{{}}
+Box 35 (Agora), FI-40014 Jyväskylä, Finland
+Aalto University, School of Business, Ekonominaukio 1, 02510, Espoo, Finland
+c
+FinEst Centre for Smart Cities, TalTech, Estonia
+d
+GIMPA, School of Technology, Accra, Ghana
+b
+
+A R T I C L E I N F O
+
+A B S T R A C T
+
+Keywords:
+{{}}
+Software engineering
+Software development
+Competence
+Competencies
+Kano model
+
+Context:
+{{}}
+Developing high-quality software requires skilled software professionals equipped with a set of basic and
+essential software engineering competencies (SEC).
+{{}}
+These competencies and the satisfaction levels derived from
+them change over a project’s lifecycle, or as software professionals move from one project to another.
+{{}}
+Objective:
+{{}}
+Previous studies suggest a lack of means enabling SEC stakeholders to identify and assess competencies
+suitable for different projects.
+{{}}
+Additionally, previous research has mainly portrayed SEC to be static and over­
+looked their evolution over time and across projects.
+{{}}
+We investigate how we could effectively identify and match
+the competencies of software professionals necessary for different projects.
+{{}}
+Method:
+{{}}
+We follow a mixed-method approach to iteratively develop and evaluate a framework for identifying and
+managing SEC.
+{{}}
+In so doing, we use the results of an extensive literature review, focus group discussions with
+experts from academia and industry, and data collected through interviews with 138 individuals with a super­
+visory role in the software industry.
+{{}}
+Results:
+{{}}
+Drawing on the Kano model and Competency Framework for Software Engineers, we propose a Unified
+Competence Gate for Software Professionals (UComGSP), a framework for identifying and managing SEC.
+{{}}
+The
+UComGSP consists of 62 hard competencies, 63 soft competencies, and 25 essential SEC competencies.
+{{}}
+Addi­
+tionally, we propose three stakeholders’ satisfaction levels for SEC assessment:
+{{}}
+basic, performance, and delighter.
+{{}}
+Furthermore, based on empirical observation, we report 27 competencies not mentioned in the reviewed liter­
+ature; 11 of them are considered essential competencies.
+{{}}
+Conclusion:
+{{}}
+Competence development involves different stakeholders, including software professionals, educa­
+tors, and the software industry.
+{{}}
+The UComGSP framework enables SEC stakeholders to (i) identify SE compe­
+tencies, (ii) identify the essential SEC, and (iii) assess the satisfaction levels that can be derived from different
+competencies.
+{{}}
+Future research is needed to evaluate the effectiveness of the proposed framework across software
+development projects.
+{{}}
+---

@@ -1,0 +1,126 @@
+Correlating Automated and Human Evaluation of Code Documentation Generation Quality.
+
+Correlating Automated and Human Evaluation of Code
+Documentation Generation Quality
+XING HU, School of Software Technology, Zhejiang University, China
+QIUYUAN CHEN and HAOYE WANG, College of Computer Science and Technology,
+Zhejiang University, China
+XIN XIA, Faculty of Information Technology, Monash University, Australia
+DAVID LO, School of Information Systems, Singapore Management University, Singapore
+THOMAS ZIMMERMANN, Microsoft Research, USA
+Automatic code documentation generation has been a crucial task in the field of software engineering.
+{{}}
+It not
+only relieves developers from writing code documentation but also helps them to understand programs better.
+{{}}
+Specifically, deep-learning-based techniques that leverage large-scale source code corpora have been widely
+used in code documentation generation.
+{{}}
+These works tend to use automatic metrics (such as BLEU, METEOR,
+ROUGE, CIDEr, and SPICE) to evaluate different models.
+{{}}
+These metrics compare generated documentation
+to reference texts by measuring the overlapping words.
+{{}}
+Unfortunately, there is no evidence demonstrating
+the correlation between these metrics and human judgment.
+{{}}
+We conduct experiments on two popular code
+documentation generation tasks, code comment generation and commit message generation, to investigate
+the presence or absence of correlations between these metrics and human judgments.
+{{}}
+For each task, we replicate three state-of-the-art approaches and the generated documentation is evaluated automatically in terms
+of BLEU, METEOR, ROUGE-L, CIDEr, and SPICE.
+{{}}
+We also ask 24 participants to rate the generated documentation considering three aspects (i.e., language, content, and effectiveness).
+{{}}
+Each participant is given Java
+methods or commit diffs along with the target documentation to be rated.
+{{}}
+The results show that the ranking
+of generated documentation from automatic metrics is different from that evaluated by human annotators.
+{{}}
+Thus, these automatic metrics are not reliable enough to replace human evaluation for code documentation
+generation tasks.
+{{}}
+In addition, METEOR shows the strongest correlation (with moderate Pearson correlation
+r about 0.7) to human evaluation metrics.
+{{}}
+However, it is still much lower than the correlation observed between different annotators (with a high Pearson correlation r about 0.8) and correlations that are reported in
+the literature for other tasks (e.g., Neural Machine Translation [39]).
+{{}}
+Our study points to the need to develop
+
+This research was partially supported by the National Science Foundation of China (No.
+{{}}
+U20A20173) and the National
+Research Foundation, Singapore under its Industry Alignment Fund—Pre-positioning (IAF-PP) Funding Initiative.
+{{}}
+Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do
+not reflect the views of National Research Foundation, Singapore.
+{{}}
+Authors’ addresses:
+{{}}
+X.
+{{}}
+Hu, School of Software Technology, Zhejiang University, No.
+{{}}
+1689 Jiangnan Road, Ningbo, Zhejiang,
+315048, China; email:
+{{}}
+xinghu@zju.edu.cn; Q.
+{{}}
+Chen and H.
+{{}}
+Wang, College of Computer Science and Technology, Zhejiang
+University, Road 38 West Lake District, Hangzhou, Zhejiang, 310027, China; emails:
+{{}}
+{chenqiuyuan, why_}@zju.edu.cn;
+X.
+{{}}
+Xia (corresponding author), Faculty of Information Technology, Building 6, 29 Ancora Imparo Way, Clayton Campus,
+Monash University VIC 3800; email:
+{{}}
+xin.xia@acm.org; D.
+{{}}
+Lo, School of Information Systems, Singapore Management University, 80 Stamford Road, Singapore 178902; email:
+{{}}
+davidlo@smu.edu.sg; T.
+{{}}
+Zimmermann, Microsoft Research, 1 Microsoft
+Way, Redmond, WA 98052; email:
+{{}}
+tzimmer@microsoft.com.
+{{}}
+Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee
+provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and
+the full citation on the first page.
+{{}}
+Copyrights for components of this work owned by others than ACM must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or republish, to post on servers or to redistribute to lists, requires
+prior specific permission and/or a fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+© 2022 Association for Computing Machinery.
+{{}}
+1049-331X/2022/07-ART63 $15.00
+https://doi.org/10.1145/3502853
+ACM Transactions on Software Engineering and Methodology, Vol.
+{{}}
+31, No.
+{{}}
+4, Article 63.
+{{}}
+Pub.
+{{}}
+date:
+{{}}
+July 2022.
+{{}}
+63
+{{}}
+---

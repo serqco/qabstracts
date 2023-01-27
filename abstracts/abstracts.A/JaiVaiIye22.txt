@@ -1,0 +1,90 @@
+Jigsaw: Large Language Models meet Program Synthesis.
+
+Large pre-trained language models such as GPT-3 [10], Codex [11],
+and Google’s language model [7] are now capable of generating
+code from natural language specifications of programmer intent.
+{{}}
+We view these developments with a mixture of optimism and cau-
+tion.
+{{}}
+On the optimistic side, such large language models have the
+potential to improve productivity by providing an automated AI
+pair programmer for every programmer in the world.
+{{}}
+On the cau-
+tionary side, since these large language models do not understand
+program semantics, they offer no guarantees about quality of the
+suggested code.
+{{}}
+In this paper, we present an approach to augment
+these large language models with post-processing steps based on
+program analysis and synthesis techniques, that understand the
+syntax and semantics of programs.
+{{}}
+Further, we show that such tech-
+niques can make use of user feedback and improve with usage.
+{{}}
+We
+present our experiences from building and evaluating such a tool
+Jigsaw, targeted at synthesizing code for using Python Pandas API
+using multi-modal inputs.
+{{}}
+Our experience suggests that as these
+large language models evolve for synthesizing code from intent,
+Jigsaw has an important role to play in improving the accuracy of
+the systems.
+{{}}
+ACM Reference Format:
+{{}}
+Naman Jain, Skanda Vaidyanath, Arun Iyer, Nagarajan Natarajan, Suresh
+Parthasarathy, Sriram Rajamani, and Rahul Sharma.
+{{}}
+2022.
+{{}}
+Jigsaw:
+{{}}
+Large
+Language Models meet Program Synthesis.
+{{}}
+In 44th International Conference
+on Software Engineering (ICSE ’22), May 21–29, 2022, Pittsburgh, PA, USA.
+{{}}
+ACM, New York, NY, USA, 13 pages.
+{{}}
+https://doi.org/10.1145/3510003.3510203
+1
+Pre-trained large language models (PTLM) such as GPT-3 [10] are
+finding pervasive applications in Natural Language Processing
+(NLP), as a general purpose platform to solve many NLP tasks.
+{{}}
+Recent efforts show that PTLMs can generate code from natural
+∗ Work   done by author during internship at Microsoft Research, India
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for components of this work owned by others than ACM
+must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Association for Computing Machinery.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3510203
+{{}}
+---

@@ -1,0 +1,84 @@
+Windranger: A Directed Greybox Fuzzer driven by Deviation Basic Blocks.
+
+Directed grey-box fuzzing (DGF) is a security testing technique
+that aims to steer the fuzzer towards predefined target sites in the
+program.
+{{}}
+To gain directedness, DGF prioritizes the seeds whose
+execution traces are closer to the target sites.
+{{}}
+Therefore, evaluating
+the distance between the execution trace of a seed and the target
+sites (aka, the seed distance) is important for DGF.
+{{}}
+The first directed
+grey-box fuzzer, AFLGo, uses an approach of calculating the basic
+block level distances during static analysis and accumulating the
+distances of the executed basic blocks to compute the seed distance.
+{{}}
+Following AFLGo, most of the existing state-of-the-art DGF tech-
+niques use all the basic blocks on the execution trace and only the
+control flow information for seed distance calculation.
+{{}}
+However,
+not every basic block is equally important and there are certain
+basic blocks where the execution trace starts to deviate from the
+target sites (aka, deviation basic blocks).
+{{}}
+In this paper, we propose a technique called WindRanger which
+leverages deviation basic blocks to facilitate DGF.
+{{}}
+To identify the
+deviation basic blocks, WindRanger applies both static reacha-
+bility analysis and dynamic filtering.
+{{}}
+To conduct directed fuzzing,
+WindRanger uses the deviation basic blocks and their related
+data flow information for seed distance calculation, mutation, seed
+prioritization as well as explore-exploit scheduling.
+{{}}
+We evaluated
+WindRanger on 3 datasets consisting of 29 programs.
+{{}}
+The exper-
+iment results show that WindRanger outperforms AFLGo, AFL,
+and FairFuzz by reaching the target sites 21%, 34%, and 37% faster
+and detecting the target crashes 44%, 66%, and 77% faster respec-
+tively.
+{{}}
+Moreover, we found a 0-day vulnerability with a CVE ID
+assigned in ffmpeg (a popular multimedia library extensively fuzzed
+by OSS-fuzz) with WindRanger by supplying manually identified
+suspect locations as the target sites.
+{{}}
+†Corresponding author.
+{{}}
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for components of this work owned by others than ACM
+must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+ICSE 2022, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Association for Computing Machinery.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3510197
+{{}}
+---

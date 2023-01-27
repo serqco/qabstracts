@@ -1,0 +1,23 @@
+GitHub Discussions: An exploratory study of early adoption.
+
+Discussions is a new feature of GitHub for asking questions or discussing topics outside of
+specific Issues or Pull Requests.
+{{}}
+Before being available to all projects in December 2020,
+it had been tested on selected open source software projects.
+{{}}
+To understand how developers use this novel feature, how they perceive it, and how it impacts the development
+processes, we conducted a mixed-methods study based on early adopters of GitHub discussions from January until July 2020.
+{{}}
+We found that:
+{{}}
+(1) errors, unexpected behavior, and
+code reviews are prevalent discussion categories; (2) there is a positive relationship between
+project member involvement and discussion frequency; (3) developers consider GitHub Discussions useful but face the problem of topic duplication between Discussions and Issues;
+(4) Discussions play a crucial role in advancing the development of projects; and (5) positive sentiment in Discussions is more frequent than in Stack Overflow posts.
+{{}}
+Our findings
+are a first step towards data-informed guidance for using GitHub Discussions, opening up
+avenues for future work on this novel communication channel.
+{{}}
+---

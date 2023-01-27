@@ -1,0 +1,60 @@
+How resource utilization influences UI responsiveness of Android software.
+
+Keywords:
+{{}}
+Resource utilization
+Android performance
+Laggy-UI
+Empirical study
+
+Context:
+{{}}
+The rapid responsiveness of smartphones is critical to user experience.
+{{}}
+Excessive resource utilization
+is typically considered as one of the major factors leading to laggy-UI.
+{{}}
+Much work focuses on modifying
+the design of Android systems and software to reduce their resource utilization.
+{{}}
+However, laggy-UI is still
+quite common on Android devices, especially the low-end ones.
+{{}}
+One reason is that developers still lack a
+clear understanding about how the utilization of various resources (e.g., CPU and memory) affects Android
+responsiveness, which leads to the inadequacy of existing performance optimization measures.
+{{}}
+Objective:
+{{}}
+The objective of this paper is to obtain a systematical understanding of how the utilization of
+various resources (e.g., CPU and memory) affects Android responsiveness.
+{{}}
+Then accordingly, we aim to figure
+out the root cause(s) of laggy-UI.
+{{}}
+Methods:
+{{}}
+First, we conduct a set of controlled experiments on two Android devices with a stress test tool.
+{{}}
+Second, we further test 36 real-life Android software to study whether the competition of resource(s), the root
+factor(s) causing laggy-UI, is severe in real-life scenarios.
+{{}}
+Results:
+{{}}
+The experimental results show that CPU competition is the root cause and other resources have no
+observable impact on Android responsiveness, except in extreme cases, e.g., utilization reaches almost 100%.
+{{}}
+We also find out CPU competition is quite common for existing Android software when it is running in the
+background.
+{{}}
+Conclusion:
+{{}}
+Through stress testing and real-life Android software testing, this work unveils that CPU competition should be the main problem to be solved.
+{{}}
+Our experimental results deepen and update previous perceptions
+of resources’ impact on Android responsiveness.
+{{}}
+Based on these findings, we provide a set of suggestions for
+designing high-performance Android systems and software, and effective performance optimization tools.
+{{}}
+---

@@ -1,0 +1,79 @@
+BugListener: Identifying and Synthesizing Bug Reports from Collaborative Live Chats.
+
+In community-based software development, developers frequently
+rely on live-chatting to discuss emergent bugs/errors they encounter
+in daily development tasks.
+{{}}
+However, it remains a challenging task
+to accurately record such knowledge due to the noisy nature of
+interleaved dialogs in live chat data.
+{{}}
+In this paper, we first formulate
+the task of identifying and synthesizing bug reports from commu-
+nity live chats, and propose a novel approach, named BugListener,
+to address the challenges.
+{{}}
+Specifically, BugListener automates three
+sub-tasks:
+{{}}
+1) Disentangle the dialogs from massive chat logs by
+using a Feed-Forward neural network; 2) Identify the bug-report
+dialogs from separated dialogs by leveraging the Graph neural net-
+work to learn the contextual information; 3) Synthesize the bug
+reports by utilizing Transfer Learning techniques to classify the
+sentences into:
+{{}}
+observed behaviors (OB), expected behaviors (EB),
+and steps to reproduce the bug (SR).
+{{}}
+BugListener is evaluated on
+six open source projects.
+{{}}
+The results show that:
+{{}}
+for bug report
+identification, BugListener achieves the average F1 of 77.74%, im-
+proving the best baseline by 12.96%; and for bug report synthesis
+task, BugListener could classify the OB, EB, and SR sentences with
+the F1 of 84.62%, 71.46%, and 73.13%, improving the best baselines by
+9.32%, 12.21%, 10.91%, respectively.
+{{}}
+A human evaluation study also
+confirms the effectiveness of BugListener in generating relevant and
+accurate bug reports.
+{{}}
+These demonstrate the significant potential of
+applying BugListener in community-based software development,
+for promoting bug discovery and quality improvement.
+{{}}
+∗ Corresponding   author.
+{{}}
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for components of this work owned by others than ACM
+must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Association for Computing Machinery.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3510108
+{{}}
+---

@@ -1,0 +1,47 @@
+Detecting and Augmenting Missing Key Aspects in Vulnerability Descriptions.
+
+Detecting and Augmenting Missing Key Aspects in
+Vulnerability Descriptions
+HAO GUO and SEN CHEN, College of Intelligence and Computing, Tianjin University, China
+ZHENCHANG XING, Research School of Computer Science, Australian National University, Australia
+XIAOHONG LI and YUDE BAI, College of Intelligence and Computing, Tianjin University, China
+JIAMOU SUN, Research School of Computer Science, Australian National University, Australia
+Security vulnerabilities have been continually disclosed and documented.
+{{}}
+For the effective understanding,
+management, and mitigation of the fast-growing number of vulnerabilities, an important practice in documenting vulnerabilities is to describe the key vulnerability aspects, such as vulnerability type, root cause,
+affected product, impact, attacker type, and attack vector.
+{{}}
+In this article, we first investigate 133,639 vulnerability reports in the Common Vulnerabilities and Exposures (CVE) database over the past 20 years.
+{{}}
+We
+find that 56%, 85%, 38%, and 28% of CVEs miss vulnerability type, root cause, attack vector, and attacker type,
+respectively.
+{{}}
+By comparing the differences of the latest updated CVE reports across different databases, we
+observe that 1,476 missing key aspects in 1,320 CVE descriptions were augmented manually in the National
+Vulnerability Database (NVD), which indicates that the vulnerability database maintainers try to complete
+the vulnerability descriptions in practice to mitigate such a problem.
+{{}}
+To help complete the missing information of key vulnerability aspects and reduce human efforts, we propose a neural-network-based approach called PMA to predict the missing key aspects of a vulnerability based
+on its known aspects.
+{{}}
+We systematically explore the design space of the neural network models and empirically identify the most effective model design in the scenario.
+{{}}
+Our ablation study reveals the prominent
+correlations among vulnerability aspects when predicting.
+{{}}
+Trained with historical CVEs, our model achieves
+88%, 71%, 61%, and 81% in F1 for predicting the missing vulnerability type, root cause, attacker type, and
+attack vector of 8,623 “future” CVEs across 3 years, respectively.
+{{}}
+Furthermore, we validate the predicting
+performance of key aspect augmentation of CVEs based on the manually augmented CVE data collected
+from NVD, which confirms the practicality of our approach.
+{{}}
+We finally highlight that PMA has the ability
+to reduce human efforts by recommending and augmenting missing key aspects for vulnerability databases,
+and to facilitate other research works such as severity level prediction of CVEs based on the vulnerability
+descriptions.
+{{}}
+---

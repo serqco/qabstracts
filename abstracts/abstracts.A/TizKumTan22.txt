@@ -1,0 +1,99 @@
+Fairness-aware Configuration of Machine Learning Libraries.
+
+This paper investigates the parameter space of machine learning
+(ML) algorithms in aggravating or mitigating fairness bugs.
+{{}}
+Data-
+driven software is increasingly applied in social-critical applications
+where ensuring fairness is of paramount importance.
+{{}}
+The existing
+approaches focus on addressing fairness bugs by either modify-
+ing the input dataset or modifying the learning algorithms.
+{{}}
+On
+the other hand, the selection of hyperparameters, which provide
+finer controls of ML algorithms, may enable a less intrusive ap-
+proach to influence the fairness.
+{{}}
+Can hyperparameters amplify or
+suppress discrimination present in the input dataset?
+{{}}
+How can we
+help programmers in detecting, understanding, and exploiting the role
+of hyperparameters to improve the fairness?
+{{}}
+We design three search-based software testing algorithms to un-
+cover the precision-fairness frontier of the hyperparameter space.
+{{}}
+We complement these algorithms with statistical debugging to ex-
+plain the role of these parameters in improving fairness.
+{{}}
+We imple-
+ment the proposed approaches in the tool Parfait-ML (PARameter
+FAIrness Testing for ML Libraries) and show its effectiveness and
+utility over five mature ML algorithms as used in six social-critical
+applications.
+{{}}
+In these applications, our approach successfully iden-
+tified hyperparameters that significantly improve (vis-a-vis the
+state-of-the-art techniques) the fairness without sacrificing preci-
+sion.
+{{}}
+Surprisingly, for some algorithms (e.g., random forest), our
+approach showed that certain configuration of hyperparameters
+(e.g., restricting the search space of attributes) can amplify biases
+across applications.
+{{}}
+Upon further investigation, we found intuitive
+explanations of these phenomena, and the results corroborate simi-
+lar observations from the literature.
+{{}}
+ACM Reference Format:
+{{}}
+Saeid Tizpaz-Niari, Ashish Kumar, Gang Tan, and Ashutosh Trivedi.
+{{}}
+2022.
+{{}}
+Fairness-aware Configuration of Machine Learning Libraries.
+{{}}
+In 44th In-
+ternational Conference on Software Engineering (ICSE ’22), May 21–29, 2022,
+Pittsburgh, PA, USA.
+{{}}
+ACM, New York, NY, USA, 12 pages.
+{{}}
+https://doi.org/10.
+{{}}
+1145/3510003.3510202
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for components of this work owned by others than the
+author(s) must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior specific permission
+and/or a fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Copyright held by the owner/author(s).
+{{}}
+Publication rights licensed to ACM.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3510202
+{{}}
+---

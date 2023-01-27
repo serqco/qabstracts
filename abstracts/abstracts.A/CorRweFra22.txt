@@ -1,0 +1,80 @@
+FlakiMe: Laboratory-Controlled Test Flakiness Impact Assessment.
+
+Much research on software testing makes an implicit assumption
+that test failures are deterministic such that they always witness
+the presence of the same defects.
+{{}}
+However, this assumption is not
+always true because some test failures are due to so-called flaky
+tests, i.e., tests with non-deterministic outcomes.
+{{}}
+To help testing re-
+searchers better investigate flakiness, we introduce a test flakiness
+assessment and experimentation platform, called FlakiMe.
+{{}}
+FlakiMe
+supports the seeding of a (controllable) degree of flakiness into the
+behaviour of a given test suite.
+{{}}
+Thereby, FlakiMe equips researchers
+with ways to investigate the impact of test flakiness on their tech-
+niques under laboratory-controlled conditions.
+{{}}
+To demonstrate the
+application of FlakiMe, we use it to assess the impact of flakiness on
+mutation testing and program repair (the PRAPR and ARJA meth-
+ods).
+{{}}
+These results indicate that a 10% flakiness is sufficient to affect
+the mutation score, but the effect size is modest (2% - 5% ), while it
+reduces the number of patches produced for repair by 20% up to
+100% of repair problems; a devastating impact on this application of
+testing.
+{{}}
+Our experiments with FlakiMe demonstrate that flakiness
+affects different testing applications in very different ways, thereby
+motivating the need for a laboratory-controllable flakiness impact
+assessment platform and approach such as FlakiMe.
+{{}}
+ACM Reference Format:
+{{}}
+Maxime Cordy, Renaud Rwemalika, Adriano Franci, Mike Papadakis, and Mark
+Harman.
+{{}}
+2022.
+{{}}
+FlakiMe:
+{{}}
+Laboratory-Controlled Test Flakiness Impact As-
+sessment.
+{{}}
+In 44th International Conference on Software Engineering (ICSE ’22),
+May 21–29, 2022, Pittsburgh, PA, USA.
+{{}}
+ACM, New York, NY, USA, 13 pages.
+{{}}
+https://doi.org/10.1145/3510003.3510194
+1
+Test flakiness is the property of a test case and system under test,
+that the test can pass on one occasion, yet fail on another, without
+the tester changing anything other than the fact that the test is
+executed on two different occasions.
+{{}}
+This behaviour has a number
+Permission to make digital or hard copies of part or all of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for third-party components of this work must be honored.
+{{}}
+For all other uses, contact the owner/author(s).
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Copyright held by the owner/author(s).
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+https://doi.org/10.1145/3510003.3510194
+{{}}
+---

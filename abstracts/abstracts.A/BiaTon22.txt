@@ -1,0 +1,29 @@
+Testing the Plasticity of Reinforcement Learning-based Systems.
+
+Testing the Plasticity of Reinforcement Learning-based
+Systems
+MATTEO BIAGIOLA and PAOLO TONELLA, Università della Svizzera italiana
+The dataset available for pre-release training of a machine-learning based system is often not representative
+of all possible execution contexts that the system will encounter in the field.
+{{}}
+Reinforcement Learning (RL) is
+a prominent approach among those that support continual learning, i.e., learning continually in the field, in
+the post-release phase.
+{{}}
+No study has so far investigated any method to test the plasticity of RL-based systems,
+i.e., their capability to adapt to an execution context that may deviate from the training one.
+{{}}
+We propose an approach to test the plasticity of RL-based systems.
+{{}}
+The output of our approach is a quantification of the adaptation and anti-regression capabilities of the system, obtained by computing the adaptation
+frontier of the system in a changed environment.
+{{}}
+We visualize such frontier as an adaptation/anti-regression
+heatmap in two dimensions, or as a clustered projection when more than two dimensions are involved.
+{{}}
+In
+this way, we provide developers with information on the amount of changes that can be accommodated by
+the continual learning component of the system, which is key to decide if online, in-the-field learning can be
+safely enabled or not.
+{{}}
+---

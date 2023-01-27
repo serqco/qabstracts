@@ -1,0 +1,41 @@
+An approach to explore sequential interactions in cognitive activities of software engineering.
+
+Keywords:
+{{}}
+Software engineering
+Cognitive activities
+Distributed cognition
+Resources model
+Sequential analysis
+
+Context :
+{{}}
+The study of cognitive aspects around software activities can provide valuable insights to improve
+software engineering practices.
+{{}}
+Objective:
+{{}}
+This paper presents an approach based on distributed cognition
+and sequential analysis to explore cognitive activities in the software development context by analyzing the
+interactions between software practitioners and the resources used to support them.
+{{}}
+Method:
+{{}}
+We conducted
+nine laboratory-based observation sessions to record qualitative audio/video data of interactions between
+the study participants and at-hand resources during the planning and managing of software analytics tasks.
+{{}}
+Results:
+{{}}
+The interaction strategies of the resources model included 21 emergent actions, and the sequential
+analysis revealed two different patterns of interaction over time.
+{{}}
+Conclusion:
+{{}}
+Our approach has been useful
+for evaluating how well an artifact works to support a team in software analytics activities.
+{{}}
+Furthermore, it
+can be applied to explore and discover interaction patterns in different software activities.
+{{}}
+---

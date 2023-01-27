@@ -1,0 +1,58 @@
+Preventing technical debt with the TAP framework for Technical Debt Aware Management.
+
+Context:
+{{}}
+Technical Debt (TD) is a metaphor for technical problems that are not visible to users and customers
+but hinder developers in their work, making future changes more difficult.
+{{}}
+TD is often incurred due to tight
+project deadlines and can make future changes more costly or impossible.
+{{}}
+Project Management usually focuses
+on customer benefits and pays less attention to their IT systems’ internal quality.
+{{}}
+TD prevention should be
+preferred over TD repayment because subsequent refactoring and re-engineering are expensive.
+{{}}
+Objective:
+{{}}
+This paper evaluates a framework focusing on both TD prevention and TD repayment in the context
+of agile-managed projects.
+{{}}
+The framework was developed and applied in an IT unit of a publishing house.
+{{}}
+The
+unique contribution of this framework is the integration of TD management into project management.
+{{}}
+Method:
+{{}}
+The evaluation was performed as a comparative case study based on ticket statistics and two
+structured surveys.
+{{}}
+The surveys were conducted in the observed IT unit using the framework and a comparison
+unit not using the framework.
+{{}}
+The first survey targeted team members, the second one IT managers.
+{{}}
+Results:
+{{}}
+The evaluation shows that in this IT unit the TAP framework led to a raised awareness for the
+incurrence of TD.
+{{}}
+Decisions to incur TD are intentional, and TD is repaid timelier.
+{{}}
+Unintentional TD incurred
+by unconscious decisions is prevented.
+{{}}
+Furthermore, better communication and better planning of the project
+pipeline can be observed.
+{{}}
+Conclusion:
+{{}}
+We provide an insight into practitioners’ ways to identify, monitor, prevent and repay TD.
+{{}}
+The
+presented framework includes a feasible method for TD prevention despite tight timelines by making TD
+repayment part of project management.
+{{}}
+---

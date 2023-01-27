@@ -1,0 +1,51 @@
+Human values in software development artefacts: A case study on issue discussions in three Android applications.
+
+Keywords:
+{{}}
+Human values
+Issue tracker
+Software artefacts
+Software repositories
+
+Context:
+{{}}
+Human values such as inclusion, privacy, and accessibility need to be considered during software
+development to attract and maintain users.
+{{}}
+However, little effort has been made to study human values
+consideration in software development, particularly in software development artefacts.
+{{}}
+Objective:
+{{}}
+Issue discussion is potentially a rich source for human values analysis because it is a common place
+for users and developers to share and communicate their concerns.
+{{}}
+This paper aims to investigate the extent
+to which human values are discussed and whether the presence of values differs across projects.
+{{}}
+Method:
+{{}}
+We carried out a case study to discover human values in 1,097 issues collected from three Android
+projects:
+{{}}
+Signal, K-9, and Focus.
+{{}}
+Results:
+{{}}
+We identified 20 value themes and proposed a contextualised software engineering description for
+each of them.
+{{}}
+The analysis shows that privacy, freedom, usability, and efficiency were the prevalent value
+themes in the issue discussions of these three projects.
+{{}}
+Meanwhile, Self-direction - Action and Security Personal are the common prevalent human values found in the projects.
+{{}}
+Moreover, we found that a statement
+of values from the apps and their functionalities could contribute to the presence of values.
+{{}}
+Conclusion:
+{{}}
+The results suggest that human values are present in software development artefacts, for which
+automated tools can be developed to extract and classify human values from them.
+{{}}
+---

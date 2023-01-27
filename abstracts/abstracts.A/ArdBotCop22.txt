@@ -1,0 +1,28 @@
+Feature Matching-based Approaches to Improve the Robustness of Android Visual GUI Testing.
+
+Feature Matching-based Approaches to Improve the
+Robustness of Android Visual GUI Testing
+LUCA ARDITO, ANDREA BOTTINO, RICCARDO COPPOLA, FABRIZIO LAMBERTI,
+FRANCESCO MANIGRASSO, LIA MORRA, and MARCO TORCHIANO, Politecnico di Torino
+In automated Visual GUI Testing (VGT) for Android devices, the available tools often suffer from low robustness to mobile fragmentation, leading to incorrect results when running the same tests on different devices.
+{{}}
+To soften these issues, we evaluate two feature matching-based approaches for widget detection in VGT
+scripts, which use, respectively, the complete full-screen snapshot of the application (Fullscreen) and the
+cropped images of its widgets (Cropped) as visual locators to match on emulated devices.
+{{}}
+Our analysis includes validating the portability of different feature-based visual locators over various apps
+and devices and evaluating their robustness in terms of cross-device portability and correctly executed interactions.
+{{}}
+We assessed our results through a comparison with two state-of-the-art tools, EyeAutomate and
+Sikuli.
+{{}}
+Despite a limited increase in the computational burden, our Fullscreen approach outperformed state-ofthe-art tools in terms of correctly identified locators across a wide range of devices and led to a 30% increase
+in passing tests.
+{{}}
+Our work shows that VGT tools’ dependability can be improved by bridging the testing and computer
+vision communities.
+{{}}
+This connection enables the design of algorithms targeted to domain-specific needs and
+thus inherently more usable and robust.
+{{}}
+---

@@ -1,0 +1,24 @@
+Human Values in Software Engineering: Contrasting Case Studies of Practice.
+
+The growing diffusion of software in society and its influence on people demands from its creators that their work carefully
+considers human values such as transparency, social responsibility, and equality.
+{{}}
+But how do software practitioners address human
+values in software engineering practice?
+{{}}
+We interviewed 31 software practitioners from two organizations, each having a strong values
+framework, with the aim to understand:
+{{}}
+(a) practitioners’ perceptions of human values and their role in software engineering; (b)
+practices that practitioners use to address human values in software; and (c) challenges they face during this process.
+{{}}
+We report our
+findings from two contrasting case organizations on how practitioners “engineer” values in their unique organizational settings.
+{{}}
+We
+found evidence that organizational culture significantly contributes to how values are addressed in software.
+{{}}
+We summarize
+recommendations from the practitioners to support proactive engineering of values-conscious software.
+{{}}
+---

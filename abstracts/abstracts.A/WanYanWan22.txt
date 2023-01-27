@@ -1,0 +1,115 @@
+Context-Aware Personalized Crowdtesting Task Recommendation.
+
+Context- and Fairness-Aware In-Process Crowdworker
+Recommendation
+JUNJIE WANG, Laboratory for Internet Software Technologies, State Key Laboratory of Computer
+Sciences, Institute of Software Chinese Academy of Sciences; University of Chinese Academy of Sciences
+YE YANG, School of Systems and Enterprises, Stevens Institute of Technology
+SONG WANG, Lassonde School of Engineering, York University
+JUN HU, Laboratory for Internet Software Technologies, Institute of Software Chinese Academy of Sciences;
+University of Chinese Academy of Sciences
+QING WANG, Laboratory for Internet Software Technologies, State Key Laboratory of Computer Sciences,
+Science & Technology on Integrated Information System Laboratory, Institute of Software Chinese Academy
+of Sciences; University of Chinese Academy of Sciences
+Identifying and optimizing open participation is essential to the success of open software development.
+{{}}
+Existing studies highlighted the importance of worker recommendation for crowdtesting tasks in order to improve
+bug detection efficiency, i.e., detect more bugs with fewer workers.
+{{}}
+However, there are a couple of limitations
+in existing work.
+{{}}
+First, these studies mainly focus on one-time recommendations based on expertise matching
+at the beginning of a new task.
+{{}}
+Second, the recommendation results suffer from severe popularity bias, i.e.,
+highly experienced workers are recommended in almost all the tasks, while less experienced workers rarely
+get recommended.
+{{}}
+This article argues the need for context- and fairness-aware in-process crowdworker recommendation in order to address these limitations.
+{{}}
+We motivate this study through a pilot study, revealing
+the prevalence of long-sized non-yielding windows, i.e., no new bugs are revealed in consecutive test reports
+during the process of a crowdtesting task.
+{{}}
+This indicates the potential opportunity for accelerating crowdtesting by recommending appropriate workers in a dynamic manner, so that the non-yielding windows could
+be shortened.
+{{}}
+Besides, motivated by the popularity bias in existing crowdworker recommendation approach,
+this study also aims at alleviating the unfairness in recommendations.
+{{}}
+Driven by these observations, this article proposes a context- and fairness-aware in-process crowdworker
+recommendation approach, iRec2.0, to detect more bugs earlier, shorten the non-yielding windows, and alleviate the unfairness in recommendations.
+{{}}
+It consists of three main components:
+{{}}
+(1) the modeling of dynamic
+This work is supported by the National Key Research and Development Program of China under grant No.
+{{}}
+2018YFB1403400,
+the National Natural Science Foundation of China under grant No.
+{{}}
+62072442, No.
+{{}}
+62002348, and Youth Innovation Promotion Association Chinese Academy of Sciences.
+{{}}
+Authors’ addresses:
+{{}}
+J.
+{{}}
+Wang, Laboratory for Internet Software Technologies, State Key Laboratory of Computer Sciences,
+Institute of Software Chinese Academy of Sciences; University of Chinese Academy of Sciences, Beijing 101408, China;
+email:
+{{}}
+junjie@iscas.ac.cn; Y.
+{{}}
+Yang, School of Systems and Enterprises, Stevens Institute of Technology, Hoboken, NJ 07030;
+email:
+{{}}
+ye.yang@stevens.edu; S.
+{{}}
+Wang, Lassonde School of Engineering, York University, ON M3J 1P3, Canada; email:
+{{}}
+wangsong@eecs.yorku.ca; J.
+{{}}
+Hu, Laboratory for Internet Software Technologies, Institute of Software Chinese Academy
+of Sciences; University of Chinese Academy of Sciences, Beijing 101408, China; email:
+{{}}
+hujun@iscas.ac.cn; Q.
+{{}}
+Wang (corresponding author), Laboratory for Internet Software Technologies, State Key Laboratory of Computer Sciences, Science &
+Technology on Integrated Information System Laboratory, Institute of Software Chinese Academy of Sciences; University
+of Chinese Academy of Sciences, Beijing 101408, China; email:
+{{}}
+wq@iscas.ac.cn.
+{{}}
+Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee
+provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and
+the full citation on the first page.
+{{}}
+Copyrights for components of this work owned by others than ACM must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or republish, to post on servers or to redistribute to lists, requires
+prior specific permission and/or a fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+© 2022 Association for Computing Machinery.
+{{}}
+1049-331X/2022/03-ART35 $15.00
+https://doi.org/10.1145/3487571
+ACM Transactions on Software Engineering and Methodology, Vol.
+{{}}
+31, No.
+{{}}
+3, Article 35.
+{{}}
+Publication date:
+{{}}
+March 2022.
+{{}}
+35
+{{}}
+---

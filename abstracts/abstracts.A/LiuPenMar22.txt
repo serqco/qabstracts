@@ -1,0 +1,23 @@
+API-Related Developer Information Needs in Stack Overflow.
+
+Stack Overflow (SO) provides informal documentation for APIs in response to questions that express API related developer
+needs.
+{{}}
+Navigating the information available on SO and getting information related to a particular API and need is challenging due to the
+vast amount of questions and answers and the tag-driven structure of SO.
+{{}}
+In this paper we focus on identifying and classifying fine-grained
+developer needs expressed in sentences of API-related SO questions, as well as the specific information types used to express such
+needs, and the different roles APIs play in these questions and their answers.
+{{}}
+We derive a taxonomy, complementing existing ones,
+through an empirical study of 266 SO posts.
+{{}}
+We then develop and evaluate an approach for the automated identification of the fine-grained
+developer needs in SO threads, which takes a thread as input and outputs the corresponding developer needs, the types of information
+expressing them, and the roles of API elements relevant to the needs.
+{{}}
+To show a practical application of our taxonomy, we introduce and
+evaluate an approach for the automated retrieval of SO questions, based on these developer needs.
+{{}}
+---

@@ -1,0 +1,28 @@
+Verification Witnesses.
+
+57
+Verification Witnesses
+DIRK BEYER and MATTHIAS DANGL, LMU Munich
+DANIEL DIETSCH and MATTHIAS HEIZMANN, University of Freiburg
+THOMAS LEMBERGER, LMU Munich
+MICHAEL TAUTSCHNIG, Queen Mary University of London
+Over the last years, witness-based validation of verification results has become an established practice in
+software verification:
+{{}}
+An independent validator re-establishes verification results of a software verifier using
+verification witnesses, which are stored in a standardized exchange format.
+{{}}
+In addition to validation, such exchangable information about proofs and alarms found by a verifier can be shared across verification tools, and
+users can apply independent third-party tools to visualize and explore witnesses to help them comprehend
+the causes of bugs or the reasons why a given program is correct.
+{{}}
+To achieve the goal of making verification
+results more accessible to engineers, it is necessary to consider witnesses as first-class exchangeable objects,
+stored independently from the source code and checked independently from the verifier that produced them,
+respecting the important principle of separation of concerns.
+{{}}
+We present the conceptual principles of verification witnesses, give a description of how to use them, provide a technical specification of the exchange
+format for witnesses, and perform an extensive experimental study on the application of witness-based result
+validation, using the validators CPAchecker, UAutomizer, CPA-witness2test, and FShell-witness2test.
+{{}}
+---

@@ -1,0 +1,80 @@
+DrAsync: Identifying and Visualizing Anti-Patterns in Asynchronous JavaScript.
+
+Promises and async/await have become popular mechanisms for
+implementing asynchronous computations in JavaScript, but de-
+spite their popularity, programmers have difficulty using them.
+{{}}
+This paper identifies 8 anti-patterns in promise-based JavaScript
+code that are prevalent across popular JavaScript repositories.
+{{}}
+We
+present a light-weight static analysis for automatically detecting
+these anti-patterns.
+{{}}
+This analysis is embedded in an interactive
+visualization tool that additionally relies on dynamic analysis to
+visualize promise lifetimes and instances of anti-patterns executed
+at run time.
+{{}}
+By enabling the user to navigate between promises in
+the visualization and the source code fragments that they originate
+from, problems and optimization opportunities can be identified.
+{{}}
+We implement this approach in a tool called DrAsync, and found
+2.6K static instances of anti-patterns in 20 popular JavaScript repos-
+itories.
+{{}}
+Upon examination of a subset of these, we found that the
+majority of problematic code reported by DrAsync could be elimi-
+nated through refactoring.
+{{}}
+Further investigation revealed that, in a
+few cases, the elimination of anti-patterns reduced the time needed
+to execute the refactored code fragments.
+{{}}
+Moreover, DrAsync’s visu-
+alization of promise lifetimes and relationships provides additional
+insight into the execution behavior of asynchronous programs and
+helped identify further optimization opportunities.
+{{}}
+KEYWORDS
+JavaScript, asynchronous programming, program analysis, visual-
+ization
+ACM Reference Format:
+{{}}
+Alexi Turcotte, Michael D.
+{{}}
+Shah, Mark W.
+{{}}
+Aldrich, and Frank Tip.
+{{}}
+2022.
+{{}}
+DrAsync:
+{{}}
+Identifying and Visualizing Anti-Patterns in Asynchronous Java-
+Script.
+{{}}
+In 44th International Conference on Software Engineering (ICSE ’22),
+May 21–29, 2022, Pittsburgh, PA, USA.
+{{}}
+ACM, New York, NY, USA, 12 pages.
+{{}}
+https://doi.org/10.1145/3510003.3510097
+Permission to make digital or hard copies of part or all of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for third-party components of this work must be honored.
+{{}}
+For all other uses, contact the owner/author(s).
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Copyright held by the owner/author(s).
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+https://doi.org/10.1145/3510003.3510097
+{{}}
+---

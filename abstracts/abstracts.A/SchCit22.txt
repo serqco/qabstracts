@@ -1,0 +1,33 @@
+An empirical investigation of command-line customization.
+
+The interactive command line, also known as the shell, is a prominent mechanism used
+extensively by a wide range of software professionals (engineers, system administrators,
+data scientists, etc.).
+{{}}
+Shell customizations can therefore provide insight into the tasks they
+repeatedly perform, how well the standard environment supports those tasks, and ways in
+which the environment could be productively extended or modified.
+{{}}
+To characterize the patterns and complexities of command-line customization, we mined the collective knowledge
+of command-line users by analyzing more than 2.2 million shell alias definitions found on
+GitHub.
+{{}}
+Shell aliases allow command-line users to customize their environment by defining arbitrarily complex command substitutions.
+{{}}
+Using inductive coding methods, we found
+three types of aliases that each enable a number of customization practices:
+{{}}
+SHORTCUTS (for
+nicknaming commands, abbreviating subcommands, and bookmarking locations), MODIFICATIONS (for substituting commands, overriding defaults, colorizing output, and elevating
+privilege), and SCRIPTS (for transforming data and chaining subcommands).
+{{}}
+We conjecture
+that identifying common customization practices can point to particular usability issues
+within command-line programs, and that a deeper understanding of these practices can
+support researchers and tool developers in designing better user experiences.
+{{}}
+In addition
+to our analysis, we provide an extensive reproducibility package in the form of a curated
+dataset together with well-documented computational notebooks enabling further knowledge discovery and a basis for learning approaches to improve command-line workflows.
+{{}}
+---

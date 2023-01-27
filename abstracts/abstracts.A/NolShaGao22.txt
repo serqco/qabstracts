@@ -1,0 +1,93 @@
+Trust Enhancement Issues in Program Repair.
+
+Automated program repair is an emerging technology that seeks
+to automatically rectify bugs and vulnerabilities using learning,
+search, and semantic analysis.
+{{}}
+Trust in automatically generated
+patches is necessary for achieving greater adoption of program
+repair.
+{{}}
+Towards this goal, we survey more than 100 software practi-
+tioners to understand the artifacts and setups needed to enhance
+trust in automatically generated patches.
+{{}}
+Based on the feedback
+from the survey on developer preferences, we quantitatively evalu-
+ate existing test-suite based program repair tools.
+{{}}
+We find that they
+cannot produce high-quality patches within a top-10 ranking and
+an acceptable time period of 1 hour.
+{{}}
+The developer feedback from
+our qualitative study and the observations from our quantitative
+examination of existing repair tools point to actionable insights to
+drive program repair research.
+{{}}
+Specifically, we note that producing
+repairs within an acceptable time-bound is very much dependent on
+leveraging an abstract search space representation of a rich enough
+search space.
+{{}}
+Moreover, while additional developer inputs are valu-
+able for generating or ranking patches, developers do not seem to
+be interested in a significant human-in-the-loop interaction.
+{{}}
+ACM Reference Format:
+{{}}
+Yannic Noller, Ridwan Shariffdeen, Xiang Gao, and Abhik Roychoudhury.
+{{}}
+2022.
+{{}}
+Trust Enhancement Issues in Program Repair.
+{{}}
+In 44th International Con-
+ference on Software Engineering (ICSE ’22), May 21–29, 2022, Pittsburgh, PA,
+USA.
+{{}}
+ACM, New York, NY, USA, 13 pages.
+{{}}
+https://doi.org/10.1145/3510003.
+{{}}
+3510040
+1
+Automated program repair technologies [14] are getting increased
+attention.
+{{}}
+In recent times, program repair has found its way into
+the automated fixing of mobile apps in the SapFix project in Face-
+book [28], automated repair bots as evidenced by the Repairnator
+∗ Joint   first authors
+† Alternate
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for components of this work owned by others than the
+author(s) must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior specific permission
+and/or a fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Copyright held by the owner/author(s).
+{{}}
+Publication rights licensed to ACM.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3510040
+{{}}
+---

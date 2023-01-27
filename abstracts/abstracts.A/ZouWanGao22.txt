@@ -1,0 +1,53 @@
+Buddy Stacks: Protecting Return Addresses with Efficient Thread-Local Storage and Runtime Re-Randomization.
+
+Buddy Stacks:
+{{}}
+Protecting Return Addresses with Efficient
+Thread-Local Storage and Runtime Re-Randomization
+CHANGWEI ZOU and XUDONG WANG, UNSW Sydney, Australia
+YAOQING GAO, Huawei Toronto Research Center, Canada
+JINGLING XUE, UNSW Sydney, Australia
+Shadow stacks play an important role in protecting return addresses to mitigate ROP attacks.
+{{}}
+Parallel shadow
+stacks, which shadow the call stack of each thread at the same constant offset for all threads, are known not to
+support multi-threading well.
+{{}}
+On the other hand, compact shadow stacks must maintain a separate shadow
+stack pointer in thread-local storage (TLS), which can be implemented in terms of a register or the perthread Thread-Control-Block (TCB), suffering from poor compatibility in the former or high performance
+overhead in the latter.
+{{}}
+In addition, shadow stacks are vulnerable to information disclosure attacks.
+{{}}
+In this paper, we propose to mitigate ROP attacks for single- and multi-threaded server programs running on general-purpose computing systems by using a novel stack layout, called a buddy stack (referred
+to as Bustk), that is highly performant, compatible with existing code, and provides meaningful security.
+{{}}
+These goals are met due to three novel design aspects in Bustk.
+{{}}
+First, Bustk places a parallel shadow stack
+just below a thread’s call stack (as each other’s buddies allocated together), avoiding the need to maintain
+a separate shadow stack pointer and making it now well-suited for multi-threading.
+{{}}
+Second, Bustk uses an
+efficient stack-based thread-local storage mechanism, denoted STK-TLS, to store thread-specific metadata in
+two TLS sections just below the shadow stack in dual redundancy (as each other’s buddies), so that both
+can be accessed and updated in a lightweight manner from the call stack pointer rsp alone.
+{{}}
+Finally, Bustk
+re-randomizes continuously (on the order of milliseconds) the return addresses on the shadow stack by using
+a new microsecond-level runtime re-randomization technique, denoted STK-MSR.
+{{}}
+This mechanism aims to
+obsolete leaked information, making it extremely unlikely for the attacker to hijack return addresses, particularly against a server program that sits often tens of milliseconds away from the attacker.
+{{}}
+Our evaluation using web servers, Nginx and Apache Httpd, shows that Bustk works well in terms of
+performance, compatibility, and security provided, with its parallel shadow stacks incurring acceptable memory overhead for real-world applications and its STK-TLS mechanism costing only two pages per thread.
+{{}}
+In
+particular, Bustk can protect the Nginx and Apache servers with an adaptive 1-ms re-randomization policy (without observable overheads when IO is intensive, with about 17,000 requests per second).
+{{}}
+In addition,
+we have also evaluated Bustk using other non-server applications, Firefox, Python, LLVM, JDK and SPEC
+CPU2006, to demonstrate further the same degree of performance and compatibility provided, but the protection provided for, say, browsers, is weaker (since network-access delays can no longer be assumed).
+{{}}
+---

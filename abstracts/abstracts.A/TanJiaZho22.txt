@@ -1,0 +1,41 @@
+Detecting Compiler Warning Defects Via Diversity-Guided Program Mutation.
+
+Compiler diagnostic warnings help developers identify potential programming mistakes during program compilation.
+{{}}
+However, these warnings could be erroneous due to the defects of compiler warning diagnostics.
+{{}}
+Although the existing technique (i.e.,
+Epiphron) can automatically generate test programs for compiler warning defect detection, the effectiveness of Epiphron on defectfinding is still limited, due to the limitation for generating warning-sensitive test program structures.
+{{}}
+Therefore, in this paper, we propose
+a DIversity-guided PROgram Mutation approach, called DIPROM, to construct diverse warning-sensitive programs for effective
+compiler warning defect detection.
+{{}}
+Given a seed test program, DIPROM first removes its dead code to reduce false positive warning
+defects.
+{{}}
+Then, the abstract syntax tree (AST) of the test program is constructed; DIPROM iteratively mutates the structures of the AST
+to generate warning-sensitive program variants.
+{{}}
+To effectively construct diverse warning-sensitive structures, DIPROM applies a novel
+diversity-guided strategy to generate program variants in each iteration.
+{{}}
+With the generated program variants, differential testing is
+conducted to detect warning defects in different compilers.
+{{}}
+In the experiments, we evaluate DIPROM with two popular C compilers (i.e.,
+GCC and Clang).
+{{}}
+Experimental results show that DIPROM significantly outperforms three state-of-the-art approaches (i.e., HiCOND,
+Epiphron, and Hermes) by up to 18.93%76.74% in terms of the bug-finding capability on average.
+{{}}
+Meanwhile, DIPROM is efficient,
+which spends less time on finding the same average number of warning defects.
+{{}}
+We at last applied DIPROM to the latest development
+versions of GCC and Clang.
+{{}}
+After two months’ running, we reported 8 new warning defects; 5 of them have been confirmed/fixed by
+developers.
+{{}}
+---

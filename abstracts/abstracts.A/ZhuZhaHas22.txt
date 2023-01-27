@@ -1,0 +1,34 @@
+An empirical study of question discussions on Stack Overflow.
+
+Stack Overflow provides a means for developers to exchange knowledge.
+{{}}
+While much previous research on Stack Overflow has focused on questions and answers (Q&A), recent work
+has shown that discussions in comments also contain rich information.
+{{}}
+On Stack Overflow,
+discussions through comments and chat rooms can be tied to questions or answers.
+{{}}
+In this
+paper, we conduct an empirical study that focuses on the nature of question discussions.
+{{}}
+We
+observe that:
+{{}}
+(1) Question discussions occur at all phases of the Q&A process, with most
+beginning before the first answer is received.
+{{}}
+(2) Both askers and answerers actively participate in question discussions; the likelihood of their participation increases as the number
+of comments increases.
+{{}}
+(3) There is a strong correlation between the number of question
+comments and the question answering time (i.e., more discussed questions receive answers
+more slowly).
+{{}}
+Our findings suggest that question discussions contain a rich trove of data
+that is integral to the Q&A processes on Stack Overflow.
+{{}}
+We further suggest how future
+research can leverage the information in question discussions, along with the commonly
+studied Q&A information.
+{{}}
+---

@@ -1,0 +1,54 @@
+L2S: A Framework for Synthesizing the Most Probable Program under a Specification.
+
+34
+L2S:
+{{}}
+A Framework for Synthesizing the Most Probable
+Program under a Specification
+YINGFEI XIONG and BO WANG, Peking University
+In many scenarios, we need to find the most likely program that meets a specification under a local context,
+where the local context can be an incomplete program, a partial specification, natural language description,
+and so on.
+{{}}
+We call such a problem program estimation.
+{{}}
+In this article, we propose a framework, LingLong
+Synthesis Framework (L2S), to address this problem.
+{{}}
+Compared with existing work, our work is novel in the
+following aspects.
+{{}}
+(1) We propose a theory of expansion rules to describe how to decompose a program into
+choices.
+{{}}
+(2) We propose an approach based on abstract interpretation to efficiently prune off the program
+sub-space that does not satisfy the specification.
+{{}}
+(3) We prove that the probability of a program is the product
+of the probabilities of choosing expansion rules, regardless of the choosing order.
+{{}}
+(4) We reduce the program estimation problem to a pathfinding problem, enabling existing pathfinding algorithms to solve this
+problem.
+{{}}
+L2S has been applied to program generation and program repair.
+{{}}
+In this article, we report our instantiation
+of this framework for synthesizing conditional expressions (L2S-Cond) and repairing conditional statements
+(L2S-Hanabi).
+{{}}
+The experiments on L2S-Cond show that each option enabled by L2S, including the expansion
+rules, the pruning technique, and the use of different pathfinding algorithms, plays a major role in the performance of the approach.
+{{}}
+The default configuration of L2S-Cond correctly predicts nearly 60% of the conditional
+expressions in the top 5 candidates.
+{{}}
+Moreover, we evaluate L2S-Hanabi on 272 bugs from two real-world Java
+defects benchmarks, namely Defects4J and Bugs.jar.
+{{}}
+L2S-Hanabi correctly fixes 32 bugs with a high precision
+of 84%.
+{{}}
+In terms of repairing conditional statement bugs, L2S-Hanabi significantly outperforms all existing
+approaches in both precision and recall.
+{{}}
+---

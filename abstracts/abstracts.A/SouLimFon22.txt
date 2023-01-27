@@ -1,0 +1,49 @@
+Developers&apos; viewpoints to avoid bug-introducing changes.
+
+Context:
+{{}}
+During software development, developers can make assumptions that guide their development
+practices to avoid bug-introducing changes.
+{{}}
+For instance, developers may consider that code with low test
+coverage is more likely to introduce bugs; and thus, focus their attention on that code to avoid bugs, neglecting
+other factors during the software development process.
+{{}}
+However, there is no knowledge about the relevance
+of these assumptions for developers.
+{{}}
+Objective:
+{{}}
+This study investigates the developers’ viewpoints on the relevance of certain assumptions to
+avoid bug-introducing changes.
+{{}}
+In particular, we analyze which assumptions developers can make during
+software development; how relevant these assumptions are for developers; the common viewpoints among
+developers regarding these assumptions; and the main reasons for developers to put more/less relevance for
+some assumptions.
+{{}}
+Method:
+{{}}
+We applied the Q-methodology, a mixed-method from the psychometric spectrum, to investigate the
+relevance of assumptions and extract the developers’ viewpoints systematically.
+{{}}
+We involved 41 developers
+analyzing 41 assumptions extracted from literature and personal interviews.
+{{}}
+Results:
+{{}}
+We identified five viewpoints among developers regarding their assumptions around bug-introducing
+changes.
+{{}}
+Despite the differences among the viewpoints, there is also consensus, for example, regarding the
+importance of being aware of changes invoking high number of features.
+{{}}
+Moreover, developers rely on personal
+and technical reasons to put relevance on some assumptions.
+{{}}
+Conclusion:
+{{}}
+These findings are valuable knowledge for practitioners and researchers towards future research
+directions and development practices improvements.
+{{}}
+---

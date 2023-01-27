@@ -1,0 +1,108 @@
+The Case for Adaptive Security Interventions.
+
+9
+The Case for Adaptive Security Interventions
+IRUM RAUF, MARIAN PETRE, THEIN TUN, and TAMARA LOPEZ, School of Computing
+and Communications, The Open University, UK
+PAUL LUNN, The University of Manchester, UK
+DIRK VAN DER LINDEN, Department of Computer and Information Sciences, Northumbria
+University, UK
+JOHN TOWSE, Department of Psychology, University of Lancaster, UK
+HELEN SHARP, School of Computing and Communications, The Open University, UK
+MARK LEVINE, Department of Psychology, University of Lancaster, UK
+AWAIS RASHID, Bristol Cyber Security Group, University of Bristol, UK
+BASHAR NUSEIBEH, School of Computing and Communications, The Open University, UK,
+Lero-The Irish Software Research Centre, Republic of Ireland
+Despite the availability of various methods and tools to facilitate secure coding, developers continue to write
+code that contains common vulnerabilities.
+{{}}
+It is important to understand why technological advances do not
+sufficiently facilitate developers in writing secure code.
+{{}}
+To widen our understanding of developers’ behaviour,
+we considered the complexity of the security decision space of developers using theory from cognitive and
+social psychology.
+{{}}
+Our interdisciplinary study reported in this article (1) draws on the psychology literature to
+provide conceptual underpinnings for three categories of impediments to achieving security goals, (2) reports
+on an in-depth meta-analysis of existing software security literature that identified a catalogue of factors that
+influence developers’ security decisions, and (3) characterises the landscape of existing security interventions
+that are available to the developer during coding and identifies gaps.
+{{}}
+Collectively, these show that different
+forms of impediments to achieving security goals arise from different contributing factors.
+{{}}
+Interventions will
+be more effective where they reflect psychological factors more sensitively and marry technical sophistication,
+psychological frameworks, and usability.
+{{}}
+Our analysis suggests “adaptive security interventions” as a solution
+that responds to the changing security needs of individual developers and a present a proof-of-concept tool
+to substantiate our suggestion.
+{{}}
+This work was partially supported by UKRI/EPSRC (EP/P011799/1, EP/P011799/2, EP/R013144/1, and EP/T017465/1), NCSC,
+and SFI (13/RC/2094 and 16/RC/3918).
+{{}}
+Authors’ addresses:
+{{}}
+I.
+{{}}
+Rauf (corresponding author), M.
+{{}}
+Petre, T.
+{{}}
+Tun, T.
+{{}}
+Lopez, and H.
+{{}}
+Sharp, School of Computing and
+Communications, The Open University, Milton Keynes, UK; emails:
+{{}}
+{irum.rauf, marian.petre, thein.tun, tamara.lopez, helen.sharp}@open.ac.uk; B.
+{{}}
+Nuseibeh, School of Computing and Communications, The Open University, Milton Keynes,
+UK and Lero, University of Limerick, Republic of Ireland; email:
+{{}}
+bashar.nuseibeh@open.ac.uk; P.
+{{}}
+Lunn, The University of
+Manchester, Manchester; email:
+{{}}
+paul.lunn@manchester.ac.uk; D.
+{{}}
+van der Linden, Department of Computer and Information Sciences, Northumbria University, Newcastle-upon-Tyne, UK; email:
+{{}}
+dirk.vanderlinden@northumbria.ac.uk; A.
+{{}}
+Rashid,
+Bristol Cyber Security Group, University of Bristol, Bristol, UK; email:
+{{}}
+awais.rashid@bristol.ac.uk; J.
+{{}}
+Towse and M.
+{{}}
+Levine,
+Department of Psychology, University of Lancaster, Lancaster, UK; emails:
+{{}}
+{john.towse, mark.levine}@lancaster.ac.uk.
+{{}}
+This work is licensed under a Creative Commons Attribution International 4.0 License.
+{{}}
+© 2021 Copyright held by the owner/author(s).
+{{}}
+1049-331X/2021/09-ART9 $15.00
+https://doi.org/10.1145/3471930
+
+ACM Transactions on Software Engineering and Methodology, Vol.
+{{}}
+31, No.
+{{}}
+1, Article 9.
+{{}}
+Publication date:
+{{}}
+September 2021.
+{{}}
+
+{{}}
+---

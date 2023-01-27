@@ -1,0 +1,30 @@
+Predictive Models in Software Engineering: Challenges and Opportunities.
+
+Predictive Models in Software Engineering:
+{{}}
+Challenges and
+Opportunities
+YANMING YANG, Zhejiang University, China
+XIN XIA, Software Engineering Application Technology Lab, Huawei, China
+DAVID LO, Singapore Management University, Singapore
+TINGTING BI and JOHN GRUNDY, Monash University, Australia
+XIAOHU YANG, Zhejiang University, China
+Predictive models are one of the most important techniques that are widely applied in many areas of software
+engineering.
+{{}}
+There have been a large number of primary studies that apply predictive models and that present
+well-performed studies in various research domains, including software requirements, software design and
+development, testing and debugging, and software maintenance.
+{{}}
+This article is a first attempt to systematically
+organize knowledge in this area by surveying a body of 421 papers on predictive models published between
+2009 and 2020.
+{{}}
+We describe the key models and approaches used, classify the different models, summarize the
+range of key application areas, and analyze research results.
+{{}}
+Based on our findings, we also propose a set of
+current challenges that still need to be addressed in future work and provide a proposed research road map
+for these opportunities.
+{{}}
+---

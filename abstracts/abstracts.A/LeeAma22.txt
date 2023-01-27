@@ -1,0 +1,45 @@
+A comparative study on vectorization methods for non-functional requirements classification.
+
+Context:
+{{}}
+Identifying non-functional requirements (NFRs) and their categories at the early phase is crucial
+for analysts to design software systems and recognize constraints.
+{{}}
+Automatic non-functional requirements
+classification methods have been studied for reducing the costs of that labor-intensive task.
+{{}}
+Our previous
+study focused on the differences among vectorization methods that converted requirements written in
+natural language into numerical vectors for classification.
+{{}}
+It had some limitations regarding the number of
+datasets used, the types of vectorization methods supporting pre-trained data, and the performance evaluation
+procedure.
+{{}}
+Objective:
+{{}}
+To examine whether different vectorization methods lead to differences in the classification
+performance of NFRs and their categories with extended settings.
+{{}}
+Methods:
+{{}}
+Comparative experiments were conducted with five open data.
+{{}}
+Nine vectorization methods, including ones with pre-trained data and four supervised classification methods, were supplied.
+{{}}
+Performance was
+evaluated with AUC and Scott-Knott ESD test.
+{{}}
+Results:
+{{}}
+Some advanced methods could achieve better performance than traditional ones when combined with
+some classifiers.
+{{}}
+The use of pre-trained data was useful for some categories.
+{{}}
+Conclusion:
+{{}}
+It is beneficial to consider using some combinations of vectorization methods and classifiers for
+classifying non-functional requirements categories.
+{{}}
+---

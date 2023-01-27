@@ -1,0 +1,77 @@
+Towards building a pragmatic cross-project defect prediction model combining non-effort based and effort-based performance measures for a balanced evaluation.
+
+Information and Software Technology 150 (2022) 106980
+
+Contents lists available at ScienceDirect
+
+Information and Software Technology
+journal homepage:
+{{}}
+www.elsevier.com/locate/infsof
+
+Towards building a pragmatic cross-project defect prediction model
+combining non-effort based and effort-based performance measures for a
+balanced evaluation
+Yogita Khatri *, Sandeep Kumar Singh #
+Jaypee Institute of Information Technology, Department of Computer Science Engineering and Information Technology, Noida, India
+
+A R T I C L E I N F O
+
+A B S T R A C T
+
+Keywords:
+{{}}
+Cross-project defect prediction
+Transfer boosting
+Effort based measures
+Non-effort based measures
+
+Context:
+{{}}
+Recent years have witnessed the growing trend in cross-project defect prediction (CPDP), where the
+training and the testing data come from different projects having different data distributions.
+{{}}
+Several CPDP
+methods have been presented in the literature to overcome differences in their distributions, but the majority of
+the existing approaches have been evaluated considering the availability of unlimited inspection effort, which is
+practically impossible, thus leading to fallacious conclusions.
+{{}}
+Further, they focused more on improving Recall
+over Precision leading to a high probability of false alarm (PF), causing significant wastage of developer’s efforts
+and time.
+{{}}
+Objective:
+{{}}
+Addressing these issues, we propose a Two-Phase Transfer Boosting (TPTB) model, which aims at
+improving the performance not only in terms of non-effort based measures (NEBMs) (making a balance between
+Recall and PF) but also in terms of effort based measures (EBMs), considering the availability of limited in­
+spection effort.
+{{}}
+Method:
+{{}}
+To mitigate the distribution differences, the first phase assigns initial weights to the training modules
+based on the feature distribution and feature importance.
+{{}}
+The second phase applies the Dynamic Transfer
+AdaBoost algorithm to build an ensemble classifier to lessen the impact of contradictory training modules.
+{{}}
+In
+addition, a sorting strategy is designed to prioritize the modules for further inspection.
+{{}}
+Results:
+{{}}
+Statistical results on 62 datasets revealed a better-balanced performance of our TPTB model holistically
+over NN-filter, ManualDown, EASC, and Cruz model with performance comparable to WPDP (Within-project
+defect prediction) considering NEBMs.
+{{}}
+Besides, when considering EBMs together, TPTB showed statistically and
+practically more balanced performance as compared to ManualUP and Cruz with overall performance compa­
+rable to EASC.
+{{}}
+Conclusions:
+{{}}
+Our results demonstrate the efficacy of the TPTB model in a practical setting empowering the quality
+assurance team to predict and prioritize the defective modules allocating limited inspection effort by optimally
+focusing on highly defective modules.
+{{}}
+---

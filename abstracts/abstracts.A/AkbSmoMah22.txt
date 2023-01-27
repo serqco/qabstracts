@@ -1,0 +1,85 @@
+Toward successful DevSecOps in software development organizations: A decision-making framework.
+
+Information and Software Technology 147 (2022) 106894
+
+Contents lists available at ScienceDirect
+
+Information and Software Technology
+journal homepage:
+{{}}
+www.elsevier.com/locate/infsof
+
+Toward successful DevSecOps in software development organizations:
+{{}}
+A
+decision-making framework
+Muhammad Azeem Akbar a, *, Kari Smolander a, Sajjad Mahmood b, c, Ahmed Alsanad d
+a
+
+Software Engineering, LUT University, Lappeenranta, 53851, Finland
+Information and Computer Science Department, King Fahd University of Petroleum and Minerals, Dhahran, Saudi Arabia
+c
+Interdisciplinary Research Center for Intelligent Secure Systems, King Fahd University of Petroleum and Minerals, Dhahran, Saudi Arabia
+d
+STC’s Artificial Intelligence Chair, Department of Information Systems, College of Computer and Information Sciences, King Saud University, Riyadh 11451, Saudi
+Arabia
+b
+
+A R T I C L E I N F O
+
+A B S T R A C T
+
+Keywords:
+{{}}
+DevOps
+DevSecOps
+Challenges
+Multivocal literature review
+Fuzzy analytical hierarchy process
+
+Context:
+{{}}
+Development and Operations (DevOps) is a methodology that aims to establish collaboration between
+programmers and operators to automate the continuous delivery of new software to reduce the development life
+cycle and produce quality software.
+{{}}
+Development, Security, and Operations (DevSecOps) is developing the
+DevOps concept, which integrates security methods into a DevOps process.
+{{}}
+DevSecOps is a software development
+process where security is built in to ensure application confidentiality, integrity, and availability.
+{{}}
+Objective:
+{{}}
+This paper aims to identify and prioritize the challenges associated with implementing the DevSecOps
+process.
+{{}}
+Method:
+{{}}
+We performed a multivocal literature review (MLR) and conducted a questionnaire-based survey to
+identify challenges associated with DevSecOps-based projects.
+{{}}
+Moreover, interpretive structure modeling (ISM)
+was applied to study the relationships among the core categories of the challenges.
+{{}}
+Finally, we used the fuzzy
+technique for order preference by similarity to an ideal solution (TOPSIS) to prioritize the identified challenges
+associated with DevSecOps projects.
+{{}}
+Results:
+{{}}
+We identified 18 challenges for the DevSecOps process and mapped them to 10 core categories.
+{{}}
+The ISM
+results indicate that the “standards” category has the most decisive influence on the other nine core categories of
+the identified challenges.
+{{}}
+Moreover, the fuzzy TOPSIS indicates that “lack of secure coding standards,” “lack of
+automated testing tools for security in DevOps,” and “ignorance in static testing for security due to lack of
+knowledge” are the highest priority challenges for the DevSecOps paradigm.
+{{}}
+Conclusion:
+{{}}
+Organizations using DevOps should consider the identified challenges in developing secure software.
+{{}}
+---
