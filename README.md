@@ -11,7 +11,8 @@ See `procedure.md` for how the study is carried out overall and specifically
 Directories (in sort of a chrono-logical order):
 
 - `volumes`:
-  The corpora used in the study (as external directories).
+  The subcorpora used in the study (as external directories).
+  Each subcorpus is the result of a call to the `retrievelit` downloader.
 - `prestudy`:
   preliminary look at a small sample of abstracts in order
   to understand the domain.

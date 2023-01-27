@@ -22,7 +22,7 @@ def volume(list_line: Entry) -> str:
     return split_entry(list_line)[0]
 
 
-def read_list(filename: str) -> tg.Sequence[Entry]:
+def read_list(filename: str) -> tg.List[Entry]:
     with open(filename, 'rt', encoding='utf-8') as lst:
         mylist = lst.read().split('\n')
         mylist.pop()  # file ends with \n, so last item is empty
@@ -76,7 +76,7 @@ class WhoWhat:
         self.workdir = workdir
         self.coders = set()
         self._coder_of = dict()  # filename -> codername
-        self._pairs: tg.Sequence[Filepair] = [] 
+        self._pairs: tg.List[Filepair] = [] 
         with open(f"{workdir}/{self.FILENAME}", 'r', encoding='utf8') as f:
             lines = f.readlines()
         for line in lines:

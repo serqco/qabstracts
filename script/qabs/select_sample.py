@@ -18,13 +18,11 @@ def configure_argparser(p_select_sample):
 
 class Population:
     def __init__(self, volumes: tg.Sequence[str]):
-        self.subpopulations = []  # type: tg.Sequence[tg.Sequence[str]]
-        self.volumenames = []  # volume can have a multi-part path
+        self.subpopulations = []  # type: tg.List[tg.List[str]]
         for volume in volumes:
-            self.volumenames.append(os.path.basename(volume))
-            this_pop = metadata.read_list(f"{volume}.list")
-            random.shuffle(this_pop)
-            self.subpopulations.append(this_pop)
+            my_subpopulation = self.subpopulation(volume)
+            random.shuffle(my_subpopulation)
+            self.subpopulations.append(my_subpopulation)
         self.next_subpopI = 0  # where to attempt to draw from next time
 
     def draw1(self) -> str:
@@ -37,6 +35,9 @@ class Population:
             return self.subpopulations[next].pop()  # return last element and remove it
         else:
             return self.draw1()  # return from next subpopulaation, because the current one is empty
+
+    def subpopulation(self, volumedir: str) -> tg.List[str]:
+        return metadata.read_list(f"{volumedir}/metadata/{volumename(volumedir)}.list")
 
 
 class Sample:
@@ -86,6 +87,10 @@ def select_sample(size: int, blocksize: int, to: str, volumes: tg.Sequence[str])
     write_titles(to, sample, volumes)
 
 
+def volumename(volumedir: str) -> str:
+    return os.path.basename(volumedir)
+
+
 def write_who_what(to: str, sample: Sample, blocksize: int):
     filename = f"{to}/sample-who-what.txt"
     with open(filename, 'w', encoding='utf8') as who:
@@ -96,15 +101,18 @@ def write_who_what(to: str, sample: Sample, blocksize: int):
             who.write(f"{citekey}   \n")
         print(f"wrote '{filename}'")
 
-def write_titles(to: str, sample: Sample, volumes: tg.Sequence[str]):
+
+def write_titles(to: str, sample: Sample, volumedirs: tg.Sequence[str]):
+    """Knows about structure of metadata; writes mapping citekey->articletitle into file."""
     alltitles = dict()
-    for volume in volumes:
-        with open(f"{volume}-metadata.json", 'rt', encoding='utf8') as md:
-            for entry in json.load(md):
+    for volumedir in volumedirs:
+        metadatafile = f"{volumedir}/metadata/{volumename(volumedir)}-dblp.json"
+        with open(metadatafile, 'rt', encoding='utf8') as md:
+            for entry in json.load(md)['corpus_metadata']:
                 alltitles[entry['identifier']] = entry['title']  # make titles accessible by citekey
     titles = dict()
     for entry in sample.entries:
-        volume, citekey = metadata.split_entry(entry)
+        volumedir, citekey = metadata.split_entry(entry)
         titles[citekey] = alltitles[citekey]
     filename = f"{to}/sample-titles.json"
     with open(filename, 'w', encoding='utf8') as j:
