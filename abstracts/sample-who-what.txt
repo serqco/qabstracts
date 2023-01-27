@@ -63,7 +63,7 @@ ValDíaBou22
 WuZouDou22   
 XiaHanAi22   
 #----- Block 8
-DabLetPer22a   
+YanHasZou22   
 YanXiaLo22   
 GeoKecSha22   
 BesMarBos22   
@@ -526,7 +526,7 @@ XuChePei22
 CheLiuSu22   
 KimRagHeo22   
 PatFacHam22   
-HerFerGal22a   
+MarLarBer22
 HenLesStr22   
 SeiHecCav22   
 DogTüz22   
@@ -580,13 +580,13 @@ TsiWau22
 StrHodPaa22   
 EndBoeWei22   
 BusOpeNad22   
-MarLarBer22   
+#HerFerGal22a  EMSE. Not an article but a 'correction'. Replaced by MarLarBer22 from the reserve in Block 59.   
 ZheCheDu22   
 LiCheYao22   
 MotSotBru22   
 #----- Block 66
 KhaAbrNia22   
 NguNgoNgu22   
-YanHasZou22   
+#DabLetPer22a  EMSE. Not an article but a 'correction'. Replaced by YanHasZou22 from the reserve in Block 8.   
 PanRaj22   
 HuqHasHaq22   
