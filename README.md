@@ -22,8 +22,13 @@ Directories (in sort of a chrono-logical order):
   Python and R scripts for study execution, analysis, and plotting.
 - `abstracts`:
   The sample of abstracts used (or potentially used) in the study.  
-  Contains subdirectories `abstracts/abstracts.A`, `abstracts/abstracts.B` for the abstracts to be annotated by the coders.  
-  `abstracts/sample*` (3 files) describes the sample and indicates the origin of the abstracts.
+  Contains subdirectories `abstracts/abstracts.A`, `abstracts/abstracts.B` for the abstracts to be
+  annotated by the coders.    
+  `abstracts/sample.list` contains lines of the form "EMSE-2022/FrePetGer22.pdf" (volumename, citekey).  
+  `abstracts/sample-titles.json` maps citekeys to article titles.  
+  `abstracts/sample-who-what.txt` work status file: Which citekeys belong to which block?
+  Who is going to code or has coded which block?
+  Use coder firstnames or nicknames for entries here.
 - `results`: 
   Data files derived from the annotated abstracts and files created by statistical evaluation.
 - `img`:

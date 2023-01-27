@@ -18,7 +18,7 @@ def main():  # uses sys.argv
     if subcmd == "select-sample":
         qabs.select_sample.select_sample(pargs.size, pargs.blocksize, pargs.to, pargs.volume)
     elif subcmd == "prepare-sample":
-        qabs.prepare_sample.prepare_sample(pargs.workdir, pargs.volumedir)
+        qabs.prepare_sample.prepare_sample(pargs.workdir, pargs.volumedir, pargs.remainder)
     elif subcmd == "check-codings":
         qabs.check_codings.check_codings(pargs.workdir)
     elif subcmd == "compare-codings":

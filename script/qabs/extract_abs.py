@@ -9,7 +9,7 @@ usage = """Heuristically obtains abstracts from PDF files.
   Works on one given PDF file or each local PDF file whose basename is
   listed in the given '*.list' file.
   Calls pdftotext (from the poppler-utils package) to extract page 1,
-  then uses incomplete heuristics according to the given article --type to find 
+  then uses incomplete heuristics according to the given --layout to find 
   start and end of the abstract on that page. 
   Creates abstract text file with same basename in outputdir.
 """
@@ -33,7 +33,7 @@ def is_icse_in_year(volume: str, years: tg.Set[int]) -> bool:
 
 def is_acmconf_icse(volume: str) -> bool:
     """Knows some ICSE years that use acmconf layout."""
-    return is_icse_in_year(volume, {2020, 2018, 2016})
+    return is_icse_in_year(volume, {2022, 2020, 2018, 2016})
 
 
 def is_ieeeconf_icse(volume: str) -> bool:
@@ -82,10 +82,10 @@ def decide_layouttype(entry: metadata.Entry) -> str:
     venue = volume_path_name_year(volume)[1]
     for key, descriptor in layouttypes.items():
         for candidate in descriptor['applies_to']:
-            if candidate == venue:
+            mentioned_by_name = (candidate == venue)
+            matched_by_predicate = (callable(candidate) and candidate(volume))
+            if mentioned_by_name or matched_by_predicate:
                 return key
-            elif callable(candidate) and candidate(volume):
-                return candidate
     raise ValueError(f"cannot find layouttype for volume '{volume}'")
     return "???"
 
@@ -102,15 +102,16 @@ def extract_abstracts(outputdir: str, layouttype: str, inputfile: str):
         print(f"'{inputfile}': unknown input file type; must be .pdf or .list")
 
 
-def extract_abstract(pdffile: str, layouttype: str, outputdir: str):
+def extract_abstract(pdffilepath: str, layouttype: str, outputdir: str):
     #----- skip existing:
+    pdffile = os.path.basename(pdffilepath)
     basename, suffix = os.path.splitext(pdffile)
     outputpathname = f"{outputdir}/{basename}.txt"
     if os.path.exists(outputpathname):
         print(f"#### '{outputpathname}' exists!. SKIPPED.")
         return
     #----- obtain abstract:
-    abstract = abstract_from_pdf(pdffile, layouttype)
+    abstract = abstract_from_pdf(pdffilepath, layouttype)
     #----- write abstract:
     print(f"---- writing '{outputpathname}'")
     with open(outputpathname, mode='wt', encoding="utf8") as f:
