@@ -25,7 +25,7 @@ changed: Lutz Prechelt, 2023-01-20
    No part of any sentence pertains to two codes at once
    (except the "extra codes", see below)
 5. For annotation, a sentence is interpreted in its 
-   backward and forward context, not in isolation.  
+   backward and 1-sentence forward context, not in isolation.  
    In particular, when a sentence can be an A or a B, but only a B is expected
    in this position, it is interpreted as a B.
 6. We are gentle in detecting negative aspects:
