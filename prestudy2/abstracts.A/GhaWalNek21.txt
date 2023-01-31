@@ -22,7 +22,7 @@ In this paper, we present a software system to facilitate and accelerate the dee
 ModelKB can automatically manage the
 modeling lifecycle end-to-end, including (1) monitoring and tracking experiments; (2) visualizing, searching for, and comparing models and experiments; (3) deploying models locally
 and on the cloud; and (4) sharing and publishing trained models.
-{{claim}}
+{{design}}
 Moreover, our system provides a stepping-stone for enhanced reproducibility.
 {{claim}}
 ModelKB currently supports TensorFlow
