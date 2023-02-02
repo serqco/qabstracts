@@ -46,12 +46,13 @@ layouttypes = dict(  # None means "We have no clue!"
     acmconf=dict(
         cols=2,
         start=r"\nABSTRACT\s",
-        end=r"\nCCS CONCEPTS\s",
+        end=r"(?i)\nCCS CONCEPTS|\nACM Reference Format:",
         applies_to=[is_acmconf_icse, ]),
     acmtrans=dict(
         cols=1,
         start=None,  # a horizontal line not represented in the text format
-        end=r"\n+CCS Concepts:|\n+Additional Key Words and Phrases:|\n+ACM Reference format:",
+        # Author names precede the abstract in ALL CAPS, but this criterion is difficult and risky
+        end=r"(?i)\n+CCS Concepts:|\n+Additional Key Words and Phrases:|\n+ACM Reference format:",
         applies_to=["TOSEM", ]),
     elsevier=dict(
         cols=1,  # much easier to handle this way. Abstract is in right col!
