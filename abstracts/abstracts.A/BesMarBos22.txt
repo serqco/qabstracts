@@ -1,28 +1,5 @@
 The use of incentives to promote technical debt management.
 
-Information and Software Technology 142 (2022) 106740
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-The use of incentives to promote technical debt management
-Terese Besker a, *, Antonio Martini b, Jan Bosch c
-a
-
-RISE Research Institutes of Sweden AB, Gothenburg, Sweden
-University of Oslo Programming and Software Engineering, Oslo, Norway
-c
-Computer Science and Engineering, Software Engineering, Chalmers University of Technology, Gothenburg, Sweden
-b
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
 Editor:
 {{}}
 Dr Jeff Carver

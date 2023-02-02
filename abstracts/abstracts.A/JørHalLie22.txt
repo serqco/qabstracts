@@ -1,28 +1,5 @@
 When should we (not) use the mean magnitude of relative error (MMRE) as an error measure in software development effort estimation?
 
-Information and Software Technology 143 (2022) 106784
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-When should we (not) use the mean magnitude of relative error (MMRE) as
-an error measure in software development effort estimation?
-{{}}
-Magne Jørgensen a, *, Torleif Halkjelsvik a, Knut Liestøl b
-a
-b
-
-Simula Metropolitan, Center for Digital Engineering, P.O.
-{{}}
-Box 134 1325 Lysaker, Oslo 0167, Norway
-Department of Informatics, University of Oslo, Oslo 0316, Norway
-
-A B S T R A C T
-
 Context:
 {{}}
 The mean magnitude of relative error (MMRE) is an error measure frequently used to evaluate and compare the estimation performance of prediction models

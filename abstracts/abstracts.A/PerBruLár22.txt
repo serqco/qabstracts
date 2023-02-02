@@ -1,27 +1,5 @@
 Agile software development and UX design: A case study of integration by mutual adjustment.
 
-Information and Software Technology 152 (2022) 107059
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Agile software development and UX design:
-{{}}
-A case study of integration by
-mutual adjustment
-John Stouby Persson a, Anders Bruun a, *, Marta Kristín Lárusdóttir b, Peter Axel Nielsen a
-a
-b
-
-Department of Computer Science, Aalborg University, Denmark
-Department of Computer Science, Reykjavik University, Iceland
-
-A B S T R A C T
-
 Context:
 {{}}
 Agility is an overarching ideal for empirically-driven software development processes that embrace change in order to improve quality, economy, and

@@ -1,47 +1,56 @@
 Broken External Links on Stack Overflow.
 
-Stack Overflow hosts valuable programming-related knowledge with 11,926,354 links that reference to the third-party
-websites.
+CodeMatcher:
 {{}}
-The links that reference to the resources hosted outside the Stack Overflow websites extend the Stack Overflow knowledge
-base substantially.
+Searching Code Based on Sequential
+Semantics of Important Query Words
+CHAO LIU, Zhejiang University, China
+XIN XIA, Huawei, China
+DAVID LO, Singapore Management University, Singapore
+ZHIWE LIU, Baidu Inc., China
+AHMED E.
 {{}}
-However, with the rapid development of programming-related knowledge, many resources hosted on the Internet
-are not available anymore.
+HASSAN, Queen’s University, Canada
+SHANPING LI, Zhejiang University, China
+To accelerate software development, developers frequently search and reuse existing code snippets from a
+large-scale codebase, e.g., GitHub.
 {{}}
-Based on our analysis of the Stack Overflow data that was released on Jun.
+Over the years, researchers proposed many information retrieval (IR)-based
+models for code search, but they fail to connect the semantic gap between query and code.
 {{}}
-2, 2019, 14.2 percent of the
-links on Stack Overflow are broken links.
+An early successful deep learning (DL)-based model DeepCS solved this issue by learning the relationship between pairs of
+code methods and corresponding natural language descriptions.
 {{}}
-The broken links on Stack Overflow can obstruct viewers from obtaining desired
-programming-related knowledge, and potentially damage the reputation of the Stack Overflow as viewers might regard the posts with
-broken links as obsolete.
+Two major advantages of DeepCS are the
+capability of understanding irrelevant/noisy keywords and capturing sequential relationships between words
+in query and code.
 {{}}
-In this paper, we characterize the broken links on Stack Overflow.
+In this article, we proposed an IR-based model CodeMatcher that inherits the advantages
+of DeepCS (i.e., the capability of understanding the sequential semantics in important query words), while
+it can leverage the indexing technique in the IR-based model to accelerate the search response time substantially.
 {{}}
-65 percent of the broken links in our
-sampled questions are used to show examples, e.g., code examples.
+CodeMatcher first collects metadata for query words to identify irrelevant/noisy ones, then iteratively
+performs fuzzy search with important query words on the codebase that is indexed by the Elasticsearch
+tool and finally reranks a set of returned candidate code according to how the tokens in the candidate code
+snippet sequentially matched the important words in a query.
 {{}}
-70 percent of the broken links in our sampled answers are used to
-provide supporting information, e.g., explaining a certain concept and describing a step to solve a problem.
+We verified its effectiveness on a large-scale
+codebase with ~41K repositories.
 {{}}
-Only 1.67 percent of the
-posts with broken links are highlighted as such by viewers in the posts’ comments.
+Experimental results showed that CodeMatcher achieves an MRR (a widely
+used accuracy measure for code search) of 0.60, outperforming DeepCS, CodeHow, and UNIF by 82%, 62%,
+and 46%, respectively.
 {{}}
-Only 5.8 percent of the posts with broken links
-removed the broken links.
+Our proposed model is over 1.2K times faster than DeepCS.
 {{}}
-Viewers cannot fully rely on the vote scores to detect broken links, as broken links are common across posts
-with different vote scores.
+Moreover, CodeMatcher
+outperforms two existing online search engines (GitHub and Google search) by 46% and 33%, respectively, in
+terms of MRR.
 {{}}
-The websites that host resources that can be maintained by their users are referenced by broken links the
-most on Stack Overflow – a prominent example of such websites is GitHub.
+We also observed that:
 {{}}
-The posts and comments related to the web technologies,
-i.e., JavaScript, HTML, CSS, and jQuery, are associated with more broken links.
-{{}}
-Based on our findings, we shed lights for future
-directions and provide recommendations for practitioners and researchers.
+fusing the advantages of IR-based and DL-based models is promising;
+improving the quality of method naming helps code search, since method name plays an important role in
+connecting query and code.
 {{}}
 ---

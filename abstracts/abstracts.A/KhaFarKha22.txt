@@ -1,13 +1,5 @@
 A deep learning-based automated framework for functional User Interface testing.
 
-Keywords:
-{{}}
-Software testing
-UI functional testing
-Transformers
-Deep learning
-Automated testing
-
 Context:
 {{}}
 The use of automation tools in software testing helps keep pace with the timeline of the deliverables.

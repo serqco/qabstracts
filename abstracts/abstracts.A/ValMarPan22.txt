@@ -1,34 +1,5 @@
 Towards a model and methodology for evaluating data quality in software engineering experiments.
 
-Information and Software Technology 151 (2022) 107029
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Towards a model and methodology for evaluating data quality in software
-engineering experiments
-Carolina Valverde a, *, Adriana Marotta a, José Ignacio Panach b, Diego Vallespir a
-a
-b
-
-Universidad de la República, Montevideo, Uruguay
-Departament d’Informàtica, Escola Tècnica Superior d’Enginyeria, Universitat de València, Valencia, Spain
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Data quality
-Data quality model
-Data quality methodology
-Software engineering experiments
-
 Context:
 {{}}
 Data collected during software engineering experiments might contain quality problems, leading to

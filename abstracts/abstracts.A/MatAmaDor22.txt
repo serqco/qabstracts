@@ -1,45 +1,5 @@
 Alternatives for testing of context-aware software systems in non-academic settings: results from a Rapid Review.
 
-Information and Software Technology 149 (2022) 106937
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Alternatives for testing of context-aware software systems in non-academic
-settings:
-{{}}
-results from a Rapid Review
-Santiago Matalonga a, *, Domenico Amalfitano b, Andrea Doreste c, Anna Rita Fasolino b,
-Guilherme Horta Travassos c
-a
-b
-c
-
-School of Computing, Engineering, and Physical Science.
-{{}}
-The University of the West of Scotland, Paisley, Renfrewshire, United Kingdom
-Department of Electrical Engineering and Information Technology, DIETI.
-{{}}
-University of Naples Federico II, Naples, Italy
-System Engineering and Computer Science, COPPE.
-{{}}
-Universidade Federal do Rio de Janeiro, Rio de Janeiro, Brazil
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Context-aware software systems
-Software testing
-Rapid review
-Contemporary software systems
-
 Context:
 {{}}
 Context-awareness challenges the engineering of contemporary software systems and jeopardizes their

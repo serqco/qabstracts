@@ -1,43 +1,5 @@
 Predicting reliability of software in industrial systems using a Petri net based approach: A case study on a safety system used in nuclear power plant.
 
-Information and Software Technology 146 (2022) 106895
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Predicting reliability of software in industrial systems using a Petri net
-based approach:
-{{}}
-A case study on a safety system used in nuclear
-power plant
-Kuldeep Kumar a, 1, Sumit b, 1, Sandeep Kumar b, *, Lalit Kumar Singh c, Alok Mishra d, e
-a
-
-Department of Computer Science and Engineering, Dr B R Ambedkar National Institute of Technology, Jalandhar, India
-Department of Computer Science and Engineering, Indian Institute of Technology Roorkee, Roorkee, India
-Department of Computer Science and Engineering, Indian Institute of Technology (Banaras Hindu University), Varanasi, India
-d
-Informatics and Digitalization, Molde University College - Specialized University in Logistics, Molde, Norway
-e
-Department of Software Engineering, Atilim University, Turkey
-b
-c
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Software reliability
-Safety-critical systems
-Petri net
-Reliability model
-
 Context:
 {{}}
 Software reliability prediction in the early stages of development can be propitious in many ways.

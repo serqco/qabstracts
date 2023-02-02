@@ -1,37 +1,5 @@
 UX professionals&apos; learning and usage of UX methods in agile.
 
-Information and Software Technology 151 (2022) 107005
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-UX professionals’ learning and usage of UX methods in agile
-Åsa Cajander a, *, Marta Larusdottir b, Johannes L.
-{{}}
-Geiser a
-a
-b
-
-Uppsala University, Uppsala, Sweden
-Reykjavik University, Reykjavik, Iceland
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-User experience
-UX
-Agile development
-UX professionals
-UX methods
-Lifelong learning
-
 Context:
 {{}}
 The usage of User Experience (UX) methods has been studied through the years.

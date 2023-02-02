@@ -1,14 +1,5 @@
 Uses of business process modeling in agile software development projects.
 
-Keywords:
-{{}}
-Process models
-Agile methodologies
-Multi-method
-Literature review
-Thematic synthesis
-Focus group
-
 Context:
 {{}}
 Agile methodologies and frameworks are widely used in software development projects because of

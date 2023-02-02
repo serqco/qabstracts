@@ -1,37 +1,5 @@
 A three-stage transfer learning framework for multi-source cross-project software defect prediction.
 
-Information and Software Technology 150 (2022) 106985
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-A three-stage transfer learning framework for multi-source cross-project
-software defect prediction
-Jiaojiao Bai a, Jingdong Jia a, *, Luiz Fernando Capretz b
-a
-b
-
-School of Software, Beihang University, No.
-{{}}
-37 Xueyuan Road, Haidian District, Beijing 100191, China
-Electrical & Computer Engineering, Western University, London, Canada
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Transfer learning
-Cross-project defect prediction
-Source selection
-Multi-source utilization
-3SW-MSTL
-
 Context:
 {{}}
 Transfer learning techniques have been proved to be effective in the field of Cross-project defect pre­

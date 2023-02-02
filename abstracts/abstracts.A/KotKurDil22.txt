@@ -1,38 +1,5 @@
 The practical roles of enterprise architecture artifacts: A classification and relationship.
 
-Information and Software Technology 147 (2022) 106897
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-The practical roles of enterprise architecture artifacts:
-{{}}
-A classification
-and relationship
-Svyatoslav Kotusev a, *, Sherah Kurnia b, Rod Dilnutt b
-a
-b
-
-HSE University, Russia
-University of Melbourne, Australia
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Enterprise architecture (EA)
-Artifacts
-Roles
-Usage
-CSVLOD taxonomy
-Grounded theory
-
 Context:
 {{}}
 Enterprise architecture (EA) is a description of an enterprise from an integrated business and IT

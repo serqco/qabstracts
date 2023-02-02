@@ -1,41 +1,5 @@
 Classifying issue reports according to feature descriptions in a user manual based on a deep learning model.
 
-Information and Software Technology 142 (2022) 106743
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Classifying issue reports according to feature descriptions in a user manual
-based on a deep learning model
-Heetae Cho b, Seonah Lee a, b, *, Sungwon Kang c
-a
-
-Department of Aerospace and Software Engineering
-Department of AI Convergence Engineering, Gyeongsang National University, 501 Jinju-daero, Jinju-si, Gyeongsangnam-do, Republic of Korea
-c
-School of Computing, Korea Advanced Institute of Science and Technology (KAIST), 291 Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea
-b
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Deep learning
-Classification
-Issue reports
-User manual
-Software features
-Data-based software engineering
-Convolution neural network
-Recurrent neural network
-Machine learning
-
 Context:
 {{}}
 Issue reports are documents with which users report problems and state their opinions on a software

@@ -1,13 +1,5 @@
 An approach to explore sequential interactions in cognitive activities of software engineering.
 
-Keywords:
-{{}}
-Software engineering
-Cognitive activities
-Distributed cognition
-Resources model
-Sequential analysis
-
 Context :
 {{}}
 The study of cognitive aspects around software activities can provide valuable insights to improve

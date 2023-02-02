@@ -1,34 +1,5 @@
 Relationships between software architecture and source code in practice: An exploratory survey and interview.
 
-Information and Software Technology 141 (2022) 106705
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Relationships between software architecture and source code in practice:
-{{}}
-An exploratory survey and interview
-Fangchao Tian a, b, Peng Liang a, *, Muhammad Ali Babar b
-a
-b
-
-School of Computer Science, Wuhan University, 430072 Wuhan, China
-School of Computer Science, The University of Adelaide, SA 5005, Australia
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Software architecture
-Source code
-Relationship industrial survey
-
 Context:
 {{}}
 Software Architecture (SA) and Source Code (SC) are two intertwined artefacts that represent the

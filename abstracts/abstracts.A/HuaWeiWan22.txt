@@ -1,11 +1,5 @@
 Yet another combination of IR- and neural-based comment generation.
 
-Keywords:
-{{}}
-Comment generation
-Information retrieval
-Deep neural network
-
 Background:
 {{}}
 Code comment generation techniques aim to generate natural language descriptions for source

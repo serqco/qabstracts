@@ -1,12 +1,5 @@
 A literature review on optimization techniques for adaptation planning in adaptive systems: State of the art and research directions.
 
-Keywords:
-{{}}
-Self-adaptive systems
-Adaptation planning
-Optimization
-Survey
-
 Context:
 {{}}
 Recent developments in modern IT systems including internet of things, edge/fog computing, or

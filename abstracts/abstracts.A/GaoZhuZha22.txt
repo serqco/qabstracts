@@ -1,33 +1,5 @@
 Dealing with imbalanced data for interpretable defect prediction.
 
-Information and Software Technology 151 (2022) 107016
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Dealing with imbalanced data for interpretable defect prediction
-Yuxiang Gao a, Yi Zhu a, b, *, Yu Zhao a
-a
-b
-
-School of Computer Science and Technology, Jiangsu Normal University, China
-Key Laboratory of Safety-Critical Software, Nanjing University of Aeronautics and Astronautics, China
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Software defect prediction
-Class imbalance
-Interpretable machine learning
-Rule-based models
-
 Context:
 {{}}
 Interpretation has been considered as a key factor to apply defect prediction in practice.

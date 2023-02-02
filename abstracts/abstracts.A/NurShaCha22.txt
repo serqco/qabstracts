@@ -1,12 +1,5 @@
 Human values in software development artefacts: A case study on issue discussions in three Android applications.
 
-Keywords:
-{{}}
-Human values
-Issue tracker
-Software artefacts
-Software repositories
-
 Context:
 {{}}
 Human values such as inclusion, privacy, and accessibility need to be considered during software

@@ -1,42 +1,5 @@
 Toward successful DevSecOps in software development organizations: A decision-making framework.
 
-Information and Software Technology 147 (2022) 106894
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Toward successful DevSecOps in software development organizations:
-{{}}
-A
-decision-making framework
-Muhammad Azeem Akbar a, *, Kari Smolander a, Sajjad Mahmood b, c, Ahmed Alsanad d
-a
-
-Software Engineering, LUT University, Lappeenranta, 53851, Finland
-Information and Computer Science Department, King Fahd University of Petroleum and Minerals, Dhahran, Saudi Arabia
-c
-Interdisciplinary Research Center for Intelligent Secure Systems, King Fahd University of Petroleum and Minerals, Dhahran, Saudi Arabia
-d
-STC’s Artificial Intelligence Chair, Department of Information Systems, College of Computer and Information Sciences, King Saud University, Riyadh 11451, Saudi
-Arabia
-b
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-DevOps
-DevSecOps
-Challenges
-Multivocal literature review
-Fuzzy analytical hierarchy process
-
 Context:
 {{}}
 Development and Operations (DevOps) is a methodology that aims to establish collaboration between

@@ -1,31 +1,5 @@
 Towards building a pragmatic cross-project defect prediction model combining non-effort based and effort-based performance measures for a balanced evaluation.
 
-Information and Software Technology 150 (2022) 106980
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Towards building a pragmatic cross-project defect prediction model
-combining non-effort based and effort-based performance measures for a
-balanced evaluation
-Yogita Khatri *, Sandeep Kumar Singh #
-Jaypee Institute of Information Technology, Department of Computer Science Engineering and Information Technology, Noida, India
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Cross-project defect prediction
-Transfer boosting
-Effort based measures
-Non-effort based measures
-
 Context:
 {{}}
 Recent years have witnessed the growing trend in cross-project defect prediction (CPDP), where the

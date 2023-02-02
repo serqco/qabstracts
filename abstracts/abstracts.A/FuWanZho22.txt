@@ -1,12 +1,5 @@
 How resource utilization influences UI responsiveness of Android software.
 
-Keywords:
-{{}}
-Resource utilization
-Android performance
-Laggy-UI
-Empirical study
-
 Context:
 {{}}
 The rapid responsiveness of smartphones is critical to user experience.

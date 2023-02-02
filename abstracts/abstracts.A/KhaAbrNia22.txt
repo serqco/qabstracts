@@ -1,20 +1,5 @@
 Introduction to the special issue on managing software processes using soft computing techniques.
 
-Information and Software Technology 152 (2022) 107055
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Editorial
-
-Introduction to the special issue on managing software processes using soft
-computing techniques
-A B S T R A C T
-
 The coronavirus outbreak dramatically changed the work culture in the software industry.
 {{}}
 Most software practitioners began working remotely, which significantly

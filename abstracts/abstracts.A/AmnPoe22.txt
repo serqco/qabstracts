@@ -1,40 +1,5 @@
 Ambiguity in user stories: A systematic literature review.
 
-Information and Software Technology 145 (2022) 106824
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Ambiguity in user stories:
-{{}}
-A systematic literature review
-Anis R.
-{{}}
-Amna a, b, *, Geert Poels a, c
-a
-
-Department of Business Informatics and Operations Management, Ghent University, Belgium
-Department of Informatics Engineering, University of 17 Agustus 1945 Surabaya, Indonesia
-c
-FlandersMake@UGent – corelab CVAMO, Ghent, Belgium
-b
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Requirements engineering
-Agile software development
-User story
-Ambiguity
-Systematic Literature Review
-
 Context:
 {{}}
 Ambiguity in user stories is a problem that has received little research attention.

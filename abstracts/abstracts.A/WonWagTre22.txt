@@ -1,10 +1,5 @@
 Self-adaptive systems: A systematic literature review across categories and domains.
 
-Keywords:
-{{}}
-Self-adaptive systems
-Literature review
-
 Context:
 {{}}
 Championed by IBM’s vision of autonomic computing paper in 2003, the autonomic computing

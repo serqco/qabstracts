@@ -1,34 +1,5 @@
 Automatically inferring user behavior models in large-scale web applications.
 
-Information and Software Technology 141 (2022) 106704
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Automatically inferring user behavior models in large-scale
-web applications
-Saeedeh Sadat Sajjadi Ghaemmaghami,
-ConceptualizationMethodologySoftwareValidationFormal analysisWriting,
-Seyedeh Sepideh Emam,
-ConceptualizationMethodologySoftwareValidationInvestigationWriting, James Miller,
-Supervision *
-Department of Electrical and Computer Engineering, University of Alberta, 116 Street NW, Edmonton, T6G 1H9, Canada
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Model inference
-User behavioral model
-Reinforcement learning
-Web application
-
 Context:
 {{}}
 Inferring a behavioral model from users’ navigation patterns in a web application helps application

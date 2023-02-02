@@ -1,43 +1,5 @@
 The essential competencies of software professionals: A unified competence framework.
 
-Information and Software Technology 151 (2022) 107020
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-The essential competencies of software professionals:
-{{}}
-A unified
-competence framework
-Nana Assyne a, d, *, Hadi Ghanbari b, c, Mirja Pulkkinen a
-a
-
-University of Jyväskylä, Faculty of Information Technology, P.O.
-{{}}
-Box 35 (Agora), FI-40014 Jyväskylä, Finland
-Aalto University, School of Business, Ekonominaukio 1, 02510, Espoo, Finland
-c
-FinEst Centre for Smart Cities, TalTech, Estonia
-d
-GIMPA, School of Technology, Accra, Ghana
-b
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Software engineering
-Software development
-Competence
-Competencies
-Kano model
-
 Context:
 {{}}
 Developing high-quality software requires skilled software professionals equipped with a set of basic and

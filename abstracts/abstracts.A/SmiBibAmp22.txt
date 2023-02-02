@@ -1,38 +1,5 @@
 Refactoring embedded software: A study in healthcare domain.
 
-Information and Software Technology 143 (2022) 106760
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Refactoring embedded software:
-{{}}
-A study in healthcare domain
-Paraskevi Smiari a, Stamatia Bibi a, *, Apostolos Ampatzoglou b, Elvira-Maria Arvanitou b
-a
-b
-
-Department of Electrical and Computer Engineering, University of Western Macedonia, Kozani, Greece
-Department of Applied Informatics, University of Macedonia, Thessaloniki, Greece
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Embedded software
-OO refactorings
-Maintenance
-Software evaluation
-Reuse
-Software tools
-Performance
-
 Context:
 {{}}
 In embedded software industry, stakeholders usually promote run-time properties (e.g., performance,

@@ -1,39 +1,5 @@
 Consolidating a common perspective on Technical Debt and its Management through a Tertiary Study.
 
-Information and Software Technology 149 (2022) 106964
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Consolidating a common perspective on Technical Debt and its Management
-through a Tertiary Study
-Helvio Jeronimo Junior a, b, *, Guilherme Horta Travassos a
-a
-b
-
-Systems Engineering and Computer Science Program– PESC/COPPE, Universidade Federal do Rio de Janeiro, P.O.
-{{}}
-Box 68511, Rio de Janeiro, Brazil
-Instituto Federal de Educação, Ciência e Tecnologia do Rio de Janeiro, Campus Niterói, P.O.
-{{}}
-Box 24315-375, Rio de Janeiro, Brazil
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Technical debt
-Software project management
-Quality assurance
-Tertiary study
-Evidence-based software engineering
-
 Context:
 {{}}
 Technical Debt (TD) contextualizes the technical decisions on shortcuts and workarounds during software

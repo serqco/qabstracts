@@ -1,34 +1,5 @@
 Programming language implementations for context-oriented self-adaptive systems.
 
-Information and Software Technology 143 (2022) 106789
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Programming language implementations for context-oriented
-self-adaptive systems
-Nicolás Cardozo a, *, Kim Mens b
-a
-b
-
-Systems and Computing Engineering Department, Universidad de los Andes, FLAG Laboratory, Bogotá, Colombia
-ICTEAM, Université Catholique de Louvain, Louvain-la-Neuve, Belgium
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Context-oriented programming
-Self-adaptive systems
-Language engineering
-Programming language abstractions
-
 Context:
 {{}}
 The context-oriented programming paradigm is designed to enable self-adaptation, or dynamic behavior

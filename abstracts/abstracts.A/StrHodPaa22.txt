@@ -1,22 +1,5 @@
 Theories in Agile Software Development: Past, Present, and Future Introduction to the XP 2020 Special Section.
 
-Information and Software Technology 152 (2022) 107058
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Theories in Agile Software Development:
-{{}}
-Past, Present, and Future Introduction to the XP 2020
-Special Section
-A R T I C L E I N F O
-
-A B S T R A C T
-
 Keywords
 agile software development
 theories

@@ -1,40 +1,5 @@
 A model-driven approach to reengineering processes in cloud computing.
 
-Information and Software Technology 144 (2022) 106795
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-A model-driven approach to reengineering processes in cloud computing
-Mahdi Fahmideh a, *, John Grundy b, Ghassan Beydoun b, Didar Zowghi c, Willy Susilo d,
-Davoud Mougouei a
-a
-
-University of Southern Queensland, Australia
-Monash University, Australia
-c
-University of Technology Sydney, Australia
-d
-University of Wollongong, Australia
-b
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Modeling
-Model-driven software engineering
-Reengineering process
-Method engineering
-Cloud computing
-Legacy software applications
-
 Context:
 {{}}
 The reengineering process of large data-intensive legacy software applications (“legacy applications” for

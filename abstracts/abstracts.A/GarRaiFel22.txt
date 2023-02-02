@@ -1,24 +1,5 @@
 Introduction to the Special Issue on: Grey Literature and Multivocal Literature Reviews (MLRs) in software engineering.
 
-Information and Software Technology 141 (2022) 106697
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-Editorial
-
-Introduction to the Special Issue on:
-{{}}
-Grey Literature and Multivocal Literature Reviews (MLRs)
-in software engineering
-A R T I C L E I N F O
-
-A B S T R A C T
-
 Keywords
 Grey literature
 Multivocal literature review

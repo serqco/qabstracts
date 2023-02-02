@@ -1,30 +1,5 @@
 A DQN-based agent for automatic software refactoring.
 
-Information and Software Technology 147 (2022) 106893
-
-Contents lists available at ScienceDirect
-
-Information and Software Technology
-journal homepage:
-{{}}
-www.elsevier.com/locate/infsof
-
-A DQN-based agent for automatic software refactoring
-Hamidreza Ahmadi , Mehrdad Ashtiani *, Mohammad Abdollahi Azgomi , Raana Saheb-Nassagh
-School of Computer Engineering, Iran University of Science and Technology, Tehran, Iran
-
-A R T I C L E I N F O
-
-A B S T R A C T
-
-Keywords:
-{{}}
-Software refactoring
-Design patterns
-Technical debt
-Software metrics
-Reinforcement learning
-
 Context:
 {{}}
 Nowadays, technical debt has become a very important issue in software project management.

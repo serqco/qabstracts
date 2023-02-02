@@ -1,12 +1,5 @@
 An empirical study of emoji use in software development communication.
 
-Keywords:
-{{}}
-Emoji
-Software engineering
-Sentiment analysis
-Empirical analysis
-
 Context:
 {{}}
 Similar to social media platforms, people use emojis in software development related communication
