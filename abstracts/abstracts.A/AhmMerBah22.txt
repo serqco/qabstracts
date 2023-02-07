@@ -1,0 +1,28 @@
+﻿A Study on Blockchain Architecture Design Decisions and Their Security Attacks and Threats.
+
+
+Blockchain is a disruptive technology intended to implement secure decentralised distributed systems, in
+which transactional data can be shared, stored, and verified by participants of the system without needing
+a central authentication/verification authority.
+{{}}
+Blockchain-based systems have several architectural components and variants, which architects can leverage to build secure software systems.
+{{}}
+However, there is a lack
+of studies to assist architects in making architecture design and configuration decisions for blockchain-based
+systems.
+{{}}
+This knowledge gap may increase the chance of making unsuitable design decisions and producing
+configurations prone to potential security risks.
+{{}}
+To address this limitation, we report our comprehensive systematic literature review to derive a taxonomy of commonly used architecture design decisions in blockchainbased systems.
+{{}}
+We map each of these decisions to potential security attacks and their posed threats.
+{{}}
+MITRE’s
+attack tactic categories and Microsoft STRIDE threat modeling are used to systematically classify threats
+and their associated attacks to identify potential attacks and threats in blockchain-based systems.
+{{}}
+Our mapping approach aims to guide architects to make justifiable design decisions that will result in more secure
+implementations.
+{{}}
+---

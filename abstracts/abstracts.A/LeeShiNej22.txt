@@ -1,0 +1,31 @@
+Optimal priority assignment for real-time systems: a coevolution-based approach.
+
+In real-time systems, priorities assigned to real-time tasks determine the order of task executions, by relying on an underlying task scheduling policy.
+{{}}
+Assigning optimal priority
+values to tasks is critical to allow the tasks to complete their executions while maximizing safety margins from their specified deadlines.
+{{}}
+This enables real-time systems to tolerate
+unexpected overheads in task executions and still meet their deadlines.
+{{}}
+In practice, priority assignments result from an interactive process between the development and testing
+teams.
+{{}}
+In this article, we propose an automated method that aims to identify the best possible priority assignments in real-time systems, accounting for multiple objectives regarding
+safety margins and engineering constraints.
+{{}}
+Our approach is based on a multi-objective,
+competitive coevolutionary algorithm mimicking the interactive priority assignment process
+between the development and testing teams.
+{{}}
+We evaluate our approach by applying it to six
+industrial systems from different domains and several synthetic systems.
+{{}}
+The results indicate that our approach significantly outperforms both our baselines, i.e., random search and
+sequential search, and solutions defined by practitioners.
+{{}}
+Our approach scales to complex
+industrial systems as an offline analysis method that attempts to find near-optimal solutions
+within acceptable time, i.e., less than 16 hours.
+{{}}
+---

@@ -1,0 +1,29 @@
+A Compositional Approach for Complex Event Pattern Modeling and Transformation to Colored Petri Nets with Black Sequencing Transitions.
+
+Prioritized Colored Petri Nets (PCPNs) are a well-known extension of plain Petri nets in which transitions can have priorities
+and the tokens on the places carry data information.
+{{}}
+In this paper, we propose an extension of the PCPN model with black sequencing
+transitions (BPCPN).
+{{}}
+This extension allows us to easily model the ordered firing of the same transition using an ordered set of tokens on
+one of its precondition places.
+{{}}
+Black sequencing transitions are then presented as a shorthand notation in order to model the
+processing of a flow of events, represented by one of their precondition places.
+{{}}
+We then show how black sequencing transitions can be
+encoded into PCPNs, and their application to model Complex Event Processing (CEP), defining a compositional approach to translate
+some of the most relevant event pattern operators.
+{{}}
+We have developed MEdit4CEP-BPCPN, an extension of the MEdit4CEP tool, to
+provide tool support for this novel technique, thus allowing end users to easily define event patterns and obtain an automatic translation
+into BPCPNs.
+{{}}
+This can, in turn, be transformed into a corresponding PCPN, and then be immediately used in CPN Tools.
+{{}}
+Finally, a
+health case study concerning the monitoring of pregnant women is considered to illustrate how the event patterns are created and how
+the BPCPN and PCPN models are obtained by using the MEdit4CEP-BPCPN tool.
+{{}}
+---

@@ -1,0 +1,23 @@
+Analysing app reviews for software engineering: a systematic literature review.
+
+App reviews found in app stores can provide critically valuable information to help software
+engineers understand user requirements and to design, debug, and evolve software products.
+{{}}
+Over the last ten years, a vast amount of research has been produced to study what useful
+information might be found in app reviews, and how to mine and organise such information as efficiently as possible.
+{{}}
+This paper presents a comprehensive survey of this research,
+covering 182 papers published between 2012 and 2020.
+{{}}
+This survey classifies app review
+analysis not only in terms of mined information and applied data mining techniques but also,
+and most importantly, in terms of supported software engineering activities.
+{{}}
+The survey also
+reports on the quality and results of empirical evaluation of existing techniques and identifies important avenues for further research.
+{{}}
+This survey can be of interest to researchers
+and commercial organisations developing app review analysis techniques and to software
+engineers considering to use app review analysis.
+{{}}
+---

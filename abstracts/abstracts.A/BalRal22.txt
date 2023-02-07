@@ -1,0 +1,28 @@
+Sampling in software engineering research: a critical review and guidelines.
+
+Representative sampling appears rare in empirical software engineering research.
+{{}}
+Not all
+studies need representative samples, but a general lack of representative sampling undermines a scientific field.
+{{}}
+This article therefore reports a critical review of the state of sampling
+in recent, high-quality software engineering research.
+{{}}
+The key findings are:
+{{}}
+(1) random
+sampling is rare; (2) sophisticated sampling strategies are very rare; (3) sampling, representativeness and randomness often appear misunderstood.
+{{}}
+These findings suggest that
+software engineering research has a generalizability crisis.
+{{}}
+To address these problems,
+this paper synthesizes existing knowledge of sampling into a succinct primer and proposes
+extensive guidelines for improving the conduct, presentation and evaluation of sampling
+in software engineering research.
+{{}}
+It is further recommended that while researchers should
+strive for more representative samples, disparaging non-probability sampling is generally
+capricious and particularly misguided for predominately qualitative research.
+{{}}
+---

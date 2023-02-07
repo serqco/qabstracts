@@ -1,0 +1,32 @@
+Continuously Managing NFRs: Opportunities and Challenges in Practice.
+
+Non-functional requirements (NFR), which include performance, availability, and maintainability, are vitally important to
+overall software quality.
+{{}}
+However, research has shown NFRs are, in practice, poorly defined and difficult to verify.
+{{}}
+Continuous software
+engineering practices, which extend agile practices, emphasize fast paced, automated, and rapid release of software that poses
+additional challenges to handling NFRs.
+{{}}
+In this multi-case study we empirically investigated how three organizations, for which NFRs
+are paramount to their business survival, manage NFRs in their continuous practices.
+{{}}
+We describe four practices these companies use
+to manage NFRs, such as offloading NFRs to cloud providers or the use of metrics and continuous monitoring, both of which enable
+almost real-time feedback on managing the NFRs.
+{{}}
+However, managing NFRs comes at a cost—as we also identified a number of
+challenges these organizations face while managing NFRs in their continuous software engineering practices.
+{{}}
+For example, the
+organizations in our study were able to realize an NFR by strategically and heavily investing in configuration management and
+infrastructure as code, in order to offload the responsibility of NFRs; however, this offloading implied potential loss of control.
+{{}}
+Our
+discussion and key research implications show the opportunities, trade-offs, and importance of the unique give-and-take relationship
+between continuous software engineering and NFRs.
+{{}}
+Research artifacts may be found at https://doi.org/10.5281/zenodo.3376342.
+{{}}
+---

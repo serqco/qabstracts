@@ -1,0 +1,30 @@
+SugarC: Scalable Desugaring of Real-World Preprocessor Usage into Pure C.
+
+
+Variability-aware analysis is critical for ensuring the quality of configurable
+C software.
+{{}}
+An important step toward the development of
+variability-aware analysis at scale is to transform real-world C software
+that uses both C and preprocessor into pure C code, by replacing
+the preprocessors's compile-time variability with C's runtime-
+variability.
+{{}}
+In this work, we design and implement a desugaring
+tool, SugarC, that transforms away real-world preprocessor usage.
+{{}}
+SugarC augments C's formal grammar specification with translation
+rules, performs simultaneous type checking during desugarting,
+and introduces numerous optimizations to address challenges
+that appear in real-world preprocessor usage.
+{{}}
+The experiments on DesugarBench, a benchmark consisting of 108 manually-created
+programs, show that SugarC supports many more language features
+than two existing desugaring tools.
+{{}}
+When applied on three
+real-world configurable C software, SugarC desugared 774 out of
+813 files in the three programs, taking at most ten minutes in the
+worst case and less than two minutes for 95% of the C files.
+{{}}
+---

@@ -1,0 +1,47 @@
+The use of incentives to promote technical debt management.
+
+
+Context:
+{{}}
+When developing software, it is vitally important to keep the level of technical debt down since, based
+on several studies, it has been well established that technical debt can lower the development productivity,
+decrease the developers’ morale and compromise the overall quality of the software, among others.
+{{}}
+However,
+even if researchers and practitioners working in today’s software development industry are quite familiar with
+the concept of technical debt and its related negative consequences, there has been no empirical research
+focusing specifically on how software managers actively communicate and manage the need to keep the level of
+technical debt as low as possible.
+{{}}
+Objective:
+{{}}
+This study aims to understand how software companies give incentives to manage technical debt.
+{{}}
+This
+is carried out by exploring how companies encourage and reward practitioners for actively keeping the level of
+technical debt down add whether the companies use any forcing or penalising initiatives when managing technical
+debt.
+{{}}
+Method:
+{{}}
+As a first step, this paper reports the results of both an online survey providing quantitative data from
+258 participants and interviews with 32 software practitioners.
+{{}}
+As a second step, this study sets out to specifically
+provide a detailed assessment of additional and in-depth analysis of technical debt management strategies based
+on an encouraging mindset and attitude from both managers and technical roles to understand how, when and by
+whom such strategies are adopted in practice.
+{{}}
+Results:
+{{}}
+Our findings show that having a technical debt management strategy (specially based on encouragement)
+can significantly impact the amount of technical debt related to the software.
+{{}}
+Conclusion:
+{{}}
+The result indicates that there is considerable unfulfilled potential to influence how software prac­
+titioners can further limit and reduce technical debt by adopting a strategy based explicitly on an encouraging
+mindset from managers where they also specifically dedicate time and resources for technical debt remediation
+activities.
+{{}}
+---

@@ -1,0 +1,36 @@
+Bug Localization in Model-Based Systems in the Wild.
+
+
+The companies that have adopted the Model-Driven Engineering (MDE) paradigm have the advantage of
+working at a high level of abstraction.
+{{}}
+Nevertheless, they have the disadvantage of the lack of tools available
+to perform bug localization at the model level.
+{{}}
+In addition, in an MDE context, a bug can be related to different
+MDE artefacts, such as design-time models, model transformations, or run-time models.
+{{}}
+Starting the bug
+localization in the wrong place or with the wrong tool can lead to a result that is unsatisfactory.
+{{}}
+We evaluate
+how to apply the existing model-based approaches in order to mitigate the effect of starting the localization
+in the wrong place.
+{{}}
+We also take into account that software engineers can refine the results at different stages.
+{{}}
+In our evaluation, we compare different combinations of the application of bug localization approaches and
+human refinement.
+{{}}
+The combination of our approaches plus manual refinement obtains the best results.
+{{}}
+We
+performed a statistical analysis to provide evidence of the significance of the results.
+{{}}
+The conclusions obtained
+from this evaluation are:
+{{}}
+humans have to be involved at the right time in the process (or results can even get
+worse), and artefact-independence can be achieved without worsening the results.
+{{}}
+---

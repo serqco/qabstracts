@@ -1,0 +1,81 @@
+Correction to: Analysing app reviews for software engineering: a systematic literature review.
+
+Empirical Software Engineering (2022) 27:
+{{}}
+58
+https://doi.org/10.1007/s10664-022-10135-4
+
+CORRECTION
+
+Correction to:
+{{}}
+Analysing app reviews for software
+engineering:
+{{}}
+a systematic literature review
+Jacek Dąbrowski 1,2
+
+1
+
+2
+
+& Emmanuel Letier & Anna Perini & Angelo Susi
+
+2
+
+Published online:
+{{}}
+15 March 2022
+# The Author(s) 2022
+
+Correction to:
+{{}}
+Empir Software Eng (2022) 27:
+{{}}
+43
+https://doi.org/10.1007/s10664-021-10065-7
+The original version of this article, unfortunately, contained mistakes.
+{{}}
+The surname of the first
+author, Jacek Dąbrowski, was misspelled throughout the online version of the article as
+“Dębrowski.” The surname, however, is correct in the PDF version.
+{{}}
+The original article has been corrected.
+{{}}
+Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which
+permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give
+appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and
+indicate if changes were made.
+{{}}
+The images or other third party material in this article are included in the article's
+Creative Commons licence, unless indicated otherwise in a credit line to the material.
+{{}}
+If material is not included
+in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or
+exceeds the permitted use, you will need to obtain permission directly from the copyright holder.
+{{}}
+To view a copy
+of this licence, visit http://creativecommons.org/licenses/by/4.0/.
+{{}}
+>
+
+The online version of the original article can be found at https://doi.org/10.1007/s10664-021-10065-7
+
+* Jacek Dąbrowski
+j.dabrowski@cs.ucl.ac.uk
+Emmanuel Letier
+e.letier@cs.ucl.ac.uk
+Anna Perini
+perini@fbk.eu
+Angelo Susi
+susi@fbk.eu
+
+1
+
+University College London, London, UK
+
+2
+
+Fondazione Bruno Kessler, Trento, Italy
+{{}}
+---

@@ -1,0 +1,50 @@
+Classifying issue reports according to feature descriptions in a user manual based on a deep learning model.
+
+Context:
+{{}}
+Issue reports are documents with which users report problems and state their opinions on a software
+system.
+{{}}
+Issue reports are useful for software maintenance, but managing them requires developers’ considerable
+manual effort.
+{{}}
+To reduce such effort, previous studies have mostly suggested methods for automatically classi­
+fying issue reports.
+{{}}
+However, most of those studies classify issue reports according to issue types, based only on
+whether the report is relevant to a bug, whether the report is duplicated, or whether the issue is functional or
+nonfunctional.
+{{}}
+Objective:
+{{}}
+In this paper, we intend to link issue reports and a user manual and so propose a deep learning modelbased method that classifies issue reports according to software features that are described in the user manual in
+order to help developers relate issue reports to features to make changes to a software system.
+{{}}
+Method:
+{{}}
+In order to classify issue reports according to the feature descriptions in a user manual, our method uses
+a deep learning technique with a word embedding technique.
+{{}}
+The key insight in our method is that the sections of
+a user manual that describe software features contain the words and sentences similar to those in issue reports.
+{{}}
+Based on the insight, we construct a classification model that learns the feature descriptions (i.e. sections) in a
+user manual and classifies issue reports according to the feature descriptions.
+{{}}
+Results:
+{{}}
+We evaluate the proposed method by comparing its classification performance with that of the state-ofthe-art method, TicketTagger.
+{{}}
+The experimental results show that the proposed method yields 10% ~ 24%
+higher classification f1-score than that of TicketTagger.
+{{}}
+We also experiment with two deep learning models and
+four word embedding techniques and find out that the Convolution Neural Network model with FastText (or
+GloVe) yields the best performance.
+{{}}
+Conclusion:
+{{}}
+Our study shows the feasibility of classifying issue reports according to software features, which can
+be the basis for successive studies to classify issue reports into software features.
+{{}}
+---

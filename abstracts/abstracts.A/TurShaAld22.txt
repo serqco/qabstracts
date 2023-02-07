@@ -1,0 +1,40 @@
+DrAsync: Identifying and Visualizing Anti-Patterns in Asynchronous JavaScript.
+
+Promises and async/await have become popular mechanisms for
+implementing asynchronous computations in JavaScript, but de-
+spite their popularity, programmers have difficulty using them.
+{{}}
+This paper identifies 8 anti-patterns in promise-based JavaScript
+code that are prevalent across popular JavaScript repositories.
+{{}}
+We
+present a light-weight static analysis for automatically detecting
+these anti-patterns.
+{{}}
+This analysis is embedded in an interactive
+visualization tool that additionally relies on dynamic analysis to
+visualize promise lifetimes and instances of anti-patterns executed
+at run time.
+{{}}
+By enabling the user to navigate between promises in
+the visualization and the source code fragments that they originate
+from, problems and optimization opportunities can be identified.
+{{}}
+We implement this approach in a tool called DrAsync, and found
+2.6K static instances of anti-patterns in 20 popular JavaScript repos-
+itories.
+{{}}
+Upon examination of a subset of these, we found that the
+majority of problematic code reported by DrAsync could be elimi-
+nated through refactoring.
+{{}}
+Further investigation revealed that, in a
+few cases, the elimination of anti-patterns reduced the time needed
+to execute the refactored code fragments.
+{{}}
+Moreover, DrAsync's visu-
+alization of promise lifetimes and relationships provides additional
+insight into the execution behavior of asynchronous programs and
+helped identify further optimization opportunities.
+{{}}
+---
