@@ -1,0 +1,72 @@
+Modeling Performance of Microservices Systems with Growth Theory.
+
+Context 
+{{}}
+The microservices architectural style is gaining momentum in the IT industry.
+{{}}
+This style does not guarantee that a target system can continuously meet acceptable performance levels.
+{{}}
+The ability to study the violations of performance requirements and eventually
+predict them would help practitioners to tune techniques like dynamic load balancing or
+horizontal scaling to achieve the resilience property.
+{{}}
+Objective
+{{}}
+The goal of this work is to study the violations of performance requirements of
+microservices through time series analysis and provide practical instruments that can detect
+resilient and non-resilient microservices and possibly predict their performance behavior.
+{{}}
+Method
+{{}}
+We introduce a new method based on growth theory to model the occurrences
+of violations of performance requirements as a stochastic process.
+{{}}
+We applied our method
+to an in-vitro e-commerce benchmark and an in-production real-world telecommunication
+system.
+{{}}
+We interpreted the resulting growth models to characterize the microservices in
+terms of their transient performance behavior.
+{{}}
+Results
+{{}}
+Our empirical evaluation shows that, in most of the cases, the non-linear S-shaped
+growth models capture the occurrences of performance violations of resilient microservices
+with high accuracy.
+{{}}
+The bounded nature associated with this models tell that the performance degradation is limited and thus the microservice is able to come back to an acceptable
+performance level even under changes in the nominal number of concurrent users.
+{{}}
+We also
+detect cases where linear models represent a better description.
+{{}}
+These microservices are
+not resilient and exhibit constant growth and unbounded performance violations over time.
+{{}}
+The application of our methodology to a real in-production system identified additional
+resilience profiles that were not observed in the in-vitro experiments.
+{{}}
+These profiles show
+the ability of services to react differently to the same solicitation.
+{{}}
+We found that when a ser-
+vice is resilient it can either decrease the rate of the violations occurrences in a continuous
+manner or with repeated attempts (periodical or not).
+{{}}
+Conclusions
+{{}}
+We showed that growth theory can be successfully applied to study the occurences
+of performance violations of in-vitro and in-production real-world systems.
+{{}}
+Furthermore,
+the cost of our model calibration heuristics, based on the mathematical expression of the
+selected non-linear growth models, is limited.
+{{}} 
+We discussed how the resulting models can
+shed some light on the trend of performance violations and help engineers to spot problematic microservice operations that exhibit performance issues. 
+{{}}
+Thus, meaningful insights
+from the application of growth theory have been derived to characterize the behavior of
+(non) resilient microservices operations.
+{{}}
+---

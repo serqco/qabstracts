@@ -1,0 +1,40 @@
+On the Reproducibility and Replicability of Deep Learning in Software Engineering.
+
+
+Context:
+{{}}
+Deep learning (DL) techniques have gained significant popularity among software engineering
+(SE) researchers in recent years.
+{{}}
+This is because they can often solve many SE challenges without enormous
+manual feature engineering effort and complex domain knowledge.
+{{}}
+Objective:
+{{}}
+Although many DL studies have reported substantial advantages over other state-of-the-art models on effectiveness, they often ignore two factors:
+{{}}
+(1) reproducibility—whether the reported experimental
+results can be obtained by other researchers using authors’ artifacts (i.e., source code and datasets) with the
+same experimental setup; and (2) replicability—whether the reported experimental result can be obtained
+by other researchers using their re-implemented artifacts with a different experimental setup.
+{{}}
+We observed
+that DL studies commonly overlook these two factors and declare them as minor threats or leave them for
+future work.
+{{}}
+This is mainly due to high model complexity with many manually set parameters and the timeconsuming optimization process, unlike classical supervised machine learning (ML) methods (e.g., random
+forest).
+{{}}
+This study aims to investigate the urgency and importance of reproducibility and replicability for DL
+studies on SE tasks.
+{{}}
+Method:
+{{}}
+In this study, we conducted a literature review on 147 DL studies recently published in 20 SE venues
+and 20 AI (Artificial Intelligence) venues to investigate these issues.
+{{}}
+We also re-ran four representative DL
+models in SE to investigate important factors that may strongly affect the reproducibility and replicability of
+a study.
+{{}}
+---

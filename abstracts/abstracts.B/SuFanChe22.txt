@@ -1,0 +1,46 @@
+Why My App Crashes? Understanding and Benchmarking Framework-Specific Exceptions of Android Apps.
+
+Mobile apps have become ubiquitous.
+{{}}
+Ensuring their correctness and reliability is important.
+{{}}
+However, many apps still
+suffer from occasional to frequent crashes, weakening their competitive edge.
+{{}}
+Large-scale, deep analyses of the characteristics of realworld app crashes can provide useful insights to both developers and researchers.
+{{}}
+However, such studies are difficult and yet to be
+carried out - this work fills this gap.
+{{}}
+We collected 16,245 and 8,760 unique exceptions from 2,486 open-source and 3,230 commercial
+Android apps, respectively, and observed that the exceptions thrown from Android framework (termed “ framework-specific
+exceptions” ) account for the majority.
+{{}}
+With one-year effort, we (1) extensively investigated these framework-specific exceptions, and
+(2) further conducted an online survey of 135 professional app developers about how they analyze, test, reproduce and fix these
+exceptions.
+{{}}
+Specifically, we aim to understand the framework-specific exceptions from several perspectives:
+{{}}
+(i) their characteristics
+(e.g., manifestation locations, fault taxonomy), (ii) the developers' testing practices, (iii) existing bug detection techniques’
+effectiveness, (iv) their reproducibility and (v) bug fixes.
+{{}}
+To enable follow-up research (e.g., bug understanding, detection, localization
+and repairing), we further systematically constructed, DroidDefects, the first comprehensive and largest benchmark of Android app
+exception bugs.
+{{}}
+This benchmark contains 33 reproducible exceptions (with test cases, stack traces, faulty and fixed app versions, bug
+types, etc.), and 3,696 ground-truth exceptions (real faults manifested by automated testing tools), which cover the apps with different
+complexities and diverse exception types.
+{{}}
+Based on our findings, we also built two prototype tools:
+{{}}
+Stoat+, an optimized dynamic
+testing tool, which quickly uncovered three previously-unknown, fixed crashes in Gmail and Google+; ExLocator, an exception
+localization tool, which can locate the root causes of specific exception types.
+{{}}
+Our dataset, benchmark and tools are publicly available
+on https://github.com/tingsu/droiddefects.
+{{}}
+---

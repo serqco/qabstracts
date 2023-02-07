@@ -1,0 +1,28 @@
+﻿Uniform and scalable sampling of highly configurable systems.
+
+Many analyses on configurable software systems are intractable when confronted with
+colossal and highly-constrained configuration spaces.
+{{}}
+These analyses could instead use
+statistical inference, where a tractable sample accurately predicts results for the entire
+space.
+{{}}
+To do so, the laws of statistical inference requires each member of the population
+to be equally likely to be included in the sample, i.e., the sampling process needs to be
+“uniform”.
+{{}}
+SAT-samplers have been developed to generate uniform random samples at a
+reasonable computational cost.
+{{}}
+However, there is a lack of experimental validation over
+colossal spaces to show whether the samplers indeed produce uniform samples or not.
+{{}}
+This
+paper (i) proposes a new sampler named BDDSampler, (ii) presents a new statistical test
+to verify sampler uniformity, and (iii) reports the evaluation of BDDSampler and five
+other state-of-the-art samplers: KUS, QuickSampler, Smarch, Spur, and Unigen2.
+{{}}
+Our
+experimental results show only BDDSampler satisfies both scalability and uniformity.
+{{}}
+---

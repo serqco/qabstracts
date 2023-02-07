@@ -1,0 +1,55 @@
+Software defect prediction with semantic and structural information of codes based on Graph Neural Networks.
+
+Context:
+{{}}
+Most defect prediction methods consider a series of traditional manually designed static code metrics.
+{{}}
+However, only using these hand-crafted features is impractical.
+{{}}
+Some researchers use the Convolutional Neural
+Network (CNN) to capture the potential semantic information based on the program’s Syntax Trees (ASTs).
+{{}}
+In recent years, leveraging the dependency relationships between software modules to construct a software
+network and using network embedding models to capture the structural information have been helpful in
+defect prediction.
+{{}}
+This paper simultaneously takes the semantic and structural information into account and
+proposes a method called CGCN.
+{{}}
+Objective:
+{{}}
+This study aims to validate the feasibility and performance of the proposed method in software
+defect prediction.
+{{}}
+Method:
+{{}}
+Abstract Syntax Trees and a Class Dependency Network (CDN) are first generated based on the source
+code.
+{{}}
+For ASTs, symbolic tokens are extracted and encoded into vectors.
+{{}}
+The numerical vectors are then used
+as input to the CNN to capture the semantic information.
+{{}}
+For CDN, a Graph Convolutional Network (GCN)
+is used to learn the structural information of the network automatically.
+{{}}
+Afterward, the learned semantic and
+structural information are combined with different weights.
+{{}}
+Finally, we concatenate the learned features with
+traditional hand-crafted features to train a classifier for more accurate defect prediction.
+{{}}
+Results:
+{{}}
+The proposed method outperforms the state-of-the-art defect prediction models for both within-project
+prediction (including within-version and cross-version) and cross-project prediction on 21 open-source projects.
+{{}}
+In general, within-version prediction achieves better performance in the three prediction tasks.
+{{}}
+Conclusion:
+{{}}
+The proposed method of combining semantic and structural information can improve the
+performance of software defect prediction.
+{{}}
+---

@@ -1,0 +1,33 @@
+﻿BiRD: Race Detection in Software Binaries under Relaxed Memory Models.
+
+
+Instruction reordering and interleavings in program execution under relaxed memory semantics result in
+non-intuitive behaviors, making it difficult to provide assurances about program correctness.
+{{}}
+Studies have
+shown that up to 90% of the concurrency bugs reported by state-of-the-art static analyzers are false alarms.
+{{}}
+As
+a result, filtering false alarms and detecting real concurrency bugs is a challenging problem.
+{{}}
+Unsurprisingly,
+this problem has attracted the interest of the research community over the past few decades.
+{{}}
+Nonetheless,
+many of the existing techniques rely on analyzing source code, rarely consider the effects introduced by
+compilers, and assume a sequentially consistent memory model.
+{{}}
+In a practical setting, however, developers
+often do not have access to the source code, and even commodity architectures such as x86 and ARM are not
+sequentially consistent.
+{{}}
+In this work, we present Bird, a prototype tool, to dynamically detect harmful data races in x86 binaries
+under relaxed memory models, TSO and PSO.
+{{}}
+Bird employs source-DPOR to explore all distinct feasible interleavings for a multithreaded application.
+{{}}
+Our evaluation of Bird on 42 publicly available benchmarks and
+its comparison with the state-of-the-art tools indicate Bird’s potential in effectively detecting data races in
+software binaries.
+{{}}
+---

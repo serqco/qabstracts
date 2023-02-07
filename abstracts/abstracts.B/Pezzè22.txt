@@ -1,0 +1,67 @@
+Editorial: A Retrospective and Prospective Reflection.
+
+18e
+Editorial:
+{{}}
+A Retrospective and Prospective Reflection
+The midterm renewal of the editor-in-chief for a second three-year term is the time for retrospective and prospective reflections.
+{{}}
+The last three years have witnessed extraordinary growth of
+TOSEM that consolidated and extended its traditional role as the premier journal for leading software engineering research.
+{{}}
+The fast-impact track that we introduced in 2018 to offer a bounded
+turnaround review time for reasonably sized journal-first papers boosted a healthy growth of highquality submissions.
+{{}}
+The new continuous special sections that we started in 2019 with AI and Software Engineering, and continued in 2021 with Security and Software Engineering, consolidated the
+role of TOSEM as a premier venue for interdisciplinary results.
+{{}}
+In the last three years, the number
+of journal-first papers quadrupled, and now more than half of TOSEM submissions are journalfirst papers.
+{{}}
+The new thread of survey papers that we introduced in 2021 to enrich the role of
+TOSEM with a gallery of portraits of relevant research software engineering areas, with no page
+limitations, is quickly attracting a healthy number of contributions.
+{{}}
+In the next three years, we will introduce new continuous special sections on interdisciplinary
+topics and further enhance the role of TOSEM as the premier venue for software engineering research with new initiatives:
+{{}}
+replication packages and preregistered papers.
+{{}}
+Replication packages
+will encourage repeatability, reproducibility and replicability of the results, by complementing
+the excellent experience of software engineering conferences and workshops with a permanent
+archive of replication data and artifacts linked to TOSEM papers.
+{{}}
+We will encourage authors to
+complement their papers with replication packages that we will review with a dedicated process.
+{{}}
+Preregistered papers will extend the experimental mission of TOSEM, by offering authors the possibility of preregistering papers for early sharing of results and experimental plans, in line with best
+practice in other scientific fields.
+{{}}
+Preregistered papers present a research hypothesis and methodology to validate the claims and are later completed with the results of experiments and replication
+packages that witness the quality and completeness of the results presented in the final papers.
+{{}}
+The end of a three-year tenure is also time for acknowledgments.
+{{}}
+It is with great gratitude
+that I thank Cristian Cadar and Gregg Rothermel, who rotated off the TOSEM editorial board
+at the end of December 2021 after six years of invaluable service.
+{{}}
+I would like to mention all
+editors who terminated their services in the last three years:
+{{}}
+Antonio Carzaniga, Mark Harman,
+Antonia Bertolino, Vittorio Cortellessa, Jin Song Dong, Atanas (Nasko) Rountev, Margaret-Anne
+(Peggy) Storey and Tim Menzies.
+{{}}
+A warm thank-you to the editors who continue serving with
+great dedication on the board and who do their best to guarantee timely and thorough reviews
+despite the large increase of workload, due to the many new submissions, the key factor of the
+current TOSEM success.
+{{}}
+A special thanks to Paolo Tonella and Abhik Roychoudhury, who chair
+the continuous special section on AI and software engineering as well as the section on security
+and software engineering, respectively, to Damian Tamburri and Fabio Palomba, the wizards of
+the successful social media presence, and to Antónia Lopes, who will substitute for Cristian Cadar
+{{}}
+---

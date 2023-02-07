@@ -1,0 +1,56 @@
+A three-stage transfer learning framework for multi-source cross-project software defect prediction.
+
+Context:
+{{}}
+Transfer learning techniques have been proved to be effective in the field of Cross-project defect pre­
+diction (CPDP).
+{{}}
+However, some questions still remain.
+{{}}
+First, the conditional distribution difference between
+source and target projects has not been considered.
+{{}}
+Second, facing multiple source projects, most studies only
+rarely consider the issues of source selection and multi-source data utilization; instead, they use all available
+projects and merge multi-source data together to obtain one final dataset.
+{{}}
+Objective:
+{{}}
+To address these issues, in this paper, we propose a three-stage weighting framework for multi-source
+transfer learning (3SW-MSTL) in CPDP.
+{{}}
+In stage 1, a source selection strategy is needed to select a suitable
+number of source projects from all available projects.
+{{}}
+In stage 2, a transfer technique is applied to minimize
+marginal differences.
+{{}}
+In stage 3, a multi-source data utilization scheme that uses conditional distribution in­
+formation is needed to help guide researchers in the use of multi-source transferred data.
+{{}}
+Method:
+{{}}
+First, we have designed five source selection strategies and four multi-source utilization schemes and
+chosen the best one to be used in stage 1 and 3 in 3SW-MSTL by comparing their influences on prediction
+performance.
+{{}}
+Second, to validate the performance of 3SW-MSTL, we compared it with four multi-source and six
+single-source CPDP methods, a baseline within-project defect prediction (WPDP) method, and two unsupervised
+methods on the data from 30 widely used open-source projects.
+{{}}
+Results:
+{{}}
+Through experiments, bellwether and weighted vote are separately chosen as a source selection strategy
+and a multi-source utilization scheme used in 3SW-MSTL.
+{{}}
+And, our results indicate that 3SW-MSTL outperforms
+four multi-source, six single-source CPDP methods and two unsupervised methods.
+{{}}
+And, 3SW-MSTL is compa­
+rable to the WPDP method.
+{{}}
+Conclusion:
+{{}}
+The proposed 3SW-MSTL model is more effective for considering the two issues mentioned before.
+{{}}
+---

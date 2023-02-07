@@ -1,0 +1,62 @@
+An Empirical Study of the Effectiveness of an Ensemble of Stand-alone Sentiment Detection Tools for Software Engineering Datasets.
+
+
+Sentiment analysis in software engineering (SE) has shown promise to analyze and support diverse development activities.
+{{}}
+Recently, several tools are proposed to detect sentiments in software artifacts.
+{{}}
+While the
+tools improve accuracy over off-the-shelf tools, recent research shows that their performance could still be unsatisfactory.
+{{}}
+A more accurate sentiment detector for SE can help reduce noise in analysis of software scenarios
+where sentiment analysis is required.
+{{}}
+Recently, combinations, i.e., hybrids of stand-alone classifiers are found
+to offer better performance than the stand-alone classifiers for fault detection.
+{{}}
+However, we are aware of no
+such approach for sentiment detection for software artifacts.
+{{}}
+We report the results of an empirical study that
+we conducted to determine the feasibility of developing an ensemble engine by combining the polarity labels
+of stand-alone SE-specific sentiment detectors.
+{{}}
+Our study has two phases.
+{{}}
+In the first phase, we pick five SEspecific sentiment detection tools from two recently published papers by Lin et al.
+{{}}
+[29, 30], who first reported
+negative results with stand alone sentiment detectors and then proposed an improved SE-specific sentiment
+detector, POME [29].
+{{}}
+We report the study results on 17,581 units (sentences/documents) coming from six
+currently available sentiment benchmarks for software engineering.
+{{}}
+We find that the existing tools can be
+complementary to each other in 85-95% of the cases, i.e., one is wrong but another is right.
+{{}}
+However, a majority
+voting-based ensemble of those tools fails to improve the accuracy of sentiment detection.
+{{}}
+We develop Sentisead, a supervised tool by combining the polarity labels and bag of words as features.
+{{}}
+Sentisead improves the
+performance (F1-score) of the individual tools by 4% (over Senti4SD [5]) – 100% (over POME [29]).
+{{}}
+The initial
+development of Sentisead occurred before we observed the use of deep learning models for SE-specific sentiment detection.
+{{}}
+In particular, recent papers show the superiority of advanced language-based pre-trained
+transformer models (PTM) over rule-based and shallow learning models.
+{{}}
+Consequently, in a second phase,
+we compare and improve Sentisead infrastructure using the PTMs.
+{{}}
+We find that a Sentisead infrastructure
+with RoBERTa as the ensemble of the five stand-alone rule-based and shallow learning SE-specific tools from
+Lin et al.
+{{}}
+[29, 30] offers the best F1-score of 0.805 across the six datasets, while a stand-alone RoBERTa shows
+an F1-score of 0.801.
+{{}}
+---

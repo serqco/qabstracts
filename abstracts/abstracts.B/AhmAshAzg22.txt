@@ -1,0 +1,51 @@
+A DQN-based agent for automatic software refactoring.
+
+Context:
+{{}}
+Nowadays, technical debt has become a very important issue in software project management.
+{{}}
+The main
+mechanism to repay this debt is through refactoring.
+{{}}
+Refactoring software projects usually comes at a high cost.
+{{}}
+As a result, researchers have always looked for ways to minimize this cost, and a good potential candidate to
+reduce the cost of a process is to automate it.
+{{}}
+Objective:
+{{}}
+One of the automatic software refactoring methods that recently has received a lot of attention is based
+on search-based software engineering (SBSE) methods.
+{{}}
+Although because of comprehensiveness and versatility
+SBSE is considered an appropriate method for automatic refactoring, it has its downsides, the most important of
+which are the uncertainty of the results and the exponential execution time.
+{{}}
+Method:
+{{}}
+In this research, a solution is proposed inspired by search-based refactoring while taking advantage of
+exploitation in reinforcement learning techniques.
+{{}}
+This work aims to solve the uncertainty problems and
+execution time for large programs.
+{{}}
+In the proposed approach, the problem of uncertainty is solved by targeting
+the selection of refactoring actions used in the search-based approach.
+{{}}
+Also, due to the reduction of the de­
+pendency between the choice of the appropriate refactoring and its execution time, the time problem in large
+software refactoring has been greatly improved.
+{{}}
+Results:
+{{}}
+Amongst the performed evaluations and specifically for the refactoring of the largest case study, the
+proposed approach managed to increase the accuracy to more than twice of the SBSE refactoring approaches,
+while reducing the execution time of refactoring by more than 98%.
+{{}}
+Conclusion:
+{{}}
+The results of the tests show that with increasing the volume and size of the software, the perfor­
+mance of the proposed approach also improves compared to the methods based on SBSE, both in terms of
+reducing technical debt and speeding up the refactoring process.
+{{}}
+---

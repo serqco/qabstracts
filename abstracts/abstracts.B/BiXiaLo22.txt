@@ -1,0 +1,32 @@
+﻿Accessibility in Software Practice: A Practitioner’s Perspective
+
+Being able to access software in daily life is vital for everyone, and thus accessibility is a fundamental challenge for software development.
+{{}}
+However, given the number of accessibility issues reported by many users,
+e.g., in app reviews, it is not clear if accessibility is widely integrated into current software projects and how
+software projects address accessibility issues.
+{{}}
+In this article, we report a study of the critical challenges and
+benefits of incorporating accessibility into software development and design.
+{{}}
+We applied a mixed qualitative
+and quantitative approach for gathering data from 15 interviews and 365 survey respondents from 26 countries across five continents to understand how practitioners perceive accessibility development and design in
+practice.
+{{}}
+We got 44 statements grouped into eight topics on accessibility from practitioners’ viewpoints and
+different software development stages.
+{{}}
+Our statistical analysis reveals substantial gaps between groups, e.g.,
+practitioners have Direct vs.
+{{}}
+Indirect accessibility relevant work experience when they reviewed the summarized statements.
+{{}}
+These gaps might hinder the quality of accessibility development and design, and we
+use our findings to establish a set of guidelines to help practitioners be aware of accessibility challenges and
+benefit factors.
+{{}}
+We suggest development teams put accessibility as a first-class consideration throughout the
+software development process, and we also propose some remedies to resolve the gaps between groups and
+to highlight key future research directions to incorporate accessibility into software design and development.
+{{}}
+---
