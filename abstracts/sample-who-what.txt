@@ -267,7 +267,7 @@ FahGruBey22
 ReiZam22   
 HeBarNic22   
 AhmFanYi22   
-LiuXiaLo22   
+# LiuXiaLo22 duplicate ID (TOSEM and TSE): TOSEM article is removed from sample   
 MarKesVer22   
 #----- Block 31
 SteNicInv22   
@@ -585,7 +585,7 @@ ZheCheDu22
 LiCheYao22   
 MotSotBru22   
 #----- Block 66
-KhaAbrNia22   
+# KhaAbrNia22  IST. Not an article but an editorial. Removed from sample   
 NguNgoNgu22   
 #DabLetPer22a  EMSE. Not an article but a 'correction'. Replaced by YanHasZou22 from the reserve in Block 8.   
 PanRaj22   
