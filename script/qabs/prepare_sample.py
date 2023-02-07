@@ -27,7 +27,7 @@ def prepare_sample(workdir: str, volumedir: str, remaindermode: bool):
         os.mkdir(targetdir)
     #----- obtain data:
     sample = metadata.read_list(f'{workdir}/sample.list')
-    with open(f"{workdir}/sample-titles.json") as f:
+    with open(f"{workdir}/sample-titles.json", encoding='utf8') as f:
         titles = json.load(f)
     #----- create abstracts files:
     for article in sample:
