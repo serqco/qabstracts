@@ -1,14 +1,6 @@
 Software Engineering for AI-Based Systems: A Survey.
 
-Software Engineering for AI-Based Systems:
-{{}}
-A Survey
-SILVERIO MARTÍNEZ-FERNÁNDEZ, Universitat Politècnica de Catalunya - BarcelonaTech, Spain
-JUSTUS BOGNER, University of Stuttgart, Institute of Software Engineering, Germany
-XAVIER FRANCH and MARC ORIOL, Universitat Politècnica de Catalunya - BarcelonaTech, Spain
-JULIEN SIEBERT, ADAM TRENDOWICZ, and ANNA MARIA VOLLMER, Fraunhofer
-Institute for Experimental Software Engineering IESE, Germany
-STEFAN WAGNER, University of Stuttgart, Institute of Software Engineering, Germany
+
 AI-based systems are software systems with functionalities enabled by at least one AI component (e.g., for
 image-, speech-recognition, and autonomous driving).
 {{}}

@@ -1,13 +1,6 @@
-A Study on Blockchain Architecture Design Decisions and Their Security Attacks and Threats.
+﻿A Study on Blockchain Architecture Design Decisions and Their Security Attacks and Threats.
 
-A Study on Blockchain Architecture Design Decisions and
-Their Security Attacks and Threats
-SABREEN AHMADJEE, University of Birmingham, UK, Umm Al-Qura University, Saudi Arabia
-CARLOS MERA-GÓMEZ, ESPOL Polytechnic University, Escuela Superior Politécnica del Litoral,
-ESPOL, Ecuador
 
-RAMI BAHSOON, University of Birmingham, UK
-RICK KAZMAN, University of Hawaii, USA
 Blockchain is a disruptive technology intended to implement secure decentralised distributed systems, in
 which transactional data can be shared, stored, and verified by participants of the system without needing
 a central authentication/verification authority.

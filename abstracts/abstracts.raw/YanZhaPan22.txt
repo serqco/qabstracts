@@ -1,17 +1,5 @@
 Do Developers Really Know How to Use Git Commands? A Large-scale Study Using Stack Overflow.
 
-Do Developers Really Know How to Use Git Commands?
-{{}}
-A Large-scale Study Using Stack Overflow
-WENHUA YANG, College of Computer Science and Technology, Nanjing University of Aeronautics and
-Astronautics, China
-
-CHONG ZHANG and MINXUE PAN, State Key Laboratory for Novel Software Technology and the
-Software Institute, Nanjing University, China
-CHANG XU, State Key Laboratory for Novel Software Technology and the Department of Computer
-Science and Technology, Nanjing University, China
-YU ZHOU and ZHIQIU HUANG, College of Computer Science and Technology, Nanjing University
-of Aeronautics and Astronautics, China
 Git, a cross-platform and open source distributed version control tool, provides strong support for non-linear
 development and is capable of handling everything from small to large projects with speed and efficiency.
 {{}}

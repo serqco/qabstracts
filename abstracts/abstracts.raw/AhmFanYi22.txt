@@ -1,16 +1,6 @@
 Verifix: Verified Repair of Programming Assignments.
 
-Verifix:
-{{}}
-Verified Repair of Programming Assignments
-UMAIR Z.
-{{}}
-AHMED and ZHIYU FAN, National University of Singapore
-JOOYONG YI, Ulsan National Institute of Science and Technology, South Korea
-OMAR I.
-{{}}
-AL-BATAINEH and ABHIK ROYCHOUDHURY, National University
-of Singapore
+
 Automated feedback generation for introductory programming assignments is useful for programming education.
 {{}}
 Most works try to generate feedback to correct a student program by comparing its behavior with an

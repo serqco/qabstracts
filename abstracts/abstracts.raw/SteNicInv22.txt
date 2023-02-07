@@ -1,9 +1,6 @@
 Verification of Distributed Systems via Sequential Emulation.
 
-Verification of Distributed Systems via Sequential Emulation
-LUCA DI STEFANO, University Grenoble Alpes, Inria, CNRS, Grenoble INP∗ , LIG
-ROCCO DE NICOLA, IMT School of Advanced Studies
-OMAR INVERSO, Gran Sasso Science Institute (GSSI)
+
 Sequential emulation is a semantics-based technique to automatically reduce property checking of distributed
 systems to the analysis of sequential programs.
 {{}}

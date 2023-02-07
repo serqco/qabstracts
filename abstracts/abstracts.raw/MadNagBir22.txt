@@ -1,14 +1,6 @@
-ConE: A Concurrent Edit Detection Tool for Large-scale Software Development.
+﻿ConE: A Concurrent Edit Detection Tool for Large-scale Software Development.
 
-ConE:
-{{}}
-A Concurrent Edit Detection Tool for Large-scale
-Software Development
-CHANDRA MADDILA, NACHIAPPAN NAGAPPAN, and CHRISTIAN BIRD,
-Microsoft Research
 
-GEORGIOS GOUSIOS, Facebook
-ARIE van DEURSEN, Delft University of Technology
 Modern, complex software systems are being continuously extended and adjusted.
 {{}}
 The developers responsible

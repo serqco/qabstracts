@@ -10,7 +10,7 @@ backs:
 grammar-based autocompletion is restricted in dynamically-
 typed language environments, whereas NLP-based autocompleters
 struggle to understand the semantics of the programming language
-and the developer’s code context.
+and the developer's code context.
 {{}}
 In this work, we present CodeFill, a language model for autocom-
 pletion that combines learned structure and naming information.
@@ -36,16 +36,8 @@ against four baselines and two state-of-the-art models, GPT-C and
 TravTrans+.
 {{}}
 CodeFill surpasses all baselines in single token predic-
-tion (MRR:
-{{}}
-70.9% vs.
-{{}}
-66.2% and 67.8%) and outperforms the state of
-the art for multi-token prediction (ROUGE-L:
-{{}}
-63.7% vs.
-{{}}
-52.4% and
+tion (MRR: 70.9% vs. 66.2% and 67.8%) and outperforms the state of
+the art for multi-token prediction (ROUGE-L: 63.7% vs. 52.4% and
 59.2%, for 𝑛 = 4 tokens).
 {{}}
 We publicly release our source code and

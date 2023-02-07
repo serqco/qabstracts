@@ -1,11 +1,6 @@
 Industry-Academia Research Collaboration and Knowledge Co-creation: Patterns and Anti-patterns.
 
-Industry–Academia Research Collaboration and Knowledge
-Co-creation:
-{{}}
-Patterns and Anti-patterns
-DUSICA MARIJAN, Simula Research Laboratory
-SAGAR SEN, Sintef Digital and Sweetzpot
+
 Increasing the impact of software engineering research in the software industry and the society at large has
 long been a concern of high priority for the software engineering community.
 {{}}

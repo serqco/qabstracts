@@ -1,10 +1,5 @@
-All in One: Design, Verification, and Implementation of SNOW-optimal Read Atomic Transactions.
+﻿All in One: Design, Verification, and Implementation of SNOW-optimal Read Atomic Transactions.
 
-All in One:
-{{}}
-Design, Verification, and Implementation
-of SNOW-optimal Read Atomic Transactions
-SI LIU, ETH Zürich, Switzerland
 Distributed read atomic transactions are important building blocks of modern cloud databases that magnificently bridge the gap between data availability and strong data consistency.
 {{}}
 The performance of their transactional reads is particularly critical to the overall system performance, as many real-world database workloads

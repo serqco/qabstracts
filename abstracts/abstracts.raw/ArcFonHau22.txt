@@ -1,11 +1,6 @@
 Bug Localization in Model-Based Systems in the Wild.
 
-Bug Localization in Model-Based Systems in the Wild
-LORENA ARCEGA and JAIME FONT, Escuela de Arquitectura y Tecnología,
-Universidad San Jorge
 
-ØYSTEIN HAUGEN, Faculty of Computer Science, Østfold University College
-CARLOS CETINA, Escuela de Arquitectura y Tecnología, Universidad San Jorge
 The companies that have adopted the Model-Driven Engineering (MDE) paradigm have the advantage of
 working at a high level of abstraction.
 {{}}

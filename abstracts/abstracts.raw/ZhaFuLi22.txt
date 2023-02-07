@@ -1,13 +1,6 @@
 Towards Robustness of Deep Program Processing Models - Detection, Estimation, and Enhancement.
 
-50
-Towards Robustness of Deep Program Processing
-Models—Detection, Estimation, and Enhancement
-HUANGZHAO ZHANG, ZHIYI FU, and GE LI, Peking University, China
-LEI MA, University of Alberta, Canada
-ZHEHAO ZHAO, HUA’AN YANG, and YIZHE SUN, Peking University, China
-YANG LIU, Nanyang Technological University, Singapore
-ZHI JIN, Peking University, China
+
 Deep learning (DL) has recently been widely applied to diverse source code processing tasks in the software engineering (SE) community, which achieves competitive performance (e.g., accuracy).
 {{}}
 However, the

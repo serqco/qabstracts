@@ -17,7 +17,7 @@ As a concrete instance of this, we posit in this paper that program elements tha
 covered by flaky tests, i.e., tests with non-deterministic behaviour, are also worthy of investment of additional testing effort.
 {{}}
 In this paper,
-we set out to quantify, characterize, and mitigate “flakily covered” program elements (i.e., those elements that are only covered by flaky
+we set out to quantify, characterize, and mitigate "flakily covered"� program elements (i.e., those elements that are only covered by flaky
 tests).
 {{}}
 To that end, we perform an empirical study of three large software systems from the OpenStack community.

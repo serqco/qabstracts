@@ -32,7 +32,7 @@ Further investigation revealed that, in a
 few cases, the elimination of anti-patterns reduced the time needed
 to execute the refactored code fragments.
 {{}}
-Moreover, DrAsync’s visu-
+Moreover, DrAsync's visu-
 alization of promise lifetimes and relationships provides additional
 insight into the execution behavior of asynchronous programs and
 helped identify further optimization opportunities.

@@ -1,10 +1,6 @@
-Towards a Consistent Interpretation of AIOps Models.
+﻿Towards a Consistent Interpretation of AIOps Models.
 
-Towards a Consistent Interpretation of AIOps Models
-YINGZHE LYU, Software Analysis and Intelligence Lab (SAIL), Queen’s University, Canada
-GOPI KRISHNAN RAJBAHADUR, DAYI LIN, and BOYUAN CHEN, Centre for Software
-Excellence, Huawei Canada, Canada
-ZHEN MING (JACK) JIANG, Lassonde School of Engineering, York University, Canada
+
 Artificial Intelligence for IT Operations (AIOps) has been adopted in organizations in various tasks, including
 interpreting models to identify indicators of service failures.
 {{}}

@@ -1,16 +1,6 @@
-CONFETTI: Amplifying Concolic Guidance for Fuzzers.
+﻿CONFETTI: Amplifying Concolic Guidance for Fuzzers.
 
-  2022 IEEE/ACM 44th International Conference on Software Engineering (ICSE)
-CONFETTI:
-{{}}
-Amplifying Concolic Guidance for Fuzzers
-       James Kukucka1 , Luís Pina2 , Paul Ammann1 , and Jonathan Bell3
-                          Mason University, Fairfax, VA USA
-                          2 University
-                         of Illinois Chicago, Chicago, Illinois USA
-                  3 Northeastern University, Boston, MA USA
- jkukucka@gmu.edu,luispina@uic.edu,pammann@gmu.edu,j.bell@northeastern.edu
-Abstract
+
 Fuzz testing (fuzzing) allows developers to detect bugs and vul-
 nerabilities in code by automatically generating defect-revealing
 inputs.

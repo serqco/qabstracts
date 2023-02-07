@@ -1,4 +1,4 @@
-An empirical study of data constraint implementations in Java.
+﻿An empirical study of data constraint implementations in Java.
 
 Software systems are designed according to guidelines and constraints defined by business
 rules.

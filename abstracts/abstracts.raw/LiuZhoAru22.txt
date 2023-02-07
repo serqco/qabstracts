@@ -1,12 +1,6 @@
 Automatic Detection of Performance Bugs in Database Systems using Equivalent Queries.
 
-  2022 IEEE/ACM 44th International Conference on Software Engineering (ICSE)
-Automatic Detection of Performance Bugs
-in Database Systems using Equivalent Queries
-                Xinyu Liu∗ , Qi Zhou† , Joy Arulraj∗ , Alessandro Orso∗
-∗ Georgia
-                    † Meta, Seattle, WA, USA; zhouqi@fb.com
-Abstract
+
 Because modern data-intensive applications rely heavily on database
 systems (DBMSs), developers extensively test these systems to elim-
 inate bugs that negatively affect functionality.

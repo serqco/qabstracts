@@ -1,11 +1,6 @@
 Verification Witnesses.
 
-57
-Verification Witnesses
-DIRK BEYER and MATTHIAS DANGL, LMU Munich
-DANIEL DIETSCH and MATTHIAS HEIZMANN, University of Freiburg
-THOMAS LEMBERGER, LMU Munich
-MICHAEL TAUTSCHNIG, Queen Mary University of London
+
 Over the last years, witness-based validation of verification results has become an established practice in
 software verification:
 {{}}

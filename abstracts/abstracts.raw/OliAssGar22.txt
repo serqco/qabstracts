@@ -1,4 +1,4 @@
-Developers&apos; perception matters: machine learning to detect developer-sensitive smells.
+﻿Developers' perception matters: machine learning to detect developer-sensitive smells.
 
 Code smells are symptoms of poor design that hamper software evolution and maintenance.
 {{}}

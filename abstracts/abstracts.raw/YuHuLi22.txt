@@ -1,16 +1,6 @@
 Assessing and Improving an Evaluation Dataset for Detecting Semantic Code Clones via Deep Learning.
 
-Assessing and Improving an Evaluation Dataset for
-Detecting Semantic Code Clones via Deep Learning
-HAO YU, School of Software and Microelectronics, Peking University, Beijing, China
-XING HU, School of Software Technology, Zhejiang University, Ningbo, China
-GE LI, Key Laboratory of High Confidence Software Technologies (Peking University), Ministry of
-Education, China
 
-YING LI, National Research Center of Software Engineering, Peking University, Beijing, China
-QIANXIANG WANG, Huawei Technologies Co., Ltd., China
-TAO XIE, Key Laboratory of High Confidence Software Technologies (Peking University), Ministry of
-Education, China
 In recent years, applying deep learning to detect semantic code clones has received substantial attention from
 the research community.
 {{}}

@@ -1,10 +1,7 @@
 Automated, Cost-effective, and Update-driven App Testing.
 
-Automated, Cost-effective, and Update-driven App Testing
-CHANH DUC NGO and FABRIZIO PASTORE, SnT Centre, University of Luxembourg, Luxembourg
-LIONEL BRIAND, SnT Centre, University of Luxembourg, Luxembourg and School of EECS, University
-of Ottawa, Canada
-Apps’ pervasive role in our society led to the definition of test automation approaches to ensure their dependability.
+
+Apps' pervasive role in our society led to the definition of test automation approaches to ensure their dependability.
 {{}}
 However, state-of-the-art approaches tend to generate large numbers of test inputs and are unlikely
 to achieve more than 50% method coverage.

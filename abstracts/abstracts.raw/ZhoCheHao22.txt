@@ -1,12 +1,6 @@
 Parallel Test Prioritization.
 
-Parallel Test Prioritization
-JIANYI ZHOU, Key Laboratory of High Confidence Software Technologies (Peking University), Ministry
-of Education
 
-JUNJIE CHEN, College of Intelligence and Computing, Tianjin University
-DAN HAO, Key Laboratory of High Confidence Software Technologies (Peking University), Ministry of
-Education
 Although regression testing is important to guarantee the software quality in software evolution, it suffers
 from the widely known cost problem.
 {{}}

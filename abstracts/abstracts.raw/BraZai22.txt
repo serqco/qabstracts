@@ -7,7 +7,7 @@ While current tools can generate powerful regression or crash-reproducing test c
 these are often kept separately from the maintained test suite.
 {{}}
 In this paper, we leverage the
-developer’s familiarity with test cases amplified from existing, manually written developer
+developer's familiarity with test cases amplified from existing, manually written developer
 tests.
 {{}}
 Starting from issues reported by developers in previous studies, we investigate what

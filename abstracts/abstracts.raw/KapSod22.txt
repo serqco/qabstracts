@@ -1,8 +1,6 @@
 OSS Effort Estimation Using Software Features Similarity and Developer Activity-Based Metrics.
 
-OSS Effort Estimation Using Software Features Similarity
-and Developer Activity-Based Metrics
-RITU KAPUR and BALWINDER SODHI, Indian Institute of Technology Ropar
+
 Software development effort estimation (SDEE) generally involves leveraging the information about the effort
 spent in developing similar software in the past.
 {{}}

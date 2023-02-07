@@ -1,11 +1,5 @@
 A Systematic Literature Review on the Use of Deep Learning in Software Engineering Research.
 
-A Systematic Literature Review on the Use of Deep Learning
-in Software Engineering Research
-CODY WATSON, Washington & Lee University
-NATHAN COOPER and DAVID NADER PALACIO, William & Mary
-KEVIN MORAN, George Mason University
-DENYS POSHYVANYK, William & Mary
 An increasingly popular set of techniques adopted by software engineering (SE) researchers to automate development tasks are those rooted in the concept of Deep Learning (DL).
 {{}}
 The popularity of such techniques

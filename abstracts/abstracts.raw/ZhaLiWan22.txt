@@ -17,42 +17,19 @@ ReMoS, a relevant model slicing technique to reduce defect inheri-
 tance during transfer learning while retaining useful knowledge from
 the teacher model.
 {{}}
-Speciﬁcally, ReMoS computes a model slice (a
+Speci�cally, ReMoS computes a model slice (a
 subset of model weights) that is relevant to the student task based on
-the neuron coverage information obtained by proﬁling the teacher
-* Workis done while Ziqi Zhang was an intern and Yuanchun Li was a researcher at
-Microsoft.
+the neuron coverage information obtained by profiling the teacher
+model on the student task.
 {{}}
-† Correspondence to:
+Only the relevant slice is used to finetune
+the student model, while the irrelevant weights are retrained
+from scratch to minimize the risk of inheriting defects.
 {{}}
-Yuanchun Li, Yao Guo.
-{{}}
-Permission to make digital or hard copies of all or part of this work for personal or
-classroom use is granted without fee provided that copies are not made or distributed
-for proﬁt or commercial advantage and that copies bear this notice and the full citation
-on the ﬁrst page.
-{{}}
-Copyrights for components of this work owned by others than ACM
-must be honored.
-{{}}
-Abstracting with credit is permitted.
-{{}}
-To copy otherwise, or republish,
-to post on servers or to redistribute to lists, requires prior speciﬁc permission and/or a
-fee.
-{{}}
-Request permissions from permissions@acm.org.
-{{}}
-ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
-© 2022 Association for Computing Machinery.
-{{}}
-ACM ISBN 978-1-4503-9221-1/22/05.
-{{}}
-.
-{{}}
-. $
-{{}}
-15.00
-https://doi.org/10.1145/3510003.3510191
+Our experiments
+on seven DNN defects, four DNN models, and eight datasets
+demonstrate that ReMoS can reduce inherited defects effectively (by
+63% to 86% for CV tasks and by 40% to 61% for NLP tasks) and
+efficiently with minimal sacrifice of accuracy (3% on average).
 {{}}
 ---

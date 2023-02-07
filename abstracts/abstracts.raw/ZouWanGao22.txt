@@ -1,12 +1,6 @@
-Buddy Stacks: Protecting Return Addresses with Efficient Thread-Local Storage and Runtime Re-Randomization.
+﻿Buddy Stacks: Protecting Return Addresses with Efficient Thread-Local Storage and Runtime Re-Randomization.
 
-Buddy Stacks:
-{{}}
-Protecting Return Addresses with Efficient
-Thread-Local Storage and Runtime Re-Randomization
-CHANGWEI ZOU and XUDONG WANG, UNSW Sydney, Australia
-YAOQING GAO, Huawei Toronto Research Center, Canada
-JINGLING XUE, UNSW Sydney, Australia
+
 Shadow stacks play an important role in protecting return addresses to mitigate ROP attacks.
 {{}}
 Parallel shadow

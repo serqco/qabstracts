@@ -1,17 +1,6 @@
 Automating App Review Response Generation Based on Contextual Knowledge.
 
-Automating App Review Response Generation Based on
-Contextual Knowledge
-CUIYUN GAO, Harbin Institute of Technology, Shenzhen, China
-WENJIE ZHOU, The Key Laboratory for Computer Systems of State Ethnic Affairs Commission,
-Southwest Minzu University, China
-XIN XIA, Software Engineering Application Technology Lab, Huawei, China
-DAVID LO, Singapore Management University, Singapore
-QI XIE, The Key Laboratory for Computer Systems of State Ethnic Affairs Commission, Southwest Minzu
-University, China
-MICHAEL R.
-{{}}
-LYU, The Chinese University of Hong Kong, China
+
 User experience of mobile apps is an essential ingredient that can influence the user base and app revenue.
 {{}}
 To ensure good user experience and assist app development, several prior studies resort to analysis of app

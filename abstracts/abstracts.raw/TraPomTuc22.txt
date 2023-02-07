@@ -1,12 +1,6 @@
 How Software Refactoring Impacts Execution Time.
 
-How Software Refactoring Impacts Execution Time
-LUCA TRAINI, DANIELE DI POMPEO, and MICHELE TUCCI, University of L’Aquila, Italy
-BIN LIN, Software Institute - USI, Lugano, Swizerland
-SIMONE SCALABRINO, University of Molise, Italy
-GABRIELE BAVOTA and MICHELE LANZA, Software Institute - USI, Lugano, Swizerland
-ROCCO OLIVETO, University of Molise, Italy
-VITTORIO CORTELLESSA, University of L’Aquila, Italy
+
 Refactoring aims at improving the maintainability of source code without modifying its external behavior.
 {{}}
 Previous works proposed approaches to recommend refactoring solutions to software developers.

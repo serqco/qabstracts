@@ -1,4 +1,4 @@
-&quot;More Than Deep Learning&quot;: post-processing for API sequence recommendation.
+"More Than Deep Learning": post-processing for API sequence recommendation.
 
 In the daily development process, developers often need assistance in finding a sequence
 of APIs to accomplish their development tasks.

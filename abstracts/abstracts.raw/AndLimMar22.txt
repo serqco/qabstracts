@@ -1,11 +1,6 @@
 Guaranteeing Timed Opacity using Parametric Timed Model Checking.
 
-Guaranteeing Timed Opacity using Parametric Timed
-Model Checking
-ÉTIENNE ANDRÉ, Université de Lorraine, CNRS, Inria, LORIA
-DIDIER LIME, École Centrale de Nantes, LS2N, UMR CNRS 6004
-DYLAN MARINHO, Université de Lorraine, CNRS, Inria, LORIA
-JUN SUN, School of Information Systems, Singapore Management University
+
 Information leakage can have dramatic consequences on systems security.
 {{}}
 Among harmful information leaks,

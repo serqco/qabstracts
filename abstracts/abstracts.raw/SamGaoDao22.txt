@@ -28,8 +28,8 @@ mediate representation.
 {{}}
 We performed empirical investigations to
 highlight how, without the unified model, a significant amount
-of Java methods called from the native code are “unreachable” in
-apps’ call-graphs, both in goodware and malware.
+of Java methods called from the native code are "unreachable"� in
+apps' call-graphs, both in goodware and malware.
 {{}}
 Using JuCify, we
 were able to enable static analyzers to reveal cases where malware
@@ -37,7 +37,7 @@ relied on native code to hide invocation of payment library code
 or of other sensitive code in the Android framework.
 {{}}
 Additionally,
-JuCify’s model enables state-of-the-art tools to achieve better preci-
+JuCify's model enables state-of-the-art tools to achieve better preci-
 sion and recall in detecting data leaks through native code.
 {{}}
 Finally,

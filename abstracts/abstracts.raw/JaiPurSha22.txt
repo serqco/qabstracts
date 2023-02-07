@@ -1,11 +1,6 @@
-BiRD: Race Detection in Software Binaries under Relaxed Memory Models.
+﻿BiRD: Race Detection in Software Binaries under Relaxed Memory Models.
 
-BiRD:
-{{}}
-Race Detection in Software Binaries under Relaxed
-Memory Models
-RIDHI JAIN and RAHUL PURANDARE, Indraprastha Institute of Information Technology Delhi
-SUBODH SHARMA, Indian Institute of Technology Delhi
+
 Instruction reordering and interleavings in program execution under relaxed memory semantics result in
 non-intuitive behaviors, making it difficult to provide assurances about program correctness.
 {{}}

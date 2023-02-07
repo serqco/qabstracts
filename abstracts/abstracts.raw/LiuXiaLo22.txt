@@ -1,17 +1,8 @@
 Broken External Links on Stack Overflow.
 
-CodeMatcher:
-{{}}
-Searching Code Based on Sequential
+CodeMatcher: Searching Code Based on Sequential
 Semantics of Important Query Words
-CHAO LIU, Zhejiang University, China
-XIN XIA, Huawei, China
-DAVID LO, Singapore Management University, Singapore
-ZHIWE LIU, Baidu Inc., China
-AHMED E.
-{{}}
-HASSAN, Queen’s University, Canada
-SHANPING LI, Zhejiang University, China
+
 To accelerate software development, developers frequently search and reuse existing code snippets from a
 large-scale codebase, e.g., GitHub.
 {{}}

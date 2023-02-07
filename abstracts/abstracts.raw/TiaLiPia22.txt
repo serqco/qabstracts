@@ -1,15 +1,6 @@
 Predicting Patch Correctness Based on the Similarity of Failing Test Cases.
 
-Predicting Patch Correctness Based on the Similarity of
-Failing Test Cases
-HAOYE TIAN, YINGHUA LI, WEIGUO PIAN, and ABDOUL KADER KABORÉ,
-University of Luxembourg, Luxembourg
-KUI LIU, Software Engineering Application Technology Lab, Huawei, China
 
-ANDREW HABIB, JACQUES KLEIN, and TEGAWENDÉ F.
-{{}}
-BISSYANDÉ, University of
-Luxembourg, Luxembourg
 How do we know a generated patch is correct?
 {{}}
 This is a key challenging question that automated program

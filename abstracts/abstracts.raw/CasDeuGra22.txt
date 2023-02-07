@@ -34,9 +34,7 @@ The experimental results show that deep learning algorithms allow to obtain bett
 those achieved with conventional (shallow) machine learning methods.
 {{}}
 Moreover, the application of Transfer
-Learning allows to considerably improve the accuracy of the predictions, ca.
-{{}}
-10%.
+Learning allows to considerably improve the accuracy of the predictions, ca. 10%.
 {{}}
 Conclusions:
 {{}}

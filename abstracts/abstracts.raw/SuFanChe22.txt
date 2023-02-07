@@ -10,7 +10,7 @@ suffer from occasional to frequent crashes, weakening their competitive edge.
 Large-scale, deep analyses of the characteristics of realworld app crashes can provide useful insights to both developers and researchers.
 {{}}
 However, such studies are difficult and yet to be
-carried out — this work fills this gap.
+carried out - this work fills this gap.
 {{}}
 We collected 16,245 and 8,760 unique exceptions from 2,486 open-source and 3,230 commercial
 Android apps, respectively, and observed that the exceptions thrown from Android framework (termed “ framework-specific
@@ -23,7 +23,7 @@ exceptions.
 Specifically, we aim to understand the framework-specific exceptions from several perspectives:
 {{}}
 (i) their characteristics
-(e.g., manifestation locations, fault taxonomy), (ii) the developers’ testing practices, (iii) existing bug detection techniques’
+(e.g., manifestation locations, fault taxonomy), (ii) the developers' testing practices, (iii) existing bug detection techniques’
 effectiveness, (iv) their reproducibility and (v) bug fixes.
 {{}}
 To enable follow-up research (e.g., bug understanding, detection, localization

@@ -1,11 +1,6 @@
 The Impact of Dormant Defects on Defect Prediction: A Study of 19 Apache Projects.
 
-The Impact of Dormant Defects on Defect Prediction:
-{{}}
-A Study of 19 Apache Projects
-DAVIDE FALESSI, University of Rome Tor Vergata, Italy
-AALOK AHLUWALIA, California Polytechnic State University, USA
-MASSIMILIANO DI PENTA, University of Sannio, Italy
+
 Defect prediction models can be beneficial to prioritize testing, analysis, or code review activities, and has
 been the subject of a substantial effort in academia, and some applications in industrial contexts.
 {{}}

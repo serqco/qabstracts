@@ -21,9 +21,7 @@ from 428 students in total.
 We found that for a task that required
 managing complex aliasing, Bronze users were more likely to com-
 plete the task in the time available, and those who did so required
-only about a third as much time (4 hours vs.
-{{}}
-12 hours).
+only about a third as much time (4 hours vs. 12 hours).
 {{}}
 We found
 no significant difference in total time, even though Bronze users

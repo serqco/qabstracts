@@ -1,17 +1,6 @@
 Time-travel Investigation: Toward Building a Scalable Attack Detection Framework on Ethereum.
 
-Time-travel Investigation:
-{{}}
-Toward Building a Scalable Attack
-Detection Framework on Ethereum
-SIWEI WU, Zhejiang University & Key Laboratory of Blockchain and Cyberspace Governance
-of Zhejiang Province
 
-LEI WU, YAJIN ZHOU, and RUNHUAI LI, Zhejiang University
-ZHI WANG, Florida State University
-XIAPU LUO, The Hong Kong Polytechnic University
-CONG WANG, City University of Hong Kong
-KUI REN, Zhejiang University
 Ethereum has been attracting lots of attacks, hence there is a pressing need to perform timely investigation
 and detect more attack instances.
 {{}}

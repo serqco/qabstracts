@@ -1,16 +1,8 @@
-Context-Aware Personalized Crowdtesting Task Recommendation.
+﻿Context-Aware Personalized Crowdtesting Task Recommendation.
 
 Context- and Fairness-Aware In-Process Crowdworker
 Recommendation
-JUNJIE WANG, Laboratory for Internet Software Technologies, State Key Laboratory of Computer
-Sciences, Institute of Software Chinese Academy of Sciences; University of Chinese Academy of Sciences
-YE YANG, School of Systems and Enterprises, Stevens Institute of Technology
-SONG WANG, Lassonde School of Engineering, York University
-JUN HU, Laboratory for Internet Software Technologies, Institute of Software Chinese Academy of Sciences;
-University of Chinese Academy of Sciences
-QING WANG, Laboratory for Internet Software Technologies, State Key Laboratory of Computer Sciences,
-Science & Technology on Integrated Information System Laboratory, Institute of Software Chinese Academy
-of Sciences; University of Chinese Academy of Sciences
+
 Identifying and optimizing open participation is essential to the success of open software development.
 {{}}
 Existing studies highlighted the importance of worker recommendation for crowdtesting tasks in order to improve
@@ -41,75 +33,20 @@ this study also aims at alleviating the unfairness in recommendations.
 Driven by these observations, this article proposes a context- and fairness-aware in-process crowdworker
 recommendation approach, iRec2.0, to detect more bugs earlier, shorten the non-yielding windows, and alleviate the unfairness in recommendations.
 {{}}
-It consists of three main components:
+It consists of three main components: (1) the modeling of dynamic
+testing context, (2) the learning-based ranking component, and (3) the multi-objective optimization-based reranking
+component. 
 {{}}
-(1) the modeling of dynamic
-This work is supported by the National Key Research and Development Program of China under grant No.
+The evaluation is conducted on 636 crowdtesting tasks fromone of the largest crowdtesting
+platforms, and results show the potential of iRec2.0 in improving the cost-effectiveness of crowdtesting
+by saving the cost, shortening the testing process, and alleviating the unfairness among workers.
 {{}}
-2018YFB1403400,
-the National Natural Science Foundation of China under grant No.
+In detail,
+iRec2.0 could shorten the non-yielding window by a median of 50%–66% in different application scenarios,
+and consequently have potential of saving testing cost by a median of 8%–12%.
 {{}}
-62072442, No.
-{{}}
-62002348, and Youth Innovation Promotion Association Chinese Academy of Sciences.
-{{}}
-Authors’ addresses:
-{{}}
-J.
-{{}}
-Wang, Laboratory for Internet Software Technologies, State Key Laboratory of Computer Sciences,
-Institute of Software Chinese Academy of Sciences; University of Chinese Academy of Sciences, Beijing 101408, China;
-email:
-{{}}
-junjie@iscas.ac.cn; Y.
-{{}}
-Yang, School of Systems and Enterprises, Stevens Institute of Technology, Hoboken, NJ 07030;
-email:
-{{}}
-ye.yang@stevens.edu; S.
-{{}}
-Wang, Lassonde School of Engineering, York University, ON M3J 1P3, Canada; email:
-{{}}
-wangsong@eecs.yorku.ca; J.
-{{}}
-Hu, Laboratory for Internet Software Technologies, Institute of Software Chinese Academy
-of Sciences; University of Chinese Academy of Sciences, Beijing 101408, China; email:
-{{}}
-hujun@iscas.ac.cn; Q.
-{{}}
-Wang (corresponding author), Laboratory for Internet Software Technologies, State Key Laboratory of Computer Sciences, Science &
-Technology on Integrated Information System Laboratory, Institute of Software Chinese Academy of Sciences; University
-of Chinese Academy of Sciences, Beijing 101408, China; email:
-{{}}
-wq@iscas.ac.cn.
-{{}}
-Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee
-provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and
-the full citation on the first page.
-{{}}
-Copyrights for components of this work owned by others than ACM must be honored.
-{{}}
-Abstracting with credit is permitted.
-{{}}
-To copy otherwise, or republish, to post on servers or to redistribute to lists, requires
-prior specific permission and/or a fee.
-{{}}
-Request permissions from permissions@acm.org.
-{{}}
-© 2022 Association for Computing Machinery.
-{{}}
-1049-331X/2022/03-ART35 $15.00
-https://doi.org/10.1145/3487571
-ACM Transactions on Software Engineering and Methodology, Vol.
-{{}}
-31, No.
-{{}}
-3, Article 35.
-{{}}
-Publication date:
-{{}}
-March 2022.
-{{}}
-35
+Meanwhile, the recommendation
+frequency of the crowdworker drop from 34%–60% to 5%–26% under different scenarios, indicating its
+potential in alleviating the unfairness among crowdworkers.
 {{}}
 ---

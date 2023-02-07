@@ -1,57 +1,40 @@
 Adaptive Test Selection for Deep Neural Networks.
 
-  2022 IEEE/ACM 44th International Conference on Software Engineering (ICSE)
-"EBQUJWF 5FTU 4FMFDUJPO GPS %FFQ /FVSBM /FUXPSLT
-9JOZV (BP
-YJOZVHBP!TNBJMOKVFEVDO
-4UBUF ,FZ -BCPSBUPSZ GPS /PWFM
-4PॏXBSF 5FDIOPMPHZ
-/BOKJOH 6OJWFSTJUZ
-/BOKJOH  $IJOB
-;JYJ -JV
-[YMJV!TNBJMOKVFEVDO
-4UBUF ,FZ -BCPSBUPSZ GPS /PWFM
-4PॏXBSF 5FDIOPMPHZ
-/BOKJOH 6OJWFSTJUZ
-/BOKJOH  $IJOB
-"#453"$5
-%FFQ OFVSBM OFUXPSLT %// IBWF BDIJFWFE USFNFOEPVT EFWFMPQ
-NFOU JO UIF QBTU EFDBEF 8IJMF NBOZ %//ESJWFO TPॏXBSF BQQMJ
-DBUJPOT IBWF CFFO EFQMPZFE UP TPMWF WBSJPVT UBTLT UIFZ DPVME BMTP
-QSPEVDF JODPSSFDU CFIBWJPST BOE SFTVMU JO NBTTJWF MPTTFT 5P SFWFBM
-UIF JODPSSFDU CFIBWJPST BOE JNQSPWF UIF RVBMJUZ PG %//ESJWFO BQ
-QMJDBUJPOT EFWFMPQFST PॏFO OFFE SJDI MBCFMFE EBUB GPS UIF UFTUJOH
-BOE PQUJNJ[BUJPO PG %// NPEFMT )PXFWFS JO QSBDUJDF DPMMFDUJOH
-EJWFSTF EBUB GSPN BQQMJDBUJPO TDFOBSJPT BOE MBCFMJOH UIFN QSPQFSMZ
-JT PॏFO B IJHIMZ FYQFOTJWF BOE UJNFDPOTVNJOH UBTL
-*O UIJT QBQFS XF QSPQPTFE BO BEBQUJWF UFTU TFMFDUJPO NFUIPE
-OBNFMZ "54 GPS EFFQ OFVSBM OFUXPSLT UP BMMFWJBUF UIJT QSPCMFN
-"54 MFWFSBHFT UIF EJ੖FSFODF CFUXFFO UIF NPEFM PVUQVUT UP NFB
-TVSF UIF CFIBWJPS EJWFSTJUZ PG %// UFTU EBUB "OE JU BJNT BU TFMFDU
-JOH B TVCTFU XJUI EJWFSTF UFTUT GSPN B NBTTJWF VOMBCFMMFE EBUBTFU
-8F FYQFSJNFOU "54 XJUI GPVS XFMMEFTJHOFE %// NPEFMT BOE GPVS
-XJEFMZVTFE EBUBTFUT JO DPNQBSJTPO XJUI WBSJPVT LJOET PG OFVSPO
-DPWFSBHF /$  य़F SFTVMUT EFNPOTUSBUF UIBU "54 DBO TJHOJ੗DBOUMZ
-PVUQFSGPSN BMM UFTU TFMFDUJPO NFUIPET JO BTTFTTJOH CPUI GBVMU EFUFD
-UJPO BOE NPEFM JNQSPWFNFOU DBQBCJMJUZ PG UFTU TVJUFT *U JT QSPNJT
-JOH UP TBWF UIF EBUB MBCFMJOH BOE NPEFM SFUSBJOJOH DPTUT GPS EFFQ
-OFVSBM OFUXPSLT
-$$4 $0/$&154
-‫ ۦ‬4PࢄXBSF BOE JUT FOHJOFFSJOH ‫ މ‬4PࡄXBSF UFTUJOH BOE EFCVH
-HJOH
-޿ :BOH   'FOH JT UIF DPSSFTQPOEJOH BVUIPS
-1FSNJTTJPO UP NBLF EJHJUBM PS IBSE DPQJFT PG BMM PS QBSU PG UIJT XPSL GPS QFSTPOBM PS
-DMBTTSPPN VTF JT HSBOUFE XJUIPVU GFF QSPWJEFE UIBU DPQJFT BSF OPU NBEF PS EJTUSJCVUFE
-GPS QSP੗U PS DPNNFSDJBM BEWBOUBHF BOE UIBU DPQJFT CFBS UIJT OPUJDF BOE UIF GVMM DJUB
-UJPO PO UIF ੗STU QBHF $PQZSJHIUT GPS DPNQPOFOUT PG UIJT XPSL PXOFE CZ PUIFST UIBO
-UIF BVUIPS T NVTU CF IPOPSFE "CTUSBDUJOH XJUI DSFEJU JT QFSNJ॒FE 5P DPQZ PUIFS
-XJTF PS SFQVCMJTI UP QPTU PO TFSWFST PS UP SFEJTUSJCVUF UP MJTUT SFRVJSFT QSJPS TQFDJ੗D
-QFSNJTTJPO BOEPS B GFF 3FRVFTU QFSNJTTJPOT GSPN QFSNJTTJPOT!BDNPSH
-*$4& ‫ ڣ‬.BZ ‫  ڝ‬1JࡇTCVSHI 1" 64"
-i  $PQZSJHIU IFME CZ UIF PXOFSBVUIPS T  1VCMJDBUJPO SJHIUT MJDFOTFE UP "$.
-"$.
+Deep neural networks (DNN) have achieved tremendous development
+in the past decade.
 {{}}
-*4#/ ۪
-IUUQTEPJPSH
+While many DNN-driven software applications
+have been deployed to solve various tasks, they could also
+produce incorrect behaviors and result in massive losses.
+{{}}
+To reveal
+the incorrect behaviors and improve the quality of DNN-driven applications,
+developers often need rich labeled data for the testing
+and optimization of DNN models.
+{{}}
+However, in practice, collecting 
+diverse data from apaplication scenarios and labeling them properly
+is often a highly expensive and time-consuming task.
+{{}}
+In this paper, we proposed an adaptive test selection method,
+namely ATS, for deep neural networks to alleviate this problem.
+{{}}
+ATS leverages the difference between the model outputs to measure
+the behavior diversity of DNN test data.
+{{}}
+And it aims at selecting
+a subset with diverse tests from a massive unlabelled dataset.
+{{}}
+We experiment ATS with four well-designed DNN models and four
+widely-used datasets in comparison with various kinds of neuron
+coverage (NC).
+{{}}
+The results demonstrate that ATS can significantly
+outperform all test selection methods in assessing both fault detection
+and model improvement capability of test suites.
+{{}}
+It is promising
+to save the data labeling and model retraining costs for deep
+neural networks.
 {{}}
 ---

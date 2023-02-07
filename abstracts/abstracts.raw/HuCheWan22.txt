@@ -1,13 +1,6 @@
 Correlating Automated and Human Evaluation of Code Documentation Generation Quality.
 
-Correlating Automated and Human Evaluation of Code
-Documentation Generation Quality
-XING HU, School of Software Technology, Zhejiang University, China
-QIUYUAN CHEN and HAOYE WANG, College of Computer Science and Technology,
-Zhejiang University, China
-XIN XIA, Faculty of Information Technology, Monash University, Australia
-DAVID LO, School of Information Systems, Singapore Management University, Singapore
-THOMAS ZIMMERMANN, Microsoft Research, USA
+
 Automatic code documentation generation has been a crucial task in the field of software engineering.
 {{}}
 It not
@@ -50,77 +43,7 @@ However, it is still much lower than the correlation observed between different 
 the literature for other tasks (e.g., Neural Machine Translation [39]).
 {{}}
 Our study points to the need to develop
-
-This research was partially supported by the National Science Foundation of China (No.
-{{}}
-U20A20173) and the National
-Research Foundation, Singapore under its Industry Alignment Fund—Pre-positioning (IAF-PP) Funding Initiative.
-{{}}
-Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do
-not reflect the views of National Research Foundation, Singapore.
-{{}}
-Authors’ addresses:
-{{}}
-X.
-{{}}
-Hu, School of Software Technology, Zhejiang University, No.
-{{}}
-1689 Jiangnan Road, Ningbo, Zhejiang,
-315048, China; email:
-{{}}
-xinghu@zju.edu.cn; Q.
-{{}}
-Chen and H.
-{{}}
-Wang, College of Computer Science and Technology, Zhejiang
-University, Road 38 West Lake District, Hangzhou, Zhejiang, 310027, China; emails:
-{{}}
-{chenqiuyuan, why_}@zju.edu.cn;
-X.
-{{}}
-Xia (corresponding author), Faculty of Information Technology, Building 6, 29 Ancora Imparo Way, Clayton Campus,
-Monash University VIC 3800; email:
-{{}}
-xin.xia@acm.org; D.
-{{}}
-Lo, School of Information Systems, Singapore Management University, 80 Stamford Road, Singapore 178902; email:
-{{}}
-davidlo@smu.edu.sg; T.
-{{}}
-Zimmermann, Microsoft Research, 1 Microsoft
-Way, Redmond, WA 98052; email:
-{{}}
-tzimmer@microsoft.com.
-{{}}
-Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee
-provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and
-the full citation on the first page.
-{{}}
-Copyrights for components of this work owned by others than ACM must be honored.
-{{}}
-Abstracting with credit is permitted.
-{{}}
-To copy otherwise, or republish, to post on servers or to redistribute to lists, requires
-prior specific permission and/or a fee.
-{{}}
-Request permissions from permissions@acm.org.
-{{}}
-© 2022 Association for Computing Machinery.
-{{}}
-1049-331X/2022/07-ART63 $15.00
-https://doi.org/10.1145/3502853
-ACM Transactions on Software Engineering and Methodology, Vol.
-{{}}
-31, No.
-{{}}
-4, Article 63.
-{{}}
-Pub.
-{{}}
-date:
-{{}}
-July 2022.
-{{}}
-63
+specialized automated evaluation metrics that can correlate more closely to human evaluation metrics for
+code generation tasks.
 {{}}
 ---

@@ -1,11 +1,5 @@
 Adversarial Robustness of Deep Code Comment Generation.
 
-Adversarial Robustness of Deep Code Comment Generation
-YU ZHOU, XIAOQING ZHANG, and JUANJUAN SHEN, Nanjing University of Aeronautics and
-Astronautics, China
-
-TINGTING HAN and TAOLUE CHEN, Birkbeck, University of London, UK
-HARALD GALL, University of Zurich, Switzerland
 Deep neural networks (DNNs) have shown remarkable performance in a variety of domains such as computer vision, speech recognition, and natural language processing.
 {{}}
 Recently they also have been applied to

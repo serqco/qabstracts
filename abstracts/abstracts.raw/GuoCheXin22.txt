@@ -1,11 +1,6 @@
 Detecting and Augmenting Missing Key Aspects in Vulnerability Descriptions.
 
-Detecting and Augmenting Missing Key Aspects in
-Vulnerability Descriptions
-HAO GUO and SEN CHEN, College of Intelligence and Computing, Tianjin University, China
-ZHENCHANG XING, Research School of Computer Science, Australian National University, Australia
-XIAOHONG LI and YUDE BAI, College of Intelligence and Computing, Tianjin University, China
-JIAMOU SUN, Research School of Computer Science, Australian National University, Australia
+
 Security vulnerabilities have been continually disclosed and documented.
 {{}}
 For the effective understanding,

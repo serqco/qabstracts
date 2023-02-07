@@ -1,9 +1,6 @@
-A Practical Approach for Dynamic Taint Tracking with Control-flow Relationships.
+﻿A Practical Approach for Dynamic Taint Tracking with Control-flow Relationships.
 
-26
-A Practical Approach for Dynamic Taint Tracking with
-Control-flow Relationships
-KATHERINE HOUGH and JONATHAN BELL, Northeastern University, United States
+
 Dynamic taint tracking, a technique that traces relationships between values as a program executes, has
 been used to support a variety of software engineering tasks.
 {{}}

@@ -40,7 +40,7 @@ Our proposal shows a formalized
 framework that measures and improves the quality of software engineering experimental data.
 {{}}
 The results of a
-survey distributed to the experiments’ responsibles show that they value the improvements introduced by the
+survey distributed to the experiments' responsibles show that they value the improvements introduced by the
 model and methodology, and that they intend to apply them again in future experiences.
 {{}}
 Conclusions:

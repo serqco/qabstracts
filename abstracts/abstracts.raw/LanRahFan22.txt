@@ -1,24 +1,6 @@
 Model Transformation Development Using Automated Requirements Analysis, Metamodel Matching, and Transformation by Example.
 
-18
-Model Transformation Development Using Automated
-Requirements Analysis, Metamodel Matching, and
-Transformation by Example
-K.
-{{}}
-LANO, Dept.
-{{}}
-of Informatics, King’s College London, UK
-S.
-{{}}
-KOLAHDOUZ-RAHIMI, Dept.
-{{}}
-of Software Engineering, Iran
-S.
-{{}}
-FANG, Dept.
-{{}}
-of Informatics, King’s College London, UK
+
 In this article, we address how the production of model transformations (MT) can be accelerated by automation of transformation synthesis from requirements, examples, and metamodels.
 {{}}
 We introduce a synthesis

@@ -1,8 +1,6 @@
 Testing the Plasticity of Reinforcement Learning-based Systems.
 
-Testing the Plasticity of Reinforcement Learning-based
-Systems
-MATTEO BIAGIOLA and PAOLO TONELLA, Università della Svizzera italiana
+
 The dataset available for pre-release training of a machine-learning based system is often not representative
 of all possible execution contexts that the system will encounter in the field.
 {{}}

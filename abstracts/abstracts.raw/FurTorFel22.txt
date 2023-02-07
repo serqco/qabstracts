@@ -1,16 +1,6 @@
 Applying Bayesian Analysis Guidelines to Empirical Software Engineering Data: The Case of Programming Languages and Code Quality.
 
-Applying Bayesian Analysis Guidelines to Empirical
-Software Engineering Data:
-{{}}
-The Case of Programming
-Languages and Code Quality
-CARLO A.
-{{}}
-FURIA, Software Institute, USI Università della Svizzera italiana, Switzerland
-RICHARD TORKAR, University of Gothenburg, Sweden and Stellenbosch Institute for Advanced Study
-(STIAS), South Africa
-ROBERT FELDT, Chalmers and University of Gothenburg, Sweden
+
 Statistical analysis is the tool of choice to turn data into information and then information into empirical
 knowledge.
 {{}}

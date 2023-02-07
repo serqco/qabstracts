@@ -1,11 +1,6 @@
 An Empirical Study on Data Distribution-Aware Test Selection for Deep Learning Enhancement.
 
-An Empirical Study on Data Distribution-Aware Test
-Selection for Deep Learning Enhancement
-QIANG HU, YUEJUN GUO, and MAXIME CORDY, University of Luxembourg
-XIAOFEI XIE, Singapore Management University
-LEI MA, University of Alberta
-MIKE PAPADAKIS and YVES LE TRAON, University of Luxembourg
+
 Similar to traditional software that is constantly under evolution, deep neural networks need to evolve upon
 the rapid growth of test data for continuous enhancement (e.g., adapting to distribution shift in a new environment for deployment).
 {{}}

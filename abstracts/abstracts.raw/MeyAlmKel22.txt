@@ -1,13 +1,6 @@
 Examining Penetration Tester Behavior in the Collegiate Penetration Testing Competition.
 
-Examining Penetration Tester Behavior in the Collegiate
-Penetration Testing Competition
-BENJAMIN S.
-{{}}
-MEYERS, SULTAN FAHAD ALMASSARI, BRANDON N.
-{{}}
-KELLER, and
-ANDREW MENEELY, Department of Software Engineering, Rochester Institute of Technology, USA
+
 Penetration testing is a key practice toward engineering secure software.
 {{}}
 Malicious actors have many tactics
@@ -27,7 +20,7 @@ We constructed 98
 timelines of vulnerability discovery and exploits for 37 unique vulnerabilities discovered by 10 teams of penetration testers.
 {{}}
 We grouped related vulnerabilities together by mapping to Common Weakness Enumerations
-and MITRE ATT&CK™.
+and MITRE ATT&CK™
 {{}}
 We found that (1) vulnerabilities related to improper resource control (e.g., session
 fixation) are discovered faster and more often, as well as exploited faster, than vulnerabilities related to improper access control (e.g., weak password requirements), (2) there is a clear process followed by penetration

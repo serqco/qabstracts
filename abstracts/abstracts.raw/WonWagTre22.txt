@@ -2,7 +2,7 @@ Self-adaptive systems: A systematic literature review across categories and doma
 
 Context:
 {{}}
-Championed by IBM’s vision of autonomic computing paper in 2003, the autonomic computing
+Championed by IBM's vision of autonomic computing paper in 2003, the autonomic computing
 research field has seen increased research activity over the last 20 years.
 {{}}
 Several conferences (SEAMS, SASO,

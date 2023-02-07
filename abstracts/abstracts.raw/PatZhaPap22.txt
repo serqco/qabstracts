@@ -1,65 +1,30 @@
 SugarC: Scalable Desugaring of Real-World Preprocessor Usage into Pure C.
 
- 2022 IEEE/ACM 44th International Conference on Software Engineering (ICSE)
-4VHBS$ 4DBMBCMF %FTVHBSJOH PG 3FBM8PSME 1SFQSPDFTTPS 6TBHF
-JOUP 1VSF $
-;BDIBSZ 1B॒FSTPO
-य़F 6OJWFSTJUZ PG 5FYBT BU %BMMBT
-64"
-;BDI1BUUFSTPO!VUEBMMBTFEV
-                     4IJZJ 8FJ
-     य़F 6OJWFSTJUZ PG 5FYBT BU %BMMBT
-                  64"
-          TXFJ!VUEBMMBTFEV
-"#453"$5
-7BSJBCJMJUZBXBSF BOBMZTJT JT DSJUJDBM GPS FOTVSJOH UIF RVBMJUZ PG DPO
-੗HVSBCMF $ TPॏXBSF "O JNQPSUBOU TUFQ UPXBSE UIF EFWFMPQNFOU PG
-WBSJBCJMJUZBXBSF BOBMZTJT BU TDBMF JT UP USBOTGPSN SFBMXPSME $ TPॏ
-XBSF UIBU VTFT CPUI $ BOE QSFQSPDFTTPS JOUP QVSF $ DPEF CZ SFQMBD
-JOH UIF QSFQSPDFTTPS‫۝‬T DPNQJMFUJNF WBSJBCJMJUZ XJUI $‫۝‬T SVOUJNF
-WBSJBCJMJUZ *O UIJT XPSL XF EFTJHO BOE JNQMFNFOU B EFTVHBSJOH
-UPPM 4VHBS$ UIBU USBOTGPSNT BXBZ SFBMXPSME QSFQSPDFTTPS VTBHF
-4VHBS$ BVHNFOUT $‫۝‬T GPSNBM HSBNNBS TQFDJ੗DBUJPO XJUI USBOTMB
-UJPO SVMFT QFSGPSNT TJNVMUBOFPVT UZQF DIFDLJOH EVSJOH EFTVHBS
-JOH BOE JOUSPEVDFT OVNFSPVT PQUJNJ[BUJPOT UP BEESFTT DIBMMFOHFT
-UIBU BQQFBS JO SFBMXPSME QSFQSPDFTTPS VTBHF य़F FYQFSJNFOUT PO
-%FTVHBS#FODI B CFODINBSL DPOTJTUJOH PG  NBOVBMMZDSFBUFE
-QSPHSBNT TIPX UIBU 4VHBS$ TVQQPSUT NBOZ NPSF MBOHVBHF GFB
-UVSFT UIBO UXP FYJTUJOH EFTVHBSJOH UPPMT 8IFO BQQMJFE PO UISFF
-SFBMXPSME DPO੗HVSBCMF $ TPॏXBSF 4VHBS$ EFTVHBSFE  PVU PG
- ੗MFT JO UIF UISFF QSPHSBNT UBLJOH BU NPTU UFO NJOVUFT JO UIF
-XPSTU DBTF BOE MFTT UIBO UXP NJOVUFT GPS  PG UIF $ ੗MFT
-$$4 $0/$&154
-‫ ۦ‬4PࢄXBSF BOE JUT FOHJOFFSJOH → 1SFQSPDFTTPST 4PVSDF DPEF
-HFOFSBUJPO 4PࡄXBSF QSPEVDU MJOFT
-,&:803%4
-$ QSFQSPDFTTPS TZOUBYEJSFDUFE USBOTMBUJPO EFTVHBSJOH
-"$.
+
+Variability-aware analysis is critical for ensuring the quality of configurable
+C software.
 {{}}
-3FGFSFODF 'PSNBU
-;BDIBSZ 1B॒FSTPO ;FOPOH ;IBOH #SFOU 1BQQBT 4IJZJ 8FJ BOE 1BVM (B[[
-JMMP  4VHBS$ 4DBMBCMF %FTVHBSJOH PG 3FBM8PSME 1SFQSPDFTTPS 6TBHF
-JOUP 1VSF $ *O UI *OUFSOBUJPOBM $POGFSFODF PO 4PࡄXBSF &OHJOFFSJOH *$4&
-‫ ڣ‬.BZ ‫  ڝ‬1JࡇTCVSHI 1" 64" "$.
+An important step toward the development of
+variability-aware analysis at scale is to transform real-world C software
+that uses both C and preprocessor into pure C code, by replacing
+the preprocessors's compile-time variability with C's runtime-
+variability.
 {{}}
-/FX :PSL /:
+In this work, we design and implement a desugaring
+tool, SugarC, that transforms away real-world preprocessor usage.
 {{}}
-64"  QBHFT
-IUUQTEPJPSH
-1FSNJTTJPO UP NBLF EJHJUBM PS IBSE DPQJFT PG BMM PS QBSU PG UIJT XPSL GPS QFSTPOBM PS
-DMBTTSPPN VTF JT HSBOUFE XJUIPVU GFF QSPWJEFE UIBU DPQJFT BSF OPU NBEF PS EJTUSJCVUFE
-GPS QSP੗U PS DPNNFSDJBM BEWBOUBHF BOE UIBU DPQJFT CFBS UIJT OPUJDF BOE UIF GVMM DJUB
-UJPO PO UIF ੗STU QBHF $PQZSJHIUT GPS DPNQPOFOUT PG UIJT XPSL PXOFE CZ PUIFST UIBO
-"$.
+SugarC augments C's formal grammar specification with translation
+rules, performs simultaneous type checking during desugarting,
+and introduces numerous optimizations to address challenges
+that appear in real-world preprocessor usage.
 {{}}
-NVTU CF IPOPSFE "CTUSBDUJOH XJUI DSFEJU JT QFSNJ॒FE 5P DPQZ PUIFSXJTF PS SF
-QVCMJTI UP QPTU PO TFSWFST PS UP SFEJTUSJCVUF UP MJTUT SFRVJSFT QSJPS TQFDJ੗D QFSNJTTJPO
-BOEPS B GFF 3FRVFTU QFSNJTTJPOT GSPN QFSNJTTJPOT!BDNPSH
-*$4& ‫ ڣ‬.BZ ‫  ڝ‬1JࡇTCVSHI 1" 64"
-i  "TTPDJBUJPO GPS $PNQVUJOH .BDIJOFSZ
-"$.
+The experiments on DesugarBench, a benchmark consisting of 108 manually-created
+programs, show that SugarC supports many more language features
+than two existing desugaring tools.
 {{}}
-*4#/ ۪
-IUUQTEPJPSH
+When applied on three
+real-world configurable C software, SugarC desugared 774 out of
+813 files in the three programs, taking at most ten minutes in the
+worst case and less than two minutes for 95% of the C files.
 {{}}
 ---

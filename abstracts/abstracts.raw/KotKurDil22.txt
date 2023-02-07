@@ -8,8 +8,7 @@ perspective.
 EA is typically defined as a comprehensive blueprint of an organization covering its business, data,
 applications and technology domains and consisting of diverse EA artifacts.
 {{}}
-EA has numerous potential stakeÂ­
-holders and usage scenarios in organizations.
+EA has numerous potential stake­holders and usage scenarios in organizations.
 {{}}
 However, the existing EA literature does not offer any consistent
 theories explaining the practical roles of individual EA artifacts and fails to explain how exactly different types of

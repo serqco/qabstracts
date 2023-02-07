@@ -23,8 +23,8 @@ to strengthen the external validity of the original study.
 The results of our replication confirm that:
 {{}}
 (1) CoGEE outperforms both baseline
-and state-of-the-art benchmarks statistically significantly (p < 0:001); (2) CoGEE’s multi-objective nature makes it able to reach such a
-good performance; (3) CoGEE’s estimation errors lie within claimed industrial human-expert-based thresholds.
+and state-of-the-art benchmarks statistically significantly (p < 0:001); (2) CoGEE's multi-objective nature makes it able to reach such a
+good performance; (3) CoGEE's estimation errors lie within claimed industrial human-expert-based thresholds.
 {{}}
 Moreover, our new
 results show that the effectiveness of CoGEE is generally not limited to nor dependent on the choice of the multi-objective algorithm.

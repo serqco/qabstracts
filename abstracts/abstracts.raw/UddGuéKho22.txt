@@ -1,14 +1,6 @@
 An Empirical Study of the Effectiveness of an Ensemble of Stand-alone Sentiment Detection Tools for Software Engineering Datasets.
 
-An Empirical Study of the Effectiveness of an Ensemble
-of Stand-alone Sentiment Detection Tools for Software
-Engineering Datasets
-GIAS UDDIN, University of Calgary, Canada
-YANN-GAËL GUÉHÉNUC, Concordia University, Canada
-FOUTSE KHOMH, Polytechnique Montréal, Canada
-CHANCHAL K.
-{{}}
-ROY, University of Saskatchewan, Canada
+
 Sentiment analysis in software engineering (SE) has shown promise to analyze and support diverse development activities.
 {{}}
 Recently, several tools are proposed to detect sentiments in software artifacts.

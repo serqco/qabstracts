@@ -1,20 +1,5 @@
 A Tale of Two Cities: Software Developers Working from Home during the COVID-19 Pandemic.
 
-A Tale of Two Cities:
-{{}}
-Software Developers Working from
-Home during the COVID-19 Pandemic
-DENAE FORD, Microsoft Research
-MARGARET-ANNE STOREY, University of Victoria
-THOMAS ZIMMERMANN and CHRISTIAN BIRD, Microsoft Research
-SONIA JAFFE, Microsoft Corp.
-{{}}
-CHANDRA MADDILA and JENNA L.
-{{}}
-BUTLER, Microsoft Research
-BRIAN HOUCK, Microsoft Corp.
-{{}}
-NACHIAPPAN NAGAPPAN, Microsoft Research
 The COVID-19 pandemic has shaken the world to its core and has provoked an overnight exodus of developers who normally worked in an office setting to working from home.
 {{}}
 The magnitude of this shift and the

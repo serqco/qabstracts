@@ -1,13 +1,6 @@
 A Survey of Flaky Tests.
 
-17
-A Survey of Flaky Tests
-OWAIN PARRY, University of Sheffield, UK
-GREGORY M.
-{{}}
-KAPFHAMMER, Allegheny College, USA
-MICHAEL HILTON, Carnegie Mellon University, USA
-PHIL MCMINN, University of Sheffield, UK
+
 Tests that fail inconsistently, without changes to the code under test, are described as flaky.
 {{}}
 Flaky tests do

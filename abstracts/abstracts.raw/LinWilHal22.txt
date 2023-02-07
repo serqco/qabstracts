@@ -23,7 +23,7 @@ Our findings indicate that explanation detail affects what answers
 participants reading a thread select (p<0.01), while answer score and acceptance do not (p>0.05)—the inverse of what research has
 shown for those asking and answering questions.
 {{}}
-The qualitative analysis of participants’ rationale further explains how several
+The qualitative analysis of participants' rationale further explains how several
 cognitive biases underpin these findings.
 {{}}
 Correspondence bias, in particular, plays an important role in instilling readers with a false
@@ -31,7 +31,7 @@ sense of confidence in an answer through the way it looks, regardless of whether
 it.
 {{}}
 As a result, we argue that StackOverflow’s use as a knowledge base by people not actively involved in threads—when there is only
-one-way-communication—may inadvertently contribute to the spread of insecure code, as the community’s voting mechanisms hold
+one-way-communication—may inadvertently contribute to the spread of insecure code, as the community's voting mechanisms hold
 little power to deter them from answers.
 {{}}
 ---

@@ -27,9 +27,7 @@ dependency chain for a specific set of R language source-code files.
 {{}}
 We formulate logistic regression models, where developers’
 software library choices are modeled, to investigate the combination of technological attributes that drive adoption among competing
-data frame (a core concept for a data science languages) implementations in the R language:
-{{}}
-tidy and data.table.
+data frame (a core concept for a data science languages) implementations in the R language: tidy and data.table.
 {{}}
 To describe each
 technology, we quantify key project attributes that might affect adoption (e.g., response times to raised issues, overall deployments,

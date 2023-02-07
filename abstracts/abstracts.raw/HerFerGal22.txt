@@ -1,4 +1,4 @@
-Uniform and scalable sampling of highly configurable systems.
+﻿Uniform and scalable sampling of highly configurable systems.
 
 Many analyses on configurable software systems are intractable when confronted with
 colossal and highly-constrained configuration spaces.
@@ -20,9 +20,7 @@ colossal spaces to show whether the samplers indeed produce uniform samples or n
 This
 paper (i) proposes a new sampler named BDDSampler, (ii) presents a new statistical test
 to verify sampler uniformity, and (iii) reports the evaluation of BDDSampler and five
-other state-of-the-art samplers:
-{{}}
-KUS, QuickSampler, Smarch, Spur, and Unigen2.
+other state-of-the-art samplers: KUS, QuickSampler, Smarch, Spur, and Unigen2.
 {{}}
 Our
 experimental results show only BDDSampler satisfies both scalability and uniformity.

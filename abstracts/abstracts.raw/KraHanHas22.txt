@@ -36,7 +36,7 @@ researchers to replicate or build upon these modes and results.
 {{}}
 Conclusions:
 {{}}
-ExplorViz’s multi-user modes are our approach to enable heterogeneous collaborative software
+ExplorViz's multi-user modes are our approach to enable heterogeneous collaborative software
 visualizations.
 {{}}
 The preliminary results indicate the need for more research regarding effectiveness, usability,

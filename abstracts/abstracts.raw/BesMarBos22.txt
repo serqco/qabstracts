@@ -1,8 +1,5 @@
 The use of incentives to promote technical debt management.
 
-Editor:
-{{}}
-Dr Jeff Carver
 
 Context:
 {{}}
@@ -46,12 +43,5 @@ The result indicates that there is considerable unfulfilled potential to influen
 titioners can further limit and reduce technical debt by adopting a strategy based explicitly on an encouraging
 mindset from managers where they also specifically dedicate time and resources for technical debt remediation
 activities.
-{{}}
-Keywords:
-{{}}
-Technical debt
-Software development
-Software incentive programs
-Empirical study
 {{}}
 ---

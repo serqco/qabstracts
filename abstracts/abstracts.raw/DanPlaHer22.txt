@@ -1,4 +1,4 @@
-Identifying Challenges for OSS Vulnerability Scanners - A Study &amp; Test Suite.
+﻿Identifying Challenges for OSS Vulnerability Scanners - A Study & Test Suite.
 
 The use of vulnerable open-source dependencies is a known problem in today’s software development.
 {{}}

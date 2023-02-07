@@ -1,12 +1,6 @@
-Using Personality Detection Tools for Software Engineering Research: How Far Can We Go?
+﻿Using Personality Detection Tools for Software Engineering Research: How Far Can We Go?
 
-42
-Using Personality Detection Tools for Software Engineering
-Research:
-{{}}
-How Far Can We Go?
-{{}}
-FABIO CALEFATO and FILIPPO LANUBILE, University of Bari
+
 Assessing the personality of software engineers may help to match individual traits with the characteristics
 of development activities such as code review and testing, as well as support managers in team composition.
 {{}}

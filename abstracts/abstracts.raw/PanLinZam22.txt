@@ -1,11 +1,8 @@
-Why Do Developers Reject Refactorings in Open-Source Projects?
+﻿Why Do Developers Reject Refactorings in Open-Source Projects?
 
 Why Do Developers Reject Refactorings
 in Open-Source Projects?
 {{}}
-JEVGENIJA PANTIUCHINA and BIN LIN, Software Institute, Università della Svizzera italiana
-FIORELLA ZAMPETTI and MASSIMILIANO DI PENTA, University of Sannio
-MICHELE LANZA and GABRIELE BAVOTA, Software Institute, Università della Svizzera italiana
 Refactoring operations are behavior-preserving changes aimed at improving source code quality.
 {{}}
 While refactoring is largely considered a good practice, refactoring proposals in pull requests are often rejected after the

@@ -3,7 +3,7 @@ Code Comprehension Confounders: A Study of Intelligence and Personality.
 Program comprehension is a cognitive psychological process.
 {{}}
 Accordingly, literature and intuition suggest that a
-developer’s intelligence and personality have an impact on their performance in comprehending source code.
+developer's intelligence and personality have an impact on their performance in comprehending source code.
 {{}}
 Some researchers have
 made this suggestion in the past when discussing threats to validity of their study results.

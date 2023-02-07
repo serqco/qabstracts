@@ -1,14 +1,5 @@
-An Empirical Study of Release Note Production and Usage in Practice.
+﻿Accessibility in Software Practice: A Practitioner’s Perspective
 
-Accessibility in Software Practice:
-{{}}
-A Practitioner’s
-Perspective
-TINGTING BI and XIN XIA, The Faculty of Information Technology, Monash University,
-Melbourne, Australia
-DAVID LO, The School of Information Systems, Singapore Management University, Singapore
-JOHN GRUNDY, The Faculty of Information Technology, Monash University, Melbourne, Australia
-THOMAS ZIMMERMANN and DENAE FORD, Microsoft Research, Redmond, WA, USA
 Being able to access software in daily life is vital for everyone, and thus accessibility is a fundamental challenge for software development.
 {{}}
 However, given the number of accessibility issues reported by many users,

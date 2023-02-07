@@ -1,9 +1,6 @@
 Feature Matching-based Approaches to Improve the Robustness of Android Visual GUI Testing.
 
-Feature Matching-based Approaches to Improve the
-Robustness of Android Visual GUI Testing
-LUCA ARDITO, ANDREA BOTTINO, RICCARDO COPPOLA, FABRIZIO LAMBERTI,
-FRANCESCO MANIGRASSO, LIA MORRA, and MARCO TORCHIANO, Politecnico di Torino
+
 In automated Visual GUI Testing (VGT) for Android devices, the available tools often suffer from low robustness to mobile fragmentation, leading to incorrect results when running the same tests on different devices.
 {{}}
 To soften these issues, we evaluate two feature matching-based approaches for widget detection in VGT

@@ -35,7 +35,7 @@ The code lines at the top of the list are considered as potential defect locatio
 {{}}
 Our tool can
 assist developers efficiently check buggy lines at an early stage, which is able to reduce the risk of introducing bugs in time and improve
-the developers’ confidence in the reliability of their software.
+the developers' confidence in the reliability of their software.
 {{}}
 We conducted an extensive experiment on 14 open source Java projects
 with a total of 11,615 buggy changes.

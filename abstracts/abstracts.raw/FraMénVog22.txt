@@ -33,7 +33,7 @@ The practitioners rated RE research as essential or worthwhile in a majority of 
 However, the percentage of non-positive ratings is still higher than we would like.
 {{}}
 Among the factors that affect the perception of
-relevance are the research’s links to industry, the research method used, and respondents’ roles.
+relevance are the research's links to industry, the research method used, and respondents' roles.
 {{}}
 The reasons for positive perceptions
 were primarily related to the relevance of the problem and the soundness of the solution, while the causes for negative perceptions

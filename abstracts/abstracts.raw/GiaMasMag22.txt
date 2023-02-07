@@ -1,10 +1,6 @@
 Monitoring Constraints and Metaconstraints with Temporal Logics on Finite Traces.
 
-Monitoring Constraints and Metaconstraints with Temporal
-Logics on Finite Traces
-GIUSEPPE DE GIACOMO, Sapienza University of Rome, Italy
-RICCARDO DE MASELLIS, Uppsala University, Sweden
-FABRIZIO MARIA MAGGI and MARCO MONTALI, Free University of Bozen-Bolzano, Italy
+
 Runtime monitoring is a central operational decision support task in business process management.
 {{}}
 It helps

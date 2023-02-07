@@ -1,4 +1,4 @@
-Why secret detection tools are not enough: It&apos;s not just about false positives - An industrial case study.
+Why secret detection tools are not enough: It's not just about false positives - An industrial case study.
 
 Checked-in secrets in version-controlled software projects pose security risks to software
 and services.

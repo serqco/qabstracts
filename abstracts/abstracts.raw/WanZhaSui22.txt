@@ -25,7 +25,7 @@ Such features, along
 with plain code sequences, are injected into a deep reinforcement learning (DRL) framework (e.g., actor-critic network) for comment
 generation.
 {{}}
-Our approach assigns weights (pays “attention”) to tokens and statements when constructing the code representation to
+Our approach assigns weights (pays "attention"�) to tokens and statements when constructing the code representation to
 reflect the hierarchical code structure under different contexts regarding code features (e.g., control flows and abstract syntax trees).
 {{}}
 Our reinforcement learning mechanism further strengthens the prediction results through the actor network and the critic network,

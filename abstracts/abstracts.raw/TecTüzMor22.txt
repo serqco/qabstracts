@@ -9,7 +9,7 @@ Most
 task assignment techniques in the literature build and evaluate their models based on datasets collected from
 real projects.
 {{}}
-The techniques invariably presume that these datasets reliably represent the ‘‘ground truth’’.
+The techniques invariably presume that these datasets reliably represent the "ground truth".
 {{}}
 In
 a project dataset used to build an automated task assignment system, the recommended assignee for the task
@@ -28,7 +28,7 @@ Method:
 {{}}
 We devised a debiasing method to detect potentially problematic samples in task assignment datasets.
 {{}}
-We then evaluated the method’s impact on the performance of seven task assignment techniques by comparing
+We then evaluated the method's impact on the performance of seven task assignment techniques by comparing
 the Mean Reciprocal Rank (MRR) scores before and after debiasing.
 {{}}
 We used two different task assignment
