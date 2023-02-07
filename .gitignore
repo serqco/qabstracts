@@ -1,7 +1,9 @@
 #--- our stuff:
 *~
+img/
 prestudy/pdf/
 prestudy/testdata.git
+results/
 volumes/*/*.pdf
 volumes/log/
 .RData
