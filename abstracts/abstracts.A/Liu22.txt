@@ -1,28 +1,28 @@
 ﻿All in One: Design, Verification, and Implementation of SNOW-optimal Read Atomic Transactions.
 
 Distributed read atomic transactions are important building blocks of modern cloud databases that magnificently bridge the gap between data availability and strong data consistency.
-{{}}
+{{background}}
 The performance of their transactional reads is particularly critical to the overall system performance, as many real-world database workloads
 are dominated by reads.
-{{}}
+{{background}}
 Following the SNOW design principle for optimal reads, we develop LORA, a novel
 SNOW-optimal algorithm for distributed read atomic transactions.
-{{}}
+{{objective}}
 LORA completes its reads in exactly one
 round trip, even in the presence of conflicting writes, without imposing additional overhead to the communication, and it outperforms the state-of-the-art read atomic algorithms.
-{{}}
+{{design}}
 To guide LORA’s development, we present a rewriting-logic-based framework and toolkit for design, verification, implementation, and evaluation of distributed databases.
-{{}}
+{{design}}
 Within the framework, we formalize LORA
 and mathematically prove its data consistency guarantees.
-{{}}
+{{design}}
 We also apply automatic model checking and statistical verification to validate our proofs and to estimate LORA’s performance.
-{{}}
+{{design,method}}
 We additionally generate
 from the formal model a correct-by-construction distributed implementation for testing and performance
 evaluation under realistic deployments.
-{{}}
+{{design,method}}
 Our design-level and implementation-based experimental results are
 consistent, which together demonstrate LORA’s promising data consistency and performance achievement.
-{{}}
+{{result:i2}}
 ---

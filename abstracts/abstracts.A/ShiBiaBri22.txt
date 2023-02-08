@@ -2,29 +2,31 @@ PRINS: scalable model inference for component-based system logs.
 
 Behavioral software models play a key role in many software engineering tasks; unfortunately, these models either are not available during software development or, if available,
 quickly become outdated as implementations evolve.
-{{}}
+{{background}}
 Model inference techniques have been
 proposed as a viable solution to extract finite state models from execution logs.
-{{}}
+{{background}}
 However,
 existing techniques do not scale well when processing very large logs that can be commonly
 found in practice.
-{{}}
+{{background}}
 In this paper, we address the scalability problem of inferring the model of
 a component-based system from large system logs, without requiring any extra information.
-{{}}
+{{objective:i1}}
 Our model inference technique, called PRINS, follows a divide-and-conquer approach.
-{{}}
+{{design}}
 The
 idea is to first infer a model of each system component from the corresponding logs; then,
 the individual component models are merged together taking into account the flow of events
 across components, as reflected in the logs.
-{{}}
+{{design}}
 We evaluated PRINS in terms of scalability and
 accuracy, using nine datasets composed of logs extracted from publicly available benchmarks and a personal computer running desktop business applications.
-{{}}
+{{method}}
 The results show
 that PRINS can process large logs much faster than a publicly available and well-known
 state-of-the-art tool, without significantly compromising the accuracy of inferred models.
-{{}}
+{{result:i3}}
 ---
+result:i3 missing information for 'faster' (number), compared tool (name), 
+accuracy loss (number).
