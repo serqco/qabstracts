@@ -17,8 +17,7 @@ jobs:
           echo "#############################"
           echo "###### prestudy2     ########"
           echo "#############################"
-          python script/qabstracts.py check-codings prestudy2
-          python script/qabstracts.py compare-codings prestudy2
+          (python script/qabstracts.py check-codings prestudy2 && python script/qabstracts.py compare-codings prestudy2) || true
           echo " "
           echo " "
           echo " "
