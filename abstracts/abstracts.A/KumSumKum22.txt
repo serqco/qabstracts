@@ -1,64 +1,64 @@
 Predicting reliability of software in industrial systems using a Petri net based approach: A case study on a safety system used in nuclear power plant.
 
 Context:
-{{}}
+{{h-background}}
 Software reliability prediction in the early stages of development can be propitious in many ways.
-{{}}
+{{background}}
 The
 combinatorial models used to predict reliability using architectures such as fault trees, binary decision diagrams,
 etc.
-{{}}
+{{background}}
 have limitations in modeling complex system behavior.
-{{}}
+{{background}}
 On the other hand, state-based models such as
 Markov chains suffer from the state-space explosion problem, and they need transition probability among
 different system states to measure reliability.
-{{}}
+{{background}}
 These probabilities are usually assumed or are obtained from the
 operational profile for which the system should be used in the field.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 The objective of this paper is to present a method for predicting the reliability of software in industrial
 systems using a generalized stochastic Petri nets based approach.
-{{}}
+{{objective}}
 The key idea is to violate the assumption of
 state transition probabilities in the Markov chain.
-{{}}
+{{objective:u1}}
 The state transition probabilities are calculated using Petri net
 transitions' throughput by performing stationary analysis under the consideration to identify and handle dead
 markings in the Petri net.
-{{}}
+{{objective:u1}}
 Method:
-{{}}
+{{h-method}}
 Initially, a generalized stochastic Petri net of the system under consideration is generated from the
 standard system's specification.
-{{}}
+{{design}}
 Thereafter, dead markings are identified in the Petri net which are further
 removed to perform steady-state analysis.
-{{}}
+{{design}}
 At last, a Markov model is generated based on the reachability graph of
 the Petri net, which is further used to predict the system reliability.
-{{}}
+{{design}}
 Results:
-{{}}
+{{h-result}}
 The presented method has been applied to a safety-critical system, Shut Down System-1, of a nuclear
 power plant, which is operational in the Canada Deuterium Uranium reactor.
-{{}}
+{{method}}
 The predicted reliability of the
 system using this method is 99.99966% which has been validated using the specified system requirements.
-{{}}
+{{result:u1}}
 To
 further validate and generalize the results, sensitivity analysis is performed by varying different system
 parameters.
-{{}}
+{{method}}
 Conclusions:
-{{}}
+{{h-conclusion}}
 The method discussed in this paper presents a step of performing structural analysis on the Petri net
 of the system under consideration to identify and handle dead markings on the Petri net.
-{{}}
+{{method}}
 It further handles the
 issue of assuming transition probabilities among the system states by calculating them using Petri net transitions’
 throughput.
-{{}}
+{{method}}
 ---
