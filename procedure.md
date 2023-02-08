@@ -56,6 +56,8 @@ changed: Lutz Prechelt, 2022-10-04
 This is the prestudy version of the description.
 The final version will talk of `abstracts/` instead of `prestudy2/`.
 
+Long version for learning:
+
 1. `git pull`
 2. Edit `prestudy2/sample-who-what.txt`.
    Find the first block B that has an empty column C and that you have not yet worked on.
@@ -63,7 +65,7 @@ The final version will talk of `abstracts/` instead of `prestudy2/`.
    e.g. `-Lutz`. This reserves those files for you to annotate so that nobody else works on them.
 3. `git add prestudy2/sample-who-what.txt; git commit -m"<firstname> will code block <B> <C>"; git push`    
    For instance, if you are Lutz and you picked column `abstracts.A` in block 3, 
-   the commit message is "Lutz will code block 3 A".  
+   the commit message is **"Lutz will code block 3 A"**.  
    Make sure the pull and the push are no more than 3 minutes apart so that it becomes
    unlikely that your edit conflicts with somebody else's.
 4. For each abstracts file in your block (e.g. `prestudy2/abstracts.A/AbcDefGhi21.txt`):
@@ -85,10 +87,18 @@ The final version will talk of `abstracts/` instead of `prestudy2/`.
 7. Edit `prestudy2/sample-who-what.txt` and remove the dashes you inserted in step 2,
    leaving your name only. This reports that the annotations of those files are done.
 8. `git add prestudy2/sample-who-what.txt; git commit -m"<firstname> has coded block <B> <C>"`
+   (e.g. **"Lutz has coded block 3 A"**)
 9. Make sure you got the commit message right.
    Use `git commit --amend -m"<firstname> has coded block <B> <C>"` if not.
 10. `git push`  
     (Took a while? Yes. But the next block will be so much quicker!)
+
+Short version as a memory aid after learning:
+
+- reserve a block in 'sample-who-what.txt'; commit (e.g. **"Lutz will code block 3 A"**); push
+- code the abstracts
+- possibly run 'check-codings' and 'compare-codings'
+- adjust 'sample-who-what.txt'; commit it and all abstracts (e.g. **"Lutz has coded block 3 A"**); push
 
 
 ## 4. Evaluators: Questions to answer
