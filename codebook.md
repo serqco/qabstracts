@@ -90,6 +90,8 @@ The above list sketches the default structure of a structured abstract.
 
 - code `claim:iu`:  
   A non-empirical would-be result statement.
+  In the article itself, the statement may have empirical backing, but in the abstract
+  we cannot see which or where it may stem from.
   If position and phrasing allow it to be considered `background`, `objective`, or `conclusion`, use these.
 - code `futurework`:  
   information about suggested future research.
