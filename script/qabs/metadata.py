@@ -142,6 +142,8 @@ class WhoWhat:
         """
         Generator for pairs A/B, A/C, A/D etc. (whether reservation or not).
         """
+        if len(columns) == 0:
+            return  # there are zero pairs
         coder_A = columns[0]
         file_of_A = self._implied_filename(citekey, 0)
         for index, coder in enumerate(columns[1:]):
