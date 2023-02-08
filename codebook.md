@@ -262,7 +262,7 @@ Typical cases:
 
 ### 4.2 Understandability gaps: `u`
 
-The of spots in the abstract I have found where I feel that the abstract 
+The spots in the abstract I have found where I feel that the abstract 
 is ambiguous ("I wonder whether this means A or B") or downright unclear ("Huh?").
 
 Typical cases:
