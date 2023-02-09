@@ -1,53 +1,55 @@
 Locality-based security bug report identification via active learning.
 
 Context:
-{{}}
+{{h-background}}
 Security bug report (SBR) identification is a crucial way to eliminate security-critical vulnerabilities
 during software development.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 In recent years, many approaches have utilized supervised machine learning (SML) techniques in
 the SBR identification.
-{{}}
+{{background}}
 However, such approaches often require a large number of labelled bug reports, which
 are often hard to obtain in practice.
-{{}}
+{{background}}
 Active learning is a potential approach to reducing the manual labelling
 cost while maintaining good performance.
-{{}}
+{{background}}
 Nevertheless, the existing active learning-based SBR identification
 approach still yields poor performance due to ignoring the locality in bug reports.
-{{}}
+{{background}}
 Method:
-{{}}
+{{h-method}}
 To address the above problems, we propose locality-based SBR identification via active learning.
-{{}}
+{{objective}}
 Our approach recommends a small part of instances based on locality in bug reports, asks for their labels, and
 learns the SBR classifier.
-{{}}
+{{design}}
 Specifically, our approach relies on the locality to construct the initial training set,
 which is designed to address how to start during active learning.
-{{}}
+{{design}}
 Moreover, our approach applies the locality
 into the query process, which is designed to improve which instance should be queried next during active
 learning.
-{{}}
+{{design}}
 Result:
-{{}}
+{{h-result}}
 We conduct experiments on large-scale bug reports (nearly 125K) from six real-world projects.
-{{}}
+{{method}}
 In
 comparison with three state-of-the-art SML-based and active learning-based SBR identification approaches, our
 approach can obtain the maximum values of F-Measure (0.8176) and AUC (0.8631).
-{{}}
+{{result}}
 Moreover, our approach
 requires 16.60% to 71.40% of all bug reports when achieving the optimal performance in these six projects,
 which improves three approaches from 9.82% to 64.19% on average.
-{{}}
+{{result}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 As shown from the experimental results, our approach can be more effective and efficient to
 identify SBRs than the existing approaches.
-{{}}
+{{conclusion}}
 ---
+wrong h-objective followed by background, and h-result followed by method 
+(bad fit of structured abstract format with design article) 

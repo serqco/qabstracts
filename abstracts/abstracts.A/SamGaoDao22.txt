@@ -3,45 +3,45 @@ JuCify: A Step Towards Android Code Unification for Enhanced Static Analysis.
 Native code is now commonplace within Android app packages
 where it co-exists and interacts with Dex bytecode through the Java
 Native Interface to deliver rich app functionalities.
-{{}}
+{{background}}
 Yet, state-of-the-
 art static analysis approaches have mostly overlooked the presence
 of such native code, which, however, may implement some key sen-
 sitive, or even malicious, parts of the app behavior.
-{{}}
+{{background}}
 This limitation
 of the state of the art is a severe threat to validity in a large range of
 static analyses that do not have a complete view of the executable
 code in apps.
-{{}}
+{{background}}
 To address this issue, we propose a new advance in
 the ambitious research direction of building a unified model of all
 code in Android apps.
-{{}}
+{{objective,-hype}}
 The JuCify approach presented in this paper
 is a significant step towards such a model, where we extract and
 merge call graphs of native code and bytecode to make the final
 model readily-usable by a common Android analysis framework:
-{{}}
+{{design,objective}}
 in our implementation, JuCify builds on the Soot internal inter-
 mediate representation.
-{{}}
+{{design}}
 We performed empirical investigations to
 highlight how, without the unified model, a significant amount
-of Java methods called from the native code are "unreachable"ù in
+of Java methods called from the native code are "unreachable"ÔøΩ in
 apps' call-graphs, both in goodware and malware.
-{{}}
+{{a-method,result:i1}}
 Using JuCify, we
 were able to enable static analyzers to reveal cases where malware
 relied on native code to hide invocation of payment library code
 or of other sensitive code in the Android framework.
-{{}}
+{{result:i3}}
 Additionally,
 JuCify's model enables state-of-the-art tools to achieve better preci-
 sion and recall in detecting data leaks through native code.
-{{}}
+{{result:i2}}
 Finally,
 we show that by using JuCify we can find sensitive data leaks that
 pass through native code.
-{{}}
+{{result}}
 ---

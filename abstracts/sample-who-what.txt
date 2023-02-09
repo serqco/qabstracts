@@ -18,14 +18,14 @@ ShiBiaBri22   Lutz
 MenCla22      Lutz
 XueZhoLuo22   Lutz
 #----- Block 3
-QiuGaoXia22   -Lutz
-GeFanQia22    -Lutz
-CheHuWei22    -Lutz
-TsaBraHir22   -Lutz
-YanZhaPan22   -Lutz
-XiaHeXu22     -Lutz
-ZhoZhaShe22   -Lutz
-SamGaoDao22   -Lutz
+QiuGaoXia22   Lutz
+GeFanQia22    Lutz
+CheHuWei22    Lutz
+TsaBraHir22   Lutz
+YanZhaPan22   Lutz
+XiaHeXu22     Lutz
+ZhoZhaShe22   Lutz
+SamGaoDao22   Lutz
 #----- Block 4
 XieLeiYan22   
 YanXiaFan22   
