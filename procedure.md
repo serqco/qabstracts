@@ -1,7 +1,7 @@
 # Overall procedure for executing the 'qabstracts' study
 
 created: Lutz Prechelt, 2022-09-21  
-changed: Lutz Prechelt, 2022-10-04 
+changed: Lutz Prechelt, 2023-02-09
 
 
 ## 1. Overall procedure
@@ -90,12 +90,13 @@ Long version for learning:
    (e.g. **"Lutz has coded block 3 A"**)
 9. Make sure you got the commit message right.
    Use `git commit --amend -m"<firstname> has coded block <B> <C>"` if not.
-10. `git push`  
+10. `git push` 
+    In case of conflicts, do `git pull --rebase`, then repeat the push.  
     (Took a while? Yes. But the next block will be so much quicker!)
 
 Short version as a memory aid after learning:
 
-- reserve a block in 'sample-who-what.txt'; commit (e.g. **"Lutz will code block 3 A"**); push
+- pull; reserve a block in 'sample-who-what.txt'; commit (e.g. **"Lutz will code block 3 A"**); push
 - code the abstracts
 - possibly run 'check-codings' and 'compare-codings'
 - adjust 'sample-who-what.txt'; commit it and all abstracts (e.g. **"Lutz has coded block 3 A"**); push
