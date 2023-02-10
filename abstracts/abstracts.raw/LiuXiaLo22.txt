@@ -1,7 +1,4 @@
-Broken External Links on Stack Overflow.
-
-CodeMatcher: Searching Code Based on Sequential
-Semantics of Important Query Words
+CodeMatcher: Searching Code Based on Sequential Semantics of Important Query Words.
 
 To accelerate software development, developers frequently search and reuse existing code snippets from a
 large-scale codebase, e.g., GitHub.
