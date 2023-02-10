@@ -2,26 +2,26 @@ Change-Patterns Mapping: A Boosting Way for Change Impact Analysis.
 
 Change impact analysis (CIA) is a specialized process of program comprehension that investigates the ripple effects of a
 code change in a software system.
-{{}}
+{{background}}
 In this paper, we present a boosting way for change impact analysis via mapping the historical
 change-patterns to current CIA task in a cross-project scenario.
-{{}}
+{{objective,design}}
 The change-patterns reflect the coupling dependencies between
 changed entities in a change set.
-{{}}
+{{design}}
 A traditional CIA tool (such as ImpactMiner) outputs an initial impact set for a starting entity.
-{{}}
+{{design}}
 To boost
 the traditional CIA tool, our approach retrieves an equivalent entity from various historical change sets for the starting entity.
-{{}}
+{{design}}
 Then, the
 change-patterns between the equivalent entity and the rest of entities in the change set are mapped to the CIA task at hand.
-{{}}
+{{design}}
 For current
 CIA task, if an entity in the initial impact set involves the similar change-pattern with the starting entity when comparing with the mapped
 change-pattern, we will reward the impacted confidence of the entity.
-{{}}
+{{design}}
 Accuracy improvements are observed in the experiments when
 applying our boosting method to three famous CIA tools, i.e., ImpactMiner, JRipples and ROSE.
-{{}}
+{{result:i1u1,method}}
 ---

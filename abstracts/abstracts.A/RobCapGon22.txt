@@ -1,29 +1,29 @@
 Development effort estimation in free/open source software from activity in version control systems.
 
 Effort estimation models are a fundamental tool in software management, and used as a forecast for resources, constraints and costs associated to software development.
-{{}}
+{{background}}
 For Free/Open
 Source Software (FOSS) projects, effort estimation is especially complex:
-{{}}
+{{background}}
 professional
 developers work alongside occasional, volunteer developers, so the overall effort (in personmonths) becomes non-trivial to determine.
-{{}}
+{{background}}
 The objective of this work it to develop a simple
 effort estimation model for FOSS projects, based on the historic data of developers’ effort.
-{{}}
+{{objective}}
 The model is fed with direct developer feedback to ensure its accuracy.
-{{}}
+{{design}}
 After extracting
 the personal development profiles of several thousands of developers from 6 large FOSS
 projects, we asked them to fill in a questionnaire to determine if they should be considered
 as full-time developers in the project that they work in.
-{{}}
+{{design}}
 Their feedback was used to finetune the value of an effort threshold, above which developers can be considered as full-time.
-{{}}
+{{design}}
 With the help of the over 1,000 questionnaires received, we were able to determine, for
 every project in our sample, the threshold of commits that separates full-time from non-fulltime developers.
-{{}}
+{{design:u1,a-result}}
 We finally offer guidelines and a tool to apply our model to FOSS projects
 that use a version control system.
-{{}}
+{{design}}
 ---

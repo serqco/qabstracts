@@ -2,45 +2,50 @@ Retrieving Data Constraint Implementations Using Fine-Grained Code Patterns.
 
 Business rules are an important part of the requirements of soft-
 ware systems that are meant to support an organization.
-{{}}
+{{background}}
 These rules
 describe the operations, definitions, and constraints that apply to
 the organization.
-{{}}
+{{background}}
 Within the software system, business rules are
 often translated into constraints on the values that are required or
 allowed for data, called data constraints.
-{{}}
+{{background}}
 Business rules are subject
 to frequent changes, which in turn require changes to the corre-
 sponding data constraints in the software.
-{{}}
+{{background}}
 The ability to efficiently
 and precisely identify where data constraints are implemented in
 the source code is essential for performing such necessary changes.
-{{}}
+{{background}}
 In this paper, we introduce Lasso, the first technique that au-
 tomatically retrieves the method and line of code where a given
 data constraint is enforced.
-{{}}
+{{objective}}
 Lasso is based on traceability link re-
 covery approaches and leverages results from recent research that
 identified line-of-code level implementation patterns for data con-
 straints.
-{{}}
+{{design}}
 We implement three versions of Lasso that can retrieve
 data constraint implementations when they are implemented with
 any one of 13 frequently occurring patterns.
-{{}}
+{{design:i1}}
 We evaluate the three
 versions on a set of 299 data constraints from 15 real-world Java
 systems, and find that they improve method-level link recovery
 by 30%, 70%, and 163%, in terms of true positives within the first
 10 results, compared to their text-retrieval-based baseline.
-{{}}
+{{method,result}}
 More
 importantly, the Lasso variants correctly identify the line of code
 implementing the constraint inside the methods for 68% of the 299
 constraints.
-{{}}
+{{result}}
 ---
+Information-rich method/result sentence: 
+We evaluate the three versions on a set of 299 data constraints from 15 real-world Java
+systems, and find that they improve method-level link recovery
+by 30%, 70%, and 163%, in terms of true positives within the first
+10 results, compared to their text-retrieval-based baseline.

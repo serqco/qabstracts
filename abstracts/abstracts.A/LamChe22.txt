@@ -1,31 +1,31 @@
 Understanding and supporting the design systems practice.
 
 Design systems represent a user interaction design and development approach that is currently of avid interest in the industry.
-{{}}
+{{background}}
 However, little research work has been done to
 synthesize knowledge related to design systems in order to inform the design of tools to
 support their creation, maintenance, and usage practices.
-{{}}
+{{background}}
 This paper represents an important
 step in which we explored the issues that design system projects usually deal with and the
 perceptions and values of design system project leaders.
-{{}}
+{{objective,-hype}}
 Through this exploration, we aim
 to investigate the needs for tools that support the design system approach.
-{{}}
+{{objective}}
 We found that
 the open source communities around design systems focused on discussing issues related
 to behaviors of user interface components of design systems.
-{{}}
+{{result}}
 At the same time, leaders of
 design system projects faced considerable challenges when evolving their design systems
 to make them both capable of capturing stable design knowledge and flexible to the needs
 of the various concrete products.
-{{}}
+{{result}}
 They valued a bottom-up approach for design system creation and maintenance, in which components are elevated and merged from the evolving
 products.
-{{}}
+{{result}}
 Our findings synthesize the knowledge and lay foundations for designing techniques and tools aimed at supporting the design system practice and related modern user
 interaction design and development approaches.
-{{}}
+{{conclusion}}
 ---

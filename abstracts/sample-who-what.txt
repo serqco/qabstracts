@@ -27,14 +27,14 @@ XiaHeXu22     Lutz
 ZhoZhaShe22   Lutz
 SamGaoDao22   Lutz
 #----- Block 4
-XieLeiYan22   -Lutz
-YanXiaFan22   -Lutz
-WatCooNad22   -Lutz
-RobCapGon22   -Lutz
-LamChe22      -Lutz
-HuaJiaLuo22   -Lutz
-FloPerWei22   -Lutz
-RonWanMan22   -Lutz
+XieLeiYan22   Lutz
+YanXiaFan22   Lutz
+WatCooNad22   Lutz
+RobCapGon22   Lutz
+LamChe22      Lutz
+HuaJiaLuo22   Lutz
+FloPerWei22   Lutz
+RonWanMan22   Lutz
 #----- Block 5
 KotKurDil22   
 GalEwaJun22   

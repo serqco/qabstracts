@@ -1,25 +1,26 @@
 A Systematic Literature Review on the Use of Deep Learning in Software Engineering Research.
 
 An increasingly popular set of techniques adopted by software engineering (SE) researchers to automate development tasks are those rooted in the concept of Deep Learning (DL).
-{{}}
+{{background}}
 The popularity of such techniques
 largely stems from their automated feature engineering capabilities, which aid in modeling software artifacts.
-{{}}
+{{background}}
 However, due to the rapid pace at which DL techniques have been adopted, it is difficult to distill the current
 successes, failures, and opportunities of the current research landscape.
-{{}}
+{{background}}
 In an effort to bring clarity to this
 cross-cutting area of work, from its modern inception to the present, this article presents a systematic literature review of research at the intersection of SE & DL.
-{{}}
+{{objective}}
 The review canvasses work appearing in the most
 prominent SE and DL conferences and journals and spans 128 papers across 23 unique SE tasks.
-{{}}
+{{method:i1}}
 We center
 our analysis around the components of learning, a set of principles that governs the application of machine
 learning techniques (ML) to a given problem domain, discussing several aspects of the surveyed work at a
 granular level.
-{{}}
+{{method}}
 The end result of our analysis is a research roadmap that both delineates the foundations of
 DL techniques applied to SE research and highlights likely areas of fertile exploration for the future.
-{{}}
+{{a-result}}
 ---
+a-result is excusable for this type of study
