@@ -1,57 +1,59 @@
 iContractML 2.0: A domain-specific language for modeling and deploying smart contracts onto multiple blockchain platforms.
 
 Context:
-{{}}
+{{h-background}}
 Smart contracts play a vital role in many fields.
-{{}}
+{{background}}
 Despite being called smart, the development of
 smart contracts is a tedious task beyond defining a set of contractual rules.
-{{}}
+{{background}}
 In addition to business knowledge,
 coding a smart contract requires strong technical knowledge in a multiplex of new and rapidly changing
 domain-specific languages and blockchain platforms.
-{{}}
+{{background}}
 Objectives:
-{{}}
+{{h-objective}}
 The goal of this paper is to assist developers in building smart contracts independently from
 the language or the target blockchain platform.
-{{}}
+{{objective}}
 In which, we present our second-generation smart contract
 language iContractML 2.0.
-{{}}
+{{objective}}
 Methods:
-{{}}
+{{h-method}}
 We follow a feature-oriented approach to analyze three different blockchain platforms and propose
 an enhanced reference model and a modeling framework for smart contracts (iContractML 2.0).
-{{}}
+{{design}}
 Then, we
 evaluate the coverage and extensibility of iContractML 2.0, first through mapping the concepts of the reference
 models to the constructs within each of the platforms used in devising the reference model, and second through
 mapping its concepts to a new smart contract language not previously considered.
-{{}}
+{{method,design}}
 Finally, we demonstrate the
 capabilities of iContractML 2.0 using five case studies from different business domains.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 iContractML 2.0 extends our first generation language to support DAML, which is another standardized language for smart contracts.
-{{}}
+{{design}}
 This makes iContractML 2.0 supports the platforms that DAML support by
 extension.
-{{}}
+{{design}}
 Moreover, iContractML 2.0 supports generating the structural and deployment artifacts in addition
 to the smart contract behavior by implementing templates for some of the common functions.
-{{}}
+{{design}}
 The results
 of evaluating the generality of the iContractML 2.0 reference model show that it is 91.7% lucid and 72.2%
 laconic.
-{{}}
+{{result}}
 Moreover, the reference model is able to capture all the elements of the new language with 83.3% of
 the components which have a direct one-to-one mapping.
-{{}}
+{{result}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 iContractML 2.0 is an extensible framework that empowers developers to model and generate
 functional smart contract code that can be deployed onto multiple blockchain platforms.
-{{}}
+{{conclusion}}
 ---
+Good example how design articles do not fit well into the standard structured abstract format:
+Lots of design explanation in the results part.
