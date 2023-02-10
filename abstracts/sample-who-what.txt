@@ -36,14 +36,14 @@ HuaJiaLuo22   Lutz
 FloPerWei22   Lutz
 RonWanMan22   Lutz
 #----- Block 5
-KotKurDil22   
-GalEwaJun22   
-IzaGisGou22   
-LiuXiaLo22   
-MarBogFra22   
-BalRal22   
-JiaLiuJin22   
-HamMetQas22   
+KotKurDil22   -Lutz
+GalEwaJun22   -Lutz
+IzaGisGou22   -Lutz
+LiuXiaLo22    -Lutz
+MarBogFra22   -Lutz
+BalRal22      -Lutz
+JiaLiuJin22   -Lutz
+HamMetQas22   -Lutz
 #----- Block 6
 HorCorFue22   
 GonRajHas22   
