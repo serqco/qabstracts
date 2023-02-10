@@ -98,8 +98,8 @@ The above list sketches the default structure of a structured abstract.
 - code `limitation`:  
   information about limitations, threats to validity, and the like
   of the study or its results.
-- code `resourcepointer`:  
-  A concrete reference to a concrete external resource such as 
+- code `resourcepointer:iu`:  
+  A reference to a concrete external resource such as 
   a software artifact, materials package, data package, appendix,
   or similar item.
 
