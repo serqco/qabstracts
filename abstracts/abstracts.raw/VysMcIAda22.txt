@@ -17,7 +17,7 @@ As a concrete instance of this, we posit in this paper that program elements tha
 covered by flaky tests, i.e., tests with non-deterministic behaviour, are also worthy of investment of additional testing effort.
 {{}}
 In this paper,
-we set out to quantify, characterize, and mitigate "flakily covered"� program elements (i.e., those elements that are only covered by flaky
+we set out to quantify, characterize, and mitigate "flakily covered"� program elements (i.e., those elements that are only covered by flaky
 tests).
 {{}}
 To that end, we perform an empirical study of three large software systems from the OpenStack community.
@@ -30,7 +30,7 @@ In terms of
 characterization, we find that incidences of flakily covered statements could not be well explained by solely using code characteristics,
 such as dispersion, ownership, and development activity.
 {{}}
-In terms of mitigation, we propose GreedyFlake – a test effort prioritization
+In terms of mitigation, we propose GreedyFlake â€“ a test effort prioritization
 algorithm to maximize return on investment when tackling the problem of flakily covered program elements.
 {{}}
 We find that GreedyFlake

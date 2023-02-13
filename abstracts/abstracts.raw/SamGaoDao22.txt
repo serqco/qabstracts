@@ -28,7 +28,7 @@ mediate representation.
 {{}}
 We performed empirical investigations to
 highlight how, without the unified model, a significant amount
-of Java methods called from the native code are "unreachable"ù in
+of Java methods called from the native code are "unreachable"ÔøΩ in
 apps' call-graphs, both in goodware and malware.
 {{}}
 Using JuCify, we

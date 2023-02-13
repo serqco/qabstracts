@@ -17,7 +17,7 @@ ReMoS, a relevant model slicing technique to reduce defect inheri-
 tance during transfer learning while retaining useful knowledge from
 the teacher model.
 {{}}
-SpeciÅcally, ReMoS computes a model slice (a
+SpeciÔøΩcally, ReMoS computes a model slice (a
 subset of model weights) that is relevant to the student task based on
 the neuron coverage information obtained by profiling the teacher
 model on the student task.
