@@ -37,10 +37,10 @@ The results of the study suggest that:
 {{}}
 (a) maintainability and reusability are the design-time quality
 attributes that motivate the refactoring of Embedded Software (ES), with 30% of the participants considering
-them as of "Very High"ù importance; (b) the refactorings that are most frequently performed are "Extract
-Method"ù, "Replace Magic Number with Constant"ù and "Remove Parameter"ù.
+them as of "Very High"ÔøΩ importance; (b) the refactorings that are most frequently performed are "Extract
+Method"ÔøΩ, "Replace Magic Number with Constant"ÔøΩ and "Remove Parameter"ÔøΩ.
 {{}}
-We note that the "Extract Method"ù
+We note that the "Extract Method"ÔøΩ
 refactoring has an applicability of more than over 80%; and (c) to evaluate the refactoring process engineers use
 tools producing structural metrics, internal standards, and reviews.
 {{}}

@@ -5,7 +5,7 @@ In parallel to academic (peer-reviewed) literature (e.g., journal and conference
 grey literature (GL) has accumulated since the inception of software engineering (SE).
 {{}}
 GL is often defined as
-"literature that is not formally published in sources such as books or journal articles"ù, e.g., in the form of trade
+"literature that is not formally published in sources such as books or journal articles"ÔøΩ, e.g., in the form of trade
 magazines, online blog-posts, technical reports, and online videos such as tutorial and presentation videos.
 {{}}
 GL is

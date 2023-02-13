@@ -37,9 +37,9 @@ The ISM
 results indicate that the "standards" category has the most decisive influence on the other nine core categories of
 the identified challenges.
 {{}}
-Moreover, the fuzzy TOPSIS indicates that "lack of secure coding standards,"ù "lack of
-automated testing tools for security in DevOps,"ù and "ignorance in static testing for security due to lack of
-knowledge"ù are the highest priority challenges for the DevSecOps paradigm.
+Moreover, the fuzzy TOPSIS indicates that "lack of secure coding standards,"ÔøΩ "lack of
+automated testing tools for security in DevOps,"ÔøΩ and "ignorance in static testing for security due to lack of
+knowledge"ÔøΩ are the highest priority challenges for the DevSecOps paradigm.
 {{}}
 Conclusion:
 {{}}

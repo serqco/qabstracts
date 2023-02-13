@@ -15,8 +15,8 @@ Problem.
 It is important to measure the ability of a mutation reduction strategy to maintain test suite
 effectiveness evaluation.
 {{}}
-However, existing evaluation indicators are unable to measure the “order-preserving
-ability”, i.e., to what extent the mutation score order among test suites is maintained before and after mutation
+However, existing evaluation indicators are unable to measure the â€œorder-preserving
+abilityâ€�, i.e., to what extent the mutation score order among test suites is maintained before and after mutation
 reduction.
 {{}}
 As a result, misleading conclusions can be achieved when using existing indicators to evaluate the
@@ -24,7 +24,7 @@ reduction effectiveness.
 {{}}
 Objective.
 {{}}
-We aim to propose evaluation indicators to measure the "order-preserving ability"� of a mutation
+We aim to propose evaluation indicators to measure the "order-preserving ability"� of a mutation
 reduction strategy, which is important but missing in our community.
 {{}}
 Method.
@@ -46,7 +46,7 @@ a mutation reduction strategy can provide compared with a random reduction strat
 {{}}
 Result.
 {{}}
-The experimental results show that OP and EROP are able to efficiently measure the "orderpreserving ability"� of a mutation reduction strategy.
+The experimental results show that OP and EROP are able to efficiently measure the "orderpreserving ability"� of a mutation reduction strategy.
 {{}}
 As a result, they have a better ability to distinguish
 various mutation reduction strategies compared with the existing evaluation indicators.

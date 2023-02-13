@@ -9,7 +9,7 @@ Just-in-Time (JIT) variant of defect prediction.
 However, some types of commits are invisible to the SZZ approach.
 {{}}
 We refer to these
-invisible commits as "Ghost Commits."ù In this paper, we set out to define, quantify, characterize, and mitigate ghost commits that impact
+invisible commits as "Ghost Commits."ÔøΩ In this paper, we set out to define, quantify, characterize, and mitigate ghost commits that impact
 the SZZ algorithm during its mapping (i.e., linking defect-fixing commits to those commits that are implicated by the fix) and filtering
 phases (i.e., removing improbable fix-inducing commits from the set of implicated commits).
 {{}}

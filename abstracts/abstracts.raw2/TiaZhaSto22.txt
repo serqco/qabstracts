@@ -7,9 +7,9 @@ One modality of communication is a
 commit message, in which developers describe the changes they
 make in a repository.
 {{}}
-As such, commit messages serve as an “audit
-trail” by which developers can understand how the source code
-of a project has changed—and why.
+As such, commit messages serve as an â€œaudit
+trailâ€� by which developers can understand how the source code
+of a project has changedâ€”and why.
 {{}}
 Hence, the quality of com-
 mit messages affects the effectiveness of communication among
@@ -26,7 +26,7 @@ However, these are based on uncurated datasets including
 considerable proportions of poorly phrased commit messages.
 {{}}
 In
-this multi-method study, we first define what constitutes a “good”
+this multi-method study, we first define what constitutes a â€œgoodâ€�
 commit message, and then establish what proportion of commit
 messages lack information using a sample of almost 1,600 messages
 from five highly active open source projects.
@@ -45,7 +45,7 @@ To that end, we develop a taxonomy based on recurring
 patterns in commit messages' expressions.
 {{}}
 Finally, we investigate
-whether "good"� commit messages can be automatically identified;
+whether "good"� commit messages can be automatically identified;
 such automation could prompt developers to write better commit
 messages.
 {{}}

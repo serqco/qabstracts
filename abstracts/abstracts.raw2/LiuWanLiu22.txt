@@ -19,7 +19,7 @@ sible transitions due to the coverage issues of dynamic analysis and
 over-approximation of the static analysis.
 {{}}
 We propose ProMal, a
-"tribrid"ù analysis that synergistically combines static analysis, dy-
+"tribrid"ÔøΩ analysis that synergistically combines static analysis, dy-
 namic analysis, and machine learning to construct a precise WTG.
 {{}}
 Specifically, ProMal first applies static analysis to build a static

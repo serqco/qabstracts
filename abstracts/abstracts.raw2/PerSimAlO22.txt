@@ -24,7 +24,7 @@ Our results show that
 Stack Overflow is utilized by a diverse set of developers for refactoring assistance for a variety of technologies.
 {{}} 
 Our observations show five areas that developers typically require help
-with refactoring– Code Optimization, Tools and IDEs, Architecture and Design Patterns,
+with refactoringâ€“ Code Optimization, Tools and IDEs, Architecture and Design Patterns,
 Unit Testing, and Database.
 {{}}
 We envision our findings better bridge the support between traditional 
