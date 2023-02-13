@@ -1,0 +1,51 @@
+A literature review on optimization techniques for adaptation planning in adaptive systems: State of the art and research directions.
+
+Context:
+{{}}
+Recent developments in modern IT systems including internet of things, edge/fog computing, or
+cyber–physical systems support intelligent and seamless interaction between users and systems.
+{{}}
+This requires
+a reaction to changes in their environment or the system.
+{{}}
+Adaptive systems provide mechanisms for these
+reactions.
+{{}}
+Objective:
+{{}}
+To implement this functionality, several approaches for the planning of adaptations exist that rely
+on rules, utility functions, or advanced techniques, such as machine learning.
+{{}}
+As the adaptation space with
+possible options is often extensively huge, optimization techniques might support efficient determination of
+the adaptation space and identify the system’s optimal configuration.
+{{}}
+With this paper, we provide a systematic
+review of adaptation planning as the optimization target.
+{{}}
+Method:
+{{}}
+In this paper, we review which optimization techniques are applied for adaptation planning in
+adaptive systems using a systematic literature review approach.
+{{}}
+Results:
+{{}}
+We reviewed 115 paper in detail out of an initial search set of 9,588 papers.
+{{}}
+Our analysis reveals
+that learning techniques and genetic algorithms are by far dominant; in total, heuristics (anytime learning)
+are more frequently applied as exact algorithms.
+{{}}
+We observed that around 57% of the approaches target
+multi-objectiveness and around 30% integrate distributed optimization.
+{{}}
+As last dimension, we focused on
+situation-awareness, which is only supported by two approaches.
+{{}}
+Conclusion:
+{{}}
+In this paper, we provide an overview of the current state of the art of approaches that rely
+on optimization techniques for planning adaptations in adaptive systems and further derive open research
+challenges, in particular regarding the integration of distributed optimization and situation-awareness.
+{{}}
+---

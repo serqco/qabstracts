@@ -1,0 +1,33 @@
+Theories in Agile Software Development: Past, Present, and Future Introduction to the XP 2020 Special Section.
+
+
+Over the last two decades, agile software development has gained popularity among software engineering re­
+searchers and practitioners.
+{{}}
+However, the development and use of theories in agile research remain relatively
+low.
+{{}}
+While analyzing publications on agile software development in the Scopus database from the last decade, we
+found that only 7% of the papers used or developed a theory.
+{{}}
+This trend seems stable.
+{{}}
+However, it is promising
+that most theory-centric studies use or propose theories to address cognitive and behavioral aspects of people
+working in agile development.
+{{}}
+We argue that these aspects build fundamental pillars in agile software devel­
+opment.
+{{}}
+In this special section, we introduce extended versions of four papers selected from the XP2020 Con­
+ference.
+{{}}
+These papers make valuable contributions to aspects of learning and behavior in agile software
+development.
+{{}}
+We encourage researchers to be more theory-centric in their future empirical studies of agile
+methods and practices by familiarizing themselves with existing theories and applying and developing theories.
+{{}}
+This way, they can contribute to a reliable, evidence-based body of knowledge in our community.
+{{}}
+---

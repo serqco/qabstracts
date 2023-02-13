@@ -1,0 +1,56 @@
+Two N-of-1 self-trials on readability differences between anonymous inner classes (AICs) and lambda expressions (LEs) on Java code snippets.
+
+In Java, lambda expressions (LEs) were introduced at a time where the similar language construct anonymous inner class (AIC) already existed for years.
+{{}}
+But while LEs became quite
+popular in mainstream programming languages in general, their usability is hardly studied.
+{{}}
+From the Java perspective the need to study the relationship between LEs and AICs was and
+is quite obvious, because both language constructs co-exist.
+{{}}
+However, it is quite usual that
+new language constructs are introduced although they are not or hardly studied using scientific methods – and an often heard argument from programming language designers is that
+the effort or the costs for the application of the scientific method on language constructs is
+too high.
+{{}}
+The present paper contributes in two different ways.
+{{}}
+First, with respect to LEs in
+comparison to AICs, this paper presents two N-of-1 studies (i.e. randomized control trials
+executed on a single subject) where LEs and AICs are used as listeners in Java code.
+{{}}
+Both
+experiments had two similar and rather simple tasks ("count the number of parameters",
+respectively "count the number of used parameters") with the dependent variable being reaction time.
+{{}}
+The first experiment used the number of parameters, the second the number of
+used parameters as the controlled, independent variable (in addition to the technique LE and
+AIC).
+{{}}
+Other variables (LOC, etc.) were randomly generated within given boundaries.
+{{}}
+The
+main result of both experiments is that LEs without type annotations require less reading
+time (p < .01) with rather small effect sizes (ηp2 < .2, reduction of reaction time of at most
+35%).
+{{}}
+The results are based on 9,600 observations (one N-of-1 trial with eight replications).
+{{}}
+This gives evidence that the readability of LEs without type annotations improves the readability of code.
+{{}}
+However, the effect seems to be so small, that we do not expect this to have
+a larger impact on daily programming.
+{{}}
+Second, we see the contribution of this paper in the
+application of N-of-1 trials.
+{{}}
+Such experiments require relatively low effort in the data selection but still permit to analyze results in a non-subjective way using commonly accepted
+analysis techniques.
+{{}}
+Additionally, they permit to increase the number of selected data points
+in comparison to traditional multi-subject experiments.
+{{}}
+We think that researchers should
+take such experiments into account before planning and executing larger experiments.
+{{}}
+---

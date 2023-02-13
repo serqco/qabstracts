@@ -1,0 +1,40 @@
+Open-source software product line extraction processes: the ArgoUML-SPL and Phaser cases.
+
+Software Product Lines (SPLs) are rarely developed from scratch.
+{{}}
+Commonly, they emerge
+from one product when there is a need to create tailored variants, or from existing variants
+created in an ad-hoc way once their separated maintenance and evolution become challenging.
+{{}}
+Despite the vast literature about re-engineering systems into SPLs and related technical
+approaches, there is a lack of detailed analysis of the process itself and the effort involved.
+{{}}
+In this paper, we provide and analyze empirical data of the extraction processes of two opensource case studies, namely ArgoUML and Phaser.
+{{}}
+Both cases emerged from the transition
+of a monolithic system into an SPL.
+{{}}
+The analysis relies on information mined from the
+version control history of their respective source-code repositories and the discussion with
+developers that took part in the process.
+{{}}
+Unlike previous works that focused mostly on the
+structural results of the final SPL, the contribution of this study is an in-depth characterization of the processes.
+{{}}
+With this work, we aimed at providing a deeper understanding of the
+strategies for SPL extraction and their implications.
+{{}}
+Our results indicate that the source code
+changes can range from almost a fourth to over half of the total lines of code.
+{{}}
+Developers
+may or may not use branching strategies for feature extraction.
+{{}}
+Additionally, the problems
+faced during the extraction process may be due to lack of tool support, complexity on managing feature dependencies and issues with feature constraints.
+{{}}
+We made publicly available
+the datasets and the analysis scripts of both case studies to be used as a baseline for extractive
+SPL adoption research and practice.
+{{}}
+---

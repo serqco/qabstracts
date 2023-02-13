@@ -1,0 +1,48 @@
+A unifying framework for the systematic analysis of Git workflows.
+
+Context:
+{{}}
+Git is a popular distributed version control system that provides flexibility and robustness for software
+development projects.
+{{}}
+Several workflows have been proposed to codify the way project contributors work
+collaboratively with Git.
+{{}}
+Some workflows are highly prescriptive while others allow more leeway but do not
+provide the same level of code quality assurance, thus, preventing their comparison to determine the most
+suitable for a specific set of requirements, or to ascertain if a workflow is being properly followed.
+{{}}
+Objective:
+{{}}
+In this paper, we propose a novel feature-based framework for describing Git workflows, based on
+a study of 26 existing instances.
+{{}}
+The framework enables workflows’ comparison, to discern how, and to what
+extent, they exploit Git capabilities for collaborative software development.
+{{}}
+Methods:
+{{}}
+The framework uses feature-based modelling to map Git capabilities, regularly expressed as
+contribution guidelines, and a set of features that can be impartially applied to all the workflows considered.
+{{}}
+Through this framework, each workflow was characterised based on their publicly available descriptions.
+{{}}
+The
+characterisations were then vectorised and processed using hierarchical clustering to determine workflows’
+similarities and to identify which features are most popular, and more relevant for discriminatory purposes.
+{{}}
+Results:
+{{}}
+Comparative analysis evidenced that some workflows claiming to be closely related, when described
+and then characterised, turned out to have more differences than similarities.
+{{}}
+The analysis also showed
+that most workflows focus on the branching and code integration strategies, whilst others emphasise subtle
+differences from other popular workflows or describe a specific development route and are, thus, widely reused.
+{{}}
+Conclusion:
+{{}}
+The characterisation and clustering analysis demonstrated that our framework can be used to
+compare and analyse Git workflows.
+{{}}
+---

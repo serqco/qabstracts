@@ -1,0 +1,30 @@
+The making of accessible Android applications: an empirical study on the state of the practice.
+
+Nowadays, mobile applications represent the principal means to enable human interaction.
+{{}}
+Being so pervasive, these applications should be made usable for all users:
+{{}}
+accessibility collects the guidelines that developers should follow to include features allowing users with
+disabilities (e.g., visual impairments) to better interact with an application.
+{{}}
+While research
+in this field is gaining interest, there is still a notable lack of knowledge on how developers practically deal with the problem:
+{{}}
+(i) whether they are aware and take accessibility
+guidelines into account when developing apps, (ii) which guidelines are harder for them
+to implement, and (iii) which tools they use to be supported in this task.
+{{}}
+To bridge the
+gap of knowledge on the state of the practice concerning the accessibility of mobile applications, we adopt a mixed-method research approach with a twofold goal.
+{{}}
+We aim to (i)
+verify how accessibility guidelines are implemented in mobile applications through a coding strategy and (ii) survey mobile developers on the issues and challenges of dealing with
+accessibility in practice.
+{{}}
+The key results of the study show that most accessibility guidelines are ignored when developing mobile apps.
+{{}}
+This behavior is mainly due to the lack of
+developers' awareness of accessibility concerns and the lack of tools to support them during
+the development.
+{{}}
+---

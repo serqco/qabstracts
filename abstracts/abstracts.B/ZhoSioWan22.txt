@@ -1,0 +1,51 @@
+SPI: Automated Identification of Security Patches via Commits.
+
+Security patches in open source software, providing security fixes to identified vulnerabilities, are crucial in
+protecting against cyber attacks.
+{{}}
+Security advisories and announcements are often publicly released to inform the users about potential security vulnerability.
+{{}}
+Despite the National Vulnerability Database (NVD)
+publishes identified vulnerabilities, a vast majority of vulnerabilities and their corresponding security patches
+remain beyond public exposure, e.g., in the open source libraries that are heavily relied on by developers.
+{{}}
+As
+many of these patches exist in open sourced projects, the problem of curating and gathering security patches
+can be difficult due to their hidden nature.
+{{}}
+An extensive and complete security patches dataset could help
+end-users such as security companies, e.g., building a security knowledge base, or researcher, e.g., aiding in
+vulnerability research.
+{{}}
+To efficiently curate security patches including undisclosed patches at large scale and low cost, we propose
+a deep neural-network-based approach built upon commits of open source repositories.
+{{}}
+First, we design and
+build security patch datasets that include 38,291 security-related commits and 1,045 Common Vulnerabilities and Exposures (CVE) patches from four large-scale C programming language libraries.
+{{}}
+We manually
+verify each commit, among the 38,291 security-related commits, to determine if they are security related.
+{{}}
+We devise and implement a deep learning-based security patch identification system that consists of two
+composite neural networks:
+{{}}
+one commit-message neural network that utilizes pretrained word representations learned from our commits dataset and one code-revision neural network that takes code before revision
+and after revision and learns the distinction on the statement level.
+{{}}
+Our system leverages the power of the
+two networks for Security Patch Identification.
+{{}}
+Evaluation results show that our system significantly outperforms SVM and K-fold stacking algorithms.
+{{}}
+The result on the combined dataset achieves as high as 87.93%
+F1-score and precision of 86.24%.
+{{}}
+We deployed our pipeline and learned model in an industrial production environment to evaluate the generalization ability of our approach.
+{{}}
+The industrial dataset consists of 298,917 commits from 410 new libraries
+that range from a wide functionalities.
+{{}}
+Our experiment results and observation on the industrial dataset
+proved that our approach can identify security patches effectively among open sourced projects.
+{{}}
+---

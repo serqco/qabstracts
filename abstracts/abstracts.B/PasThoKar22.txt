@@ -1,0 +1,46 @@
+Story points changes in agile iterative development.
+
+Story Points (SP) are an effort unit that is used to represent the relative effort of a work
+item.
+{{}}
+In Agile software development, SP allows a development team to estimate their delivery capacity and facilitate the sprint planning activities.
+{{}}
+Although Agile embraces changes,
+SP changes after the sprint planning may negatively impact the sprint plan.
+{{}}
+To minimize the
+impact, there is a need to better understand the SP changes and an automated approach to
+predict the SP changes.
+{{}}
+Hence, to better understand the SP changes, we examine the prevalence, accuracy, and impact of information changes on SP changes.
+{{}}
+Through the analyses
+based on 19,349 work items spread across seven open-source projects, we find that on average, 10% of the work items have SP changes.
+{{}}
+These work items typically have SP value
+increased by 58%-100% relative to the initial SP value when they were assigned to a sprint.
+{{}}
+We also find that the unchanged SP reflect the development time better than the changed SP.
+{{}}
+Our qualitative analysis shows that the work items with changed SP often have the information changes relating to updating the scope of work.
+{{}}
+Our empirical results suggest that SP
+and the scope of work should be reviewed prior or during sprint planning to achieve a reliable sprint plan.
+{{}}
+Yet, it could be a tedious task to review all work items in the product (or
+sprint) backlog.
+{{}}
+Therefore, we develop a classifier to predict whether a work item will have
+SP changes after being assigned to a sprint.
+{{}}
+Our classifier achieves an AUC of 0.69-0.8,
+which is significantly better than the baselines.
+{{}}
+Our results suggest that to better manage
+and prepare for the unreliability in SP estimation, the team can leverage our insights and the
+classifier during the sprint planning.
+{{}}
+To facilitate future studies, we provide the replication
+package and the datasets, which are available online.
+{{}}
+---

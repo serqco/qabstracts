@@ -1,0 +1,53 @@
+Refactoring embedded software: A study in healthcare domain.
+
+Context:
+{{}}
+In embedded software industry, stakeholders usually promote run-time properties (e.g., performance,
+energy efficiency, etc.) as quality drivers, which in many cases leads to a compromise at the levels of design-time
+qualities (e.g., maintainability, reusability, etc.).
+{{}}
+Such a compromise does not come without a cost; since
+embedded systems need heavy maintenance cycles.
+{{}}
+To assure effective bug-fixing, shorten the time required for
+releasing updates, a refactoring of the software codebase needs to take place regularly.
+{{}}
+Objective:
+{{}}
+This study aims
+to investigate how refactorings are applied in ES industry; and propose a systematic approach that can guide
+refactoring through a 3-step process for refactoring:
+{{}}
+(a) planning; (b) design; and (c) evaluation.
+{{}}
+Method:
+{{}}
+The aforementioned goals were achieved by conducting a single case study in a company that develops
+medical applications for bio-impedance devices; and follows a rather systematic refactoring process in periodic
+timestamps.
+{{}}
+Three data collection approaches have been used:
+{{}}
+surveys, interviews (10 practitioners), and artifact
+analysis (51 refactoring activities).
+{{}}
+Results:
+{{}}
+The results of the study suggest that:
+{{}}
+(a) maintainability and reusability are the design-time quality
+attributes that motivate the refactoring of Embedded Software (ES), with 30% of the participants considering
+them as of "Very High"� importance; (b) the refactorings that are most frequently performed are "Extract
+Method"�, "Replace Magic Number with Constant"� and "Remove Parameter"�.
+{{}}
+We note that the "Extract Method"�
+refactoring has an applicability of more than over 80%; and (c) to evaluate the refactoring process engineers use
+tools producing structural metrics, internal standards, and reviews.
+{{}}
+Conclusions:
+{{}}
+The outcomes of this study can be useful to both researchers and practitioners, in the sense that the
+former can focus their efforts on aspects that are meaningful to industry, whereas the latter are provided with a
+systematic refactoring process.
+{{}}
+---

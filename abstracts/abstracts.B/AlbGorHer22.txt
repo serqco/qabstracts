@@ -1,0 +1,34 @@
+Super-optimization of Smart Contracts.
+
+
+Smart contracts are programs deployed on a blockchain.
+{{}}
+They are executed for a monetary fee paid in gas—
+a clear optimization target for smart contract compilers.
+{{}}
+Because smart contracts are a young, fast-moving
+field without (manually) fine-tuned compilers, they highly benefit from automated and adaptable approaches,
+especially as smart contracts are effectively immutable, and as such need a high level of assurance.
+{{}}
+This
+makes them an ideal domain for applying formal methods.
+{{}}
+Super-optimization is a technique to find the best
+translation of a block of instructions by trying all possible sequences of instructions that produce the same
+result.
+{{}}
+We present a framework for super-optimizing smart contracts based on Max-SMT with two main
+ingredients:
+{{}}
+(1) a stack functional specification extracted from the basic blocks of a smart contract, which is
+simplified using rules capturing the semantics of arithmetic, bit-wise, and relational operations, and (2) the
+synthesis of optimized blocks, which finds—by means of an efficient SMT encoding—basic blocks with minimal
+gas cost whose stack functional specification is equal (modulo commutativity) to the extracted one.
+{{}}
+We implemented our framework in the tool syrup 2.0.
+{{}}
+Through large-scale experiments on real-world
+smart contracts, we analyze performance improvements for different SMT encodings, as well as tradeoffs
+between quality of optimizations and required optimization time.
+{{}}
+---

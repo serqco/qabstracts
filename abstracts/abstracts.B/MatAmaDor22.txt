@@ -1,0 +1,49 @@
+Alternatives for testing of context-aware software systems in non-academic settings: results from a Rapid Review.
+
+Context:
+{{}}
+Context-awareness challenges the engineering of contemporary software systems and jeopardizes their
+testing.
+{{}}
+The variation of context represents a relevant behavior that deepens the limitations of available software
+testing practices and technologies.
+{{}}
+However, such software systems are mainstream.
+{{}}
+Therefore, researchers in
+non-academic settings also face challenges when developing and testing contemporary software systems.
+{{}}
+Objective:
+{{}}
+To understand how researchers deal with the variation of context when testing context-aware software
+systems developed in non-academic settings.
+{{}}
+Method:
+{{}}
+To undertake a secondary study (Rapid Review) to uncover the necessary evidence from primary sources
+describing the testing of context-aware software systems outside academia.
+{{}}
+Results:
+{{}}
+The current testing initiatives in non-academic settings aim to generate or improve test suites that can
+deal with the context variation and the sheer volume of test input possibilities.
+{{}}
+They mostly rely on modeling the
+systems’ dynamic behavior and increasing computing resources to generate test inputs to achieve this.
+{{}}
+We found
+no evidence of test results aiming at managing context variation through the testing lifecycle process.
+{{}}
+Conclusions:
+{{}}
+So far, the identified testing initiatives and strategies are not ready for mainstream adoption.
+{{}}
+They
+are all domain-specific, and while the ideas and approaches can be reproduced in distinct settings, the tech­
+nologies are to be re-engineered and tailored to the context-awareness of contemporary software systems in
+different problem domains.
+{{}}
+Further and joint investigations in academia and experiences in non-academic set­
+tings can evolve the body of knowledge regarding the testing of contemporary software systems in the field.
+{{}}
+---

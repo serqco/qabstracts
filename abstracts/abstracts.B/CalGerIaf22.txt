@@ -1,0 +1,39 @@
+Will you come back to contribute? Investigating the inactivity of OSS core developers in GitHub.
+
+Several Open-Source Software (OSS) projects depend on the continuity of their development
+communities to remain sustainable.
+{{}}
+Understanding how developers become inactive or why
+they take breaks can help communities prevent abandonment and incentivize developers to
+come back.
+{{}}
+In this paper, we propose a novel method to identify developers’ inactive periods
+by analyzing the individual rhythm of contributions to the projects.
+{{}}
+Using this method, we
+quantitatively analyze the inactivity of core developers in 18 OSS organizations hosted on
+GitHub.
+{{}}
+We also survey core developers to receive their feedback about the identified breaks
+and transitions.
+{{}}
+Our results show that our method was effective for identifying developers’
+breaks.
+{{}}
+About 94% of the surveyed core developers agreed with our state model of inactivity;
+71% and 79% of them acknowledged their breaks and state transition, respectively.
+{{}}
+We also
+show that all core developers take breaks (at least once) and about a half of them (~45%) have
+completely disengaged from a project for at least one year.
+{{}}
+We also analyzed the probability of
+transitions to/from inactivity and found that developers who pause their activity have a ~35 to
+~55% chance to return to an active state; yet, if the break lasts for a year or longer, then the
+probability of resuming activities drops to ~21–26%, with a ~54% chance of complete
+disengagement.
+{{}}
+These results may support the creation of policies and mechanisms to make
+OSS community managers aware of breaks and potential project abandonment.
+{{}}
+---

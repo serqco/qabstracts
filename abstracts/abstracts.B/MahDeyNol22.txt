@@ -1,0 +1,36 @@
+One-off events? An empirical study of hackathon code creation and reuse.
+
+Context Hackathons have become popular events for teams to collaborate on projects and
+develop software prototypes.
+{{}}
+Most existing research focuses on activities during an event
+with limited attention to the evolution of the hackathon code.
+{{}}
+Objective We aim to understand the evolution of code used in and created during hackathon
+events, with a particular focus on the code blobs, specifically, how frequently hackathon
+teams reuse pre-existing code, how much new code they develop, if that code gets reused
+afterwards, and what factors affect reuse.
+{{}}
+Method We collected information about 22,183 hackathon projects from Devpost and
+obtained related code blobs, authors, project characteristics, original author, code creation
+time, language, and size information from World of Code.
+{{}}
+We tracked the reuse of code
+blobs by identifying all commits containing blobs created during hackathons and identifying all projects that contain those commits.
+{{}}
+We also conducted a series of surveys in order to
+gain a deeper understanding of hackathon code evolution that we sent out to hackathon participants whose code was reused, whose code was not reused, and developers who reused
+some hackathon code.
+{{}}
+Result 9.14% of the code blobs in hackathon repositories and 8% of the lines of code (LOC)
+are created during hackathons and around a third of the hackathon code gets reused in
+other projects by both blob count and LOC.
+{{}}
+The number of associated technologies and the
+number of participants in hackathons increase reuse probability.
+{{}}
+Conclusion The results of our study demonstrates hackathons are not always “one-off”
+events as the common knowledge dictates and it can serve as a starting point for further
+studies in this area.
+{{}}
+---

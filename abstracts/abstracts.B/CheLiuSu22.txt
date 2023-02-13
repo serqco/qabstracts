@@ -1,0 +1,45 @@
+Adaptive Performance Anomaly Detection for Online Service Systems via Pattern Sketching.
+
+To ensure the performance of online service systems, their status
+is closely monitored with various software and system metrics.
+{{}}
+Performance anomalies represent the performance degradation is-
+sues (e.g., slow response) of the service systems.
+{{}}
+When performing
+anomaly detection over the metrics, existing methods often lack the
+merit of interpretability, which is vital for engineers and analysts to
+take remediation actions.
+{{}}
+Moreover, they are unable to effectively
+accommodate the ever-changing services in an online fashion.
+{{}}
+To
+address these limitations, in this paper, we propose ADSketch, an in-
+terpretable and adaptive performance anomaly detection approach
+based on pattern sketching.
+{{}}
+ADSketch achieves interpretability by
+identifying groups of anomalous metric patterns, which represent
+particular types of performance issues.
+{{}}
+The underlying issues can
+then be immediately recognized if similar patterns emerge again.
+{{}}
+In addition, an adaptive learning algorithm is designed to embrace
+unprecedented patterns induced by service updates or user behav-
+ior changes.
+{{}}
+The proposed approach is evaluated with public data
+as well as industrial data collected from a representative online
+service system in Huawei Cloud.
+{{}}
+The experimental results show
+that ADSketch outperforms state-of-the-art approaches by a sig-
+nificant margin, and demonstrate the effectiveness of the online
+algorithm in new pattern discovery.
+{{}}
+Furthermore, our approach has
+been successfully deployed in industrial practice.
+{{}}
+---

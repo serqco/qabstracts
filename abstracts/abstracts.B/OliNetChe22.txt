@@ -1,0 +1,39 @@
+Different, Really! A comparison of Highly-Configurable Systems and Single Systems.
+
+Context:
+{{}}
+The development of systems that handle configuration options according to a specific environment
+is considered a hard activity.
+{{}}
+These kind of systems, Highly-Configurable Systems (HCS) are perceived by
+researchers and developers as complex and difficult to maintain due to the necessity of handling variation
+points.
+{{}}
+Although this perception is reported in the literature, no prior study investigated the differences
+between HCS and Single Systems (SS).
+{{}}
+Objective:
+{{}}
+This study investigated similarities and differences between HCS and SS using well known metrics
+from the literature according to three different perspectives:
+{{}}
+product perspective (bug-proneness, complexity,
+and change size); process perspective (number of contributors, number of core developers, and accidental
+contributors); and people perspective (contributor retention and number of paid contributors).
+{{}}
+Method:
+{{}}
+To perform this comparison, we collected data from two surveys and from a mining study (within
+15,769 releases of 124 GitHub projects written in C).
+{{}}
+Results:
+{{}}
+In general, we identified that for the majority of the metrics, the perception of practitioners and
+researchers about HCS and SS is different from our mining results.
+{{}}
+Conclusion:
+{{}}
+The identification of similarities and differences of HCS and SS will help to initiate a discussion
+and further research in this direction.
+{{}}
+---

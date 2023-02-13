@@ -1,0 +1,35 @@
+Agile software development one year into the COVID-19 pandemic.
+
+As a result of the COVID-19 pandemic, many agile practitioners had to transition into a
+remote work environment.
+{{}}
+Despite remote work not being a new concept for agile software
+practitioners, the forced or recommended nature of remote work is new.
+{{}}
+This study investigates how the involuntary shift to remote work and how social restrictions imposed by the
+COVID-19 pandemic have affected agile software development (ASD), and how agile practitioners have been affected in terms of ways of working.
+{{}}
+An explanatory sequential mixed
+methods study was performed.
+{{}}
+Data were collected one year into the COVID-19 pandemic
+through a questionnaire with 96 respondents and in-depth semi-structured interviews with
+seven practitioners from seven different companies.
+{{}}
+Data were analyzed through Bayesian
+analysis and thematic analysis.
+{{}}
+The results show, in general, that the aspects of ASD that
+have been the most affected is communication and social interactions, while technical work
+aspects have not experienced the same changes.
+{{}}
+Moreover, feeling forced to work remotely
+has a significant impact on different aspects of ASD, e.g., productivity and communication,
+and industry practitioners' employment of agile development and ways of working have primarily been affected by the lack of social interaction and the shift to digital communication.
+{{}}
+The results also suggest that there may be a group maturing debt when teams do go back
+into office, as digital communication and the lack of psychological safety stand in the way
+for practitioners' ability to have sensitive discussions and progress as a team in a remote
+setting.
+{{}}
+---

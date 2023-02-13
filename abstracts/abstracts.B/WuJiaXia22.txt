@@ -1,0 +1,83 @@
+One Fuzzing Strategy to Rule Them All.
+
+Coverage-guided fuzzing has become mainstream in fuzzing to
+automatically expose program vulnerabilities.
+{{}}
+Recently, a group of
+fuzzers are proposed to adopt a random search mechanism namely
+Havoc, explicitly or implicitly, to augment their edge exploration.
+{{}}
+However, they only tend to adopt the default setup of Havoc as an
+implementation option while none of them attempts to explore its
+power under diverse setups or inspect its rationale for potential
+improvement.
+{{}}
+In this paper, to address such issues, we conduct
+the first empirical study on Havoc to enhance the understanding
+of its characteristics.
+{{}}
+Specifically, we first find that applying the
+default setup of Havoc to fuzzers can significantly improve their
+edge coverage performance.
+{{}}
+Interestingly, we further observe that
+even simply executing Havoc itself without appending it to any
+fuzzer can lead to strong edge coverage performance and outper-
+form most of our studied fuzzers.
+{{}}
+Moreover, we also extend the
+execution time of Havoc and find that most fuzzers can not only
+achieve significantly higher edge coverage, but also tend to perform
+similarly (i.e., their performance gaps get largely bridged).
+{{}}
+Inspired
+by the findings, we further propose Havoc𝑀𝐴𝐵 , which models the
+Havoc mutation strategy as a multi-armed bandit problem to be
+solved by dynamically adjusting the mutation strategy.
+{{}}
+The evalua-
+tion result presents that Havoc𝑀𝐴𝐵 can significantly increase the
+edge coverage by 11.1% on average for all the benchmark projects
+compared with Havoc and even slightly outperform state-of-the-art
+QSYM which augments its computing resource by adopting three
+parallel threads.
+{{}}
+We further execute Havoc𝑀𝐴𝐵 with three parallel
+† Mingyuan Wu is also affiliated with the Research Institute of Trustworthy Au-
+tonomous Systems, Shenzhen, China.
+{{}}
+* Yuqun Zhang is the corresponding author.
+{{}}
+He is also affiliated with the Research
+Institute of Trustworthy Autonomous Systems, Shenzhen, China and Guangdong
+Provincial Key Laboratory of Brain-inspired Intelligent Computation, China.
+{{}}
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page.
+{{}}
+Copyrights for components of this work owned by others than ACM
+must be honored.
+{{}}
+Abstracting with credit is permitted.
+{{}}
+To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee.
+{{}}
+Request permissions from permissions@acm.org.
+{{}}
+ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
+© 2022 Association for Computing Machinery.
+{{}}
+ACM ISBN 978-1-4503-9221-1/22/05.
+{{}}
+.
+{{}}
+. $
+{{}}
+15.00
+https://doi.org/10.1145/3510003.3510174
+{{}}
+---

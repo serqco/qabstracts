@@ -1,0 +1,19 @@
+Empirical Effort and Schedule Estimation Models for Agile Processes in the US DoD.
+
+Estimating the cost and schedule of agile software projects is critical at an early phase to establish baseline budgets and
+schedules for the selection of competitive bidders.
+{{}}
+The challenge is that common agile sizing measures such as story points and user
+stories are not practical for early estimation as these are often reported after contract award in DoD.
+{{}}
+This study provides a set of effort
+and schedule estimation models for agile projects using a sizing measure that is available before proposal evaluation based on data
+from 36 DoD agile projects.
+{{}}
+The results suggest that initial software requirements, defined as the sum of functions and external
+interfaces, is an effective sizing measure for early estimation of effort and schedule of agile projects.
+{{}}
+The models’ accuracy improves
+when application domain groups and peak staff are added as inputs.
+{{}}
+---

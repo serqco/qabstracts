@@ -1,0 +1,36 @@
+Efficient static analysis and verification of featured transition systems.
+
+A Featured Transition System (FTS) models the behaviour of all products of a Software
+Product Line (SPL) in a single compact structure, by associating action-labelled transitions
+with features that condition their presence in product behaviour.
+{{}}
+It may however be the
+case that the resulting featured transitions of an FTS cannot be executed in any product
+(so called dead transitions) or, on the contrary, can be executed in all products (so called
+false optional transitions).
+{{}}
+Moreover, an FTS may contain states from which a transition
+can be executed only in some products (so called hidden deadlock states).
+{{}}
+It is useful to
+detect such ambiguities and signal them to the modeller, because dead transitions indicate an
+anomaly in the FTS that must be corrected, false optional transitions indicate a redundancy
+that may be removed, and hidden deadlocks should be made explicit in the FTS to improve
+the understanding of the model and to enable efficient verification—if the deadlocks in the
+products should not be remedied in the first place.
+{{}}
+We provide an algorithm to analyse an
+FTS for ambiguities and a means to transform an ambiguous FTS into an unambiguous
+one.
+{{}}
+The scope is twofold:
+{{}}
+an ambiguous model is typically undesired as it gives an unclear
+idea of the SPL and, moreover, an unambiguous FTS can efficiently be model checked.
+{{}}
+We
+empirically show the suitability of the algorithm by applying it to a number of benchmark
+SPL examples from the literature, and we show how this facilitates a kind of family-based
+model checking of a wide range of properties on FTSs.
+{{}}
+---

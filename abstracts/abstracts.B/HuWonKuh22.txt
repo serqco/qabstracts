@@ -1,0 +1,29 @@
+CT-IoT: a combinatorial testing-based path selection framework for effective IoT testing.
+
+Testing Internet of Things (IoT) systems is challenging.
+{{}}
+This is not only because of the various
+aspects of IoT systems, such as software, hardware, and network that need to be tested, but also
+because of the unexpected issues caused by a large number of heterogeneous devices brought
+together by IoT systems.
+{{}}
+When an IoT system has hundreds, or even thousands, of heterogeneous devices, which devices should be tested to detect more faults?
+{{}}
+How can we systematically test an IoT system and its numerous devices in a cost-effective way?
+{{}}
+Are there any
+coverage criteria for testers to evaluate the thoroughness of the testing against IoT systems?
+{{}}
+In
+this paper, we present a combinatorial testing path selection framework for IoT systems, called
+CT-IoT, that systematically identifies and recommends testing paths in IoT systems for
+effective testing.
+{{}}
+We also propose four coverage criteria that can help testers evaluate the
+testing thoroughness for IoT systems.
+{{}}
+We conducted an empirical study of CT-IoT on two realworld IoT systems and evaluated the effectiveness of CT-IoT in terms of coverage achievements.
+{{}}
+The results show the superiority of CT-IoT over a random approach.
+{{}}
+---

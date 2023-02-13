@@ -1,0 +1,33 @@
+An Empirical Study of C++ Vulnerabilities in Crowd-Sourced Code Examples.
+
+Software developers share programming solutions in Q&A sites like Stack Overflow, Stack Exchange, Android forum, and
+so on.
+{{}}
+The reuse of crowd-sourced code snippets can facilitate rapid prototyping.
+{{}}
+However, recent research shows that the shared code
+snippets may be of low quality and can even contain vulnerabilities.
+{{}}
+This paper aims to understand the nature and the prevalence of
+security vulnerabilities in crowd-sourced code examples.
+{{}}
+To achieve this goal, we investigate security vulnerabilities in the C++ code
+snippets shared on Stack Overflow over a period of 10 years.
+{{}}
+In collaborative sessions involving multiple human coders, we manually
+assessed each code snippet for security vulnerabilities following CWE (Common Weakness Enumeration) guidelines.
+{{}}
+From the 72,483
+reviewed code snippets used in at least one project hosted on GitHub, we found a total of 99 vulnerable code snippets categorized into
+31 types.
+{{}}
+Many of the investigated code snippets are still not corrected on Stack Overflow.
+{{}}
+The 99 vulnerable code snippets found in
+Stack Overflow were reused in a total of 2859 GitHub projects.
+{{}}
+To help improve the quality of code snippets shared on Stack Overflow,
+we developed a browser extension that allows Stack Overflow users to be notified for vulnerabilities in code snippets when they see
+them on the platform.
+{{}}
+---
