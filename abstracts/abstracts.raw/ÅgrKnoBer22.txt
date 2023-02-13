@@ -25,11 +25,11 @@ aspects have not experienced the same changes.
 {{}}
 Moreover, feeling forced to work remotely
 has a significant impact on different aspects of ASD, e.g., productivity and communication,
-and industry practitioners’ employment of agile development and ways of working have primarily been affected by the lack of social interaction and the shift to digital communication.
+and industry practitioners' employment of agile development and ways of working have primarily been affected by the lack of social interaction and the shift to digital communication.
 {{}}
 The results also suggest that there may be a group maturing debt when teams do go back
 into office, as digital communication and the lack of psychological safety stand in the way
-for practitioners’ ability to have sensitive discussions and progress as a team in a remote
+for practitioners' ability to have sensitive discussions and progress as a team in a remote
 setting.
 {{}}
 ---

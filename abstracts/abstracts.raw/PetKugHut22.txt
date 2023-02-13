@@ -2,7 +2,7 @@ Defining adaptivity and logical architecture for engineering (smart) self-adapti
 
 Context:
 {{}}
-Modern cyber–physical systems (CPSs) are embedded in the physical world and intrinsically operate
+Modern cyber-physical systems (CPSs) are embedded in the physical world and intrinsically operate
 in a continuously changing and uncertain environment or operational context.
 {{}}
 To meet their business goals and
@@ -32,7 +32,7 @@ Results:
 {{}}
 First, our results show that in order to answer if a system is adaptive, the right framing is necessary:
 {{}}
-the system’s adaptation goals, its context, and the time period in which the system is adaptive.
+the system's adaptation goals, its context, and the time period in which the system is adaptive.
 {{}}
 Second, we
 discuss the benefits of our architecture by comparing it with the MAPE-K conceptual model.
@@ -43,7 +43,7 @@ Commonly accepted definitions of adaptivity and self-adaptive systems are necess
 in this domain to be compared and discussed since the same terms are often used with different semantics.
 {{}}
 Furthermore, in modern self-adaptive CPSs, which operate in dynamic and uncertain contexts, it is insufficient
-if the adaptation logic is specified during the system’s design, but instead, the adaptation logic itself needs to
-adapt and ‘‘learn’’ during run-time.
+if the adaptation logic is specified during the system's design, but instead, the adaptation logic itself needs to
+adapt and "learn" during run-time.
 {{}}
 ---

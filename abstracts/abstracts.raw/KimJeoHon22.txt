@@ -1,12 +1,6 @@
 Predictive Mutation Analysis via the Natural Language Channel in Source Code.
 
-73
-Predictive Mutation Analysis via the Natural Language
-Channel in Source Code
-JINHAN KIM, KAIST
-JUYOUNG JEON, Hyundai MOBIS
-SHIN HONG, Handong Global University
-SHIN YOO, KAIST
+
 Mutation analysis can provide valuable insights into both the system under test and its test suite.
 {{}}
 However, it

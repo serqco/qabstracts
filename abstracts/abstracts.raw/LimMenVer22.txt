@@ -34,5 +34,14 @@ the proposed strategies using COLEMAN have the best performance in comparison wi
 {{}}
 Moreover,
 COLEMAN produces, in more than 92% of the cases, reasonable solutions that are near to
+the optimal solutions obtained by a deterministic approach.
+{{}}Both strategies spend less than
+one second to execute.
+{{}}
+WTS provides better results in the less restrictive budgets, and VTS
+the opposite.
+{{}}
+WTS seems to better mitigate the problem of beginning without knowledge,
+and is more suitable when a new variant to be tested is added.
 {{}}
 ---

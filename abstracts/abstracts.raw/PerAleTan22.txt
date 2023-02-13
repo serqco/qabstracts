@@ -46,5 +46,11 @@ Conclusion:
 These findings indicate that our novel fairness measure and the new approach
 for fairness testing of regression-based ML systems can identify the degree of fairness in
 predictions, which can help software teams to make data-informed decisions about whether
+such software systems are ready to deploy. 
+{{}}
+The scientific knowledge gained from our work
+can be phrased as a technological rule; to measure the fairness of the regression-based ML
+systems in the context of emergency department wait-time prediction use fairness degree
+and search-based techniques to approximate it.
 {{}}
 ---

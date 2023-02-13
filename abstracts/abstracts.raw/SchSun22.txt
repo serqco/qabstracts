@@ -2,7 +2,7 @@ ExAIS: Executable AI Semantics.
 
 Neural networks can be regarded as a new programming paradigm,
 i.e., instead of building ever-more complex programs through (often
-informal) logical reasoning in the programmers’ mind, complex
+informal) logical reasoning in the programmers' mind, complex
 ‘AI’ systems are built by optimising generic neural network models
 with big data.
 {{}}

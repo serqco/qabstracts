@@ -45,7 +45,7 @@ Conclusion:
 Through stress testing and real-life Android software testing, this work unveils that CPU competition should be the main problem to be solved.
 {{}}
 Our experimental results deepen and update previous perceptions
-of resources’ impact on Android responsiveness.
+of resources' impact on Android responsiveness.
 {{}}
 Based on these findings, we provide a set of suggestions for
 designing high-performance Android systems and software, and effective performance optimization tools.

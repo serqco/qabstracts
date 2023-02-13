@@ -1,16 +1,11 @@
 Introduction to the Special Issue on: Grey Literature and Multivocal Literature Reviews (MLRs) in software engineering.
 
-Keywords
-Grey literature
-Multivocal literature review
-Evidence-based software engineering
-Epistemology
 
 In parallel to academic (peer-reviewed) literature (e.g., journal and conference papers), an enormous extent of
 grey literature (GL) has accumulated since the inception of software engineering (SE).
 {{}}
 GL is often defined as
-“literature that is not formally published in sources such as books or journal articles”, e.g., in the form of trade
+"literature that is not formally published in sources such as books or journal articles"�, e.g., in the form of trade
 magazines, online blog-posts, technical reports, and online videos such as tutorial and presentation videos.
 {{}}
 GL is
@@ -37,44 +32,5 @@ process, seven papers were accepted for this SI.
 {{}}
 In this introduction we provide a brief overview of GL and MLRs
 in SE, and then a brief summary of the seven papers published in this SI.
-{{}}
-Grey literature and its state of in software engineering
-While a hazy definition of "grey literature" had existed previously,
-the term is generally understood to have been coined by the researcher
-Charles P.
-{{}}
-Auger, who wrote Use of Reports Literature in 1975 [1].
-{{}}
-Auger [1] referred to literature comprising intelligence reports and
-notes on defence research that had been produced, in vast quantities, by
-the Allied Forces during World War II.
-{{}}
-Auger first used the term "grey
-literature" during a conference held by the British Lending Library Di­
-vision in 1978 [2].
-{{}}
-The most widely used and accepted definition of “grey literature”
-(GL) is the so-called Luxembourg definition, which states that, “[grey
-literature] is produced on all levels of government, academics, business
-and industry in print and electronic formats, but which is not controlled
-by commercial publishers, i.e., where publishing is not the primary ac­
-tivity of the producing body” [3].
-{{}}
-The Cochrane handbook for system­
-atic reviews of interventions [4] defines GL as “literature that is not
-formally published in sources such as books or journal articles”.
-{{}}
-Various models have been proposed to classify different types of
-sources of GL.
-{{}}
-For example, one model from the management sciences
-[5] organizes GL into three tiers:
-{{}}
-• 1st tier GL (High outlet control/ High credibility):
-{{}}
-Such as books,
-magazines, government reports, white papers
-
-https://doi.org/10.1016/j.infsof.2021.106697
 {{}}
 ---

@@ -54,4 +54,7 @@ contain in distant repositories in the system.
 In addition, we found that code cloning occurs
 more frequently during DL model construction, model training, and data pre-processing.
 {{}}
+And that hyperparameters setting is the phase of deep learning model construction during
+which cloning is the riskiest, since it often leads to faults.
+{{}}
 ---

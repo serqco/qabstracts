@@ -1,10 +1,6 @@
 Context-Aware Code Change Embedding for Better Patch Correctness Assessment.
 
-Context-Aware Code Change Embedding for Better Patch
-Correctness Assessment
-BO LIN and SHANGWEN WANG, National University of Defense Technology, Changsha, China
-MING WEN, Huazhong University of Science and Technology, Wuhan, China
-XIAOGUANG MAO, National University of Defense Technology, Changsha, China
+
 Despite the capability in successfully fixing more and more real-world bugs, existing Automated Program
 Repair (APR) techniques are still challenged by the long-standing overfitting problem (i.e., a generated patch
 that passes all tests is actually incorrect).

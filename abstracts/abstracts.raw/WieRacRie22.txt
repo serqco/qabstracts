@@ -49,7 +49,7 @@ pipeline can be observed.
 {{}}
 Conclusion:
 {{}}
-We provide an insight into practitioners’ ways to identify, monitor, prevent and repay TD.
+We provide an insight into practitioners' ways to identify, monitor, prevent and repay TD.
 {{}}
 The
 presented framework includes a feasible method for TD prevention despite tight timelines by making TD

@@ -1,21 +1,6 @@
 ReCDroid+: Automated End-to-End Crash Reproduction from Bug Reports for Android Apps.
 
-ReCDroid+:
-{{}}
-Automated End-to-End Crash Reproduction
-from Bug Reports for Android Apps
-YU ZHAO, University of Central Missouri, USA
-TING SU, East China Normal University, China
-YANG LIU, Nanyang Technological University, Singapore
-WEI ZHENG, Northwestern Polytechnical University, China
-XIAOXUE WU, Yangzhou University, China
-RAMAKANTH KAVULURU, University of Kentucky, USA
-WILLIAM G.
-{{}}
-J.
-{{}}
-HALFOND, University of Southern California, USA
-TINGTING YU, University of Cincinnati, USA
+
 The large demand of mobile devices creates significant concerns about the quality of mobile applications
 (apps).
 {{}}

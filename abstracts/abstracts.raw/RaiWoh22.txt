@@ -7,7 +7,7 @@ Software practitioners are a primary provider of information for field studies i
 Research typically recruits practitioners through some kind of sampling.
 {{}}
 But sampling may not in itself recruit
-the ‘‘right’’ participants.
+the "right" participants.
 {{}}
 Objective:
 {{}}
@@ -28,13 +28,13 @@ those to illustrate the framework.
 Results:
 {{}}
 Whilst existing guidance recognises the importance of recruiting participants, there is limited guidance
-on how to recruit the ‘‘right’’ participants.
+on how to recruit the "right" participants.
 {{}}
 The framework suggests the conceptualisation of participants as
-‘‘research instruments’’ or, alternatively, as a sampling frame for items of interest.
+"research instruments" or, alternatively, as a sampling frame for items of interest.
 {{}}
 The exemplars suggest
-that at least some members of the research community are aware of the need to carefully recruit the ‘‘right’’
+that at least some members of the research community are aware of the need to carefully recruit the "right"
 participants.
 {{}}
 Conclusions:

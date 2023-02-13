@@ -15,7 +15,7 @@ Objective:
 {{}}
 The development and adoption of new technology – structurally impacting the way the organization
 conducts its activities – requires a considerable amount of effort in a short time frame, thus rendering it a
-governance decision where the alignment of the technology’s adoption and use to the long term strategy
+governance decision where the alignment of the technology's adoption and use to the long term strategy
 needs to be evaluated.
 {{}}
 The short time frame requiring fast response implies that agility should not remain a
@@ -31,7 +31,7 @@ rigor and design cycles of DSR have been applied and presented.
 {{}}
 Results:
 {{}}
-StratAMoDrIGo is based on the identification of sources of value for the organization’s strategy, its
+StratAMoDrIGo is based on the identification of sources of value for the organization's strategy, its
 stakeholders and the users of the implemented/adopted technology.
 {{}}
 Relevant concepts are consolidated in an
@@ -42,7 +42,7 @@ The proposal is applied on the case of an hospital facing the Covid-19 pandemic.
 {{}}
 Conclusion:
 {{}}
-The value brought by strategic opportunities’ adoption to the organization, stakeholders and users
+The value brought by strategic opportunities' adoption to the organization, stakeholders and users
 can be evaluated ex ante through conceptual models.
 {{}}
 ---

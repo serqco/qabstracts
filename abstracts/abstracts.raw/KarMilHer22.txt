@@ -22,6 +22,6 @@ Several variations of the robust Hausdorff distance are evaluated.
 {{}}
 The results show that the
 proposed approach can effectively estimate the semantic similarity, reflecting the software
-library’s scopes, software evolution, and individual parts (e.g., packages) of those libraries.
+library's scopes, software evolution, and individual parts (e.g., packages) of those libraries.
 {{}}
 ---

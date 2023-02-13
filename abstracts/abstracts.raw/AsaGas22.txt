@@ -5,7 +5,7 @@ Diverse layers of defence play an important role in the design of defence-in-dep
 The use of Intrusion Detection Systems (IDSs) are ubiquitous in this design.
 {{}}
 But
-the selection of the “right” IDSs in various configurations is an important decision that the
+the selection of the "right" IDSs in various configurations is an important decision that the
 security architects need to make.
 {{}}
 Additionally, the ability of these IDSs to adapt to the evolving threat-landscape also needs to be investigated.

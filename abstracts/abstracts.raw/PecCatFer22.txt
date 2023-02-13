@@ -1,8 +1,6 @@
 Software testing and Android applications: a large-scale empirical study.
 
-These days, over three billion users rely on mobile applications (a.k.a.
-{{}}
-apps) on a daily
+These days, over three billion users rely on mobile applications (a.k.a. apps) on a daily
 basis to access high-speed connectivity and all kinds of services it enables, from social to
 emergency needs.
 {{}}

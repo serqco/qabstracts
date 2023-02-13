@@ -25,22 +25,4 @@ Beyond such a benchmarking
 with ground truth data which demonstrates an improvement over the state-of-the-art, we
 confirmed that SSPCATCHER can help catch security patches that were not reported as such.
 {{}}
-1 Introduction
-Recently, our digital world was shaken by two of the most widespread malware outbreaks
-to date, namely WannaCry and Petya.
-{{}}
-Interestingly, both leveraged a known exploit with an
-available patch (Trend Micro 2017).
-{{}}
-Despite the availability of such a patch that could have
-prevented an infection, a large number of systems around the globe were impacted, leading
-to a loss of over 4 billion US dollars (Berr 2017).
-{{}}
-In a typical scenario of vulnerability
-correction, a developer proposes changes bundled as a software patch by pushing a commit
-(i.e., patch + description of changes) to the code repository, which is analyzed by the project
-maintainer, or a chain of maintainers.
-{{}}
-The maintainers eventually reject or apply the changes
-{{}}
 ---

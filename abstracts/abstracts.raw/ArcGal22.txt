@@ -1,14 +1,5 @@
 Enhancing Search-based Testing with Testability Transformations for Existing APIs.
 
-1
-Enhancing Search-based Testing with Testability
-Transformations for Existing APIs
-ANDREA ARCURI, Kristiania University College and Oslo Metropolitan University, Oslo, Norway
-JUAN P.
-{{}}
-GALEOTTI, Depto.
-{{}}
-de Computación, FCEyN-UBA, and ICC, CONICET-UBA, Argentina
 Search-based software testing (SBST) has been shown to be an effective technique to generate test cases
 automatically.
 {{}}

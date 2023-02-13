@@ -11,7 +11,7 @@ After refactoring a model, proving that it still preserves its original behavior
 {{}}
 In this paper, we
 present a process for applying refactoring transformations to the Extended Finite State Machine (EFSM) models using verified
-transformation rules that have been proven to preserve the model’s original behavior.
+transformation rules that have been proven to preserve the model's original behavior.
 {{}}
 We provide a simplified three-step verification
 approach that can be used to prove that a transformation rule will generate a transformed model that is semantically equivalent to the

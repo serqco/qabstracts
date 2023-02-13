@@ -20,8 +20,8 @@ comparison to AICs, this paper presents two N-of-1 studies (i.e. randomized cont
 executed on a single subject) where LEs and AICs are used as listeners in Java code.
 {{}}
 Both
-experiments had two similar and rather simple tasks (“count the number of parameters”,
-respectively “count the number of used parameters”) with the dependent variable being reaction time.
+experiments had two similar and rather simple tasks ("count the number of parameters",
+respectively "count the number of used parameters") with the dependent variable being reaction time.
 {{}}
 The first experiment used the number of parameters, the second the number of
 used parameters as the controlled, independent variable (in addition to the technique LE and
@@ -48,7 +48,7 @@ Such experiments require relatively low effort in the data selection but still p
 analysis techniques.
 {{}}
 Additionally, they permit to increase the number of selected data points
-in comparison to traditional multi–subject experiments.
+in comparison to traditional multi-subject experiments.
 {{}}
 We think that researchers should
 take such experiments into account before planning and executing larger experiments.

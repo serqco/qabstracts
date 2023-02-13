@@ -25,10 +25,10 @@ Herein, this study
 empirically examines the relationship between SATD and MCR.
 {{}}
 Our case study of 156,372 review records from the Qt and OpenStack systems shows that (i) review records
-involving SATD are about 6%–7% less likely to be accepted by reviews than those without SATD; (ii) review
+involving SATD are about 6%-7% less likely to be accepted by reviews than those without SATD; (ii) review
 records involving SATD tend to require two to three more revisions compared with those without SATD;
-(iii) 28–48% of SATD comments are introduced during code reviews; (iv) SATD during reviews works for
+(iii) 28-48% of SATD comments are introduced during code reviews; (iv) SATD during reviews works for
 communicating between authors and reviewers; and (v) 20% of the SATD comments are introduced due to
-reviewers’ requests.
+reviewers' requests.
 {{}}
 ---

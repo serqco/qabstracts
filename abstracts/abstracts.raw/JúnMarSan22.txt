@@ -8,9 +8,9 @@ The challenges imposed by distance often characterize communication
 as still one of the main drawbacks of globally distributed projects.
 {{}}
 Therefore, establishing
-communication processes and practices is relevant to support a team’s work.
+communication processes and practices is relevant to support a team's work.
 {{}}
-These processes and practices need to be updated and aligned with the team’s needs.
+These processes and practices need to be updated and aligned with the team's needs.
 {{}}
 Thus, assessing
 and evaluating the maturity of such communication processes and practices is paramount.

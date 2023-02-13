@@ -1,7 +1,7 @@
 Sentinel: A Hyper-Heuristic for the Generation of Mutant Reduction Strategies.
 
 Mutation testing is an effective approach to evaluate and strengthen software test suites, but its adoption is currently limited
-by the mutants’ execution computational cost.
+by the mutants' execution computational cost.
 {{}}
 Several strategies have been proposed to reduce this cost (a.k.a.
 {{}}
@@ -31,6 +31,6 @@ without any loss in quality for subsequently developed versions in 95 percent of
 {{}}
 These results show that Sentinel is able to
 automatically generate mutation strategies that reduce mutation testing cost without affecting its testing effectiveness (i.e., mutation
-score), thus taking off from the tester’s shoulders the burden of manually selecting and configuring strategies for each SUT.
+score), thus taking off from the tester's shoulders the burden of manually selecting and configuring strategies for each SUT.
 {{}}
 ---

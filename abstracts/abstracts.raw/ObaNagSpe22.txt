@@ -7,7 +7,7 @@ Software development is a collaborative task.
 Previous research has shown social aspects within
 development teams to be highly relevant for the success of software projects.
 {{}}
-A team’s mood has been proven
+A team's mood has been proven
 to be particularly important.
 {{}}
 It is paramount for project managers to be aware of negative moods within their

@@ -1,10 +1,6 @@
 How Do Successful and Failed Projects Differ? A Socio-Technical Analysis.
 
-How Do Successful and Failed Projects Differ?
-{{}}
-A Socio-Technical Analysis
-MITCHELL JOBLIN, Saarland University and Siemens Corporate Research, Germany
-SVEN APEL, Saarland University, Saarland Informatics Campus, Germany
+
 Software development is at the intersection of the social realm, involving people who develop the software,
 and the technical realm, involving artifacts (code, docs, etc.) that are being produced.
 {{}}
@@ -25,7 +21,7 @@ in the context of software engineering wisdom.
 {{}}
 Based on a selection of 32 open source projects, we perform
 an empirical study to validate our approach considering three prediction scenarios to test the classification
-model’s ability generalizing to (1) randomly held-out project snapshots, (2) future project states, and (3) entirely new projects.
+model's ability generalizing to (1) randomly held-out project snapshots, (2) future project states, and (3) entirely new projects.
 {{}}
 Our results provide evidence that a socio-technical perspective is superior to a pure social or technical
 perspective when it comes to early indicators of future project success.

@@ -1,11 +1,6 @@
 Towards an Anatomy of Software Craftsmanship.
 
-Towards an Anatomy of Software Craftsmanship
-ANDERS SUNDELIN, Ericsson AB and Software Engineering Research Lab, Blekinge Institute
-of Technology
 
-JAVIER GONZALEZ-HUERTA, KRZYSZTOF WNUK, and TONY GORSCHEK,
-Software Engineering Research Lab, Blekinge Institute of Technology
 Context:
 {{}}
 The concept of software craftsmanship has early roots in computing, and in 2009, the Manifesto for

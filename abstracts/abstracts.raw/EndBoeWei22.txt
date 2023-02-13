@@ -21,8 +21,8 @@ In this paper,
 we report the results of the first large-scale survey of cannabis
 use by programmers.
 {{}}
-We report findings about 803 developers’ (in-
-cluding 450 full-time programmers’) cannabis usage prevalence,
+We report findings about 803 developers' (in-
+cluding 450 full-time programmers') cannabis usage prevalence,
 perceptions, and motivations.
 {{}}
 For example, we find that some

@@ -1,12 +1,6 @@
 Measuring and Modeling Group Dynamics in Open-Source Software Development: A Tensor Decomposition Approach.
 
-Measuring and Modeling Group Dynamics in Open-Source
-Software Development:
-{{}}
-A Tensor Decomposition Approach
-THOMAS BOCK, Saarland University, Saarland Informatics Campus, Germany
-ANGELIKA SCHMID, IBM, Germany
-SVEN APEL, Saarland University, Saarland Informatics Campus, Germany
+
 Many open-source software projects depend on a few core developers, who take over both the bulk of coordination and programming tasks.
 {{}}
 They are supported by peripheral developers, who contribute either via

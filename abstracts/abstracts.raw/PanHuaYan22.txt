@@ -1,4 +1,4 @@
-Comments on &quot;Using $k$k-Core Decomposition on Class Dependency Networks to Improve Bug Prediction Model&apos;s Practical Performance&quot;.
+Comments on "Using $k$k-Core Decomposition on Class Dependency Networks to Improve Bug Prediction Model's Practical Performance".
 
 In a very recent paper by (Qu et al., 2021), the authors propose an effective equation, top-core, to improve the performance
 of effort-aware bug prediction models.
@@ -6,7 +6,7 @@ of effort-aware bug prediction models.
 A distinctive feature of top-core is that it takes into account the coreness of a class in a Class
 Dependency Network (CDN) when calculating the relative risk of a class to be buggy.
 {{}}
-In this comment, we show that Qu et al.’s paper
+In this comment, we show that Qu et al.'s paper
 contains three shortcomings that may influence the performance of top-core or even have the potential to lead to erroneous results.
 {{}}
 First, we show that the CDN that they use to calculate the coreness of classes is not very accurate, neglecting many important types of
@@ -34,10 +34,10 @@ In this comment, we provide solutions to the problems by using i) an improved CD
 the structure of software systems, ii) the z-score method to normalize the features, and iii) an adaptive mechanism to determine the
 number of execution times.
 {{}}
-In the experiments, we find that Qu et al.’s approach based on the Logistic Regression model does not
+In the experiments, we find that Qu et al.'s approach based on the Logistic Regression model does not
 perform significantly better than the state-of-the-art approach Ree, which is inconsistent with the conclusion in Qu et al.’s work.
 {{}}
 We
-also observe that replacing CDN with ICDN does improve the performance of Qu et al.’s approach.
+also observe that replacing CDN with ICDN does improve the performance of Qu et al.'s approach.
 {{}}
 ---

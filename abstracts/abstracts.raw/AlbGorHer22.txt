@@ -1,11 +1,6 @@
 Super-optimization of Smart Contracts.
 
-Super-optimization of Smart Contracts
-ELVIRA ALBERT, PABLO GORDILLO, ALEJANDRO HERNÁNDEZ-CEREZO, and
-ALBERT RUBIO, Complutense University of Madrid, Spain
-MARIA A.
-{{}}
-SCHETT, University College London, UK
+
 Smart contracts are programs deployed on a blockchain.
 {{}}
 They are executed for a monetary fee paid in gas—

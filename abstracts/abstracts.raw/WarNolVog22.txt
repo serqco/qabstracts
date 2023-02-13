@@ -32,7 +32,7 @@ that contain seven different types of vulnerabilities (SQL injection, XSS, Comma
 code execution, Path disclosure, Open redirect) for training.
 {{}}
 In the experimental evaluation, Vudenc achieves
-a recall of 78%–87%, a precision of 82%–96%, and an F1 score of 80%–90%.
+a recall of 78%-87%, a precision of 82%-96%, and an F1 score of 80%-90%.
 {{}}
 Vudenc’s code, the datasets for
 the vulnerabilities, and the Python corpus for the word2vec model are available for reproduction.

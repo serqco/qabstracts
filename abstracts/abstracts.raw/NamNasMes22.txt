@@ -27,7 +27,7 @@ Our results highlight the importance of code representation and its impact on le
 and usefulness.
 {{}}
 Our findings indicate that (1) while code abstractions help the learning process, they can adversely impact the usefulness of inferred fixes from a developer’s point of
-view; this emphasizes the need to look at the patches generated from the practitioner’s perspective, which is often neglected in the literature, (2) mixed representations can outperform
+view; this emphasizes the need to look at the patches generated from the practitioner's perspective, which is often neglected in the literature, (2) mixed representations can outperform
 homogeneous code representations, (3) bug type can affect the effectiveness of different
 code representations; although current techniques use a single code representation for all
 bug types, there is no single best code representation applicable to all bug types.

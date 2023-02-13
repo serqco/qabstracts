@@ -1,15 +1,6 @@
 NPC: Neuron Path Coverage via Characterizing Decision Logic of Deep Neural Networks.
 
-NPC:
-{{}}
-Neuron Path Coverage via Characterizing Decision
-Logic of Deep Neural Networks
-XIAOFEI XIE, Singapore Management University, Singapore
-TIANLIN LI and JIAN WANG, Nanyang Technological University, Singapore
-LEI MA, Kyushu University, Japan
-QING GUO, Nanyang Technological University, Singapore
-FELIX JUEFEI-XU, Alibaba Group, USA
-YANG LIU, Nanyang Technological University, Singapore, Zhejiang Sci-Tech University, China
+
 Deep learning has recently been widely applied to many applications across different domains, e.g., image
 classification and audio recognition.
 {{}}
@@ -28,96 +19,22 @@ The relationship between the structural coverage and the decision logic of DNNs 
 Moreover, recent studies have further revealed the non-existence of correlation between the structural coverage
 and DNN defect detection, which further posts concerns on what a suitable DNN testing criterion should be.
 {{}}
-Xiaofei Xie and Tianlin Li equal contributions.
+In this article, we propose the interpretable coverage criteria through constructing the decision structure
+of a DNN.
 {{}}
-This research is partially supported by the National Research Foundation, Singapore under its the AI Singapore Programme
-(AISG2-RP-2020-019), the National Research Foundation, Prime Minister’s Office, Singapore under its National Cybersecurity R&D Program (Award No.
+Mirroring the control flow graph of the traditional program, we first extract a decision graph
+from a DNN based on its interpretation, where a path of the decision graph represents a decision logic of
+the DNN.
 {{}}
-NRF2018NCR-NCR005-0001), NRF Investigatorship NRFI06-2020-0022-0001, the National
-Research Foundation through its National Satellite of Excellence in Trustworthy Software Systems (NSOE-TSS) project
-under the National Cybersecurity R&D (NCR) Grant Award No.
+Based on the control flow and data flow of the decision graph, we propose two variants of path
+coverage to measure the adequacy of the test cases in exercising the decision logic.
 {{}}
-NRF2018NCR-NSOE003-0001, the National Research Foundation, Singapore under its AI Singapore Programme (AISG Award No:
+The higher the path
+coverage, the more diverse decision logic the DNN is expected to be explored.
 {{}}
-AISG-PhD/2021-01-022[T]), the Ministry of Education, Singapore under its Academic Research Fund Tier 3 (MOET32020-0004), the JSPS KAKENHI Grant Nos.
-{{}}
-JP20H04168,
-JP19K24348, JP19H04086, JP21H04877, and JST-Mirai Program Grant No.
-{{}}
-JPMJMI20B8, Japan.
-{{}}
-Lei Ma is also supported by
-Canada CIFAR AI Program and Natural Sciences and Engineering Research Council of Canada.
-{{}}
-Any opinions, findings and
-conclusions or recommendations expressed in this material are those of the author(s) and do not reflect the views of the
-Ministry of Education, Singapore.
-{{}}
-Authors’ addresses:
-{{}}
-X.
-{{}}
-Xie, Singapore Management University, LKCSB 4124, 50 Stamford Road, Singapore 178899;
-email:
-{{}}
-xiaofei.xfxie@gmail.com; T.
-{{}}
-Li, J.
-{{}}
-Wang, and Q.
-{{}}
-Guo (corresponding author), Nanyang Technological University,
-Block N4-B2c-06, School of Computer Science and Engineering, 50 NANYANG AVENUE, Singapore 639798; emails:
-{{}}
-tianlin001@e.ntu.edu.sg, {jian.wang, qing.guo}@ntu.edu.sg; L.
-{{}}
-Ma, 11-207 Donadeo Innovation Centre for Engineering Building, Electrical and Computer Engineering Department, University of Alberta, Edmonton, Canada; email:
-{{}}
-malei@ait.kyushu-u.ac.jp; F.
-{{}}
-Juefei-Xu, Alibaba Group, 525 Almanor Ave, Sunnyvale, CA 94085, United States; email:
-{{}}
-juefei.xu@gmail.com; Y.
-{{}}
-Liu (corresponding author), Nanyang Technological University, Block N4-B2c-06, School of Computer Science and Engineering, 50 NANYANG AVENUE, Singapore 639798, Zhejiang Sci-Tech University, China; email:
-{{}}
-yangliu@ntu.edu.sg.
-{{}}
-Updated author affliation:
-{{}}
-Lei Ma, University of Alberta, Canada; email:
-{{}}
-ma.lei@acm.org.
-{{}}
-Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee
-provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and
-the full citation on the first page.
-{{}}
-Copyrights for components of this work owned by others than ACM must be honored.
-{{}}
-Abstracting with credit is permitted.
-{{}}
-To copy otherwise, or republish, to post on servers or to redistribute to lists, requires
-prior specific permission and/or a fee.
-{{}}
-Request permissions from permissions@acm.org.
-{{}}
-© 2022 Association for Computing Machinery.
-{{}}
-1049-331X/2022/04-ART47 $15.00
-https://doi.org/10.1145/3490489
-ACM Transactions on Software Engineering and Methodology, Vol.
-{{}}
-31, No.
-{{}}
-3, Article 47.
-{{}}
-Pub.
-{{}}
-date:
-{{}}
-April 2022.
-{{}}
-47
+Our large-scale evaluation
+results demonstrate that: The path in the decision graph is effective in characterizing the decision of the DNN,
+and the proposed coverage criteria are also sensitive with errors, including natural errors and adversarial
+examples, and strongly correlate with the output impartiality.
 {{}}
 ---

@@ -1,16 +1,6 @@
 Opinion Mining for Software Development: A Systematic Literature Review.
 
-Opinion Mining for Software Development:
-{{}}
-A Systematic
-Literature Review
-BIN LIN, Software Institute - Università della Svizzera italiana, Switzerland
-NATHAN CASSEE and ALEXANDER SEREBRENIK, Eindhoven University of Technology,
-The Netherlands
 
-GABRIELE BAVOTA, Software Institute - Università della Svizzera italiana, Switzerland
-NICOLE NOVIELLI, University of Bari, Italy
-MICHELE LANZA, Software Institute - Università della Svizzera italiana, Switzerland
 Opinion mining, sometimes referred to as sentiment analysis, has gained increasing attention in software
 engineering (SE) studies.
 {{}}

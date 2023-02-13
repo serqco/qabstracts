@@ -1,7 +1,7 @@
 Jigsaw: Large Language Models meet Program Synthesis.
 
 Large pre-trained language models such as GPT-3 [10], Codex [11],
-and Google’s language model [7] are now capable of generating
+and Google's language model [7] are now capable of generating
 code from natural language specifications of programmer intent.
 {{}}
 We view these developments with a mixture of optimism and cau-

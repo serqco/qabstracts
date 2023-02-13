@@ -1,20 +1,13 @@
 Continuous and Proactive Software Architecture Evaluation: An IoT Case.
 
-Continuous and Proactive Software Architecture Evaluation:
-{{}}
-An IoT Case
-DALIA SOBHY, Computer Engineering Department, Arab Academy of Science and Technology
-and Maritime Transport, Egypt
-LEANDRO MINKU, University of Birmingham, UK
-RAMI BAHSOON, FRSA and University of Birmingham, UK
-RICK KAZMAN, SEI/CMU and University of Hawaii, USA
+
 Design-time evaluation is essential to build the initial software architecture to be deployed.
 {{}}
-However, experts’
+However, experts'
 assumptions made at design-time are unlikely to remain true indefinitely in systems that are characterized by
 scale, hyperconnectivity, dynamism, and uncertainty in operations (e.g. IoT).
 {{}}
-Therefore, experts’ design-time
+Therefore, experts' design-time
 decisions can be challenged at run-time.
 {{}}
 A continuous architecture evaluation that systematically assesses

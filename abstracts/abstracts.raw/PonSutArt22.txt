@@ -1,12 +1,6 @@
 Stateful Serverless Computing with Crucial.
 
-Stateful Serverless Computing with Crucial
-DANIEL BARCELONA-PONS, Universitat Rovira i Virgili
-PIERRE SUTRA, Télécom SudParis
-MARC SÁNCHEZ-ARTIGAS and GERARD PARÍS, Universitat Rovira i Virgili
-PEDRO GARCÍA-LÓPEZ, Universitat Rovira i Virgili, and IBM T.J.
-{{}}
-Watson Research Center
+
 Serverless computing greatly simplifies the use of cloud resources.
 {{}}
 In particular, Function-as-a-Service (FaaS)

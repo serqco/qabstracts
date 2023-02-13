@@ -1,16 +1,6 @@
 Women&apos;s Participation in Open Source Software: A Survey of the Literature.
 
-81
-Women’s Participation in Open Source Software:
-{{}}
-A Survey
-of the Literature
-BIANCA TRINKENREICH, Northern Arizona University, USA
-IGOR WIESE, Universidade Tecnológica Federal do Paraná, Brazil
-ANITA SARMA, Oregon State University, USA
-MARCO GEROSA, Northern Arizona University, USA
-IGOR STEINMACHER, Universidade Tecnológica Federal do Paraná, Brazil and
-Northern Arizona University, USA
+
 Women are underrepresented in Open Source Software (OSS) projects, as a result of which, not only do women
 lose career and skill development opportunities, but the projects themselves suffer from a lack of diversity of
 perspectives.

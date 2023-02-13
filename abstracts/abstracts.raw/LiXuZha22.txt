@@ -1,19 +1,6 @@
 OJXPERF: Featherlight Object Replica Detection for Java Programs.
 
-   2022 IEEE/ACM 44th International Conference on Software Engineering (ICSE)
-OJXPerf:
-{{}}
-Featherlight Object Replica Detection for Java
-    Programs
-Bolun Li
-North Carolina State University
-Raleigh, North Carolina, USA
-bli35@ncsu.edu
-Pengfei Su
-University of California, Merced
-Merced, California, USA
-psu9@ucmerced.edu
-Abstract
+
 Memory bloat is an important source of inefficiency in complex
 production software, especially in software written in managed lan-
 guages such as Java.
@@ -60,35 +47,5 @@ cluding well-known benchmarks and real-world applications.
 The
 results show a noticeable reduction in memory usage (up to 11%)
 and a significant speedup (up to 25%).
-{{}}
-Permission to make digital or hard copies of all or part of this work for personal or
-classroom use is granted without fee provided that copies are not made or distributed
-for profit or commercial advantage and that copies bear this notice and the full citation
-on the first page.
-{{}}
-Copyrights for components of this work owned by others than the
-author(s) must be honored.
-{{}}
-Abstracting with credit is permitted.
-{{}}
-To copy otherwise, or
-republish, to post on servers or to redistribute to lists, requires prior specific permission
-and/or a fee.
-{{}}
-Request permissions from permissions@acm.org.
-{{}}
-ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
-© 2022 Copyright held by the owner/author(s).
-{{}}
-Publication rights licensed to ACM.
-{{}}
-ACM ISBN 978-1-4503-9221-1/22/05.
-{{}}
-.
-{{}}
-. $
-{{}}
-15.00
-https://doi.org/10.1145/3510003.3510083
 {{}}
 ---

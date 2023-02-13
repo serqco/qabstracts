@@ -22,7 +22,7 @@ comprehensive dataset constructed from 26 popular GitHub projects, we obtain the
 (a) Duplicate pull requests result in
 redundant human and computing resources, exerting a significant impact on the contribution and evaluation process.
 {{}}
-(b) Contributors’
+(b) Contributors'
 inappropriate working patterns and the drawbacks of their collaborating environment might result in duplicate pull requests.
 {{}}
 (c) Compared

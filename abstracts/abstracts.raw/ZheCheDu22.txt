@@ -24,7 +24,7 @@ we propose NeuronFair, a new DNN fairness testing framework
 that differs from previous work in several key aspects:
 {{}}
 (1) inter-
-pretable - it quantitatively interprets DNNs’ fairness violations
+pretable - it quantitatively interprets DNNs' fairness violations
 for the biased decision; (2) effective - it uses the interpretation
 results to guide the generation of more diverse instances in less
 time; (3) generic - it can handle both structured and unstructured

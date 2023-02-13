@@ -11,8 +11,8 @@ developers from five different companies.
 We provide empirical evidence that a link exists between emotions and perceived productivity
 at the workplace.
 {{}}
-Furthermore, we present a taxonomy of triggers for developers’ positive and negative emotions, based on the
-qualitative analysis of participants’ self-reported answers collected through daily experience sampling.
+Furthermore, we present a taxonomy of triggers for developers' positive and negative emotions, based on the
+qualitative analysis of participants' self-reported answers collected through daily experience sampling.
 {{}}
 Finally, we experiment with a
 minimal set of non-invasive biometric sensors that we use as input for emotion detection.

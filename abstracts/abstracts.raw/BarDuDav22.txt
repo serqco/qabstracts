@@ -28,7 +28,7 @@ that client-side sanitization
 logic, including regexes, is consistent with the sanitization logic on
 the server-side.
 {{}}
-We identify a service’s regex-based input sanitiza-
+We identify a service's regex-based input sanitiza-
 tion in its HTML forms or its API, find vulnerable regexes among
 these regexes, craft ReDoS probes, and pinpoint vulnerabilities.
 {{}}
@@ -56,6 +56,6 @@ DoS vulnerabilities in plain sight.
 Our results motivate short-term
 patches and long-term fundamental solutions.
 {{}}
-“Make measurable what cannot be measured.”
+"Make measurable what cannot be measured." - Galileo Galilei
 {{}}
 ---

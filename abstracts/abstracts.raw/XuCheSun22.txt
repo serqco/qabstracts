@@ -1,17 +1,5 @@
 Memory-Safety Challenge Considered Solved? An In-Depth Study with All Rust CVEs.
 
-Memory-Safety Challenge Considered Solved?
-{{}}
-An In-Depth
-Study with All Rust CVEs
-HUI XU, School of Computer Science, Fudan University
-ZHUANGBIN CHEN, Department of CSE, The Chinese University of Hong Kong
-MINGSHEN SUN, Baidu Security
-YANGFAN ZHOU, School of Computer Science, Fudan University and Shanghai Key Laboratory
-of Intelligent Information Processing
-MICHAEL R.
-{{}}
-LYU, Department of CSE, The Chinese University of Hong Kong
 Rust is an emerging programming language that aims at preventing memory-safety bugs without sacrificing
 much efficiency.
 {{}}

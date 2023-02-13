@@ -1,17 +1,12 @@
 Analyzing Uncertainty in Release Planning: A Method and Experiment for Fixed-Date Release Cycles.
 
-Analyzing Uncertainty in Release Planning:
-{{}}
-A Method and
-Experiment for Fixed-Date Release Cycles
-OLAWOLE ONI and EMMANUEL LETIER, Department of Computer Science, University College
-London, United Kingdom
-Release planning—deciding what features to implement in upcoming releases of a software system—is a critical activity in iterative software development.
+
+Release planning - deciding what features to implement in upcoming releases of a software system - is a critical activity in iterative software development.
 {{}}
 Many release planning methods exist, but most ignore the
 inevitable uncertainty in estimating software development effort and business value.
 {{}}
-The article’s objective
+The article's objective
 is to study whether analyzing uncertainty during release planning generates better release plans than if
 uncertainty is ignored.
 {{}}

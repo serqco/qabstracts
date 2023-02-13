@@ -40,8 +40,10 @@ It is the only approach that achieves competitive results on all datasets regard
 all considered metrics.
 {{}}
 Moreover, we conduct an extensive ablation study that demonstrates
-the importance of each TraceSim’s element to its final performance and robustness.
+the importance of each TraceSim's element to its final performance and robustness.
 {{}}
 Finally,
+we provide the source code for all considered methods and evaluation methodology as well
+as the created datasets.
 {{}}
 ---

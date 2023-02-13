@@ -1,8 +1,6 @@
 Verification of Programs Sensitive to Heap Layout.
 
-Verification of Programs Sensitive to Heap Layout
-HENRICH LAUKO, LUKÁŠ KORENČIK, and PETR ROČKAI,
-Masaryk University, Czech Republic
+
 Most C and C++ programs use dynamically allocated memory (often known as a heap) to store and organize
 their data.
 {{}}

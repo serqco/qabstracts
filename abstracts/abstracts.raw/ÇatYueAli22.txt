@@ -1,9 +1,6 @@
 Uncertainty-aware Prediction Validator in Deep Learning Models for Cyber-physical System Data.
 
-Uncertainty-aware Prediction Validator in Deep Learning
-Models for Cyber-physical System Data
-FERHAT OZGUR CATAK, University of Stavanger, Simula Research Laboratory, Norway
-TAO YUE and SHAUKAT ALI, Simula Research Laboratory, Norway
+
 The use of Deep learning in Cyber-Physical Systems (CPSs) is gaining popularity due to its ability to bring
 intelligence to CPS behaviors.
 {{}}

@@ -1,14 +1,6 @@
 Psychometrics in Behavioral Software Engineering: A Methodological Introduction with Guidelines.
 
-Psychometrics in Behavioral Software Engineering:
-{{}}
-A Methodological Introduction with Guidelines
-DANIEL GRAZIOTIN, University of Stuttgart, Institute of Software Engineering, Germany
-PER LENBERG and ROBERT FELDT, Chalmers and the University of Gothenburg, Dept.
-{{}}
-of Computer
-Science and Engineering, Sweden
-STEFAN WAGNER, University of Stuttgart, Institute of Software Engineering, Germany
+
 A meaningful and deep understanding of the human aspects of software engineering (SE) requires psychological constructs to be considered.
 {{}}
 Psychology theory can facilitate the systematic and sound development

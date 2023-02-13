@@ -25,7 +25,7 @@ To compare and evaluate the hybrid search strategy, we replicated the search pro
 systematic literature review (SLR) on industry–academia collaboration in software engineering.
 {{}}
 The SLR used
-a more ‘‘traditional’’ approach to searching for relevant articles for an SLR, while our replication was executed
+a more "traditional" approach to searching for relevant articles for an SLR, while our replication was executed
 using a hybrid search strategy.
 {{}}
 Results:

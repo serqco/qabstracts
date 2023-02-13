@@ -14,7 +14,7 @@ optimization could still be relatively new to SE/SBSE researchers, who may not b
 problems.
 {{}}
 On the other hand, simply following the evaluation methods for general multi-objective optimization problems may not be
-appropriate for specific SBSE problems, especially when the problem nature or decision maker’s preferences are explicitly/implicitly known.
+appropriate for specific SBSE problems, especially when the problem nature or decision maker's preferences are explicitly/implicitly known.
 {{}}
 This has been well echoed in the literature by various inappropriate/inadequate selection and inaccurate/misleading use of evaluation
 methods.

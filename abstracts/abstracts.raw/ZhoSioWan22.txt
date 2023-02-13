@@ -1,11 +1,5 @@
 SPI: Automated Identification of Security Patches via Commits.
 
-SPI:
-{{}}
-Automated Identification of Security Patches
-via Commits
-YAQIN ZHOU, JING KAI SIOW, CHENYU WANG, SHANGQING LIU, and
-YANG LIU, Nanyang Technological University, Singapore
 Security patches in open source software, providing security fixes to identified vulnerabilities, are crucial in
 protecting against cyber attacks.
 {{}}

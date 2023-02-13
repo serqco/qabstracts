@@ -1,8 +1,5 @@
 Boosting Compiler Testing via Compiler Optimization Exploration.
 
-Boosting Compiler Testing via Compiler Optimization
-Exploration
-JUNJIE CHEN and CHENYAO SUO, College of Intelligence and Computing, Tianjin University
 Compilers are a kind of important software, and similar to the quality assurance of other software, compiler
 testing is one of the most widely-used ways of guaranteeing their quality.
 {{}}

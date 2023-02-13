@@ -12,13 +12,13 @@ code.
 With the increasing popularity of code review, dependency on bug localizers can be reduced.
 {{}}
 Besides, the
-code review-based bug localization is more trustworthy since reviewers’ expertise and experience are reflected
+code review-based bug localization is more trustworthy since reviewers' expertise and experience are reflected
 in these suggestions.
 {{}}
 Objective:
 {{}}
 The natural language instructions scripted on the review comments are enormous sources of
-information about the bug’s nature and expected solutions.
+information about the bug's nature and expected solutions.
 {{}}
 However, none of the learning-based tools has
 utilized the review comments to fix programming bugs to the best of our knowledge.

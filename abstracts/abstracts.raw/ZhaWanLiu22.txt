@@ -1,16 +1,6 @@
 Mutant Reduction Evaluation: What is There and What is Missing?
 
-Mutant Reduction Evaluation:
-{{}}
-What is There and
-What is Missing?
-{{}}
-PENG ZHANG, YANG WANG, XUTONG LIU, YANHUI LI, and YIBIAO YANG,
-Nanjing University
 
-ZIYUAN WANG, Nanjing University of Posts and Telecommunications
-XIAOYU ZHOU, Southeast University
-LIN CHEN and YUMING ZHOU, Nanjing University
 Background.
 {{}}
 Mutation testing is a commonly used defect injection technique for evaluating the effectiveness of a test suite.
@@ -25,8 +15,8 @@ Problem.
 It is important to measure the ability of a mutation reduction strategy to maintain test suite
 effectiveness evaluation.
 {{}}
-However, existing evaluation indicators are unable to measure the “order-preserving
-ability”, i.e., to what extent the mutation score order among test suites is maintained before and after mutation
+However, existing evaluation indicators are unable to measure the â€œorder-preserving
+abilityâ€�, i.e., to what extent the mutation score order among test suites is maintained before and after mutation
 reduction.
 {{}}
 As a result, misleading conclusions can be achieved when using existing indicators to evaluate the
@@ -34,7 +24,7 @@ reduction effectiveness.
 {{}}
 Objective.
 {{}}
-We aim to propose evaluation indicators to measure the “order-preserving ability” of a mutation
+We aim to propose evaluation indicators to measure the "order-preserving ability"� of a mutation
 reduction strategy, which is important but missing in our community.
 {{}}
 Method.
@@ -56,76 +46,19 @@ a mutation reduction strategy can provide compared with a random reduction strat
 {{}}
 Result.
 {{}}
-The experimental results show that OP and EROP are able to efficiently measure the “orderpreserving ability” of a mutation reduction strategy.
+The experimental results show that OP and EROP are able to efficiently measure the "orderpreserving ability"� of a mutation reduction strategy.
 {{}}
 As a result, they have a better ability to distinguish
 various mutation reduction strategies compared with the existing evaluation indicators.
 {{}}
 In addition, we find
-
-This work is partially supported by the National Natural Science Foundation of China (61772259, 62172205, 61872177,
-62072194, 62172202).
+that Subsuming Mutant Selection (SMS) and Clustering Mutant Selection (CMS) are more effective
+than the other strategies under OP and EROP.
 {{}}
-Authors’ addresses:
+Conclusion.
 {{}}
-P.
-{{}}
-Zhang, Y.
-{{}}
-Wang, X.
-{{}}
-Liu, Y.
-{{}}
-Li (corresponding author), Y.
-{{}}
-Yang, L.
-{{}}
-Chen (corresponding author),
-and Y.
-{{}}
-Zhou (corresponding author), Department of Computer Science and Techonology Nanjing University 163 Xianlin Avenue, Qixia District Nanjing, Jiangsu Province, China, 210023; emails:
-{{}}
-{dz1833034, njuwy, xryu}@smail.nju.edu.cn,
-{yanhuili, yangyibiao, lchen, zhouyuming}@nju.edu.cn; Z.
-{{}}
-Wang, School of Computer Science Nanjing University of
-Posts and Telecommunications 9 Wenyuan Road, Qixia District Nanjing, Jiangsu Province, China, 210023; email:
-{{}}
-wangziyuan@njupt.edu.cn; X.
-{{}}
-Zhou, School of Computer Science and Engineering Souteast University 2 Souteast University, Jiangning District Nanjing, Jiangsu Province, China, 211189; email:
-{{}}
-zhouxy@seu.edu.cn.
-{{}}
-Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee
-provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and
-the full citation on the first page.
-{{}}
-Copyrights for components of this work owned by others than ACM must be honored.
-{{}}
-Abstracting with credit is permitted.
-{{}}
-To copy otherwise, or republish, to post on servers or to redistribute to lists, requires
-prior specific permission and/or a fee.
-{{}}
-Request permissions from permissions@acm.org.
-{{}}
-© 2022 Association for Computing Machinery.
-{{}}
-1049-331X/2022/07-ART69 $15.00
-https://doi.org/10.1145/3522578
-ACM Transactions on Software Engineering and Methodology, Vol.
-{{}}
-31, No.
-{{}}
-4, Article 69.
-{{}}
-Pub.
-{{}}
-date:
-{{}}
-July 2022.
-{{}}
-69
+We suggest, for the researchers, that OP and EROP should be used to measure the effectiveness
+of a mutant reduction strategy, and for the practitioners, that SMS and CMS should be given priority in
+practice.
 {{}}
 ---

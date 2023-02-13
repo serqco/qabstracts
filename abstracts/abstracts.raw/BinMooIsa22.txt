@@ -8,20 +8,20 @@ function names as semantic cues that can be learned by a deep neural network (DN
 vulnerability of functions.
 {{}}
 Combining identifier splitting, which we use to split each function name into its constituent words, with
-a novel frequency-based algorithm, we explore the extent to which the words that make up a function’s name
+a novel frequency-based algorithm, we explore the extent to which the words that make up a function's name
 can be used to predict potentially vulnerable functions.
 {{}}
 In contrast to the lightweight prediction provided by
 a DNN considering only function names, avoiding the need for a DNN provides featherweight prediction.
 {{}}
 The
-underlying idea is that function names that contain certain ‘‘dangerous’’ words are more likely to accompany
+underlying idea is that function names that contain certain "dangerous" words are more likely to accompany
 vulnerable functions.
 {{}}
 Of course, this assumes that the frequency-based algorithm can be properly tuned to
 focus on truly dangerous words.
 {{}}
-Because it is more transparent than a DNN, which behaves as a ‘‘black box’’ and thus provides no insight
+Because it is more transparent than a DNN, which behaves as a "black box" and thus provides no insight
 into the rationalization underlying its decisions, the frequency-based algorithm enables us to investigate the
 inner workings of the DNN.
 {{}}
@@ -32,7 +32,7 @@ We empirically evaluate our approach on a heterogeneous dataset containing over 
 vulnerable, and over 950 000 functions labeled benign.
 {{}}
 Our analysis shows that words alone account for a
-significant portion of the DNN’s classification ability.
+significant portion of the DNN's classification ability.
 {{}}
 We also find that words are of greatest value in the
 datasets with a more homogeneous vocabulary.

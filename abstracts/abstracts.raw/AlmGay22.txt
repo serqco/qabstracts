@@ -1,6 +1,6 @@
 Learning how to search: generating effective test cases through adaptive fitness function selection.
 
-Search-based test generation is guided by feedback from one or more fitness functions—
+Search-based test generation is guided by feedback from one or more fitness functions'
 scoring functions that judge solution optimality.
 {{}}
 Choosing informative fitness functions is

@@ -3,23 +3,21 @@ DevRec: Multi-Relationship Embedded Software Developer Recommendation.
 Collaboration efficiency is of paramount importance for software development.
 {{}}
 Finding suitable developers is critical and
-challenging due to the difficulty of capturing developers’ expertises, relevance as well as the sparsity of explicit developer-task
+challenging due to the difficulty of capturing developers' expertises, relevance as well as the sparsity of explicit developer-task
 interactions.
 {{}}
-To tackle this problem, existing developer recommendation approaches focus on modelling the developer’s expertise or
+To tackle this problem, existing developer recommendation approaches focus on modelling the developer's expertise or
 interactions with tasks based on their historical information.
 {{}}
 However, such approaches often suffer from low performance because
-they ignore some useful information that might help improve recommendation performance, such as 1) developers’ collaboration
-relationship; 2) the interaction relationship between developer and task; and 3) the tasks’ similarity relationship.
+they ignore some useful information that might help improve recommendation performance, such as 1) developers' collaboration
+relationship; 2) the interaction relationship between developer and task; and 3) the tasks' similarity relationship.
 {{}}
 To leverage the
 above-mentioned relationships, this paper proposes DevRec, a novel multi-relationship embedded approach for software developer
 recommendation.
 {{}}
-We first formally define the multi-relationships and then learn the vector representations (aka.
-{{}}
-embeddings) of
+We first formally define the multi-relationships and then learn the vector representations (aka. embeddings) of
 developers and tasks.
 {{}}
 Second, we explicitly encoded the multi-relationships into the embedding process.

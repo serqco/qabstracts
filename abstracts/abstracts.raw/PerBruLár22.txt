@@ -21,12 +21,12 @@ We conducted a case study involving (a) one iteration of individual interviews w
 managers, and one solution architect) and (b) a follow-up iteration consisting of a workshop with 6 employees (three UX designers, two solution architects, and one
 project manager) two years later.
 {{}}
-We analyzed how the company’s approach to integration with ’upfront design’ and ’work in parallel’ involve mutual adjustments as
+We analyzed how the company’s approach to integration with "upfront design" and "work in parallel" involve mutual adjustments as
 opposed to assimilation or separation of UX design and software development.
 {{}}
 Results:
 {{}}
-Our analysis shows how integration through mutual adjustments made distinct contributions to UX designers’ and software developers’ pursuit of Agility.
+Our analysis shows how integration through mutual adjustments made distinct contributions to UX designers' and software developers’ pursuit of Agility.
 {{}}
 They experienced notably different work processes that still dealt effectively with change and contributed to quality, economy, or simplicity.
 {{}}

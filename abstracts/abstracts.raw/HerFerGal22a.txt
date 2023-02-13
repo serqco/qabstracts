@@ -1,4 +1,4 @@
-Correction to: Uniform and scalable sampling of highly configurable systems.
+﻿Correction to: Uniform and scalable sampling of highly configurable systems.
 
 Empirical Software Engineering (2022) 27:
 {{}}
@@ -41,30 +41,5 @@ with the empirical variable frequencies in a sample".
 The original article has been corrected.
 {{}}
 The online version of the original article can be found at https://doi.org/10.1007/s10664-021-10102-5
-
-* Ruben Heradio
-rheradio@issi.uned.es
-David Fernandez-Amoros
-david@issi.uned.es
-José A.
-{{}}
-Galindo
-jagalindo@us.es
-David Benavides
-benavides@us.es
-Don Batory
-batory@cs.utexas.edu
-
-1
-
-Universidad Nacional de Educación a Distancia, Madrid, Spain
-
-2
-
-University of Seville, Seville, Spain
-
-3
-
-University of Texas at Austin, Austin, TX, USA
 {{}}
 ---

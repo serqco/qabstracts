@@ -43,41 +43,15 @@ tion strategies can be consistently effective, and the power of their
 gradient-guidance mechanisms have been compromised.
 {{}}
 Inspired
-† Mingyuan Wu is also affiliated with the Research Institute of Trustworthy Au-
-tonomous Systems, Shenzhen, China.
+by such findings, we propose a simplistic technique, PreFuzz, which
+improves neural program-smoothing-based fuzzers with a resourceefficient
+edge selection mechanism to enhance their gradient guidance
+and a probabilistic byte selection mechanism to further boost
+mutation effectiveness.
 {{}}
-* Yuqun Zhang is the corresponding author.
-{{}}
-He is also affiliated with the Research
-Institute of Trustworthy Autonomous Systems, Shenzhen, China and Guangdong
-Provincial Key Laboratory of Brain-inspired Intelligent Computation, China.
-{{}}
-Permission to make digital or hard copies of all or part of this work for personal or
-classroom use is granted without fee provided that copies are not made or distributed
-for profit or commercial advantage and that copies bear this notice and the full citation
-on the first page.
-{{}}
-Copyrights for components of this work owned by others than ACM
-must be honored.
-{{}}
-Abstracting with credit is permitted.
-{{}}
-To copy otherwise, or republish,
-to post on servers or to redistribute to lists, requires prior specific permission and/or a
-fee.
-{{}}
-Request permissions from permissions@acm.org.
-{{}}
-ICSE ’22, May 21–29, 2022, Pittsburgh, PA, USA
-© 2022 Association for Computing Machinery.
-{{}}
-ACM ISBN 978-1-4503-9221-1/22/05.
-{{}}
-.
-{{}}
-. $
-{{}}
-15.00
-https://doi.org/10.1145/3510003.3510089
+Our evaluation results indicate that PreFuzz
+can significantly increase the edge coverage of Neuzz/MTFuzz, and
+also reveal multiple practical guidelines to advance future research
+on neural program-smoothing-based fuzzing.
 {{}}
 ---

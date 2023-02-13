@@ -46,7 +46,7 @@ Conclusion:
 {{}}
 Most studies do not include any form of an online reproduction package, although this has started
 to change recently—8% of analyzed studies published before 2018 included a full reproduction package,
-compared to 22% in years 2018–2019.
+compared to 22% in years 2018-2019.
 {{}}
 Ones that do include a package usually use a research group website
 or even a personal one.

@@ -26,7 +26,7 @@ inductive coding and theming using categories from an existing onboarding theory
 {{}}
 Results:
 {{}}
-We describe the team’s onboarding practices and adjustments and present an agile onboarding model
+We describe the team's onboarding practices and adjustments and present an agile onboarding model
 that encompasses onboarding activities, individual adjustments, and workplace adjustments.
 {{}}
 Conclusions:

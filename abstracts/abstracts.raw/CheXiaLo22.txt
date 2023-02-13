@@ -1,11 +1,6 @@
 Defining Smart Contract Defects on Ethereum.
 
-Why Do Smart Contracts Self-Destruct?
-{{}}
-Investigating the Selfdestruct Function on Ethereum
-JIACHI CHEN and XIN XIA, Monash University
-DAVID LO, Singapore Management University
-JOHN GRUNDY, Monash University
+
 The selfdestruct function is provided by Ethereum smart contracts to destroy a contract on the blockchain
 system.
 {{}}

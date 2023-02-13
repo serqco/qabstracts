@@ -10,7 +10,7 @@ threat investigation process.
 {{}}
 Objective:
 {{}}
-‘Event polysemy’ phenomenon broadly exists in large-scale event dataset, which means that events
+'Event polysemy' phenomenon broadly exists in large-scale event dataset, which means that events
 of the same category can reveal different purposes in different contexts.
 {{}}
 This paper aims at exploring, revealing

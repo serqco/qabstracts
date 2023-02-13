@@ -1,19 +1,6 @@
 Turnover of Companies in OpenStack: Prevalence and Rationale.
 
-Turnover of Companies in OpenStack:
-{{}}
-Prevalence and
-Rationale
-YUXIA ZHANG and HUI LIU, School of Computer Science and Technology, Beijing Institute of
-Technology
 
-XIN TAN, School of Computer Science and Engineering, Beihang University, State Key Laboratory of
-Software Development Environment
-
-MINGHUI ZHOU and ZHI JIN, School of Computer Science and Technology, Peking University,
-Key Laboratory of High Confidence Software Technologies, Ministry of Education
-JIAXIN ZHU, Institute of Software, Chinese Academy of Sciences, University of Chinese Academy of
-Sciences
 To achieve commercial goals, companies have made substantial contributions to large open-source software
 (OSS) ecosystems such as OpenStack and have become the main contributors.
 {{}}
@@ -37,7 +24,7 @@ Compared to the sustaining companies that joined in the same version, the withdr
 companies tend to have a weaker contribution intensity but contribute to a similar scope of repositories in
 OpenStack.
 {{}}
-Through conducting a developer survey, we find four aspects of reasons for companies’ withdrawal from OpenStack:
+Through conducting a developer survey, we find four aspects of reasons for companies' withdrawal from OpenStack:
 {{}}
 company, community, developer, and project.
 {{}}
@@ -46,7 +33,7 @@ company aspect, i.e., the company either achieved its goals or failed to do so.
 {{}}
 By fitting the survival analysis
 model, we find that commercial goals are associated with the probability of the company’s withdrawal, and
-that a company’s contribution intensity and scale are positively correlated with its retention.
+that a company's contribution intensity and scale are positively correlated with its retention.
 {{}}
 Maintaining
 good retention is important but challenging for OSS ecosystems, and our results may shed light on potential

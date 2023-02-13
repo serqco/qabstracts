@@ -1,8 +1,6 @@
 Classifying Mobile Applications Using Word Embeddings.
 
-Classifying Mobile Applications Using Word Embeddings
-FAHIMEH EBRAHIMI, MIROSLAV TUSHEV, and ANAS MAHMOUD,
-Louisiana State University
+
 Modern application stores enable developers to classify their apps by choosing from a set of generic categories,
 or genres, such as health, games, and music.
 {{}}

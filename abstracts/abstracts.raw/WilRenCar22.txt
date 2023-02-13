@@ -1,11 +1,6 @@
 Guided Feature Identification and Removal for Resource-constrained Firmware.
 
-Guided Feature Identification and Removal for
-Resource-constrained Firmware
-RYAN WILLIAMS, Northeastern University, USA
-TONGWEI REN and LORENZO DE CARLI, Worcester Polytechnic Institute, USA
-LONG LU, Northeastern University, USA
-GILLIAN SMITH, Worcester Polytechnic Institute, USA
+
 IoT firmware oftentimes incorporates third-party components, such as network-oriented middleware and
 media encoders/decoders.
 {{}}

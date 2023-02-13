@@ -33,6 +33,6 @@ Moreover, we deployed and evaluated the usefulness of SKIPCI with our industrial
 {{}}
 Qualitative results
 demonstrate the effectiveness of SKIPCI in providing relevant CI skip commit recommendations to developers for two large software
-projects from practitioner’s point of view.
+projects from practitioner's point of view.
 {{}}
 ---

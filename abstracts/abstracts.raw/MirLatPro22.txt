@@ -1,21 +1,6 @@
 Type4Py: Practical Deep Similarity Learning-Based Type Inference for Python.
 
-2022 IEEE/ACM 44th International Conference on Software Engineering (ICSE)
-Type4Py:
-{{}}
-Practical Deep Similarity Learning-Based Type
-Inference for Python
-      Amir M.
-{{}}
-Mir
-s.a.m.mir@tudelft.nl
-Delft University of Technology
-Delft, The Netherlands
- Sebastian Proksch
-s.proksch@tudelft.nl
-Delft University of Technology
-Delft, The Netherlands
-Abstract
+
 Dynamic languages, such as Python and Javascript, trade static
 typing for developer flexibility and productivity.
 {{}}

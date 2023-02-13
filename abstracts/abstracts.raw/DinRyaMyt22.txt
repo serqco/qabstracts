@@ -6,7 +6,7 @@ development lifecycle.
 Effective software testing can provide bene-
 fits such as bug finding, preventing regressions, and documentation.
 {{}}
-In terms of documentation, unit tests express a unit’s intended
+In terms of documentation, unit tests express a unit's intended
 functionality, as conceived by the developer.
 {{}}
 A test oracle, typi-

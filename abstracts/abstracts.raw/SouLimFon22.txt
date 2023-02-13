@@ -14,7 +14,7 @@ of these assumptions for developers.
 {{}}
 Objective:
 {{}}
-This study investigates the developers’ viewpoints on the relevance of certain assumptions to
+This study investigates the developers' viewpoints on the relevance of certain assumptions to
 avoid bug-introducing changes.
 {{}}
 In particular, we analyze which assumptions developers can make during
@@ -25,7 +25,7 @@ some assumptions.
 Method:
 {{}}
 We applied the Q-methodology, a mixed-method from the psychometric spectrum, to investigate the
-relevance of assumptions and extract the developers’ viewpoints systematically.
+relevance of assumptions and extract the developers' viewpoints systematically.
 {{}}
 We involved 41 developers
 analyzing 41 assumptions extracted from literature and personal interviews.

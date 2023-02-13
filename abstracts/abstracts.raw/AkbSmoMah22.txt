@@ -34,12 +34,12 @@ Results:
 We identified 18 challenges for the DevSecOps process and mapped them to 10 core categories.
 {{}}
 The ISM
-results indicate that the “standards” category has the most decisive influence on the other nine core categories of
+results indicate that the "standards" category has the most decisive influence on the other nine core categories of
 the identified challenges.
 {{}}
-Moreover, the fuzzy TOPSIS indicates that “lack of secure coding standards,” “lack of
-automated testing tools for security in DevOps,” and “ignorance in static testing for security due to lack of
-knowledge” are the highest priority challenges for the DevSecOps paradigm.
+Moreover, the fuzzy TOPSIS indicates that "lack of secure coding standards,"� "lack of
+automated testing tools for security in DevOps,"� and "ignorance in static testing for security due to lack of
+knowledge"� are the highest priority challenges for the DevSecOps paradigm.
 {{}}
 Conclusion:
 {{}}

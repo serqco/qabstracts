@@ -1,9 +1,6 @@
 On the Faults Found in REST APIs by Automated Test Generation.
 
-On the Faults Found in REST APIs by Automated
-Test Generation
-BOGDAN MARCULESCU and MAN ZHANG, Kristiania University College, Norway
-ANDREA ARCURI, Kristiania University College and Oslo Metropolitan University, Norway
+
 RESTful web services are often used for building a wide variety of enterprise applications.
 {{}}
 The diversity and

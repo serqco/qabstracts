@@ -1,12 +1,6 @@
 An Empirical Study of the Impact of Hyperparameter Tuning and Model Optimization on the Performance Properties of Deep Neural Networks.
 
-An Empirical Study of the Impact of Hyperparameter Tuning
-and Model Optimization on the Performance Properties of
-Deep Neural Networks
-LIZHI LIAO, Concordia University, Canada
-HENG LI, Polytechnique Montréal, Canada
-WEIYI SHANG, Concordia University, Canada
-LEI MA, University of Alberta, Canada
+
 Deep neural network (DNN) models typically have many hyperparameters that can be configured to
 achieve optimal performance on a particular dataset.
 {{}}
@@ -49,60 +43,5 @@ device.
 {{}}
 Our findings highlight that practitioners can benefit from paying attention to a variety of performance
 properties and the confounding effect of model optimization when tuning and optimizing their DNN models.
-{{}}
-Authors’ addresses:
-{{}}
-L.
-{{}}
-Liao and W.
-{{}}
-Shang, Department of Computer Science and Software Engineering, Concordia University, 1455 Boulevard de Maisonneuve West, Montréal, Québec, Canada H3G 1M8; emails:
-{{}}
-{l_lizhi, shang}@encs.concordia.ca;
-H.
-{{}}
-Li, Département de génie informatique et génie logiciel, Polytechnique Montréal, 2500 Chemin de Polytechnique, Montréal, Québec, Canada H3T 1J4; email:
-{{}}
-heng.li@polymtl.ca; L.
-{{}}
-Ma, Department of Electrical & Computer Engineering, University of Alberta, 116 St.
-{{}}
-and 85 Ave., Edmonton, Alberta, Canada T6G 2R3; email:
-{{}}
-ma.lei@acm.org.
-{{}}
-Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee
-provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and
-the full citation on the first page.
-{{}}
-Copyrights for components of this work owned by others than the author(s) must be
-honored.
-{{}}
-Abstracting with credit is permitted.
-{{}}
-To copy otherwise, or republish, to post on servers or to redistribute to lists,
-requires prior specific permission and/or a fee.
-{{}}
-Request permissions from permissions@acm.org.
-{{}}
-© 2022 Copyright held by the owner/author(s).
-{{}}
-Publication rights licensed to ACM.
-{{}}
-1049-331X/2022/04-ART53 $15.00
-https://doi.org/10.1145/3506695
-ACM Transactions on Software Engineering and Methodology, Vol.
-{{}}
-31, No.
-{{}}
-3, Article 53.
-{{}}
-Pub.
-{{}}
-date:
-{{}}
-April 2022.
-{{}}
-53
 {{}}
 ---

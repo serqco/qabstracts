@@ -24,7 +24,7 @@ accessibility in practice.
 The key results of the study show that most accessibility guidelines are ignored when developing mobile apps.
 {{}}
 This behavior is mainly due to the lack of
-developers’ awareness of accessibility concerns and the lack of tools to support them during
+developers' awareness of accessibility concerns and the lack of tools to support them during
 the development.
 {{}}
 ---

@@ -20,8 +20,8 @@ environment.
 Using human performance as a baseline, we define re-
 liability requirements as:
 {{}}
-‘if the changes in an image do not affect a
-human’s decision, neither should they affect the MVC’s.’ To this end,
+'if the changes in an image do not affect a
+human's decision, neither should they affect the MVC's.' To this end,
 we provide:
 {{}}
 (1) a class of safety-related image transformations; (2)

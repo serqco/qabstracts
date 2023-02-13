@@ -5,7 +5,7 @@ to better understand the bug fixing process and to enable the estimation of the 
 {{}}
 In general, estimation models are built using the data (e.g., fixing time,
 severity, number of comments, number of attachments, and number of patches) present in
-the reports of fixed bugs (i.e., the report final’s state).
+the reports of fixed bugs (i.e., the report final's state).
 {{}}
 However, we claim that this approach
 is not reliable in a real setting.
@@ -22,7 +22,7 @@ between the moment the bug was first reported until the bug is considered fixed.
 {{}}
 We consider not only the final state of the bug report to create our estimation model but all the
 previous available states, different from some previous studies that do not consider the
-reports’ updates.
+reports' updates.
 {{}}
 The concept of bug report evolution is used to create a dataset containing
 all investigated report states.
@@ -37,11 +37,20 @@ analysis is performed with data from the JIRA issue tracking system of ten open-
 projects.
 {{}}
 By leveraging the best models (considering all possible configurations) for the different states of the evolution of a bug report, we can assess whether there are significant
-differences in the models’ estimation ability due to the report’s state.
+differences in the models' estimation ability due to the report's state.
 {{}}
-Results We gathered evidence that the reports’ fields are updated often, which characterizes
+Results We gathered evidence that the reports' fields are updated often, which characterizes
 the reports’ evolution, impacting the building of bug-fixing estimation models.
 {{}}
-The models’
+The models'
+evaluation shows promising results 0.44 up to 0.85, precision values from 0.34 up to 0.74
+and recall values from 0.62 up to 0.99, depending on the project.
+{{}}
+Conclusions Our experiments show that field updates have a meaningful impact on the
+models' performance. Furthermore, we present a new approach to deal with the bug report
+evolution by considering each report version as an independent report.
+{{}} 
+Finally, we also make
+available our dataset to the community.
 {{}}
 ---

@@ -1,10 +1,5 @@
 Theories in Agile Software Development: Past, Present, and Future Introduction to the XP 2020 Special Section.
 
-Keywords
-agile software development
-theories
-grounded theory
-review
 
 Over the last two decades, agile software development has gained popularity among software engineering re­
 searchers and practitioners.

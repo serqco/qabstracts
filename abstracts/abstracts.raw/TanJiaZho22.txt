@@ -35,7 +35,7 @@ which spends less time on finding the same average number of warning defects.
 We at last applied DIPROM to the latest development
 versions of GCC and Clang.
 {{}}
-After two months’ running, we reported 8 new warning defects; 5 of them have been confirmed/fixed by
+After two months' running, we reported 8 new warning defects; 5 of them have been confirmed/fixed by
 developers.
 {{}}
 ---

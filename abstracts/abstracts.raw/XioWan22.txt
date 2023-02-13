@@ -1,11 +1,6 @@
 L2S: A Framework for Synthesizing the Most Probable Program under a Specification.
 
-34
-L2S:
-{{}}
-A Framework for Synthesizing the Most Probable
-Program under a Specification
-YINGFEI XIONG and BO WANG, Peking University
+
 In many scenarios, we need to find the most likely program that meets a specification under a local context,
 where the local context can be an incomplete program, a partial specification, natural language description,
 and so on.
