@@ -45,14 +45,14 @@ BalRal22      Lutz
 JiaLiuJin22   Lutz
 HamMetQas22   Lutz
 #----- Block 6
-HorCorFue22   
-GonRajHas22   
-ZenWuYe22   
-LavMor22   
-FurTorFel22   
-TurShaAld22   
-HaqShiNej22   
-AssGhaPul22   
+HorCorFue22   -Lutz 
+GonRajHas22   -Lutz
+ZenWuYe22     -Lutz
+LavMor22      -Lutz
+FurTorFel22   -Lutz
+TurShaAld22   -Lutz
+HaqShiNej22   -Lutz
+AssGhaPul22   -Lutz
 #----- Block 7
 SprSinSen22   
 KonKasKam22   
