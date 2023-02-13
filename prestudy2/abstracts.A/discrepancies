@@ -1,0 +1,91 @@
+==================== design vs method:
+
+##### The sets of codes applied are different, please check:
+prestudy2/abstracts.A/LiuKimBis21.txt  (Lloyd)
+prestudy2/abstracts.C/LiuKimBis21.txt  (Gunnar/Martin)
+To automatically identify
+patterns in violations and their fixes, we propose an approach that utilizes convolutional neural networks to learn features and clustering to
+regroup similar instances.
+{{design:u1}}  (Lloyd)
+{{method}}  (Gunnar/Martin)
+#classification 2 design  must recognize design papers!
+
+##### The sets of codes applied are different, please check:
+prestudy2/abstracts.A/CheCheZha21.txt  (Lutz)
+prestudy2/abstracts.C/CheCheZha21.txt  (Gunnar/Martin)
+In particular, we first identify software-specific terms by utilizing a software-specific corpus (e.g., Stack Overflow) and a general corpus
+(e.g., Wikipedia).
+{{design}}  (Lutz)
+{{method}}  (Gunnar/Martin)
+#classification 2 design  must recognize design papers!
+
+##### The sets of codes applied are different, please check:
+prestudy2/abstracts.A/ChoDamTra21.txt  (Lutz)
+prestudy2/abstracts.C/ChoDamTra21.txt  (Gunnar/Martin)
+Our model uses Long Short-Term Memory, a deep
+learning technique, to automatically learn semantic features representing an issue report,
+and combines them with the traditional textual similarity features. 
+{{design:i1}}  (Lutz)
+{{method}}  (Gunnar/Martin)
+#classification 2 design  must recognize design papers!
+
+##### The sets of codes applied are different, please check:
+prestudy2/abstracts.A/GhaWalNek21.txt  (Lutz)
+prestudy2/abstracts.C/GhaWalNek21.txt  (Gunnar/Martin)
+ModelKB can automatically manage the
+modeling lifecycle end-to-end, including (1) monitoring and tracking experiments; (2) visualizing, searching for, and comparing models and experiments; (3) deploying models locally
+and on the cloud; and (4) sharing and publishing trained models.
+{{claim}}  (Lutz)
+{{design}}  (Gunnar/Martin)
+#classification 2A design  these are "designed features"
+
+##### The sets of codes applied are different, please check:
+prestudy2/abstracts.A/MunMonSun21.txt  (Lutz)
+prestudy2/abstracts.C/MunMonSun21.txt  (Gunnar/Martin)
+This technique is implemented in a prototype named INTREPAIR.
+{{a-design}}  (Lutz)
+{{method}}  (Gunnar/Martin)
+#classification 2 a-design  no sign of any empirical study here
+
+
+==================== objective:
+
+
+##### The sets of codes applied are different, please check:
+prestudy2/abstracts.A/ScaBavVen21.txt  (Lutz)
+prestudy2/abstracts.C/ScaBavVen21.txt  (Gunnar/Martin)
+We try to (i)
+correlate each metric with understandability and (ii) build models combining metrics to assess understandability.
+{{objective:u1}}  (Lutz)
+{{method}}  (Gunnar/Martin)
+#classification 2 objective,a-method  "try to" is an objective; they don't say anything about HOW
+
+##### The sets of codes applied are different, please check:
+prestudy2/abstracts.A/PimMurBra21.txt  (Lutz)
+prestudy2/abstracts.C/PimMurBra21.txt  (Gunnar/Martin)
+In this paper, we extended
+the analysis in four different ways to validate the hypothesis uncovered in our original study.
+{{objective}}  (Lutz)
+{{method:u1}}  (Gunnar/Martin)
+#classification 2 objective,a-method  goal mentioned, but no method details
+
+##### The sets of codes applied are different, please check:
+prestudy2/abstracts.A/ScaBavVen21.txt  (Lutz)
+prestudy2/abstracts.C/ScaBavVen21.txt  (Gunnar/Martin)
+In this work, we perform
+an extensive evaluation of 121 existing as well as new code-related, documentation-related, and developer-related metrics.
+{{objective}}  (Lutz)
+{{method}}  (Gunnar/Martin)
+#classification 2 objective,a-method  They don't say anything about HOW
+
+##### The sets of codes applied are different, please check:
+prestudy2/abstracts.A/HasIqbIsl21.txt  (Lloyd)
+prestudy2/abstracts.C/HasIqbIsl21.txt  (Gunnar/Martin)
+Since project managers at Samsung Research Bangladesh (SRBD) were also
+intrigued by these questions, this research developed, deployed, and evaluated a productionready solution using the Balanced SCorecard (BSC) strategy that SRBD managers can use
+in their day-to-day management to monitor individual developer’s, a particular project’s or
+the entire organization’s code review effectiveness.
+{{background,objective:u1}}  (Lloyd)
+{{background,method}}  (Gunnar/Martin)
+#classification 2 background,objective,design
+

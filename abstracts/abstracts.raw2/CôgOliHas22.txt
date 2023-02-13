@@ -1,0 +1,48 @@
+Deprecation of Packages and Releases in Software Ecosystems: A Case Study on NPM.
+
+Deprecation is used by developers to discourage the usage of certain features of a software system.
+{{}}
+Prior studies have
+focused on the deprecation of source code features, such as API methods.
+{{}}
+With the advent of software ecosystems, package
+managers started to allow developers to deprecate higher-level features, such as package releases.
+{{}}
+This study examines how the
+deprecation mechanism offered by the npm package manager is used to deprecate releases that are published in the ecosystem.
+{{}}
+We
+propose two research questions.
+{{}}
+In our first RQ, we examine how often package releases are deprecated in npm, ultimately revealing
+the importance of a deprecation mechanism to the package manager.
+{{}}
+We found that the proportion of packages that have at least one
+deprecated release is 3.7 percent and that 66 percent of such packages have deprecated all their releases, preventing client packages
+to migrate from a deprecated to a replacement release.
+{{}}
+Also, 31 percent of the partially deprecated packages do not have any
+replacement release.
+{{}}
+In addition, we investigate the content of the deprecation messages and identify five rationales behind the
+deprecation of releases, namely:
+{{}}
+withdrawal, supersession, defect, test, and incompatibility.
+{{}}
+In our second RQ, we examine how client
+packages adopt deprecated releases.
+{{}}
+We found that, at the time of our data collection, 27 percent of all client packages directly adopt
+at least one deprecated release and that 54 percent of all client packages transitively adopt at least one deprecated release.
+{{}}
+The direct
+adoption of deprecated releases is highly skewed, with the top 40 popular deprecated releases accounting for more than half of all
+deprecated releases adoption.
+{{}}
+As a discussion that derives from our findings, we highlight the rudimentary aspect of the deprecation
+mechanism employed by npm and recommend a set of improvements to this mechanism.
+{{}}
+These recommendations aim at supporting
+client packages in detecting deprecated releases, understanding their impact, and coping with them.
+{{}}
+---

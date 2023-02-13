@@ -1,0 +1,50 @@
+SemMT: A Semantic-Based Testing Approach for Machine Translation Systems.
+
+34e
+SemMT:
+{{}}
+A Semantic-Based Testing Approach for Machine
+Translation Systems
+JIALUN CAO and MEIZINIU LI, The Hong Kong University of Science and Technology
+YETING LI, University of Chinese Academy of Sciences
+MING WEN, Huazhong University of Science and Technology
+SHING-CHI CHEUNG, The Hong Kong University of Science and Technology
+HAIMING CHEN, University of Chinese Academy of Sciences
+Machine translation has wide applications in daily life.
+{{}}
+In mission-critical applications such as translating
+official documents, incorrect translation can have unpleasant or sometimes catastrophic consequences.
+{{}}
+This
+motivates recent research on the testing methodologies for machine translation systems.
+{{}}
+Existing methodologies mostly rely on metamorphic relations designed at the textual level (e.g., Levenshtein distance) or
+syntactic level (e.g., distance between grammar structures) to determine the correctness of translation results.
+{{}}
+However, these metamorphic relations do not consider whether the original and the translated sentences have the same meaning (i.e., semantic similarity).
+{{}}
+To address this problem, in this article we propose
+SemMT, an automatic testing approach for machine translation systems based on semantic similarity checking.
+{{}}
+SemMT applies round-trip translation and measures the semantic similarity between the original and
+the translated sentences.
+{{}}
+Our insight is that the semantics concerning logical relations and quantifiers in
+sentences can be captured by regular expressions (or deterministic finite automata) where efficient semantic
+equivalence/similarity checking algorithms can be applied.
+{{}}
+Leveraging the insight, we propose three semantic
+similarity metrics and implement them in SemMT.
+{{}}
+We compared SemMT with related state-of-the-art testing
+techniques, demonstrating the effectiveness of mistranslation detection.
+{{}}
+The experiment results show that
+SemMT outperforms existing metrics, achieving an increase of 34.2% and 15.4% on accuracy and F-score, respectively.
+{{}}
+We also study the possibility of further enhancing the performance by combining various metrics.
+{{}}
+Finally, we discuss a solution to locate the suspicious trip in round-trip translation, which provides hints for
+bug diagnosis.
+{{}}
+---

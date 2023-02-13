@@ -1,0 +1,59 @@
+Sentiment analysis tools in software engineering: A systematic mapping study.
+
+Context:
+{{}}
+Software development is a collaborative task.
+{{}}
+Previous research has shown social aspects within
+development teams to be highly relevant for the success of software projects.
+{{}}
+A team's mood has been proven
+to be particularly important.
+{{}}
+It is paramount for project managers to be aware of negative moods within their
+teams, as such awareness enables them to intervene.
+{{}}
+Sentiment analysis tools offer a way to determine the
+mood of a team based on textual communication.
+{{}}
+Objective:
+{{}}
+We aim to help developers or stakeholders in their choice of sentiment analysis tools for their
+specific purpose.
+{{}}
+Therefore, we conducted a systematic mapping study (SMS).
+{{}}
+Methods:
+{{}}
+We present the results of our SMS of sentiment analysis tools developed for or applied in the context
+of software engineering (SE).
+{{}}
+Our results summarize insights from 106 papers with respect to (1) the application
+domain, (2) the purpose, (3) the used data sets, (4) the approaches for developing sentiment analysis tools,
+(5) the usage of already existing tools, and (6) the difficulties researchers face.
+{{}}
+We analyzed in more detail
+which tools and approaches perform how in terms of their performance.
+{{}}
+Results:
+{{}}
+According to our results, sentiment analysis is frequently applied to open-source software projects,
+and most approaches are neural networks or support-vector machines.
+{{}}
+The best performing approach in our
+analysis is neural networks and the best tool is BERT.
+{{}}
+Despite the frequent use of sentiment analysis in SE, there
+are open issues, e.g. regarding the identification of irony or sarcasm, pointing to future research directions.
+{{}}
+Conclusion:
+{{}}
+We conducted an SMS to gain an overview of the current state of sentiment analysis in order to
+help developers or stakeholders in this matter.
+{{}}
+Our results include interesting findings e.g. on the used tools
+and their difficulties.
+{{}}
+We present several suggestions on how to solve these identified problems.
+{{}}
+---

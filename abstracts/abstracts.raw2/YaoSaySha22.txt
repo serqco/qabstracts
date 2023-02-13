@@ -1,0 +1,42 @@
+Improving State-of-the-Art Compression Techniques for Log Management Tools.
+
+Log data records important runtime information about the running of a software system for different purposes including
+performance assurance, capacity planning, and anomaly detection.
+{{}}
+Log management tools such as ELK Stack and Splunk are widely
+adopted to manage and leverage log data in order to assist DevOps in real-time log analytics and decision making.
+{{}}
+To enable fast
+queries and to save storage space, such tools split log data into small blocks (e.g., 16KB), then index and compress each block
+separately.
+{{}}
+Previous log compression studies focus on improving the compression of either large-sized log files or log streams, without
+considering improving the compression of small log blocks (the actual compression need by modern log management tools).
+{{}}
+The
+evaluation of four state-of-the-art compression approaches (e.g., Logzip, a variation of Logzip by pre-extracting log templates named
+Logzip-E, LogArchive and Cowic) indicates that these approaches do not perform well on small log blocks.
+{{}}
+In fact, the compressed
+blocks that are preprocessed using Logzip, Logzip-E, LogArchive or Cowic are even larger (on median 1.3 times, 1.5 times, 0.2 times or
+6.6 times) than the compressed blocks without any preprocessing.
+{{}}
+Hence, we propose an approach named LogBlock to preprocess
+small log blocks before compressing them with a general compressor such as gzip, deflate and lz4, which are widely adopted by log
+management tools.
+{{}}
+LogBlock reduces the repetitiveness of logs by preprocessing the log headers and rearranging the log content
+leading to an improved compression ratio for a log file.
+{{}}
+Our evaluation on 16 log files shows that, for 16KB to 128KB block sizes, the
+compressed blocks by LogBlock are on median 5 to 21 percent smaller than the same compressed blocks without preprocessing
+(outperforming the state-of-the-art compression approaches).
+{{}}
+LogBlock achieves both a higher compression ratio (a median of 1.7 to
+8.4 times, 1.9 to 10.0 times, 1.3 to 1.9 times and 6.2 to 11.4 times) and a faster compression speed (a median of 30.8 to 49.7 times,
+42.6 to 53.8 times, 4.5 to 6.0 times and 2.5 to 4.0 times) than Logzip, Logzip-E, LogArchive and Cowic.
+{{}}
+LogBlock can help improve the
+storage efficiency of log management tools.
+{{}}
+---

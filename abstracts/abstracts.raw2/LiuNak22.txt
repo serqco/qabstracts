@@ -1,0 +1,28 @@
+Automatic Test Case and Test Oracle Generation Based on Functional Scenarios in Formal Specifications for Conformance Testing.
+
+Testing a program to confirm whether it consistently implements its requirements specification is a necessary but
+time-consuming activity in software development.
+{{}}
+Automatic testing based on specifications can significantly alleviate the workload
+and cost, but faces a challenge of how to ensure that both the user’s concerns in the specification and possible execution paths in the
+program are all covered.
+{{}}
+In this paper, we describe a new method, called “Vibration-Method” or simply “V-Method” , for automatic
+generation of test cases and test oracle from model-based formal specifications, aiming to address this challenge.
+{{}}
+The proposed
+method is suitable for testing information systems in which rich data types are used.
+{{}}
+Supporting the principle of “divide and conquer” ,
+the method provides a specific technique for generating test cases based on functional scenarios defined in the specification, test case
+generation criteria, automatic test case generation algorithms, and a well-defined mechanism for deriving test oracle.
+{{}}
+We elaborate on
+the method by discussing how initial test cases can be automatically generated, how additional necessary test cases are produced
+using the “vibration” technique, and how a test oracle can be automatically derived for a group of test cases.
+{{}}
+We also describe a
+controlled experiment to evaluate the effectiveness of the method and discuss the important issues in relation to the performance and
+applicability of the method.
+{{}}
+---

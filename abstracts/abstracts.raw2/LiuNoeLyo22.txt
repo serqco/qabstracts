@@ -1,0 +1,45 @@
+How ReadMe files are structured in open source Java projects.
+
+Context:
+{{}}
+Recent studies on open source platforms, such as GitHub, provide insights into how developers engage
+with software artifacts such as ReadMe files.
+{{}}
+Since ReadMe files are usually the first item users interact with in
+a repository, it is important that ReadMe files provide users with the information needed to engage with the
+corresponding repository.
+{{}}
+Objective:
+{{}}
+We investigate and compare ReadMe files of open source Java projects on GitHub in order to (i)
+determine the degree to which ReadMe files are aligned with the official guidelines, (ii) identify the common
+patterns in the structure of ReadMe files, and (iii) characterize the relationship between ReadMe file structure
+and popularity of associated repositories.
+{{}}
+Method:
+{{}}
+We apply statistical analyzes and clustering methods on 14,901 Java repositories to identify structural
+patterns of ReadMe files and the relationship of ReadMe file structure to repository stars.
+{{}}
+Results:
+{{}}
+While the majority of ReadMe files do not align with the GitHub guidelines, repositories whose ReadMe
+files follow the GitHub guidelines tend to receive more stars.
+{{}}
+We identify 32 clusters of common ReadMe file
+structures and the features associated with each structure.
+{{}}
+We show that projects with ReadMe files that contain
+project name, usage information, installation instructions, license information, code snippets, or links to images
+tend to get more stars.
+{{}}
+Conclusion:
+{{}}
+ReadMe file structure shares a statistically significant relationship with popularity as measured
+by number of stars; however, the most frequent ReadMe file structures are associated with less popular
+repositories on GitHub.
+{{}}
+Our findings can be used to understand the importance of ReadMe file structures and
+their relationship with popularity.
+{{}}
+---

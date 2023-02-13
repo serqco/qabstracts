@@ -1,0 +1,56 @@
+Search-based fairness testing for regression-based machine learning systems.
+
+Context:
+{{}}
+Machine learning (ML) software systems are permeating many aspects of our life,
+such as healthcare, transportation, banking, and recruitment.
+{{}}
+These systems are trained with
+data that is often biased, resulting in biased behaviour.
+{{}}
+To address this issue, fairness testing
+approaches have been proposed to test ML systems for fairness, which predominantly focus on
+assessing classification-based ML systems.
+{{}}
+These methods are not applicable to regressionbased systems, for example, they do not quantify the magnitude of the disparity in predicted
+outcomes, which we identify as important in the context of regression-based ML systems.
+{{}}
+Method:
+{{}}
+We conduct this study as design science research.
+{{}}
+We identify the problem
+instance in the context of emergency department (ED) wait-time prediction.
+{{}}
+In this paper,
+we develop an effective and efficient fairness testing approach to evaluate the fairness of
+regression-based ML systems.
+{{}}
+We propose fairness degree, which is a new fairness measure for regression-based ML systems, and a novel search-based fairness testing (SBFT)
+approach for testing regression-based machine learning systems.
+{{}}
+We apply the proposed
+solutions to ED wait-time prediction software.
+{{}}
+Results:
+{{}}
+We experimentally evaluate the effectiveness and efficiency of the proposed
+approach with ML systems trained on real observational data from the healthcare domain.
+{{}}
+We demonstrate that SBFT significantly outperforms existing fairness testing approaches,
+with up to 111% and 190% increase in effectiveness and efficiency of SBFT compared to
+the best performing existing approaches.
+{{}}
+Conclusion:
+{{}}
+These findings indicate that our novel fairness measure and the new approach
+for fairness testing of regression-based ML systems can identify the degree of fairness in
+predictions, which can help software teams to make data-informed decisions about whether
+such software systems are ready to deploy. 
+{{}}
+The scientific knowledge gained from our work
+can be phrased as a technological rule; to measure the fairness of the regression-based ML
+systems in the context of emergency department wait-time prediction use fairness degree
+and search-based techniques to approximate it.
+{{}}
+---

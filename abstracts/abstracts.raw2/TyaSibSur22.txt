@@ -1,0 +1,57 @@
+Empirically developed framework for building trust in distributed agile teams.
+
+Background:
+{{}}
+Organizations are adopting agile practices in distributed software development in order to
+develop quality software in less time.
+{{}}
+Using agile software development in distributed set up has its own
+set of challenges pertaining to face to face interactions, collaboration, time zone and cultural differences.
+{{}}
+A
+strong presence of trust helps to overcome these challenges.
+{{}}
+A relatively lesser number of empirical studies on
+multidimensional perspective of trust in distributed agile software development has motivated this study.
+{{}}
+Objective:
+{{}}
+This study aims to develop a comprehensive framework to build trust in distributed agile teams.
+{{}}
+Method:
+{{}}
+This study is based on Grounded Theory research methodology which involves 40 agile practitioners
+from diverse domains belonging to 19 different software organizations located across seven different countries.
+{{}}
+Besides, observations in two different software organizations were also performed to gather data.
+{{}}
+Data has been
+gathered in the form of semi-structured interviews and field notes.
+{{}}
+Result:
+{{}}
+Qualitative data analysis resulted into five different contributing categories for building trust amongst
+distributed agile teams.
+{{}}
+These categories represent multidimensional perspectives that influence trust building
+amongst agile team members working across different parts of the world.
+{{}}
+Conclusion:
+{{}}
+This study culminates into a framework for building trust in distributed agile teams.
+{{}}
+The proposed
+framework has been developed empirically and has five components that influence trust building.
+{{}}
+These
+components are related to working environment, leadership, organizational, personal and socio cultural
+perspectives.
+{{}}
+The multidimensional perspective of trust was investigated from an agile practitioners view
+through their real-life project experiences.
+{{}}
+Organizations and software practitioners may utilize the results
+of this study to create a hospitable environment for building trust while practicing agile in a distributed
+environment.
+{{}}
+---

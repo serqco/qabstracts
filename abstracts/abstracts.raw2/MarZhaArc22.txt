@@ -1,0 +1,37 @@
+On the Faults Found in REST APIs by Automated Test Generation.
+
+
+RESTful web services are often used for building a wide variety of enterprise applications.
+{{}}
+The diversity and
+increased number of applications using RESTful APIs means that increasing amounts of resources are spent
+developing and testing these systems.
+{{}}
+Automation in test data generation provides a useful way of generating
+test data in a fast and efficient manner.
+{{}}
+However, automated test generation often results in large test suites
+that are hard to evaluate and investigate manually.
+{{}}
+This article proposes a taxonomy of the faults we have found using search-based software testing techniques applied on RESTful APIs.
+{{}}
+The taxonomy is a first step in understanding, analyzing, and ultimately
+fixing software faults in web services and enterprise applications.
+{{}}
+We propose to apply a density-based clustering algorithm to the test cases evolved during the search to allow a better separation between different
+groups of faults.
+{{}}
+This is needed to enable engineers to highlight and focus on the most serious faults.
+{{}}
+Tests were automatically generated for a set of eight case studies, seven open-source and one industrial.
+{{}}
+The test cases generated during the search are clustered based on the reported last executed line and based on
+the error messages returned, when such error messages were available.
+{{}}
+The tests were manually evaluated
+to determine their root causes and to obtain additional information.
+{{}}
+The article presents a taxonomy of the faults found based on the manual analysis of 415 faults in the eight
+case studies and proposes a method to support the classification using clustering of the resulting test cases.
+{{}}
+---

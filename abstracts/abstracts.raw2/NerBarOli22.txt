@@ -1,0 +1,38 @@
+Compiling Quantamorphisms for the IBM Q Experience.
+
+Based on the connection between the categorical derivation of classical programs from specifications and a
+category-theoretic approach to quantum information, this paper contributes to extending the laws of classical program algebra to
+quantum programming.
+{{}}
+This aims at building correct-by-construction quantum circuits to be deployed on quantum devices such as
+those available through the IBM Q Experience.
+{{}}
+Reversibility is ensured by minimal complements.
+{{}}
+Such complementation is extended
+inductively to encompass catamorphisms on lists (vulgo folds), giving rise to the corresponding recursion scheme in reversible
+computation.
+{{}}
+The same idea is then applied to the setting of quantum programming, where computation is expressed by unitary
+transformations.
+{{}}
+This yields the notion of ‘quantamorphism’, a structural form of quantum recursion implementing cycles and folds on
+lists with quantum control flow.
+{{}}
+By Kleisli correspondence, quantamorphisms can be written as monadic functional programs with
+quantum parameters.
+{{}}
+This enables the use of Haskell, a monadic functional programming language, to perform the experimental work.
+{{}}
+Such calculated quantum programs prepared in Haskell are pushed through Quipper and the Qiskit interface to IBM Q quantum
+devices.
+{{}}
+The generated quantum circuits – often quite large – exhibit the predicted behaviour.
+{{}}
+However, running them on real quantum
+devices naturally incurs a significant amount of errors.
+{{}}
+As quantum technology is rapidly evolving, an increase in reliability is likely in the
+future, allowing for our programs to run more accurately.
+{{}}
+---

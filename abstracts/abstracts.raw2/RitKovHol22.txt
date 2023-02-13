@@ -1,0 +1,35 @@
+Comparing Block-Based Programming Models for Two-Armed Robots.
+
+Modern industrial robots can work alongside human workers and coordinate with other robots.
+{{}}
+This means they can
+perform complex tasks, but doing so requires complex programming.
+{{}}
+Therefore, robots are typically programmed by experts, but there
+are not enough to meet the growing demand for robots.
+{{}}
+To reduce the need for experts, researchers have tried to make robot
+programming accessible to factory workers without programming experience.
+{{}}
+However, none of that previous work supports
+coordinating multiple robot arms that work on the same task.
+{{}}
+In this paper we present four block-based programming language designs
+that enable end-users to program two-armed robots.
+{{}}
+We analyze the benefits and trade-offs of each design on expressiveness and
+user cognition, and evaluate the designs based on a survey of 273 professional participants of whom 110 had no previous
+programming experience.
+{{}}
+We further present an interactive experiment based on a prototype implementation of the design we deem
+best.
+{{}}
+This experiment confirmed that novices can successfully use our prototype to complete realistic robotics tasks.
+{{}}
+This work
+contributes to making coordinated programming of robots accessible to end-users.
+{{}}
+It further explores how visual programming
+elements can make traditionally challenging programming tasks more beginner-friendly.
+{{}}
+---
