@@ -3,36 +3,37 @@ Comparing ϕ and the F-measure as performance metrics for software-related class
 Context The F-measure has been widely used as a performance metric when selecting
 binary classifiers for prediction, but it has also been widely criticized, especially given the
 availability of alternatives such as φ (also known as Matthews Correlation Coefficient).
-{{}}
+{{background}}
 Objectives Our goals are to (1) investigate possible issues related to the F-measure in depth
 and show how φ can address them, and (2) explore the relationships between the F-measure
 and φ.
-{{}}
+{{h-objective,objective}}
 Method Based on the definitions of φ and the F-measure, we derive a few mathematical properties of these two performance metrics and of the relationships between them.
-{{}}
+{{h-method,method}}
 To
 demonstrate the practical effects of these mathematical properties, we illustrate the outcomes of an empirical study involving 70 Empirical Software Engineering datasets and 837
 classifiers.
-{{}}
+{{method}}
 Results We show that φ can be defined as a function of Precision and Recall, which are the
 only two performance metrics used to define the F-measure, and the rate of actually positive
 software modules in a dataset.
-{{}}
+{{h-result,result}}
 Also, φ can be expressed as a function of the F-measure and
 the rates of actual and estimated positive software modules.
-{{}}
+{{result}}
 We derive the minimum and
 maximum value of φ for any given value of the F-measure, and the conditions under which
 both the F-measure and φ rank two classifiers in the same order.
-{{}}
+{{result}}
 Conclusions Our results show that φ is a sensible and useful metric for assessing the performance of binary classifiers.
-{{}}
+{{h-conclusion,conclusion}}
 We also recommend that the F-measure should not be used
 by itself to assess the performance of a classifier, but that the rate of positives should always
 be specified as well, at least to assess if and to what extent a classifier performs better than
 random classification.
-{{}}
+{{conclusion}}
 The mathematical relationships described here can also be used to reinterpret the conclusions of previously published papers that relied mainly on the F-measure
 as a performance metric.
-{{}}
+{{conclusion}}
 ---
+Theoretical work that is more similar to an empirical work than to a design work.
