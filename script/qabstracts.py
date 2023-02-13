@@ -4,6 +4,7 @@ import argparse
 
 import qabs.select_sample
 import qabs.prepare_sample
+import qabs.fix_encoding
 import qabs.check_codings
 import qabs.compare_codings
 import qabs.export
@@ -19,6 +20,8 @@ def main():  # uses sys.argv
         qabs.select_sample.select_sample(pargs.size, pargs.blocksize, pargs.to, pargs.volume)
     elif subcmd == "prepare-sample":
         qabs.prepare_sample.prepare_sample(pargs.workdir, pargs.volumedir, pargs.remainder)
+    elif subcmd == "fix-encoding":
+        qabs.fix_encoding.fix_encoding(pargs.files)
     elif subcmd == "check-codings":
         qabs.check_codings.check_codings(pargs.workdir)
     elif subcmd == "compare-codings":
@@ -48,6 +51,10 @@ def setup_argparser():
     subparser = subparsers.add_parser('prepare-sample',
             help="Get and prepare abstracts (after select-sample)")
     qabs.prepare_sample.configure_argparser(subparser)
+
+    subparser = subparsers.add_parser('fix-encoding',
+            help="Make sure all files are readable as UTF-8")
+    qabs.fix_encoding.configure_argparser(subparser)
 
     subparser = subparsers.add_parser('check-codings',
             help="Check annotated abstracts for unallowed syntax and undefined codes")
