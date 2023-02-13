@@ -1,0 +1,61 @@
+Cronista: A multi-database automated provenance collection system for runtime-models.
+
+Context:
+{{}}
+Decision making by software systems that face uncertainty needs tracing to support understandability,
+as accountability is crucial.
+{{}}
+While logging has been essential to support explanations and understandability of
+behaviour, several issues still persist, such as the high cost for managing large logs, not knowing what to log,
+and the inability of logging techniques to relate events to each other or to specific occurrences of high-level
+activities in the system.
+{{}}
+Objective:
+{{}}
+Cronista is an alternative to logging for systems that act on top of runtime models.
+{{}}
+Instead of
+targeting the running systems, Cronista automatically collects the provenance of changes made to the runtime
+models, which aim at leveraging high-level representations, to produce more concise historical records.
+{{}}
+The
+provenance graphs capture causal links between those changes and the activities of the system, which are used
+to investigate issues.
+{{}}
+Method:
+{{}}
+Cronista’s architecture is described with the current design and the implementation of its high-level
+components for single-machine, multi-threaded systems.
+{{}}
+Cronista is applied to a traffic-simulation case study.
+{{}}
+The trade-offs of two different storage solutions are evaluated, i.e. the CDO model repositories, and JanusGraph
+graph databases.
+{{}}
+Results:
+{{}}
+Integrating Cronista into the case study requires only minor code changes.
+{{}}
+Cronista collected provenance graphs for the simulations as they ran, using both CDO and JanusGraph.
+{{}}
+Both solutions highlighted the
+cause of a seeded defect in the system.
+{{}}
+For the longer executions, both CDO and JanusGraph showed negligible
+overhead on the simulation times.
+{{}}
+Querying and visualisation tools were more user-friendly in JanusGraph than
+in CDO.
+{{}}
+Conclusion:
+{{}}
+Cronista demonstrates the feasibility of recording fine-grained provenance for the evolution of
+runtime models, while using it to investigate issues.
+{{}}
+User convenience and resource requirements need to be
+balanced.
+{{}}
+The paper present how the available technologies studied offer different trade-offs to satisfy the
+balance required.
+{{}}
+---

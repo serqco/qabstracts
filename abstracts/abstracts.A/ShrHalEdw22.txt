@@ -1,0 +1,35 @@
+The Best Laid Plans or Lack Thereof: Security Decision-Making of Different Stakeholder Groups.
+
+Cyber security requirements are influenced by the priorities and decisions of a range of stakeholders.
+{{}}
+Board members
+and Chief Information Security Officers (CISOs) determine strategic priorities.
+{{}}
+Managers have responsibility for resource allocation
+and project management.
+{{}}
+Legal professionals concern themselves with regulatory compliance.
+{{}}
+Little is understood about how the
+security decision-making approaches of these different stakeholders contrast, and if particular groups of stakeholders have a better
+appreciation of security requirements during decision-making.
+{{}}
+Are risk analysts better decision makers than CISOs?
+{{}}
+Do security
+experts exhibit more effective strategies than board members?
+{{}}
+This paper explores the effect that different experience and diversity
+of expertise has on the quality of a team’s cyber security decision-making and whether teams with members from more varied
+backgrounds perform better than those with more focused, homogeneous skill sets.
+{{}}
+Using data from 208 sessions and 948 players of
+a tabletop game run in the wild by a major national organization over 16 months, we explore how choices are affected by player
+background (e.g., cyber security experts versus risk analysts, board-level decision makers versus technical experts) and different
+team make-ups (homogeneous teams of security experts versus various mixes).
+{{}}
+We find that no group of experts makes significantly
+better game decisions than anyone else, and that their biases lead them to not fully comprehend what they are defending or how the
+defenses work.
+{{}}
+---

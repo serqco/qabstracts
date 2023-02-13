@@ -1,0 +1,40 @@
+How Do Successful and Failed Projects Differ? A Socio-Technical Analysis.
+
+
+Software development is at the intersection of the social realm, involving people who develop the software,
+and the technical realm, involving artifacts (code, docs, etc.) that are being produced.
+{{}}
+It has been shown that
+a socio-technical perspective provides rich information about the state of a software project.
+{{}}
+In particular, we are interested in socio-technical factors that are associated with project success.
+{{}}
+For this
+purpose, we frame the task as a network classification problem.
+{{}}
+We show how a set of heterogeneous networks composed of social and technical entities can be jointly embedded in a single vector space enabling
+mathematically sound comparisons between distinct software projects.
+{{}}
+Our approach is specifically designed
+using intuitive metrics stemming from network analysis and statistics to ease the interpretation of results
+in the context of software engineering wisdom.
+{{}}
+Based on a selection of 32 open source projects, we perform
+an empirical study to validate our approach considering three prediction scenarios to test the classification
+model's ability generalizing to (1) randomly held-out project snapshots, (2) future project states, and (3) entirely new projects.
+{{}}
+Our results provide evidence that a socio-technical perspective is superior to a pure social or technical
+perspective when it comes to early indicators of future project success.
+{{}}
+To our surprise, the methodology
+proposed here even shows evidence of being able to generalize to entirely novel (project hold-out set) software
+projects reaching predication accuracies of 80%, which is a further testament to the efficacy of our approach
+and beyond what has been possible so far.
+{{}}
+In addition, we identify key features that are strongly associated
+with project success.
+{{}}
+Our results indicate that even relatively simple socio-technical networks capture highly
+relevant and interpretable information about the early indicators of future project success.
+{{}}
+---

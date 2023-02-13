@@ -1,0 +1,35 @@
+Programming language implementations for context-oriented self-adaptive systems.
+
+Context:
+{{}}
+The context-oriented programming paradigm is designed to enable self-adaptation, or dynamic behavior
+modification of software systems, in response to changes in their surrounding environment.
+{{}}
+Contextoriented
+programming offers an adaptation model, from a programming language perspective, that maintains a clean
+modularisation between the application and adaptation logic, as well as between the components providing
+adaptations.
+{{}}
+Objective:
+{{}}
+We use three implementation techniques for context-oriented programming languages to assess their
+appropriateness to foster self-adaptive systems.
+{{}}
+These approaches take advantage of the capabilities offered by
+the host programming language to realize self-adaptation as proposed by context-oriented languages.
+{{}}
+Method:
+{{}}
+We evaluate each of these approaches by assessing their modularity and complexity when defining
+adaptations, and by comparing their run-time performance on a simple benchmark.
+{{}}
+Results:
+{{}}
+Our results show a higher modularity than that for common architecture based self-adaptive systems,
+while maintaining comparable performance.
+{{}}
+Conclusion:
+{{}}
+We conclude that context-oriented programming is an appropriate paradigm to realize selfadaptation.
+{{}}
+---

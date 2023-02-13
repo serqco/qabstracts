@@ -1,0 +1,45 @@
+Locating Performance Regression Root Causes in the Field Operations of Web-Based Systems: An Experience Report.
+
+Software developers usually rely on in-house performance testing to detect performance regressions and locate their root
+causes.
+{{}}
+Such performance testing is typically resource and time-consuming, making it impractical to conduct when the software is
+delivered in fast-paced release cycles.
+{{}}
+On the other hand, the operational data generated in the field environment provides rich
+information about the performance of a software system and its runtime activities.
+{{}}
+Therefore, this work explores the idea of leveraging the
+readily-available field operational data to locate the root causes of performance regression instead of running expensive performance
+tests.
+{{}}
+However, due to the ever-changing workloads from the end users and the noise from the field, directly analyzing performance
+metrics such as response time of the system may not be able to help locate the root causes of performance regressions.
+{{}}
+In this paper, we
+report our experience of designing and adopting an approach that automatically locates the root causes of performance regressions
+while the software systems are deployed and running in the field.
+{{}}
+First, our approach uses black-box performance models to capture the
+relationship between the performance of a system and its runtime activities.
+{{}}
+Then, our approach analyzes the performance models and
+uses statistical techniques to suggest the problematic system runtime activities (i.e., the root causes) that are related to a performance
+regression.
+{{}}
+Our evaluation considered three open-source projects and one industrial product.
+{{}}
+In the three open-source systems, we find
+that our approach can successfully locate the root causes of all arbitrarily injected synthetic performance regressions.
+{{}}
+Our approach has
+successfully detected and located the root causes of three performance regressions in an industry system and it has been adopted by our
+industrial partner and used in practice on a daily basis over a 12-month period.
+{{}}
+In addition, we share the challenges that we encountered
+during the design and adoption of our approach, how we address those challenges, and the lessons that we learned during the process.
+{{}}
+We believe that our novel approach together with our documented experience can benefit practitioners and researchers who wish to
+leverage the field-operation data of a software system to conduct performance assurance activities.
+{{}}
+---

@@ -1,0 +1,35 @@
+Verification of Programs Sensitive to Heap Layout.
+
+
+Most C and C++ programs use dynamically allocated memory (often known as a heap) to store and organize
+their data.
+{{}}
+In practice, it can be useful to compare addresses of different heap objects, for instance, to
+store them in a binary search tree or a sorted array.
+{{}}
+However, comparisons of pointers to distinct objects
+are inherently ambiguous:
+{{}}
+The address order of two objects can be reversed in different executions of the
+same program, due to the nature of the allocation algorithm and other external factors.
+{{}}
+This poses a significant challenge to program verification, since a sound verifier must consider all possible
+behaviors of a program, including an arbitrary reordering of the heap.
+{{}}
+A naive verification of all possibilities, of course, leads to a combinatorial explosion of the state space:
+{{}}
+For this reason, we propose an underapproximating abstract domain that can be soundly refined to consider all relevant heap orderings.
+{{}}
+We have implemented the proposed abstract domain and evaluated it against several existing software verification tools on a collection of pointer-manipulating programs.
+{{}}
+In many cases, existing tools only consider
+a single fixed heap order, which is a source of unsoundness.
+{{}}
+We demonstrate that using our abstract domain,
+this unsoundness can be repaired at only a very modest performance cost.
+{{}}
+Additionally, we show that, even
+though many verifiers ignore it, ambiguous behavior is present in a considerable fraction of programs from
+software verification competition (sv-comp).
+{{}}
+---

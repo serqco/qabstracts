@@ -1,0 +1,44 @@
+Agile software development and UX design: A case study of integration by mutual adjustment.
+
+Context:
+{{}}
+Agility is an overarching ideal for empirically-driven software development processes that embrace change in order to improve quality, economy, and
+simplicity.
+{{}}
+While the pursuit of Agility has held prominence in software practice and research for over two decades, user experience (UX) designers struggle to
+integrate their work processes with agile software development.
+{{}}
+Objective:
+{{}}
+As empirical processes are constantly evolving, so is this integration struggle for UX designers.
+{{}}
+We, therefore, present an industrial case study of how a
+Danish software company integrates UX design and agile software development.
+{{}}
+Method:
+{{}}
+We conducted a case study involving (a) one iteration of individual interviews with 10 employees (four UX designers, three software developers, two project
+managers, and one solution architect) and (b) a follow-up iteration consisting of a workshop with 6 employees (three UX designers, two solution architects, and one
+project manager) two years later.
+{{}}
+We analyzed how the company’s approach to integration with "upfront design" and "work in parallel" involve mutual adjustments as
+opposed to assimilation or separation of UX design and software development.
+{{}}
+Results:
+{{}}
+Our analysis shows how integration through mutual adjustments made distinct contributions to UX designers' and software developers’ pursuit of Agility.
+{{}}
+They experienced notably different work processes that still dealt effectively with change and contributed to quality, economy, or simplicity.
+{{}}
+Nevertheless, as shown
+from a follow-up workshop two years after our first interviews, these processes were still susceptible to integration struggles over time.
+{{}}
+Conclusion:
+{{}}
+We conclude that integration based on mutual adjustment potentially makes Agility for UX designers and software developers different and mutually
+complementary.
+{{}}
+This integration contrasts with assimilation, which potentially makes their Agility mutually indistinguishably, and with separation, which makes
+their Agility different and mutually competing.
+{{}}
+---

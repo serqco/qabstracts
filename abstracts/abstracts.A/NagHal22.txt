@@ -1,0 +1,32 @@
+How Software Developers Mitigate Their Errors When Developing Code.
+
+Code remains largely hand-made by humans and, as such, writing code is prone to error.
+{{}}
+Many previous studies have
+focused on the technical reasons for these errors and provided developers with increasingly sophisticated tools.
+{{}}
+Few studies have
+looked in detail at why code errors have been made from a human perspective.
+{{}}
+We use Human Error Theory to frame our exploratory
+study and use semi-structured interviews to uncover a preliminary understanding of the errors developers make while coding.
+{{}}
+We look
+particularly at the Skill-based (SB) errors reported by 27 professional software developers.
+{{}}
+We found that the complexity of the
+development environment is one of the most frequently reported reasons for errors.
+{{}}
+Maintaining concentration and focus on a particular
+task also underpins many developer errors.
+{{}}
+We found that developers struggle with effective mitigation strategies for their errors,
+reporting strategies largely based on improving their own willpower to concentrate better on coding tasks.
+{{}}
+We discuss how using
+Reason’s Swiss Cheese model may help reduce errors during software development.
+{{}}
+This model ensures that layers of tool, process
+and management mitigation are in place to prevent developer errors from causing system failures.
+{{}}
+---

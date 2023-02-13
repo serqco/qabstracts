@@ -1,0 +1,41 @@
+Real world projects, real faults: evaluating spectrum based fault localization techniques on Python projects.
+
+Spectrum Based Fault Localization (SBFL) is a statistical approach to identify faulty code
+within a program given a program spectra (i.e., records of program elements executed by
+passing and failing test cases).
+{{}}
+Several SBFL techniques have been proposed over the years,
+but most evaluations of those techniques were done only on Java and C programs, and frequently involve artificial faults.
+{{}}
+Considering the current popularity of Python, indicated by
+the results of the Stack Overflow survey among developers in 2020, it becomes increasingly important to understand how SBFL techniques perform on Python projects.
+{{}}
+However,
+this remains an understudied topic.
+{{}}
+In this work, our objective is to analyze the effectiveness of popular SBFL techniques in real-world Python projects.
+{{}}
+We also aim to compare
+our observed performance on Python to previously-reported performance on Java.
+{{}}
+Using the
+recently-built bug benchmark BugsInPy as our fault dataset, we apply five popular SBFL
+techniques (Tarantula, Ochiai, OP , Barinel, and DStar) and analyze their performances.
+{{}}
+We
+subsequently compare our results with results from Java and C projects reported in earlier
+related works.
+{{}}
+We find that 1) the real faults in BugsInPy are harder to identify using SBFL
+techniques compared to the real faults in Defects4J, indicated by the lower performance
+of the evaluated SBFL techniques on BugsInPy; 2) older techniques such as Tarantula,
+Barinel, and Ochiai consistently outperform newer techniques (i.e., OP and DStar) in a
+variety of metrics and debugging scenarios; 3) claims in preceding studies done on artificial faults in C and Java (such as “OP outperforms Tarantula”) do not hold on Python
+real faults; 4) lower-performing techniques can outperform higher-performing techniques in
+some cases, emphasizing the potential benefit of combining SBFL techniques.
+{{}}
+Our results
+yield insight into how popular SBFL techniques perform in real Python faults and emphasize
+the importance of conducting SBFL evaluations on real faults.
+{{}}
+---

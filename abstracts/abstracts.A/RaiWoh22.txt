@@ -1,0 +1,48 @@
+Recruiting credible participants for field studies in software engineering research.
+
+Context:
+{{}}
+Software practitioners are a primary provider of information for field studies in software engineering.
+{{}}
+Research typically recruits practitioners through some kind of sampling.
+{{}}
+But sampling may not in itself recruit
+the "right" participants.
+{{}}
+Objective:
+{{}}
+To assess existing guidance on participant recruitment, and to propose and illustrate a framework
+for recruiting professional practitioners as credible participants in field studies of software engineering.
+{{}}
+Methods:
+{{}}
+We review existing guidelines, checklists and other advisory sources on recruiting participants for
+field studies.
+{{}}
+We develop a framework, partly based on our prior research and on the research of others.
+{{}}
+We
+search for and select three exemplar studies (a case study, an interview study and a survey study) and use
+those to illustrate the framework.
+{{}}
+Results:
+{{}}
+Whilst existing guidance recognises the importance of recruiting participants, there is limited guidance
+on how to recruit the "right" participants.
+{{}}
+The framework suggests the conceptualisation of participants as
+"research instruments" or, alternatively, as a sampling frame for items of interest.
+{{}}
+The exemplars suggest
+that at least some members of the research community are aware of the need to carefully recruit the "right"
+participants.
+{{}}
+Conclusions:
+{{}}
+The framework is intended to encourage researchers to think differently about the involvement of
+practitioners in field studies of software engineering.
+{{}}
+Also, the framework identifies a number of characteristics
+not explicitly addressed by existing guidelines.
+{{}}
+---

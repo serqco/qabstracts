@@ -1,0 +1,33 @@
+Including Everyone, Everywhere: Understanding Opportunities and Challenges of Geographic Gender-Inclusion in OSS.
+
+The gender gap is a significant concern facing the software industry as the development becomes more geographically
+distributed.
+{{}}
+Widely shared reports indicate that gender differences may be specific to each region.
+{{}}
+However, how complete can these reports
+be with little to no research reflective of the Open Source Software (OSS) process and communities software is now commonly developed in?
+{{}}
+Our study presents a multi-region geographical analysis of gender inclusion on GitHub.
+{{}}
+This mixed-methods approach includes
+quantitatively investigating differences in gender inclusion in projects across geographic regions and investigate these trends over time using
+data from contributions to 21,456 project repositories.
+{{}}
+We also qualitatively understand the unique experiences of developers contributing to
+these projects through a survey that is strategically targeted to developers in various regions worldwide.
+{{}}
+Our findings indicate that gender
+diversity is low across all parts of the world, with no substantial difference across regions.
+{{}}
+However, there has been statistically significant
+improvement in diversity worldwide since 2014, with certain regions such as Africa improving at faster pace.
+{{}}
+We also find that most
+motivations and barriers to contributions (e.g., lack of resources to contribute and poor working environment) were shared across regions,
+however, some insightful differences, such as how to make projects more inclusive, did arise.
+{{}}
+From these findings, we derive and present
+implications for tools that can foster inclusion in open source software communities and empower contributions from everyone, everywhere.
+{{}}
+---

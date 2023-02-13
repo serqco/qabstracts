@@ -1,0 +1,30 @@
+Guided Feature Identification and Removal for Resource-constrained Firmware.
+
+
+IoT firmware oftentimes incorporates third-party components, such as network-oriented middleware and
+media encoders/decoders.
+{{}}
+These components consist of large and mature codebases, shipping with a variety of
+non-critical features.
+{{}}
+Feature bloat increases code size, complicates auditing/debugging, and reduces stability.
+{{}}
+This is problematic for IoT devices, which are severely resource-constrained and must remain operational in
+the field for years.
+{{}}
+Unfortunately, identification and complete removal of code related to unwanted features requires familiarity with codebases of interest, cumbersome manual effort, and may introduce bugs.
+{{}}
+We address these
+difficulties by introducing PRAT, a system that takes as input the codebase of software of interest, identifies
+and maps features to code, presents this information to a human analyst, and removes all code belonging to
+unwanted features.
+{{}}
+PRAT solves the challenge of identifying feature-related code through a novel form of
+differential dynamic analysis and visualizes results as user-friendly feature graphs.
+{{}}
+Evaluation on diverse codebases shows superior code removal compared to both manual feature deactivation and state-of-art debloating tools, and generality across programming languages.
+{{}}
+Furthermore, a user
+study comparing PRAT to manual code analysis shows that it can significantly simplify the feature identification workflow.
+{{}}
+---

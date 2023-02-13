@@ -1,0 +1,29 @@
+A Theory of Value for Value-Based Feature Selection in Software Engineering.
+
+Value-Based Software Engineering stresses the role of value in software related decisions.
+{{}}
+In the context of feature
+selection, software features judged to provide higher value take priority in the development process.
+{{}}
+This paper focuses on what
+value means when selecting software features.
+{{}}
+Using grounded theory, we conducted and analyzed semi-structured interviews with
+21 key stakeholders (decision-makers) from three software/software-intensive companies, within a context where value-based
+decision-making was already established.
+{{}}
+Our analysis led to the building of a theory of value for value-based feature selection that
+identifies the nature of value propositions considered by key stakeholders when selecting software features (i.e., decision-making
+criteria for deciding upon software features, as suggested by Boehm (2003)).
+{{}}
+We found that some value propositions were common to
+all three company cases (core value propositions), whereas others were dependent upon the context in which a company operates,
+and the characteristics of the product under development (specific value propositions).
+{{}}
+Moreover, value propositions vary according to
+the stakeholder group and the type of feature being assessed.
+{{}}
+Our study provides significant insight into value in the context of feature
+selection, and generates new concepts around value-based feature selection such as new value propositions.
+{{}}
+---

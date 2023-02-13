@@ -1,0 +1,36 @@
+Classifying Mobile Applications Using Word Embeddings.
+
+
+Modern application stores enable developers to classify their apps by choosing from a set of generic categories,
+or genres, such as health, games, and music.
+{{}}
+These categories are typically static—new categories do not necessarily emerge over time to reflect innovations in the mobile software landscape.
+{{}}
+With thousands of apps
+classified under each category, locating apps that match a specific consumer interest can be a challenging task.
+{{}}
+To overcome this challenge, in this article, we propose an automated approach for classifying mobile apps into
+more focused categories of functionally related application domains.
+{{}}
+Our aim is to enhance apps visibility and
+discoverability.
+{{}}
+Specifically, we employ word embeddings to generate numeric semantic representations of
+app descriptions.
+{{}}
+These representations are then classified to generate more cohesive categories of apps.
+{{}}
+Our
+empirical investigation is conducted using a dataset of 600 apps, sampled from the Education, Health&Fitness,
+and Medical categories of the Apple App Store.
+{{}}
+The results show that our classification algorithms achieve
+their best performance when app descriptions are vectorized using GloVe, a count-based model of word embeddings.
+{{}}
+Our findings are further validated using a dataset of Sharing Economy apps and the results are
+evaluated by 12 human subjects.
+{{}}
+The results show that GloVe combined with Support Vector Machines can
+produce app classifications that are aligned to a large extent with human-generated classifications.
+{{}}
+---

@@ -1,0 +1,42 @@
+Does it matter who pays back Technical Debt? An empirical study of self-fixed TD.
+
+Context:
+{{}}
+Technical Debt (TD) can be paid back either by those that incurred it or by others.
+{{}}
+We call the
+former self-fixed TD, and it can be particularly effective, as developers are experts in their own code and are
+well-suited to fix the corresponding TD issues.
+{{}}
+Objective:
+{{}}
+The goal of our study is to investigate self-fixed technical debt, especially the extent in which TD
+is self-fixed, which types of TD are more likely to be self-fixed, whether the remediation time of self-fixed TD
+is shorter than non-self-fixed TD and how development behaviors are related to self-fixed TD.
+{{}}
+Method:
+{{}}
+We report on an empirical study that analyzes the self-fixed issues of five types of TD (i.e., Code,
+Defect, Design, Documentation and Test), captured via static analysis, in more than 44,000 commits obtained
+from 20 Python and 16 Java projects of the Apache Software Foundation.
+{{}}
+Results:
+{{}}
+The results show that about half of the fixed issues are self-fixed and that the likelihood of contained
+TD issues being self-fixed is negatively correlated with project size, the number of developers and total issues.
+{{}}
+Moreover, there is no significant difference of the survival time between self-fixed and non-self-fixed issues.
+{{}}
+Furthermore, developers are more keen to pay back their own TD when it is related to lower code level issues,
+e.g., Defect Debt and Code Debt.
+{{}}
+Finally, developers who are more dedicated to or knowledgeable about the
+project contribute to a higher chance of self-fixing TD.
+{{}}
+Conclusions:
+{{}}
+These results can benefit both researchers and practitioners by aiding the prioritization of TD
+remediation activities and refining strategies within development teams, and by informing the development
+of TD management tools.
+{{}}
+---
