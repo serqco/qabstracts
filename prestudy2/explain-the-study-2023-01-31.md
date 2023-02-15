@@ -3,7 +3,7 @@
 created: Lutz Prechelt, 2023-01-24
 
 This file was used as a kind of presentation to introduce the
-study design to Dag Sjöberg and Sebastian Baltes.
+study design to Dag Sjöberg (2013-01-31) and Sebastian Baltes (2023-02-13).
 
 
 ## Goals
@@ -15,6 +15,7 @@ articles have room for improvement.
 
 Show (if that is so) how structured abstracts tend to have better quality
 than unstructured ones.
+
 
 
 ## Approach
@@ -33,7 +34,7 @@ than unstructured ones.
 ## Codebook
 
 - The backbone of the code set are codes for the sections of a structured abstract:
-  background, objective, method, results, conclusions.
+  background, objective, method, result, conclusion.
 - Other codes represent:
   - variants of the above that are devoid of usable information (e.g. `a-method`)
   - less frequent statement types
