@@ -21,9 +21,7 @@ To demonstrate the guidelines in practice, we apply them to reanalyze a GitHub d
 in different programming languages.
 {{method}}
 The dataset’s original analysis [Ray et al.
-{{background}}
 2014] and a critical reanalysis [Berger et al.
-{{background}}
 2019] have attracted considerable attention—in no small part because they target a topic (the
 impact of different programming languages) on which strong opinions abound.
 {{background}}
