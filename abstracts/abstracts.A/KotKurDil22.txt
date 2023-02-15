@@ -52,7 +52,7 @@ solutions to the commonly reported practical problems with EA.
 This study suggests that the EA research
 community should focus on studying individual EA artifacts instead of studying EA in general and calls for
 further research on EA artifacts and their usage as part of EA practices.
-{{furtherwork}}
+{{futurework}}
 ---
 This study is an in-between of an empirical work and a design work:
 An artifact is delivered, but it is mostly an empirical result.

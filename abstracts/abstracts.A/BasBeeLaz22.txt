@@ -22,5 +22,5 @@ Our empirical evaluation,
 based on a proof-of-concept implementation and a set of benchmarks from the literature,
 confirms the validity of our theory and demonstrates that in general our approach can avoid
 the generation of a significant amount of the equivalent mutants.
-{{method:i1,result:1}}
+{{method:i1,result:i1}}
 ---
