@@ -3,38 +3,38 @@ An empirical study of issue-link algorithms: which issue-link algorithms should 
 The accuracy of the SZZ algorithm is pivotal for just-in-time defect prediction because most
 prior studies have used the SZZ algorithm to detect defect-inducing commits to construct
 and evaluate their defect prediction models.
-{{}}
+{{background}}
 The SZZ algorithm has two phases to detect
 defect-inducing commits:
-{{}}
+{{background}}
 (1) linking issue reports in an issue-tracking system to possible
 defect-fixing commits in a version control system by using an issue-link algorithm (ILA);
 and (2) tracing the modifications of defect-fixing commits back to possible defect-inducing
 commits.
-{{}}
+{{background}}
 Researchers and practitioners can address the second phase by using existing solutions such as a tool called cregit.
-{{}}
+{{background}}
 In contrast, although various ILAs have been proposed
 for the first phase, no large-scale studies exist in which such ILAs are evaluated under
 the same experimental conditions.
-{{}}
+{{background}}
 Hence, we still have no conclusions regarding the bestperforming ILA for the first phase.
-{{}}
+{{background}}
 In this paper, we compare 10 ILAs collected from our
 systematic literature study with regards to the accuracy of detecting defect-fixing commits.
-{{}}
+{{objective}}
 In addition, we compare the defect prediction performance of ILAs and their combinations that can detect defect-fixing commits accurately.
-{{}}
+{{objective}}
 We conducted experiments on five
 open-source software projects.
-{{}}
+{{method}}
 We found that all ILAs and their combinations prevented the
 defect prediction model from being affected by missing defect-fixing commits.
-{{}}
+{{result}}
 In particular, the combination of a natural language text similarity approach, Phantom heuristics, a
 random forest approach, and a support vector machine approach is the best way to statistically significantly reduced the absolute differences from the ground-truth defect prediction
 performance.
-{{}}
+{{result}}
 We summarized the guidelines to use ILAs as our recommendations.
-{{}}
+{{a-conclusion}}
 ---
