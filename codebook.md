@@ -1,7 +1,7 @@
 # Codebook and coding rules for qabstracts study
 
 created: Lutz Prechelt, 2022-07-14  
-changed: Lutz Prechelt, 2023-01-20
+changed: Lutz Prechelt, 2023-02-15
 
 
 ## 1. Coding rules: Fundamentals
@@ -16,7 +16,8 @@ changed: Lutz Prechelt, 2023-01-20
    (marked by `{{}}`) with at least one code.  
    If a sentence has been inappropriately broken into several
    (typically because of an abbreviation such as "approx. "),
-   apply the same codes to each part and consider them one.
+   remove the superfluous `{{}}` line.
+   (This does not apply to `cruft` sentences, see that code below.)
 4. If necessary, a sentence (in particular a long one) can
    receive two or more codes.
    This means that some substantial part(s) of the sentence pertain to one code
