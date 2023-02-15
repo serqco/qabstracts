@@ -1,7 +1,7 @@
 # qabstracts: Quality of scientific abstracts
 
 created: Lutz Prechelt, 2022-07-12  
-updated: Gunnar Bergersen, 2023-01-06
+updated: Lutz Prechelt, 2023-02-15
 
 Empirical study on how well abstracts actually summarize the article
 
@@ -39,3 +39,8 @@ Directories (in sort of a chrono-logical order):
 Setup issues for Mac users (Monterey 12.6.1) 2023-01-06, Gunnar
 - use `python3` instead of `python` when running scripts, see `procedure.md`.
 - if scripts fail with python issues, run `pip3 install -r requirements.txt` (use 'homebrew' if pip isn't already installed')
+
+TODO before running a similar study again:
+- extend the "not a sentence-end" heuristic:
+  "vs.", "et al.", ...
+- make sure we treat data as UTF-8 always
