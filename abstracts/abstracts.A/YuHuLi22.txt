@@ -3,22 +3,25 @@ Assessing and Improving an Evaluation Dataset for Detecting Semantic Code Clones
 
 In recent years, applying deep learning to detect semantic code clones has received substantial attention from
 the research community.
-{{}}
+{{background}}
 Accordingly, various evaluation benchmark datasets, with the most popular one as
 BigCloneBench, are constructed and selected as benchmarks to assess and compare different deep learning
 models for detecting semantic clones.
-{{}}
+{{background}}
 However, there is no study to investigate whether an evaluation benchmark dataset such as BigCloneBench is properly used to evaluate models for detecting semantic code clones.
-{{}}
+{{background}}
 In this article, we present an experimental study to show that BigCloneBench typically includes semantic
 clone pairs that use the same identifier names, which however are not used in non-semantic-clone pairs.
-{{}}
+{{a-method,result}}
 Subsequently, we propose an undesirable-by-design Linear-Model that considers only which identifiers appear
 in a code fragment; this model can achieve high effectiveness for detecting semantic clones when evaluated
 on BigCloneBench, even comparable to state-of-the-art deep learning models recently proposed for detecting semantic clones.
-{{}}
+{{method:u1,result}}
 To alleviate these issues, we abstract a subset of the identifier names (including type,
 variable, and method names) in BigCloneBench to result in AbsBigCloneBench and use AbsBigCloneBench
 to better assess the effectiveness of deep learning models on the task of detecting semantic clones.
-{{}}
+{{method}}
 ---
+Curious structure: A method step is reported last; its results are not mentioned, presumably because
+those results are not part of the paper's goal -- but that goal is never spelled out, at least
+in my reading of the abstract. 
