@@ -1,30 +1,30 @@
 ﻿Identifying Challenges for OSS Vulnerability Scanners - A Study & Test Suite.
 
 The use of vulnerable open-source dependencies is a known problem in today’s software development.
-{{}}
+{{background}}
 Several
 vulnerability scanners to detect known-vulnerable dependencies appeared in the last decade, however, there exists no case study
 investigating the impact of development practices, e.g., forking, patching, re-bundling, on their performance.
-{{}}
+{{background}}
 This paper studies (i)
 types of modifications that may affect vulnerable open-source dependencies and (ii) their impact on the performance of vulnerability
 scanners.
-{{}}
+{{objective}}
 Through an empirical study on 7,024 Java projects developed at SAP, we identified four types of modifications:
-{{}}
+{{method}}
 recompilation, re-bundling, metadata-removal and re-packaging.
-{{}}
+{{result}}
 In particular, we found that more than 87 percent (56 percent, resp.) of
 the vulnerable Java classes considered occur in Maven Central in re-bundled (re-packaged, resp.) form.
-{{}}
+{{method}}
 We assessed the impact of
 these modifications on the performance of the open-source vulnerability scanners OWASP Dependency-Check (OWASP) and Eclipse
 Steady, GitHub Security Alerts, and three commercial scanners.
-{{}}
+{{method}}
 The results show that none of the scanners is able to handle all the
 types of modifications identified.
-{{}}
+{{result}}
 Finally, we present Achilles, a novel test suite with 2,505 test cases that allow replicating the
 modifications on open-source dependencies.
-{{}}
+{{X}}
 ---

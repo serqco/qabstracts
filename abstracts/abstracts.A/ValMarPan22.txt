@@ -1,51 +1,51 @@
 Towards a model and methodology for evaluating data quality in software engineering experiments.
 
 Context:
-{{}}
+{{h-background}}
 Data collected during software engineering experiments might contain quality problems, leading to
 wrong experimental conclusions.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 We present a data quality (DQ) model and a methodology specific to software engineering experiments,
 which provides a systematic approach in order to analyze and improve data quality in this domain.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 Our proposal considers a multifaceted view of data quality suitable for this context, which enables the
 discovery of DQ problems that are not generally addressed.
-{{}}
+{{design}}
 We successfully applied the model (DQMoS) and
 methodology (DQMeS) in four controlled experiments, detecting different quality problems that could impact the
 experimental results.
-{{}}
+{{method,result:i1}}
 We present, through a running example, how we applied the DQMoS and DQMeS to one of
 the four experimental data.
-{{}}
+{{a-method}}
 Results:
-{{}}
+{{h-result}}
 We found that between 55% and 75% of the DQ metrics applied showed the presence of a DQ problem in
 all four experiments.
-{{}}
+{{result}}
 In all cases, the experimental results had already been obtained before the DQMeS appli­
 cation.
-{{}}
+{{method}}
 This means that the DQ problems we found, were not discovered by the experimenters during or before
 making their experiment’s analysis.
-{{}}
+{{result}}
 Results yield data quality problems that experimenters did not detect on
 their own analysis, and that affect the experimental response variables.
-{{}}
+{{result}}
 Our proposal shows a formalized
 framework that measures and improves the quality of software engineering experimental data.
-{{}}
+{{design}}
 The results of a
 survey distributed to the experiments' responsibles show that they value the improvements introduced by the
 model and methodology, and that they intend to apply them again in future experiences.
-{{}}
+{{method,result:i1}}
 Conclusions:
-{{}}
+{{h-conclusion}}
 DQMoS and DQMeS are useful to increase the confidence in the quality of data used in software
 engineering experiments, and improve the trust in experimental results.
-{{}}
+{{conclusion}}
 ---
