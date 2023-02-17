@@ -3,38 +3,38 @@ Inference and Test Generation Using Program Invariants in Chemical Reaction Netw
 Chemical reaction networks (CRNs) are an emerging distributed
 computational paradigm where programs are encoded as a set of ab-
 stract chemical reactions.
-{{}}
+{{background}}
 CRNs can be compiled into DNA strands
 which perform the computations in vitro, creating a foundation for
 intelligent nanodevices.
-{{}}
+{{background}}
 Recent research proposed a software test-
 ing framework for stochastic CRN programs in simulation, however,
 it relies on existing program specifications.
-{{}}
+{{background}}
 In practice, specifica-
 tions are often lacking and when they do exist, transforming them
 into test cases is time-intensive and can be error prone.
-{{}}
+{{background}}
 In this work,
 we propose an inference technique called ChemFlow which extracts
 3 types of invariants from an existing CRN model.
-{{}}
+{{objective,design}}
 The extracted
 invariants can then be used for test generation or model validation
 against program implementations.
-{{}}
+{{design}}
 We applied ChemFlow to 13
 CRN programs ranging from toy examples to real biological models
 with hundreds of reactions.
-{{}}
+{{method}}
 We find that the invariants provide
 strong fault detection and often exhibit less flakiness than specifica-
 tion derived tests.
-{{}}
+{{result}}
 In the biological models we showed invariants to
 developers and they confirmed that some of these point to parts of
 the model that are biologically incorrect or incomplete suggesting
 we may be able to use ChemFlow to improve model quality.
-{{}}
+{{result,conclusion}}
 ---

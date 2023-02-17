@@ -2,40 +2,41 @@ Engineering Web Augmentation software: A development method for enabling end-use
 
 Nowadays, end-users are able to adapt Web applications when some of their requirements have not been taken
 into account by developers.
-{{}}
+{{background}}
 One possible way to do adaptations is by using Web Augmentation techniques.
-{{}}
+{{background}}
 Web
 Augmentation allows end-users to modify the Web sites’ user interfaces once these are loaded on the clientside, i.e., in the browser.
-{{}}
+{{background}}
 They achieve these adaptations by developing and/or installing Web browser plugins
 ("augmenters") that modify the user interface with new functionalities.
-{{}}
+{{background}}
 This particular kind of software artifacts
 requires special attention regarding maintenance as–in most cases–they depend on third-party resources, such
 as HTML pages.
-{{}}
+{{background}}
 When these resources are upgraded, unexpected results during the augmentation process may
 occur.
-{{}}
+{{background}}
 Many communities have arisen around Web Augmentation, and today there are large repositories where
 developers share their augmenters; end-users may give feedback about existing augmentations and even ask for
 new ones.
-{{}}
+{{background}}
 Maintenance is a key phase in the augmenters' life-cycle, and currently, this task falls (as usual) on
 the developers.
-{{}}
+{{background}}
 In this paper, we present a participatory approach for allowing end-users without programming
 skills to participate in the augmenters' maintenance phase.
-{{}}
+{{objective}}
 In order to allow this, we also provide support for
 the development phase to bootstrap a first version of the augmenter and to reduce the load on developers in
 both phases, development and maintenance.
-{{}}
+{{objective}}
 We present an analysis of more than eight thousand augmenters,
 which helped us devise the approach.
-{{}}
+{{method}}
 Finally, we present an experiment with 48 participants to validate our
 approach.
-{{}}
+{{method}}
 ---
+Appears to be a design paper, but this abstract doesn't appear to have any design statements.

@@ -3,43 +3,44 @@ Nessie: Automatically Testing JavaScript APIs with Asynchronous Callbacks.
 Previous algorithms for feedback-directed unit test generation iter-
 atively create sequences of API calls by executing partial tests and
 by adding new API calls at the end of the test.
-{{}}
+{{background}}
 These algorithms
 are challenged by a popular class of APIs:
-{{}}
+{{background}}
 higher-order functions
 that receive callback arguments, which often are invoked asyn-
 chronously.
-{{}}
+{{background}}
 Existing test generators cannot effectively test such
 APIs because they only sequence API calls, but do not nest one call
 into the callback function of another.
-{{}}
+{{background}}
 This paper presents Nessie,
 the first feedback-directed unit test generator that supports nesting
 of API calls and that tests asynchronous callbacks.
-{{}}
+{{objective}}
 Nesting API calls
 enables a test to use values produced by an API that are available
 only once a callback has been invoked, and is often necessary to
 ensure that methods are invoked in a specific order.
-{{}}
+{{background}}
 The core con-
 tributions of our approach are a tree-based representation of unit
 tests with callbacks and a novel algorithm to iteratively generate
 such tests in a feedback-directed manner.
-{{}}
+{{design}}
 We evaluate our approach
 on ten popular JavaScript libraries with both asynchronous and
 synchronous callbacks.
-{{}}
+{{method}}
 The results show that, in a comparison with
 LambdaTester, a state of the art test generation technique that only
 considers sequencing of method calls, Nessie finds more behavioral
 differences and achieves slightly higher coverage.
-{{}}
+{{result}}
 Notably, Nessie
 needs to generate significantly fewer tests to achieve and exceed
 the coverage achieved by the state of the art.
-{{}}
+{{result:i2}}
 ---
+Strange background after objective.
