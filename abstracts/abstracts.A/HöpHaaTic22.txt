@@ -1,58 +1,58 @@
 ﻿Advantages and disadvantages of (dedicated) model transformation languages.
 
 Context
-{{}}
+{{h-background}}
 Model driven development envisages the use of model transformations to evolve
 models.
-{{}}
+{{background}}
 Model transformation languages, developed for this task, are touted with many
 benefits over general purpose programming languages.
-{{}}
+{{background}}
 However, a large number of these
 claims have not yet been substantiated.
-{{}}
+{{background}}
 They are also made without the context necessary
 to be able to critically assess their merit or built meaningful empirical studies around them.
-{{}}
+{{background}}
 Objective
-{{}}
+{{h-objective}}
 The objective of our work is to elicit the reasoning, influences and background
 knowledge that lead people to assume benefits or drawbacks of model transformation
 languages.
-{{}}
+{{objective}}
 Method
-{{}}
+{{h-method}}
 We conducted a large-scale interview study involving 56 participants from research
 and industry.
-{{}}
+{{method}}
 Interviewees were presented with claims about model transformation languages and were asked to provide reasons for their assessment thereof.
-{{}}
+{{method}}
 We qualitatively
 analysed the responses to find factors that influence the properties of model transformation
 languages as well as explanations as to how exactly they do so.
-{{}}
+{{method}}
 Results
-{{}}
+{{h-result}}
 Our interviews show, that general purpose expressiveness of GPLs, domain specific
 capabilities of MTLs as well as tooling all have strong influences on how people view
 properties of model transformation languages.
-{{}}
+{{result}}
 Moreover, the Choice of MTL, the Use Case
 for which a transformation should be developed as well as the Skills of involved stakeholders
 have a moderating effect on the influences, by changing the context to consider.
-{{}}
+{{result}}
 Conclusion
-{{}}
+{{h-conclusion}}
 There is a broad body of experience, that suggests positive and negative influences for properties of MTLs.
-{{}}
+{{conclusion}}
 Our data suggests, that much needs to be done in order to
 convey the viability of model transformation languages.
-{{}}
+{{conclusion}}
 Efforts to provide more empirical
 substance need to be undergone and lacklustre language capabilities and tooling need to be
 improved upon.
-{{}}
+{{conclusion}}
 We suggest several approaches for this that can be based on the results of
 the presented study.
-{{}}
+{{futurework}}
 ---
