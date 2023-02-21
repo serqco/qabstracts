@@ -1,31 +1,32 @@
 Predicting sensitive information leakage in IoT applications using flows-aware machine learning approach.
 
 This paper presents an approach for identification of vulnerable IoT applications.
-{{}}
+{{objective}}
 The
 approach focuses on a category of vulnerabilities that leads to sensitive information leakage which can be identified by using taint flow analysis.
-{{}}
+{{design}}
 Tainted flows vulnerability is
 very much impacted by the structure of the program and the order of the statements in the
 code, designing an approach to detect such vulnerability needs to take into consideration
 such information in order to provide precise results.
-{{}}
+{{background}}
 In this paper, we propose and develop
 an approach, FlowsMiner, that mines features from the code related to program structure
 such as control statements and methods, in addition to program’s statement order.
-{{}}
+{{objective}}
 FlowsMiner, generates features in the form of tainted flows.
-{{}}
+{{objective}}
 We developed, Flows2Vec, a tool that
 transform the features recovered by FlowsMiner into vectors, which are then used to aid
 the process of machine learning by providing a flow’s aware model building process.
-{{}}
+{{design}}
 The
 resulting model is capable of accurately classify applications as vulnerable if the vulnerability is exhibited by changes in the order of statements in source code.
-{{}}
+{{design}}
 When compared to
 a base Bag of Words (BoW) approach, the experiments show that the proposed approach
 has improved the AUC of the prediction models for all algorithms and the best case for
 Corpus1 dataset is improved from 0.91 to 0.94 and for Corpus2 from 0.56 to 0.96.
-{{}}
+{{method,result}}
 ---
+Curious train-of-thought, many sentences with role ambiguity.

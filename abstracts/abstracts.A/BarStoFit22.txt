@@ -2,25 +2,28 @@ Managing Episodic Volunteers in Free/Libre/Open Source Software Communities.
 
 We draw on the concept of episodic volunteering (EV) from the general volunteering literature to identify practices for
 managing EV in free/libre/open source software (FLOSS) communities.
-{{}}
+{{background}}
 Infrequent but ongoing participation is widespread, but the
 practices that community managers are using to manage EV, and their concerns about EV, have not been previously documented.
-{{}}
+{{background,objective}}
 We
 conducted a policy Delphi study involving 24 FLOSS community managers from 22 different communities.
-{{}}
+{{method}}
 Our panel identified 16
 concerns related to managing EV in FLOSS, which we ranked by prevalence.
-{{}}
+{{result}}
 We also describe 65 practices for managing EV in
 FLOSS.
-{{}}
+{{result}}
 Almost three-quarters of these practices are used by at least three community managers.
-{{}}
+{{result}}
 We report these practices using a
 systematic presentation that includes context, relationships between practices, and concerns that they address.
-{{}}
+{{method}}
 These findings provide
 a coherent framework that can help FLOSS community managers to better manage episodic contributors.
-{{}}
+{{conclusion}}
 ---
+Rare case of an almost implicit objective statement:
+"Infrequent but ongoing participation is widespread, but the practices that community managers 
+are using to manage EV, and their concerns about EV, have not been previously documented."

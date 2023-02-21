@@ -2,35 +2,35 @@ Sources of software development task friction.
 
 Given a task description, a developer’s job is to alter the software system in a way that
 accomplishes the task, usually by fixing a bug or adding a new feature.
-{{}}
+{{background}}
 Completing these
 tasks typically requires developers to use multiple tools, spanning multiple applications,
 within their environment.
-{{}}
+{{background}}
 In this paper, we investigate how existing desktop environments
 align with and facilitate developers’ needs as they tackle their tasks.
-{{}}
+{{objective}}
 We examine how
 developers use their tools to perform their tasks and the ways in which these tools inhibit
 development velocity.
-{{}}
+{{method}}
 Through a controlled user study with 17 subjects and a field study
 with 10 industrial engineers, we found that developers frequently formulate specific objectives, or goals, on-demand as they encounter new information when progressing through
 their tasks.
-{{}}
+{{method,result}}
 These goals are often not achievable directly in the environment, forcing developers to translate their task into goals and their goals into the low-level actions provided
 by the environment.
-{{}}
+{{result:i1}}
 When carrying out these low-level actions, developers routinely perform extra work such as locating and integrating resources and adapting their needs to align
 with the capabilities of the environment.
-{{}}
+{{result}}
 This extra work acts as a form of friction, limiting how quickly and directly developers can complete their tasks.
-{{}}
+{{result}}
 Much of this extra work
 exists due to mismatches between current tools and environments and how developers actually work in practice.
-{{}}
+{{result}}
 This work identifies seven types of development friction and provides
 design recommendations that future tools and environments could use to more effectively
 help developers complete their tasks.
-{{}}
+{{conclusion}}
 ---

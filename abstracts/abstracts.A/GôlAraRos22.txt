@@ -1,64 +1,64 @@
 Detecting relevant app reviews for software evolution and maintenance through multimodal one-class learning.
 
 Context:
-{{}}
+{{h-background}}
 Mobile app reviews are a rich source of information for software evolution and maintenance.
-{{}}
+{{background}}
 Several
 studies have shown the effectiveness of exploring relevant reviews in the software development lifecycle, such
 as release planning and requirements engineering tasks.
-{{}}
+{{background}}
 Popular apps receive even millions of reviews, thereby
 making manual extraction of relevant information an impractical task.
-{{}}
+{{background}}
 The literature presents several machine
 learning approaches to detect relevant reviews.
-{{}}
+{{background}}
 However, these approaches use multi-class learning, implying
 more user effort for data labeling since users must label a significant set of relevant and irrelevant reviews.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 This article investigates methods for detecting relevant app reviews considering scenarios with
 small sets of labeled data.
-{{}}
+{{objective}}
 We evaluated unimodal and multimodal representations, different labeling levels,
 as well as different app review domains and languages.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 We present a one-class multimodal learning method for detecting relevant reviews.
-{{}}
+{{design}}
 Our approaches
 have two main contributions.
-{{}}
+{{design}}
 First, we use one-class learning that requires only the labeling of relevant app
 reviews, thereby minimizing the labeling effort.
-{{}}
+{{design}}
 Second, to handle the smaller amount of labeled reviews
 without harming classification performance, we also present methods to improve feature extraction and reviews
 representation.
-{{}}
+{{design,a-design}}
 We propose the Multimodal Autoencoder and the Multimodal Variational Autoencoder.
-{{}}
+{{design}}
 The
 methods learn representations which explore both textual data and visual information based on the density
 of the reviews.
-{{}}
+{{design}}
 Density information can be interpreted as a summary of the main topics or clusters extracted
 from the reviews.
-{{}}
+{{design}}
 Results:
-{{}}
+{{h-result}}
 Our methods achieved competitive results even using only 25% of labeled reviews compared to
 models that used the entire training set.
-{{}}
+{{result}}
 Also, our multimodal approaches obtain the highest 𝐹1 -Score and
 AUC-ROC in twenty-three out of twenty-four scenarios.
-{{}}
+{{result}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 Our one-class multimodal methods proved to be a competitive alternative for detecting relevant
 reviews and promising for practical scenarios involving data-driven software evolution and maintenance.
-{{}}
+{{conclusion}}
 ---
