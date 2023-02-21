@@ -99,14 +99,14 @@ KukPinAmm22   Lutz
 HöpHaaTic22   Lutz
 TunTraLe22    Lutz
 #----- Block 12
-BarStoFit22   
-GôlAraRos22   
-CalLan22   
-AbdBadCos22   
-TizKumTan22   
-BraFriHol22   
-LinLiZha22   
-NaeAla22   
+BarStoFit22   -Lutz
+GôlAraRos22   -Lutz
+CalLan22      -Lutz
+AbdBadCos22   -Lutz
+TizKumTan22   -Lutz
+BraFriHol22   -Lutz
+LinLiZha22    -Lutz
+NaeAla22      -Lutz
 #----- Block 13
 FanWeiJin22   
 SahÖzyTos22   
