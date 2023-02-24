@@ -1,44 +1,44 @@
 Predicting vulnerability inducing function versions using node embeddings and graph neural networks.
 
 Context:
-{{}}
+{{h-background}}
 Predicting software vulnerabilities over code changes is a difficult task due to obtaining real
 vulnerability data and their associated code fixes from software projects as software organizations are often
 reluctant to report those.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 We aim to propose a vulnerability prediction model that runs after every code change, and identifies
 vulnerability inducing functions in that version.
-{{}}
+{{objective}}
 We also would like to assess the success of node and token
 based source code representations over abstract syntax trees (ASTs) on predicting vulnerability inducing
 functions.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 We train neural networks to represent node embeddings and token embeddings over ASTs in order
 to obtain feature representations.
-{{}}
+{{design}}
 Then, we build two Graph Neural Networks (GNNs) with node embeddings,
 and compare them against Convolutional Neural Network (CNN) and Support Vector Machine (SVM) with
 token representations.
-{{}}
+{{design,method}}
 Results:
-{{}}
+{{h-result}}
 We report our empirical analysis over the change history of vulnerability inducing functions of
 Wireshark project.
-{{}}
+{{method}}
 GraphSAGE model using source code representation via ASTs achieves the highest AUC
 rate, while CNN models using token representations achieves the highest recall, precision and F1 measure.
-{{}}
+{{result:i4}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 Representing functions with their structural information extracted from ASTs, either in token
 form or in complete graph form, is great at predicting vulnerability inducing function versions.
-{{}}
+{{conclusion}}
 Transforming
 source code into token frequencies as a natural language text fails to build successful models for vulnerability
 prediction in a real software project.
-{{}}
+{{conclusion}}
 ---

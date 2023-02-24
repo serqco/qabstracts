@@ -1,29 +1,30 @@
 When should we (not) use the mean magnitude of relative error (MMRE) as an error measure in software development effort estimation?
 
 Context:
-{{}}
+{{h-background}}
 The mean magnitude of relative error (MMRE) is an error measure frequently used to evaluate and compare the estimation performance of prediction models
 and software professionals.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 This paper examines conditions for proper use of MMRE in effort estimation contexts.
-{{}}
+{{objective:u1}}
 Method:
-{{}}
+{{h-method}}
 We apply research on scoring functions to identify the type of estimates that minimizes the expected value of the MMRE.
-{{}}
+{{method:u1}}
 Results:
-{{}}
+{{h-result}}
 We show that the MMRE is a proper error measure for estimates of the most likely (mode) effort, but not for estimates of the median or mean effort, provided
 that the effort usage is approximately log-normally distributed, which we argue is a reasonable assumption in many software development contexts.
-{{}}
+{{result:u1}}
 The relevance of
 the findings is demonstrated on real-world software development data.
-{{}}
+{{method:i1}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 MMRE is not a proper measure of the accuracy of estimates of the median or mean effort, but may be used for the accuracy evaluation of estimates of most
 likely effort.
-{{}}
+{{result}}
 ---
+Appears to be a theoretical paper.
