@@ -108,14 +108,14 @@ BraFriHol22   Lutz
 LinLiZha22    Lutz
 NaeAla22      Lutz
 #----- Block 13
-FanWeiJin22   
-SahÖzyTos22   
-LiuLiSwa22   
-JaiPurSha22   
-Pezzè22   
-NadRodNag22   
-JørHalLie22   
-HerFerGal22   
+FanWeiJin22   -Lutz
+SahÖzyTos22   -Lutz
+LiuLiSwa22    -Lutz
+JaiPurSha22   -Lutz
+Pezzè22       -Lutz
+NadRodNag22   -Lutz
+JørHalLie22   -Lutz
+HerFerGal22   -Lutz
 #----- Block 14
 YeGuMar22   
 JiaTanDam22   
