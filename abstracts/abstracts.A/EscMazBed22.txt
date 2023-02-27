@@ -2,31 +2,31 @@ Studying eventual connectivity issues in Android apps.
 
 Mobile apps have become indispensable for daily life, not only for individuals but also
 for companies/organizations that offer their services digitally.
-{{}}
+{{background}}
 Inherited by the mobility
 of devices, there are no limitations regarding the locations or conditions in which apps
 are being used.
-{{}}
+{{background}}
 For example, apps can be used where no internet connection is available.
-{{}}
+{{background}}
 Therefore, offline-first is a highly desired quality of mobile apps.
-{{}}
+{{background}}
 Accordingly, inappropriate handling of connectivity issues and miss-implementation of good practices lead to
 bugs and crashes occurrences that reduce the confidence of users on the apps’ quality.
-{{}}
+{{background}}
 In
 this paper, we present the first study on Eventual Connectivity (ECn) issues exhibited by
 Android apps, by manually inspecting 971 scenarios related to 50 open-source apps.
-{{}}
+{{objective,method:u1}}
 We
 found 304 instances of ECn issues (6 issues per app, on average) that we organized in a taxonomy of 10 categories.
-{{}}
+{{result}}
 We found that the majority of ECn issues are related to the use of
 messages not providing correct information to the user about the connectivity status and to
 the improper use of external libraries/apps to which the check of the connectivity status is
 delegated.
-{{}}
+{{result}}
 Based on our findings, we distill a list of lessons learned for both practitioners
 and researchers, indicating directions for future work.
-{{}}
+{{a-conclusion}}
 ---
