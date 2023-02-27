@@ -117,14 +117,14 @@ NadRodNag22   Lutz
 JørHalLie22   Lutz
 HerFerGal22   Lutz
 #----- Block 14
-YeGuMar22   
-JiaTanDam22   
-ÇetTüz22   
-ChaZhaShe22   
-LyuRajLin22   
-EscMazBed22   
-NolShaGao22   
-Vidoni22   
+YeGuMar22     -Lutz
+JiaTanDam22   -Lutz
+ÇetTüz22      -Lutz
+ChaZhaShe22   -Lutz
+LyuRajLin22   -Lutz
+EscMazBed22   -Lutz
+NolShaGao22   -Lutz
+Vidoni22      -Lutz
 #----- Block 15
 AhmMerBah22   
 HatNovBal22   
