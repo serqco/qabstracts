@@ -126,14 +126,14 @@ EscMazBed22   Lutz
 NolShaGao22   Lutz
 Vidoni22      Lutz
 #----- Block 15
-AhmMerBah22   
-HatNovBal22   
-TeyIzaIsa22   
-HuCheWan22   
-ChoLeeKan22   
-KalNorVog22   
-ReiJahMoc22   
-TawSarPet22   
+AhmMerBah22   -Lutz
+HatNovBal22   -Lutz
+TeyIzaIsa22   -Lutz
+HuCheWan22    -Lutz
+ChoLeeKan22   -Lutz
+KalNorVog22   -Lutz
+ReiJahMoc22   -Lutz
+TawSarPet22   -Lutz
 #----- Block 16
 FahAhmBeh22   
 HuaWeiWan22   
