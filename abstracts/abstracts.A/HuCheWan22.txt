@@ -2,48 +2,48 @@ Correlating Automated and Human Evaluation of Code Documentation Generation Qual
 
 
 Automatic code documentation generation has been a crucial task in the field of software engineering.
-{{}}
+{{background}}
 It not
 only relieves developers from writing code documentation but also helps them to understand programs better.
-{{}}
+{{background}}
 Specifically, deep-learning-based techniques that leverage large-scale source code corpora have been widely
 used in code documentation generation.
-{{}}
+{{background}}
 These works tend to use automatic metrics (such as BLEU, METEOR,
 ROUGE, CIDEr, and SPICE) to evaluate different models.
-{{}}
+{{background}}
 These metrics compare generated documentation
 to reference texts by measuring the overlapping words.
-{{}}
+{{background}}
 Unfortunately, there is no evidence demonstrating
 the correlation between these metrics and human judgment.
-{{}}
+{{background}}
 We conduct experiments on two popular code
 documentation generation tasks, code comment generation and commit message generation, to investigate
 the presence or absence of correlations between these metrics and human judgments.
-{{}}
+{{objective}}
 For each task, we replicate three state-of-the-art approaches and the generated documentation is evaluated automatically in terms
 of BLEU, METEOR, ROUGE-L, CIDEr, and SPICE.
-{{}}
+{{method}}
 We also ask 24 participants to rate the generated documentation considering three aspects (i.e., language, content, and effectiveness).
-{{}}
+{{method}}
 Each participant is given Java
 methods or commit diffs along with the target documentation to be rated.
-{{}}
+{{method}}
 The results show that the ranking
 of generated documentation from automatic metrics is different from that evaluated by human annotators.
-{{}}
+{{result}}
 Thus, these automatic metrics are not reliable enough to replace human evaluation for code documentation
 generation tasks.
-{{}}
+{{conclusion}}
 In addition, METEOR shows the strongest correlation (with moderate Pearson correlation
 r about 0.7) to human evaluation metrics.
-{{}}
+{{result}}
 However, it is still much lower than the correlation observed between different annotators (with a high Pearson correlation r about 0.8) and correlations that are reported in
 the literature for other tasks (e.g., Neural Machine Translation [39]).
-{{}}
+{{result}}
 Our study points to the need to develop
 specialized automated evaluation metrics that can correlate more closely to human evaluation metrics for
 code generation tasks.
-{{}}
+{{conclusion}}
 ---

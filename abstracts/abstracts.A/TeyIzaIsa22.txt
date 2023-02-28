@@ -1,38 +1,39 @@
 A Fast Clustering Algorithm for Modularization of Large-Scale Software Systems.
 
 A software system evolves over time in order to meet the needs of users.
-{{}}
+{{background}}
 Understanding a program is the most important
 step to apply new requirements.
-{{}}
+{{background}}
 Clustering techniques through dividing a program into small and meaningful parts make it possible to
 understand the program.
-{{}}
+{{background}}
 In general, clustering algorithms are classified into two categories:
-{{}}
+{{background}}
 hierarchical and non-hierarchical
 algorithms (such as search-based approaches).
-{{}}
+{{background}}
 While clustering problems generally tend to be NP-hard, search-based algorithms
 produce acceptable clustering and have time and space constraints and hence they are inefficient in large-scale software systems.
-{{}}
+{{background}}
 Most algorithms which currently used in software clustering fields do not scale well when applied to large and very large applications.
-{{}}
+{{background}}
 In
 this paper, we present a new and fast clustering algorithm, FCA, that can overcome space and time constraints of existing algorithms
 by performing operations on the dependency matrix and extracting other matrices based on a set of features.
-{{}}
+{{objective,design}}
 The experimental results
 on ten small-sized applications, ten folders with different functionalities from Mozilla Firefox, a large-sized application (namely ITK), and
 a very large-sized application (namely Chromium) demonstrate that the proposed algorithm achieves higher quality modularization
 compared with hierarchical algorithms.
-{{}}
+{{method,result:i1}}
 It can also compete with search-based algorithms and a clustering algorithm based on
 subsystem patterns.
-{{}}
+{{result:i1}}
 But the running time of the proposed algorithm is much shorter than that of the hierarchical and non-hierarchical
 algorithms.
-{{}}
+{{result:i1}}
 The source code of the proposed algorithm can be accessed at https://github.com/SoftwareMaintenanceLab.
-{{}}
+{{resourcepointer}}
 ---
+Ill-constructed objective that calls design ideas goals.
