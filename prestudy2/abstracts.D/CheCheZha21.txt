@@ -24,7 +24,7 @@ In this paper, we propose an automatic unsupervised approach to build such a the
 {{objective}}
 In particular, we first identify software-specific terms by utilizing a software-specific corpus (e.g., Stack Overflow) and a general corpus
 (e.g., Wikipedia).
-{{method}}
+{{design,method}}
 Then we infer morphological forms of software-specific terms by combining distributed word semantics, domain-specific
 lexical rules and transformations.
 {{method}}
