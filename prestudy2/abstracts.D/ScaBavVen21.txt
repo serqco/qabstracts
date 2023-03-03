@@ -13,7 +13,7 @@ Unfortunately, there are no metrics designed to assess the understandability of 
 {{background}}
 In this work, we perform
 an extensive evaluation of 121 existing as well as new code-related, documentation-related, and developer-related metrics.
-{{method}}
+{{objective,a-method}}
 We try to (i)
 correlate each metric with understandability and (ii) build models combining metrics to assess understandability.
 {{method}}
