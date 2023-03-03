@@ -18,7 +18,7 @@ However, there
 is lack of a systematic way to investigate the distributions on existing violations and fixed ones in the wild, that can provide insights into
 prioritizing violations for developers, and an effective way to mine code and fix patterns which can help developers easily understand the
 reasons of leading violations and how to fix them.
-{{claim:i4, -ignorediff}}
+{{background}}
 In this paper, we first collect and track a large number of fixed and unfixed violations across
 revisions of software.
 {{method:i3}}
@@ -28,7 +28,7 @@ that are fixed, in terms of occurrences, spread and categories, which can provid
 To automatically identify
 patterns in violations and their fixes, we propose an approach that utilizes convolutional neural networks to learn features and clustering to
 regroup similar instances.
-{{method}}
+{{design}}
 We then evaluate the usefulness of the identified fix patterns by applying them to unfixed violations.
 {{method}}
 The results
@@ -38,4 +38,4 @@ It is also noteworthy that
 the yielded patterns are applicable to four real bugs in the Defects4J major benchmark for software testing and automated repair.
 {{result}}
 ---
-This is my first abstract analysis.  It took ~45 minutes.
+This is my first abstract analysis.  It took ~45 minutes.  I have changed 2 codes after Lutz/Lloyd discussion.
