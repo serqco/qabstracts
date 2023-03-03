@@ -1,47 +1,50 @@
 Patchworking: Exploring the code changes induced by vulnerability fixing activities.
 
 Context:
-{{}}
+{{h-background}}
 Identifying and repairing vulnerable code is a critical software maintenance task.
-{{}}
+{{background}}
 Change impact
 analysis plays an important role during software maintenance, as it helps software maintainers to figure out
 the potential effects of a change before it is applied.
-{{}}
+{{background}}
 However, while the software engineering community
 has extensively studied techniques and tools for performing impact analysis of change requests, there are no
 approaches for estimating the impact when the change involves the resolution of a vulnerability bug.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 We hypothesize that similar vulnerabilities may present similar strategies for patching.
-{{}}
+{{objective:u1}}
 More
 specifically, our work aims at understanding whether the class of the vulnerability to fix may determine the
 type of impact on the system to repair.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 To verify our conjecture, in this paper, we examine 524 security patches applied to vulnerabilities
 belonging to ten different weakness categories and extracted from 98 different open-source projects written in
 Java.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 We obtain empirical evidence that vulnerabilities of the same types are often resolved by applying
 similar code transformations, and, thus, produce almost the same impact on the codebase.
-{{}}
+{{result:i1}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 On the one hand, our findings open the way to better management of software maintenance
 activities when dealing with software vulnerabilities.
-{{}}
+{{conclusion}}
 Indeed, vulnerability class information could be exploited
 to better predict how much code will be affected by the fixing, how the structural properties of the code (i.e.,
 complexity, coupling, cohesion, size) will change, and the effort required for the fix.
-{{}}
+{{conclusion}}
 On the other hand, our
 results can be leveraged for improving automated strategies supporting developers when they have to deal
 with security flaws.
-{{}}
+{{conclusion}}
 ---
+The use of singular vs. plural for the headings in structured abstracts may be 
+interesting to review. The present article uses Method (singular) and 
+Results (plural) although only 1 result is mentioned (at least as formulated).
