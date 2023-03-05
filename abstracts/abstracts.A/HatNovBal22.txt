@@ -19,5 +19,5 @@ project member involvement and discussion frequency; (3) developers consider Git
 Our findings
 are a first step towards data-informed guidance for using GitHub Discussions, opening up
 avenues for future work on this novel communication channel.
-{{conclusion}}
+{{fposs}}
 ---

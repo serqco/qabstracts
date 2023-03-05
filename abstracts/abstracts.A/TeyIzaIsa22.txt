@@ -17,7 +17,7 @@ While clustering problems generally tend to be NP-hard, search-based algorithms
 produce acceptable clustering and have time and space constraints and hence they are inefficient in large-scale software systems.
 {{background}}
 Most algorithms which currently used in software clustering fields do not scale well when applied to large and very large applications.
-{{background}}
+{{gap}}
 In
 this paper, we present a new and fast clustering algorithm, FCA, that can overcome space and time constraints of existing algorithms
 by performing operations on the dependency matrix and extracting other matrices based on a set of features.

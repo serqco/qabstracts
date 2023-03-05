@@ -14,7 +14,7 @@ fying issue reports.
 However, most of those studies classify issue reports according to issue types, based only on
 whether the report is relevant to a bug, whether the report is duplicated, or whether the issue is functional or
 nonfunctional.
-{{background}}
+{{gap}}
 Objective:
 {{h-objective}}
 In this paper, we intend to link issue reports and a user manual and so propose a deep learning modelbased method that classifies issue reports according to software features that are described in the user manual in
@@ -46,5 +46,5 @@ Conclusion:
 {{h-conclusion}}
 Our study shows the feasibility of classifying issue reports according to software features, which can
 be the basis for successive studies to classify issue reports into software features.
-{{conclusion}}
+{{conclusion,fposs}}
 ---

@@ -10,10 +10,10 @@ Blockchain-based systems have several architectural components and variants, whi
 However, there is a lack
 of studies to assist architects in making architecture design and configuration decisions for blockchain-based
 systems.
-{{background}}
+{{gap}}
 This knowledge gap may increase the chance of making unsuitable design decisions and producing
 configurations prone to potential security risks.
-{{background}}
+{{gap}}
 To address this limitation, we report our comprehensive systematic literature review to derive a taxonomy of commonly used architecture design decisions in blockchainbased systems.
 {{objective}}
 We map each of these decisions to potential security attacks and their posed threats.
