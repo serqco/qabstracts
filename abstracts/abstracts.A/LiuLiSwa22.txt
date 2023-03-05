@@ -2,7 +2,7 @@ PUS: A Fast and Highly Efficient Solver for Inclusion-based Pointer Analysis.
 
 A crucial performance bottleneck in most interprocedural static
 analyses is solving pointer analysis constraints.
-{{background}}
+{{gap}}
 We present Pus,
 a highly efficient solver for inclusion-based pointer analysis.
 {{objective}}

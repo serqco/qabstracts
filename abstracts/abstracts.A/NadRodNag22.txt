@@ -40,10 +40,10 @@ participating in OSS.
 {{conclusion}}
 Furthermore, the results from our regression analysis lead us to believe that there may exist differences between
 the evaluation of the contributions from different perceptible races and ethnicities.
-{{conclusion}}
+{{summary}}
 Thus, our findings reinforce the need for further
 studies on racial and ethnic diversity in software engineering to foster healthier OSS communities.
-{{conclusion}}
+{{fneed}}
 ---
 Same conjecture that presumably drove doing the study appears again in the conclusion:
 "the results from our regression analysis lead us to believe that there may exist differences between

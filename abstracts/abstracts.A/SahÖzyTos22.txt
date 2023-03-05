@@ -5,7 +5,7 @@ Context:
 Predicting software vulnerabilities over code changes is a difficult task due to obtaining real
 vulnerability data and their associated code fixes from software projects as software organizations are often
 reluctant to report those.
-{{background}}
+{{gap}}
 Objective:
 {{h-objective}}
 We aim to propose a vulnerability prediction model that runs after every code change, and identifies

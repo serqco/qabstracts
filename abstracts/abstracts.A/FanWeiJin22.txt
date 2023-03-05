@@ -9,7 +9,7 @@ for individual fairness testing.
 However, they are suffering from
 three major limitations, i.e., low efficiency, low effectiveness, and
 model-specificity.
-{{background}}
+{{gap}}
 This work proposes ExpGA, an explanation-
 guided fairness testing approach through a genetic algorithm (GA).
 {{objective}}
