@@ -9,7 +9,7 @@ Understanding (NLU) component that enables the chatbot to understand natural lan
 Recently, many NLU platforms were provided
 to serve as an off-the-shelf NLU component for chatbots, however, selecting the best NLU for Software Engineering chatbots remains an open
 challenge.
-{{background}}
+{{background,gap}}
 Therefore, in this paper, we evaluate four of the most commonly used NLUs, namely IBM Watson, Google Dialogflow, Rasa, and
 Microsoft LUIS to shed light on which NLU should be used in Software Engineering based chatbots.
 {{objective}}

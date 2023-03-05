@@ -9,12 +9,12 @@ introducing the structural information of programs into latent representation.
 {{background}}
 However, when dealing with
 rapidly expanded unlabeled cross-language source code datasets from the Internet, there are still two issues.
-{{background}}
+{{gap}}
 Firstly, deep learning models for many code-specific tasks still suffer from the lack of high-quality labels.
-{{background}}
+{{gap}}
 Secondly, the structural differences among programming languages make it more difficult to process multiple
 languages in a single neural architecture.
-{{background}}
+{{gap}}
 To address these issues, in this article, we propose a novel Cross-language Code representation with a
 large-scale pre-training (XCode) method.
 {{objective}}

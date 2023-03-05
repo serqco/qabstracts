@@ -32,5 +32,5 @@ exists due to mismatches between current tools and environments and how develope
 This work identifies seven types of development friction and provides
 design recommendations that future tools and environments could use to more effectively
 help developers complete their tasks.
-{{conclusion}}
+{{summary,fposs}}
 ---

@@ -5,7 +5,7 @@ managing EV in free/libre/open source software (FLOSS) communities.
 {{background}}
 Infrequent but ongoing participation is widespread, but the
 practices that community managers are using to manage EV, and their concerns about EV, have not been previously documented.
-{{background,objective}}
+{{background,gap}}
 We
 conducted a policy Delphi study involving 24 FLOSS community managers from 22 different communities.
 {{method}}
@@ -24,6 +24,6 @@ These findings provide
 a coherent framework that can help FLOSS community managers to better manage episodic contributors.
 {{conclusion}}
 ---
-Rare case of an almost implicit objective statement:
+Rare case of an implicit objective statement:
 "Infrequent but ongoing participation is widespread, but the practices that community managers 
 are using to manage EV, and their concerns about EV, have not been previously documented."

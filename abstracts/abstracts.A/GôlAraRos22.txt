@@ -16,7 +16,7 @@ learning approaches to detect relevant reviews.
 {{background}}
 However, these approaches use multi-class learning, implying
 more user effort for data labeling since users must label a significant set of relevant and irrelevant reviews.
-{{background}}
+{{gap}}
 Objective:
 {{h-objective}}
 This article investigates methods for detecting relevant app reviews considering scenarios with
