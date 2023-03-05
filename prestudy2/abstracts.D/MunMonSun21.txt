@@ -9,7 +9,7 @@ Our technique, based on static symbolic execution, fuses detection,
 repair generation and validation.
 {{design}}
 This technique is implemented in a prototype named INTREPAIR.
-{{method}}
+{{a-design}}
 We applied INTREPAIR to 2,052 C
 programs (approx.
 {{method}}

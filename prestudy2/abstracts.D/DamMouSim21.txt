@@ -25,6 +25,6 @@ terms of Mealy machines, we evaluate the precision of family models learned from
 We show that
 product sampling can lead to models as precise as those learned by exhaustive analysis and
 hence, reduce the costs for family model learning.
-{{conclusion}}
+{{result,conclusion}}
 ---
 

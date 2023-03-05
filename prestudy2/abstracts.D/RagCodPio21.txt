@@ -13,7 +13,7 @@ by reanalyzing the data via a theory’s lens.
 {{objective}}
 Using the lens of Information Foraging Theory (IFT), we present new insights not revealed by
 the prior empirical work.
-{{method,a-result}}
+{{method}}
 First, while looking for specific information, participants’ foraging behaviors were consistent with other foraging
 situations in SE; therefore, prior research on IFT-based SE tool design can be leveraged for VCS.
 {{result,conclusion}}
@@ -29,6 +29,6 @@ of IFT and SE, namely, creating forageable information.
 {{conclusion,futurework}}
 Finally, the results of using an IFT lens on these data provides some evidence as
 to IFT’s scoping and utility for the version control domain.
-{{result:i1,conclusion}}
+{{conclusion:i1}}
 ---
 

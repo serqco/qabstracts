@@ -16,14 +16,14 @@ practices, and makes it hard to reproduce its results.
 To better understand good and bad
 practices used in the development of real notebooks, in prior work we studied 1.4 million
 notebooks from GitHub.
-{{objective,background}}
+{{background}}
 We presented a detailed analysis of their characteristics that impact
 reproducibility, proposed best practices that can improve the reproducibility, and discussed
 open challenges that require further research and development.
 {{a-result,a-design,a-futurework}}
 In this paper, we extended
 the analysis in four different ways to validate the hypothesis uncovered in our original study.
-{{method:i1}}
+{{objective,a-method}}
 First, we separated a group of popular notebooks to check whether notebooks that get more
 attention have more quality and reproducibility capabilities.
 {{method}}
