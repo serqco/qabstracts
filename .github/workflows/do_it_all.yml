@@ -9,17 +9,14 @@ jobs:
         uses: actions/checkout@v3
       - name: check-codings
         run: |
-          # ls ${{ github.workspace }}
           git log --oneline -10
-          # sudo apt install poppler-utils
           pip -q install -r requirements.txt
-          # PYTHONPATH=script pytest -v
           set +e
           echo "*****************************"
           echo "****** prestudy2     ********"
           echo "*****************************"
           python script/qabstracts.py check-codings prestudy2 && python script/qabstracts.py compare-codings prestudy2
-          prestudy_status = $?
+          prestudy_status=$?
           echo " "
           echo " "
           echo " "
@@ -27,7 +24,9 @@ jobs:
           echo "****** full study    ********"
           echo "*****************************"
           python script/qabstracts.py check-codings abstracts && python script/qabstracts.py compare-codings abstracts 
-          fullstudy_status = $?
+          fullstudy_status=$?
+          echo " "
+          echo " "
           echo "?????????????????????????"
           echo "'prestudy2/' had $prestudy_status errors" 
           echo "'abstracts/' had $fullstudy_status errors" 
