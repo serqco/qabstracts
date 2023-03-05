@@ -4,11 +4,11 @@ Software analytics have empowered software organisations to support a wide range
 policy-making.
 {{background}}
 However, such predictions made by software analytics to date have not been explained and justified.
-{{background}}
+{{gap}}
 Specifically, current
 defect prediction models still fail to explain why models make such a prediction and fail to uphold the privacy laws in terms of the
 requirement to explain any decision made by an algorithm.
-{{background}}
+{{gap}}
 In this paper, we empirically evaluate three model-agnostic techniques, i.e.,
 two state-of-the-art Local Interpretability Model-agnostic Explanations technique (LIME) and BreakDown techniques, and our
 improvement of LIME with Hyper Parameter Optimisation (LIME-HPO).
@@ -22,5 +22,5 @@ explanations are necessary and useful to understand the predictions of defect mo
 {{method,conclusion,result}}
 Since the implementation of the studied
 model-agnostic techniques is available in both Python and R, we recommend model-agnostic techniques be used in the future.
-{{conclusion}}
+{{fposs}}
 ---
