@@ -13,7 +13,7 @@ important elements, and many approaches have been proposed.
 {{background}}
 However, the software networks that existing approaches use neglect
 the multilayer nature of software systems.
-{{background}}
+{{gap}}
 That is, nodes in the network can have different types of relationships at the same time, and
 each type of relationship forms a specific layer.
 {{background}}

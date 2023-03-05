@@ -13,7 +13,7 @@ unify product models into a family model and integrate the behavior of various p
 {{background}}
 Albeit reasonably effective, the exhaustive analysis of
 product lines is often infeasible due to the potentially exponential number of valid configurations.
-{{background}}
+{{gap}}
 In this paper, we first present a family-based behavioral model learning techniques,
 called F F SMDiff .
 {{a-design}}
@@ -25,7 +25,6 @@ terms of Mealy machines, we evaluate the precision of family models learned from
 We show that
 product sampling can lead to models as precise as those learned by exhaustive analysis and
 hence, reduce the costs for family model learning.
-{{result:i1}}
-{{conclusion}}
+{{result:i1,conclusion}}
 ---
 

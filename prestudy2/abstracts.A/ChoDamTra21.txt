@@ -10,7 +10,7 @@ most important information provided with the issue that software engineers often
 {{background}}
 However, assigning an issue to the correct component(s) is challenging, especially for
 large-scale projects which have up to hundreds of components.
-{{background}}
+{{gap}}
 In this paper, we propose
 a predictive model which learns from historical issue reports and recommends the most
 relevant components for new issues.
