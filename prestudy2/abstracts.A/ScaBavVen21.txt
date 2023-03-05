@@ -10,7 +10,7 @@ might be useful to guide developers in writing better code, and could also help 
 components.
 {{background}}
 Unfortunately, there are no metrics designed to assess the understandability of code snippets.
-{{background}}
+{{gap}}
 In this work, we perform
 an extensive evaluation of 121 existing as well as new code-related, documentation-related, and developer-related metrics.
 {{objective}}

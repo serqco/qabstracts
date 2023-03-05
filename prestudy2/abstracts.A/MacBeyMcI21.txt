@@ -9,7 +9,7 @@ its maintenance can, at best, lead to expensive build breakage, or at worst, int
 Recent studies have investigated the (co-)evolution of build configurations and reasons for
 build breakage; however, the prior analysis focused on a coarse-grained outcome (i.e., either
 build changing or not).
-{{background}}
+{{background,gap}}
 In this paper, we present BUILDDIFF, an approach to extract detailed
 build changes from MAVEN build files and classify them into 143 change types.
 {{objective,result}}
@@ -41,10 +41,10 @@ contributions of this paper lay in the foundation for future research, such as f
 the (co-)evolution of build files with other artifacts, improving effort estimation approaches
 by incorporating necessary modifications to the build system specification, or automatic
 repair approaches for configuration code.
-{{conclusion,futurework}}
+{{fposs}}
 Furthermore, our detailed change information
 enables improvements of refactoring approaches for build configurations and improvements
 of prediction models to identify error-prone build files.
-{{conclusion}}
+{{fposs}}
 ---
 
