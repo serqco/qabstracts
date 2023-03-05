@@ -29,6 +29,6 @@ suitable for practical applications.
 {{result}}
 Finally, we conducted interviews with five professional developers to understand the factors that
 influence their ability to understand code snippets, aiming at identifying possible new metrics.
-{{method, objective:i1}}
+{{method, objective}}
 ---
 
