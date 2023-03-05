@@ -16,7 +16,7 @@ Although plenty of coverage-based criteria have been proposed to
 assist in the data selection of convolutional neural networks, it is
 difficult to apply them on Recurrent Neural Network (RNN) models
 due to the difference between the working nature.
-{{background}}
+{{gap}}
 In this paper, we propose a test suite selection tool DeepState
 towards the particular neural network structures of RNN models
 for reducing the data labeling and computation cost.
