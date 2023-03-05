@@ -8,7 +8,7 @@ used by software companies to facilitate continuous integration and continuous d
 {{background}}
 However, using feature toggles inappropriately may cause problems which can have a severe
 impact, such as code complexity, dead code, and system failure.
-{{background}}
+{{gap}}
 For example, the erroneous
 repurposing of an old feature toggle caused Knight Capital Group, an American global
 financial services firm, to go bankrupt due to the implications of the resultant incorrect
@@ -40,7 +40,7 @@ work can help practitioners more effectively use feature toggles.
 {{h-conclusion,conclusion}}
 This work can enable future
 mining of code repositories to automatically identify feature toggle practices.
-{{conclusion}}
+{{fposs}}
 Communicated by:
 {{cruft}}
 Bram Adams
