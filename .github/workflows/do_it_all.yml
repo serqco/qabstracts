@@ -14,16 +14,21 @@ jobs:
           # sudo apt install poppler-utils
           pip -q install -r requirements.txt
           # PYTHONPATH=script pytest -v
+          set +e
           echo "*****************************"
           echo "****** prestudy2     ********"
           echo "*****************************"
-          (python script/qabstracts.py check-codings prestudy2 && python script/qabstracts.py compare-codings prestudy2) || true
+          python script/qabstracts.py check-codings prestudy2 && python script/qabstracts.py compare-codings prestudy2
+          prestudy_status = $?
           echo " "
           echo " "
           echo " "
           echo "*****************************"
           echo "****** full study    ********"
           echo "*****************************"
-          python script/qabstracts.py check-codings abstracts
-          python script/qabstracts.py compare-codings abstracts  # must yet learn about IU suffixes
-          echo "Job status: ${{ job.status }}"
+          python script/qabstracts.py check-codings abstracts && python script/qabstracts.py compare-codings abstracts 
+          fullstudy_status = $?
+          echo "?????????????????????????"
+          echo "'prestudy2/' had $prestudy_status errors" 
+          echo "'abstracts/' had $fullstudy_status errors" 
+          exit $((prestudy_status+fullstudy_status))
