@@ -10,7 +10,7 @@ code.
 {{background}}
 This restricts their practicality in domain-specific languages
 with relatively scarce and expensive data.
-{{background}}
+{{gap}}
 In this paper, we propose
 CDCS, a novel approach for domain-specific code search.
 {{objective}}

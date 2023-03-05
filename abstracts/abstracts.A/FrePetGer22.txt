@@ -23,7 +23,7 @@ automatically classify review changes.
 Then, we evaluate the relevance of information on
 review change types and its potential usefulness, by conducting (1) semi-structured interviews with 12 developers and (2) a qualitative study with 17 developers, who are asked to
 assess reports on the review changes of their project.
-{{objective:i1,method}}
+{{objective,method}}
 Key results of the study show that
 not only it is possible to automatically classify code review changes, but this information
 is also perceived by practitioners as valuable to improve the code review process.

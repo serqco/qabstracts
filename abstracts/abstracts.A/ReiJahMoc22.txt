@@ -14,7 +14,7 @@ The extent of the spread of vulnerabilities through code reuse, the
 potential impact of such spread, or avenues for mitigating risk of
 these secondary vulnerabilities has not been studied in the context
 of a nearly complete collection of open source code.
-{{background}}
+{{gap}}
 Aim:
 {{h-objective}}
 We aim to find ways to detect the white-box reuse induced
@@ -52,7 +52,7 @@ that only a small percentage accepted and applied the patch.
 We
 hope that VDiOS will lead to further study and mitigation of risks
 from orphan vulnerabilities and other orphan code flaws.
-{{conclusion}}
+{{fposs}}
 ---
 Rare h-background heading "Motivation", although most "Context" sections
 are in fact written as motivations.

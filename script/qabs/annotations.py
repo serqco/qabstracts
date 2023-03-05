@@ -19,7 +19,7 @@ AnnotationishMatches = tg.Tuple[OStr, OStr, OStr, OStr]
 
 class Codebook:
     CODEBOOK_PATH = 'codebook.md'  # in project rootdir
-    CODEDEF_REGEXP = r"code `([\w-]+(?::iu)?)`"  # what code definitions look like in codebook
+    CODEDEF_REGEXP = r"code `([\w-]+(?::i?u)?)`"  # what code definitions look like in codebook
     IGNORECODE = '-ignorediff'  # code that indicates not to report coding differences
     GARBAGE_CODES = ['cruft']
 
@@ -30,9 +30,16 @@ class Codebook:
         """Whether this code can never have an UI suffix."""
         return code in self.codes
 
-    def exists_with_suffix(self, coding: str) -> bool:
+    def exists_with_iu_suffix(self, coding: str) -> bool:
         """Whether this coding with no IU suffix could have had one."""
         return f"{coding}:iu" in self.codes
+
+    def exists_with_u_suffix(self, coding: str) -> bool:
+        """Whether this coding with no U suffix could have had one."""
+        return f"{coding}:u" in self.codes
+
+    def exists_with_suffix(self, coding: str) -> bool:
+        return self.exists_with_iu_suffix(coding) or self.exists_with_u_suffix(coding)
 
     def is_extra_code(self, code: str) -> bool:
         return code.startswith('-')
@@ -48,7 +55,8 @@ class Codebook:
 
 
 class Annotations:
-    ALLOWED_SUFFIX_REGEXP = r"i\d+|u\d+|i\d+u\d+"
+    ALLOWED_IU_SUFFIX_REGEXP = r"i\d+|u\d+|i\d+u\d+"
+    ALLOWED_U_SUFFIX_REGEXP = r"u\d+"
     ANNOTATIONISH_REGEXP = r"\n(\{\{[^}]*\})\n|\n(\{[^{]*\}\})\n|\n(.+\{\{.*\}\})|\n(\{\{.*\}\})\n"  # 4 cases, matches only 1 
     ANNOTATION_CONTENT_REGEXP = r"([\w-]+)(:[\w\d]*)?"  # we simply ignore commas and blanks (and any non-word garbage symbols)
     BARE_CODENAME_REGEXP = r"-?([\w-]+)(:[\w\d]*)?"
@@ -88,8 +96,8 @@ class Annotations:
     def codes_with_suffixes(self, annotation1: str, annotation2: str) -> tg.Mapping[str, tg.Tuple[int, int, int, int]]:
         """
         Map codes to tuples of (icount1, ucount1, icount2, ucount2) for 
-        those codes in the annotations that can have IU suffixes.
-        Counts are forced to 0 for codes that happen not to have an IU suffix.
+        those codes in the annotations that can have IU suffixes or U suffixes.
+        Counts are forced to 0 for codes that happen not to have a suffix.
         """
         result = dict()
         annotation_regexp = r"([\w-]+):(\d+)"
@@ -102,6 +110,7 @@ class Annotations:
                 icount2, ucount2 = self.split_suffix(csuffix)
                 result[code] = (icount1, ucount1, icount2, ucount2)
         for code, count in re.findall(annotation_regexp, annotation2):
+            assert False
             result[code] = (result[code], count)  # turn single count into a pair of counts
         # counts are never optional, so all values are pairs now
         return result
@@ -147,12 +156,16 @@ class Annotations:
                 return f"unknown code: '{code}'"
             else:
                 return None  # known code without suffix: done
-        else:  # has iu_suffix
-            if not self.codebook.exists_with_suffix(code):
-                return (f"%s: '{code}:{suffix}'" % ("should not have an IU suffix" if self.codebook.exists_bare(code)
-                                                       else "unknown code"))
-        # ----- report malformed suffixes:
-        mm = re.fullmatch(self.ALLOWED_SUFFIX_REGEXP, suffix)
-        if not mm:
-            return f"IU suffix does not match one of the patterns :i1, :u2, :i3u4 : '{code}:{suffix}'"
-        return None
+        # ----- handle case with suffix:
+        if self.codebook.exists_with_iu_suffix(code):
+            mm = re.fullmatch(self.ALLOWED_IU_SUFFIX_REGEXP, suffix)
+            if not mm:
+                return f"IU suffix does not match one of the patterns :i1, :u2, :i3u4 : '{code}:{suffix}'"
+        elif self.codebook.exists_with_u_suffix(code):
+            mm = re.fullmatch(self.ALLOWED_U_SUFFIX_REGEXP, suffix)
+            if not mm:
+                return f"IU suffix does not match the only allowed pattern :u1 : '{code}:{suffix}'"
+        else:
+            return (f"%s: '{code}:{suffix}'" % ("should not have an IU suffix" if self.codebook.exists_bare(code)
+                                                else "unknown code"))
+        return None  # no problem found

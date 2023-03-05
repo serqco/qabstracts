@@ -10,7 +10,7 @@ physical systems.
 {{background}}
 However, adoption of formal methods in industry is hindered by usability issues, particularly
 the difficulty of understanding model checking results.
-{{background}}
+{{gap}}
 Objective:
 {{h-objective}}
 We want to provide an overview of the state of the art for counterexample explanation by
@@ -40,9 +40,9 @@ Conclusion:
 We notably see a lack of research on counterexample explanation that targets probabilistic and
 real-time systems, leverages the explanations to domain-specific models, and evaluates approaches in user
 studies.
-{{conclusion}}
+{{summary}}
 We conclude by discussing the adequacy of different types of explanations for users with varying
 domain and formal methods expertise, showing the need to support laypersons in understanding model
 checking results to increase adoption of formal methods in industry.
-{{conclusion}}
+{{summary,fneed}}
 ---

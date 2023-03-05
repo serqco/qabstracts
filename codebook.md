@@ -1,7 +1,7 @@
 # Codebook and coding rules for qabstracts study
 
 created: Lutz Prechelt, 2022-07-14  
-changed: Lutz Prechelt, 2023-02-15
+changed: Lutz Prechelt, 2023-03-05
 
 
 ## 1. Coding rules: Fundamentals
@@ -55,47 +55,162 @@ for directly from this file by looking for strings of the form
 Make sure all code declarations take this form and no other things do.
 
 
-### 2.1 The basics: background, objective, method (or design), results, conclusion
+### 2.1 The abstract archetype
 
-The above list sketches the default structure of a structured abstract.
+Empirically, nearly all abstracts share a common overall structure which we call the
+"archetype" of abstracts.
+Deviations occur sometimes, but usually mean the abstract is ill-formed.
+The archetype describes an abstract as a sequence of stretches.
+A stretch is a sequence of one (occasionally only a part of one) or more sentences.
+The archetype describes what the sequence looks like and what the role (stretch type)
+of each stretch is.
+This section describes the archetype and mentions the most typical code(s) used for
+each role (core codes). 
+All codes, including the less frequent ones, will be defined in detail in 
+subsequent sections.
 
-- code `background`:  
-  Information about the larger topic area of the work;  
-  information leading towards the research interest of the work;  
-  information about related work or the state of knowledge.  
-- code `objective:iu`:  
+The archetype:
+
+1. An abstract typically consists of three parts, in this order:
+   Introduction, Study Description, and Outlook. 
+   The Outlook is sometimes missing.
+2. The Introduction first introduces the topic area of the study and what is known (`background`)
+   and then may or may not point out a gap in knowledge (`gap`) or 
+   postulate a need for a certain research (`need`).
+3. For an empirical article, the Study Description begins with
+   method description (`method`), followed by results description (`result`).
+   Sometimes, this sequence occurs twice in a row, very rarely more.
+4. For a design article, design description (`design`, see below) may precede the structure
+   described in the previous point or may be interleaved with it.
+5. Study Description may end with a study summary (`summary`), 
+   but often this stretch is not present.
+6. Outlook talks about future research and states 
+   what could now be done (`fposs`, for future possibilities),
+   what should now be done (`fneed`),
+   what the authors themselves intend to do (`fwork`), or
+   what is still not known (`fgap`).
+   Several of these may occur, in no particular order.
+7. Two turning points connect the three parts:
+   - A statement of the study goals (`objective`) connects Introduction to Study Description.
+   - A generalizing statement ("take-home message", `conclusion`) 
+     connects Study Description to Outlook. This stretch may be missing.
+
+**The archetype guides the coding**: During coding, we will expect the next sentence
+to be either part of the same stretch or the beginning of one
+that the archetype describes as a possible successor.  
+Only if the next sentence clearly defies any such interpretation will we consider
+a different code for it.
+
+
+### 2.2 Core codes for the turning points
+
+The turning points are the most informative sentences (typically only one each)
+in an abstract: 
+The first describes what the study is about, 
+the second describes what it found.
+
+From Introduction to Study Description:
+- code `objective:u`:  
   one or more of this work's 
   top-level research goals,
   specific top-level research interests, or
   top-level research questions.  
+
+From Study Description to Outlook:
+- code `conclusion:u`:  
+  A take-home message that is less specific than one or more results.
+  Either a generalization from the results or a non-obvious existence proof statement.
+
+
+### 2.3 Core codes for Introduction
+
+The above list sketches the default structure of a structured abstract.
+
+- code `background`:  
+  Information about the larger topic area of the work, the state-of-the-art,
+  related work, what is known.
+- code `gap`:  
+  A statement of what is not yet known or what is yet difficult to achieve.
+- code `need`:  
+  A postulate about what research needs to be performed.
+
+
+### 2.4 Core codes for Study Description
+
 - code `method:iu`:  
   information about the approach or setup of an empirical (or possibly purely mathematical) study.
 - code `design:iu`:  
   information about the design, design process, and designed features of 
   an artifact, such as software, a process, or a method.
   This occurs instead of (or in addition to) `method` when the article
-  is artifact-centric instead of purely empirical.
+  is artifact-centric instead of purely empirical, i.e., 
+  when the article's main contribution is the artifact or the knowledge how to build it,
+  not the empirical results obtained with its help.
   (Designed features are known at design time, in contrast to emerging features,
   which can only be determined empirically and are classified as `result`.
   Top-level design _goals_ (and non-goals) are classified as `objective`.)
 - code `result:iu`:  
   information about the immediate outcome of a study in the form of
   empirical results. See `claim:iu`.
-- code `conclusion`:  
-  A take-home message that is less specific than one or more results.
-  Either a generalization from the results or an existence proof statement.
+- code `summary:u`:  
 
 
-### 2.2 Less common codes
+### 2.5 Core codes for Outlook
+
+- code `fgap:u`:  
+  Statement about what is still not known after the study.
+- code `fneed:u`:  
+  Statement about what future research should be done (by whoever).
+- code `fposs:u`:  
+  Statement about what future research is now possible (i.e., could now be done, by whoever).  
+  Note: Statements what practitioners can now do are `conclusion`!
+- code `fwork:u`:  
+  Statement about what future research the authors intend to do.
+
+
+### 2.6 Structured abstracts' headings
+
+Codes of the form `h-<xyz>` designate internal headings that occur in structured abstracts: 
+A section intro term "<Xyz>:" or some synonym of that,
+that announces subsequent `<xyz>` information.
+
+It does _not_ matter whether the announcement is correct.
+Singular and plural are considered equivalent.
+If the heading is not terminated with a colon or period, the sentence will have multiple
+codings, but the heading must be first in the sentence.
+
+Introduction:
+  - code `h-background`: "Background:", "Context:", "Introduction:", "Topic:", etc.
+
+Study Description:
+  - code `h-objective`: "Objective:", "Aim:", "Goal:", "Question:", etc.
+  - code `h-design`: "Approach:" etc. (probably rare)
+  - code `h-method`: "Method:", "Approach:" etc.
+  - code `h-result`: "Result:" etc.
+  - code `h-summary`: "Summary:" etc. (probably rare)
+  - code `h-limitation`: "Limitations:" etc.  (probably rare)
+
+Outlook:
+  - code `h-conclusion`: "Conclusion:" etc.
+  - code `h-fwork`: "Future work:", "Outlook:", etc.  (probably rare)
+
+Note 1: Our codings are more differentiated than these headings
+so that multiple different codings are often expected to occur after a heading `h-xx`,
+not only `xx`.
+
+Note 2: `h-conclusion` will very often be followed by `summary`, 
+although the latter is logically part of Study Description, not Outlook.
+
+
+
+### 2.7 Less common codes
 
 - code `claim:iu`:  
   A non-empirical would-be result statement.
   In the article itself, the statement may have empirical backing, but in the abstract
   we cannot see which or where it may stem from.
   If position and phrasing allow it to be considered `background`, `objective`, or `conclusion`, use these.
-- code `futurework`:  
-  information about suggested future research.
-- code `limitation`:  
+- code `limitation:u`:  
   information about limitations, threats to validity, and the like
   of the study or its results.
 - code `resourcepointer:iu`:  
@@ -104,43 +219,77 @@ The above list sketches the default structure of a structured abstract.
   or similar item.
 
 
-### 2.3 Headings and announcements
+### 2.8 "Announcements"
 
 - codes of the form `a-<xyz>` designate announcements:  
   A statement announcing (hence the `a-`) that the article body will 
   contain information of the `<xyz>` type, 
   but this and the next sentence do not contain such information.
-  Besides explicit announcements there may be implicit ones, 
-  so watch out where there is indeed no useful information in a sentence. 
   - code `a-background` (hopefully never to be seen)
   - code `a-claim` (hopefully never to be seen)
   - code `a-conclusion`
   - code `a-design` (e.g. "We present our system XYZ.")
-  - code `a-futurework`
+  - code `a-fgap`
+  - code `a-fneed`
+  - code `a-fposs`
+  - code `a-fwork`
+  - code `a-gap`
   - code `a-limitation`
   - code `a-method` (e.g. "We describe the approach used for our survey.")
+  - code `a-need`
   - code `a-objective`
   - code `a-result` (e.g. "We report on our empirical results in detail.",
     "For various parameters, we study the correlations."
     In some contexts, the latter could also be `a-method` or `method`.)
   - code `a-resourcepointer`
-- codes of the form `h-<xyz>` designate internal headings that occur in structured abstracts: 
-  A section intro term "<Xyz>:" or some synonym of that,
-  that announces subsequent `<xyz>` information.
-  It does _not_ matter whether the announcement is correct.
-  Singular and plural are considered equivalent.
-  If the heading is not terminated with a colon or period, the sentence will have multiple
-  codings, but the heading must be first in the sentence.
-  - code `h-background`: "Background:", "Context:", etc.
-  - code `h-conclusion`: "Conclusion:" etc.
-  - code `h-design`: "Approach:" etc. (probably rare)
-  - code `h-futurework`: "Future work:" etc.
-  - code `h-method`: "Method:", "Approach:" etc.
-  - code `h-objective`: "Objective:", "Aim:", "Goal:", "Question:", etc.
-  - code `h-result`: "Result:" etc.
+  - code `a-summary`
 
 
-### 2.4 Codes for special circumstances
+### 2.9 Extra codes
+
+These codes can never occur alone, only in conjunction with one of the others.
+They start with a dash to signal this and should be given last. 
+
+- code `-hype`:  
+  The sentence praises the work beyond what a factual statement might state.
+  The code does not talk about the truth of the statement (which is often difficult
+  to judge from the abstract alone), but about the tone in which
+  the statement is made.
+  Plain positive properties do not qualify ("This is helpful because..."),
+  only emphasized ones do ("This is tremendously helpful because...").
+  "very" does not count as hype.
+  This code is not a classification of a sentence, but an additional attribute.
+  It is considered subjective.
+  The most common places for this to occur are 
+  `result`, `conclusion`, `fposs`, `need`, `method`.  
+- code `-ignorediff`:
+  If the script flags a coding discrepancy that, after discussion, you and your fellow coder
+  agree should be left in (because the two codings represent two different reasonable interpretations),
+  add this code in one (and only one) of the codings to mark the discrepancy as resolved.
+- code `-incredible`:  
+  The sentence makes a statement that is very hard to believe, even after considering
+  possible information that the reader of the abstract does not have.
+  This code is not a classification of a sentence, but an additional attribute.
+  It is considered subjective.
+  The most common places for this to occur are 
+  `result`, `summary`, `conclusion`.  
+- code `-problemstmt`:
+  The sentence formulates a statement of a problem to be solved that is more general
+  than the study's `objective`. 
+  Typically only (but then frequently) found in `need` statements.  
+  (This code is for collecting data for a possible future research interest.
+  We only want to find some examples, so not everybody needs to apply this code all the time.
+  Feel free to overlook as many instances as needed to avoid slowing you down.)
+- code `futurework`:  
+  code `a-futurework`:  
+  code `h-futurework`:  
+  `futurework` is a synonym and the previous name of `fwork`.
+  These codes will be removed when all existing codings have been reworked to possibly assign
+  their `background` and `conclusion` sentences to one of the various new codes 
+  introduced 2023-03-05.
+
+
+### 2.10 Codes for special circumstances
 
 - code `cruft`:  
   This sentence is not part of the abstract.
@@ -150,29 +299,6 @@ The above list sketches the default structure of a structured abstract.
   consider using `fgrep {{X}}` to find these cases.
   Use `X` only rarely and only when you cannot _yet_ make up your mind.
   Such a code will likely result in a discrepancy with your fellow coder.
-
-
-### 2.5 Extra codes
-
-These codes can never occur alone, only in conjunction with one of the others.
-They start with a dash to signal this and should be given last. 
-
-- code `-hype`:  
-  The sentence praises the work beyond what a factual statement might state.
-  Plain positive properties do not qualify ("This is helpful because..."),
-  only emphasized ones do ("This is tremendously helpful because...").
-  "very" does not count as hype.
-  This code is not a classification of a sentence, but an additional attribute.
-- code `-ignorediff`:
-  If the script flags a coding discrepancy that, after discussion, you and your fellow coder
-  agree should be left in (because the two codings represent two different reasonable interpretations),
-  add this code in one (and only one) of the codings to mark the discrepancy as resolved.
-- code `-problemstmt`:
-  The sentence formulates a statement of a problem to be solved that is more general
-  than the study's `objective`. Typically only found in `background` statements.  
-  (This code is for collecting data for a possible future research interest.
-  We only want to find some examples, so not everybody needs to apply this code all the time.
-  Feel free to overlook as many instances as needed to avoid slowing you down.)
 
 
 ## 3. Coding rules: Avoiding inter-coder discrepancies
@@ -227,6 +353,9 @@ There are four cases, explained by example:
 
 If the sentence has only 1 code annotated to it, the counts pertain to the entire sentence.
 If there are two or more codes annotated to it, the counts pertain only to the respective part.
+
+If a code is declared with suffix `:u` (instead of `:iu`), only understandability gaps
+can be annoted in codings using that code.
 
 
 ### 4.1 Informativeness gaps: `i`

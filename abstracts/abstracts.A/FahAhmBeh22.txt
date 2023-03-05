@@ -6,7 +6,7 @@ domains and their development is rapidly increasing to provide value-added servi
 Little research to date
 uncovers the core development process lifecycle needed for IoT systems, and thus software engineers find themselves unprepared and
 unfamiliar with this new genre of system development.
-{{background}}
+{{gap}}
 To ameliorate this gap, we conducted a mixed quantitative and qualitative
 research study where we derived a conceptual process framework from the extant literature on IoT, through which 27 key tasks for
 incorporation into the development processes of IoT systems were identified.

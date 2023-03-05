@@ -9,7 +9,7 @@ malformed.
 {{background}}
 While researchers and practitioners alike have invested a large and diverse effort towards improving fuzzing in recent
 years, this surge of work has also made it difficult to gain a comprehensive and coherent view of fuzzing.
-{{background}}
+{{gap}}
 To help preserve and bring
 coherence to the vast literature of fuzzing, this paper presents a unified, general-purpose model of fuzzing together with a taxonomy of
 the current fuzzing literature.

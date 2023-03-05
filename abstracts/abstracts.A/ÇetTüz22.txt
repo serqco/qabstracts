@@ -11,7 +11,7 @@ issues.
 {{background}}
 Previous approaches mainly consider the commit-based contributions which provide
 an incomplete picture of developer contributions.
-{{background}}
+{{gap}}
 Objective
 {{h-objective}}
 Different from the traditional commit-based approaches for analyzing developer

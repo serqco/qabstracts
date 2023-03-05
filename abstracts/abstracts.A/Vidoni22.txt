@@ -9,10 +9,10 @@ their emergence in 2004, many investigations have analysed different aspects of 
 {{background}}
 However, there
 are no guidelines on how to conduct systematic MSR studies.
-{{background}}
+{{gap}}
 There is a need to evaluate how MSR research
 is approached to provide a framework to do so systematically.
-{{background}}
+{{need}}
 Objective:
 {{h-objective}}
 To identify how MSR studies are conducted in terms of repository selection and data extraction.
@@ -45,5 +45,5 @@ Hence, there is a need for guidelines on how to conduct systematic MSR studies.
 New guidelines and a template
 have been proposed, consolidating related studies in the MSR field and strategies for systematic literature
 reviews.
-{{conclusion}}
+{{summary,fposs:u1}}
 ---

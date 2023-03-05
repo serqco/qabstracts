@@ -17,7 +17,7 @@ to reference texts by measuring the overlapping words.
 {{background}}
 Unfortunately, there is no evidence demonstrating
 the correlation between these metrics and human judgment.
-{{background}}
+{{gap}}
 We conduct experiments on two popular code
 documentation generation tasks, code comment generation and commit message generation, to investigate
 the presence or absence of correlations between these metrics and human judgments.
@@ -45,5 +45,5 @@ the literature for other tasks (e.g., Neural Machine Translation [39]).
 Our study points to the need to develop
 specialized automated evaluation metrics that can correlate more closely to human evaluation metrics for
 code generation tasks.
-{{conclusion}}
+{{fneed}}
 ---

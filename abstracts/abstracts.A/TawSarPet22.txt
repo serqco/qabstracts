@@ -5,7 +5,7 @@ knowledge by addressing both internal and external validity aspects.
 {{background}}
 However, these studies are still rare in certain software
 engineering fields.
-{{background}}
+{{gap}}
 In this paper, we replicate and extend a previous study, which denotes the current state-of-the-art for multi-objective
 software effort estimation, namely CoGEE.
 {{objective}}
