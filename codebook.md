@@ -110,14 +110,14 @@ The first describes what the study is about,
 the second describes what it found.
 
 From Introduction to Study Description:
-- code `objective:iu`:  
+- code `objective:u`:  
   one or more of this work's 
   top-level research goals,
   specific top-level research interests, or
   top-level research questions.  
 
 From Study Description to Outlook:
-- code `conclusion`:  
+- code `conclusion:u`:  
   A take-home message that is less specific than one or more results.
   Either a generalization from the results or a non-obvious existence proof statement.
 
@@ -152,18 +152,19 @@ The above list sketches the default structure of a structured abstract.
 - code `result:iu`:  
   information about the immediate outcome of a study in the form of
   empirical results. See `claim:iu`.
+- code `summary:u`:  
 
 
 ### 2.5 Core codes for Outlook
 
-- code `fgap`:  
+- code `fgap:u`:  
   Statement about what is still not known after the study.
-- code `fneed`:  
+- code `fneed:u`:  
   Statement about what future research should be done (by whoever).
-- code `fposs`:  
+- code `fposs:u`:  
   Statement about what future research is now possible (i.e., could now be done, by whoever).  
   Note: Statements what practitioners can now do are `conclusion`!
-- code `fwork`:  
+- code `fwork:u`:  
   Statement about what future research the authors intend to do.
 
 
@@ -209,7 +210,7 @@ although the latter is logically part of Study Description, not Outlook.
   In the article itself, the statement may have empirical backing, but in the abstract
   we cannot see which or where it may stem from.
   If position and phrasing allow it to be considered `background`, `objective`, or `conclusion`, use these.
-- code `limitation`:  
+- code `limitation:u`:  
   information about limitations, threats to validity, and the like
   of the study or its results.
 - code `resourcepointer:iu`:  
@@ -280,8 +281,10 @@ They start with a dash to signal this and should be given last.
   We only want to find some examples, so not everybody needs to apply this code all the time.
   Feel free to overlook as many instances as needed to avoid slowing you down.)
 - code `futurework`:  
-  synonym and previous name of `fwork`.
-  This code will be removed when all existing codings have been reworked to possibly assign
+  code `a-futurework`:  
+  code `h-futurework`:  
+  `futurework` is a synonym and the previous name of `fwork`.
+  These codes will be removed when all existing codings have been reworked to possibly assign
   their `background` and `conclusion` sentences to one of the various new codes 
   introduced 2023-03-05.
 
@@ -350,6 +353,9 @@ There are four cases, explained by example:
 
 If the sentence has only 1 code annotated to it, the counts pertain to the entire sentence.
 If there are two or more codes annotated to it, the counts pertain only to the respective part.
+
+If a code is declared with suffix `:u` (instead of `:iu`), only understandability gaps
+can be annoted in codings using that code.
 
 
 ### 4.1 Informativeness gaps: `i`
