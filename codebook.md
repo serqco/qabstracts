@@ -50,12 +50,12 @@ An IU suffix codifies subjective property counts of two properties
 `i` and `u`, each with a default value of 0.
 
 Our annotation checking script gathers the set of codes to check
-for directly from this file by looking for strings of the form
+for directly from the present file by looking for strings of the form
 "code `something-or-other`".
 Make sure all code declarations take this form and no other things do.
 
 
-### 2.1 The abstract archetype
+### 2.1 The abstracts archetype
 
 Empirically, nearly all abstracts share a common overall structure which we call the
 "archetype" of abstracts.
@@ -72,28 +72,27 @@ subsequent sections.
 The archetype:
 
 1. An abstract typically consists of three parts, in this order:
-   Introduction, Study Description, and Outlook. 
-   The Outlook is sometimes missing.
-2. The Introduction first introduces the topic area of the study and what is known (`background`)
+   _Introduction_, _Study Description_, and _Outlook_. 
+   The _Outlook_ is sometimes missing.
+2. The _Introduction_ first introduces the topic area of the study and what is known (`background`)
    and then may or may not point out a gap in knowledge (`gap`) or 
    postulate a need for a certain research (`need`).
-3. For an empirical article, the Study Description begins with
+3. For an empirical article, the _Study Description_ begins with
    method description (`method`), followed by results description (`result`).
    Sometimes, this sequence occurs twice in a row, very rarely more.
 4. For a design article, design description (`design`, see below) may precede the structure
    described in the previous point or may be interleaved with it.
-5. Study Description may end with a study summary (`summary`), 
-   but often this stretch is not present.
-6. Outlook talks about future research and states 
+5. Occasionally (but infrequently), _Study Description_ will end with a study summary (`summary`).
+6. _Outlook_ talks about future research and states 
    what could now be done (`fposs`, for future possibilities),
    what should now be done (`fneed`),
    what the authors themselves intend to do (`fwork`), or
    what is still not known (`fgap`).
    Several of these may occur, in no particular order.
 7. Two turning points connect the three parts:
-   - A statement of the study goals (`objective`) connects Introduction to Study Description.
+   - A statement of the study goals (`objective`) connects _Introduction_ to _Study Description_.
    - A generalizing statement ("take-home message", `conclusion`) 
-     connects Study Description to Outlook. This stretch may be missing.
+     connects _Study Description_ to _Outlook_. This stretch may be missing.
 
 **The archetype guides the coding**: During coding, we will expect the next sentence
 to be either part of the same stretch or the beginning of one
@@ -109,20 +108,20 @@ in an abstract:
 The first describes what the study is about, 
 the second describes what it found.
 
-From Introduction to Study Description:
+From _Introduction_ to _Study Description_:
 - code `objective:u`:  
   one or more of this work's 
   top-level research goals,
   specific top-level research interests, or
   top-level research questions.  
 
-From Study Description to Outlook:
+From _Study Description_ to _Outlook_:
 - code `conclusion:u`:  
   A take-home message that is less specific than one or more results.
-  Either a generalization from the results or a non-obvious existence proof statement.
+  Usually a generalization from the results, sometimes a non-obvious existence proof statement.
 
 
-### 2.3 Core codes for Introduction
+### 2.3 Core codes for _Introduction_
 
 The above list sketches the default structure of a structured abstract.
 
@@ -135,7 +134,7 @@ The above list sketches the default structure of a structured abstract.
   A postulate about what research needs to be performed.
 
 
-### 2.4 Core codes for Study Description
+### 2.4 Core codes for _Study Description_
 
 - code `method:iu`:  
   information about the approach or setup of an empirical (or possibly purely mathematical) study.
@@ -155,7 +154,7 @@ The above list sketches the default structure of a structured abstract.
 - code `summary:u`:  
 
 
-### 2.5 Core codes for Outlook
+### 2.5 Core codes for _Outlook_
 
 - code `fgap:u`:  
   Statement about what is still not known after the study.
@@ -179,10 +178,10 @@ Singular and plural are considered equivalent.
 If the heading is not terminated with a colon or period, the sentence will have multiple
 codings, but the heading must be first in the sentence.
 
-Introduction:
+_Introduction_:
   - code `h-background`: "Background:", "Context:", "Introduction:", "Topic:", etc.
 
-Study Description:
+_Study Description_:
   - code `h-objective`: "Objective:", "Aim:", "Goal:", "Question:", etc.
   - code `h-design`: "Approach:" etc. (probably rare)
   - code `h-method`: "Method:", "Approach:" etc.
@@ -190,7 +189,7 @@ Study Description:
   - code `h-summary`: "Summary:" etc. (probably rare)
   - code `h-limitation`: "Limitations:" etc.  (probably rare)
 
-Outlook:
+_Outlook_:
   - code `h-conclusion`: "Conclusion:" etc.
   - code `h-fwork`: "Future work:", "Outlook:", etc.  (probably rare)
 
