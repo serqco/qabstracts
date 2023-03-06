@@ -16,11 +16,11 @@ defect localization as “ Just-In-Time (JIT) Defect localization” .
 {{background}}
 Although many prior studies have proposed various JIT defect
 identification methods to identify whether a new change is buggy, these prior methods do not locate the suspicious positions.
-{{background}}
+{{gap}}
 Thus, JIT
 defect localization is the next step of JIT defect identification (i.e., after a buggy change is identified, suspicious source code lines are
 located).
-{{background}}
+{{need}}
 To address this problem, we propose a two-phase framework, i.e., JIT defect identification and JIT defect localization.
 {{objective}}
 Given a

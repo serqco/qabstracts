@@ -5,7 +5,7 @@ Design systems represent a user interaction design and development approach that
 However, little research work has been done to
 synthesize knowledge related to design systems in order to inform the design of tools to
 support their creation, maintenance, and usage practices.
-{{background}}
+{{gap}}
 This paper represents an important
 step in which we explored the issues that design system projects usually deal with and the
 perceptions and values of design system project leaders.
@@ -27,5 +27,5 @@ products.
 {{result}}
 Our findings synthesize the knowledge and lay foundations for designing techniques and tools aimed at supporting the design system practice and related modern user
 interaction design and development approaches.
-{{conclusion}}
+{{summary,fposs}}
 ---

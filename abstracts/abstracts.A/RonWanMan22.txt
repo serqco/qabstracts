@@ -7,13 +7,13 @@ to enrich the context and convey additional emotion.
 {{background}}
 With the increasing emoji use in software developmentrelated communication, it has become important to understand why software developers are using emojis and
 their impact.
-{{background}}
+{{need}}
 Objective:
 {{h-objective}}
 Gaining a deeper understanding is essential because the intention of emoji usage might be affected
 by the demographics and experience of developers; also, frequency and the distribution of emoji usage might
 change depending on the activity, stage of the development, and nature of the conversation, etc.
-{{background}}
+{{need, background}}
 Methods:
 {{h-method}}
 We present a large-scale empirical study on the intention of emoji usage conducted on 2,712 Open
@@ -37,9 +37,9 @@ Conclusion:
 Our study opens a new avenue in Software Engineering research related to automatically
 identifying the intention of the emoji use that can help improve the communication efficiency and help project
 maintainers monitor and ensure the quality of communication.
-{{conclusion}}
+{{fposs}}
 Another thread of future research could look
 into what intentions of emoji usage or what kind of emojis are more likely to attract users and how that is
 associated with emoji usage diffusion in different levels (threads, projects, etc.)
-{{futurework}}
+{{fposs}}
 ---

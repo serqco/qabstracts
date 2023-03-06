@@ -21,6 +21,6 @@ granular level.
 {{method}}
 The end result of our analysis is a research roadmap that both delineates the foundations of
 DL techniques applied to SE research and highlights likely areas of fertile exploration for the future.
-{{a-result}}
+{{a-result, a-fposs}}
 ---
 a-result is excusable for this type of study
