@@ -29,6 +29,6 @@ of IFT and SE, namely, creating forageable information.
 {{conclusion,futurework}}
 Finally, the results of using an IFT lens on these data provides some evidence as
 to IFT’s scoping and utility for the version control domain.
-{{conclusion:i1}}
+{{conclusion}}
 ---
 

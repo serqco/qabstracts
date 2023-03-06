@@ -27,7 +27,7 @@ In particular, we first identify software-specific terms by utilizing a software
 {{design,method}}
 Then we infer morphological forms of software-specific terms by combining distributed word semantics, domain-specific
 lexical rules and transformations.
-{{method-ignorediff}}
+{{method,-ignorediff}}
 Finally, we perform graph analysis on morphological relations.
 {{method,-ignorediff}}
 We evaluate the coverage and accuracy of
