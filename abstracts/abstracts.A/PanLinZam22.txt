@@ -21,5 +21,5 @@ Our study resulted in a comprehensive taxonomy consisting of 26 refactoring-rela
 {{result}}
 The taxonomy, accompanied with representative examples and highlighted implications, provides developers with valuable insights on how to ponder and polish their refactoring contributions, and indicates a number of directions researchers can pursue toward better refactoring
 recommenders.
-{{conclusion}}
+{{conclusion,a-fposs}}
 ---

@@ -9,7 +9,7 @@ proposed as a viable solution to extract finite state models from execution logs
 However,
 existing techniques do not scale well when processing very large logs that can be commonly
 found in practice.
-{{background}}
+{{gap}}
 In this paper, we address the scalability problem of inferring the model of
 a component-based system from large system logs, without requiring any extra information.
 {{objective}}

@@ -13,7 +13,7 @@ DevSecOps paradigm, which is gaining significant interest from both industry and
 {{background}}
 However, the
 adoption of DevSecOps in practice is proving to be a challenge.
-{{background}}
+{{gap}}
 Objective:
 {{h-objective}}
 This study aims to systemize the knowledge about the challenges faced by practitioners when
@@ -55,10 +55,10 @@ Conclusions:
 {{h-conclusion}}
 We highlight the need for developer-centered application security testing tools that target the
 continuous practices in DevSecOps.
-{{conclusion}}
+{{summary}}
 More research is needed on how the traditionally manual security practices
 can be automated to suit rapid software deployment cycles.
-{{futurework}}
+{{fneed}}
 Finally, achieving a suitable balance between the
 speed of delivery and security is a significant issue practitioners face in the DevSecOps paradigm.
 {{conclusion}}

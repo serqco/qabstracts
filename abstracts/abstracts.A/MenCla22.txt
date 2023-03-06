@@ -7,7 +7,7 @@ standard proxy for diversity.
 {{background}}
 Although more sophisticated measures exist, such as proximity of a sample to a uniform distribution,
 methods to use them tend to be type dependent.
-{{background}}
+{{gap}}
 We use r-wise hash functions to create a novel, semantics preserving, testability
 transformation for C programs that we call HashFuzz.
 {{design,objective}}

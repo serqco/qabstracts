@@ -9,7 +9,7 @@ analyzed and detected by the static malware analysis and detection systems.
 Though there are already studies on unpacking packed
 Android apps, they usually leverage the manual reverse engineered packing behaviors to unpack apps packed by the specific packers
 and cannot be appified to the evolved and new packers.
-{{background}}
+{{gap}}
 In this paper, we propose a novel unpacking approach with the capacity of
 adaptively unpacking the evolved and newly encountered packers.
 {{objective}}
