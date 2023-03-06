@@ -1,7 +1,7 @@
 # Codebook and coding rules for qabstracts study
 
 created: Lutz Prechelt, 2022-07-14  
-changed: Lutz Prechelt, 2023-03-05
+changed: Lutz Prechelt, 2023-03-06
 
 
 ## 1. Coding rules: Fundamentals
@@ -129,7 +129,8 @@ The above list sketches the default structure of a structured abstract.
   Information about the larger topic area of the work, the state-of-the-art,
   related work, what is known.
 - code `gap`:  
-  A statement of what is not yet known or what is yet difficult to achieve.
+  A statement of what is not yet known or 
+  what is so far difficult to achieve in research or in practice.
 - code `need`:  
   A postulate about what research needs to be performed.
 
@@ -160,6 +161,7 @@ The above list sketches the default structure of a structured abstract.
   Statement about what is still not known after the study.
 - code `fneed:u`:  
   Statement about what future research should be done (by whoever).
+  Also used when authors "hope" (etc.) for certain research to be done. 
 - code `fposs:u`:  
   Statement about what future research is now possible (i.e., could now be done, by whoever).  
   Note: Statements what practitioners can now do are `conclusion`!
