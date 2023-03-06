@@ -28,5 +28,5 @@ and the generated examples have better transferability compared with the baselin
 {{result:i1}}
 We also confirm, via
 experiments, the effectiveness in improving model robustness with our training method.
-{{a-method,result}}
+{{a-method,result:i1}}
 ---

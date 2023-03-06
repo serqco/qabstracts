@@ -16,7 +16,7 @@ information, correct meaning, and consistent description.
 In recent years, numerous approaches have been
 proposed for code summarization, but it is still very challenging for developers to automatically learn the
 complex semantics from the source code and generate complete, correct and consistent code summaries.
-{{background}}
+{{gap}}
 Objective:
 {{h-objective}}
 In this paper, we propose KGCodeSum, a novel keyword-guided abstractive code summarization
@@ -46,5 +46,5 @@ could significantly save time and space in the model training process.
 Conclusion:
 {{h-conclusion}}
 Our KGCodeSum approach could effectively generate code summaries.
-{{conclusion}}
+{{summary}}
 ---

@@ -6,7 +6,7 @@ of an open-source software project.
 However, it is difficult for new-
 comers to locate suitable development tasks, while existing “Good
 First Issues” (GFI) in GitHub are often insufficient and inappropriate.
-{{background}}
+{{gap}}
 In this paper, we propose RecGFI, an effective practical approach for
 the recommendation of good first issues to newcomers, which can
 be used to relieve maintainers’ burden and help newcomers onboard.

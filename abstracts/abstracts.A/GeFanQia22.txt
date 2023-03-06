@@ -49,7 +49,7 @@ Conclusion:
 {{h-conclusion}}
 As shown from the experimental results, our approach can be more effective and efficient to
 identify SBRs than the existing approaches.
-{{conclusion}}
+{{summary}}
 ---
 wrong h-objective followed by background, and h-result followed by method 
 (bad fit of structured abstract format with design article) 

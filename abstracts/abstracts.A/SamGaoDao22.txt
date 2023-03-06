@@ -13,7 +13,7 @@ This limitation
 of the state of the art is a severe threat to validity in a large range of
 static analyses that do not have a complete view of the executable
 code in apps.
-{{background}}
+{{gap}}
 To address this issue, we propose a new advance in
 the ambitious research direction of building a unified model of all
 code in Android apps.

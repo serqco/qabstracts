@@ -14,7 +14,7 @@ same languages and tools, techniques in mining software repositories should enab
 scalable insights into AI models and AI development.
 {{background}}
 However, much of the relevant metadata around models are not easily extractable.
-{{background}}
+{{gap}}
 This paper (an extension of our MSR 2020
 paper) presents a library called AIMMX for AI Model Metadata eXtraction from software
 repositories into enhanced metadata that conforms to a flexible metadata schema.
@@ -34,5 +34,5 @@ We also
 demonstrate the flexibility of extracted metadata by using the evaluation dataset in an existing natural language processing (NLP) analysis platform to identify trends in the dataset.
 {{a-result,method}}
 Overall, we hope AIMMX fosters research towards better AI development.
-{{conclusion}}
+{{fneed}}
 ---

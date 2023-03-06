@@ -14,7 +14,7 @@ To better help developers use Git, it is necessary to understand the issues and 
 Git.
 {{background}}
 Unfortunately, this problem has not yet been comprehensively studied.
-{{background}}
+{{gap}}
 To fill this knowledge gap, in this
 article, we conduct a large-scale study on Stack Overflow, a popular Q&A forum for developers.
 {{objective}}
