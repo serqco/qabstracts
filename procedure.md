@@ -1,7 +1,7 @@
 # Overall procedure for executing the 'qabstracts' study
 
 created: Lutz Prechelt, 2022-09-21  
-changed: Lutz Prechelt, 2023-02-09
+changed: Lutz Prechelt, 2023-03-06
 
 
 ## 1. Overall procedure
@@ -56,7 +56,7 @@ changed: Lutz Prechelt, 2023-02-09
 This is the prestudy version of the description.
 The final version will talk of `abstracts/` instead of `prestudy2/`.
 
-Long version for learning:
+### 3.1 Long version for learning
 
 1. `git pull`
 2. Edit `prestudy2/sample-who-what.txt`.
@@ -90,17 +90,35 @@ Long version for learning:
    (e.g. **"Lutz has coded block 3 A"**)
 9. Make sure you got the commit message right.
    Use `git commit --amend -m"<firstname> has coded block <B> <C>"` if not.
-10. `git push` 
-    In case of conflicts, do `git pull --rebase`, then repeat the push.  
-    (Took a while? Yes. But the next block will be so much quicker!)
+10. `git push`  
+    In case of conflicts, do `git pull --rebase`, then repeat the push.    
+    **Always use rebase, not merge** to keep our history tidy.
 
-Short version as a memory aid after learning:
+Took a while? Yes. But the next block will be so much quicker!
+
+
+### 3.2 Short version as a memory aid after learning
 
 - pull; reserve a block in 'sample-who-what.txt'; commit (e.g. **"Lutz will code block 3 A"**); push
 - code the abstracts
 - possibly run 'check-codings' and 'compare-codings'
 - adjust 'sample-who-what.txt'; commit it and all abstracts (e.g. **"Lutz has coded block 3 A"**); push
 
+
+### 3.3 Fixing problems after coding
+
+- Once you have coded a block, it is "yours" and you'll never need to make a reservation
+  again when you want to modify its files.
+- If you have made **syntactical** mistakes and get messages in the 
+  "check individual files" department, 
+  correct them ASAP (because they block the more important "check pairs of files" messages)
+  and commit them with messages of the form  
+  **"Lutz fixed block 3 A"**
+- You can and should do this for such mistakes of other coders as well
+- If you made **semantical** changes to a block of yours (whether based on solo decisions
+  or after discussing messages with your fellow coder), 
+  commit them with messages of the form  
+  **"Lutz adjusted block 3 A"**
 
 ## 4. Evaluators: Questions to answer
 
