@@ -1,7 +1,7 @@
 # Codebook and coding rules for qabstracts study
 
 created: Lutz Prechelt, 2022-07-14  
-changed: Lutz Prechelt, 2023-03-06
+changed: Lutz Prechelt, 2023-03-07
 
 
 ## 1. Coding rules: Fundamentals
@@ -74,25 +74,25 @@ The archetype:
 1. An abstract typically consists of three parts, in this order:
    _Introduction_, _Study Description_, and _Outlook_. 
    The _Outlook_ is sometimes missing.
-2. The _Introduction_ first introduces the topic area of the study and what is known (`background`)
+2. Two turning points connect the three parts:
+   - A statement of the study goals (`objective`) connects _Introduction_ to _Study Description_.
+   - A generalizing statement ("take-home message", `conclusion`) 
+     connects _Study Description_ to _Outlook_, but may be missing.
+3. The _Introduction_ first introduces the topic area of the study and what is known (`background`)
    and then may or may not point out a gap in knowledge (`gap`) or 
    postulate a need for a certain research (`need`).
-3. For an empirical article, the _Study Description_ begins with
+4. For an empirical article, the _Study Description_ begins with
    method description (`method`), followed by results description (`result`).
    Sometimes, this sequence occurs twice in a row, very rarely more.
-4. For a design article, design description (`design`, see below) may precede the structure
+5. For a design article, design description (`design`, see below) may precede the structure
    described in the previous point or may be interleaved with it.
-5. Occasionally (but infrequently), _Study Description_ will end with a study summary (`summary`).
-6. _Outlook_ talks about future research and states 
+6. Occasionally (but infrequently), _Study Description_ will end with a study summary (`summary`).
+7. _Outlook_ talks about future research and states 
    what could now be done (`fposs`, for future possibilities),
    what should now be done (`fneed`),
    what the authors themselves intend to do (`fwork`), or
    what is still not known (`fgap`).
    Several of these may occur, in no particular order.
-7. Two turning points connect the three parts:
-   - A statement of the study goals (`objective`) connects _Introduction_ to _Study Description_.
-   - A generalizing statement ("take-home message", `conclusion`) 
-     connects _Study Description_ to _Outlook_. This stretch may be missing.
 
 **The archetype guides the coding**: During coding, we will expect the next sentence
 to be either part of the same stretch or the beginning of one
