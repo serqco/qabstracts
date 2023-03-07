@@ -30,23 +30,26 @@ def compare_codings(maxcountdiff: int, workdir: str):
         print(f"\n\n#################### {coder}'s: ####################\n")
         for file1, coder1, file2, coder2 in what.pairs:
             if coder in (coder1, coder2):
-                msgcount += compare_files(file1, coder1, file2, coder2, maxcountdiff, annots)
+                msgcount += compare_files(file1, coder1, file2, coder2, 
+                                          what.blockname(file1), maxcountdiff, annots)
     sys.exit(msgcount)  # 0 if no errors, number of errors otherwise
 
 
-def compare_files(file1: str, name1: str, file2: str, name2: str, maxcountdiff: int, annots: annot.Annotations) -> int:
+def compare_files(file1: str, name1: str, file2: str, name2: str, 
+                  block: str, maxcountdiff: int, annots: annot.Annotations) -> int:
     with open(file1, 'r', encoding='utf8') as f1:
         content1 = f1.read()
     with open(file2, 'r', encoding='utf8') as f2:
         content2 = f2.read()
     sa_pairs1 = annots.find_all_sentence_and_annotation_pairs(content1)  # list of pairs (previous sentence, annotation)
     sa_pairs2 = annots.find_all_sentence_and_annotation_pairs(content2)  # list of pairs (previous sentence, annotation)
-    return compare_codings2(file1, name1, sa_pairs1, file2, name2, sa_pairs2, maxcountdiff, annots)
+    return compare_codings2(file1, name1, sa_pairs1, file2, name2, sa_pairs2, 
+                            block, maxcountdiff, annots)
 
 
 def compare_codings2(file1: str, name1: str, sa_pairs1: tg.Sequence[tg.Tuple[str, str]],
                      file2: str, name2: str, sa_pairs2: tg.Sequence[tg.Tuple[str, str]],
-                     maxcountdiff: int, annots: annot.Annotations):
+                     block: str, maxcountdiff: int, annots: annot.Annotations):
     msgcount = 0
     def printmsg(msg: str, *items: tg.Sequence[str]):
         print("\n#####", msg)
@@ -56,9 +59,9 @@ def compare_codings2(file1: str, name1: str, sa_pairs1: tg.Sequence[tg.Tuple[str
             print(item)
         return 1
     def of_1(msg: str) -> str:
-        return f"{msg}  ({name1})"
+        return f"{msg}  ({name1}, Block {block})"
     def of_2(msg: str) -> str:
-        return f"{msg}  ({name2})"
+        return f"{msg}  ({name2}, Block {block})"
 
     for pair1, pair2 in zip(sa_pairs1, sa_pairs2):
         sentence1, annotation1 = pair1

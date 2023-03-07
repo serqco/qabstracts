@@ -67,20 +67,26 @@ class WhoWhat:
     Hides the following secrets :
     1. The filename of the who/what file.
     2. The format of that file (for reading only)
-    3. The meaning of the entries in that file (reservations, implied filenames, coder_letters)
+    3. The meaning of the entries in that file (blocks, reservations, implied filenames, coder_letters)
     4. Which pairs of annotated files should be compared
     """
     FILENAME = "sample-who-what.txt"  # in workdir
+    BLOCKHEADER_REGEXP = r"^#---+ [Bb]lock (\d+)"
 
     def __init__(self, workdir: str):
         self.workdir = workdir
         self.coders = set()
         self._coder_of = dict()  # filename -> codername
+        self._block_of = dict()  # filename -> blockname
         self._pairs: tg.List[Filepair] = [] 
         with open(f"{workdir}/{self.FILENAME}", 'r', encoding='utf8') as f:
             lines = f.readlines()
+        currentblock = ""  # block number as a string
         for line in lines:
             if line.startswith("#"):
+                mm = re.match(self.BLOCKHEADER_REGEXP, line)
+                if mm:
+                    currentblock = mm.group(1)
                 continue
             parts = line.strip().split()  # splits on single or multiple whitespace after removing trailing \n
             citekey = parts[0]
@@ -90,10 +96,16 @@ class WhoWhat:
                 if self.is_reservation(coder):
                     continue  # reservations are non-entries
                 self.coders.add(coder)
-                self._coder_of[self._implied_filename(citekey, index)] = coder
+                filename = self._implied_filename(citekey, index)
+                self._coder_of[filename] = coder
+                self._block_of[filename] = currentblock
             #--- collect filepair entries, using either _build_pairs_with_A oder _build_neighboring_pairs:
             for next_pair in self._build_pairs_with_A(citekey, columns):
                 self._pairs.append(next_pair)
+
+    def blockname(self, filename: str) -> str:
+        """Which block does this file belong to?"""
+        return self._block_of[filename]
 
     def citekey(self, filename: str) -> str:
         """Partial inverse of _implied_filename()"""

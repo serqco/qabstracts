@@ -25,14 +25,14 @@ def check_codings(workdir: str):
     for coder in sorted(what.coders):
         print(f"\n#################### {coder}'s: ####################\n")
         for file in what.files_of(coder):
-            errors += report_errors(file, coder, annots)
+            errors += report_errors(file, coder, what.blockname(file), annots)
     sys.exit(errors)  # 0 if no errors, number of errors otherwise
 
 
-def report_errors(file: str, coder: str, annots: annot.Annotations) -> int:
+def report_errors(file: str, coder: str, block: str, annots: annot.Annotations) -> int:
     def report():
         if errors:
-            print(f"---- {file}  ({coder}):\n" + '\n'.join(errors))
+            print(f"---- {file}  ({coder}, Block {block}):\n" + '\n'.join(errors))
     with open(file, 'rt', encoding='utf8') as f:
         content = f.read()
     #----- check annotation-ish stuff:
