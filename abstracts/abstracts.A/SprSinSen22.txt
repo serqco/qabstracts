@@ -7,7 +7,7 @@ development costs.
 Abstraction Layered Architecture (ALA) is a
 reference architecture for building maintainable applications, but
 its effectiveness in commercial projects has remained unexplored.
-{{background}}
+{{gap}}
 This research, carried out as a 16-month joint industry-academic
 project, explores developing commercial code bases using ALA
 and the extent to which ALA improves maintainability.
@@ -36,5 +36,5 @@ trend upwards in the longer term.
 Our findings led to proposing
 a generalised ALA-based development method that promises a
 significant reduction in maintenance costs.
-{{conclusion}}
+{{summary}}
 ---

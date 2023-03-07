@@ -15,10 +15,10 @@ tions and using them to detect vulnerability.
 In practice, text-based
 techniques are scalable but not accurate due to the lack of program
 semantics.
-{{background}}
+{{gap}}
 Graph-based methods are accurate but not scalable since
 graph analysis is typically time-consuming.
-{{background}}
+{{gap}}
 In this paper, we aim to achieve both scalability and accuracy on
 scanning large-scale source code vulnerabilities.
 {{objective}}

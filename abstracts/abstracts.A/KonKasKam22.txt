@@ -17,9 +17,9 @@ Researchers and practitioners can address the second phase by using existing sol
 In contrast, although various ILAs have been proposed
 for the first phase, no large-scale studies exist in which such ILAs are evaluated under
 the same experimental conditions.
-{{background}}
+{{gap}}
 Hence, we still have no conclusions regarding the bestperforming ILA for the first phase.
-{{background}}
+{{gap}}
 In this paper, we compare 10 ILAs collected from our
 systematic literature study with regards to the accuracy of detecting defect-fixing commits.
 {{objective}}

@@ -12,7 +12,7 @@ original query.
 {{background}}
 In other words, these techniques automatically improve the existing query but cannot contribute
 new, previously unmentioned, concepts.
-{{background}}
+{{gap}}
 Objective:
 {{h-objective}}
 In this paper, we propose a technique to guide software developers in manually improving their
@@ -37,9 +37,9 @@ Conclusion:
 As shown in the experimental results, the described approach is capable at recommending
 appropriate clarification questions to software developers and considered useful by a sample of developers
 ranging from novices to experienced professionals.
-{{conclusion,result,method}}
+{{summary,result,method}}
 ---
-Curious final sentence containing conclusion, then result, then method:
+Curious final sentence containing summary (or conclusion?), then result, then method:
 "As shown in the experimental results, the described approach is capable at recommending
 appropriate clarification questions to software developers and considered useful by a sample of developers
 ranging from novices to experienced professionals."

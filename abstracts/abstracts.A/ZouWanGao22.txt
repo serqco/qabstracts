@@ -12,7 +12,7 @@ stack pointer in thread-local storage (TLS), which can be implemented in terms o
 overhead in the latter.
 {{background}}
 In addition, shadow stacks are vulnerable to information disclosure attacks.
-{{background}}
+{{gap}}
 In this paper, we propose to mitigate ROP attacks for single- and multi-threaded server programs running on general-purpose computing systems by using a novel stack layout, called a buddy stack (referred
 to as Bustk), that is highly performant, compatible with existing code, and provides meaningful security.
 {{objective}}

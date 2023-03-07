@@ -6,7 +6,7 @@ Recent research efforts in detecting code clones and classifying code have shown
 other approaches.
 {{background}}
 However, existing AST-based approaches do not take into account contextual information of a program, like statement context.
-{{background}}
+{{gap}}
 To address this issue, we propose
 a novel approach path context to capture the context of statements, and a path context augmented network (PCAN) to learn a program.
 {{objective}}
