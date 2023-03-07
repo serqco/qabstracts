@@ -40,6 +40,6 @@ The guidelines can support building solid statistical analyses and connecting th
 {{conclusion}}
 Thus, they can help buttress continued progress in
 empirical software engineering research.
-{{conclusion}}
+{{a-fposs}}
 ---
 False-positive sentence ends due to "et al.".

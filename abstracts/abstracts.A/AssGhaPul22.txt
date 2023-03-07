@@ -12,10 +12,10 @@ Objective:
 {{h-objective}}
 Previous studies suggest a lack of means enabling SEC stakeholders to identify and assess competencies
 suitable for different projects.
-{{background}}
+{{gap}}
 Additionally, previous research has mainly portrayed SEC to be static and over­
 looked their evolution over time and across projects.
-{{background}}
+{{gap}}
 We investigate how we could effectively identify and match
 the competencies of software professionals necessary for different projects.
 {{objective}}
@@ -48,12 +48,12 @@ Conclusion:
 {{h-conclusion}}
 Competence development involves different stakeholders, including software professionals, educa­
 tors, and the software industry.
-{{conclusion}}
+{{summary}}
 The UComGSP framework enables SEC stakeholders to (i) identify SE compe­
 tencies, (ii) identify the essential SEC, and (iii) assess the satisfaction levels that can be derived from different
 competencies.
 {{conclusion}}
 Future research is needed to evaluate the effectiveness of the proposed framework across software
 development projects.
-{{a-futurework}}
+{{fneed}}
 ---

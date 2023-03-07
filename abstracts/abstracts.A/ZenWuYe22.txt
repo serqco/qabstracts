@@ -16,7 +16,7 @@ sider the full semantics of the program (e.g., mutation-based fault
 localization and angelic debugging), leading to scalability issues,
 or ignore the semantics of the program (e.g., spectrum-based fault
 localization), leading to imprecise localization results.
-{{background}}
+{{gap}}
 Our key idea
 is:
 {{objective}}

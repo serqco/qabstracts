@@ -3,7 +3,7 @@ Comparing ϕ and the F-measure as performance metrics for software-related class
 Context The F-measure has been widely used as a performance metric when selecting
 binary classifiers for prediction, but it has also been widely criticized, especially given the
 availability of alternatives such as φ (also known as Matthews Correlation Coefficient).
-{{background}}
+{{h-background,background}}
 Objectives Our goals are to (1) investigate possible issues related to the F-measure in depth
 and show how φ can address them, and (2) explore the relationships between the F-measure
 and φ.
@@ -34,6 +34,6 @@ random classification.
 {{conclusion}}
 The mathematical relationships described here can also be used to reinterpret the conclusions of previously published papers that relied mainly on the F-measure
 as a performance metric.
-{{conclusion}}
+{{fposs}}
 ---
 Theoretical work that is more similar to an empirical work than to a design work.
