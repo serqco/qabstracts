@@ -12,7 +12,7 @@ emergency fixes and the newly adopted features.
 {{background}}
 However, little is known about the common
 practices adapted by app developers in preparing their release notes.
-{{background}}
+{{gap}}
 In this paper, we are
 interested in capturing the common practices as release notes patterns.
 {{objective}}

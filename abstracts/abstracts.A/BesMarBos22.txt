@@ -12,7 +12,7 @@ even if researchers and practitioners working in today’s software development 
 the concept of technical debt and its related negative consequences, there has been no empirical research
 focusing specifically on how software managers actively communicate and manage the need to keep the level of
 technical debt as low as possible.
-{{background}}
+{{gap}}
 Objective:
 {{h-objective}}
 This study aims to understand how software companies give incentives to manage technical debt.
@@ -45,3 +45,4 @@ mindset from managers where they also specifically dedicate time and resources f
 activities.
 {{conclusion}}
 ---
+A lengthy, but vague conclusion.

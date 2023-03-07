@@ -11,7 +11,7 @@ a great financial cost as well.
 Even though there are many studies
 that examine the capabilities of dl, only a few focus on its green
 aspects, such as energy consumption.
-{{background}}
+{{gap}}
 This paper aims at raising awareness of the costs incurred when
 using different dl frameworks.
 {{objective}}
@@ -54,7 +54,7 @@ This suggests that devel-
 opers need to improve the documentation of their dl frameworks,
 the source code of the functions used in these frameworks, as well
 as to enhance existing dl algorithms.
-{{conclusion}}
+{{fneed}}
 ---
 Conjecture: The discrimination between 'conclusion' and 'futurework'
 depends a lot on wording. Semantically, the difference is often unclear.

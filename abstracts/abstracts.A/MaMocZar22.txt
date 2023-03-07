@@ -47,11 +47,11 @@ gauge the generalizability of the proposed methodology, we investigate the sprea
 and React, and discuss the results.
 {{method,a-result}}
 Future work:
-{{h-futurework}}
+{{h-fwork}}
 We hope that our methodology encompassing social contagion that captures both
 rational and irrational preferences and the elucidation of key measures from large collections of version control data provides a general
 path toward increasing visibility, driving better informed decisions, and producing more sustainable and widely adopted software.
-{{conclusion}}
+{{fneed}}
 ---
 An 'objective' statement that totally sounds like a conclusion:
 "Thus, our findings have

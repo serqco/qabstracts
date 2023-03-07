@@ -49,7 +49,7 @@ Conclusion:
 {{h-conclusion}}
 While there is an ebb and flow of application domains, domains like bio-inspired approaches,
 security, and cyber–physical systems showed promise to grow heading into the 2020s.
-{{conclusion}}
+{{summary}}
 ---
 A second recurring (although much less frequently) style of 'objective' statement
 is a background-type statement that is marked to be the objective, such as here:
@@ -61,3 +61,4 @@ that is explicitly labeled as 'method':
 "Method:
 This paper contributes a systematic literature review into self-adaptive systems using the dblp
 computer science bibliography as a database."
+The conclusion is a summary: It uses past tense.

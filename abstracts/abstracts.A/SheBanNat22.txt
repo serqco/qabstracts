@@ -13,7 +13,7 @@ As new applications and
 features are routinely introduced and existing applications are run
 under new environments, developing new rules and maintaining
 existing ones become extremely challenging.
-{{background}}
+{{gap}}
 We propose a data-driven solution to address the problem.
 {{objective}}
 We

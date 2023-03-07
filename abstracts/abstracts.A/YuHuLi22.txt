@@ -9,7 +9,7 @@ BigCloneBench, are constructed and selected as benchmarks to assess and compare 
 models for detecting semantic clones.
 {{background}}
 However, there is no study to investigate whether an evaluation benchmark dataset such as BigCloneBench is properly used to evaluate models for detecting semantic code clones.
-{{background}}
+{{gap}}
 In this article, we present an experimental study to show that BigCloneBench typically includes semantic
 clone pairs that use the same identifier names, which however are not used in non-semantic-clone pairs.
 {{a-method,result}}
