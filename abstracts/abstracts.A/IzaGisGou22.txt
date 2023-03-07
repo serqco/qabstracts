@@ -6,12 +6,12 @@ single token completions.
 {{background}}
 Both approaches have significant draw-
 backs:
-{{background}}
+{{gap}}
 grammar-based autocompletion is restricted in dynamically-
 typed language environments, whereas NLP-based autocompleters
 struggle to understand the semantics of the programming language
 and the developer's code context.
-{{background}}
+{{gap}}
 In this work, we present CodeFill, a language model for autocom-
 pletion that combines learned structure and naming information.
 {{objective}}

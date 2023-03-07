@@ -9,7 +9,7 @@ due to advances in AI.
 {{background}}
 However, there is limited synthesized knowledge on Software Engineering (SE)
 approaches for building, operating, and maintaining AI-based systems.
-{{background}}
+{{gap}}
 To collect and analyze state-of-theart knowledge about SE for AI-based systems, we conducted a systematic mapping study.
 {{objective}}
 We considered 248

@@ -13,7 +13,7 @@ EA has numerous potential stake�holders and usage scenarios in organizations.
 However, the existing EA literature does not offer any consistent
 theories explaining the practical roles of individual EA artifacts and fails to explain how exactly different types of
 EA artifacts are used in practice.
-{{background}}
+{{gap}}
 Objective:
 {{h-objective}}
 This study intends to explore the roles of different EA artifacts in organizations and develop a generic
@@ -45,14 +45,14 @@ contents, typical usage, ensuing organizational benefits and interrelationships 
 Conclusions:
 {{h-conclusion}}
 This study presents the first systematic theory describing the usage of EA artifacts in organizations.
-{{conclusion}}
+{{summary}}
 Our theory facilitates better theoretical understanding of the concept of EA and also provides evidence-based
 solutions to the commonly reported practical problems with EA.
 {{conclusion}}
 This study suggests that the EA research
 community should focus on studying individual EA artifacts instead of studying EA in general and calls for
 further research on EA artifacts and their usage as part of EA practices.
-{{futurework}}
+{{fneed}}
 ---
 This study is an in-between of an empirical work and a design work:
 An artifact is delivered, but it is mostly an empirical result.

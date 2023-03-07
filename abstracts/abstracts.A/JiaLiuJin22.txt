@@ -7,7 +7,7 @@ To this end, a number of approaches have been proposed to expand abbreviations i
 {{background}}
 However, such approaches
 are either inaccurate or confined to specific identifiers.
-{{background}}
+{{gap}}
 To this end, in this paper, we propose a generic and accurate approach to
 expand identifier abbreviations by leveraging both semantic relation and transfer expansion.
 {{objective}}

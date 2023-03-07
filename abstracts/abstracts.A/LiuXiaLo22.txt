@@ -36,9 +36,9 @@ outperforms two existing online search engines (GitHub and Google search) by 46%
 terms of MRR.
 {{result}}
 We also observed that:
-{{conclusion}}
+{{result}}
 fusing the advantages of IR-based and DL-based models is promising;
 improving the quality of method naming helps code search, since method name plays an important role in
 connecting query and code.
-{{conclusion}}
+{{result:i2}}
 ---
