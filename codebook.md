@@ -35,6 +35,7 @@ Only by applying rules 4, 5, 6 carefully will we be able to come out
 with a good intercoder agreement.
 
 
+
 ## 2. Codebook: Codes for sentences
 
 Subsequent subsections define codes for sentences. 
@@ -269,28 +270,27 @@ They start with a dash to signal this and should be given last.
   Plain positive properties do not qualify ("This is helpful because..."),
   only emphasized ones do ("This is tremendously helpful because...").
   "very" does not count as hype.
-  This code is not a classification of a sentence, but an additional attribute.
-  It is considered subjective.
   The most common places for this to occur are 
   `result`, `conclusion`, `fposs`, `need`, `method`.  
-- code `-ignorediff`:
+- code `-ignorediff`:  
   If the script flags a coding discrepancy that, after discussion, you and your fellow coder
   agree should be left in (because the two codings represent two different reasonable interpretations),
   add this code in one (and only one) of the codings to mark the discrepancy as resolved.
 - code `-incredible`:  
   The sentence makes a statement that is very hard to believe, even after considering
   possible information that the reader of the abstract does not have.
-  This code is not a classification of a sentence, but an additional attribute.
-  It is considered subjective.
   The most common places for this to occur are 
   `result`, `summary`, `conclusion`.  
-- code `-problemstmt`:
+- code `-problemstmt`:  
   The sentence formulates a statement of a problem to be solved that is more general
   than the study's `objective`. 
   Typically only (but then frequently) found in `need` statements.  
   (This code is for collecting data for a possible future research interest.
   We only want to find some examples, so not everybody needs to apply this code all the time.
   Feel free to overlook as many instances as needed to avoid slowing you down.)
+- code `-timid`:  
+  Applies to `conclusion` only. 
+  To be used when the generalization made is overly vague or small.
 - code `futurework`:  
   code `a-futurework`:  
   code `h-futurework`:  
@@ -298,6 +298,13 @@ They start with a dash to signal this and should be given last.
   These codes will be removed when all existing codings have been reworked to possibly assign
   their `background` and `conclusion` sentences to one of the various new codes 
   introduced 2023-03-05.
+
+In contrast to the sentence classifications, which are intended to be objective
+(hence the use of two coders and the use of `-ignorediff` where objectivity reaches its limits),
+the codes `-hype`, `-incredible`, and `-timid` are optional additional attributes
+that are considered subjective. 
+Apply them with your own good judgment and keep in mind that
+"we are gentle in detecting negative aspects".
 
 
 ### 2.10 Codes for special circumstances
