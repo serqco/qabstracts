@@ -317,6 +317,7 @@ Apply them with your own good judgment and keep in mind that
   consider using `fgrep {{X}}` to find these cases.
   Use `X` only rarely and only when you cannot _yet_ make up your mind.
   Such a code will likely result in a discrepancy with your fellow coder.
+  It must always eventually be replaced with a proper code.
 
 
 ## 3. Coding rules: Avoiding inter-coder discrepancies
