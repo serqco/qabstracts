@@ -7,14 +7,14 @@ bug detection efficiency, i.e., detect more bugs with fewer workers.
 {{background}}
 However, there are a couple of limitations
 in existing work.
-{{background}}
+{{gap}}
 First, these studies mainly focus on one-time recommendations based on expertise matching
 at the beginning of a new task.
-{{background}}
+{{gap}}
 Second, the recommendation results suffer from severe popularity bias, i.e.,
 highly experienced workers are recommended in almost all the tasks, while less experienced workers rarely
 get recommended.
-{{background}}
+{{gap}}
 This article argues the need for context- and fairness-aware in-process crowdworker recommendation in order to address these limitations.
 {{objective}}
 We motivate this study through a pilot study, revealing
@@ -45,5 +45,5 @@ and consequently have potential of saving testing cost by a median of 8%–12%.
 Meanwhile, the recommendation
 frequency of the crowdworker drop from 34%–60% to 5%–26% under different scenarios, indicating its
 potential in alleviating the unfairness among crowdworkers.
-{{result,conclusion}}
+{{result,conclusion,-timid}}
 ---

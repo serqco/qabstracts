@@ -13,7 +13,7 @@ intrinsic weaknesses and subsequently proposing feasible mitigation.
 {{background}}
 Yet few are clear about how these weaknesses are incurred and
 how effective these attack approaches are in assaulting deep learning.
-{{background}}
+{{gap}}
 In order to unveil the security weaknesses and aid in the
 development of a robust deep learning system, we undertake an investigation on attacks towards deep learning, and analyze these
 attacks to conclude some findings in multiple views.

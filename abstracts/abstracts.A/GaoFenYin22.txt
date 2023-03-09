@@ -15,7 +15,7 @@ and optimization of DNN models.
 However, in practice, collecting 
 diverse data from apaplication scenarios and labeling them properly
 is often a highly expensive and time-consuming task.
-{{background}}
+{{gap}}
 In this paper, we proposed an adaptive test selection method,
 namely ATS, for deep neural networks to alleviate this problem.
 {{objective}}

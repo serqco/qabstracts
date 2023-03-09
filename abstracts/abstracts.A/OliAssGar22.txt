@@ -13,11 +13,11 @@ have different perceptions about the presence (or not) of a smell, which we call
 Although Machine Learning (ML) techniques are promising to
 detect smells, there is little knowledge regarding the accuracy of these techniques to detect
 developer-sensitive smells.
-{{background}}
+{{gap}}
 Besides, companies may change developers frequently, and the
 models should adapt quickly to the preferences of new developers, i.e., using few training
 instances.
-{{background}}
+{{gap}}
 Based on that, we present an investigation of the behavior of ML techniques in
 detecting developer-sensitive smells.
 {{objective}}
@@ -43,5 +43,5 @@ disagreement can introduce bias in the smell detection, which can be risky for o
 {{conclusion}}
 Moreover, our findings shed light on improving the state of the art and practice
 for the detection of code smells, contributing to multiple stakeholders.
-{{conclusion}}
+{{fposs}}
 ---

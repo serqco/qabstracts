@@ -6,14 +6,14 @@ Transfer learning techniques have been proved to be effective in the field of Cr
 diction (CPDP).
 {{background}}
 However, some questions still remain.
-{{background}}
+{{gap}}
 First, the conditional distribution difference between
 source and target projects has not been considered.
-{{background}}
+{{gap}}
 Second, facing multiple source projects, most studies only
 rarely consider the issues of source selection and multi-source data utilization; instead, they use all available
 projects and merge multi-source data together to obtain one final dataset.
-{{background}}
+{{gap}}
 Objective:
 {{h-objective}}
 To address these issues, in this paper, we propose a three-stage weighting framework for multi-source

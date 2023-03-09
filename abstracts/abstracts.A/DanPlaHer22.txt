@@ -5,7 +5,7 @@ The use of vulnerable open-source dependencies is a known problem in today’s s
 Several
 vulnerability scanners to detect known-vulnerable dependencies appeared in the last decade, however, there exists no case study
 investigating the impact of development practices, e.g., forking, patching, re-bundling, on their performance.
-{{background}}
+{{gap}}
 This paper studies (i)
 types of modifications that may affect vulnerable open-source dependencies and (ii) their impact on the performance of vulnerability
 scanners.
@@ -26,5 +26,6 @@ types of modifications identified.
 {{result}}
 Finally, we present Achilles, a novel test suite with 2,505 test cases that allow replicating the
 modifications on open-source dependencies.
-{{X}}
+{{objective}}
 ---
+A secondary contribution unexpectedly comes falling from the sky in the last sentence.
