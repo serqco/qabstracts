@@ -12,7 +12,7 @@ concurrently editing the same code areas.
 {{background}}
 This, in turn, may lead to hard-to-merge changes or even merge
 conflicts, logical bugs that are difficult to detect, duplication of work, and wasted developer productivity.
-{{background}}
+{{gap}}
 To
 address this, we explore the extent of this problem in the pull-request-based software development model.
 {{objective}}

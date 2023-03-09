@@ -13,7 +13,7 @@ information, which cluster software entities that use similar vocabulary.
 {{background}}
 However, the existence of semantic
 outliers obstructing the clustering process is hardly considered.
-{{background}}
+{{gap}}
 Objective:
 {{h-objective}}
 To overcome the existence of semantic outliers, this paper proposes a two-stage software clustering
@@ -44,10 +44,10 @@ Conclusion:
 {{h-conclusion}}
 In this paper, we propose EVOL, a new software clustering approach that considers semantic
 outliers filtration and label propagation.
-{{conclusion}}
+{{summary}}
 The experiment results show that the proposed approach EVOL can
 be very useful to enhance the quality of the software modularization.
-{{conclusion,-hype}}
+{{summary,-hype}}
 ---
 First conclusion sentence is a mere repetition (summary): 
 "In this paper, we propose EVOL, a new software clustering approach that considers semantic

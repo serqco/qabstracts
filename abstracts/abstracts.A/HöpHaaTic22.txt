@@ -10,10 +10,10 @@ benefits over general purpose programming languages.
 {{background}}
 However, a large number of these
 claims have not yet been substantiated.
-{{background}}
+{{gap}}
 They are also made without the context necessary
 to be able to critically assess their merit or built meaningful empirical studies around them.
-{{background}}
+{{gap}}
 Objective
 {{h-objective}}
 The objective of our work is to elicit the reasoning, influences and background
@@ -44,15 +44,15 @@ have a moderating effect on the influences, by changing the context to consider.
 Conclusion
 {{h-conclusion}}
 There is a broad body of experience, that suggests positive and negative influences for properties of MTLs.
-{{conclusion}}
+{{summary}}
 Our data suggests, that much needs to be done in order to
 convey the viability of model transformation languages.
-{{conclusion}}
+{{fneed}}
 Efforts to provide more empirical
 substance need to be undergone and lacklustre language capabilities and tooling need to be
 improved upon.
-{{conclusion}}
+{{fneed}}
 We suggest several approaches for this that can be based on the results of
 the presented study.
-{{futurework}}
+{{fposs}}
 ---

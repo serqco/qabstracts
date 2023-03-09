@@ -26,7 +26,7 @@ infrastructure as code, in order to offload the responsibility of NFRs; however,
 Our
 discussion and key research implications show the opportunities, trade-offs, and importance of the unique give-and-take relationship
 between continuous software engineering and NFRs.
-{{conclusion}}
+{{a-conclusion}}
 Research artifacts may be found at https://doi.org/10.5281/zenodo.3376342.
 {{resourcepointer}}
 ---

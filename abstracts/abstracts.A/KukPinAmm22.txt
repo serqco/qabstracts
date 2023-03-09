@@ -23,7 +23,7 @@ However, these dynamic
 analysis techniques are not perfect in practice, which can result in
 the loss of important relationships between input bytes and branch
 predicates, thus reducing the effective power of the technique.
-{{background}}
+{{gap}}
 We
 introduce a new, surprisingly simple, but effective technique, global
 hinting, which allows the fuzzer to insert these interesting bytes

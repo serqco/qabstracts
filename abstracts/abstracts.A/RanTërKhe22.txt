@@ -15,7 +15,7 @@ While
 incremental build has been studied for software evolution and
 relatively small changes of the source code, it has surprisingly not
 been considered for software configurations.
-{{background}}
+{{gap}}
 In this exploratory
 study, we examine the benefits and limits of building software
 configurations incrementally, rather than always building them

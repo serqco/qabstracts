@@ -14,7 +14,7 @@ constraints are implemented is essential for testing, debugging, and software ch
 {{background}}
 Unfortunately, there are no widely-accepted guidelines or best practices on how to implement data
 constraints.
-{{background}}
+{{gap}}
 This paper presents an empirical study that investigates how data constraints are
 implemented in Java.
 {{objective}}
