@@ -1,7 +1,7 @@
 # Codebook and coding rules for qabstracts study
 
 created: Lutz Prechelt, 2022-07-14  
-changed: Lutz Prechelt, 2023-03-07
+changed: Lutz Prechelt, 2023-03-09
 
 
 ## 1. Coding rules: Fundamentals
@@ -140,20 +140,30 @@ The above list sketches the default structure of a structured abstract.
 - code `method:iu`:  
   information about the approach or setup of an empirical (or possibly purely mathematical) study.
 - code `design:iu`:  
-  information about the design, design process, and designed features of 
-  an artifact, such as software, a process, or a method.
-  This occurs instead of (or in addition to) `method` when the article
-  is artifact-centric instead of purely empirical, i.e., 
-  when the article's main contribution is the artifact or the knowledge how to build it,
+  To be used only if the article is artifact-centric instead of purely empirical, i.e., 
+  if the article's main contribution is an artifact or the knowledge how to build it,
   not the empirical results obtained with its help.
-  (Designed features are known at design time, in contrast to emerging features,
-  which can only be determined empirically and are classified as `result`.
-  Top-level design _goals_ (and non-goals) are classified as `objective`.)
+  A `design` statement provides information about the design, design process, and designed features of 
+  an artifact, such as software, a process, or a method.  
+  We call articles where the abstract contains a design statement "design articles"
+  (or artifact-centric articles). 
+  - Such articles will typically also contain some empirical part and code `method` is used
+    for its description.  
+  - The "designed features" mentioned above are known at design time
+    and classified as `design`.
+    This is in contrast to emerging features,
+    which can only be determined empirically and are classified as `result`.
+  - Top-level design _goals_ (and non-goals) are classified as `objective`.
+    Subordinate design goals and non-goals are classified as `design`.
+  - Statements about the design of subordinate artifacts, 
+    that do not represent the main contribution but rather only aid an empirical study, 
+    are classified as `method`.
 - code `result:iu`:  
   information about the immediate outcome of a study in the form of
   empirical results. See `claim:iu`.
 - code `summary:u`:  
-
+  A statement that summarizes several results, but does not provide new information.
+  A summary statement does not generalize beyond the immediate results.
 
 ### 2.5 Core codes for _Outlook_
 
