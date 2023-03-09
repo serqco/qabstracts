@@ -1,8 +1,5 @@
 ﻿Context-Aware Personalized Crowdtesting Task Recommendation.
 
-Context- and Fairness-Aware In-Process Crowdworker
-Recommendation
-
 Identifying and optimizing open participation is essential to the success of open software development.
 {{background}}
 Existing studies highlighted the importance of worker recommendation for crowdtesting tasks in order to improve
