@@ -43,8 +43,8 @@ complexity metrics and pin down factors relevant to program
 comprehension.
 {{conclusion}}
 Future Work:
-{{h-futurework}}
+{{h-fwork}}
 We outline several follow-up experiments investigat-
 ing fine-grained effects of code complexity and describe possible
 refinements to code complexity metrics.
-{{futurework}}
+{{fwork}}

@@ -183,7 +183,7 @@ The above list sketches the default structure of a structured abstract.
 ### 2.6 Structured abstracts' headings
 
 Codes of the form `h-<xyz>` designate internal headings that occur in structured abstracts: 
-A section intro term "<Xyz>:" or some synonym of that,
+A section intro term "Xyz:" or some synonym of that,
 that announces subsequent `<xyz>` information.
 
 It does _not_ matter whether the announcement is correct.
@@ -210,8 +210,8 @@ Note 1: Our codings are more differentiated than these headings
 so that multiple different codings are often expected to occur after a heading `h-xx`,
 not only `xx`.
 
-Note 2: `h-conclusion` will very often be followed by `summary`, 
-although the latter is logically part of Study Description, not Outlook.
+Note 2: If `summary` occurs, it will typically follow `h-conclusion`, 
+although it is logically part of Study Description, not Outlook.
 
 
 
@@ -291,13 +291,6 @@ They start with a dash to signal this and should be given last.
 - code `-timid`:  
   Applies to `conclusion` only. 
   To be used when the generalization made is overly vague or small.
-- code `futurework`:  
-  code `a-futurework`:  
-  code `h-futurework`:  
-  `futurework` is a synonym and the previous name of `fwork`.
-  These codes will be removed when all existing codings have been reworked to possibly assign
-  their `background` and `conclusion` sentences to one of the various new codes 
-  introduced 2023-03-05.
 
 In contrast to the sentence classifications, which are intended to be objective
 (hence the use of two coders and the use of `-ignorediff` where objectivity reaches its limits),

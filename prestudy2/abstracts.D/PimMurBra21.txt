@@ -20,7 +20,7 @@ notebooks from GitHub.
 We presented a detailed analysis of their characteristics that impact
 reproducibility, proposed best practices that can improve the reproducibility, and discussed
 open challenges that require further research and development.
-{{a-result,a-design,a-futurework}}
+{{a-result,a-design,a-fwork}}
 In this paper, we extended
 the analysis in four different ways to validate the hypothesis uncovered in our original study.
 {{objective,a-method}}

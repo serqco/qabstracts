@@ -56,5 +56,5 @@ the source code of the functions used in these frameworks, as well
 as to enhance existing dl algorithms.
 {{fneed}}
 ---
-Conjecture: The discrimination between 'conclusion' and 'futurework'
+Conjecture: The discrimination between 'conclusion' and 'fwork'
 depends a lot on wording. Semantically, the difference is often unclear.
