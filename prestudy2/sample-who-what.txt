@@ -4,11 +4,11 @@ LiuKimBis21   Lloyd        Lutz          Gunnar        Martin        Julian
 # MaiTreHat21 is a copyright change notice, not an abstract. Ignore.
 ShaHodAmo21   Lloyd        Lutz          Gunnar        Martin        Julian
 #----- Block 2
-ManHanHan21   Lloyd        Lutz          Gunnar        Martin                
-HasIqbIsl21   Lloyd        Lutz          Gunnar        Martin  
-MurJasSad21   Lloyd        Lutz          Gunnar        Martin
-PraShaSha21   Lloyd        Lutz          Gunnar        Martin  
-MahDreWil21   Lloyd        Lutz          Gunnar        Martin  
+ManHanHan21   Lloyd        Lutz          Gunnar        Martin        -Julian
+HasIqbIsl21   Lloyd        Lutz          Gunnar        Martin        -Julian
+MurJasSad21   Lloyd        Lutz          Gunnar        Martin        -Julian
+PraShaSha21   Lloyd        Lutz          Gunnar        Martin        -Julian
+MahDreWil21   Lloyd        Lutz          Gunnar        Martin        -Julian
 #----- Block 3
 CheCheZha21   Lutz         Lloyd         Gunnar        Martin  
 JohZimBir21   Lutz         Lloyd         Gunnar        Martin  	
