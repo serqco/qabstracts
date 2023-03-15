@@ -15,11 +15,13 @@ IGNORE = annot.Codebook.IGNORECODE
 def configure_argparser(subparser):
     subparser.add_argument('workdir',
                            help="Directory where sample-who-what.txt and abstracts.?/* live")
-    subparser.add_argument('--maxcountdiff', type=int, default=2,
+    subparser.add_argument('--maxcountdiff', type=int, default=2, metavar="N",
                            help="how much the smaller IU count may be smaller without a message")
+    subparser.add_argument('--onlyfor', type=str, metavar="codername",
+                           help="Only messages for this coder will be displayed.")
 
 
-def compare_codings(maxcountdiff: int, workdir: str):
+def compare_codings(maxcountdiff: int, onlyfor: str, workdir: str):
     msgcount = 0
     what = qabs.metadata.WhoWhat(workdir)
     annots = annot.Annotations()
@@ -27,6 +29,8 @@ def compare_codings(maxcountdiff: int, workdir: str):
     print("=== check pairs of files (consult with your fellow coder except for obvious mistakes) ===")
     print("=========================================================================================")
     for coder in sorted(what.coders):
+        if onlyfor and onlyfor != coder:
+            continue  # suppress this block of messages
         print(f"\n\n#################### {coder}'s: ####################\n")
         for file1, coder1, file2, coder2 in what.pairs:
             if coder in (coder1, coder2):

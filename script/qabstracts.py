@@ -25,7 +25,7 @@ def main():  # uses sys.argv
     elif subcmd == "check-codings":
         qabs.check_codings.check_codings(pargs.workdir)
     elif subcmd == "compare-codings":
-        qabs.compare_codings.compare_codings(pargs.maxcountdiff, pargs.workdir)
+        qabs.compare_codings.compare_codings(pargs.maxcountdiff, pargs.onlyfor, pargs.workdir)
     elif subcmd == "export":
         qabs.export.export(pargs.workdir)
     elif subcmd == "extract-abs":
