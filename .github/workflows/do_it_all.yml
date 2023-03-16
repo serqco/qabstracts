@@ -28,6 +28,6 @@ jobs:
           echo " "
           echo " "
           echo "?????????????????????????"
-          echo "'prestudy2/' had $prestudy_status errors" 
-          echo "'abstracts/' had $fullstudy_status errors" 
-          exit $((prestudy_status+fullstudy_status))
+          echo "'prestudy2/' had$( (( prestudy_status == 255 )) && echo ' more than') $prestudy_status errors"
+          echo "'abstracts/' had$( (( fullstudy_status == 255 )) && echo ' more than') $fullstudy_status errors"
+          ! (( prestudy_status || fullstudy_status ))

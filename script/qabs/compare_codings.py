@@ -36,6 +36,7 @@ def compare_codings(maxcountdiff: int, onlyfor: str, workdir: str):
             if coder in (coder1, coder2):
                 msgcount += compare_files(file1, coder1, file2, coder2, 
                                           what.blockname(file1), maxcountdiff, annots)
+    msgcount = min(msgcount, 255)
     sys.exit(msgcount)  # 0 if no errors, number of errors otherwise
 
 
