@@ -33,7 +33,7 @@ changed: Lutz Prechelt, 2023-03-06
 
 - You need a work environment equipped with 
   [git](https://git-scm.com/book/en/v2) and a text editor.
-- Optional: If you also have Python 3.8 or younger at hand, all the better.
+- Optional: If you also have Python 3.8 or younger at hand, all the better (with packages `pandas` and `matplotlib` installed).
 - This is easy for users on Linux or Mac OS X.
   Windows users can get by with 
   [git for windows](https://gitforwindows.org/), 
