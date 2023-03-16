@@ -28,6 +28,7 @@ def check_codings(workdir: str):
         print(f"\n#################### {coder}'s: ####################\n")
         for file in what.files_of(coder):
             errors += report_errors(file, coder, what.blockname(file), annots)
+    errors = min(errors, 255)
     sys.exit(errors)  # 0 if no errors, number of errors otherwise
 
 
