@@ -73,19 +73,19 @@ The final version will talk of `abstracts/` instead of `prestudy2/`.
    2. Step back. Is anything special about this abstract that we should remember?
       For instance, does it contain anything that makes a good example in the article?
       Then add a remark below (but usually not).
-5. If you have Python set up, run
+5. Edit `prestudy2/sample-who-what.txt` and remove the dashes you inserted in step 2,
+   leaving your name only. This reports that the annotations of those files are done.
+6. If you have Python set up, run
    `python script/qabstracts.py check-codings prestudy2`  
    If all it says is a list of coders, all is well.
    Otherwise, repair any problems you find, even if you have not produced them (if the solution is obvious).  
    This checked the codings in isolation. Next is checking them against those of your fellow coder:  
-   `python script/qabstracts.py compare-codings prestudy2`  
+   `python script/qabstracts.py compare-codings --onlyfor <firstname> prestudy2`  
    If problems occur here, consult with your fellow coder and resolve them together.  
    If you have no Python, skip this step.
    If your Python is not found, try `python3` in the commands above.
-6. Now add the files of the block to the git index
+7. Now add the files of the block to the git index
    using either `git add -i` or (preferably) the git GUI of your choice.
-7. Edit `prestudy2/sample-who-what.txt` and remove the dashes you inserted in step 2,
-   leaving your name only. This reports that the annotations of those files are done.
 8. `git add prestudy2/sample-who-what.txt; git commit -m"<firstname> has coded block <B> <C>"`
    (e.g. **"Lutz has coded block 3 A"**)
 9. Make sure you got the commit message right.
