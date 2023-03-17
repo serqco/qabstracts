@@ -118,6 +118,8 @@ def compare_codings2(file1: str, name1: str, annotated_sentences1: tg.Sequence[a
         # ----- check for IGNORE:
         if IGNORE in (set1 | set2):
             continue  # do not report possible discrepancies
+            # we do not check for superfluous IGNORE, because that does not scale for 
+            # more than 2 columns as in prestudy2
         # ----- check for code discrepancies:
         if set1 != set2:  # code sets are different
             msgcount += printmsg(f"The sets of codes applied are different, please check:",
