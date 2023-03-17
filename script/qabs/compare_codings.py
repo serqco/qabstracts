@@ -4,6 +4,8 @@ import typing as tg
 import qabs.metadata
 import qabs.annotations as annot
 
+import qabs.color as color
+
 usage = """Compares annotations between coders and flags discrepancies.
   Knows about the maximum allowed IU count difference.
   Knows about codes for silencing discrepancies.
@@ -62,9 +64,9 @@ def compare_codings2(file1: str, name1: str, annotated_sentences1: tg.Sequence[a
         """Show sentence with a problem. Suppress header if same as previous."""
         nonlocal lastmsg, extra_line_done
         if msg != lastmsg:
-            print("\n#####", msg)
-            print(f"{file1}  ({name1}, Block {block})")
-            print(f"{file2}  ({name2}, Block {block})")
+            print(f"\n{color.YELLOW}##### {msg}{color.RESET}")
+            print(f"{color.BLUE}{file1}{color.RESET}  ({name1}, Block {block})")
+            print(f"{color.BLUE}{file2}{color.RESET}  ({name2}, Block {block})")
             lastmsg = msg
         for item in items:
             print(item)
@@ -80,19 +82,19 @@ def compare_codings2(file1: str, name1: str, annotated_sentences1: tg.Sequence[a
         extra_line_done = True
 
     def numbered_sentence(ann_sent: annot.AnnotatedSentence) -> str:
-        return f"[{ann_sent.sentence_idx}] {ann_sent.sentence}"
+        return f"[{ann_sent.sentence_idx}] {color.BOLD}{ann_sent.sentence}{color.RESET}"
 
     def of_1(msg: str) -> str:
-        return f"{msg}  ({name1})"
+        return f"{color.RED}{msg}{color.RESET}  ({name1})"
 
     def of_2(msg: str) -> str:
-        return f"{msg}  ({name2})"
+        return f"{color.RED}{msg}{color.RESET}  ({name2})"
 
     def of_1_ok(msg: str) -> str:
-        return f"{msg}  -OK- ({name1})"
+        return f"{color.GREEN}{msg}{color.RESET}  -OK- ({name1})"
 
     def of_2_ok(msg: str) -> str:
-        return f"{msg}  -OK- ({name2})"
+        return f"{color.GREEN}{msg}{color.RESET}  -OK- ({name2})"
 
     for as1, as2 in zip(annotated_sentences1, annotated_sentences2):
         # ----- check for non-parallel codings:
