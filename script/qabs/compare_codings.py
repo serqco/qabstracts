@@ -126,13 +126,24 @@ def compare_codings2(file1: str, name1: str, annotated_sentences1: tg.Sequence[a
                                  numbered_sentence(as1), of_1(as1.annotation), of_2(as2.annotation))
             continue
         # ----- check for count discrepancies:
+        countdiffs_count = 0
         for code, counts in annots.codes_with_suffixes(as1.annotation, as2.annotation).items():
             icount1, ucount1, icount2, ucount2 = counts
-            if abs(icount1 - icount2) > maxcountdiff:
+            idiff = abs(icount1 - icount2) > maxcountdiff
+            udiff = abs(ucount1 - ucount2) > maxcountdiff
+            if idiff and udiff:
+                msgcount += printmsg(f"{code}: Very different numbers of i&u gaps, please reconsider:",
+                                     numbered_sentence(as1), of_1(as1.annotation), of_2(as2.annotation))
+                countdiffs_count += 1
+            elif idiff:
                 msgcount += printmsg(f"{code}: Very different numbers of informativeness gaps, please reconsider:",
                                      numbered_sentence(as1), of_1(as1.annotation), of_2(as2.annotation))
-            if abs(ucount1 - ucount2) > maxcountdiff:
+                countdiffs_count += 1
+            elif udiff:
                 msgcount += printmsg(f"{code}: Very different numbers of understandability gaps, please reconsider:",
                                      numbered_sentence(as1), of_1(as1.annotation), of_2(as2.annotation))
+                countdiffs_count += 1
+        if countdiffs_count > 0:
+            continue
         printextra(numbered_sentence(as1), of_1_ok(as1.annotation), of_2_ok(as2.annotation))
     return msgcount
