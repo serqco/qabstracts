@@ -356,7 +356,7 @@ What we do _not_ want to assess is:
   about the article?
 - Is the understanding I have achieved actually correct?
 
-**Syntax:** `ì`and `u` are provided in the IU suffix of certain codes, see Section 2.
+**Syntax:** `i`and `u` are provided in the IU suffix of certain codes, see Section 2.
 There are four cases, explained by example:
 - `:i4u3`: the sentence has 4 informativess gaps and 3 understandability gaps;
 - `:i2`: 2 informativess gaps and 0 understandability gaps;
