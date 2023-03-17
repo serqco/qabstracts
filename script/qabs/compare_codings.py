@@ -15,11 +15,13 @@ IGNORE = annot.Codebook.IGNORECODE
 def configure_argparser(subparser):
     subparser.add_argument('workdir',
                            help="Directory where sample-who-what.txt and abstracts.?/* live")
-    subparser.add_argument('--maxcountdiff', type=int, default=2,
+    subparser.add_argument('--maxcountdiff', type=int, default=2, metavar="N",
                            help="how much the smaller IU count may be smaller without a message")
+    subparser.add_argument('--onlyfor', type=str, metavar="codername",
+                           help="Only messages for this coder will be displayed.")
 
 
-def compare_codings(maxcountdiff: int, workdir: str):
+def compare_codings(maxcountdiff: int, onlyfor: str, workdir: str):
     msgcount = 0
     what = qabs.metadata.WhoWhat(workdir)
     annots = annot.Annotations()
@@ -27,6 +29,8 @@ def compare_codings(maxcountdiff: int, workdir: str):
     print("=== check pairs of files (consult with your fellow coder except for obvious mistakes) ===")
     print("=========================================================================================")
     for coder in sorted(what.coders):
+        if onlyfor and onlyfor != coder:
+            continue  # suppress this block of messages
         print(f"\n\n#################### {coder}'s: ####################\n")
         for file1, coder1, file2, coder2 in what.pairs:
             if coder in (coder1, coder2):
@@ -47,41 +51,66 @@ def compare_files(file1: str, name1: str, file2: str, name2: str,
                             block, maxcountdiff, annots)
 
 
-def compare_codings2(file1: str, name1: str, sa_pairs1: tg.Sequence[tg.Tuple[str, str]],
-                     file2: str, name2: str, sa_pairs2: tg.Sequence[tg.Tuple[str, str]],
+def compare_codings2(file1: str, name1: str, annotated_sentences1: tg.Sequence[annot.AnnotatedSentence],
+                     file2: str, name2: str, annotated_sentences2: tg.Sequence[annot.AnnotatedSentence],
                      block: str, maxcountdiff: int, annots: annot.Annotations):
     msgcount = 0
+    lastmsg = ""  # message type in last header
+    extra_line_done = True  # whether one more sentence after previous problem has been shown already
+
     def printmsg(msg: str, *items: tg.Sequence[str]):
-        print("\n#####", msg)
-        print(of_1(file1))
-        print(of_2(file2))
+        """Show sentence with a problem. Suppress header if same as previous."""
+        nonlocal lastmsg, extra_line_done
+        if msg != lastmsg:
+            print("\n#####", msg)
+            print(f"{file1}  ({name1}, Block {block})")
+            print(f"{file2}  ({name2}, Block {block})")
+            lastmsg = msg
         for item in items:
             print(item)
+        extra_line_done = False
         return 1
-    def of_1(msg: str) -> str:
-        return f"{msg}  ({name1}, Block {block})"
-    def of_2(msg: str) -> str:
-        return f"{msg}  ({name2}, Block {block})"
 
-    for pair1, pair2 in zip(sa_pairs1, sa_pairs2):
-        sentence1, annotation1 = pair1
-        sentence2, annotation2 = pair2
+    def printextra(*items: tg.Sequence[str]):
+        nonlocal lastmsg, extra_line_done
+        if extra_line_done:
+            return  # do printextra only once between any two problems
+        for item in items:
+            print(item)
+        extra_line_done = True
+
+    def numbered_sentence(ann_sent: annot.AnnotatedSentence) -> str:
+        return f"[{ann_sent.sentence_idx}] {ann_sent.sentence}"
+
+    def of_1(msg: str) -> str:
+        return f"{msg}  ({name1})"
+
+    def of_2(msg: str) -> str:
+        return f"{msg}  ({name2})"
+
+    def of_1_ok(msg: str) -> str:
+        return f"{msg}  -OK- ({name1})"
+
+    def of_2_ok(msg: str) -> str:
+        return f"{msg}  -OK- ({name2})"
+
+    for as1, as2 in zip(annotated_sentences1, annotated_sentences2):
         # ----- check for non-parallel codings:
-        if sentence1 != sentence2:
+        if as1.sentence != as2.sentence:
             msgcount += printmsg("Annotations should be at parallel points in the files, but are at different points here:",
-                                 of_1(f"\"{sentence1}\""), of_2(f"\"{sentence2}\""))
+                                 of_1(f"\"{as1.sentence}\""), of_2(f"\"{as2.sentence}\""))
             break
         # ----- check for incomplete annotation:
-        if annots.is_empty_annotation(annotation1) or annots.is_empty_annotation(annotation2):
+        if annots.is_empty_annotation(as1.annotation) or annots.is_empty_annotation(as2.annotation):
             msgcount += printmsg("Incomplete annotation found, skipping rest of this file pair:",
-                                 sentence1, of_1(annotation1), of_2(annotation2))
+                                 numbered_sentence(as1), of_1(as1.annotation), of_2(as2.annotation))
             break
         # ----- check for double IGNORE:
-        set1 = annots.codings_of(annotation1, strip_suffixes=True)
-        set2 = annots.codings_of(annotation2, strip_suffixes=True)
+        set1 = annots.codings_of(as1.annotation, strip_suffixes=True)
+        set2 = annots.codings_of(as2.annotation, strip_suffixes=True)
         if IGNORE in set1 and IGNORE in set2:
             msgcount += printmsg(f"Code '{IGNORE}' should only appear in one coding, never in both as it does here:",
-                                 sentence1, of_1(annotation1), of_2(annotation2))
+                                 numbered_sentence(as1), of_1(as1.annotation), of_2(as2.annotation))
             continue
         # ----- check for IGNORE:
         if IGNORE in (set1 | set2):
@@ -89,15 +118,16 @@ def compare_codings2(file1: str, name1: str, sa_pairs1: tg.Sequence[tg.Tuple[str
         # ----- check for code discrepancies:
         if set1 != set2:  # code sets are different
             msgcount += printmsg(f"The sets of codes applied are different, please check:",
-                                 sentence1, of_1(annotation1), of_2(annotation2))
+                                 numbered_sentence(as1), of_1(as1.annotation), of_2(as2.annotation))
             continue
         # ----- check for count discrepancies:
-        for code, counts in annots.codes_with_suffixes(annotation1, annotation2).items():
+        for code, counts in annots.codes_with_suffixes(as1.annotation, as2.annotation).items():
             icount1, ucount1, icount2, ucount2 = counts
             if abs(icount1 - icount2) > maxcountdiff:
                 msgcount += printmsg(f"{code}: Very different numbers of informativeness gaps, please reconsider:",
-                                     sentence1, annotation1, annotation2)
+                                     numbered_sentence(as1), of_1(as1.annotation), of_2(as2.annotation))
             if abs(ucount1 - ucount2) > maxcountdiff:
                 msgcount += printmsg(f"{code}: Very different numbers of understandability gaps, please reconsider:",
-                                     sentence1, annotation1, annotation2)
+                                     numbered_sentence(as1), of_1(as1.annotation), of_2(as2.annotation))
+        printextra(numbered_sentence(as1), of_1_ok(as1.annotation), of_2_ok(as2.annotation))
     return msgcount

@@ -10,11 +10,13 @@ Terminology for annotations:
 - suffix:      i1  (or i1u1 or u1)
 - suffixish:   CSuffix content not yet checked for structure
 """
+import dataclasses
 import re
 import typing as tg
 
 OStr = tg.Optional[str]
 AnnotationishMatches = tg.Tuple[OStr, OStr, OStr, OStr]
+IUIUcount = tg.Tuple[int, int, int, int]
 
 
 class Codebook:
@@ -54,6 +56,13 @@ class Codebook:
         return codes
 
 
+@dataclasses.dataclass
+class AnnotatedSentence:
+    sentence_idx: int
+    sentence: str
+    annotation: str
+
+
 class Annotations:
     ALLOWED_IU_SUFFIX_REGEXP = r"i\d+|u\d+|i\d+u\d+"
     ALLOWED_U_SUFFIX_REGEXP = r"u\d+"
@@ -74,8 +83,14 @@ class Annotations:
     def find_all_line_and_annotation_pairs(self, content: str) -> tg.Sequence[tg.Tuple[str, str]]:
         return re.findall(self.LINE_AND_ANNOTATION_PAIR_REGEXP, content)
 
-    def find_all_sentence_and_annotation_pairs(self, content: str) -> tg.Sequence[tg.Tuple[str, str]]:
-        return re.findall(self.SENTENCE_AND_ANNOTATION_PAIR_REGEXP, content, flags=re.DOTALL)
+    def find_all_sentence_and_annotation_pairs(self, content: str) -> tg.Sequence[AnnotatedSentence]:
+        result = []
+        i = 1
+        for sentence, annotation in re.findall(self.SENTENCE_AND_ANNOTATION_PAIR_REGEXP, 
+                                               content, flags=re.DOTALL):
+            result.append(AnnotatedSentence(i, sentence, annotation))
+            i += 1
+        return result
 
     def bare_codename(self, coding: str) -> str:
         """Strips off leading dashes and trailing IU suffixes where present"""
@@ -93,7 +108,7 @@ class Annotations:
             return ("{{}}" f" annotation must be alone on a line: '{other}'\n", None)
         return (None, valid)
 
-    def codes_with_suffixes(self, annotation1: str, annotation2: str) -> tg.Mapping[str, tg.Tuple[int, int, int, int]]:
+    def codes_with_suffixes(self, annotation1: str, annotation2: str) -> tg.Mapping[str, IUIUcount]:
         """
         Map codes to tuples of (icount1, ucount1, icount2, ucount2) for 
         those codes in the annotations that can have IU suffixes or U suffixes.

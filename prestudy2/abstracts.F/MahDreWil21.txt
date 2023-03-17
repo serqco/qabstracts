@@ -2,47 +2,47 @@ Software development with feature toggles: practices used by practitioners.
 
 Background Using feature toggles is a technique that allows developers to either turn a
 feature on or off with a variable in a conditional statement.
-{{}}
+{{h-background,background}}
 Feature toggles are increasingly
 used by software companies to facilitate continuous integration and continuous delivery.
-{{}}
+{{background}}
 However, using feature toggles inappropriately may cause problems which can have a severe
 impact, such as code complexity, dead code, and system failure.
-{{}}
+{{background}}
 For example, the erroneous
 repurposing of an old feature toggle caused Knight Capital Group, an American global
 financial services firm, to go bankrupt due to the implications of the resultant incorrect
 system behavior.
-{{}}
+{{background}}
 Aim The goal of this research project is to aid software practitioners in the use of practices
 to support software development with feature toggles through an empirical study of feature
 toggle practice usage by practitioners.
-{{}}
+{{h-objective,objective}}
 Method We conducted a qualitative analysis of 99 artifacts from the grey literature and 10
 peer-reviewed papers about feature toggles.
-{{}}
+{{h-method,method}}
 We conducted a survey of practitioners from 38
 companies.
-{{}}
+{{method:i1}}
 Results We identified 17 practices in 4 categories:
-{{}}
+{{h-result,result}}
 Management practices, Initialization
 practices, Implementation practices, and Clean-up practices.
-{{}}
+{{result}}
 We observed that all of the
 survey respondents use a dedicated tool to create and manage feature toggles in their code.
-{{}}
+{{result}}
 Documenting feature toggle’s metadata, setting up the default value for feature toggles, and
 logging the changes made on feature toggles are also frequently-observed practices.
-{{}}
+{{result:i3}}
 Conclusions The feature toggle development practices discovered and enumerated in this
 work can help practitioners more effectively use feature toggles.
-{{}}
+{{h-conclusion,conclusion}}
 This work can enable future
 mining of code repositories to automatically identify feature toggle practices.
-{{}}
+{{conclusion}}
 Communicated by:
-{{}}
+{{cruft}}
 Bram Adams
  Rezvan Mahdavi-Hezaveh
 
@@ -54,6 +54,6 @@ laurie williams@ncsu.edu
 1
 
 Department of Computer Science, North Carolina State University, Raleigh, NC, USA
-{{}}
+{{cruft}}
 ---
 
