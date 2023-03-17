@@ -10,12 +10,12 @@ MurJasSad21   Lloyd        Lutz          Gunnar        Martin        Julian     
 PraShaSha21   Lloyd        Lutz          Gunnar        Martin        Julian        Franz
 MahDreWil21   Lloyd        Lutz          Gunnar        Martin        Julian        Franz
 #----- Block 3
-CheCheZha21   Lutz         Lloyd         Gunnar        Martin        -Franz
-JohZimBir21   Lutz         Lloyd         Gunnar        Martin  	     -Franz
-GhaWalNek21   Lutz         Lloyd         Gunnar        Martin        -Franz
-ScaBavVen21   Lutz         Lloyd         Gunnar        Martin        -Franz
-MacBeyMcI21   Lutz         Lloyd         Gunnar        Martin        -Franz
-RagCodPio21   Lutz         Lloyd         Gunnar        Martin        -Franz
+CheCheZha21   Lutz         Lloyd         Gunnar        Martin        Franz
+JohZimBir21   Lutz         Lloyd         Gunnar        Martin        Franz
+GhaWalNek21   Lutz         Lloyd         Gunnar        Martin        Franz
+ScaBavVen21   Lutz         Lloyd         Gunnar        Martin        Franz
+MacBeyMcI21   Lutz         Lloyd         Gunnar        Martin        Franz
+RagCodPio21   Lutz         Lloyd         Gunnar        Martin        Franz
 #----- Block 4
 PimMurBra21   Lutz         Lloyd         Gunnar        Martin  
 PanHuaCha21   Lutz         Lloyd         Gunnar        Martin  
