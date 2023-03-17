@@ -32,10 +32,10 @@ Finally, we perform graph analysis on morphological relations.
 {{design}}
 We evaluate the coverage and accuracy of
 our constructed thesaurus against community-cumulated lists of software-specific terms, abbreviations and synonyms.
-{{method,a-result:i2}}
+{{method}}
 We also manually
 examine the correctness of the identified abbreviations and synonyms in our thesaurus.
-{{method,a-result:i1}}
+{{method}}
 We demonstrate the usefulness of our constructed
 thesaurus by developing three applications and also verify the generality of our approach in constructing thesauruses from data sources in
 other domains.
