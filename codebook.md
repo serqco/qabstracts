@@ -131,9 +131,11 @@ The above list sketches the default structure of a structured abstract.
   related work, what is known.
 - code `gap`:  
   A statement of what is not yet known or 
-  what is so far difficult to achieve in research or in practice.
+  what is so far difficult to achieve in research or in practice
+  which directly leads over to the topic of the present work (the `objective`).
 - code `need`:  
-  A postulate about what research needs to be performed.
+  A postulate about what research needs to be performed
+  which directly leads over to the topic of the present work (the `objective`).
 
 
 ### 2.4 Core codes for _Study Description_
