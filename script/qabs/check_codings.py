@@ -4,6 +4,8 @@ import typing as tg
 import qabs.metadata
 import qabs.annotations as annot
 
+import qabs.color as color
+
 usage = """Checks annotated (and unannotated) abstracts files for errors.
   Knows about annotation syntax. 
   Reads all abstracts files and checks for syntax errors and undefined codes.
@@ -32,7 +34,7 @@ def check_codings(workdir: str):
 def report_errors(file: str, coder: str, block: str, annots: annot.Annotations) -> int:
     def report():
         if errors:
-            print(f"---- {file}  ({coder}, Block {block}):\n" + '\n'.join(errors))
+            print(f"---- {color.BLUE}{file}{color.RESET}  ({coder}, Block {block}):\n" + '\n'.join(errors))
     with open(file, 'rt', encoding='utf8') as f:
         content = f.read()
     #----- check annotation-ish stuff:
@@ -40,7 +42,7 @@ def report_errors(file: str, coder: str, block: str, annots: annot.Annotations) 
     for matches in annots.find_all_annotationish(content):
         msg, annotation = annots.check_annotationish(matches)
         if msg and not annotation:
-            errors.append(msg)
+            errors.append(f"{color.RED}{msg}{color.RESET}")
         elif annotation and not msg:
             errors.extend(report_errors_within_braces(annotation, annots))
         else:
@@ -59,5 +61,5 @@ def report_errors_within_braces(annotation: str, annots: annot.Annotations) -> t
     for code, iu_suffix in annots.split_into_codings(annotation):
         result = annots.wrong_coding_msg(code, iu_suffix)
         if result:
-            errors.append(result)
+            errors.append(f"{color.RED}{result}{color.RESET}")
     return errors
