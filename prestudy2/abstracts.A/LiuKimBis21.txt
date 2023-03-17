@@ -5,10 +5,10 @@ detect security vulnerabilities or bad programming practices.
 {{background}}
 However, the adoption of these tools is hindered by their high false positive
 rates.
-{{gap}}
+{{background}}
 If the false positive rate is too high, developers may get acclimated to violation reports from these tools, causing concrete and severe
 bugs being overlooked.
-{{gap}}
+{{background}}
 Fortunately, some violations are actually addressed and resolved by developers.
 {{background}}
 We claim that those violations that
@@ -18,17 +18,17 @@ However, there
 is lack of a systematic way to investigate the distributions on existing violations and fixed ones in the wild, that can provide insights into
 prioritizing violations for developers, and an effective way to mine code and fix patterns which can help developers easily understand the
 reasons of leading violations and how to fix them.
-{{background}}
+{{background,-ignorediff}}
 In this paper, we first collect and track a large number of fixed and unfixed violations across
 revisions of software.
 {{method:i1}}
 The empirical analyses reveal that there are discrepancies in the distributions of violations that are detected and those
 that are fixed, in terms of occurrences, spread and categories, which can provide insights into prioritizing violations.
-{{result:u1}}
+{{result:u1,-ignorediff}}
 To automatically identify
 patterns in violations and their fixes, we propose an approach that utilizes convolutional neural networks to learn features and clustering to
 regroup similar instances.
-{{design:u1}}
+{{design:u1,-ignorediff}}
 We then evaluate the usefulness of the identified fix patterns by applying them to unfixed violations.
 {{method}}
 The results
