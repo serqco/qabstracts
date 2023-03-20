@@ -9,7 +9,7 @@ removing obstacles.
 {{background}}
 However, empirical studies focusing on the role of the scrum master
 in practice are scarce.
-{{background}}
+{{gap}}
 To address this gap, a Grounded Theory study with a mixed
 methods approach was carried out which included semi-structured interviews with 39
 software practitioners and a questionnaire with 47 respondents.
