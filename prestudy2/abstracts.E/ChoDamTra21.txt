@@ -1,52 +1,27 @@
 Automatically recommending components for issue reports using deep learning.
 
 Today’s software development is typically driven by incremental changes made to software to implement a new functionality, fix a bug, or improve its performance and security.
-{{}}
+{{background}}
 Each change request is often described as an issue.
-{{}}
+{{background}}
 Recent studies suggest that a set of
 components (e.g., software modules) relevant to the resolution of an issue is one of the
 most important information provided with the issue that software engineers often rely on.
-{{}}
+{{background}}
 However, assigning an issue to the correct component(s) is challenging, especially for
 large-scale projects which have up to hundreds of components.
-{{}}
+{{gap}}
 In this paper, we propose
 a predictive model which learns from historical issue reports and recommends the most
 relevant components for new issues.
-{{}}
+{{objective}}
 Our model uses Long Short-Term Memory, a deep
 learning technique, to automatically learn semantic features representing an issue report,
-
-Communicated by:
-{{}}
-Bram Adams
- Morakot Choetkiertikul
-
-morakot.cho@mahidol.ac.th
-Hoa Khanh Dam
-hoa@uow.edu.au
-Truyen Tran
-truyen.tran@deakin.edu.au
-Trang Pham
-phtra@deakin.edu.au
-Chaiyong Ragkhitwetsagul
-chaiyong.rag@mahidol.ac.th
-Aditya Ghose
-aditya@uow.edu.au
-1
-
-Software Engineering Research Unit (SERU), Faculty of Information and Communication
-Technology (ICT), Mahidol University, Salaya, Thailand
-
-2
-
-School of Computing and Information Technology, Faculty of Engineering and Information
-Sciences, University of Wollongong, Wollongong, Australia
-
-3
-
-School of Information Technology, Deakin University, Geelong, Australia
-{{}}
+and combines them with the traditional textual similarity features.
+{{design:i1}}
+An extensive evaluation on 142,025 issues from 11 large projects shows that our approach outperforms one
+common baseline, two state-of-the-art techniques, and six alternative techniques with an
+improvement of 16.70%–66.31% on average across all projects in predictive performance.
+{{method,result}}
 ---
 

@@ -9,17 +9,17 @@ its maintenance can, at best, lead to expensive build breakage, or at worst, int
 Recent studies have investigated the (co-)evolution of build configurations and reasons for
 build breakage; however, the prior analysis focused on a coarse-grained outcome (i.e., either
 build changing or not).
-{{gap}}
+{{background,gap}}
 In this paper, we present BUILDDIFF, an approach to extract detailed
 build changes from MAVEN build files and classify them into 143 change types.
-{{design}}
+{{objective,result}}
 In a manual evaluation of 400 build-changing commits, we show that BUILDDIFF can extract and
 classify build changes with average precision, recall, and f1-scores of 0.97, 0.98, and 0.97,
 respectively.
 {{method,result}}
 We then present two studies using the build changes extracted from 144 open
 source Java projects to study the frequency and time of build changes.
-{{objective,method}}
+{{method}}
 The results show
 that the top-10 most frequent change types account for 51% of the build changes.
 {{result}}
@@ -30,7 +30,7 @@ frequently.
 We also observe frequently co-occurring changes, such as changes to the source
 code management definitions, and corresponding changes to the dependency management
 system and the dependency declaration.
-{{result}}
+{{result:i1u1}}
 Furthermore, our results show that build changes
 frequently occur around release days.
 {{result:i1}}

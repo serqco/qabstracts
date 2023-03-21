@@ -10,7 +10,7 @@ However, consistent vocabulary for a concept is essential to make an effective u
 {{background}}
 Unfortunately, the same concepts are often intentionally or accidentally mentioned in many different morphological forms (such as
 abbreviations, synonyms and misspellings) in informal discussions.
-{{background}}GhaWalNek21
+{{background}}
 Existing techniques to deal with such morphological forms are either
 designed for general English or mainly resort to domain-specific lexical rules.
 {{background}}

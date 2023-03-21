@@ -2,26 +2,26 @@ A comprehensive study of code-removal patches in automated program repair.
 
 Automatic Program Repair (APR) techniques can promisingly help reduce the cost of
 debugging.
-{{}}
+{{background}}
 Many relevant APR techniques follow the generate-and-validate approach,
 that is, the faulty program is iteratively modified with different change operators and then
 validated with a test suite until a plausible patch is generated.
-{{}}
+{{background}}
 In particular, Kali is a
 generate-and-validate technique developed to investigate the possibility of generating
 plausible patches by only removing code.
-{{}}
+{{background}}
 Former studies show that indeed Kali successfully addressed several faults.
-{{}}
+{{background}}
 This paper addresses the single and particular case of coderemoval patches in automated program repair.
-{{}}
+{{objective:u1}}
 We investigate the reasons and the
 scenarios that make their creation possible, and the relationship with patches implemented
 by developers.
-{{}}
+{{a-method}}
 Our study reveals that code-removal patches are often insufficient to fix
 bugs, and proposes a comprehensive taxonomy of code-removal patches that provides
 evidence of the problems that may affect test suites, opening new opportunities for
 researchers in the field of automatic program repair.
-{{}}
+{{result:i1,fposs}}
 ---

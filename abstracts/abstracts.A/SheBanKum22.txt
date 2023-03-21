@@ -2,39 +2,39 @@ SoftNER: Mining knowledge graphs from cloud incidents.
 
 The move from boxed products to services and the widespread adoption of cloud computing
 has had a huge impact on the software development life cycle and DevOps processes.
-{{}}
+{{background}}
 Particularly, incident management has become critical for developing and operating large-scale
 services.
-{{}}
+{{background}}
 Prior work on incident management has heavily focused on the challenges with
 incident triaging and de-duplication.
-{{}}
+{{background}}
 In this work, we address the fundamental problem of
 structured knowledge extraction from service incidents.
-{{}}
+{{objective}}
 We have built SoftNER, a framework for mining Knowledge Graphs from incident reports.
-{{}}
+{{design}}
 First, we build a novel multi-task
 learning based BiLSTM-CRF model which leverages not just the semantic context but also
 the data-types for extracting factual information in the form of named entities.
-{{}}
+{{design}}
 Next, we
 present an approach to mine relations between the named entities for automatically constructing knowledge graphs.
-{{}}
+{{design}}
 We have deployed SoftNER at Microsoft, a major cloud service
 provider and have evaluated it on more than 2 months of cloud incidents.
-{{}}
+{{design}}
 We show that
 SoftNER’s unsupervised pipeline learns the software entity types from unstructured incident data with high precision of 0.96 (at rank 50) and 0.77 (at rank 100).
-{{}}
+{{result:u1}}
 We also evaluate
 and show that SoftNER’s unsupervised pipeline accurately labels data with a precision of
 0.94.
-{{}}
+{{result}}
 Further, our multi-task learning based deep learning model also outperforms the stateof-the-art NER models with an average F1 of 0.96.
-{{}}
+{{result:i1}}
 Lastly, using the knowledge extracted
 by SoftNER, we are able to build accurate models for tasks such as incident triaging and
 recommending entities based on their relevance to incident titles.
-{{}}
+{{result:i2}}
 ---

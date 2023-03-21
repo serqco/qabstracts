@@ -1,44 +1,46 @@
 Guidelines for the development of a critical software under emergency.
 
 Context:
-{{}}
+{{h-background}}
 During the first wave of the COVID-19 pandemic, an international and heterogeneous team of
 scientists collaborated on a social project to produce a mechanical ventilator for intensive care units (MVM).
-{{}}
+{{background}}
 MVM has been conceived to be produced and used also in poor countries:
-{{}}
+{{background}}
 it is open-source, no patents, cheap,
 and can be produced with materials that are easy to retrieve.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 The objective of this work is to extract from the experience of the MVM development and software
 certification a set of lessons learned and then guidelines that can help developers to produce safety–critical
 devices in similar emergency situations.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 We conducted a case study.
-{{}}
+{{design}}
 We had full access to source code, comments on code, change
 requests, test reports, every deliverable (60 in total) produced for the software certification (safety concepts,
 requirements specifications, architecture and design, testing activities, etc.), notes, whiteboard sketches, emails,
 etc.
-{{}}
+{{design}}
 We validated both lessons learned and guidelines with experts.
-{{}}
+{{design}}
 Findings:
-{{}}
+{{h-result}}
 We contribute a set of validated lessons learned and a set of validated guidelines, together with a
 discussion of benefits and risks of each guideline.
-{{}}
+{{summary,a-result}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 In this work we share our experience in certifying software for healthcare devices produced
 under emergency, i.e. with strict and pressing time constraints and with the difficulty of establishing a
 heterogeneous development team made of volunteers.
-{{}}
+{{design}}
 We believe that the guidelines will help engineers during
 the development of critical software under emergency.
-{{}}
+{{conclusion}}
 ---
+According to 'objective', a design article, but the design approach is apparently a
+participant-observation case study, for which our codebook is odd.

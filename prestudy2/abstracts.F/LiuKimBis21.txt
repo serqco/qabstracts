@@ -5,10 +5,10 @@ detect security vulnerabilities or bad programming practices.
 {{background}}
 However, the adoption of these tools is hindered by their high false positive
 rates.
-{{gap}}
+{{background}}
 If the false positive rate is too high, developers may get acclimated to violation reports from these tools, causing concrete and severe
 bugs being overlooked.
-{{gap}}
+{{background}}
 Fortunately, some violations are actually addressed and resolved by developers.
 {{background}}
 We claim that those violations that

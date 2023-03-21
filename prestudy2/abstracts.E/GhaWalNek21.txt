@@ -18,7 +18,7 @@ Moreover, most of the existing solutions address a single phase of the modeling 
 as model deployment.
 {{gap}}
 In this paper, we present a software system to facilitate and accelerate the deep learning lifecycle, named ModelKB.
-{{objective,a-design}}
+{{objective}}
 ModelKB can automatically manage the
 modeling lifecycle end-to-end, including (1) monitoring and tracking experiments; (2) visualizing, searching for, and comparing models and experiments; (3) deploying models locally
 and on the cloud; and (4) sharing and publishing trained models.
