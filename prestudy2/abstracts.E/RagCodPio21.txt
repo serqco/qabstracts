@@ -13,7 +13,7 @@ by reanalyzing the data via a theory’s lens.
 {{objective,method:i1}}
 Using the lens of Information Foraging Theory (IFT), we present new insights not revealed by
 the prior empirical work.
-{{method,result}}
+{{method}}
 First, while looking for specific information, participants’ foraging behaviors were consistent with other foraging
 situations in SE; therefore, prior research on IFT-based SE tool design can be leveraged for VCS.
 {{result,conclusion}}
