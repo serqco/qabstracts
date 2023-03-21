@@ -17,36 +17,10 @@ relevant components for new issues.
 {{}}
 Our model uses Long Short-Term Memory, a deep
 learning technique, to automatically learn semantic features representing an issue report,
-
-Communicated by:
+and combines them with the traditional textual similarity features. 
 {{}}
-Bram Adams
- Morakot Choetkiertikul
-
-morakot.cho@mahidol.ac.th
-Hoa Khanh Dam
-hoa@uow.edu.au
-Truyen Tran
-truyen.tran@deakin.edu.au
-Trang Pham
-phtra@deakin.edu.au
-Chaiyong Ragkhitwetsagul
-chaiyong.rag@mahidol.ac.th
-Aditya Ghose
-aditya@uow.edu.au
-1
-
-Software Engineering Research Unit (SERU), Faculty of Information and Communication
-Technology (ICT), Mahidol University, Salaya, Thailand
-
-2
-
-School of Computing and Information Technology, Faculty of Engineering and Information
-Sciences, University of Wollongong, Wollongong, Australia
-
-3
-
-School of Information Technology, Deakin University, Geelong, Australia
+An extensive evaluation on 142,025 issues from 11 large projects shows that our approach outperforms one
+common baseline, two state-of-the-art techniques, and six alternative techniques with an
+improvement of 16.70%–66.31% on average across all projects in predictive performance.
 {{}}
 ---
-
