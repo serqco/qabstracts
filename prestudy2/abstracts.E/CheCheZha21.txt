@@ -13,10 +13,10 @@ abbreviations, synonyms and misspellings) in informal discussions.
 {{background}}
 Existing techniques to deal with such morphological forms are either
 designed for general English or mainly resort to domain-specific lexical rules.
-{{gap}}
+{{background}}
 A thesaurus, which contains software-specific terms and
 commonly-used morphological forms, is desirable to perform normalization for software engineering text.
-{{need}}
+{{background}}
 However, constructing this
 thesaurus in a manual way is a challenge task.
 {{gap}}
