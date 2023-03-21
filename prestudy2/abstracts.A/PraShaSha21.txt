@@ -9,7 +9,7 @@ has resulted in several high-profile incidents in recent years.
 As usage of open-source
 libraries grows, understanding of these dependency vulnerabilities becomes increasingly
 important.
-{{background}}
+{{need}}
 Objective In this work, we analyze vulnerabilities in open-source libraries used by 450
 software projects written in Java, Python, and Ruby.
 {{h-objective, method}}
@@ -19,12 +19,12 @@ prevalence and project as well as commit attributes.
 Method Our data is obtained by scanning versions of the sample projects after each commit made between November 1, 2017 and October 31, 2018 using an industrial software
 composition analysis tool, which provides information such as library names and versions,
 dependency types (direct or transitive), and known vulnerabilities.
-{{h-method, method}}
+{{h-method,method}}
 Results Among other findings, we found that project activity level, popularity, and developer experience do not translate into better or worse handling of dependency vulnerabilities.
-{{h-result, result}}
+{{h-result,result}}
 We also found “Denial of Service” and “Information Disclosure” types of vulnerabilities
 being common across the languages studied.
-{{result}}
+{{result:i1}}
 Further, we found that most dependency vulnerabilities persist throughout the observation period (mean of 78.4%, 97.7%, and 66.4%
 for publicly-known vulnerabilities in our Java, Python, and Ruby datasets respectively), and
 the resolved ones take 3-5 months to fix.
@@ -33,6 +33,6 @@ Conclusion Our results highlight the importance of managing the number of depend
 and performing timely updates, and indicate some areas that can be prioritized to improve
 security in wide range of projects, such as prevention and mitigation of Denial-of-Service
 attacks.
-{{h-conclusion, conclusion}}
+{{h-conclusion,conclusion}}
 ---
-
+I don't see fposs in the final sentence. I see a statement about industry applications, not research possibilities.
