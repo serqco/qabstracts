@@ -4,7 +4,7 @@ Organizations have a variety of options to help their software developers become
 modifying office layouts, to investing in better tools, to cleaning up the source code.
 {{background}}
 But which options will have the biggest impact?
-{{gap}}
+{{objective}}
 Drawing from the literature in software engineering and industrial/organizational psychology to identify factors that correlate with
 productivity, we designed a survey that asked 622 developers across 3 companies about these productivity factors and about self-rated
 productivity.
