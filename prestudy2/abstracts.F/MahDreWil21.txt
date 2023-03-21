@@ -40,7 +40,7 @@ work can help practitioners more effectively use feature toggles.
 {{h-conclusion,conclusion}}
 This work can enable future
 mining of code repositories to automatically identify feature toggle practices.
-{{conclusion}}
+{{fposs}}
 Communicated by:
 {{cruft}}
 Bram Adams
