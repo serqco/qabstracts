@@ -19,7 +19,7 @@ commonly-used morphological forms, is desirable to perform normalization for sof
 {{background}}
 However, constructing this
 thesaurus in a manual way is a challenge task.
-{{background}}
+{{gap}}
 In this paper, we propose an automatic unsupervised approach to build such a thesaurus.
 {{objective:u1}}
 In particular, we first identify software-specific terms by utilizing a software-specific corpus (e.g., Stack Overflow) and a general corpus

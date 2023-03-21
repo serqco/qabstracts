@@ -10,7 +10,7 @@ might be useful to guide developers in writing better code, and could also help 
 components.
 {{background}}
 Unfortunately, there are no metrics designed to assess the understandability of code snippets.
-{{background}}
+{{gap}}
 In this work, we perform
 an extensive evaluation of 121 existing as well as new code-related, documentation-related, and developer-related metrics.
 {{objective}}
@@ -19,14 +19,14 @@ correlate each metric with understandability and (ii) build models combining met
 {{objective:u1}}
 To do this, we use 444
 human evaluations from 63 developers and we obtained a bold negative result:
-{{method, result}}
+{{method}}
 none of the 121 experimented metrics is able to capture
 code understandability, not even the ones assumed to assess quality attributes apparently related, such as code readability and
 complexity.
 {{result:u2}}
 While we observed some improvements while combining metrics in models, their effectiveness is still far from making them
 suitable for practical applications.
-{{result}}
+{{conclusion}}
 Finally, we conducted interviews with five professional developers to understand the factors that
 influence their ability to understand code snippets, aiming at identifying possible new metrics.
 {{method, objective}}
