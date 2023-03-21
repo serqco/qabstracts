@@ -12,7 +12,7 @@ self-documenting aspects and the ability to reproduce results have been touted a
 At the same time, there has been growing criticism that the way
 in which notebooks are being used leads to unexpected behavior, encourages poor coding
 practices, and makes it hard to reproduce its results.
-{{background}}
+{{gap}}
 To better understand good and bad
 practices used in the development of real notebooks, in prior work we studied 1.4 million
 notebooks from GitHub.
@@ -23,7 +23,7 @@ open challenges that require further research and development.
 {{background}}
 In this paper, we extended
 the analysis in four different ways to validate the hypothesis uncovered in our original study.
-{{objective?}}
+{{objective}}
 First, we separated a group of popular notebooks to check whether notebooks that get more
 attention have more quality and reproducibility capabilities.
 {{method}}
@@ -45,7 +45,7 @@ patterns we discovered, which provide additional insights into notebook reproduc
 Based on our findings and best practices we proposed, we designed Julynter, a Jupyter
 Lab extension that identifies potential issues in notebooks and suggests modifications that
 improve their reproducibility.
-{{design}}
+{{method}}
 We evaluate Julynter with a remote user experiment with the
 goal of assessing Julynter recommendations and usability.
 {{method}}

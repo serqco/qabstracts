@@ -10,10 +10,10 @@ circumvents limitations of programming languages and software architectures.
 {{background}}
 Unfortunately, little is known about the principles
 governing scattering in large and long-living software systems.
-{{background}}
+{{objective}}
 We present a longitudinal study of feature scattering in the Linux kernel,
 complemented by a survey with 74, and interviews with nine Linux kernel developers.
-{{method}}
+{{method:i1}}
 We analyzed almost eight years of the kernel’s
 history, focusing on its largest subsystem:
 {{method:i1}}
