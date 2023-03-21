@@ -144,14 +144,14 @@ WuYanMa22     Lutz
 CanSorFor22   Lutz
 GuoCheXin22   Lutz
 #----- Block 17
-WanLutQia22   -Lutz
-MeyAlmKel22   -Lutz
-DabLetPer22   -Lutz
-PreRob22      -Lutz
-AtaMasHem22   -Lutz
-UddGuéKho22   -Lutz
-SheBanKum22   -Lutz
-BomBonGal22   -Lutz
+WanLutQia22   Lutz
+MeyAlmKel22   Lutz
+DabLetPer22   Lutz
+PreRob22      Lutz
+AtaMasHem22   Lutz
+UddGuéKho22   Lutz
+SheBanKum22   Lutz
+BomBonGal22   Lutz
 #----- Block 18
 SahUraMah22   
 ArdBotCop22   
