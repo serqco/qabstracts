@@ -1,25 +1,25 @@
 # what       abstracts.A   abstracts.B   abstracts.C   abstracts.D   abstracts.E   abstracts.F
 #----- Block 1
-LiuKimBis21   Lutz         Lloyd         Gunnar        Martin        Julian        Franz
+LiuKimBis21   Lutz         Lloyd         -Gunnar       -Martin       Julian        Franz
 # MaiTreHat21 is a copyright change notice, not an abstract. Ignore.
-ShaHodAmo21   Lutz         Lloyd         Gunnar        Martin        Julian        Franz
+ShaHodAmo21   Lutz         Lloyd         -Gunnar       -Martin       Julian        Franz
 #----- Block 2
-ManHanHan21   Lloyd        Lutz          Gunnar        Martin        Julian        Franz
-HasIqbIsl21   Lloyd        Lutz          Gunnar        Martin        Julian        Franz
-MurJasSad21   Lloyd        Lutz          Gunnar        Martin        Julian        Franz
-PraShaSha21   Lloyd        Lutz          Gunnar        Martin        Julian        Franz
-MahDreWil21   Lloyd        Lutz          Gunnar        Martin        Julian        Franz
+ManHanHan21   Lloyd        Lutz          -Gunnar       -Martin       Julian        Franz
+HasIqbIsl21   Lloyd        Lutz          -Gunnar       -Martin       Julian        Franz
+MurJasSad21   Lloyd        Lutz          -Gunnar       -Martin       Julian        Franz
+PraShaSha21   Lloyd        Lutz          -Gunnar       -Martin       Julian        Franz
+MahDreWil21   Lloyd        Lutz          -Gunnar       -Martin       Julian        Franz
 #----- Block 3
-CheCheZha21   Lutz         Lloyd         Gunnar        Martin        Franz
-JohZimBir21   Lutz         Lloyd         Gunnar        Martin        Franz
-GhaWalNek21   Lutz         Lloyd         Gunnar        Martin        Franz
-ScaBavVen21   Lutz         Lloyd         Gunnar        Martin        Franz
-MacBeyMcI21   Lutz         Lloyd         Gunnar        Martin        Franz
-RagCodPio21   Lutz         Lloyd         Gunnar        Martin        Franz
+CheCheZha21   Lutz         Lloyd         -Gunnar       -Martin       Franz
+JohZimBir21   Lutz         Lloyd         -Gunnar       -Martin       Franz
+GhaWalNek21   Lutz         Lloyd         -Gunnar       -Martin       Franz
+ScaBavVen21   Lutz         Lloyd         -Gunnar       -Martin       Franz
+MacBeyMcI21   Lutz         Lloyd         -Gunnar       -Martin       Franz
+RagCodPio21   Lutz         Lloyd         -Gunnar       -Martin       Franz
 #----- Block 4
-PimMurBra21   Lutz         Lloyd         Gunnar        Martin        Franz
-PanHuaCha21   Lutz         Lloyd         Gunnar        Martin        Franz
-PasQueMuk21   Lutz         Lloyd         Gunnar        Martin        Franz
-ChoDamTra21   Lutz         Lloyd         Gunnar        Martin        Franz
-MunMonSun21   Lutz         Lloyd         Gunnar        Martin        Franz
-DamMouSim21   Lutz         Lloyd         Gunnar        Martin        Franz
+PimMurBra21   Lutz         Lloyd         -Gunnar       -Martin       Franz
+PanHuaCha21   Lutz         Lloyd         -Gunnar       -Martin       Franz
+PasQueMuk21   Lutz         Lloyd         -Gunnar       -Martin       Franz
+ChoDamTra21   Lutz         Lloyd         -Gunnar       -Martin       Franz
+MunMonSun21   Lutz         Lloyd         -Gunnar       -Martin       Franz
+DamMouSim21   Lutz         Lloyd         -Gunnar       -Martin       Franz
