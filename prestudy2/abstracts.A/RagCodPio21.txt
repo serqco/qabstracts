@@ -4,7 +4,7 @@ Version Control Systems (VCS) are an important source of information for develop
 {{background}}
 This calls for a principled understanding
 of developers’ information seeking in VCS—both for improving existing tools and for understanding requirements for new tools.
-{{background}}
+{{background,-ignorediff}}
 Our prior
 work investigated empirically how and why developers seek information in VCS:
 {{background}}

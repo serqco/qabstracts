@@ -16,7 +16,7 @@ product lines is often infeasible due to the potentially exponential number of v
 {{gap}}
 In this paper, we first present a family-based behavioral model learning techniques,
 called F F SMDiff .
-{{a-design}}
+{{objective}}
 Subsequently, we report on our experience on learning family models by employing product sampling.
 {{a-result}}
 Using 105 products of six product lines expressed in

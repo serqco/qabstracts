@@ -16,10 +16,10 @@ the multilayer nature of software systems.
 {{gap}}
 That is, nodes in the network can have different types of relationships at the same time, and
 each type of relationship forms a specific layer.
-{{background}}
+{{gap}}
 Worse still, they mainly focus on identifying important classes, and little work has been
 done on quantifying package importance.
-{{background}}
+{{gap}}
 In this paper, we propose an ElementRank approach to provide a ranked list of classes (or
 packages) for maintainers to start the comprehension process.
 {{objective}}
@@ -53,6 +53,6 @@ ElementRank and that of the approaches in the related work, and the benefits of 
 other approaches in the related work.
 {{result,a-result}}
 Empirical results also show that ElementRank can be applied to large software systems.
-{{a-result}}
+{{a-result,-ignorediff}}
 ---
 
