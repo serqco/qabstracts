@@ -27,6 +27,6 @@ of accuracy and minority class F1 score.
 In our post-deployment survey, SRBD developers
 and managers indicated that they found our solution as useful and it provided them with
 important insights to help their decision makings.
-{{result}}
+{{method,result}}
 ---
 
