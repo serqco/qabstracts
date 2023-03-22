@@ -7,7 +7,7 @@ provide automatic repairs of integer overflows in C source code.
 {{objective}}
 Our technique, based on static symbolic execution, fuses detection,
 repair generation and validation.
-{{design,objective}}
+{{design,objective,-ignorediff}}
 This technique is implemented in a prototype named INTREPAIR.
 {{a-design}}
 We applied INTREPAIR to 2,052 C

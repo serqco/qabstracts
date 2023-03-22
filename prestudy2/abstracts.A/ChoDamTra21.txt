@@ -14,7 +14,7 @@ large-scale projects which have up to hundreds of components.
 In this paper, we propose
 a predictive model which learns from historical issue reports and recommends the most
 relevant components for new issues.
-{{objective,design}}
+{{objective,design,-ignorediff}}
 Our model uses Long Short-Term Memory, a deep
 learning technique, to automatically learn semantic features representing an issue report,
 and combines them with the traditional textual similarity features. 

@@ -25,7 +25,7 @@ packages) for maintainers to start the comprehension process.
 {{objective}}
 The top-ranked classes (or packages) can be seen as the starting points
 for the software comprehension process at the class (or package) level.
-{{background}}
+{{design}}
 First, we introduce two kinds of multilayer software networks to
 describe the topological structure of software at the class level and package level, respectively.
 {{design}}
@@ -51,7 +51,7 @@ using a set of twelve open source software systems.
 Through a set of experiments, we show the rank correlation between the results of
 ElementRank and that of the approaches in the related work, and the benefits of ElementRank are also illustrated in comparison with
 other approaches in the related work.
-{{result,a-result}}
+{{result,a-result,-ignorediff}}
 Empirical results also show that ElementRank can be applied to large software systems.
 {{a-result,-ignorediff}}
 ---
