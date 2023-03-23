@@ -17,7 +17,7 @@ system behavior.
 Aim The goal of this research project is to aid software practitioners in the use of practices
 to support software development with feature toggles through an empirical study of feature
 toggle practice usage by practitioners.
-{{h-objective,objective}}
+{{h-objective,objective,-ignorediff}}
 Method We conducted a qualitative analysis of 99 artifacts from the grey literature and 10
 peer-reviewed papers about feature toggles.
 {{h-method,method}}
