@@ -45,6 +45,6 @@ repair approaches for configuration code.
 Furthermore, our detailed change information
 enables improvements of refactoring approaches for build configurations and improvements
 of prediction models to identify error-prone build files.
-{{claim}}
+{{conclusion}}
 ---
 
