@@ -1,0 +1,720 @@
+{
+    "highlight.regexes": {
+        "(\\{\\{)(.*)(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {
+                    "color": "rgb(200,200,20)",
+                    "fontWeight": "normal"
+                },
+                {},
+                {
+                    "color": "rgb(200,200,20)",
+                    "fontWeight": "normal"
+                }
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(objective)(:u\\d+)?([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {
+                    "color": "rgb(0,180,0)",
+                    "fontWeight": "normal"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(conclusion)(:u\\d+)?([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {
+                    "color": "rgb(110,180,0)",
+                    "fontWeight": "normal"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(background)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(gap)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(need)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(method)(:(i\\d+u\\d+|i\\d+|u\\d+))?([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {
+                    "color": "rgb(0,180,0)",
+                    "fontWeight": "normal"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(design)(:(i\\d+u\\d+|i\\d+|u\\d+))?([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {
+                    "color": "rgb(0,180,0)",
+                    "fontWeight": "normal"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(result)(:(i\\d+u\\d+|i\\d+|u\\d+))?([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {
+                    "color": "rgb(0,180,0)",
+                    "fontWeight": "normal"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(summary)(:u\\d+)?([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {
+                    "color": "rgb(0,180,0)",
+                    "fontWeight": "normal"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(fgap)(:u\\d+)?([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {
+                    "color": "rgb(0,180,0)",
+                    "fontWeight": "normal"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(fneed)(:u\\d+)?([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {
+                    "color": "rgb(0,180,0)",
+                    "fontWeight": "normal"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(fposs)(:u\\d+)?([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {
+                    "color": "rgb(0,180,0)",
+                    "fontWeight": "normal"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(fwork)(:u\\d+)?([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {
+                    "color": "rgb(0,180,0)",
+                    "fontWeight": "normal"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(h\\-background)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(h\\-objective)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(h\\-design)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(h\\-method)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(h\\-result)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(h\\-summary)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(h\\-limitation)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(h\\-conclusion)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(h\\-fwork)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(claim)(:(i\\d+u\\d+|i\\d+|u\\d+))?([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {
+                    "color": "rgb(0,180,0)",
+                    "fontWeight": "normal"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(limitation)(:u\\d+)?([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {
+                    "color": "rgb(0,180,0)",
+                    "fontWeight": "normal"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(resourcepointer)(:(i\\d+u\\d+|i\\d+|u\\d+))?([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {
+                    "color": "rgb(0,180,0)",
+                    "fontWeight": "normal"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(a\\-background)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(a\\-claim)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(a\\-conclusion)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(a\\-design)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(a\\-fgap)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(a\\-fneed)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(a\\-fposs)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(a\\-fwork)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(a\\-gap)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(a\\-limitation)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(a\\-method)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(a\\-need)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(a\\-objective)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(a\\-result)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(a\\-resourcepointer)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(a\\-summary)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(20,200,20)",
+                    "fontWeight": "bold"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(\\-hype)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(150,150,255)",
+                    "fontWeight": "normal",
+                    "fontStyle": "italic"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(\\-ignorediff)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(150,150,255)",
+                    "fontWeight": "normal",
+                    "fontStyle": "italic"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(\\-incredible)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(150,150,255)",
+                    "fontWeight": "normal",
+                    "fontStyle": "italic"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(\\-problemstmt)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(150,150,255)",
+                    "fontWeight": "normal",
+                    "fontStyle": "italic"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(\\-timid)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(150,150,255)",
+                    "fontWeight": "normal",
+                    "fontStyle": "italic"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(cruft)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(255,160,140)",
+                    "fontWeight": "normal",
+                    "fontStyle": "italic"
+                },
+                {},
+                {}
+            ]
+        },
+        "(\\{\\{)(.+[\\, ])?(X)([, ].+)?(\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {},
+                {
+                    "color": "rgb(200,200,20)",
+                    "fontWeight": "bold",
+                    "fontStyle": "italic"
+                },
+                {},
+                {}
+            ]
+        },
+        "(,)": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {
+                    "color": "inherit"
+                }
+            ]
+        },
+        "(\\{\\{.*?)(.*)(.*?\\}\\})": {
+            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
+            "decorations": [
+                {},
+                {
+                    "color": "rgb(255,10,10)",
+                    "fontWeight": "bold"
+                },
+                {}
+            ]
+        }
+    }
+}
