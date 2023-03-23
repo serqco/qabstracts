@@ -26,7 +26,7 @@ complexity.
 {{result:u2}}
 While we observed some improvements while combining metrics in models, their effectiveness is still far from making them
 suitable for practical applications.
-{{conclusion}}
+{{result}}
 Finally, we conducted interviews with five professional developers to understand the factors that
 influence their ability to understand code snippets, aiming at identifying possible new metrics.
 {{method, objective}}

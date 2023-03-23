@@ -10,10 +10,10 @@ arriving at a satisfactory result.
 While there has been a surge in the number of tools and
 frameworks that aim at facilitating deep learning, the process of managing the models
 and their artifacts is still surprisingly challenging and time-consuming.
-{{background}}
+{{gap}}
 Existing modelmanagement solutions are either tailored for commercial platforms or require significant
 code changes.
-{{background}}
+{{gap}}
 Moreover, most of the existing solutions address a single phase of the modeling lifecycle, such as experiment monitoring, while ignoring other essential tasks, such
 as model deployment.
 {{gap}}

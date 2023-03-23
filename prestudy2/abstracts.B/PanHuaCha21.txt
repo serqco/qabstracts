@@ -16,7 +16,7 @@ the multilayer nature of software systems.
 {{gap}}
 That is, nodes in the network can have different types of relationships at the same time, and
 each type of relationship forms a specific layer.
-{{background}}
+{{gap}}
 Worse still, they mainly focus on identifying important classes, and little work has been
 done on quantifying package importance.
 {{gap}}
@@ -25,7 +25,7 @@ packages) for maintainers to start the comprehension process.
 {{objective}}
 The top-ranked classes (or packages) can be seen as the starting points
 for the software comprehension process at the class (or package) level.
-{{background}}
+{{design}}
 First, we introduce two kinds of multilayer software networks to
 describe the topological structure of software at the class level and package level, respectively.
 {{design}}
