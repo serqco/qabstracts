@@ -19,7 +19,7 @@ inform the key stakeholders.
 {{design:i1u1}}
 Our automated model to identify useful code reviews achieves
 7.88% and 14.39% improvement in terms of accuracy and minority class F1 score respectively over the models proposed in prior studies.
-{{method,result:u1}}
+{{method,result:u1,-ignorediff}}
 It also outperforms human evaluators from
 SRBD, that the model replaces, by a margin of 25.32% and 23.84% respectively in terms
 of accuracy and minority class F1 score.
