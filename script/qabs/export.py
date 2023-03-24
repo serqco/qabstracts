@@ -15,9 +15,11 @@ usage = """Splits each annotated file into one record per coding.
 
 NAN_VALUE = "NA"  # R's "not available" value
 
+
 def configure_argparser(subparser):
     subparser.add_argument('workdir',
                            help="Directory where metadata and abstracts.?/* live")
+
 
 @dataclasses.dataclass
 class Abstract:
@@ -39,9 +41,9 @@ def export(workdir: str):
     for coder in sorted(what.coders):
         for file in what.files_of(coder):
             citekey = what.citekey(file)
-            abstract = Abstract(filename=file, citekey=citekey, 
+            abstract = Abstract(filename=file, citekey=citekey,
                                 venue=venue.venue_of(citekey), volume=venue.volume_of(citekey),
-                                coder_letter=what.coder_letter(file), coder=coder, 
+                                coder_letter=what.coder_letter(file), coder=coder,
                                 annots=annots, codebook=annots.codebook)
             export_for_file(file, abstract)
 
@@ -49,36 +51,35 @@ def export(workdir: str):
 def export_for_file(filename: str, abstract: Abstract):
     with open(filename, 'rt', encoding='utf8') as f:
         content = f.read()
-    for i, pair in enumerate(abstract.annots.find_all_sentence_and_annotation_pairs(content)):
-        sentence, annotation = pair
-        process_sentence(i+1, sentence, annotation, abstract)
+    for i, annot_sentence in enumerate(abstract.annots.find_all_sentence_and_annotation_pairs(content)):
+        process_sentence(i + 1, annot_sentence, abstract)
 
 
-def process_sentence(idx: int, sentence: str, annotation: str, abstract: Abstract):
+def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract: Abstract):
     """
     Print one or possibly several records for one pair of sentence and annotation.
     Decides which codings to report at all, how to split word count and char count among them,
-    and how to determine icount and ucount. 
+    and how to determine icount and ucount.
     """
     H_LEN = 10  # assumed number of chars corresponding to a h-* coding if there are multiple codings
-    sentence2 = _unlinebreak(sentence)
+    sentence2 = _unlinebreak(annot_sentence.sentence)
     words = _count_words(sentence2)
     chars = len(sentence2)
-    codings = set(abstract.annots.split_into_codings(annotation)) - set([abstract.codebook.IGNORECODE])  # forget IGNORECODEs
+    codings = set(abstract.annots.split_into_codings(annot_sentence.annotation)) - {abstract.codebook.IGNORECODE}  # forget IGNORECODEs
     codes_done = set(abstract.codebook.GARBAGE_CODES)  # consider them done right from the start
     multiple = len(codings) > 1  # whether there are multiple codings at this sentence
-    #----- process extra codes (which involve no length):
+    # ----- process extra codes (which involve no length):
     for code, csuffix in codings:
         if code not in codes_done and abstract.codebook.is_extra_code(code):
             codes_done.add(code)
-            prt_record(abstract, idx, words, chars, 
+            prt_record(abstract, idx, words, chars,
                        abstract.annots.bare_codename(code), _topic(code), math.nan, math.nan)
-    #----- process h-* codes (which count only 1 word):
+    # ----- process h-* codes (which count only 1 word):
     for code, csuffix in codings:
         if code not in codes_done and abstract.codebook.is_heading_code(code):
             codes_done.add(code)
-            prt_record(abstract, idx, 
-                       1 if multiple else words , H_LEN if multiple else chars, 
+            prt_record(abstract, idx,
+                       1 if multiple else words, H_LEN if multiple else chars,
                        abstract.annots.bare_codename(code), _topic(code), 0, 0)
     words -= len(codes_done)
     chars -= H_LEN * len(codes_done)  # the approximation matters only if there are unprocessed codings left
@@ -86,19 +87,19 @@ def process_sentence(idx: int, sentence: str, annotation: str, abstract: Abstrac
     if remaining > 1:
         words = words / remaining  # split length equally among remaining codes, an assumption!
         chars = chars / remaining  # ditto
-    #----- process remaining codes with no IU suffix:
+    # ----- process remaining codes with no IU suffix:
     for code, csuffix in codings:
         if code not in codes_done and not csuffix:
             codes_done.add(code)
-            prt_record(abstract, idx, words, chars, 
+            prt_record(abstract, idx, words, chars,
                        code, _topic(code), 0, 0)
-    #----- process remaining codes with explicit or implicit IU suffix:
+    # ----- process remaining codes with explicit or implicit IU suffix:
     for code, csuffix in codings:
         if code not in codes_done:
             codes_done.add(code)
             assert abstract.codebook.exists_with_suffix(code)
             icount, ucount = abstract.annots.split_suffix(csuffix)
-            prt_record(abstract, idx, words, chars, 
+            prt_record(abstract, idx, words, chars,
                        code, _topic(code), icount, ucount)
 
 
@@ -146,7 +147,7 @@ def _topic(code: str) -> str:
     return 'other'  # all other proper codes form one group
 
 
-def _triple(basecode: str) -> str:
+def _triple(basecode: str) -> tuple[str, str, str]:
     return f"h-{basecode}", f"a-{basecode}", basecode
 
 
