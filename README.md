@@ -35,10 +35,7 @@ Directories (in sort of a chrono-logical order):
   Plots created by statistical evaluation and perhaps other images.
 - `write`:
   The articles and reports eventually written about the study.
-  
-Setup issues for Mac users (Monterey 12.6.1) 2023-01-06, Gunnar
-- use `python3` instead of `python` when running scripts, see `procedure.md`.
-- if scripts fail with python issues, run `pip3 install -r requirements.txt` (use 'homebrew' if pip isn't already installed')
+
 
 TODO before running a similar study again:
 - extend the "not a sentence-end" heuristic:

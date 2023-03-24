@@ -31,24 +31,79 @@ changed: Lutz Prechelt, 2023-03-06
 
 ## 2. Coders: Setting up your environment
 
-- You need a work environment equipped with 
-  [git](https://git-scm.com/book/en/v2) and a text editor.
-- Optional: If you also have Python 3.8 or younger at hand, all the better (with packages `pandas` and `matplotlib` installed).
-- This is easy for users on Linux or Mac OS X.
-  Windows users can get by with 
-  [git for windows](https://gitforwindows.org/), 
-  but I recommend
-  [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
-  for a more complete setup (e.g. with manpages and Python).
-- Alternatively, you could use [GitHub Desktop](https://desktop.github.com/).
-  I have no experience with this.
+You need a work environment equipped with 
+[git](https://git-scm.com/book/en/v2) and a text editor or IDE.
+
+Additionally, a Python setup is very convenient, because it allows you to run the 
+checking scripts locally _before_ checking in your codings.
+Even without a local Python installation, GitHub will run the checking scripts
+whenever you check in any file and send an email if there are any problems.
+
+### 2.1 I have a development setup already and know how to use it
+
+- Just use whatever IDE or editor you are most familiar with.
+  Learn how to open a file by partial filename instead of by browsing; 
+  you will need this a lot when resolving disagreements.
+- Set up Python (see below) if you want to run the checking scripts locally.
+
+### 2.2 I have no development setup and want the simplest possible solution
+
+- Log into GitHub
+- Use the free GitHub online VS Code IDE [github.dev](https://github.dev/serqco/qabstracts/)
+- Learn how to create a Git commit involving several files.
+  Read it up in 
+  [the documentation](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor#using-source-control)
+- In this setup, you cannot run the Python checking scripts yourself.
+  You need to perform a commit to have the GitHub CI run them for you.
+  Please create a commit only when coding your block is finished
+  to avoid cluttering our commit history too much (it will be cluttered already
+  by the additional mistake-fixing commits you will likely need from time to time).
+
+### 2.3 I have no development setup but want to install and learn one
+
+- Get Git. 
+  - On Windows, install [git for windows](https://gitforwindows.org/).
+    "Git Bash" will become the command line shell that you need to use,
+    not CMD or PowerShell.
+  - On Debian/Ubuntu, do `sudo apt install git`
+  - On Mac OS X, do the equivalent of the above with HomeBrew.
 - [Set up SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
-  You can do without this, but it will be inconvenient:
-  You will have to use the `https:` clone URL and input your GitHub password upon each `push` or `pull`.
-- Start a shell, visit the place where your `qabstracts` work directory should be created and do
+- Start a shell and the ssh-agent, add your SSH keys to the agent,
+  visit the place where your `qabstracts` work directory should be created, and do
   `git clone git@github.com:serqco/qabstracts.git`.
-- If you work without SSH keys, do
-  `git clone https://github.com/serqco/qabstracts.git` instead.
+- `cd qabstracts`. This directory is where you will do 
+  all the git calls (if you do them from the command line rather than the IDE) and 
+  Python calls.
+- As an IDE, install either
+  [PyCharm Community Edition](https://www.jetbrains.com/pycharm/download)
+  or
+  [Visual Studio Code](https://code.visualstudio.com/) (usually called VS Code).
+  Both work perfectly fine for our purposes.
+- In the IDE documentation, learn the following functions:
+  - setting up Git (and then do that once now)
+  - Opening a file by typing or pasting a fraction of its filename
+    (which you will want to pick from `sample-who-what.txt` or a checking script message)
+  - Git `commit`
+  - Perhaps also Git `push`, `pull` (with rebase, not merge), `log`. 
+- You can mix Git use on the command line with Git use in the IDE.
+  For instance, the IDE is unbeatably good for creating commits,
+  but some people prefer the command line for `push`, `pull` and `log`.
+
+### 2.4 I want to set up Python to run the checking scripts locally
+
+The scripts are programs to be called from the command line.
+
+- Depending on your setup, the resulting Python command may be called `python` or `python3` and
+  the Pip command may be called `pip` or `pip3`. Try the second variant first.
+- Install Python 3.8 or higher: https://www.python.org/
+- Create a [Python virtual environment](https://docs.python.org/3/library/venv.html)
+  (or "venv" for short)
+- [Activate](https://docs.python.org/3/library/venv.html#how-venvs-work) the venv. 
+  Whenever you start a new command line shell, you need to activate the venv there.
+- Go to the qabstracts directory and execute `pip install -r requirements.txt`
+  to install the libraries required by the scripts.
+- Should additional dependencies be introduced in the scripts later,
+  repeat the above step to add them into your venv.
 
 
 ## 3. Coders: Annotating one block of abstracts
