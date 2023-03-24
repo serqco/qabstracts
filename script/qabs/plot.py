@@ -47,6 +47,7 @@ def create_all_datasets(df: pd.DataFrame):
 def df_primary1(df: pd.DataFrame) -> pd.DataFrame:
     """Input data w/o 'extra' codes, plus some helper columns"""
     res = df.query('words > 0').copy()  # suppress the auxiliary codes (extra codes)
+    res['is_announce'] = res.code.str.contains('^a-')  # per-sentence entry, must be counted
     res['is_struc'] = res.code.str.contains('^h-')  # per-sentence entry, must be aggregated
     res['is_design'] = res.code == 'design'  # per-sentence entry, must be aggregated
     return res
@@ -65,6 +66,7 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
              utopics=_nagg('topic', 'nunique'),
              icount=_nagg('icount', 'sum'), 
              ucount=_nagg('ucount', 'sum'),
+             announcecount=_nagg('is_announce', 'sum'),
              is_struc=_nagg('is_struc', 'any'), 
              is_design=_nagg('is_design', 'any'))
     #----- add derived variables:
@@ -87,7 +89,7 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
     res = add_fraction_x(res, 'future')
     res = add_fraction_x(res, 'other')
     res['fraction_introduction'] = res.fraction_background + res.fraction_gap
-    print(topicparts.head(20), res.fraction_gap.describe(), res.fraction_summary.describe())
+    res['total_gaps'] = res.icount + res.ucount + 3 * res.announcecount  # count each 'a-*' as 3 gaps
     return res
 
 
@@ -131,10 +133,13 @@ def create_all_plots(datasets: argparse.Namespace, outputdir: str):
     # plot_boxplots(datasets.by_ab, 'icount', outputdir, ymax=10)
     # plot_boxplots(datasets.by_ab, 'ucount', outputdir, ymax=10)
     # plot_boxplots(datasets.by_ab, 'sentences', outputdir, ymax=20)
-    plot_boxplots(datasets.by_ab, 'fraction_introduction', outputdir, ymax=100)
-    plot_boxplots(datasets.by_ab, 'fraction_conclusion', outputdir, ymax=100)
-    plot_boxplots(datasets.by_ab, 'fraction_other', outputdir, ymax=100)
-
+    # plot_boxplots(datasets.by_ab, 'fraction_introduction', outputdir, ymax=100)
+    # plot_boxplots(datasets.by_ab, 'fraction_conclusion', outputdir, ymax=100)
+    # plot_boxplots(datasets.by_ab, 'fraction_other', outputdir, ymax=100)
+    plot_lowess(datasets.by_ab.fraction_introduction, "space for introduction [%]",
+                datasets.by_ab.total_gaps, "#gaps", 
+                outputdir, "gaps_by_fracintro",
+                xmax=100, ymax=15, frac=0.75)
 
 def plot_ab_topicstructure_freqs(df: pd.DataFrame, outputdir: str):
     """Barplot of how often the most common train-of-thought structures occur."""
@@ -191,6 +196,32 @@ def plot_boxplots(df: pd.DataFrame, which: str, outputdir: str, *, ymax=None):
         plt.vlines(x+0.1, mymean-se, mymean+se, 
                    colors='red', linestyles='solid', linewidth=0.7)
     plt.savefig(_plotfilename(outputdir, name_suffix=which))
+
+
+def plot_lowess(x: pd.Series, xlabel: str, y: pd.Series, ylabel: str,
+                outputdir: str, name_suffix: str, *, 
+                frac=0.67, show=True, xmax=None, ymax=None):
+    #----- compute lowess line:
+    import statsmodels.nonparametric.smoothers_lowess as sml
+    delta = 0.01 * (x.max() - x.min())
+    line_xy = sml.lowess(y.to_numpy(), x.to_numpy(), frac=frac, delta=delta,
+                         is_sorted=False)
+    #----- plot labeling:
+    plt.figure()
+    plt.xlim(left=0, right=xmax)
+    plt.xlabel(xlabel)
+    plt.ylim(bottom=0, top=ymax)
+    plt.ylabel(ylabel)
+    plt.grid(axis='both', linewidth=0.1)
+    #----- plot points:
+    if show:
+        plt.scatter(x, y, s=2, c="darkred")
+    #----- plot lowess line:
+    # print(line_xy)
+    plt.plot(line_xy[:, 0], line_xy[:, 1], )
+    #----- save:
+    plt.savefig(_plotfilename(outputdir, name_suffix=name_suffix))
+
 
 
 def _funcname(levels_up: int) -> str:
