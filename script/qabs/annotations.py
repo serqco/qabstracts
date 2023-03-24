@@ -24,6 +24,7 @@ class Codebook:
     CODEDEF_REGEXP = r"code `([\w-]+(?::i?u)?)`"  # what code definitions look like in codebook
     IGNORECODE = '-ignorediff'  # code that indicates not to report coding differences
     GARBAGE_CODES = ['cruft']
+    NONETOPIC = 'none'  # pseudo-topic for codes that have no topic
 
     def __init__(self):
         self.codes = self._allowed_codes(self.CODEBOOK_PATH)
@@ -48,6 +49,25 @@ class Codebook:
 
     def is_heading_code(self, code: str) -> bool:
         return code.startswith('h-')
+
+    @classmethod
+    def topic(cls, code: str) -> str:
+        """Code group, for a coarser analysis. Result words should have a unique first letter."""
+        the_topic = dict(
+                background='background', gap='gap', need='gap',
+                objective='objective',
+                design='design', method='method', result='result', claim='result', summary='summary',
+                conclusion='conclusion',
+                fposs='future', fneed='future', fgap='future', fwork='future',
+                limitation='other', resourcepointer='other', X='other',
+                )
+        if code.startswith('-'):
+            return cls.NONETOPIC  # auxiliary codes have no topic
+        if code.startswith('a-'):
+            return cls.topic(code[2:])
+        if code.startswith('h-'):
+            return cls.topic(code[2:])
+        return the_topic[code]
 
     def _allowed_codes(self, codebookfile: str) -> tg.Set[str]:
         with open(codebookfile, 'rt', encoding='utf8') as cb:

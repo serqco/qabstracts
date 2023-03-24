@@ -15,7 +15,6 @@ usage = """Splits each annotated file into one record per coding.
 
 NAN_VALUE = "NA"  # R's "not available" value
 
-
 def configure_argparser(subparser):
     subparser.add_argument('workdir',
                            help="Directory where metadata and abstracts.?/* live")
@@ -73,14 +72,14 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
         if code not in codes_done and abstract.codebook.is_extra_code(code):
             codes_done.add(code)
             prt_record(abstract, idx, words, chars,
-                       abstract.annots.bare_codename(code), _topic(code), math.nan, math.nan)
+                       abstract.annots.bare_codename(code), annot.Codebook.topic(code), math.nan, math.nan)
     # ----- process h-* codes (which count only 1 word):
     for code, csuffix in codings:
         if code not in codes_done and abstract.codebook.is_heading_code(code):
             codes_done.add(code)
             prt_record(abstract, idx,
                        1 if multiple else words, H_LEN if multiple else chars,
-                       abstract.annots.bare_codename(code), _topic(code), 0, 0)
+                       abstract.annots.bare_codename(code), annot.Codebook.topic(code), 0, 0)
     words -= len(codes_done)
     chars -= H_LEN * len(codes_done)  # the approximation matters only if there are unprocessed codings left
     remaining = len(codings) - len(codes_done)
@@ -92,7 +91,7 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
         if code not in codes_done and not csuffix:
             codes_done.add(code)
             prt_record(abstract, idx, words, chars,
-                       code, _topic(code), 0, 0)
+                       code, annot.Codebook.topic(code), 0, 0)
     # ----- process remaining codes with explicit or implicit IU suffix:
     for code, csuffix in codings:
         if code not in codes_done:
@@ -100,7 +99,7 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
             assert abstract.codebook.exists_with_suffix(code)
             icount, ucount = abstract.annots.split_suffix(csuffix)
             prt_record(abstract, idx, words, chars,
-                       code, _topic(code), icount, ucount)
+                       code, annot.Codebook.topic(code), icount, ucount)
 
 
 def prt_head():
@@ -134,21 +133,6 @@ def _numberish(val) -> str:
         return str(val)
     else:
         return "%.1f" % val
-
-
-def _topic(code: str) -> str:
-    """Code group, for a coarser analysis."""
-    topics = ('background', 'objective', 'design', 'method', 'result', 'conclusion')
-    for topic in topics:
-        if code in _triple(topic):
-            return topic
-    if code.startswith('-'):
-        return 'none'  # auxiliary codes have the 'none' topic
-    return 'other'  # all other proper codes form one group
-
-
-def _triple(basecode: str) -> tuple[str, str, str]:
-    return f"h-{basecode}", f"a-{basecode}", basecode
 
 
 def _unlinebreak(s: str) -> str:

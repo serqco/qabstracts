@@ -7,6 +7,8 @@ import pandas as pd
 import matplotlib as mpl
 from matplotlib import pyplot as plt
 
+import qabs.annotations as annot
+
 usage = """Computes derived data and creates plots and stats outputs.
   Reads data created by 'export'. Computes many derived data sets.
   Creates plots in outputdir.
@@ -75,25 +77,37 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
         res[f'fraction_{x}'] = (100 * res[f'words_{x}'] / res.words).fillna(0)
         return res
     res = add_fraction_x(res, 'background')
+    res = add_fraction_x(res, 'gap')
+    res = add_fraction_x(res, 'objective')
+    res = add_fraction_x(res, 'design')
+    res = add_fraction_x(res, 'method')
+    res = add_fraction_x(res, 'result')
+    res = add_fraction_x(res, 'summary')
     res = add_fraction_x(res, 'conclusion')
+    res = add_fraction_x(res, 'future')
     res = add_fraction_x(res, 'other')
+    res['fraction_introduction'] = res.fraction_background + res.fraction_gap
+    print(topicparts.head(20), res.fraction_gap.describe(), res.fraction_summary.describe())
     return res
+
 
 def ser_ab_structures(df: pd.DataFrame) -> pd.DataFrame:
     strucs = df[df['topic'] != 'other'] \
         .groupby(['citekey', 'coder'])[['topic', 'is_struc']] \
         .aggregate(
-            topicstructure=_nagg('topic', firstletters),
+            topicstructure=_nagg('topic', topicletters),
             is_struc=_nagg('is_struc', 'any'))
     return strucs
 
 
-def firstletters(vals: pd.Series) -> str:
+def topicletters(topics: pd.Series) -> str:
     """Find topic block sequence: Turns (background, background, objective) into 'bo' etc."""
     result = []
     prevletter = ""
-    for val in vals:
-        if val[0] != prevletter:
+    for val in topics:
+        if val == annot.Codebook.NONETOPIC:
+            continue  # not to be part of our sequence
+        if val[0] != prevletter:  # collapse stretches into a single letter
             result.append(val[0])
             prevletter = val[0]
     return "".join(result)
@@ -102,6 +116,7 @@ def firstletters(vals: pd.Series) -> str:
 def print_all_stats(datasets: argparse.Namespace):
     # print_abtype_table(datasets.by_ab)
     ...
+
 
 def print_abtype_table(df: pd.DataFrame):
     _printheader()
@@ -116,9 +131,10 @@ def create_all_plots(datasets: argparse.Namespace, outputdir: str):
     # plot_boxplots(datasets.by_ab, 'icount', outputdir, ymax=10)
     # plot_boxplots(datasets.by_ab, 'ucount', outputdir, ymax=10)
     # plot_boxplots(datasets.by_ab, 'sentences', outputdir, ymax=20)
-    plot_boxplots(datasets.by_ab, 'fraction_background', outputdir, ymax=100)
+    plot_boxplots(datasets.by_ab, 'fraction_introduction', outputdir, ymax=100)
     plot_boxplots(datasets.by_ab, 'fraction_conclusion', outputdir, ymax=100)
     plot_boxplots(datasets.by_ab, 'fraction_other', outputdir, ymax=100)
+
 
 def plot_ab_topicstructure_freqs(df: pd.DataFrame, outputdir: str):
     """Barplot of how often the most common train-of-thought structures occur."""
