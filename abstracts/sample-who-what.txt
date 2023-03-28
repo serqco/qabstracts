@@ -162,14 +162,14 @@ JunTra22      Lutz
 UttPal22      Lutz
 GinMarMar22   Lutz
 #----- Block 19
-CasZamNov22   -Lutz
-LiWanNgu22    -Lutz
-ParKapHil22   -Lutz
-MajModMen22   -Lutz
-CinCooPas22   -Lutz
-MasPasBav22   -Lutz
-SunZhaFan22   -Lutz
-CheCheWan22   -Lutz
+CasZamNov22   Lutz
+LiWanNgu22    Lutz
+ParKapHil22   Lutz
+MajModMen22   Lutz
+CinCooPas22   Lutz
+MasPasBav22   Lutz
+SunZhaFan22   Lutz
+CheCheWan22   Lutz
 #----- Block 20
 StrDinLin22   
 NgoPasBri22   

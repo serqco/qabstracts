@@ -2,47 +2,47 @@ DEAR: A Novel Deep Learning-based Approach for Automated Program Repair.
 
 The existing deep learning (DL)-based automated program repair
 (APR) models are limited in fixing general software defects.
-{{}}
+{{gap}}
 We
 present DEAR, a DL-based approach that supports fixing for the
 general bugs that require dependent changes at once to one or mul-
 tiple consecutive statements in one or multiple hunks of code.
-{{}}
+{{objective}}
 We
 first design a novel fault localization (FL) technique for multi-hunk,
 multi-statement fixes that combines traditional spectrum-based (SB)
 FL with deep learning and data-flow analysis.
-{{}}
+{{design}}
 It takes the buggy
 statements returned by the SBFL model, detects the buggy hunks
 to be fixed at once, and expands a buggy statement 𝑠 in a hunk to
 include other suspicious statements around 𝑠.
-{{}}
+{{design}}
 We design a two-tier,
 tree-based LSTM model that incorporates cycle training and uses a
 divide-and-conquer strategy to learn proper code transformations
 for fixing multiple statements in the suitable fixing context consist-
 ing of surrounding subtrees.
-{{}}
+{{design}}
 We conducted several experiments to
 evaluate DEAR on three datasets:
-{{}}
+{{method}}
 Defects4J (395 bugs), BigFix (+26k
 bugs), and CPatMiner (+44k bugs).
-{{}}
+{{method}}
 On Defects4J dataset, DEAR
 outperforms the baselines from 42%–683% in terms of the number
 of auto-fixed bugs with only the top-1 patches.
-{{}}
+{{result}}
 On BigFix dataset,
 it fixes 31–145 more bugs than existing DL-based APR models with
 the top-1 patches.
-{{}}
+{{result}}
 On CPatMiner dataset, among 667 fixed bugs,
 there are 169 (25.3%) multi-hunk/multi-statement bugs.
-{{}}
+{{result}}
 DEAR fixes
 71 and 164 more bugs, including 52 and 61 more multi-hunk/multi-
 statement bugs, than the state-of-the-art, DL-based APR models.
-{{}}
+{{result}}
 ---

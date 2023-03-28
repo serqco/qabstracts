@@ -1,61 +1,62 @@
 Test case recommendation based on balanced distance of test targets.
 
 Context:
-{{}}
+{{h-background}}
 Unit testing has been widely regarded as an effective technique to ensure software quality.
-{{}}
+{{background}}
 Writing
 unit test cases is time-consuming and requires developers to have abundant knowledge and experience.
-{{}}
+{{background}}
 Automated test case generation, a promising technology for liberating developers and improving test efficiency,
 currently performs not satisfactory in real-world projects.
-{{}}
+{{background}}
 As a complement, test case recommendation (TCR)
 has been receiving the attention of researchers.
-{{}}
+{{background}}
 TCR can improve the efficiency of test case writing by
 recommending test case code to developers for their reference and reuse.
-{{}}
+{{background}}
 The overarching idea of TCR
 techniques is that two similar test targets can reuse each other’s test cases.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 Existing TCR techniques either fail to recommend relevant test cases for a given test target or are
 vulnerable to the mismatch of test target signatures.
-{{}}
+{{gap}}
 Our objective is to effectively and robustly recommend
 relevant test cases for test targets given by developers.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 In this paper, we propose a novel TCR technique that measures the similarity of test targets based on
 a balanced distance.
-{{}}
+{{design}}
 The balanced distance integrates the distances on code snippets and comments, making
 the measurement of test target similarity more accurate and robust.
-{{}}
+{{design}}
 In particular, we take the distance on
 control flows into account to compensate for the shortcomings in measuring the similarity only based on the
 literal text of code snippets.
-{{}}
+{{design}}
 As a proof-of-concept application, we implement a test case recommender named
 BDTCR.
-{{}}
+{{design}}
 Results:
-{{}}
+{{h-result}}
 We construct a test case corpus containing more than 13,000 test cases collected from GitHub.
-{{}}
+{{method}}
 Based
 on this corpus, we conduct comprehensive experiments to evaluate the effectiveness and usefulness of BDTCR.
-{{}}
+{{method}}
 The experimental results show that BDTCR can effectively recommend relevant test cases and outperform the
 state-of-the-art techniques.
-{{}}
+{{result:i1}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 It can be concluded that (1) BDTCR is an effective TCR technique; (2) BDTCR is a robust TCR
 technique that can effectively resist the interference of the mismatch of test target signatures; (3) BDTCR is
 practical to help developers write test cases quickly and effectively.
-{{}}
+{{conclusion}}
 ---
+Three conclusions -- and they all actually are conclusions.
