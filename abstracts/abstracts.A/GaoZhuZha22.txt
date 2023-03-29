@@ -1,52 +1,56 @@
 Dealing with imbalanced data for interpretable defect prediction.
 
 Context:
-{{}}
+{{h-background}}
 Interpretation has been considered as a key factor to apply defect prediction in practice.
-{{}}
+{{background}}
 As interpre­
 tation from rule-based interpretable models can provide insights about past defects with high quality, many prior
 studies attempt to construct interpretable models for both accurate prediction and comprehensible interpreta­
 tion.
-{{}}
+{{background}}
 However, class imbalance is usually ignored, which may bring huge negative impact on interpretation.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 In this paper, we are going to investigate resampling techniques, a popular solution to deal with
 imbalanced data, on interpretation for interpretable models.
-{{}}
+{{objective}}
 We also investigate the feasibility to construct
 interpretable defect prediction models directly on original data.
-{{}}
+{{objective}}
 Further, we are going to propose a rule-based
 interpretable model which can deal with imbalanced data directly.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 We conduct an empirical study on 47 publicly available datasets to investigate the impact of resampling
 techniques on rule-based interpretable models and the feasibility to construct such models directly on original
 data.
-{{}}
+{{method}}
 We also improve gain function and tolerate lower confidence based on rule induction algorithms to deal
 with imbalanced data.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 We find that (1) resampling techniques impact on interpretable models heavily from both feature
 importance and model complexity, (2) it is not feasible to construct meaningful interpretable models on original
 but imbalanced data due to low coverage of defects and poor performance, and (3) our proposed approach is
 effective to deal with imbalanced data compared with other rule-based models.
-{{}}
+{{result}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 Imbalanced data heavily impacts on the interpretable defect prediction models.
-{{}}
+{{conclusion}}
 Resampling tech­
 niques tend to shift the learned concept, while constructing rule-based interpretable models on original data may
 also be infeasible.
-{{}}
+{{conclusion}}
 Thus, it is necessary to construct rule-based models which can deal with imbalanced data well
 in further studies.
-{{}}
+{{fneed}}
 ---
+3 sentences of objective and still I was unsure whether this empirical-sounding objective
+might in fact belong to a design paper. Looking at results and conclusion, the paper is empirical.
+Yet the second sentence of method is clearly a design statement in principle.
+A curious case of a fuzzy article type.

@@ -2,26 +2,27 @@ Automated, Cost-effective, and Update-driven App Testing.
 
 
 Apps' pervasive role in our society led to the definition of test automation approaches to ensure their dependability.
-{{}}
+{{background}}
 However, state-of-the-art approaches tend to generate large numbers of test inputs and are unlikely
 to achieve more than 50% method coverage.
-{{}}
+{{gap}}
 In this article, we propose a strategy to achieve significantly higher coverage of the code affected by updates
 with a much smaller number of test inputs, thus alleviating the test oracle problem.
-{{}}
+{{objective}}
 More specifically, we present ATUA, a model-based approach that synthesizes App models with static
 analysis, integrates a dynamically refined state abstraction function and combines complementary testing
 strategies, including (1) coverage of the model structure, (2) coverage of the App code, (3) random exploration,
 and (4) coverage of dependencies identified through information retrieval.
-{{}}
+{{design}}
 Its model-based strategy enables
 ATUA to generate a small set of inputs that exercise only the code affected by the updates.
-{{}}
+{{design}}
 In turn, this makes
 common test oracle solutions more cost-effective, as they tend to involve human effort.
-{{}}
+{{design}}
 A large empirical evaluation, conducted with 72 App versions belonging to nine popular Android Apps, has
 shown that ATUA is more effective and less effort-intensive than state-of-the-art approaches when testing
 App updates.
-{{}}
+{{method,conclusion}}
 ---
+method+conclusion in a single sentence, but no results

@@ -1,33 +1,39 @@
 An approach to explore sequential interactions in cognitive activities of software engineering.
 
 Context :
-{{}}
+{{h-background}}
 The study of cognitive aspects around software activities can provide valuable insights to improve
 software engineering practices.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 This paper presents an approach based on distributed cognition
 and sequential analysis to explore cognitive activities in the software development context by analyzing the
 interactions between software practitioners and the resources used to support them.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 We conducted
 nine laboratory-based observation sessions to record qualitative audio/video data of interactions between
 the study participants and at-hand resources during the planning and managing of software analytics tasks.
-{{}}
+{{design:i1}}
 Results:
-{{}}
+{{h-result}}
 The interaction strategies of the resources model included 21 emergent actions, and the sequential
 analysis revealed two different patterns of interaction over time.
-{{}}
+{{result}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 Our approach has been useful
 for evaluating how well an artifact works to support a team in software analytics activities.
-{{}}
+{{conclusion}}
 Furthermore, it
 can be applied to explore and discover interaction patterns in different software activities.
-{{}}
+{{conclusion}}
 ---
+objective reads like a design paper. Coded "Method:" part as design grudgingly,
+only to find in the results that the article is purely empirical.
+So I bent the coding rules and turned design into method in "Method:",
+only to find a existence-proof-type conclusion laudating the empirical method used, 
+so this _is_ a design paper after all.
+Nice example of an unclearly communicated mission.
