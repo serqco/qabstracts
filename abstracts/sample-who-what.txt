@@ -180,14 +180,14 @@ ZhaFuLi22     Lutz
 ChoGueSil22   Lutz
 VysMcIAda22   Lutz
 #----- Block 21
-TiaLiPia22   
-SuFanChe22   
-ZhaLiWan22   
-KhaSin22   
-AnaGreKeh22   
-LiYanHua22   
-RziHasKes22   
-ZhuZhaHas22   
+TiaLiPia22    -Lutz
+SuFanChe22    -Lutz
+ZhaLiWan22    -Lutz
+KhaSin22      -Lutz
+AnaGreKeh22   -Lutz
+LiYanHua22    -Lutz
+RziHasKes22   -Lutz
+ZhuZhaHas22   -Lutz
 #----- Block 22
 FalAhlPen22   
 ArcFonHau22   
