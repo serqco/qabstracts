@@ -3,44 +3,44 @@ Towards Practical Robustness Analysis for DNNs based on PAC-Model Learning.
 To analyse local robustness properties of deep neural networks
 (DNNs), we present a practical framework from a model learn-
 ing perspective.
-{{}}
+{{background}}
 Based on black-box model learning with scenario
 optimisation, we abstract the local behaviour of a DNN via an
 affine model with the probably approximately correct (PAC) guar-
 antee.
-{{}}
+{{objective}}
 From the learned model, we can infer the corresponding
 PAC-model robustness property.
-{{}}
+{{objective}}
 The innovation of our work is the
 integration of model learning into PAC robustness analysis:
-{{}}
+{{design}}
 that is,
 we construct a PAC guarantee on the model level instead of sample
 distribution, which induces a more faithful and accurate robustness
 evaluation.
-{{}}
+{{design}}
 This is in contrast to existing statistical methods with-
 out model learning.
-{{}}
+{{design}}
 We implement our method in a prototypical
 tool named DeepPAC.
-{{}}
+{{design}}
 As a black-box method, DeepPAC is scalable
 and efficient, especially when DNNs have complex structures or
 high-dimensional inputs.
-{{}}
+{{design}}
 We extensively evaluate DeepPAC, with 4
 baselines (using formal verification, statistical methods, testing and
 adversarial attack) and 20 DNN models across 3 datasets, including
 MNIST, CIFAR-10, and ImageNet.
-{{}}
+{{method}}
 It is shown that DeepPAC out-
 performs the state-of-the-art statistical method PROVERO, and it
 achieves more practical robustness analysis than the formal ver-
 ification tool ERAN.
-{{}}
+{{result:i2}}
 Also, its results are consistent with existing
 DNN testing work like DeepGini.
-{{}}
+{{result}}
 ---
