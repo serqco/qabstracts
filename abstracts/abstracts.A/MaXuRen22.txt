@@ -1,45 +1,45 @@
 Pluto: Exposing Vulnerabilities in Inter-Contract Scenarios.
 
 Attacks on smart contracts have caused considerable losses to digital assets.
-{{}}
+{{background}}
 Many techniques based on symbolic execution,
 fuzzing, and static analysis are used to detect contract vulnerabilities.
-{{}}
+{{background}}
 Most of the current analyzers only consider vulnerability detection
 intra-contract scenarios.
-{{}}
+{{background}}
 However, Ethereum contracts usually interact with others by calling their functions.
-{{}}
+{{background}}
 A bug hidden in a path that
 depends on information from external contract calls is defined as an inter-contract vulnerability.
-{{}}
+{{background}}
 Failure to deal with this kind of bug can result
 in potential false negatives and false positives.
-{{}}
+{{background}}
 In this work, we propose Pluto, which supports vulnerability detection in inter-contract
 scenarios.
-{{}}
+{{objective}}
 It first builds an Inter-contract Control Flow Graph (ICFG) to extract semantic information among contract calls.
-{{}}
+{{design}}
 Afterward, it
 symbolically explores the ICFG and deduces Inter-Contract Path Constraints (ICPC) to check the reachability of execution paths more
 accurately.
-{{}}
+{{design}}
 Finally, Pluto detects whether there is a vulnerability based on some predefined rules.
-{{}}
+{{design}}
 For evaluation, we compare Pluto with five
 state-of-the-art tools, including Oyente, Mythril, Securify, ILF, and Clairvoyance on a labeled benchmark and 39,443 real-world Ethereum
 smart contracts.
-{{}}
+{{method}}
 The result shows that other tools can only detect 10% of the inter-contract vulnerabilities, while Pluto can detect 80% of
 them on the labeled dataset.
-{{}}
+{{result}}
 Beyond that, Pluto has detected 451 confirmed vulnerabilities on real-world contracts, including 36
 vulnerabilities in inter-contract scenarios.
-{{}}
+{{result}}
 Two bugs have been assigned with unique CVE identifiers by the US National Vulnerability
 Database (NVD).
-{{}}
+{{result}}
 On average, Pluto costs 16.9 seconds to analyze a contract, which is as fast as the state-of-the-art tools.
-{{}}
+{{result}}
 ---

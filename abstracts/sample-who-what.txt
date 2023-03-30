@@ -189,14 +189,14 @@ LiYanHua22    Lutz
 RziHasKes22   Lutz
 ZhuZhaHas22   Lutz
 #----- Block 22
-FalAhlPen22   -Lutz
-ArcFonHau22   -Lutz
-CamRus22      -Lutz
-MaXuRen22     -Lutz
-MohRalTur22   -Lutz
-TecTüzMor22   -Lutz
-WanJiaLi22    -Lutz
-FliChaDye22   -Lutz
+FalAhlPen22   Lutz
+ArcFonHau22   Lutz
+CamRus22      Lutz
+MaXuRen22     Lutz
+MohRalTur22   Lutz
+TecTüzMor22   Lutz
+WanJiaLi22    Lutz
+FliChaDye22   Lutz
 #----- Block 23
 PisSpäBud22   
 ValHunFig22   

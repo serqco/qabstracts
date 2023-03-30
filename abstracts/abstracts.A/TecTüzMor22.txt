@@ -1,55 +1,57 @@
 Cleaning ground truth data in software task assignment.
 
 Context:
-{{}}
+{{h-background}}
 In the context of collaborative software development, there are many application areas of task
 assignment such as assigning a developer to fix a bug, or assigning a code reviewer to a pull request.
-{{}}
+{{background}}
 Most
 task assignment techniques in the literature build and evaluate their models based on datasets collected from
 real projects.
-{{}}
+{{background}}
 The techniques invariably presume that these datasets reliably represent the "ground truth".
-{{}}
+{{background}}
 In
 a project dataset used to build an automated task assignment system, the recommended assignee for the task
 is usually assumed to be the best assignee for that task.
-{{}}
+{{background}}
 However, in practice, the task assignee may not be
 the best possible task assignee, or even a sufficiently qualified one.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 We aim to clean up the ground truth by removing the samples that are potentially problematic
 or suspect with the assumption that removing such samples would reduce any systematic labeling bias in the
 dataset and lead to performance improvements.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 We devised a debiasing method to detect potentially problematic samples in task assignment datasets.
-{{}}
+{{design}}
 We then evaluated the method's impact on the performance of seven task assignment techniques by comparing
 the Mean Reciprocal Rank (MRR) scores before and after debiasing.
-{{}}
+{{method}}
 We used two different task assignment
 applications for this purpose:
-{{}}
+{{method}}
 Code Reviewer Recommendation (CRR) and Bug Assignment (BA).
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 In the CRR application, we achieved an average MRR improvement of 18.17% for the three
 learning-based techniques tested on two datasets.
-{{}}
+{{result}}
 No significant improvements were observed for the two
 optimization-based techniques tested on the same datasets.
-{{}}
+{{result}}
 In the BA application, we achieved a similar average
 MRR improvement of 18.40% for the two learning-based techniques tested on four different datasets.
-{{}}
+{{result}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 Debiasing the ground truth data by removing suspect samples can help improve the performance
 of learning-based techniques in software task assignment applications.
-{{}}
+{{summary}}
 ---
+This ought to be a design contribution of the research method type, but the abstract
+provides no detail about the actual method. Curious!

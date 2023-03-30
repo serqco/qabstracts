@@ -1,37 +1,37 @@
 How Templated Requirements Specifications Inhibit Creativity in Software Engineering.
 
 Desiderata is a general term for stakeholder needs, desires or preferences.
-{{}}
+{{background}}
 Recent experiments demonstrate that
 presenting desiderata as templated requirements specifications leads to less creative solutions.
-{{}}
+{{background}}
 However, these experiments do not
 establish how the presentation of desiderata affects design creativity.
-{{}}
+{{gap}}
 This study, therefore, aims to explore the cognitive mechanisms
 by which presenting desiderata as templated requirements specifications reduces creativity during software design.
-{{}}
+{{objective}}
 Forty-two software
 designers, organized into 21 pairs, participated in a dialog-based protocol study.
-{{}}
+{{method}}
 Their interactions were transcribed and the transcripts
 were analyzed in two ways:
-{{}}
+{{method}}
 (1) using inductive process coding and (2) using an a-priori coding scheme focusing on fixation and critical
 thinking.
-{{}}
+{{method}}
 Process coding shows that participants exhibited seven categories of behavior:
-{{}}
+{{result}}
 making design moves, uncritically accepting,
 rejecting, grouping, questioning, assuming and considering quality criteria.
-{{}}
+{{result}}
 Closed coding shows that participants tend to accept given
 requirements and priority levels while rejecting newer, more innovative design ideas.
-{{}}
+{{result}}
 Overall, the results suggest that designers fixate
 on desiderata presented as templated requirements specifications, hindering critical thinking.
-{{}}
+{{conclusion}}
 More precisely, requirements fixation
 mediates the negative relationship between specification formality and creativity.
-{{}}
+{{conclusion}}
 ---
