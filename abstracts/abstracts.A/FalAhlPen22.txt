@@ -14,7 +14,9 @@ One of the
 causes of noise for defect datasets is the presence of “dormant defects,” i.e., of defects discovered several releases after their introduction.
 {{}}
 This can cause a class to be labeled as defect-free while it is not, and is, therefore
-“snoring.” In this article, we investigate the impact of snoring on classifiers’ accuracy and the effectiveness
+“snoring.” 
+{{}}
+In this article, we investigate the impact of snoring on classifiers’ accuracy and the effectiveness
 of a possible countermeasure, i.e., dropping too recent data from a training set.
 {{}}
 We analyze the accuracy of
