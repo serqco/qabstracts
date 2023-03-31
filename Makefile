@@ -17,7 +17,7 @@ export:
 	$(QABSTRACTS) export $(STUDYDIR) >$(EXPORTFILE)
 
 pdf:
-	cd tex; latexmk -pdf qabstracts-tse
+	cd tex; pdflatex qabstracts-tse
 
 plot:
-	$(QABSTRACTS) plot $(EXPORTFILE) img
+	$(QABSTRACTS) plot --plotall $(EXPORTFILE) img

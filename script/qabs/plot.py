@@ -17,17 +17,19 @@ usage = """Computes derived data and creates plots and stats outputs.
 # Terminology: ab=abstract(s)  df=dataframe  freq=frequency  struc=structured
 
 def configure_argparser(p_prepare_ann: argparse.ArgumentParser):
+    p_prepare_ann.add_argument('--plotall', action='store_const', const=True,
+                               help="run all plots, not only those currently under development")
     p_prepare_ann.add_argument('datafile',
                                help="Data as created by 'export'")
     p_prepare_ann.add_argument('outputdir',
                                help="Directory where plot files will be placed")
 
 
-def plot(datafile: str, outputdir: str):
+def plot(plotall: bool, datafile: str, outputdir: str):
     df = read_datafile(datafile)
     datasets = create_all_datasets(df)
     print_all_stats(datasets)
-    create_all_plots(datasets, outputdir)
+    create_all_plots(plotall, datasets, outputdir)
 
 
 def read_datafile(datafile: str) -> pd.DataFrame:
@@ -126,16 +128,17 @@ def print_abtype_table(df: pd.DataFrame):
     print(res)
 
 
-def create_all_plots(datasets: argparse.Namespace, outputdir: str):
+def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str):
     mpl.use('PDF')
-    # plot_ab_topicstructure_freqs(datasets.ab_structures, outputdir)
-    # plot_boxplots(datasets.by_ab, 'words', outputdir)
-    # plot_boxplots(datasets.by_ab, 'icount', outputdir, ymax=10)
-    # plot_boxplots(datasets.by_ab, 'ucount', outputdir, ymax=10)
-    # plot_boxplots(datasets.by_ab, 'sentences', outputdir, ymax=20)
-    # plot_boxplots(datasets.by_ab, 'fraction_introduction', outputdir, ymax=100)
-    # plot_boxplots(datasets.by_ab, 'fraction_conclusion', outputdir, ymax=100)
-    # plot_boxplots(datasets.by_ab, 'fraction_other', outputdir, ymax=100)
+    if plotall:
+        plot_ab_topicstructure_freqs(datasets.ab_structures, outputdir)
+        plot_boxplots(datasets.by_ab, 'words', outputdir)
+        plot_boxplots(datasets.by_ab, 'icount', outputdir, ymax=10)
+        plot_boxplots(datasets.by_ab, 'ucount', outputdir, ymax=10)
+        plot_boxplots(datasets.by_ab, 'sentences', outputdir, ymax=25)
+        plot_boxplots(datasets.by_ab, 'fraction_introduction', outputdir, ymax=100)
+        plot_boxplots(datasets.by_ab, 'fraction_conclusion', outputdir, ymax=100)
+        plot_boxplots(datasets.by_ab, 'fraction_other', outputdir, ymax=100)
     plot_lowess(datasets.by_ab.fraction_introduction, "space for introduction [%]",
                 datasets.by_ab.total_gaps, "#gaps", 
                 outputdir, "gaps_by_fracintro",

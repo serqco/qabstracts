@@ -31,7 +31,7 @@ def main():  # uses sys.argv
     elif subcmd == "extract-abs":
         qabs.extract_abs.extract_abstracts(pargs.outputdir, pargs.layout, pargs.inputfile)
     elif subcmd == "plot":
-        qabs.plot.plot(pargs.datafile, pargs.outputdir)
+        qabs.plot.plot(pargs.plotall, pargs.datafile, pargs.outputdir)
     elif subcmd == "prepare-ann":
         qabs.prepare_ann.prepare_annotations(pargs.outputdir, pargs.textfile)
     else:
