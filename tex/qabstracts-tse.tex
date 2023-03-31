@@ -1,5 +1,5 @@
 % Article about SE abstracts quality (qabstracts) for IEEE Trans. on Software Engineering
-\documentclass[lettersize,journal]{IEEEtran}
+\documentclass[journal]{IEEEtran}
 
 \usepackage{cite}
 %\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
@@ -7,8 +7,15 @@
 \usepackage{url}
 %\usepackage{verbatim}
 \usepackage{graphicx}
+\graphicspath{ {../img} {.} }
 \usepackage{balance}
 \hyphenation{semi-conduc-tor IEEE-Xplore}
+
+\newcommand{\Plot}[2]{%
+	\begin{figure}[!t]%
+		\centering\includegraphics[width=\columnwidth]{#1}%
+		\vspace{-6mm}\caption{#2}\label{#1}%
+	\end{figure}}
 
 \begin{document}
 	
@@ -22,8 +29,32 @@
 
 \maketitle
 
-\begin{abstract}  % 100 to 200 words are allowed
+\begin{abstract}  % 100 to 200 words are allowed (but not enforced)
+\emph{Background:}
+Abstracts are a very valuable element in a software engineering research article,
+but not all abstracts are as informative as they could be.
+\emph{Objective:} 
+Characterize the structure of abstracts in top venues, 
+observe deficiencies, 
+suggest guidelines for writing informative abstracts.
+\emph{Methods:}
+Use open coding to derive concepts that explaining relevant properties of abstracts
+and to identify the prototypical structure of abstracts.
+Use quantitative content analysis to objectively characterize abstract structure
+over a sample of 500!!! abstracts from five high-quality venues.
+Use exploratory data analysis to find recurring issues in abstracts.
+Compare the prototypical structure to actual structures to derive
+guidelines for producing informative abstracts.
+\emph{Results:}
 !!!
+\emph{Conclusions:}
+(1)~Even in top venues, many abstracts are far from ideal.
+(2)~Structured abstracts tend to be better than unstructured ones, 
+but (3)~artifact-centric works need a different structured format.
+(4)~The community should start requiring conclusions that generalize, 
+which currently are often missing.
+\emph{Background:}
+
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -43,6 +74,15 @@
 
 
 
+\appendix
+\section{Basic statistics}
+
+\Plot{boxplots_sentences}{(caption TODO)}
+\Plot{boxplots_words}{(caption TODO)}
+\Plot{boxplots_fraction_introduction}{(caption TODO)}
+\Plot{boxplots_fraction_conclusion}{(caption TODO)}
+
+
 %\begin{figure}[!t]
 %\centering
 %\includegraphics[width=2.5in]{fig1}
@@ -52,7 +92,7 @@
 
 
 \subsection{Acknowledgments}
-\noindent This should be a simple paragraph before the bibliography to thank those individuals and institutions who have supported your work on this article.
+\noindent We thank Gesine Milde for cleansing the automatically extracted abstract texts.
 
 
 

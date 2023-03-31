@@ -4,6 +4,7 @@ img/
 prestudy/pdf/
 prestudy/testdata.git
 results/
+tex/*.pdf
 volumes/*/*.pdf
 volumes/log/
 .RData
