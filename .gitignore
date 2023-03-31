@@ -11,6 +11,13 @@ volumes/log/
 .DS_Store
 #*#
 
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+
 .idea/
 
 #--- general Python stuff
