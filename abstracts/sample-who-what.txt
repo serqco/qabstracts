@@ -1,13 +1,13 @@
 # what      abstracts.A   abstracts.B
 #----- Block 1
-FrePetGer22   Lloyd       -Julian
-ZhaLiuFan22   Lloyd       -Julian
-BasBeeLaz22   Lloyd       -Julian
-ZhoHeZen22    Lloyd       -Julian
-ForStoZim22   Lloyd       -Julian
-KauFeaAlv22   Lloyd       -Julian
-KumSumKum22   Lloyd       -Julian
-WanLiuXie22   Lloyd       -Julian
+FrePetGer22   Lloyd       Julian
+ZhaLiuFan22   Lloyd       Julian
+BasBeeLaz22   Lloyd       Julian
+ZhoHeZen22    Lloyd       Julian
+ForStoZim22   Lloyd       Julian
+KauFeaAlv22   Lloyd       Julian
+KumSumKum22   Lloyd       Julian
+WanLiuXie22   Lloyd       Julian
 #----- Block 2
 PanLinZam22   Lutz      
 Liu22         Lutz

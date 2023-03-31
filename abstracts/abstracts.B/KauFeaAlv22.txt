@@ -3,17 +3,17 @@ Prioritizing Mutants to Guide Mutation Testing.
 Mutation testing offers concrete test goals (mutants) and a rigorous
 test efficacy criterion, but it is expensive due to vast numbers of
 mutants, many of which are neither useful nor actionable.
-{{}}
+{{background}}
 Prior
 work has focused on selecting representative and sufficient mutant
 subsets, measuring whether a test set that is mutation-adequate for
 the subset is equally adequate for the entire set.
-{{}}
+{{background}}
 However, no known
 industrial application of mutation testing uses or even computes
 mutation adequacy, instead focusing on iteratively presenting very
 few mutants as concrete test goals for developers to write tests.
-{{}}
+{{background}}
 This paper (1) articulates important differences between muta-
 tion analysis, where measuring mutation adequacy is of interest,
 and mutation testing, where mutants are of interest insofar as
@@ -24,5 +24,5 @@ prioritizing mutants by incrementally selecting mutants based on
 their predicted TCAP; and (4) presents simulations showing that
 TCAP-based prioritization of mutants advances test completeness
 more rapidly than prioritization with the previous state-of-the-art.
-{{}}
+{{objective,method,result:i1}}
 ---

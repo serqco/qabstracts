@@ -2,35 +2,35 @@ What happens in my code reviews? An investigation on automatically classifying r
 
 Code reviewing is a widespread practice used by software engineers to maintain high code
 quality.
-{{}}
+{{background}}
 To date, the knowledge on the effect of code review on source code is still limited.
-{{}}
+{{background}}
 Some studies have addressed this problem by classifying the types of changes that take
 place during the review process (a.k.a.
-{{}}
+{{background}}
 review changes), as this strategy can, for example,
 pinpoint the immediate effect of reviews on code.
-{{}}
+{{background}}
 Nevertheless, this classification (1) is not
 scalable, as it was conducted manually, and (2) was not assessed in terms of how meaningful the provided information is for practitioners.
-{{}}
+{{gap}}
 This paper aims at addressing these
 limitations:
-{{}}
+{{objective}}
 First, we investigate to what extent a machine learning-based technique can
 automatically classify review changes.
-{{}}
+{{objective:u1}}
 Then, we evaluate the relevance of information on
 review change types and its potential usefulness, by conducting (1) semi-structured interviews with 12 developers and (2) a qualitative study with 17 developers, who are asked to
 assess reports on the review changes of their project.
-{{}}
+{{objective,method:u1}}
 Key results of the study show that
 not only it is possible to automatically classify code review changes, but this information
 is also perceived by practitioners as valuable to improve the code review process.
-{{}}
+{{result}}
 Data and
 materials:
-{{}}
+{{resourcepointer}}
 https://doi.org/10.5281/zenodo.5592254
-{{}}
+{{resourcepointer}}
 ---
