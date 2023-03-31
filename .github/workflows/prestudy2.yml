@@ -1,0 +1,21 @@
+name: qabstracts prestudy2 data checks
+run-name: ${{ github.actor }}
+on:
+  push:
+    paths:
+      - 'prestudy2/**'
+jobs:
+  Check-Codings:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: compare-codings prestudy2
+        run: |
+          git log --oneline -10
+          pip -q install -r requirements.txt
+          set -e
+          echo "*****************************"
+          echo "****** prestudy2     ********"
+          echo "*****************************"
+          python script/qabstracts.py check-codings prestudy2 && python script/qabstracts.py compare-codings prestudy2
