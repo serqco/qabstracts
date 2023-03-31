@@ -24,6 +24,7 @@ jobs:
           python script/qabstracts.py check-codings abstracts && python script/qabstracts.py compare-codings abstracts 
           make export
           make plot
+          apt install texlive-xetex
           make pdf
       - name: upload PDF
         uses: actions/upload-artifact@v3
