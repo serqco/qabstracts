@@ -1,0 +1,30 @@
+name: qabstracts data checks
+run-name: ${{ github.actor }}
+on: 
+  push:
+    paths:
+      - 'abstracts/**'
+      - 'script/**'
+      - 'tex/**'
+jobs:
+  Check-Codings:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: check-codings
+        run: |
+          git log --oneline -10
+          pip -q install -r requirements.txt
+          set -e
+          echo "*****************************"
+          echo "****** full study    ********"
+          echo "*****************************"
+          python script/qabstracts.py check-codings abstracts && python script/qabstracts.py compare-codings abstracts 
+          make export
+          make plot
+          make pdf
+      - name: upload-artifact
+        with: 
+          name: 'qabstracts-tse.pdf'
+          path: 'tex/qabstracts-tse.pdf'

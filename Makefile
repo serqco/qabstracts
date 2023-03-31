@@ -16,5 +16,8 @@ compare-codings:
 export:
 	$(QABSTRACTS) export $(STUDYDIR) >$(EXPORTFILE)
 
+pdf:
+	cd tex; latexmk -pdf qabstracts-tse
+
 plot:
 	$(QABSTRACTS) plot $(EXPORTFILE) img
