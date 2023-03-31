@@ -7,12 +7,12 @@ on:
       - 'script/**'
       - 'tex/**'
 jobs:
-  Check-Codings:
+  process-fullstudy:  # yml errors? try  https://rhysd.github.io/actionlint/
     runs-on: ubuntu-22.04
     steps:
-      - name: Check out repository code
+      - name: check out
         uses: actions/checkout@v3
-      - name: check-codings
+      - name: build
         run: |
           git log --oneline -10
           pip -q install -r requirements.txt
@@ -24,7 +24,8 @@ jobs:
           make export
           make plot
           make pdf
-      - name: upload-artifact
+      - name: upload PDF
+        uses: actions/upload-artifact@v3
         with: 
           name: 'qabstracts-tse.pdf'
           path: 'tex/qabstracts-tse.pdf'
