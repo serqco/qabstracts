@@ -77,11 +77,32 @@ which currently are often missing.
 \appendix
 \section{Basic statistics}
 
-\Plot{boxplots_sentences}{(caption TODO)}
-\Plot{boxplots_words}{(caption TODO)}
-\Plot{boxplots_fraction_introduction}{(caption TODO)}
-\Plot{boxplots_fraction_conclusion}{(caption TODO)}
-
+\Plot{boxplots_sentences}{%
+  Typical abstracts are 8 to 14 sentences long.
+  Structured abstracts tend to be longer than unstructured ones.
+  IST requires structured abstracts, the other venues do not.}
+\Plot{boxplots_words}{%
+  Typical abstracts are 190 to 280 words long. 
+  Structured abstracts tend to be longer than unstructured ones, 
+  although IST abstracts overall (including the design articles) do not.}
+\Plot{boxplots_fraction_introduction}{%
+  Authors invest about a third of the space into the introduction:
+  background/context information and perhaps explaining a research gap.
+  Structured abstracts tend have less of this???}
+\Plot{boxplots_fraction_conclusion}{%
+  Many abstracts offer no generalization.
+  This is worst at ICSE (with over 75\%)
+  and best at IST, which is the only venue where a majority of articles formulates a generalization.}
+\Plot{boxplots_icount}{%
+  A majority of abstracts has one or more "informativeness gaps".
+  The problem tends to be smaller in structured abstracts.}
+\Plot{boxplots_ucount}{%
+  Some abstracts have understandability gaps where an important concept is not explained at all.
+  !!!}
+\Plot{lowess_gaps_by_fracintro}{%
+	This plot checks the expectation that spending much space on background
+	will correlate with more i and u gaps.
+	This is not the case.}
 
 %\begin{figure}[!t]
 %\centering
