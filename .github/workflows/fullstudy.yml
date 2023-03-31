@@ -1,8 +1,9 @@
-name: qabstracts data checks
+name: qabstracts CI
 run-name: ${{ github.actor }}
 on: 
   push:
     paths:
+      - '.github/workflows/fullstudy.yml'
       - 'abstracts/**'
       - 'script/**'
       - 'tex/**'
