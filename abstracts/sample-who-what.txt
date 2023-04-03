@@ -198,14 +198,14 @@ TecTüzMor22   Lutz
 WanJiaLi22    Lutz
 FliChaDye22   Lutz
 #----- Block 23
-PisSpäBud22   
-ValHunFig22   
-LiuZhoAru22   
-Crnkovic22   
-GaoLiLin22   
-TraPomTuc22   
-BeyDanDie22   
-AhmAshAzg22   
+PisSpäBud22   -Lutz
+ValHunFig22   -Lutz
+LiuZhoAru22   -Lutz
+Crnkovic22    -Lutz
+GaoLiLin22    -Lutz
+TraPomTuc22   -Lutz
+BeyDanDie22   -Lutz
+AhmAshAzg22   -Lutz
 #----- Block 24
 BokAle22   
 MasHodBli22   
