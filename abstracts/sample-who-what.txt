@@ -198,14 +198,14 @@ TecTüzMor22   Lutz
 WanJiaLi22    Lutz
 FliChaDye22   Lutz
 #----- Block 23
-PisSpäBud22   -Lutz
-ValHunFig22   -Lutz
-LiuZhoAru22   -Lutz
-Crnkovic22    -Lutz
-GaoLiLin22    -Lutz
-TraPomTuc22   -Lutz
-BeyDanDie22   -Lutz
-AhmAshAzg22   -Lutz
+PisSpäBud22   Lutz
+ValHunFig22   Lutz
+LiuZhoAru22   Lutz
+# Crnkovic22  an obituary, not an article
+GaoLiLin22    Lutz
+TraPomTuc22   Lutz
+BeyDanDie22   Lutz
+AhmAshAzg22   Lutz
 #----- Block 24
 BokAle22   
 MasHodBli22   

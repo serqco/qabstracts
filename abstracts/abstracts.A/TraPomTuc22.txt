@@ -2,31 +2,32 @@ How Software Refactoring Impacts Execution Time.
 
 
 Refactoring aims at improving the maintainability of source code without modifying its external behavior.
-{{}}
+{{background}}
 Previous works proposed approaches to recommend refactoring solutions to software developers.
-{{}}
+{{background}}
 The generation of the recommended solutions is guided by metrics acting as proxy for maintainability (e.g., number
 of code smells removed by the recommended solution).
-{{}}
+{{background}}
 These approaches ignore the impact of the recommended refactorings on other non-functional requirements, such as performance, energy consumption, and
 so forth.
-{{}}
+{{background}}
 Little is known about the impact of refactoring operations on non-functional requirements other
 than maintainability.
-{{}}
+{{gap}}
 We aim to fill this gap by presenting the largest study to date to investigate the impact of refactoring
 on software performance, in terms of execution time.
-{{}}
+{{objective}}
 We mined the change history of 20 systems that defined performance benchmarks in their repositories, with the goal of identifying commits in which developers implemented refactoring operations impacting code components that are exercised by the performance
 benchmarks.
-{{}}
+{{method}}
 Through a quantitative and qualitative analysis, we show that refactoring operations can significantly impact the execution time.
-{{}}
+{{method,result:i1}}
 Indeed, none of the investigated refactoring types can be considered
 “safe” in ensuring no performance regression.
-{{}}
+{{result:i1}}
 Refactoring types aimed at decomposing complex code entities
 (e.g., Extract Class/Interface, Extract Method) have higher chances of triggering performance degradation,
 suggesting their careful consideration when refactoring performance-critical code.
-{{}}
+{{result:i1,conclusion}}
 ---
+Objective mentions "this gap".
