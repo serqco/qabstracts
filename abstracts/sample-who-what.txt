@@ -18,14 +18,14 @@ ShiBiaBri22   Lutz        Franz
 MenCla22      Lutz        Franz
 XueZhoLuo22   Lutz        Franz
 #----- Block 3
-QiuGaoXia22   Lutz        -Franz
-GeFanQia22    Lutz        -Franz
-CheHuWei22    Lutz        -Franz
-TsaBraHir22   Lutz        -Franz
-YanZhaPan22   Lutz        -Franz
-XiaHeXu22     Lutz        -Franz
-ZhoZhaShe22   Lutz        -Franz
-SamGaoDao22   Lutz        -Franz
+QiuGaoXia22   Lutz        Franz
+GeFanQia22    Lutz        Franz
+CheHuWei22    Lutz        Franz
+TsaBraHir22   Lutz        Franz
+YanZhaPan22   Lutz        Franz
+XiaHeXu22     Lutz        Franz
+ZhoZhaShe22   Lutz        Franz
+SamGaoDao22   Lutz        Franz
 #----- Block 4
 XieLeiYan22   Lutz
 YanXiaFan22   Lutz
