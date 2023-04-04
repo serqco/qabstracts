@@ -15,17 +15,17 @@ API or the code using the API.
 {{background}}
 This paper presents Keeper, a new testing tool for software that
 uses cognitive ML APIs.
-{{method}}
+{{objective}}
 Keeper designs a pseudo-inverse function
 for each ML API that reverses the corresponding cognitive task in
 an empirical way (e.g., an image search engine pseudo-reverses the
 image-classification API), and incorporates these pseudo-inverse
 functions into a symbolic execution engine to automatically gener-
 ate relevant image/text/audio inputs and judge output correctness.
-{{method}}
+{{design}}
 Once misbehavior is exposed, Keeper attempts to change how ML
 APIs are used in software to alleviate the misbehavior.
-{{method}}
+{{design}}
 Our evalu-
 ation on a variety of open-source applications shows that Keeper
 greatly improves the branch coverage, while identifying many pre-

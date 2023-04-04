@@ -13,7 +13,7 @@ pinpoint the immediate effect of reviews on code.
 {{background}}
 Nevertheless, this classification (1) is not
 scalable, as it was conducted manually, and (2) was not assessed in terms of how meaningful the provided information is for practitioners.
-{{background}}
+{{gap}}
 This paper aims at addressing these
 limitations:
 {{objective}}

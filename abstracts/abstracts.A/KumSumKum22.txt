@@ -47,7 +47,7 @@ power plant, which is operational in the Canada Deuterium Uranium reactor.
 {{method}}
 The predicted reliability of the
 system using this method is 99.99966% which has been validated using the specified system requirements.
-{{result:u1}}
+{{result:u1,method}}
 To
 further validate and generalize the results, sensitivity analysis is performed by varying different system
 parameters.
@@ -56,9 +56,9 @@ Conclusions:
 {{h-conclusion}}
 The method discussed in this paper presents a step of performing structural analysis on the Petri net
 of the system under consideration to identify and handle dead markings on the Petri net.
-{{method}}
+{{design}}
 It further handles the
 issue of assuming transition probabilities among the system states by calculating them using Petri net transitions’
 throughput.
-{{method}}
+{{design}}
 ---

@@ -14,7 +14,7 @@ mobile apps.
 Although there are already many studies for characterizing third-party libraries, including automated detection, security
 and privacy analysis of TPLs, TPL attributes analysis, etc., what strikes us odd is that there is no systematic study to summarize those
 studies’ endeavors.
-{{background}}
+{{background,need}}
 To this end, we conduct the first systematic literature review on Android TPL-related research.
 {{objective}}
 Following a welldefined systematic literature review protocol, we collected 74 primary research papers closely related to Android third-party library from
@@ -26,5 +26,5 @@ third-party library analysis.
 {{method,a-result}}
 We hope that these contributions can give readers a clear overview of existing TPL-related studies and
 inspire them to go beyond the current status quo by advancing the discipline with innovative approaches.
-{{conclusion,-hype}}
+{{conclusion}}
 ---
