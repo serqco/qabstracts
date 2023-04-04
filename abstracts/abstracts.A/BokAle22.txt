@@ -26,7 +26,7 @@ is not ideal for the search for program variants that perform well across multip
 {{gap}}
 The work in this paper addresses this problem by using an island-like evolutionary search
 mode to simultaneously evolve variants on multiple platforms.
-{{Objective}}
+{{objective}}
 Island models of evolutionary search conduct search on multiple platforms in parallel and share promising variants.
 {{design}}
 The results show that this approach has advantages over isolated evolution in terms of speeding up evolution on each platform and improving the efficiency of search.

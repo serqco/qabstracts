@@ -33,7 +33,7 @@ learning.
 We also identify three enabling conditions for technical excellence:
 {{result}}
 Leadership support, customer buyin, and psychological safety.
-{{resul}}
+{{result}}
 These enablers provide teams with leeway to nurture their pursuit of technical
 excellence.
 {{result}}
