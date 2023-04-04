@@ -15,7 +15,7 @@ To guide LORA’s development, we present a rewriting-logic-based framework and 
 {{design}}
 Within the framework, we formalize LORA
 and mathematically prove its data consistency guarantees.
-{{method,result}}
+{{method,result,-ignorediff}}
 We also apply automatic model checking and statistical verification to validate our proofs and to estimate LORA’s performance.
 {{design,method}}
 We additionally generate
