@@ -41,7 +41,7 @@ We conducted an extensive experiment on 14 open source Java projects
 with a total of 11,615 buggy changes.
 {{method}}
 We evaluate the experimental results considering four evaluation metrics.
-{{method:i4}}
+{{method:i1}}
 The experimental
 results show that our method outperforms the state-of-the-art by a substantial margin.
 {{result:i1}}

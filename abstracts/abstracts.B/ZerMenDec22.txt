@@ -9,10 +9,10 @@ article empirically studies vulnerabilities affecting npm and RubyGems packages.
 {{objective}}
 We analyse how and when these vulnerabilities are disclosed and fixed, and how their prevalence
 changes over time.
-{{method}}
+{{a-result}}
 We also analyse how vulnerable packages expose their direct and indirect
 dependents to vulnerabilities.
-{{method}}
+{{a-result}}
 We distinguish between two types of dependents:
 {{method}}
 packages
