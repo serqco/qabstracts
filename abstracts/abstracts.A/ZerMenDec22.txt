@@ -30,7 +30,7 @@ median of 30 package releases, while this is 59 releases in RubyGems packages.
 A large
 proportion of external GitHub projects is exposed to vulnerabilities coming from direct or
 indirect dependencies.
-{{result:i3}}
+{{result:i1}}
 33% and 40% of dependency vulnerabilities to which projects and
 packages are exposed, respectively, have their fixes in more recent releases within the same
 major release range of the used dependency.

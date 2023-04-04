@@ -10,7 +10,7 @@ code review.
 {{background}}
 Understanding the reasons behind the rejection of refactoring contributions can shed light on
 how such contributions can be improved, essentially benefiting software quality.
-{{background}}
+{{objective}}
 This article reports a study in which we manually coded rejection reasons inferred from 330 refactoringrelated pull requests from 207 open-source Java projects.
 {{method}}
 We surveyed 267 developers to assess their perceived

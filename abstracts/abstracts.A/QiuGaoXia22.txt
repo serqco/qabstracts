@@ -44,5 +44,5 @@ We evaluate the experimental results considering four evaluation metrics.
 {{method:i1}}
 The experimental
 results show that our method outperforms the state-of-the-art by a substantial margin.
-{{result:i2}}
+{{result:i1}}
 ---
