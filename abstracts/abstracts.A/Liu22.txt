@@ -10,7 +10,7 @@ SNOW-optimal algorithm for distributed read atomic transactions.
 {{objective}}
 LORA completes its reads in exactly one
 round trip, even in the presence of conflicting writes, without imposing additional overhead to the communication, and it outperforms the state-of-the-art read atomic algorithms.
-{{design}}
+{{design, result}}
 To guide LORA’s development, we present a rewriting-logic-based framework and toolkit for design, verification, implementation, and evaluation of distributed databases.
 {{design}}
 Within the framework, we formalize LORA

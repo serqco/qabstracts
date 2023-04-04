@@ -18,5 +18,5 @@ this adaptive approach for unpacking Android packers.
 {{objective,design}}
 The evaluation with real packed apps demonstrates that PackerGrind can
 successfully reveal packers protection mechanisms, effectively handle their evolution and recover Dex files with low overhead.
-{{conclusion}}
+{{result:i1}}
 ---
