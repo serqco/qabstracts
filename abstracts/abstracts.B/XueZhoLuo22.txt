@@ -2,21 +2,21 @@ PackerGrind: An Adaptive Unpacking System for Android Apps.
 
 App developers are increasingly using packing services (or packers) to protect their code against being reverse engineered
 or modified.
-{{}}
+{{background}}
 However, such packing techniques are also leveraged by the malicious developers to prevent the malware from being
 analyzed and detected by the static malware analysis and detection systems.
-{{}}
+{{background}}
 Though there are already studies on unpacking packed
 Android apps, they usually leverage the manual reverse engineered packing behaviors to unpack apps packed by the specific packers
 and cannot be appified to the evolved and new packers.
-{{}}
+{{gap}}
 In this paper, we propose a novel unpacking approach with the capacity of
 adaptively unpacking the evolved and newly encountered packers.
-{{}}
+{{objective}}
 Also, we develop a new system, named PackerGrind, based on
 this adaptive approach for unpacking Android packers.
-{{}}
+{{objective,design}}
 The evaluation with real packed apps demonstrates that PackerGrind can
 successfully reveal packers protection mechanisms, effectively handle their evolution and recover Dex files with low overhead.
-{{}}
+{{result:i2}}
 ---

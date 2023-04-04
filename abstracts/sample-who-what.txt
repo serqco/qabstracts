@@ -9,14 +9,14 @@ KauFeaAlv22   Lloyd       Julian
 KumSumKum22   Lloyd       Julian
 WanLiuXie22   Lloyd       Julian
 #----- Block 2
-PanLinZam22   Lutz        -Franz
-Liu22         Lutz        -Franz
-CobMazHic22   Lutz        -Franz
-RajZahBab22   Lutz        -Franz
-ZerMenDec22   Lutz        -Franz
-ShiBiaBri22   Lutz        -Franz
-MenCla22      Lutz        -Franz
-XueZhoLuo22   Lutz        -Franz
+PanLinZam22   Lutz        Franz
+Liu22         Lutz        Franz
+CobMazHic22   Lutz        Franz
+RajZahBab22   Lutz        Franz
+ZerMenDec22   Lutz        Franz
+ShiBiaBri22   Lutz        Franz
+MenCla22      Lutz        Franz
+XueZhoLuo22   Lutz        Franz
 #----- Block 3
 QiuGaoXia22   Lutz
 GeFanQia22    Lutz

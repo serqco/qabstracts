@@ -1,65 +1,65 @@
 Challenges and solutions when adopting DevSecOps: A systematic review.
 
 Context:
-{{}}
+{{h-background}}
 DevOps (Development and Operations) has become one of the fastest-growing software development
 paradigms in the industry.
-{{}}
+{{background}}
 However, this trend has presented the challenge of ensuring secure software delivery
 while maintaining the agility of DevOps.
-{{}}
+{{background}}
 The efforts to integrate security in DevOps have resulted in the
 DevSecOps paradigm, which is gaining significant interest from both industry and academia.
-{{}}
+{{background}}
 However, the
 adoption of DevSecOps in practice is proving to be a challenge.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 This study aims to systemize the knowledge about the challenges faced by practitioners when
 adopting DevSecOps and the proposed solutions reported in the literature.
-{{}}
+{{objective}}
 We also aim to identify the areas
 that need further research in the future.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 We conducted a Systematic Literature Review of 54 peer-reviewed studies.
-{{}}
+{{method}}
 The thematic analysis
 method was applied to analyze the extracted data.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 We identified 21 challenges related to adopting DevSecOps, 31 specific solutions, and the mapping
 between these findings.
-{{}}
+{{result}}
 We also determined key gap areas in this domain by holistically evaluating the
 available solutions against the challenges.
-{{}}
+{{result:i1}}
 The results of the study were classified into four themes:
-{{}}
+{{result}}
 People,
 Practices, Tools, and Infrastructure.
-{{}}
+{{result}}
 Our findings demonstrate that tool-related challenges and solutions were
 the most frequently reported, driven by the need for automation in this paradigm.
-{{}}
+{{conclusion}}
 Shift-left security and
 continuous security assessment were two key practices recommended for DevSecOps.
-{{}}
+{{result}}
 People-related factors
 were considered critical for successful DevSecOps adoption but less studied.
-{{}}
+{{result}}
 Conclusions:
-{{}}
+{{h-conclusion}}
 We highlight the need for developer-centered application security testing tools that target the
 continuous practices in DevSecOps.
-{{}}
+{{summary}}
 More research is needed on how the traditionally manual security practices
 can be automated to suit rapid software deployment cycles.
-{{}}
+{{fneed}}
 Finally, achieving a suitable balance between the
 speed of delivery and security is a significant issue practitioners face in the DevSecOps paradigm.
-{{}}
+{{conclusion}}
 ---

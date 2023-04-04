@@ -2,24 +2,24 @@
 
 Why Do Developers Reject Refactorings
 in Open-Source Projects?
-{{}}
+{{cruft}}
 Refactoring operations are behavior-preserving changes aimed at improving source code quality.
-{{}}
+{{background}}
 While refactoring is largely considered a good practice, refactoring proposals in pull requests are often rejected after the
 code review.
-{{}}
+{{background}}
 Understanding the reasons behind the rejection of refactoring contributions can shed light on
 how such contributions can be improved, essentially benefiting software quality.
-{{}}
+{{objective}}
 This article reports a study in which we manually coded rejection reasons inferred from 330 refactoringrelated pull requests from 207 open-source Java projects.
-{{}}
+{{method}}
 We surveyed 267 developers to assess their perceived
 prevalence of these identified rejection reasons, further complementing the reasons.
-{{}}
+{{method}}
 Our study resulted in a comprehensive taxonomy consisting of 26 refactoring-related rejection reasons and
 21 process-related rejection reasons.
-{{}}
+{{result}}
 The taxonomy, accompanied with representative examples and highlighted implications, provides developers with valuable insights on how to ponder and polish their refactoring contributions, and indicates a number of directions researchers can pursue toward better refactoring
 recommenders.
-{{}}
+{{conclusion,a-fposs}}
 ---
