@@ -35,7 +35,7 @@ Using JuCify, we
 were able to enable static analyzers to reveal cases where malware
 relied on native code to hide invocation of payment library code
 or of other sensitive code in the Android framework.
-{{result:i3}}
+{{result:i1}}
 Additionally,
 JuCify's model enables state-of-the-art tools to achieve better preci-
 sion and recall in detecting data leaks through native code.

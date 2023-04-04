@@ -18,7 +18,7 @@ cost while maintaining good performance.
 {{background}}
 Nevertheless, the existing active learning-based SBR identification
 approach still yields poor performance due to ignoring the locality in bug reports.
-{{background}}
+{{gap}}
 Method:
 {{h-method}}
 To address the above problems, we propose locality-based SBR identification via active learning.
