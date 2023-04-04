@@ -207,14 +207,14 @@ TraPomTuc22   Lutz
 BeyDanDie22   Lutz
 AhmAshAzg22   Lutz
 #----- Block 24
-BokAle22      -Lloyd
-MasHodBli22   -Lloyd
-MilCohKlu22   -Lloyd
-MarSen22      -Lloyd
-WeiHarHua22   -Lloyd
-AlaKraPaa22   -Lloyd
-SonJobRan22   -Lloyd
-ChePenChe22   -Lloyd
+BokAle22      Lloyd
+MasHodBli22   Lloyd
+MilCohKlu22   Lloyd
+MarSen22      Lloyd
+WeiHarHua22   Lloyd
+AlaKraPaa22   Lloyd
+SonJobRan22   Lloyd
+ChePenChe22   Lloyd
 #----- Block 25
 RusSto22   
 LiuLiDen22   
