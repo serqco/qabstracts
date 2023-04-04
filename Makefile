@@ -21,3 +21,6 @@ pdf:
 
 plot:
 	$(QABSTRACTS) plot --plotall $(EXPORTFILE) img
+
+plot1:
+	$(QABSTRACTS) plot $(EXPORTFILE) img
