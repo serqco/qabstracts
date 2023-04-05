@@ -2,49 +2,49 @@ Just-In-Time Defect Identification and Localization: A Two-Phase Framework.
 
 Defect localization aims to locate buggy program elements (e.g., buggy files, methods or lines of code) based on defect
 symptoms, e.g., bug reports or program spectrum.
-{{}}
+{{background}}
 However, when we receive the defect symptoms, the defect has been exposed and
 negative impacts have been introduced.
-{{}}
+{{background}}
 Thus, one challenging task is:
-{{}}
+{{background}}
 whether we can locate buggy program prior to the appearance
 of the defect symptom (e.g., when buggy program elements are being committed to a version control system).
-{{}}
+{{background}}
 We refer to this type of
 defect localization as “ Just-In-Time (JIT) Defect localization” .
-{{}}
+{{background}}
 Although many prior studies have proposed various JIT defect
 identification methods to identify whether a new change is buggy, these prior methods do not locate the suspicious positions.
-{{}}
+{{gap}}
 Thus, JIT
 defect localization is the next step of JIT defect identification (i.e., after a buggy change is identified, suspicious source code lines are
 located).
-{{}}
+{{need}}
 To address this problem, we propose a two-phase framework, i.e., JIT defect identification and JIT defect localization.
-{{}}
+{{objective}}
 Given a
 new change, JIT defect identification will identify it as buggy change or clean change first.
-{{}}
+{{design}}
 If a new change is identified as buggy, JIT
 defect localization will rank the source code lines introduced by the new change according to their suspiciousness scores.
-{{}}
+{{design}}
 The source
 code lines ranked at the top of the list are estimated as the defect location.
-{{}}
+{{design}}
 For JIT defect identification phase, we use 14 change-level
 features to build a classifier by following existing approach.
-{{}}
+{{design}}
 For JIT defect localization phase, we propose a JIT defect localization
 approach that leverages software naturalness with the N-gram model.
-{{}}
+{{design}}
 To evaluate the proposed framework, we conduct an empirical
 study on 14 open source projects with a total of 177,250 changes.
-{{}}
+{{method}}
 The results show that software naturalness is effective for our JIT
 defect localization.
-{{}}
+{{result:u1}}
 Our model achieves a reasonable performance, and outperforms the two baselines (i.e., random guess and a static
 bug finder (i.e., PMD)) by a substantial margin in terms of four ranking measures.
-{{}}
+{{result:i2}}
 ---
