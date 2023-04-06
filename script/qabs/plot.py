@@ -1,10 +1,14 @@
 import argparse
+import collections
 import math
+import os
 import traceback
 import typing as tg
 
 import pandas as pd
 import matplotlib as mpl
+import matplotlib.figure
+import matplotlib.axes
 from matplotlib import pyplot as plt
 
 import qabs.annotations as annot
@@ -15,6 +19,7 @@ usage = """Computes derived data and creates plots and stats outputs.
 """
 
 # Terminology: ab=abstract(s)  df=dataframe  freq=frequency  struc=structured
+
 
 def configure_argparser(p_prepare_ann: argparse.ArgumentParser):
     p_prepare_ann.add_argument('--plotall', action='store_const', const=True,
@@ -28,8 +33,92 @@ def configure_argparser(p_prepare_ann: argparse.ArgumentParser):
 def plot(plotall: bool, datafile: str, outputdir: str):
     df = read_datafile(datafile)
     datasets = create_all_datasets(df)
-    print_all_stats(datasets)
+    create_all_subsets(datasets)
+    print_all_stats(datasets, outputdir)
     create_all_plots(plotall, datasets, outputdir)
+
+tse_columnwidth_mm = 88
+tse_pagewidth_mm = 180
+
+class Subsets:
+    """
+    Define and handle overlapping subsets of something, e.g. rows in pd.Dataframes.
+    Initialize by a mapping from group name to a df-filtering predicate 'filter' plus
+    possibly other per-group attributes:
+      ss = Subsets(dict(a=dict(filter=lambda df: df.a >= 0, color='red'),
+                        b=dict(filter=lambda df: df.b <= 0, color='blue'))
+    Then iterate over groups and retrieve their rows and other attributes, e.g.
+      for name, descriptor in ss.items():
+          somecall(descriptor['color'], descriptor.color, descriptor.filter(df).somecolumn.mean())
+    or even
+      ss.a.filter(df)
+    In fact, the class knows nothing about Pandas, so instead of a Dataframe, you can use it with
+    any other container or even a virtual collection.
+    The class simply bundles a filter with several constants, bundles several such tuples
+    into a single object, and provides nice syntax for accessing them.
+    """
+
+    def __init__(self, descriptor: tg.Mapping[str, tg.Mapping[str, tg.Any]]):
+        # ----- copy subsets descriptor:
+        self.descriptor = collections.OrderedDict()
+        for name, descr in descriptor.items():
+            self.descriptor[name] = self.Subset(descr)
+        # ----- check consistency:
+        self.attrs = set()
+        for name, descr in self.descriptor.items():
+            myattrs = set(descr.keys())
+            if len(self.attrs) == 0:
+                self.attrs = myattrs  # record the canonical set of attr names
+                if 'filter' not in myattrs:
+                    raise ValueError(f"subset '{name}' lacks required attribute 'filter': {myattrs}")
+            if self.attrs > myattrs:
+                raise ValueError(f"subset '{name}' has attributes missing: %s" %
+                                 self.attrs - myattrs)
+            if myattrs > self.attrs:
+                raise ValueError(f"subset '{name}' has extra attributes: %s" %
+                                 myattrs - self.attrs)
+
+    def items(self):
+        return self.descriptor.items()
+    
+    class Subset(dict):
+        def __getattr__(self, attrname):
+            """subset attributes become Python pseudo attributes"""
+            return self[attrname]
+
+    def __getattr__(self, attrname):
+        """subset names become Python pseudo attributes holding a Subset object"""
+        return self.descriptor[attrname]
+
+
+class PlotContext:
+    outputdir: str
+    basename: str
+    df: pd.DataFrame
+    subsets: tg.Optional[Subsets] = None
+    subsets_inner: tg.Optional[Subsets] = None
+    fig: tg.Optional[mpl.figure.Figure] = None
+    ax: tg.Optional[mpl.axes.Axes] = None
+
+    def __init__(self, outputdir, basename, df, subsets=None, subsets_inner=None,
+                 height=60 / 25.4, width=tse_pagewidth_mm / 25.4):
+        self.outputdir = outputdir
+        self.basename = basename
+        self.df = df
+        self.subsets = subsets
+        self.subsets_inner = subsets_inner
+        matplotlib.rcParams.update({'font.size': 8})
+        self.fig = mpl.figure.Figure(figsize=(width, height), layout='constrained')
+        self.ax = self.fig.add_subplot()
+
+    def savefig(self):
+        self.fig.savefig(os.path.join(self.outputdir, self.basename + '.pdf'))
+
+    def again_for(self, basename: str):
+        """Reuse for another plot: Clear Figure, set a different filename, else the same."""
+        self.fig.clear()
+        self.ax = self.fig.add_subplot()
+        self.basename = basename
 
 
 def read_datafile(datafile: str) -> pd.DataFrame:
@@ -56,7 +145,7 @@ def df_primary1(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
-    #----- do basic aggregation from codings to abstracts:
+    # ----- do basic aggregation from codings to abstracts:
     res = primary.groupby(['citekey', 'coder']) \
         .agg(venue=_nagg('venue', 'min'),
              volume=_nagg('volume', 'min'),
@@ -71,15 +160,17 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
              announcecount=_nagg('is_announce', 'sum'),
              is_struc=_nagg('is_struc', 'any'), 
              is_design=_nagg('is_design', 'any'))
-    #----- add derived variables:
+    # ----- add derived variables:
     topicparts = primary.groupby(['citekey', 'coder', 'topic']).agg(
             topicwords=_nagg('words', 'sum'),
     )
-    def add_fraction_x(res: pd.DataFrame, x: str) -> pd.DataFrame:
-        res = pd.merge(res, topicparts.query(f"topic=='{x}'"), 'left', on=('citekey','coder'))
-        res = res.rename(columns=dict(topicwords=f'words_{x}'), errors="raise")
-        res[f'fraction_{x}'] = (100 * res[f'words_{x}'] / res.words).fillna(0)
-        return res
+
+    def add_fraction_x(result: pd.DataFrame, x: str) -> pd.DataFrame:
+        result = pd.merge(result, topicparts.query(f"topic=='{x}'"), 'left', on=('citekey', 'coder'))
+        result = result.rename(columns=dict(topicwords=f'words_{x}'), errors="raise")
+        result[f'fraction_{x}'] = (100 * result[f'words_{x}'] / result.words).fillna(0)
+        return result
+
     res = add_fraction_x(res, 'background')
     res = add_fraction_x(res, 'gap')
     res = add_fraction_x(res, 'objective')
@@ -117,7 +208,35 @@ def topicletters(topics: pd.Series) -> str:
     return "".join(result)
 
 
-def print_all_stats(datasets: argparse.Namespace):
+def create_all_subsets(datasets: argparse.Namespace):
+    """Add Subsets entries in datasets."""
+    ab_subsets_dict = dict(
+        all=dict(
+                x=1.0, 
+                filter=lambda df: df.loc[df.is_struc | ~df.is_struc]),
+        struc=dict(
+                x=2.5,
+                filter=lambda df: df.loc[df.is_struc]),
+        unstruc=dict(
+                x=3.5,
+                filter=lambda df: df.loc[~df.is_struc]),
+        design=dict(
+                x=4.5,
+                filter=lambda df: df.loc[df.is_design]),
+        empir=dict(
+            x=5.5,
+            filter=lambda df: df.loc[~df.is_design]),
+    )
+    x = 7.0  # add per-venue subsets after a gap
+    for venue in sorted(datasets.by_ab.venue.unique()):
+        ab_subsets_dict[venue] = dict(
+            x=x, filter=lambda df: df.loc[df.venue == venue]
+        )
+        x += 1.0
+    datasets.ab_subsets = Subsets(ab_subsets_dict)
+
+
+def print_all_stats(datasets: argparse.Namespace, outputdir: str):
     # print_abtype_table(datasets.by_ab)
     ...
 
@@ -129,20 +248,22 @@ def print_abtype_table(df: pd.DataFrame):
 
 
 def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str):
-    mpl.use('PDF')
+    # mpl.use('PDF')
     if plotall:
         plot_ab_topicstructure_freqs(datasets.ab_structures, outputdir)
-        plot_boxplots(datasets.by_ab, 'words', outputdir)
-        plot_boxplots(datasets.by_ab, 'icount', outputdir, ymax=10)
-        plot_boxplots(datasets.by_ab, 'ucount', outputdir, ymax=10)
-        plot_boxplots(datasets.by_ab, 'sentences', outputdir, ymax=25)
-        plot_boxplots(datasets.by_ab, 'fraction_introduction', outputdir, ymax=100)
-        plot_boxplots(datasets.by_ab, 'fraction_conclusion', outputdir, ymax=100)
-        plot_boxplots(datasets.by_ab, 'fraction_other', outputdir, ymax=100)
-    plot_lowess(datasets.by_ab.fraction_introduction, "space for introduction [%]",
-                datasets.by_ab.total_gaps, "#gaps", 
-                outputdir, "gaps_by_fracintro",
-                xmax=100, ymax=15, frac=0.75)
+        ctx = PlotContext(outputdir, "", datasets.by_ab, datasets.ab_subsets)
+        plot_boxplots(ctx, 'words', ymax=500)
+        plot_boxplots(ctx, 'icount', ymax=10)
+        plot_boxplots(ctx, 'ucount', ymax=10)
+        plot_boxplots(ctx, 'sentences', ymax=25)
+        plot_boxplots(ctx, 'fraction_introduction', ymax=100)
+        plot_boxplots(ctx, 'fraction_conclusion', ymax=100)
+        plot_boxplots(ctx, 'fraction_other', ymax=100)
+        plot_lowess(datasets.by_ab.fraction_introduction, "space for introduction [%]",
+                    datasets.by_ab.total_gaps, "#gaps", 
+                    outputdir, "gaps_by_fracintro",
+                    xmax=100, ymax=15, frac=0.75)
+
 
 def plot_ab_topicstructure_freqs(df: pd.DataFrame, outputdir: str):
     """Barplot of how often the most common train-of-thought structures occur."""
@@ -159,72 +280,58 @@ def plot_ab_topicstructure_freqs(df: pd.DataFrame, outputdir: str):
     plt.savefig(_plotfilename(outputdir))
 
 
-def plot_boxplots(df: pd.DataFrame, which: str, outputdir: str, *, ymax=None):
+def plot_boxplots(ctx: PlotContext, which: str, *, ymax=None):
     """Draw boxplots for all abstracts, structured/unstructured ones, and per venue."""
-    #----- prepare data:
-    vals = df[which]
-    groups = df.groupby('venue')
-    wherewhat = [ # the list of boxplots to be made, extended by the loop below:
-                  (1, "all", vals), 
-                  (2.5, "struc", vals[df.is_struc & ~df.is_design]),
-                  (3.5, "unstruc", vals[~df.is_struc & ~df.is_design]),
-                  (4.5, "design", vals[df.is_design]),
-                ]
-    x = 6  # third group of plots starts after a gap
-    for name, group in groups:
-        wherewhat.append((x, name, vals[group.index]))
-        x += 1
-    #----- configure boxplots:
-    plt.figure()
-    plt.boxplot([vals for x, lab, vals in wherewhat], 
-            notch=False, whis=(5, 95), 
-            positions=[x for x, lab, vals in wherewhat], 
-            labels=[lab for x, lab, vals in wherewhat], 
-            widths=0.7, capwidths=0.2,
-            showfliers=False, showmeans=True,
-            patch_artist=True, boxprops=dict(facecolor="yellow"),
-            medianprops=dict(color='black'),
-            meanprops=dict(marker='o', markerfacecolor='mediumblue', markeredgecolor='mediumblue'))
-    plt.ylim(bottom=0, top=ymax)
-    plt.ylabel(which)
-    plt.grid(axis='y', linewidth=0.1)
-    #----- add "n=123" at the bottom:
-    for x, lab, vals in wherewhat:
-        plt.text(x, 0, "n=%d" % len(vals), 
-                 verticalalignment='bottom', horizontalalignment='center', color='mediumblue', fontsize=8)
-    #----- add error bars for the mean:
-    for x, lab, vals in wherewhat:
+    ctx.again_for(f"boxplots_{which}")
+    ctx.ax.set_ylim(bottom=0, top=ymax)
+    ctx.ax.set_ylabel(which)
+    ctx.ax.grid(axis='y', linewidth=0.1)
+    for name, descr in ctx.subsets.items():
+        vals = descr.filter(ctx.df)[which]
+        ctx.ax.boxplot(
+                [vals], 
+                notch=False, whis=(5, 95), 
+                positions=[descr.x], labels=[name], 
+                widths=0.7, capwidths=0.2,
+                showfliers=False, showmeans=True,
+                patch_artist=True, boxprops=dict(facecolor="yellow"),
+                medianprops=dict(color='black'),
+                meanprops=dict(marker='o', markerfacecolor='mediumblue', markeredgecolor='mediumblue'))
+        # ----- add "n=123" at the bottom:
+        ctx.ax.text(descr.x, 0, "n=%d" % len(vals), 
+                    verticalalignment='bottom', horizontalalignment='center', color='mediumblue', 
+                    fontsize=7)
+        # ----- add error bar for the mean:
         mymean = vals.mean()
         se = vals.std() / math.sqrt(len(vals))  # standard error of the mean
-        plt.vlines(x+0.1, mymean-se, mymean+se, 
+        plt.vlines(descr.x + 0.1, mymean - se, mymean + se, 
                    colors='red', linestyles='solid', linewidth=0.7)
-    plt.savefig(_plotfilename(outputdir, name_suffix=which))
+    ctx.savefig()
 
 
 def plot_lowess(x: pd.Series, xlabel: str, y: pd.Series, ylabel: str,
                 outputdir: str, name_suffix: str, *, 
                 frac=0.67, show=True, xmax=None, ymax=None):
-    #----- compute lowess line:
+    # ----- compute lowess line:
     import statsmodels.nonparametric.smoothers_lowess as sml
     delta = 0.01 * (x.max() - x.min())
     line_xy = sml.lowess(y.to_numpy(), x.to_numpy(), frac=frac, delta=delta,
                          is_sorted=False)
-    #----- plot labeling:
+    # ----- plot labeling:
     plt.figure()
     plt.xlim(left=0, right=xmax)
     plt.xlabel(xlabel)
     plt.ylim(bottom=0, top=ymax)
     plt.ylabel(ylabel)
     plt.grid(axis='both', linewidth=0.1)
-    #----- plot points:
+    # ----- plot points:
     if show:
         plt.scatter(x, y, s=2, c="darkred")
-    #----- plot lowess line:
+    # ----- plot lowess line:
     # print(line_xy)
     plt.plot(line_xy[:, 0], line_xy[:, 1], )
-    #----- save:
+    # ----- save:
     plt.savefig(_plotfilename(outputdir, name_suffix=name_suffix))
-
 
 
 def _funcname(levels_up: int) -> str:
