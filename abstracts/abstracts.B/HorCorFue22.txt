@@ -1,47 +1,47 @@
 Combining multiple granularity variability in a software product line approach for web engineering.
 
 Context:
-{{}}
+{{h-background}}
 Web engineering involves managing a high diversity of artifacts implemented in different languages
 and with different levels of granularity.
-{{}}
+{{background}}
 Technological companies usually implement variable artifacts of
 Software Product Lines (SPLs) using annotations, being reluctant to adopt hybrid, often complex, approaches
 combining composition and annotations despite their benefits.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 This paper proposes a combined approach to support fine and coarse-grained variability for web
 artifacts.
-{{}}
+{{objective}}
 The proposal allows web developers to continue using annotations to handle fine-grained variability
 for those artifacts whose variability is very difficult to implement with a composition-based approach, but
 obtaining the advantages of the composition-based approach for the coarse-grained variable artifacts.
-{{}}
+{{objective}}
 Methods:
-{{}}
+{{h-method}}
 A combined approach based on feature modeling that integrates annotations into a generic
 composition-based approach.
-{{}}
+{{design}}
 We propose the definition of compositional and annotative variation points
 with custom-defined semantics, which is resolved by a scaffolding-based derivation engine.
-{{}}
+{{design}}
 The approach is
 evaluated on a real-world web-based SPL by applying a set of variability metrics, as well as discussing its
 quality criteria in comparison with annotations, compositional, and combined existing approaches.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 Our approach effectively handles both fine and coarse-grained variability.
-{{}}
+{{result:i1}}
 The mapping between the
 feature model and the web artifacts promotes the traceability of the features and the uniformity of the variation
 points regardless of the granularity of the web artifacts.
-{{}}
+{{result}}
 Conclusions:
-{{}}
+{{h-conclusion}}
 Using well-known techniques of SPLs from an architectural point of view, such as feature
 modeling, can improve the design and maintenance of variable web artifacts without the need of introducing
 complex approaches for implementing the underlying variability.
-{{}}
+{{conclusion}}
 ---
