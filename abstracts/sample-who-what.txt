@@ -45,14 +45,14 @@ BalRal22      Lutz        Franz
 JiaLiuJin22   Lutz        Franz
 HamMetQas22   Lutz        Franz
 #----- Block 6
-HorCorFue22   Lutz 
-GonRajHas22   Lutz
-ZenWuYe22     Lutz
-LavMor22      Lutz
-FurTorFel22   Lutz
-TurShaAld22   Lutz
+HorCorFue22   Lutz        -Franz
+GonRajHas22   Lutz        -Franz
+ZenWuYe22     Lutz        -Franz
+LavMor22      Lutz        -Franz
+FurTorFel22   Lutz        -Franz
+TurShaAld22   Lutz        -Franz
 # HaqShiNej22   is a correction to a previous article, not an article in itself
-AssGhaPul22   Lutz
+AssGhaPul22   Lutz        -Franz
 #----- Block 7
 SprSinSen22   Lutz
 KonKasKam22   Lutz
