@@ -122,7 +122,7 @@ def prt(value: tg.Any, end_line=False):
 
 def _count_words(s: str) -> int:
     spaces = re.findall(r"\s+", s)
-    return len(spaces)  # how many groups of one-or-more blanks
+    return len(spaces) + 1  # each group of one-or-more blanks separates two words
 
 
 def _numberish(val) -> str:
