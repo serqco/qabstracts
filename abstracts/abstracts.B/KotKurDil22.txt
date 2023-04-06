@@ -1,56 +1,56 @@
 The practical roles of enterprise architecture artifacts: A classification and relationship.
 
 Context:
-{{}}
+{{h-background}}
 Enterprise architecture (EA) is a description of an enterprise from an integrated business and IT
 perspective.
-{{}}
+{{background}}
 EA is typically defined as a comprehensive blueprint of an organization covering its business, data,
 applications and technology domains and consisting of diverse EA artifacts.
-{{}}
-EA has numerous potential stake­holders and usage scenarios in organizations.
-{{}}
+{{background}}
+EA has numerous potential stakeholders and usage scenarios in organizations.
+{{background}}
 However, the existing EA literature does not offer any consistent
 theories explaining the practical roles of individual EA artifacts and fails to explain how exactly different types of
 EA artifacts are used in practice.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 This study intends to explore the roles of different EA artifacts in organizations and develop a generic
 descriptive theory explaining these roles.
-{{}}
+{{objective}}
 The theory purports to cover various properties of EA artifacts as well
 as the relationships between them.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 The research method of this study follows two consecutive phases:
-{{}}
+{{method}}
 theory construction and theory
 validation.
-{{}}
+{{method}}
 First, theory construction is based on the qualitative in-depth analysis of five case organizations with
 established EA practices.
-{{}}
+{{method}}
 Next, theory validation includes confirmatory interviews with ten EA experts.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 This study develops a descriptive theory explaining the roles of different EA artifacts in an EA practice.
-{{}}
+{{result}}
 The resulting theory defines six general types of EA artifacts (Considerations, Standards, Visions, Landscapes,
 Outlines and Designs, CSVLOD) and explains their type-specific practical roles, including their informational
 contents, typical usage, ensuing organizational benefits and interrelationships with each other.
-{{}}
+{{result}}
 Conclusions:
-{{}}
+{{h-conclusion}}
 This study presents the first systematic theory describing the usage of EA artifacts in organizations.
-{{}}
+{{summary}}
 Our theory facilitates better theoretical understanding of the concept of EA and also provides evidence-based
 solutions to the commonly reported practical problems with EA.
-{{}}
+{{conclusion}}
 This study suggests that the EA research
 community should focus on studying individual EA artifacts instead of studying EA in general and calls for
 further research on EA artifacts and their usage as part of EA practices.
-{{}}
+{{fneed}}
 ---
