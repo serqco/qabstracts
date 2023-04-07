@@ -17,9 +17,14 @@
 		\vspace{-6mm}\caption{#2}\label{#1}%
 	\end{figure}}
 
+\newcommand{\Todo}[1]{\bgroup\bf\Large #1\egroup}
+\newcommand{\Quote}[1]{\bgroup\it #1\egroup}
+
+
 \begin{document}
 	
-\title{How (not) to write a software engineering abstract}
+\title{How (Not) To Write a Software Engineering Abstract}
+
 \author{Annie Author1, Bert Author2
 \thanks{A. Author1 is with A University, Btown, Ccountry}
 \thanks{B. Author2 is with D University, Etown, Fcountry}}
@@ -62,18 +67,191 @@ which currently are often missing.
 \end{IEEEkeywords}
 
 
+%========================================================================
 \section{Introduction}
 \IEEEPARstart{W}{elcome} to the article.
 
+\subsection{Research Question and Contributions}
+
+
+\subsection{Related Work}
+
+Budgen SE structured abstracts study; Dental research abstracts quality study.
+\Todo{Other???}
+
+
+\subsection{Article Structure}
 
 
 
-\section{Section Two}
-
-\noindent Welcome to the second section.
-
+%========================================================================
+\section{Methods}
 
 
+\subsection{Overview}
+
+\noindent
+This is a mixed-method study, consisting of three nominally sequential structural parts
+(Prestudy1, Prestudy2, Fullstudy) and
+four overlapping and partially iterative semantic elements
+(codebook development, quantitative content analysis,
+statistical evaluation, interpretation).
+
+Overall, we consider our study to be a qualitative one, but note that the middle two parts
+are compatible with a positivist epistemology (with "objective" results) so that 
+the final interpretation is done on an extremely solid and quantitative foundation.
+
+Prestudy1 was for initial codebook development.
+Prestudy2 was for codebook refinement\footnote{One additional big change happened
+	to the codebook shortly into the Fullstudy, at a time when only Lutz Prechelt
+	had started coding in the Fullstudy.},
+coding procedure development,
+and coder training.
+Fullstudy was for all other elements.
+
+
+\subsection{Data Availability}
+
+\noindent
+Full detail, including detailed execution history, available on GitHub:
+Codebook, handling procedure, coded abstracts, scripts for automation, scripts for stats and plots.
+
+
+\subsection{Codebook Development}
+
+\noindent
+Open coding in GTM fashion (grounding, constant comparison, concept memos).
+Initially structured abstract (describe!); then discovered archetype and extended set of codes; lots of clarification during coder training.
+49!!! codes; see codebook for details.
+Codes for key parts are subtle ( e.g. gap must lead "directly" to objective).
+
+
+\subsection{Coding Rules}
+
+\noindent
+by sentence; prefer single codes; consider only 1 sentence forward context (like readers); be friendly
+
+
+\subsection{Sample}
+
+\noindent
+Presumably-top-quality venues EMSE, ICSE TR, TOSEM, TSE,
+plus IST for structured abstracts.
+Random sample from 2022 population.
+100 each, but TOSEM smaller.
+
+
+\subsection{Quantitative Content Analysis and Inter-Coder Disagreements}
+
+\noindent
+Extract abstracts from PDFs; automatically split by sentence; manually add codes in {{}};
+code each abstract twice; script checks compatibility; coder B reconsiders; coder A reconsiders;
+A and B discuss remainder and resolve or add -ignorediff.
+
+Split disagreements into simple mistakes (and resolve those) and actual interpretation differences
+(limits of objectivity; actually usually quality issues, see below).
+
+
+\subsection{Statistical Evaluation}
+
+\noindent
+Plot-centric; straightforward; no bothering with confidence intervals.
+
+
+\subsection{Interpretation}
+
+\noindent
+Driven by research interest; grounded as far as possible.
+Makes use of impressions not captured in the data.
+Choice of examples reflects those.
+
+
+%========================================================================
+\section{Results}
+
+\subsection{Design Articles vs. Empirical Articles}
+
+\noindent
+Very different character depending on main contribution.
+Design articles have empirical studies, too.
+Empirical articles may describe auxiliary or secondary artifacts, too.
+
+
+\subsection{The Abstracts Archtetype}
+
+\noindent
+
+
+
+\subsection{How Not To: Missing Elements}
+
+\noindent
+Key elements (background, objective, (design), method, result, conclusion); helpful elements (summary, gap)
+
+
+\subsection{How Not To: Convoluted Trains of Thought}
+
+\noindent
+Topicstructure sequences; Archetype violations.
+
+
+\subsection{How Not To: Uninformative Formulations}
+
+\noindent
+Informativeness gaps; Announcements.
+
+
+\subsection{How Not To: Unclear Formulations}
+
+\noindent
+Understandability gaps; Ignorediffs
+
+
+\subsection{How-Not-To Summary}
+
+\noindent
+Good quality means: Follows archetype, no announcement, no gap.
+Should be over 90\% of articles.
+
+
+\subsection{How To: Structured Abstracts are more orderly}
+
+\noindent
+Re-analysis of "Convoluted Trains of Thought". 
+
+
+
+
+%========================================================================
+\section{Limitations and Threats to Validity}
+
+\noindent
+Internal: careful procedure, internal validity issues unlikely.
+Construct: cannot measure informativeness; cannot measure understandability;
+our proxy measures are less informative and only 90\% valid.
+Generalizability: 
+results should generalize to neighboring years in same venues;
+results not better in second-tier venues?
+
+
+%========================================================================
+\section{Conclusions}
+
+
+\subsection{...}
+\noindent
+
+
+\subsection{How To: Guidelines for Well-Written Abstracts}
+
+\noindent
+Authors: Follow archetype; write a structured abstract; consider a 'gap'; pack all information you can; formulate a take-home message (conclusion)
+
+Venues: Prescribe structured abstracts: Background (not Context); Design (if needed); Method/Methods; Results; or: Substudy 1/Substudy 2; Conclusion
+
+
+
+%========================================================================
 \appendix
 \section{Basic statistics}
 
