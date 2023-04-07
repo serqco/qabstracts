@@ -1,19 +1,19 @@
 Path context augmented statement and network for learning programs.
 
 Applying machine learning techniques in program analysis has attracted much attention.
-{{}}
+{{background}}
 Recent research efforts in detecting code clones and classifying code have shown that neural models based on abstract syntax trees (ASTs) can better represent source code than
 other approaches.
-{{}}
+{{background}}
 However, existing AST-based approaches do not take into account contextual information of a program, like statement context.
-{{}}
+{{gap}}
 To address this issue, we propose
 a novel approach path context to capture the context of statements, and a path context augmented network (PCAN) to learn a program.
-{{}}
+{{objective}}
 We evaluate PCAN on code clone detection,
 source code classification, and method naming.
-{{}}
+{{method}}
 The results show that compared to state-ofthe-art approaches, PCAN performs the best on code clone detection and has comparable
 performance on code classification and method naming.
-{{}}
+{{result:i1}}
 ---

@@ -3,38 +3,38 @@ Building Maintainable Software Using Abstraction Layering.
 Increased software maintainability can help improve
 a company’s profitability by directly reducing ongoing software
 development costs.
-{{}}
+{{background}}
 Abstraction Layered Architecture (ALA) is a
 reference architecture for building maintainable applications, but
 its effectiveness in commercial projects has remained unexplored.
-{{}}
+{{gap}}
 This research, carried out as a 16-month joint industry-academic
 project, explores developing commercial code bases using ALA
 and the extent to which ALA improves maintainability.
-{{}}
+{{objective}}
 An existing application from Datamars, New Zealand, was re-developed
 by using ALA and compared with the original application.
-{{}}
+{{method}}
 In
 order to carry out these comparisons, we developed suitable
 measures by adapting maintainability characteristics from the
 ISO 25010 family of standards.
-{{}}
+{{method}}
 Specifically, we determined
 metrics to capture the five sub-characteristics of maintainability:
-{{}}
+{{method}}
 modularity, reusability, analysability, modifiability, and testability; and used them to test our hypothesis that the use of ALA
 improved maintainability of the application.
-{{}}
+{{method}}
 During the evaluation, we found that the modularity, reusability, analysability,
 and testability of the re-developed ALA application were higher
 than for the original application.
-{{}}
+{{result:i1}}
 The modifiability of the ALAbased application was lower in the short-term, but shown to
 trend upwards in the longer term.
-{{}}
+{{result:i2}}
 Our findings led to proposing
 a generalised ALA-based development method that promises a
 significant reduction in maintenance costs.
-{{}}
+{{summary}}
 ---

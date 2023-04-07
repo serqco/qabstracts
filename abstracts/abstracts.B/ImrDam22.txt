@@ -1,41 +1,41 @@
 Using clarification questions to improve software developers&apos; Web search.
 
 Context:
-{{}}
+{{h-background}}
 Recent research indicates that Web queries written by software developers are not very successful
 in retrieving relevant results, performing measurably worse compared to general purpose Web queries.
-{{}}
+{{background}}
 Most
 approaches up to this point have addressed this problem with software engineering-specific automated query
 reformulation techniques, which work without developer involvement but are limited by the content of the
 original query.
-{{}}
+{{background}}
 In other words, these techniques automatically improve the existing query but cannot contribute
 new, previously unmentioned, concepts.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 In this paper, we propose a technique to guide software developers in manually improving their
 own Web search queries.
-{{}}
+{{objective}}
 We examine a conversational approach that follows unsuccessful queries with a
 clarification question aimed at eliciting additional query terms, thus providing to the developer a clear
 dimension along which the query could be improved.
-{{}}
+{{design}}
 Methods:
-{{}}
+{{h-method}}
 We describe a set of clarification questions derived from a corpus of software developer queries and
 a neural approach to recommending them for a newly issued query.
-{{}}
+{{design}}
 Results:
-{{}}
+{{h-result}}
 Our evaluation indicates that the recommendation technique is accurate, predicting a valid clarification question 80% of the time and outperforms simple baselines, as well as, state-of-the-art Learning To Rank
 (LTR) baselines.
-{{}}
+{{result:i1}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 As shown in the experimental results, the described approach is capable at recommending
 appropriate clarification questions to software developers and considered useful by a sample of developers
 ranging from novices to experienced professionals.
-{{}}
+{{summary,method,result}}
 ---

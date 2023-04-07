@@ -54,14 +54,14 @@ TurShaAld22   Lutz        Franz
 # HaqShiNej22   is a correction to a previous article, not an article in itself
 AssGhaPul22   Lutz        Franz
 #----- Block 7
-SprSinSen22   Lutz        -Julian
-KonKasKam22   Lutz        -Julian
-ImrDam22      Lutz        -Julian
-BiXiaLo22     Lutz        -Julian
-ZouWanGao22   Lutz        -Julian
-ValDíaBou22   Lutz        -Julian
-WuZouDou22    Lutz        -Julian
-XiaHanAi22    Lutz        -Julian
+SprSinSen22   Lutz        Julian
+KonKasKam22   Lutz        Julian
+ImrDam22      Lutz        Julian
+BiXiaLo22     Lutz        Julian
+ZouWanGao22   Lutz        Julian
+ValDíaBou22   Lutz        Julian
+WuZouDou22    Lutz        Julian
+XiaHanAi22    Lutz        Julian
 #----- Block 8
 YanHasZou22   Lutz
 YanXiaLo22    Lutz
