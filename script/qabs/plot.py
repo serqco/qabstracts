@@ -30,6 +30,7 @@ def plot(plotall: bool, datafile: str, outputdir: str):
     print_all_stats(datasets, outputdir)
     create_all_plots(plotall, datasets, outputdir)
 
+
 tse_columnwidth_mm = 88
 tse_pagewidth_mm = 180
 
@@ -123,30 +124,61 @@ def topicletters(topics: pd.Series) -> str:
 
 def create_all_subsets(datasets: argparse.Namespace):
     """Add pt.Subsets entries in datasets."""
-    ab_subsets_dict = dict(
-        all=dict(
-                x=1.0, 
-                filter=lambda df: df.loc[df.is_struc | ~df.is_struc]),
-        struc=dict(
-                x=2.5,
-                filter=lambda df: df.loc[df.is_struc]),
-        unstruc=dict(
-                x=3.5,
-                filter=lambda df: df.loc[~df.is_struc]),
-        design=dict(
-                x=4.5,
-                filter=lambda df: df.loc[df.is_design]),
-        empir=dict(
-            x=5.5,
-            filter=lambda df: df.loc[~df.is_design]),
-    )
+    datasets.ab_subsets = ab_subsets(datasets.by_ab)
+    datasets.ab_topicfractions_values = ab_topicfractions_values(datasets.by_ab)
+
+
+def ab_subsets(df: pd.DataFrame) -> pt.Subsets:
+    """Subsets of abstracts"""
+    ab_subsets_list = [
+        pt.Rows(label="all", 
+                x=1.0, color="red",
+                rows=lambda df: df.is_struc | ~df.is_struc),
+        pt.Rows(label="struc",
+                x=2.5, color="darkgreen",
+                rows=lambda df: df.is_struc),
+        pt.Rows(label="unstruc",
+                x=3.5, color="darkgreen",
+                rows=lambda df: ~df.is_struc),
+        pt.Rows(label="design",
+                x=4.5, color="mediumblue",
+                rows=lambda df: df.is_design),
+        pt.Rows(label="empir",
+                x=5.5, color="mediumblue",
+                rows=lambda df: ~df.is_design),
+    ]
     x = 7.0  # add per-venue subsets after a gap
-    for venue in sorted(datasets.by_ab.venue.unique()):
-        ab_subsets_dict[venue] = dict(
-            x=x, filter=lambda df: df.loc[df.venue == venue]
-        )
+    for venue in sorted(df.venue.unique()):
+        ab_subsets_list.append(pt.Rows(label=venue, x=x,  
+                                       color="grey" if venue == "IST" else "darkgrey",
+                                       rows=lambda df, venue=venue: df.venue == venue))
         x += 1.0
-    datasets.ab_subsets = pt.Subsets(ab_subsets_dict)
+    return pt.Subsets(ab_subsets_list)
+
+
+def ab_topicfractions_values(df: pd.DataFrame) -> pt.Subsets:
+    """subsets for fraction_x space-per-topic variables"""
+    ab_topicfractions_list = [
+        pt.Values(label="Background",
+                  x=1.0,
+                  values=lambda df: df.fraction_background),
+        pt.Values(label="Objective",
+                  x=2.0,
+                  values=lambda df: df.fraction_objective),
+        pt.Values(label="Design",
+                  x=3.0,
+                  values=lambda df: df.fraction_design),
+        pt.Values(label="Methods",
+                  x=4.0,
+                  values=lambda df: df.fraction_method),
+        pt.Values(label="Results",
+                  x=5.0,
+                  values=lambda df: df.fraction_result),
+        pt.Values(label="Conclusion",
+                  x=6.0,
+                  values=lambda df: df.fraction_conclusion),
+    ]
+    return pt.Subsets(ab_topicfractions_list)
 
 
 def print_all_stats(datasets: argparse.Namespace, outputdir: str):
@@ -174,9 +206,15 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
         pt.plot_boxplots(ctx, 'fraction_conclusion', ymax=100)
         pt.plot_boxplots(ctx, 'fraction_other', ymax=100)
         pt.plot_lowess(datasets.by_ab.fraction_introduction, "space for introduction [%]",
-                    datasets.by_ab.total_gaps, "#gaps",
-                    outputdir, "gaps_by_fracintro",
-                    xmax=100, ymax=15, frac=0.75)
+                       datasets.by_ab.total_gaps, "#gaps",
+                       outputdir, "gaps_by_fracintro",
+                       xmax=100, ymax=15, frac=0.75)
+        
+    ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
+                         60/25.4, tse_pagewidth_mm/25.4, 
+                         datasets.ab_topicfractions_values, datasets.ab_subsets)
+    pt.plot_xletgroups(ctx, pt.add_boxplotlet, "topicfractions",
+                       "space per topic [%]", ymax=100)
 
 
 def plot_ab_topicstructure_freqs(df: pd.DataFrame, outputdir: str):
