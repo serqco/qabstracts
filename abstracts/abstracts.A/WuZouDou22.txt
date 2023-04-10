@@ -48,7 +48,7 @@ than Devign.
 Furthermore, we conduct a case study on more than
 25 million lines of code and the result indicates that VulCNN can
 detect large-scale vulnerability.
-{{result:i1u1}}
+{{method:u1,result:i1}}
 Through the scanning reports, we
 finally discover 73 vulnerabilities that are not reported in NVD.
 {{result}}
