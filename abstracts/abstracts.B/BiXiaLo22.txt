@@ -19,7 +19,7 @@ different software development stages.
 Our statistical analysis reveals substantial gaps between groups, e.g.,
 practitioners have Direct vs.
 Indirect accessibility relevant work experience when they reviewed the summarized statements.
-{{method:i1,result:u1}}
+{{result:u1}}
 These gaps might hinder the quality of accessibility development and design, and we
 use our findings to establish a set of guidelines to help practitioners be aware of accessibility challenges and
 benefit factors.

@@ -15,5 +15,5 @@ source code classification, and method naming.
 {{method}}
 The results show that compared to state-ofthe-art approaches, PCAN performs the best on code clone detection and has comparable
 performance on code classification and method naming.
-{{result:i1}}
+{{method:i1,result:i1}}
 ---
