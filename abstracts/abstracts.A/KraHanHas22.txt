@@ -1,48 +1,48 @@
 Collaborative program comprehension via software visualization in extended reality.
 
 Context:
-{{}}
+{{h-background}}
 In software visualization research, various approaches strive to create immersive environments by
 employing extended reality devices.
-{{}}
+{{background}}
 In that context, only few research has been conducted on the effect of
 collaborative, i.e., multi-user, extended reality environments.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 We present our journey toward a web-based approach to enable (location-independent) collaborative program comprehension using desktop, virtual reality, and mobile augmented reality devices.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 We designed and implemented three multi-user modes in our web-based live trace visualization tool
 ExplorViz.
-{{}}
+{{design}}
 Users can employ desktop, mobile, and virtual reality devices to collaboratively explore software
 visualizations.
-{{}}
+{{design}}
 We conducted two preliminary user studies in which subjects evaluated our VR and AR modes
 after solving common program comprehension tasks.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 The VR and AR environments can be suitable for collaborative work in the context of program
 comprehension.
-{{}}
+{{result:u1}}
 The analyzed feedback revealed problems regarding the usability, e.g., readability of
 visualized entities and performance issues.
-{{}}
+{{result:i2}}
 Nonetheless, our approach can be seen as a blueprint for other
 researchers to replicate or build upon these modes and results.
-{{}}
+{{fposs}}
 Conclusions:
-{{}}
+{{h-conclusion}}
 ExplorViz's multi-user modes are our approach to enable heterogeneous collaborative software
 visualizations.
-{{}}
+{{summary}}
 The preliminary results indicate the need for more research regarding effectiveness, usability,
 and acceptance.
-{{}}
+{{conclusion}}
 Unlike related work, we approach the latter by introducing a multi-user augmented reality
 environment for software visualizations based on off-the-shelf mobile devices.
-{{}}
+{{summary:u1}}
 ---

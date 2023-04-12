@@ -2,37 +2,37 @@ Morest: Model-based RESTful API Testing with Execution Feedback.
 
 RESTful APIs are arguably the most popular endpoints for accessing
 Web services.
-{{}}
+{{background}}
 Blackbox testing is one of the emerging techniques
 for ensuring the reliability of RESTful APIs.
-{{}}
+{{background}}
 The major challenge
 in testing RESTful APIs is the need for correct sequences of API
 operation calls for in-depth testing.
-{{}}
+{{background}}
 To build meaningful opera-
 tion call sequences, researchers have proposed techniques to learn
 and utilize the API dependencies based on OpenAPI specifications.
-{{}}
+{{background}}
 However, these techniques either lack the overall awareness of how
 all the APIs are connected or the flexibility of adaptively fixing the
 learned knowledge.
-{{}}
+{{gap}}
 In this paper, we propose Morest, a model-based RESTful API
 testing technique that builds and maintains a dynamically updating
 RESTful-service Property Graph (RPG) to model the behaviors
 of RESTful-services and guide the call sequence generation.
-{{}}
+{{objective,design}}
 We
 empirically evaluated Morest and the results demonstrate that
 Morest can successfully request an average of 152.66%-232.45%
 more API operations, cover 26.16%-103.24% more lines of code, and
 detect 40.64%-215.94% more bugs than state-of-the-art techniques.
-{{}}
+{{a-method,result:i1u1}}
 In total, we applied Morest to 6 real-world projects and found
 44 bugs (13 of them cannot be detected by existing approaches).
-{{}}
+{{method,result}}
 Specifically, 2 of the confirmed bugs are from Bitbucket, a famous
 code management service with more than 6 million users.
-{{}}
+{{result}}
 ---

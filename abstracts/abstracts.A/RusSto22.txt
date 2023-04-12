@@ -2,27 +2,27 @@ Gender Differences in Personality Traits of Software Engineers.
 
 There is a growing body of gender studies in software engineering to understand diversity and inclusion issues, as diversity
 is recognized to be a key issue to healthy teams and communities.
-{{}}
+{{background}}
 A second factor often linked to team performance is personality,
 which has received far more attention.
-{{}}
+{{background}}
 Very few studies, however, have focused on the intersection of these two fields.
-{{}}
+{{gap}}
 Hence, we set
 out to study gender differences in personality traits of software engineers.
-{{}}
+{{objective}}
 Through a survey study we collected personality data, using
 the HEXACO model, of 483 software engineers.
-{{}}
+{{method}}
 The data were analyzed using a Bayesian independent sample t-test and network
 analysis.
-{{}}
+{{method:u1}}
 The results suggest that women score significantly higher in Openness to Experience, Honesty-Humility, and Emotionality
 than men.
-{{}}
+{{result:i3}}
 Further, men show higher psychopathic traits than women.
-{{}}
+{{result:i1}}
 Based on these findings, we develop a number of propositions
 that can guide future research.
-{{}}
+{{a-fposs}}
 ---
