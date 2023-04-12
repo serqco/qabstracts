@@ -2,7 +2,7 @@
 
 
 Shadow stacks play an important role in protecting return addresses to mitigate ROP attacks.
-{{background:u1}}
+{{background}}
 Parallel shadow
 stacks, which shadow the call stack of each thread at the same constant offset for all threads, are known not to
 support multi-threading well.

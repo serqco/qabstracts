@@ -3,7 +3,7 @@ An empirical study of issue-link algorithms: which issue-link algorithms should 
 The accuracy of the SZZ algorithm is pivotal for just-in-time defect prediction because most
 prior studies have used the SZZ algorithm to detect defect-inducing commits to construct
 and evaluate their defect prediction models.
-{{background:u1}}
+{{background}}
 The SZZ algorithm has two phases to detect
 defect-inducing commits:
 {{background}}
