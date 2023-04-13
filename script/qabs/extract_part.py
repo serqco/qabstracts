@@ -69,6 +69,14 @@ def extract_part(extractor: Extractor, layouttype: LayoutDescriptor, pdffilepath
         f.write(abstract)
 
 
+def more_readable(txt: str) -> str:
+    """Replace some special chars by more readable equivalents."""
+    txt2 = txt
+    txt2 = txt2.replace("ﬁ", "fi")
+    txt2 = txt2.replace("ﬂ", "fl")
+    # txt2 = txt2.replace("", "")
+    return txt2
+
 def volume_as_path_name_year(volumepath: str) -> tg.Tuple[str, str, int]:
     volumename_regexp = r"(.+/)?([A-Za-z]+)-(\d\d\d\d)"  # {perhaps_path}/{name}-{year}
     mm = re.fullmatch(volumename_regexp, volumepath) 

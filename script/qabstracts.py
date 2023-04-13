@@ -9,6 +9,7 @@ import qabs.check_codings
 import qabs.compare_codings
 import qabs.export
 import qabs.extract_abs
+import qabs.extract_concl
 import qabs.plot
 import qabs.prepare_ann 
 
@@ -30,6 +31,8 @@ def main():  # uses sys.argv
         qabs.export.export(pargs.workdir)
     elif subcmd == "extract-abs":
         qabs.extract_abs.extract_abs(pargs.outputdir, pargs.layout, pargs.inputfile)
+    elif subcmd == "extract-concl":
+        qabs.extract_concl.extract_concl(pargs.outputdir, pargs.layout, pargs.inputfile)
     elif subcmd == "plot":
         qabs.plot.plot(pargs.plotall, pargs.datafile, pargs.outputdir)
     elif subcmd == "prepare-ann":
