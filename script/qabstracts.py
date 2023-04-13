@@ -29,7 +29,7 @@ def main():  # uses sys.argv
     elif subcmd == "export":
         qabs.export.export(pargs.workdir)
     elif subcmd == "extract-abs":
-        qabs.extract_abs.extract_abstracts(pargs.outputdir, pargs.layout, pargs.inputfile)
+        qabs.extract_abs.extract_abs(pargs.outputdir, pargs.layout, pargs.inputfile)
     elif subcmd == "plot":
         qabs.plot.plot(pargs.plotall, pargs.datafile, pargs.outputdir)
     elif subcmd == "prepare-ann":
@@ -71,6 +71,10 @@ def setup_argparser():
     subparser = subparsers.add_parser('extract-abs',
             help="Extract abstracts from PDF files")
     qabs.extract_abs.configure_argparser(subparser)
+
+    subparser = subparsers.add_parser('extract-concl',
+            help="Extract conclusion sections from PDF files")
+    qabs.extract_concl.configure_argparser(subparser)
 
     subparser = subparsers.add_parser('plot',
             help=qabs.plot.usage)

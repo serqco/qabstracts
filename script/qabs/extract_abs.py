@@ -1,9 +1,7 @@
-import os.path
 import re
 import subprocess as sub
-import typing as tg
 
-import qabs.metadata as metadata
+import qabs.extract_part as ep
 
 usage = """Heuristically obtains abstracts from PDF files.
   Works on one given PDF file or each local PDF file whose basename is
@@ -24,30 +22,13 @@ def configure_argparser(p_extract_abs):
                                help="PDF file to scan for its abstract")
 
 
-def is_icse_in_year(volume: str, years: tg.Set[int]) -> bool:
-    """Knows which ICSE years use ACM layout (versus IEEE CS layout)."""
-    path, name, year = volume_path_name_year(volume)
-    if name != "ICSE":
-        return False
-    return year in years
-
-def is_acmconf_icse(volume: str) -> bool:
-    """Knows some ICSE years that use acmconf layout."""
-    return is_icse_in_year(volume, {2022, 2020, 2018, 2016})
-
-
-def is_ieeeconf_icse(volume: str) -> bool:
-    """Knows some ICSE years that use ieeeconf layout."""
-    return is_icse_in_year(volume, {2021, 2019, 2017})
-
-
 # Map from a layouttype name to a layout description and list of venues where it applies:
 layouttypes = dict(  # None means "We have no clue!"
     acmconf=dict(
         cols=2,
         start=r"\nABSTRACT\s",
         end=r"(?i)\nCCS CONCEPTS|\nACM Reference Format:|\nKEYWORDS\n",
-        applies_to=[is_acmconf_icse, ]),
+        applies_to=[ep.is_acmconf_icse, ]),
     acmtrans=dict(
         cols=1,
         start=None,  # a horizontal line not represented in the text format
@@ -63,7 +44,7 @@ layouttypes = dict(  # None means "We have no clue!"
         cols=2,
         start=r"\nAbstract—",
         end=r"\n+I\. ",
-        applies_to=[is_ieeeconf_icse, ]),
+        applies_to=[ep.is_ieeeconf_icse, ]),
     ieeetrans=dict(
         cols=1,  # abtract and index terms are single-column
         start=r"\nAbstract—",
@@ -78,55 +59,18 @@ layouttypes = dict(  # None means "We have no clue!"
 )
 
 
-def decide_layouttype(entry: metadata.Entry) -> str:
-    volume = metadata.volume(entry)
-    venue = volume_path_name_year(volume)[1]
-    for key, descriptor in layouttypes.items():
-        for candidate in descriptor['applies_to']:
-            mentioned_by_name = (candidate == venue)
-            matched_by_predicate = (callable(candidate) and candidate(volume))
-            if mentioned_by_name or matched_by_predicate:
-                return key
-    raise ValueError(f"cannot find layouttype for volume '{volume}'")
-    return "???"
+def extract_abs(outputdir: str, layouttype: str, inputfile: str):
+    ep.extract_parts(abstract_from_pdf, layouttypes, layouttype, outputdir, inputfile)
 
 
-def extract_abstracts(outputdir: str, layouttype: str, inputfile: str):
-    if inputfile.endswith('.pdf'):
-        extract_abstract(inputfile, layouttype, outputdir)
-    elif inputfile.endswith('.list'):
-        with open(inputfile, mode='rt', encoding="utf8") as f:
-            inputstring = f.read()
-        for inputfile in inputstring.split('\n'):
-            extract_abstract(inputfile, layouttype, outputdir)
-    else:
-        print(f"'{inputfile}': unknown input file type; must be .pdf or .list")
-
-
-def extract_abstract(pdffilepath: str, layouttype: str, outputdir: str):
-    #----- skip existing:
-    pdffile = os.path.basename(pdffilepath)
-    basename, suffix = os.path.splitext(pdffile)
-    outputpathname = f"{outputdir}/{basename}.txt"
-    if os.path.exists(outputpathname):
-        print(f"#### '{outputpathname}' exists!. SKIPPED.")
-        return
-    #----- obtain abstract:
-    abstract = abstract_from_pdf(pdffilepath, layouttype)
-    #----- write abstract:
-    print(f"---- writing '{outputpathname}'")
-    with open(outputpathname, mode='wt', encoding="utf8") as f:
-        f.write(abstract)
-
-
-def abstract_from_pdf(pdffile: str, layouttype: str) -> str:
-    cols = layouttypes[layouttype]['cols']
+def abstract_from_pdf(layouttype: ep.LayoutDescriptor, pdffile: str) -> str:
+    cols = layouttype['cols']
     if cols == 1:
         page1 = page1_from_pdf(pdffile, keeplayout=False)
-        return abstract_from_page(page1, layouttype)
+        return abstract_from_page(layouttype, page1)
     elif cols == 2:
         page1 = page1_from_pdf(pdffile, keeplayout=True)
-        return abstract_from_page(left_column(page1), layouttype)
+        return abstract_from_page(layouttype, left_column(page1))
     else:
         assert False, f"impossible col: {cols}"
         return ""
@@ -162,23 +106,16 @@ def left_column(rawpage: str) -> str:
     return compactpage
 
 
-def abstract_from_page(page: str, layouttype: str) -> str:
+def abstract_from_page(layouttype: ep.LayoutDescriptor, page: str) -> str:
     #--- find abstract start or use 0:
-    re_start = layouttypes[layouttype]['start']
+    re_start = layouttype['start']
     m_start = re_start and re.search(re_start, page) or None
     startpos = m_start and m_start.end() or 0
     #--- find abstract end or use page end:
-    re_end = layouttypes[layouttype]['end']
+    re_end = layouttype['end']
     m_end = re_end and re.search(re_end, page[startpos+1:]) or None
     endpos = m_end and startpos+1+m_end.start() or len(page)
     #--- return best approximation to abstract:
     # print(f"  abstract_from_page: len={len(page)}, start={startpos}, end={endpos}")
     # print(f"  start: '{page[startpos:startpos+30]}', end: '{page[endpos+1:endpos+30]}'")
     return page[startpos:endpos]
-
-
-def volume_path_name_year(volumepath: str) -> tg.Tuple[str, str, int]:
-    volumename_regexp = r"(.+/)?([A-Za-z]+)-(\d\d\d\d)"  # {perhaps_path}/{name}-{year}
-    mm = re.fullmatch(volumename_regexp, volumepath) 
-    path, name, year = (mm.group(1), mm.group(2), int(mm.group(3)))
-    return (path, name, year)

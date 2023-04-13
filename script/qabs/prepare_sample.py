@@ -2,9 +2,11 @@ import json
 import os.path
 import typing as tg
 
-import qabs.extract_abs
+import qabs.extract_abs as ea
+import qabs.extract_part as ep
 import qabs.metadata as metadata
 import qabs.prepare_ann
+
 
 def configure_argparser(subparser):
     subparser.add_argument('workdir', type=str,
@@ -41,9 +43,9 @@ def prepare_article(targetdir: str, volumedir: str, article: metadata.Entry, tit
     if os.path.exists(targetfile):
         return  # we are in remaindermode: skip pre-existing file
     #----- obtain abstract:
-    layouttype = qabs.extract_abs.decide_layouttype(article)
-    print(f"{article}  ({layouttype})\t-> {targetfile}")
-    abstract = qabs.extract_abs.abstract_from_pdf(f"{volumedir}/{article}", layouttype)  # may not be pure
+    layouttype = ep.decide_layouttype(ea.layouttypes, article)
+    print(f"{article}  \t-> {targetfile}")
+    abstract = qabs.extract_abs.abstract_from_pdf(layouttype, f"{volumedir}/{article}")  # may not be pure
     #----- annotate abstract and write abstract file:
     title = titles[citekey]
     annotated_abstract = qabs.prepare_ann.prepared(abstract)
