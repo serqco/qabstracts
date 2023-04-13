@@ -107,15 +107,15 @@ def left_column(rawpage: str) -> str:
 
 
 def abstract_from_page(layouttype: ep.LayoutDescriptor, page: str) -> str:
-    #--- find abstract start or use 0:
+    # --- find abstract start or use 0:
     re_start = layouttype['start']
     m_start = re_start and re.search(re_start, page) or None
     startpos = m_start and m_start.end() or 0
-    #--- find abstract end or use page end:
+    # --- find abstract end or use page end:
     re_end = layouttype['end']
     m_end = re_end and re.search(re_end, page[startpos+1:]) or None
     endpos = m_end and startpos+1+m_end.start() or len(page)
-    #--- return best approximation to abstract:
+    # --- return best approximation to abstract:
     # print(f"  abstract_from_page: len={len(page)}, start={startpos}, end={endpos}")
     # print(f"  start: '{page[startpos:startpos+30]}', end: '{page[endpos+1:endpos+30]}'")
-    return page[startpos:endpos]
+    return ep.more_readable(page[startpos:endpos])
