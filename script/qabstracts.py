@@ -20,7 +20,7 @@ def main():  # uses sys.argv
     if subcmd == "select-sample":
         qabs.select_sample.select_sample(pargs.size, pargs.blocksize, pargs.to, pargs.volume)
     elif subcmd == "prepare-sample":
-        qabs.prepare_sample.prepare_sample(pargs.workdir, pargs.volumedir, pargs.remainder)
+        qabs.prepare_sample.prepare_sample(pargs.whatpart, pargs.workdir, pargs.volumedir, pargs.remainder)
     elif subcmd == "fix-encoding":
         qabs.fix_encoding.fix_encoding(pargs.files)
     elif subcmd == "check-codings":

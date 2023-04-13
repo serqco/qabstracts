@@ -12,7 +12,6 @@ def citekey(list_line: Entry) -> str:
 
 def split_entry(list_line: Entry) -> tg.Tuple[str, str]:
     """From a line like volumes/EMSE-2021/AbuDab21.pdf return its semantic parts EMSE-2021 and AbuDab21"""
-    print("split_entry", list_line)
     mm = re.search(r"([^/]+)/([^/]+)\.pdf$", list_line)
     assert mm
     return mm.group(1), mm.group(2)

@@ -1,3 +1,4 @@
+import io
 import re
 import typing as tg
 
@@ -26,39 +27,49 @@ def configure_argparser(p_extract_abs):
                                help="PDF file to scan for its last section")
 
 
-default_section_heading = r"\n\n(\d\d? .+)\n\n"
-default_end_of_concl = r"\n(Acknowledgments|ACKNOWLEDGMENTS|References|REFERENCES)\n"
+default_section_heading = r"\n\n((\d\d?) .+)\n\n"  # group 2 must be section number
+default_end_of_concl = (r"\n(Acknowledgments?|ACKNOWLEDGMENTS?|CRediT .{10,36}|"
+                        r"References\s?|REFERENCES|Appendix( A(: .+)?)?)\n")
 # Map from a layouttype name to a layout description and list of venues where it applies:
 layouttypes = dict(  # None means "We have no clue!"
     acmconf=dict(
         laparams=pdfl.LAParams(),
-        section_heading=default_section_heading,
+        section_heading=r"\n\n((\d\d?)\s+[^a-z\n]+)\n",
         end_of_concl=default_end_of_concl,
+        remove_pars=(r"\d+",  # page number
+                     r"\x0c.+\n\n.+"),  # page header
         applies_to=[ep.is_acmconf_icse, ]),
     acmtrans=dict(
         laparams=pdfl.LAParams(),
         section_heading=default_section_heading,
         end_of_concl=default_end_of_concl,
+        remove_pars=(),
         applies_to=["TOSEM", ]),
     elsevier=dict(
         laparams=pdfl.LAParams(),
-        section_heading=default_section_heading,
+        section_heading=r"\n\n((\d\d?)\. .+)\n\n",
         end_of_concl=default_end_of_concl,
+        remove_pars=(),
         applies_to=["IST", ]),
     ieeeconf=dict(
         laparams=pdfl.LAParams(),
         section_heading=default_section_heading,
         end_of_concl=default_end_of_concl,
+        remove_pars=(),
         applies_to=[ep.is_ieeeconf_icse, ]),
     ieeetrans=dict(
         laparams=pdfl.LAParams(),
         section_heading=default_section_heading,
         end_of_concl=default_end_of_concl,
+        remove_pars=(),
         applies_to=["TSE", ]),
     springer=dict(
         laparams=pdfl.LAParams(),
         section_heading=default_section_heading,
         end_of_concl=default_end_of_concl,
+        remove_pars=(r"\x0c\d+\s+Page\s+\d+\s+of\s+\d+",
+                     r"Page\s+\d+\s+of\s+\d+\s+\d+",
+                     r"\x0c?Empir\s+Software\s+Eng\s\(20\d\d\)\s+\d+:\d+"),
         applies_to=["EMSE", ]),
 )
 
@@ -68,10 +79,32 @@ def extract_concl(outputdir: str, layouttype: str, inputfile: str):
 
 
 def conclusion_from_pdf(layout: ep.LayoutDescriptor, pdffile: str) -> str:
-    txt = pdfhl.extract_text(pdffile, layout['laparams'])
-    txt = ep.more_readable(txt)  # TODO: extract last numbered section
-    headings_mms = [mm for mm in re.finditer(layout['section_heading'], txt)]
-    conclusion_plus_rest = txt[headings_mms[-1].start():]
+    out = io.StringIO()
+    with open(pdffile, 'rb') as f:
+        pdfhl.extract_text_to_fp(f, out, laparams=layout['laparams'], 
+                                 output_type='text', codec=None)
+    txt = ep.more_readable(out.getvalue(), layout['remove_pars'])
+    headings_mms = find_headings([mm for mm in re.finditer(layout['section_heading'], txt)])
+    headings_txt = "\n".join([mm.group(1) for mm in headings_mms])
+    # return "%s\n***\n%s" % (headings_txt, txt)  # use for debugging
+    conclusion_plus_rest = txt[headings_mms[-1].start(1):]
     mm = re.search(layout['end_of_concl'], conclusion_plus_rest)
-    concl_endpos = mm.start()
-    return conclusion_plus_rest[:concl_endpos]
+    concl_endpos = mm.start() if mm else len(conclusion_plus_rest)-1
+    return "%s\n\n%s" % (headings_txt, conclusion_plus_rest[:concl_endpos])
+
+
+def find_headings(matches: tg.List[re.Match]) -> tg.List[re.Match]:
+    """
+    Simple heuristic for letting through only proper headings:
+    We ensure that the numbers increase by 1.
+    Exception: We allow increase by 2 for the case that one(!) heading in between is longer than 1 line.
+    """
+    result = []
+    lastnumber = 0
+    for mm in matches:
+        thisnumber = int(mm.group(2))  # see regexp in layouttypes
+        if thisnumber > lastnumber and thisnumber <= lastnumber+2:
+            # we allow gaps of 1 to accomodate occasional multiline-long headings
+            result.append(mm)
+            lastnumber = thisnumber
+    return result
