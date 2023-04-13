@@ -1,20 +1,28 @@
 # pytest tests
 
 import sys
+import typing as tg
 
 import qabs.annotations as annot
 import qabs.compare_codings as cc
 
 annots = annot.Annotations()  # for every test to use, so we read the codebook only once
 
+
 def test_compare_codings2(capsys):
+    def l_a_s(la_pairs: tg.Sequence[tg.Tuple[str, str]]) -> tg.Sequence[annot.AnnotatedSentence]:
+        return [annot.AnnotatedSentence(1, pair[0], pair[1]) for pair in la_pairs]
+
     def mycc(la_pairs1, la_pairs2):
-        return cc.compare_codings2("A", "Name1", la_pairs1, "B", "Name2", la_pairs2, 2, annots)
+        return cc.compare_codings2("A", "Name1", l_a_s(la_pairs1), 
+                                   "B", "Name2", l_a_s(la_pairs2), 
+                                   "TEST", 1, annots)
 
     def check(la_pairs1, la_pairs2, outputelem, appears=True):
         msgcount = mycc(la_pairs1, la_pairs2)
         captured = capsys.readouterr()
-        if captured.err: print(captured.err, file=sys.stderr)
+        if captured.err: 
+            print(captured.err, file=sys.stderr)
         if outputelem:
             if appears:
                 assert (outputelem in captured.out), captured.out

@@ -30,7 +30,7 @@ class Codebook:
         self.codes = self._allowed_codes(self.CODEBOOK_PATH)
 
     def exists_bare(self, code: str) -> bool:
-        """Whether this code can never have an UI suffix."""
+        """Whether this code can never have a UI suffix."""
         return code in self.codes
 
     def exists_with_iu_suffix(self, coding: str) -> bool:
@@ -44,10 +44,12 @@ class Codebook:
     def exists_with_suffix(self, coding: str) -> bool:
         return self.exists_with_iu_suffix(coding) or self.exists_with_u_suffix(coding)
 
-    def is_extra_code(self, code: str) -> bool:
+    @staticmethod
+    def is_extra_code(code: str) -> bool:
         return code.startswith('-')
 
-    def is_heading_code(self, code: str) -> bool:
+    @staticmethod
+    def is_heading_code(code: str) -> bool:
         return code.startswith('h-')
 
     @classmethod
@@ -73,7 +75,7 @@ class Codebook:
         with open(codebookfile, 'rt', encoding='utf8') as cb:
             codebook = cb.read()
         codes = re.findall(self.CODEDEF_REGEXP, codebook, flags=re.IGNORECASE)
-        return codes
+        return set(codes)
 
 
 @dataclasses.dataclass
@@ -86,8 +88,8 @@ class AnnotatedSentence:
 class Annotations:
     ALLOWED_IU_SUFFIX_REGEXP = r"i\d+|u\d+|i\d+u\d+"
     ALLOWED_U_SUFFIX_REGEXP = r"u\d+"
-    ANNOTATIONISH_REGEXP = r"\n(\{\{[^}]*\})\n|\n(\{[^{]*\}\})\n|\n(.+\{\{.*\}\})|\n(\{\{.*\}\})\n"  # 4 cases, matches only 1 
-    ANNOTATION_CONTENT_REGEXP = r"([\w-]+)(:[\w\d]*)?"  # we simply ignore commas and blanks (and any non-word garbage symbols)
+    ANNOTATIONISH_REGEXP = r"\n(\{\{[^}]*\})\n|\n(\{[^{]*\}\})\n|\n(.+\{\{.*\}\})|\n(\{\{.*\}\})\n"  # 4 cases
+    ANNOTATION_CONTENT_REGEXP = r"([\w-]+)(:[\w\d]*)?"  # ignore commas and blanks and any non-word garbage symbols
     BARE_CODENAME_REGEXP = r"-?([\w-]+)(:[\w\d]*)?"
     EMPTY_ANNOTATION_REGEXP = r"\{\{\s*\}\}"
     LINE_AND_ANNOTATION_PAIR_REGEXP = r"(.*)\n(\{\{.*\}\})"
@@ -117,16 +119,17 @@ class Annotations:
         mm = re.match(self.BARE_CODENAME_REGEXP, coding)
         return mm.group(1)
 
-    def check_annotationish(self, matches: AnnotationishMatches) -> tg.Tuple[OStr, OStr]:
+    @staticmethod
+    def check_annotationish(matches: AnnotationishMatches) -> tg.Tuple[OStr, OStr]:
         """Return (message, None) if annotationish is ill-formatted or (None, annotation) otherwise"""
         closing1, opening1, other, valid = matches
         if closing1:
-            return (f"second closing brace appears to be missing: '{closing1}'\n", None)
+            return f"second closing brace appears to be missing: '{closing1}'\n", None
         elif opening1:
-            return (f"second opening brace appears to be missing: '{opening1}'\n", None)
+            return f"second opening brace appears to be missing: '{opening1}'\n", None
         elif other:
-            return ("{{}}" f" annotation must be alone on a line: '{other}'\n", None)
-        return (None, valid)
+            return "{{}}" f" annotation must be alone on a line: '{other}'\n", None
+        return None, valid
 
     def codes_with_suffixes(self, annotation1: str, annotation2: str) -> tg.Mapping[str, IUIUcount]:
         """
@@ -150,7 +153,7 @@ class Annotations:
         # counts are never optional, so all values are pairs now
         return result
 
-    def codings_of(self, annotation: str, strip_suffixes = False) -> tg.Set[str]:
+    def codings_of(self, annotation: str, strip_suffixes=False) -> tg.Set[str]:
         """Return set of codings from annotation."""
         result = set()
         for code, csuffix in re.findall(self.ANNOTATION_CONTENT_REGEXP, annotation):
@@ -172,7 +175,7 @@ class Annotations:
         an IU suffix (or csuffix) in i form, u form, iu form or even a missing one.
         """
         if not suffix:
-            return (0, 0)
+            return 0, 0
         mm = re.fullmatch(self.SPLIT_SUFFIX_REGEXP, suffix)
         # if not mm:  # force malformed suffixes to (0, 0)
         #     return (0, 0)

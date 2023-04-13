@@ -2,6 +2,7 @@ import qabs.annotations
 
 annots = qabs.annotations.Annotations()  # global, for reuse to read codebook only once
 
+
 def test_codings_of():
     assert annots.codings_of("background") == {'background'}
     assert annots.codings_of("objective method") == {'objective', 'method'}
@@ -15,7 +16,7 @@ def test_find_all_sentence_and_annotation_pairs():
     input = "title\n\nL1\nL2\n{{ann}}\nL11\nL21\n{{ann1}}\nL3\n{{ann2}}\n---"
     output = annots.find_all_sentence_and_annotation_pairs(input)
     print(output)
-    assert output[2][1] == "{{ann2}}"
+    assert output[2].annotation == "{{ann2}}"
 
 
 def test_is_empty_annotation():

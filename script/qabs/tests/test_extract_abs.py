@@ -2,7 +2,7 @@
 
 import pytest
 
-import qabs.extract_abs
+import qabs.extract_abs as ea
 
 datadir = "script/testdata"
 
@@ -28,10 +28,11 @@ tests = [
      "is available at http://holmes.cs.umass.edu/."),
 ]
 
+
 @pytest.mark.parametrize("filename,layouttype,start,end", tests)
 def test_all_extract_abs_tasks(filename, layouttype, start, end):
     pdfpath = f"{datadir}/{filename}"
-    abstract = qabs.extract_abs.abstract_from_pdf(pdfpath, layouttype)
+    abstract = ea.abstract_from_pdf(ea.layouttypes[layouttype], pdfpath)
     is_correct = abstract.startswith(start) and abstract.endswith(end)
     if not is_correct:
         print(f"########## {filename}  --layout {layouttype}\n",
