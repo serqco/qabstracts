@@ -4,20 +4,20 @@ Expressing class specifications via executable constraints is impor-
 tant for various software engineering tasks such as test generation,
 bug finding and automated debugging, but developers rarely write
 them.
-{{}}
+{{background}}
 Techniques that infer specifications from code exist to fill this
 gap, but they are designed to support specific kinds of assertions
 and are difficult to adapt to support different assertion languages,
 e.g., to add support for quantification, or additional comparison
 operators, such as membership or containment.
-{{}}
+{{gap}}
 To address the above issue, we present SpecFuzzer, a novel
 technique that combines grammar-based fuzzing, dynamic invari-
 ant detection, and mutation analysis, to automatically produce
 class specifications.
-{{}}
+{{objective}}
 SpecFuzzer uses:
-{{}}
+{{design}}
 (i) a fuzzer as a generator
 of candidate assertions derived from a grammar that is automat-
 ically obtained from the class definition; (ii) a dynamic invariant
@@ -25,19 +25,19 @@ detector –Daikon– to filter out assertions invalidated by a test
 suite; and (iii) a mutation-based mechanism to cluster and rank
 assertions, so that similar constraints are grouped and then the
 stronger prioritized.
-{{}}
+{{design}}
 Grammar-based fuzzing enables SpecFuzzer
 to be straightforwardly adapted to support different specification
 languages, by manipulating the fuzzing grammar, e.g., to include
 additional operators.
-{{}}
+{{design}}
 We evaluate our technique on a benchmark of 43 Java meth-
 ods employed in the evaluation of the state-of-the-art techniques
 GAssert and EvoSpex.
-{{}}
+{{method}}
 Our results show that SpecFuzzer can eas-
 ily support a more expressive assertion language, over which is
 more effective than GAssert and EvoSpex in inferring specifications,
 according to standard performance metrics.
-{{}}
+{{result:i1}}
 ---
