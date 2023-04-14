@@ -10,6 +10,7 @@ usage = """Prepares files for annotation.
   on the next line.
 """
 
+
 def configure_argparser(p_prepare_ann):
     p_prepare_ann.add_argument('outputdir',
                                help="Directory where prepared files will be placed")
@@ -18,8 +19,8 @@ def configure_argparser(p_prepare_ann):
 
 
 def prepare_annotations(outputdir: str, inputfiles: tg.Sequence[str]):
-  for inputfile in inputfiles:
-      prepare_one_file(inputfile, outputdir)
+    for inputfile in inputfiles:
+        prepare_one_file(inputfile, outputdir)
 
 
 def prepare_one_file(inputfile: str, outputdir: str):
@@ -35,7 +36,7 @@ def prepare_one_file(inputfile: str, outputdir: str):
         f.write(prepared(inputstring))
 
 
-def prepared(input: str) -> str:
+def prepared(txt: str) -> str:
     """
     Splits into sentences and inserts '{{}}' pairs.
     Possible sentence ends are . : ? ! followed by a blank,
@@ -44,21 +45,19 @@ def prepared(input: str) -> str:
     """
     possible_end = r'[.:?!]\s*[ \n$]'
     result = ""
-    #----- process abstract text:
-    while len(input) > 0:
-        end_match = re.search(possible_end, input)
+    # ----- process abstract text:
+    while len(txt) > 0:
+        end_match = re.search(possible_end, txt)
         if end_match:
             # print(f"## match ")  #'{end_match.group()}'")
             endpos = end_match.end()
-            candidate = input[0:endpos]
-            input = input[endpos:]
+            candidate = txt[0:endpos]
+            txt = txt[endpos:]
             result += replacement_for(candidate)
         else:  # no further sentence end at all
             # print("## remainder ")
-            result += replacement_for(input)
-            input = ""
-    #----- add global area at end:
-    
+            result += replacement_for(txt)
+            txt = ""
     return result
 
 
