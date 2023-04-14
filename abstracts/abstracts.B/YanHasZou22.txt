@@ -2,48 +2,48 @@ An empirical study on release notes patterns of popular apps in the Google Play 
 
 Release notes of a new mobile release provide valuable information for app users about
 the updated functionality of an app.
-{{}}
+{{background}}
 Moreover, app developers can use the release notes
 to inform users about the resolution of a previously reported issue in user reviews.
-{{}}
+{{background}}
 Prior
 work shows that release notes are an essential artifact for app developers to announce the
 emergency fixes and the newly adopted features.
-{{}}
+{{background}}
 However, little is known about the common
 practices adapted by app developers in preparing their release notes.
-{{}}
+{{gap}}
 In this paper, we are
 interested in capturing the common practices as release notes patterns.
-{{}}
+{{objective}}
 First, we conduct an
 online survey with 102 respondents to investigate their views on mobile release notes.
-{{}}
+{{method}}
 Our
 results show that most developers find release notes to be useful for notifying their userbase.
-{{}}
+{{result}}
 Then, we study release notes patterns by analyzing 69,851 releases and 67.7 million
 user reviews of 2,232 top free-to-download apps in the Google Play Store over three years
 (from April 2016 until April 2019).
-{{}}
+{{method}}
 We observe that app developers tend to write either
 long release notes (over 50 words) or short release notes (less than 7 words).
-{{}}
+{{result}}
 We use the
 characteristics of release notes, such as the number of words, to identify six patterns of
 release notes in mobile apps.
-{{}}
+{{result:i1}}
 We manually investigate the release notes from each of the
 six patterns, and find 17 release drivers for the release notes.
-{{}}
+{{method,result:u1}}
 We also find that apps with
 longer release notes tend to have higher average user ratings.
-{{}}
+{{result:i2}}
 Furthermore, we observe that a
 shift from rarely updated patterns to frequently updated patterns tend to have higher average
 user ratings.
-{{}}
+{{result:i1}}
 Our work shows potential directions for developers to improve the release note
 mechanisms in app stores.
-{{}}
+{{a-conclusion}}
 ---

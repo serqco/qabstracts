@@ -3,37 +3,37 @@ DeepAnalyze: Learning to Localize Crashes at Scale.
 Crash localization, an important step in debugging crashes, is chal-
 lenging when dealing with an extremely large number of diverse
 applications and platforms and underlying root causes.
-{{}}
+{{background}}
 Large-scale
 error reporting systems, e.g., Windows Error Reporting (WER),
 commonly rely on manually developed rules and heuristics to lo-
 calize blamed frames causing the crashes.
-{{}}
+{{background}}
 As new applications and
 features are routinely introduced and existing applications are run
 under new environments, developing new rules and maintaining
 existing ones become extremely challenging.
-{{}}
+{{gap}}
 We propose a data-driven solution to address the problem.
-{{}}
+{{objective}}
 We
 start with the first large-scale empirical study of 362𝐾 crashes and
 their blamed methods reported to WER by tens of thousands of ap-
 plications running in the field.
-{{}}
+{{method:i2}}
 The analysis provides valuable in-
 sights on where and how the crashes happen and what methods to
 blame for the crashes.
-{{}}
+{{a-result}}
 These insights enable us to develop Deep-
 Analyze, a novel multi-task sequence labeling approach for identi-
 fying blamed frames in stack traces.
-{{}}
+{{design}}
 We evaluate our model with
 over a million real-world crashes from four popular Microsoft ap-
 plications and show that DeepAnalyze, trained with crashes from
 one set of applications, not only accurately localizes crashes of the
 same applications, but also bootstrap crash localization for other
 applications with zero to very little additional training data.
-{{}}
+{{method:i1,result:i1}}
 ---
