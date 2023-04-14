@@ -63,14 +63,14 @@ ValDíaBou22   Lutz        Julian
 WuZouDou22    Lutz        Julian
 XiaHanAi22    Lutz        Julian
 #----- Block 8
-YanHasZou22   Lutz
-YanXiaLo22    Lutz
-GeoKecSha22   Lutz
-BesMarBos22   Lutz
-SheBanNat22   Lutz
-WonWagTre22   Lutz
-YuHuLi22      Lutz
-MaMocZar22    Lutz
+YanHasZou22   Lutz        -Julian
+YanXiaLo22    Lutz        -Julian
+GeoKecSha22   Lutz        -Julian
+BesMarBos22   Lutz        -Julian
+SheBanNat22   Lutz        -Julian
+WonWagTre22   Lutz        -Julian
+YuHuLi22      Lutz        -Julian
+MaMocZar22    Lutz        -Julian
 #----- Block 9
 GerMarLat22   Lloyd
 RahImtSto22   Lloyd
