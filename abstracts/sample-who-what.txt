@@ -225,14 +225,14 @@ CheJinZho22   Lutz
 GarDegJim22   Lutz
 BiaTon22      Lutz
 #----- Block 26
-WuSheChe22   
-DasPhi22   
-MoldapAgu22   
-ZhoBoWu22   
-MaeGalGor22   
-ZhaChePen22   
-GueLarChe22   
-ZhoCheHao22   
+WuSheChe22    -Lutz
+DasPhi22      -Lutz
+MoldapAgu22   -Lutz
+ZhoBoWu22     -Lutz
+MaeGalGor22   -Lutz
+ZhaChePen22   -Lutz
+GueLarChe22   -Lutz
+ZhoCheHao22   -Lutz
 #----- Block 27
 BagKahBri22   
 LeeShiNej22   
