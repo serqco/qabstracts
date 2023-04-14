@@ -16,7 +16,7 @@ Bazel).
 {{background}}
 These hand-maintained graphs may be (a) underspecified, leading to incorrect build behaviour; or (b) overspecified, leading to
 missed acceleration opportunities.
-{{background}}
+{{gap}}
 In this paper, we propose KOTINOS – a language-agnostic approach to infer data from which build
 acceleration decisions can be made without relying upon build specifications.
 {{objective}}

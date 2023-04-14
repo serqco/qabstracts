@@ -23,7 +23,7 @@ AI-based systems are dependability and safety.
 {{result}}
 We identified multiple SE approaches for AI-based systems,
 which we classified according to the SWEBOK areas.
-{{result:i1}}
+{{result:i1,method}}
 Studies related to software testing and software quality
 are very prevalent, while areas like software maintenance seem neglected.
 {{result:i2}}
