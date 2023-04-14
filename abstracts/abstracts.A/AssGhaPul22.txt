@@ -48,7 +48,7 @@ Conclusion:
 {{h-conclusion}}
 Competence development involves different stakeholders, including software professionals, educa­
 tors, and the software industry.
-{{summary}}
+{{background}}
 The UComGSP framework enables SEC stakeholders to (i) identify SE compe­
 tencies, (ii) identify the essential SEC, and (iii) assess the satisfaction levels that can be derived from different
 competencies.

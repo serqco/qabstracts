@@ -15,7 +15,7 @@ This analysis is embedded in an interactive
 visualization tool that additionally relies on dynamic analysis to
 visualize promise lifetimes and instances of anti-patterns executed
 at run time.
-{{objective}}
+{{objective,-ignorediff}}
 By enabling the user to navigate between promises in
 the visualization and the source code fragments that they originate
 from, problems and optimization opportunities can be identified.
@@ -36,6 +36,6 @@ Moreover, DrAsync's visu-
 alization of promise lifetimes and relationships provides additional
 insight into the execution behavior of asynchronous programs and
 helped identify further optimization opportunities.
-{{claim}}
+{{claim,-ignorediff}}
 ---
 Interpreting sentences 3 and 4 requires looking at the title
