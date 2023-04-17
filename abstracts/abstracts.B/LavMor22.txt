@@ -24,7 +24,7 @@ the rates of actual and estimated positive software modules.
 We derive the minimum and
 maximum value of φ for any given value of the F-measure, and the conditions under which
 both the F-measure and φ rank two classifiers in the same order.
-{{a-result}}
+{{result}}
 Conclusions Our results show that φ is a sensible and useful metric for assessing the performance of binary classifiers.
 {{h-conclusion,conclusion}}
 We also recommend that the F-measure should not be used

@@ -27,7 +27,7 @@ itories.
 Upon examination of a subset of these, we found that the
 majority of problematic code reported by DrAsync could be elimi-
 nated through refactoring.
-{{result:i1}}
+{{a-method,result:i1}}
 Further investigation revealed that, in a
 few cases, the elimination of anti-patterns reduced the time needed
 to execute the refactored code fragments.
