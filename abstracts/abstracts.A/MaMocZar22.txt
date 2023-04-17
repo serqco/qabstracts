@@ -15,7 +15,7 @@ insights on specific technology attributes that are associated with better visib
 {{objective}}
 Thus, our findings have
 practical value for developers seeking to increase the adoption rate of their products.
-{{objective}}
+{{objective,-ignorediff}}
 Approach:
 {{h-method}}
 We leverage social contagion theory and
@@ -51,7 +51,7 @@ Future work:
 We hope that our methodology encompassing social contagion that captures both
 rational and irrational preferences and the elucidation of key measures from large collections of version control data provides a general
 path toward increasing visibility, driving better informed decisions, and producing more sustainable and widely adopted software.
-{{fneed}}
+{{fposs}}
 ---
 An 'objective' statement that totally sounds like a conclusion:
 "Thus, our findings have

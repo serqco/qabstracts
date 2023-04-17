@@ -20,7 +20,7 @@ ough empirical study to measure and compare the energy con-
 sumption and run-time performance of six different dl models
 written in the two most popular dl frameworks, namely PyTorch
 and TensorFlow.
-{{objective,-hype}}
+{{method,-hype}}
 We use a well-known benchmark of dl models,
 DeepLearningExamples, created by nvidia, to compare both the
 training and inference costs of dl.
@@ -49,7 +49,7 @@ Our man-
 ual analysis, of the documentation and source code of the functions
 examined, reveals that such a difference in performance costs is
 under-documented, in these frameworks.
-{{result}}
+{{method:i1,result}}
 This suggests that devel-
 opers need to improve the documentation of their dl frameworks,
 the source code of the functions used in these frameworks, as well

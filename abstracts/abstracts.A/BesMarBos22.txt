@@ -21,7 +21,7 @@ This
 is carried out by exploring how companies encourage and reward practitioners for actively keeping the level of
 technical debt down add whether the companies use any forcing or penalising initiatives when managing technical
 debt.
-{{a-method}}
+{{method:i2}}
 Method:
 {{h-method}}
 As a first step, this paper reports the results of both an online survey providing quantitative data from
