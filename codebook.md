@@ -1,7 +1,7 @@
 # Codebook and coding rules for qabstracts study
 
 created: Lutz Prechelt, 2022-07-14  
-changed: Lutz Prechelt, 2023-03-09
+changed: Lutz Prechelt, 2023-04-17
 
 
 ## 1. Coding rules: Fundamentals
@@ -150,7 +150,7 @@ The above list sketches the default structure of a structured abstract.
   an artifact, such as software, a process, or a method.  
   We call articles where the abstract contains a design statement "design articles"
   (or artifact-centric articles). 
-  - Such articles will typically also contain some empirical part and code `method` is used
+  - Such articles will typically also contain some empirical contribution and `method`/`result` are used
     for its description.  
   - The "designed features" mentioned above are known at design time
     and classified as `design`.
