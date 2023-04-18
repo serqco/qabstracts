@@ -234,14 +234,14 @@ ZhaChePen22   Lutz
 GueLarChe22   Lutz
 ZhoCheHao22   Lutz
 #----- Block 27
-BagKahBri22   -Lutz
-LeeShiNej22   -Lutz
-GaoZhoXia22   -Lutz
-KapSod22      -Lutz
-AniTreZai22   -Lutz
-BraZai22      -Lutz
-BriRouSei22   -Lutz
-AmrMaoSeg22   -Lutz
+BagKahBri22   Lutz
+LeeShiNej22   Lutz
+GaoZhoXia22   Lutz
+KapSod22      Lutz
+AniTreZai22   Lutz
+BraZai22      Lutz
+BriRouSei22   Lutz
+AmrMaoSeg22   Lutz
 #----- Block 28
 GiaMasMag22   
 CasDeuGra22   

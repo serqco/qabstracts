@@ -2,29 +2,29 @@ How Developers Engineer Test Cases: An Observational Study.
 
 One of the main challenges that developers face when testing their systems lies in engineering test cases that are good
 enough to reveal bugs.
-{{}}
+{{background}}
 And while our body of knowledge on software testing and automated test case generation is already quite
 significant, in practice, developers are still the ones responsible for engineering test cases manually.
-{{}}
+{{background}}
 Therefore, understanding the
 developers’ thought- and decision-making processes while engineering test cases is a fundamental step in making developers better at
 testing software.
-{{}}
+{{background}}
 In this paper, we observe 13 developers thinking-aloud while testing different real-world open-source methods, and
 use these observations to explain how developers engineer test cases.
-{{}}
+{{objective,method}}
 We then challenge and augment our main findings by surveying
 72 software developers on their testing practices.
-{{}}
+{{method}}
 We discuss our results from three different angles.
-{{}}
+{{result}}
 First, we propose a general
 framework that explains how developers reason about testing.
-{{}}
+{{result:i1}}
 Second, we propose and describe in detail the three different
 overarching strategies that developers apply when testing.
-{{}}
+{{result}}
 Third, we compare and relate our observations with the existing body of
 knowledge and propose future studies that would advance our knowledge on the topic.
-{{}}
+{{a-result,fposs}}
 ---
