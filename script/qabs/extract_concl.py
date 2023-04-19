@@ -6,8 +6,9 @@ import pdfminer.high_level as pdfhl
 import pdfminer.layout as pdfl
 
 import qabs.extract_part as ep
+import qscript
 
-usage = """Heuristically obtains the last sections (conclusion section) from PDF files.
+meaning = """Heuristically obtains the last sections (conclusion section) from PDF files.
   Works on one given PDF file or each local PDF file whose basename is
   listed in the given '*.list' file.
   Uses pdfminer.six to extract the PDF text,
@@ -17,14 +18,19 @@ usage = """Heuristically obtains the last sections (conclusion section) from PDF
 """
 
 
-def configure_argparser(p_extract_abs):
-    p_extract_abs.add_argument('--layout', type=str, required=True,
-                               choices=layouttypes.keys(),
-                               help="Article layout type used in the PDFs.")
-    p_extract_abs.add_argument('outputdir',
-                               help="Directory where conclusions files will be placed")
-    p_extract_abs.add_argument('inputfile',
-                               help="PDF file to scan for its last section")
+def add_arguments(subparser: qscript.ArgumentParser):
+    subparser.add_argument('--layout', type=str, required=True,
+                           choices=layouttypes.keys(),
+                           help="Article layout type used in the PDFs.")
+    subparser.add_argument('outputdir',
+                           help="Directory where conclusions files will be placed")
+    subparser.add_argument('inputfile',
+                           help="PDF file to scan for its last section")
+
+
+def execute(args: qscript.Namespace):
+    ep.extract_parts(conclusion_from_pdf, layouttypes, 
+                     args.layouttype, args.outputdir, args.inputfile)
 
 
 default_section_heading = r"\n\n((\d\d?) .+)\n\n"  # group 2 must be section number
@@ -72,10 +78,6 @@ layouttypes = dict(  # None means "We have no clue!"
                      r"\x0c?Empir\s+Software\s+Eng\s\(20\d\d\)\s+\d+:\d+"),
         applies_to=["EMSE", ]),
 )
-
-
-def extract_concl(outputdir: str, layouttype: str, inputfile: str):
-    ep.extract_parts(conclusion_from_pdf, layouttypes, layouttype, outputdir, inputfile)
 
 
 def conclusion_from_pdf(layout: ep.LayoutDescriptor, pdffile: str) -> str:

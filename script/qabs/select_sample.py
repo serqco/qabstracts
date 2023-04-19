@@ -4,16 +4,34 @@ import random
 import typing as tg
 
 import qabs.metadata as metadata
+import qscript
 
-def configure_argparser(p_select_sample):
-    p_select_sample.add_argument('--size', metavar="N", type=int, required=True,
-            help="Total number of abstracts in the sample")
-    p_select_sample.add_argument('--blocksize', metavar="k", type=int, required=True,
-            help="Size of subsamples that are stratified over volumes and randomized")
-    p_select_sample.add_argument('--to', metavar="targetdir", type=str, required=True,
-            help="target directory where to place result")
-    p_select_sample.add_argument('volume', nargs='+',
-            help="dirname of a retrievelit result (subpopulation)")
+meaning = "Get block-randomized articles list of given size"
+
+
+def add_arguments(subparser: qscript.ArgumentParser):
+    subparser.add_argument('--size', metavar="N", type=int, required=True,
+                           help="Total number of abstracts in the sample")
+    subparser.add_argument('--blocksize', metavar="k", type=int, required=True,
+                           help="Size of subsamples that are stratified over volumes and randomized")
+    subparser.add_argument('--to', metavar="targetdir", type=str, required=True,
+                           help="target directory where to place result")
+    subparser.add_argument('volume', nargs='+',
+                           help="dirname of a retrievelit result (subpopulation)")
+
+
+def execute(args: qscript.Namespace):
+    pop = Population(args.volumes)
+    sample = Sample(args.blocksize)
+    for i in range(args.size):
+        sample.add(pop.draw1())
+    if os.path.exists(f"{args.to}/sample.list"):
+        print(f"{to}/sample.list already exists. I will not overwrite it. Exiting.")
+        return
+    metadata.write_list(f"{args.to}/sample.list", sample.entries)
+    print(f"wrote '{args.to}/sample.list'")
+    write_who_what(args.to, sample, args.blocksize)
+    write_titles(args.to, sample, args.volumes)
 
 
 class Population:
@@ -71,20 +89,6 @@ class Sample:
     def citekeys(self):
         for elem in self._elems:
             yield metadata.citekey(elem)
-
-
-def select_sample(size: int, blocksize: int, to: str, volumes: tg.Sequence[str]):
-    pop = Population(volumes)
-    sample = Sample(blocksize)
-    for i in range(size):
-        sample.add(pop.draw1())
-    if os.path.exists(f"{to}/sample.list"):
-        print(f"{to}/sample.list already exists. I will not overwrite it. Exiting.")
-        return
-    metadata.write_list(f"{to}/sample.list", sample.entries)
-    print(f"wrote '{to}/sample.list'")
-    write_who_what(to, sample, blocksize)
-    write_titles(to, sample, volumes)
 
 
 def volumename(volumedir: str) -> str:

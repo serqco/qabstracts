@@ -1,22 +1,20 @@
-import sys
-import typing as tg
+import qscript
 
-
-usage = """Makes each file conform to UTF-8 encoding.
+meaning = """Makes each file conform to UTF-8 encoding.
   Attempts to read it as UTF-8. 
   If that fails, reads it as Windows-1252 and writes it back to the same filename as UTF-8.
 """
 
-def configure_argparser(subparser):
+def add_arguments(subparser: qscript.ArgumentParser):
     subparser.add_argument('files', nargs='+',
                            help="Files to check and perhaps convert")
 
 
-def fix_encoding(files: tg.Sequence[str]):
+def execute(args: qscript.Namespace):
     print("============================================================")
     print("=== Rewrite non-UTF8 files (interpreted as Windows-1252) ===")
     print("============================================================")
-    for file in files:
+    for file in args.files:
         check_and_perhaps_rewrite(file)
 
 

@@ -5,8 +5,11 @@ from matplotlib import pyplot as plt
 
 import qabs.annotations as annot
 import qabs.plottypes as pt
+import qscript
 
-usage = """Computes derived data and creates plots and stats outputs.
+tse_columnwidth_mm = 88
+tse_pagewidth_mm = 180
+meaning = """Computes derived data and creates plots and stats outputs.
   Reads data created by 'export'. Computes many derived data sets.
   Creates plots in outputdir.
 """
@@ -14,25 +17,21 @@ usage = """Computes derived data and creates plots and stats outputs.
 # Terminology: ab=abstract(s)  df=dataframe  freq=frequency  struc=structured
 
 
-def configure_argparser(p_prepare_ann: argparse.ArgumentParser):
-    p_prepare_ann.add_argument('--plotall', action='store_const', const=True,
-                               help="run all plots, not only those currently under development")
-    p_prepare_ann.add_argument('datafile',
-                               help="Data as created by 'export'")
-    p_prepare_ann.add_argument('outputdir',
-                               help="Directory where plot files will be placed")
+def add_arguments(subparser: qscript.ArgumentParser):
+    subparser.add_argument('--plotall', action='store_const', const=True,
+                           help="run all plots, not only those currently under development")
+    subparser.add_argument('datafile',
+                           help="Data as created by 'export'")
+    subparser.add_argument('outputdir',
+                           help="Directory where plot files will be placed")
 
 
-def plot(plotall: bool, datafile: str, outputdir: str):
-    df = read_datafile(datafile)
+def execute(args: qscript.Namespace):
+    df = read_datafile(args.datafile)
     datasets = create_all_datasets(df)
     create_all_subsets(datasets)
-    print_all_stats(datasets, outputdir)
-    create_all_plots(plotall, datasets, outputdir)
-
-
-tse_columnwidth_mm = 88
-tse_pagewidth_mm = 180
+    print_all_stats(datasets, args.outputdir)
+    create_all_plots(args.plotall, datasets, args.outputdir)
 
 
 def read_datafile(datafile: str) -> pd.DataFrame:

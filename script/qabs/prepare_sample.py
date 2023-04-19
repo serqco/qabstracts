@@ -7,12 +7,14 @@ import qabs.extract_concl as ec
 import qabs.extract_part as ep
 import qabs.metadata as metadata
 import qabs.prepare_ann
+import qscript
 
 WHAT_ABSTRACT = "abstract"
 WHAT_CONCLUSION = "conclusion"
+meaning = "Get and prepare abstracts (after select-sample)"
 
 
-def configure_argparser(subparser):
+def add_arguments(subparser: qscript.ArgumentParser):
     subparser.add_argument('whatpart', type=str, choices=(WHAT_ABSTRACT, WHAT_CONCLUSION),
                            help="what to extract from articles")
     subparser.add_argument('workdir', type=str,
@@ -23,10 +25,10 @@ def configure_argparser(subparser):
                            help="Silently skip existing abstracts and create any missing ones.")
 
 
-def prepare_sample(whatpart: str, workdir: str, volumedir: str, remaindermode: bool):
-    targetdir = f"{workdir}/raw"
+def execute(args: qscript.Namespace):
+    targetdir = f"{args.workdir}/raw"
     # ----- prepare directories:
-    if remaindermode:
+    if args.remainder:
         if not os.path.exists(targetdir):
             raise ValueError(f"'{targetdir}' does not exist. Exiting.")
     else:
@@ -34,12 +36,12 @@ def prepare_sample(whatpart: str, workdir: str, volumedir: str, remaindermode: b
             raise ValueError(f"'{targetdir}' already exists. I will not overwrite it. Exiting.")
         os.mkdir(targetdir)
     # ----- obtain data:
-    sample = metadata.read_list(f'{workdir}/sample.list')
-    with open(f"{workdir}/sample-titles.json", encoding='utf8') as f:
+    sample = metadata.read_list(f'{args.workdir}/sample.list')
+    with open(f"{args.workdir}/sample-titles.json", encoding='utf8') as f:
         titles = json.load(f)
     # ----- create abstracts files:
     for article in sample:
-        prepare_article(whatpart, targetdir, volumedir, article, titles)
+        prepare_article(args.whatpart, targetdir, args.volumedir, article, titles)
 
 
 def prepare_article(whatpart: str, targetdir: str, volumedir: str, article: metadata.Entry, 

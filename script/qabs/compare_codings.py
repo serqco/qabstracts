@@ -1,20 +1,21 @@
 import sys
 import typing as tg
 
-import qabs.metadata
 import qabs.annotations as annot
-
 import qabs.color as color
+import qabs.metadata
+import qscript
 
-usage = """Compares annotations between coders and flags discrepancies.
+IGNORE = annot.Codebook.IGNORECODE
+meaning = """Compares annotations between coders and flags discrepancies.
   Knows about the maximum allowed IU count difference.
   Knows about codes for silencing discrepancies.
   Reports problems on stdout.
 """
+aliases = ["compare", "comp"]
 
-IGNORE = annot.Codebook.IGNORECODE
 
-def configure_argparser(subparser):
+def add_arguments(subparser: qscript.ArgumentParser):
     subparser.add_argument('workdir',
                            help="Directory where sample-who-what.txt and abstracts.?/* live")
     subparser.add_argument('--maxcountdiff', type=int, default=2, metavar="N",
@@ -23,21 +24,21 @@ def configure_argparser(subparser):
                            help="Only messages for this coder will be displayed.")
 
 
-def compare_codings(maxcountdiff: int, onlyfor: str, workdir: str):
+def execute(args: qscript.Namespace):
     msgcount = 0
-    what = qabs.metadata.WhoWhat(workdir)
+    what = qabs.metadata.WhoWhat(args.workdir)
     annots = annot.Annotations()
     print("=========================================================================================")
     print("=== check pairs of files (consult with your fellow coder except for obvious mistakes) ===")
     print("=========================================================================================")
     for coder in sorted(what.coders):
-        if onlyfor and onlyfor != coder:
+        if args.onlyfor and args.onlyfor != coder:
             continue  # suppress this block of messages
         print(f"\n\n#################### {coder}'s: ####################\n")
         for file1, coder1, file2, coder2 in what.pairs:
             if coder in (coder1, coder2):
                 msgcount += compare_files(file1, coder1, file2, coder2, 
-                                          what.blockname(file1), maxcountdiff, annots)
+                                          what.blockname(file1), args.maxcountdiff, annots)
     msgcount = min(msgcount, 255)
     sys.exit(msgcount)  # 0 if no errors, number of errors otherwise
 

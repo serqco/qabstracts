@@ -4,20 +4,36 @@ import re
 import typing as tg
 from numbers import Number
 
-import qabs.metadata
 import qabs.annotations as annot
+import qabs.metadata
+import qscript
 
-usage = """Splits each annotated file into one record per coding.
+NAN_VALUE = "NA"  # R's "not available" value
+meaning = """Splits each annotated file into one record per coding.
   Knows how to compute sentence lengths and how to split them among multiple codes where needed.
   Unavailable number values will be NA (for use with R).
   Prints resulting tab-separated values file on stdout.
 """
 
-NAN_VALUE = "NA"  # R's "not available" value
 
-def configure_argparser(subparser):
+def add_arguments(subparser: qscript.ArgumentParser):
     subparser.add_argument('workdir',
                            help="Directory where metadata and abstracts.?/* live")
+
+
+def execute(args: qscript.Namespace):
+    annots = annot.Annotations()
+    venue = qabs.metadata.Venue(args.workdir)
+    what = qabs.metadata.WhoWhat(args.workdir)
+    prt_head()
+    for coder in sorted(what.coders):
+        for file in what.files_of(coder):
+            citekey = what.citekey(file)
+            abstract = Abstract(filename=file, citekey=citekey,
+                                venue=venue.venue_of(citekey), volume=venue.volume_of(citekey),
+                                coder_letter=what.coder_letter(file), coder=coder,
+                                annots=annots, codebook=annots.codebook)
+            export_for_file(file, abstract)
 
 
 @dataclasses.dataclass
@@ -30,21 +46,6 @@ class Abstract:
     coder: str
     annots: annot.Annotations  # for convenience
     codebook: annot.Codebook  # for convenience
-
-
-def export(workdir: str):
-    annots = annot.Annotations()
-    venue = qabs.metadata.Venue(workdir)
-    what = qabs.metadata.WhoWhat(workdir)
-    prt_head()
-    for coder in sorted(what.coders):
-        for file in what.files_of(coder):
-            citekey = what.citekey(file)
-            abstract = Abstract(filename=file, citekey=citekey,
-                                venue=venue.venue_of(citekey), volume=venue.volume_of(citekey),
-                                coder_letter=what.coder_letter(file), coder=coder,
-                                annots=annots, codebook=annots.codebook)
-            export_for_file(file, abstract)
 
 
 def export_for_file(filename: str, abstract: Abstract):

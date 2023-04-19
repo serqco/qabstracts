@@ -2,8 +2,9 @@ import re
 import subprocess as sub
 
 import qabs.extract_part as ep
+import qscript
 
-usage = """Heuristically obtains abstracts from PDF files.
+meaning = """Heuristically obtains abstracts from PDF files.
   Works on one given PDF file or each local PDF file whose basename is
   listed in the given '*.list' file.
   Calls pdftotext (from the poppler-utils package) to extract page 1,
@@ -12,14 +13,20 @@ usage = """Heuristically obtains abstracts from PDF files.
   Creates abstract text file with same basename in outputdir.
 """
 
-def configure_argparser(p_extract_abs):
-    p_extract_abs.add_argument('--layout', type=str, required=True,
-                               choices=layouttypes.keys(),
-                               help="Article layout type used in the PDFs.")
-    p_extract_abs.add_argument('outputdir',
-                               help="Directory where abstracts files will be placed")
-    p_extract_abs.add_argument('inputfile',
-                               help="PDF file to scan for its abstract")
+
+def add_arguments(subparser: qscript.ArgumentParser):
+    subparser.add_argument('--layout', type=str, required=True,
+                           choices=layouttypes.keys(),
+                           help="Article layout type used in the PDFs.")
+    subparser.add_argument('outputdir',
+                           help="Directory where abstracts files will be placed")
+    subparser.add_argument('inputfile',
+                           help="PDF file to scan for its abstract")
+
+
+def execute(args: qscript.Namespace):
+    ep.extract_parts(abstract_from_pdf, layouttypes, 
+                     args.layouttype, args.outputdir, args.inputfile)
 
 
 # Map from a layouttype name to a layout description and list of venues where it applies:
@@ -57,10 +64,6 @@ layouttypes = dict(  # None means "We have no clue!"
         # Abstract will be incomplete and need fixing; the string is helpful for finding those cases!
         applies_to=["EMSE", ]),
 )
-
-
-def extract_abs(outputdir: str, layouttype: str, inputfile: str):
-    ep.extract_parts(abstract_from_pdf, layouttypes, layouttype, outputdir, inputfile)
 
 
 def abstract_from_pdf(layouttype: ep.LayoutDescriptor, pdffile: str) -> str:

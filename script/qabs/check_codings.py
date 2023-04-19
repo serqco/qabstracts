@@ -1,28 +1,31 @@
+import argparse
 import sys
 import typing as tg
 
-import qabs.metadata
 import qabs.annotations as annot
-
 import qabs.color as color
+import qabs.metadata
+import qscript
 
-usage = """Checks annotated (and unannotated) abstracts files for errors.
+meaning = """Checks annotated (and unannotated) abstracts files for errors.
   Knows about annotation syntax. 
   Reads all abstracts files and checks for syntax errors and undefined codes.
   Reports problems on stdout.
 """
+aliases = ["check"]
 
-def configure_argparser(subparser):
+
+def add_arguments(subparser: qscript.ArgumentParser):
     subparser.add_argument('workdir',
                            help="Directory where metadata and abstracts.?/* live")
 
 
-def check_codings(workdir: str):
+def execute(args: qscript.Namespace):
     print("===============================================================================")
     print("=== check individual files (correct mistakes even if they are not your own) ===")
     print("===============================================================================")
     annots = annot.Annotations()
-    what = qabs.metadata.WhoWhat(workdir)
+    what = qabs.metadata.WhoWhat(args.workdir)
     errors: int = 0
     for coder in sorted(what.coders):
         print(f"\n#################### {coder}'s: ####################\n")
@@ -38,7 +41,7 @@ def report_errors(file: str, coder: str, block: str, annots: annot.Annotations) 
             print(f"---- {color.BLUE}{file}{color.RESET}  ({coder}, Block {block}):\n" + '\n'.join(errors))
     with open(file, 'rt', encoding='utf8') as f:
         content = f.read()
-    #----- check annotation-ish stuff:
+    # ----- check annotation-ish stuff:
     errors = []
     for matches in annots.find_all_annotationish(content):
         msg, annotation = annots.check_annotationish(matches)
@@ -52,7 +55,7 @@ def report_errors(file: str, coder: str, block: str, annots: annot.Annotations) 
             errors.append("too many problems in this file, stopping.\n")
             report()
             return len(errors)
-    #----- finish:
+    # ----- finish:
     report()
     return len(errors)
 
