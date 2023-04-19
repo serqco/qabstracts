@@ -2,39 +2,39 @@ Adaptive Test Selection for Deep Neural Networks.
 
 Deep neural networks (DNN) have achieved tremendous development
 in the past decade.
-{{}}
+{{background}}
 While many DNN-driven software applications
 have been deployed to solve various tasks, they could also
 produce incorrect behaviors and result in massive losses.
-{{}}
+{{background}}
 To reveal
 the incorrect behaviors and improve the quality of DNN-driven applications,
 developers often need rich labeled data for the testing
 and optimization of DNN models.
-{{}}
+{{background}}
 However, in practice, collecting 
 diverse data from apaplication scenarios and labeling them properly
 is often a highly expensive and time-consuming task.
-{{}}
+{{gap}}
 In this paper, we proposed an adaptive test selection method,
 namely ATS, for deep neural networks to alleviate this problem.
-{{}}
+{{objective}}
 ATS leverages the difference between the model outputs to measure
 the behavior diversity of DNN test data.
-{{}}
+{{design}}
 And it aims at selecting
 a subset with diverse tests from a massive unlabelled dataset.
-{{}}
+{{design}}
 We experiment ATS with four well-designed DNN models and four
 widely-used datasets in comparison with various kinds of neuron
 coverage (NC).
-{{}}
+{{method}}
 The results demonstrate that ATS can significantly
 outperform all test selection methods in assessing both fault detection
 and model improvement capability of test suites.
-{{}}
+{{result:i1}}
 It is promising
 to save the data labeling and model retraining costs for deep
 neural networks.
-{{}}
+{{conclusion}}
 ---

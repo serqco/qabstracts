@@ -1,49 +1,49 @@
 ﻿Context-Aware Personalized Crowdtesting Task Recommendation.
 
 Identifying and optimizing open participation is essential to the success of open software development.
-{{}}
+{{background}}
 Existing studies highlighted the importance of worker recommendation for crowdtesting tasks in order to improve
 bug detection efficiency, i.e., detect more bugs with fewer workers.
-{{}}
+{{background}}
 However, there are a couple of limitations
 in existing work.
-{{}}
+{{gap}}
 First, these studies mainly focus on one-time recommendations based on expertise matching
 at the beginning of a new task.
-{{}}
+{{gap}}
 Second, the recommendation results suffer from severe popularity bias, i.e.,
 highly experienced workers are recommended in almost all the tasks, while less experienced workers rarely
 get recommended.
-{{}}
+{{gap}}
 This article argues the need for context- and fairness-aware in-process crowdworker recommendation in order to address these limitations.
-{{}}
+{{objective}}
 We motivate this study through a pilot study, revealing
 the prevalence of long-sized non-yielding windows, i.e., no new bugs are revealed in consecutive test reports
 during the process of a crowdtesting task.
-{{}}
+{{method,result}}
 This indicates the potential opportunity for accelerating crowdtesting by recommending appropriate workers in a dynamic manner, so that the non-yielding windows could
 be shortened.
-{{}}
+{{design}}
 Besides, motivated by the popularity bias in existing crowdworker recommendation approach,
 this study also aims at alleviating the unfairness in recommendations.
-{{}}
+{{objective}}
 Driven by these observations, this article proposes a context- and fairness-aware in-process crowdworker
 recommendation approach, iRec2.0, to detect more bugs earlier, shorten the non-yielding windows, and alleviate the unfairness in recommendations.
-{{}}
+{{objective}}
 It consists of three main components: (1) the modeling of dynamic
 testing context, (2) the learning-based ranking component, and (3) the multi-objective optimization-based reranking
 component. 
-{{}}
+{{design}}
 The evaluation is conducted on 636 crowdtesting tasks fromone of the largest crowdtesting
 platforms, and results show the potential of iRec2.0 in improving the cost-effectiveness of crowdtesting
 by saving the cost, shortening the testing process, and alleviating the unfairness among workers.
-{{}}
+{{method,result:i3}}
 In detail,
 iRec2.0 could shorten the non-yielding window by a median of 50%–66% in different application scenarios,
 and consequently have potential of saving testing cost by a median of 8%–12%.
-{{}}
+{{result}}
 Meanwhile, the recommendation
 frequency of the crowdworker drop from 34%–60% to 5%–26% under different scenarios, indicating its
 potential in alleviating the unfairness among crowdworkers.
-{{}}
+{{result,conclusion,-timid}}
 ---
