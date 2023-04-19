@@ -1,15 +1,15 @@
 import sys
 import typing as tg
 
-import qabs.annotations as annot
-import qabs.color as color
-import qabs.metadata
+import qscript.annotations as annot
+import qscript.color as color
+import qscript.metadata
 import qscript
 
 IGNORE = annot.Codebook.IGNORECODE
 meaning = """Compares annotations between coders and flags discrepancies.
-  Knows about the maximum allowed IU count difference.
-  Knows about codes for silencing discrepancies.
+  Knows about allowed and non-allowed discrepancies and
+  about codes for silencing discrepancies.
   Reports problems on stdout.
 """
 aliases = ["compare", "comp"]
@@ -26,7 +26,7 @@ def add_arguments(subparser: qscript.ArgumentParser):
 
 def execute(args: qscript.Namespace):
     msgcount = 0
-    what = qabs.metadata.WhoWhat(args.workdir)
+    what = qscript.metadata.WhoWhat(args.workdir)
     annots = annot.Annotations()
     print("=========================================================================================")
     print("=== check pairs of files (consult with your fellow coder except for obvious mistakes) ===")

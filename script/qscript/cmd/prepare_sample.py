@@ -4,9 +4,9 @@ import typing as tg
 
 import qabs.extract_abs as ea
 import qabs.extract_concl as ec
-import qabs.extract_part as ep
-import qabs.metadata as metadata
-import qabs.prepare_ann
+import qscript.cmd.extract_part as ep
+import qscript.cmd.prepare_ann
+import qscript.metadata as metadata
 import qscript
 
 WHAT_ABSTRACT = "abstract"
@@ -44,7 +44,7 @@ def execute(args: qscript.Namespace):
         prepare_article(args.whatpart, targetdir, args.volumedir, article, titles)
 
 
-def prepare_article(whatpart: str, targetdir: str, volumedir: str, article: metadata.Entry, 
+def prepare_article(whatpart: str, targetdir: str, volumedir: str, article: metadata.Entry,
                     titles: tg.Mapping[str, str]):
     """Extracts abstract, splits by sentence, inserts {{}}, writes to abstract file"""
     citekey = metadata.citekey(article)
@@ -63,7 +63,7 @@ def prepare_article(whatpart: str, targetdir: str, volumedir: str, article: meta
         assert False
     # ----- annotate abstract and write abstract file:
     title = titles[citekey]
-    annotated_txt = qabs.prepare_ann.prepared(txt)
+    annotated_txt = qscript.cmd.prepare_ann.prepared(txt)
     with open(targetfile, 'wt', encoding='utf8') as out:
         out.write(f"{title}\n\n{annotated_txt}")
         out.write("---\n")

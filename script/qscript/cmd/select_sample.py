@@ -3,7 +3,7 @@ import os.path
 import random
 import typing as tg
 
-import qabs.metadata as metadata
+import qscript.metadata
 import qscript
 
 meaning = "Get block-randomized articles list of given size"
@@ -26,9 +26,9 @@ def execute(args: qscript.Namespace):
     for i in range(args.size):
         sample.add(pop.draw1())
     if os.path.exists(f"{args.to}/sample.list"):
-        print(f"{to}/sample.list already exists. I will not overwrite it. Exiting.")
+        print(f"{args.to}/sample.list already exists. I will not overwrite it. Exiting.")
         return
-    metadata.write_list(f"{args.to}/sample.list", sample.entries)
+    qscript.metadata.write_list(f"{args.to}/sample.list", sample.entries)
     print(f"wrote '{args.to}/sample.list'")
     write_who_what(args.to, sample, args.blocksize)
     write_titles(args.to, sample, args.volumes)
@@ -54,8 +54,9 @@ class Population:
         else:
             return self.draw1()  # return from next subpopulaation, because the current one is empty
 
-    def subpopulation(self, volumedir: str) -> tg.List[str]:
-        return metadata.read_list(f"{volumedir}/metadata/{volumename(volumedir)}.list")
+    @staticmethod
+    def subpopulation(volumedir: str) -> tg.List[str]:
+        return qscript.metadata.read_list(f"{volumedir}/metadata/{volumename(volumedir)}.list")
 
 
 class Sample:
@@ -88,7 +89,7 @@ class Sample:
     @property
     def citekeys(self):
         for elem in self._elems:
-            yield metadata.citekey(elem)
+            yield qscript.metadata.citekey(elem)
 
 
 def volumename(volumedir: str) -> str:
@@ -116,7 +117,7 @@ def write_titles(to: str, sample: Sample, volumedirs: tg.Sequence[str]):
                 alltitles[entry['identifier']] = entry['title']  # make titles accessible by citekey
     titles = dict()
     for entry in sample.entries:
-        volumedir, citekey = metadata.split_entry(entry)
+        volumedir, citekey = qscript.metadata.split_entry(entry)
         titles[citekey] = alltitles[citekey]
     filename = f"{to}/sample-titles.json"
     with open(filename, 'w', encoding='utf8') as j:

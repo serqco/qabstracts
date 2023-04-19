@@ -3,8 +3,8 @@ import argparse
 import pandas as pd
 from matplotlib import pyplot as plt
 
-import qabs.annotations as annot
-import qabs.plottypes as pt
+import qscript.annotations as annot
+import qscript.plottypes as pt
 import qscript
 
 tse_columnwidth_mm = 88

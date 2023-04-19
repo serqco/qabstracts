@@ -3,8 +3,8 @@
 import sys
 import typing as tg
 
-import qabs.annotations as annot
-import qabs.compare_codings as cc
+import qscript.annotations as annot
+import qscript.cmd.compare_codings as cc
 
 annots = annot.Annotations()  # for every test to use, so we read the codebook only once
 

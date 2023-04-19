@@ -1,9 +1,10 @@
-"""Reading and a little bit writing the various metadata files."""
+"""Reading and a little writing the various metadata files."""
 import re
 import typing as tg
 
 Entry = str  # Pseudo type for strings of form "mypath/EMSE-2021/AbuDab21.pdf"
 Filepair = tg.Tuple[str, str, str, str]  # (file1, coder1, file2, coder2)
+
 
 def citekey(list_line: Entry) -> str:
     """From a line like EMSE-2021/AbuDab21.pdf return AbuDab21"""
@@ -48,17 +49,17 @@ class Venue:
             lines = f.readlines()
         for line in lines:
             mm = re.match(self.ENTRY_REGEXP, line)
-            venue, number, citekey = (mm.group(1), mm.group(2), mm.group(3))
+            venue, number, citekey_ = (mm.group(1), mm.group(2), mm.group(3))
             if re.fullmatch(r"20\d\d", number):
                 number = number[2:]  # remove century, leaving only a two-digit year
-            self.venue[citekey] = venue
-            self.volume[citekey] = f"{venue}{number}"
+            self.venue[citekey_] = venue
+            self.volume[citekey_] = f"{venue}{number}"
 
-    def venue_of(self, citekey: str) -> str:
-        return self.venue[citekey]
+    def venue_of(self, citekey_: str) -> str:
+        return self.venue[citekey_]
 
-    def volume_of(self, citekey: str) -> str:
-        return self.volume[citekey]
+    def volume_of(self, citekey_: str) -> str:
+        return self.volume[citekey_]
 
 
 class WhoWhat:
@@ -89,30 +90,32 @@ class WhoWhat:
                     currentblock = mm.group(1)
                 continue
             parts = line.strip().split()  # splits on single or multiple whitespace after removing trailing \n
-            citekey = parts[0]
+            citekey_ = parts[0]
             columns = parts[1:]  # list of coder names or reservations
-            #--- collect coders and single-file entries:
+            # --- collect coders and single-file entries:
             for index, coder in enumerate(columns):
                 if self.is_reservation(coder):
                     continue  # reservations are non-entries
                 self.coders.add(coder)
-                filename = self._implied_filename(citekey, index)
+                filename = self._implied_filename(citekey_, index)
                 self._coder_of[filename] = coder
                 self._block_of[filename] = currentblock
-            #--- collect filepair entries, using either _build_pairs_with_A oder _build_neighboring_pairs:
-            for next_pair in self._build_pairs_with_A(citekey, columns):
+            # --- collect filepair entries, using either _build_pairs_with_A oder _build_neighboring_pairs:
+            for next_pair in self._build_pairs_with_A(citekey_, columns):
                 self._pairs.append(next_pair)
 
     def blockname(self, filename: str) -> str:
         """Which block does this file belong to?"""
         return self._block_of[filename]
 
-    def citekey(self, filename: str) -> str:
+    @staticmethod
+    def citekey(filename: str) -> str:
         """Partial inverse of _implied_filename()"""
         mm = re.search(r"/abstracts\.[A-Z]/(\w+)\.txt", filename)
         return mm.group(1)
 
-    def coder_letter(self, filename: str) -> str:
+    @staticmethod
+    def coder_letter(filename: str) -> str:
         """Partial inverse of _implied_filename()"""
         mm = re.search(r"/abstracts\.([A-Z])/", filename)
         return mm.group(1)
@@ -122,41 +125,42 @@ class WhoWhat:
             if mycoder == coder:
                 yield myfile
 
-    def is_reservation(self, codername: str) -> bool:
+    @staticmethod
+    def is_reservation(codername: str) -> bool:
         return codername.startswith('-')
 
     @property
     def pairs(self) -> tg.Generator[str, None, None]:
         for file1, coder1, file2, coder2 in self._pairs:
             if not self.is_reservation(coder1) and not self.is_reservation(coder2):
-                yield (file1, coder1, file2, coder2)
+                yield file1, coder1, file2, coder2
 
-    def _implied_filename(self, citekey: str, columnindex: int) -> str:
+    def _implied_filename(self, citekey_: str, columnindex: int) -> str:
         """Knows the abstracts.A, abstracts.B dirname convention. First such column has index 0."""
         char = chr(ord('A') + columnindex)  # 26 columns maximum (we'll never need more than 10)
-        return f"{self.workdir}/abstracts.{char}/{citekey}.txt"
+        return f"{self.workdir}/abstracts.{char}/{citekey_}.txt"
 
-    def _build_neighboring_pairs(self, citekey: str, columns: tg.Sequence[str]) -> tg.Generator[Filepair, None, None]:
+    def _build_neighboring_pairs(self, citekey_: str, columns: tg.Sequence[str]) -> tg.Generator[Filepair, None, None]:
         """
         Generator for pairs of neighboring entries A/B, C/D etc. (whether reservation or not).
         """
         firstentry = None  # we return a pair whenever we have a first and find another entry
         for index, coder in enumerate(columns):
             if firstentry:
-                mypair = (firstentry[0], firstentry[1], self._implied_filename(citekey, index), coder)
+                mypair = (firstentry[0], firstentry[1], self._implied_filename(citekey_, index), coder)
                 firstentry = None
                 yield mypair
             else:
-                firstentry = (self._implied_filename(citekey, index), coder)
+                firstentry = (self._implied_filename(citekey_, index), coder)
         # firstentry may be set when the loop finishes, leaving an unpaired entry. C'est la vie!
 
-    def _build_pairs_with_A(self, citekey: str, columns: tg.Sequence[str]) -> tg.Generator[Filepair, None, None]:
+    def _build_pairs_with_A(self, citekey_: str, columns: tg.Sequence[str]) -> tg.Generator[Filepair, None, None]:
         """
         Generator for pairs A/B, A/C, A/D etc. (whether reservation or not).
         """
         if len(columns) == 0:
             return  # there are zero pairs
         coder_A = columns[0]
-        file_of_A = self._implied_filename(citekey, 0)
+        file_of_A = self._implied_filename(citekey_, 0)
         for index, coder in enumerate(columns[1:]):
-            yield (file_of_A, coder_A, self._implied_filename(citekey, index+1), coder)
+            yield file_of_A, coder_A, self._implied_filename(citekey_, index+1), coder

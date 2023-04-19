@@ -1,10 +1,9 @@
-import argparse
 import sys
 import typing as tg
 
-import qabs.annotations as annot
-import qabs.color as color
-import qabs.metadata
+import qscript.annotations as annot
+import qscript.color as color
+import qscript.metadata
 import qscript
 
 meaning = """Checks annotated (and unannotated) abstracts files for errors.
@@ -25,7 +24,7 @@ def execute(args: qscript.Namespace):
     print("=== check individual files (correct mistakes even if they are not your own) ===")
     print("===============================================================================")
     annots = annot.Annotations()
-    what = qabs.metadata.WhoWhat(args.workdir)
+    what = qscript.metadata.WhoWhat(args.workdir)
     errors: int = 0
     for coder in sorted(what.coders):
         print(f"\n#################### {coder}'s: ####################\n")

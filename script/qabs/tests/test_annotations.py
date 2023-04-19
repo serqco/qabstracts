@@ -1,6 +1,6 @@
-import qabs.annotations
+import qscript.annotations
 
-annots = qabs.annotations.Annotations()  # global, for reuse to read codebook only once
+annots = qscript.annotations.Annotations()  # global, for reuse to read codebook only once
 
 
 def test_codings_of():

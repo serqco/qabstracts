@@ -4,8 +4,8 @@ import re
 import typing as tg
 from numbers import Number
 
-import qabs.annotations as annot
-import qabs.metadata
+import qscript.annotations as annot
+import qscript.metadata
 import qscript
 
 NAN_VALUE = "NA"  # R's "not available" value
@@ -23,8 +23,8 @@ def add_arguments(subparser: qscript.ArgumentParser):
 
 def execute(args: qscript.Namespace):
     annots = annot.Annotations()
-    venue = qabs.metadata.Venue(args.workdir)
-    what = qabs.metadata.WhoWhat(args.workdir)
+    venue = qscript.metadata.Venue(args.workdir)
+    what = qscript.metadata.WhoWhat(args.workdir)
     prt_head()
     for coder in sorted(what.coders):
         for file in what.files_of(coder):
@@ -65,7 +65,8 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
     sentence2 = _unlinebreak(annot_sentence.sentence)
     words = _count_words(sentence2)
     chars = len(sentence2)
-    codings = set(abstract.annots.split_into_codings(annot_sentence.annotation)) - {abstract.codebook.IGNORECODE}  # forget IGNORECODEs
+    codings = (set(abstract.annots.split_into_codings(annot_sentence.annotation)) -
+               {abstract.codebook.IGNORECODE})  # forget IGNORECODEs
     codes_done = set(abstract.codebook.GARBAGE_CODES)  # consider them done right from the start
     multiple = len(codings) > 1  # whether there are multiple codings at this sentence
     # ----- process extra codes (which involve no length):

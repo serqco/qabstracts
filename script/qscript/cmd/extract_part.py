@@ -3,7 +3,7 @@ import os.path
 import re
 import typing as tg
 
-import qabs.metadata as metadata
+import qscript.metadata
 
 LayoutDescriptor = tg.Mapping[str, tg.Any]  # fixed structure per extraction task
 Extractor = tg.Callable[[LayoutDescriptor, str], str]  # returns text extracted from PDF
@@ -27,8 +27,8 @@ def is_ieeeconf_icse(volume: str) -> bool:
     return is_icse_in_year(volume, {2021, 2019, 2017})
 
 
-def decide_layouttype(layouttypes: tg.Mapping[str, LayoutDescriptor], entry: metadata.Entry) -> LayoutDescriptor:
-    volume = metadata.volume(entry)
+def decide_layouttype(layouttypes: tg.Mapping[str, LayoutDescriptor], entry: qscript.metadata.Entry) -> LayoutDescriptor:
+    volume = qscript.metadata.volume(entry)
     venue = volume_as_path_name_year(volume)[1]
     for key, descriptor in layouttypes.items():
         for candidate in descriptor['applies_to']:
