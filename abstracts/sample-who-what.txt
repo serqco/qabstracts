@@ -81,14 +81,14 @@ LiuGaoXia22   Lloyd
 LuLiLiu22     Lloyd
 WhiKri22      Lloyd
 #----- Block 10
-HeMenChe22    Lutz
-ValMarPan22   Lutz
-GaoFenYin22   Lutz
-WanYanWan22   Lutz
-OliAssGar22   Lutz
-DanPlaHer22   Lutz
-HouBel22      Lutz
-BaiJiaCap22   Lutz
+HeMenChe22    Lutz        -Lloyd
+ValMarPan22   Lutz        -Lloyd
+GaoFenYin22   Lutz        -Lloyd
+WanYanWan22   Lutz        -Lloyd
+OliAssGar22   Lutz        -Lloyd
+DanPlaHer22   Lutz        -Lloyd
+HouBel22      Lutz        -Lloyd
+BaiJiaCap22   Lutz        -Lloyd
 #----- Block 11
 FloMorZha22   Lutz
 WerLiLow22    Lutz
