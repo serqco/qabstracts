@@ -22,6 +22,8 @@ changed: Lutz Prechelt, 2023-04-17
    This means that some substantial part(s) of the sentence pertain to one code
    and other substantial parts pertain to another code.
    An interpretation with only one code is prefered.
+   Use multiple codes if otherwise a key element of an abstract (objective, method,
+   result, conclusion) would appear to be missing entirely from the abstract.
    No part of any sentence pertains to two codes at once
    (except the "extra codes", see below)
 5. For annotation, a sentence is interpreted in its 
@@ -115,6 +117,11 @@ From _Introduction_ to _Study Description_:
   top-level research goals,
   specific top-level research interests, or
   top-level research questions.  
+  Objectives sentences often contain material that is ambiguous as goal-or-method
+  or as goal-or-design. In those cases, assign two codes only if there is no 
+  method (or design) information elsehwere in the abstract (according to general rule 4).
+  If the method (or design) information is too specific and concrete to be a goal,
+  assign two codes in any case.
 
 From _Study Description_ to _Outlook_:
 - code `conclusion:u`:  
