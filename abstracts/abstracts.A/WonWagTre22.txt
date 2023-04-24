@@ -22,7 +22,7 @@ Objective:
 {{h-objective}}
 Despite a number of literature reviews on specific aspects of SASs ranging from their requirements
 to quality attributes, we lack a systematic understanding of the current state of the art.
-{{objective}}
+{{gap}}
 Method:
 {{h-method}}
 This paper contributes a systematic literature review into self-adaptive systems using the dblp

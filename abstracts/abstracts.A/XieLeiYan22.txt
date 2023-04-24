@@ -18,7 +18,7 @@ To overcome the limitations, we propose Aeneas, a universal
 data augmentation approach that generAtes synthesized failing
 test cases from reduced feature space for more precise fault localiza-
 tion.
-{{objective,design}}
+{{objective}}
 Specifically, to improve the effectiveness of data augmentation,
 Aeneas applies a revised principal component analysis (PCA) first
 to generate reduced feature space for more concise representation

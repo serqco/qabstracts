@@ -20,7 +20,7 @@ As a result, such drawbacks lead to inferior and inconsistent comment generation
 To
 address the above limitations, this paper presents a new code summarization approach using hierarchical attention network by
 incorporating multiple code features, including type-augmented abstract syntax trees and program control flows.
-{{objective,method}}
+{{objective}}
 Such features, along
 with plain code sequences, are injected into a deep reinforcement learning (DRL) framework (e.g., actor-critic network) for comment
 generation.

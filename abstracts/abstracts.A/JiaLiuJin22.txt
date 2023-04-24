@@ -14,14 +14,14 @@ expand identifier abbreviations by leveraging both semantic relation and transfe
 One of the key insights of the approach is
 that abbreviations in the name of software entity e have a great chance to find their full terms in names of software entities that are
 semantically related to e.
-{{design}}
+{{design,-ignorediff}}
 Consequently, the proposed approach builds a knowledge graph to represent such entities and their
 relationships with e and searches the graph for full terms.
 {{design}}
 Another key insight is that literally identical abbreviations within the same
 application are likely (but not necessary) to have identical expansions, and thus the semantics-based expansion in one place may be
 transferred to other places.
-{{design}}
+{{design,-ignorediff}}
 To investigate when abbreviation expansion could be transferred safely, we conduct a case study on three
 open-source applications.
 {{method}}

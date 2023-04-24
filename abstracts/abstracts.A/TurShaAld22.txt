@@ -6,7 +6,7 @@ spite their popularity, programmers have difficulty using them.
 {{background,gap}}
 This paper identifies 8 anti-patterns in promise-based JavaScript
 code that are prevalent across popular JavaScript repositories.
-{{objective}}
+{{objective,result}}
 We
 present a light-weight static analysis for automatically detecting
 these anti-patterns.
@@ -15,7 +15,7 @@ This analysis is embedded in an interactive
 visualization tool that additionally relies on dynamic analysis to
 visualize promise lifetimes and instances of anti-patterns executed
 at run time.
-{{objective,-ignorediff}}
+{{design}}
 By enabling the user to navigate between promises in
 the visualization and the source code fragments that they originate
 from, problems and optimization opportunities can be identified.
@@ -38,4 +38,6 @@ insight into the execution behavior of asynchronous programs and
 helped identify further optimization opportunities.
 {{claim,-ignorediff}}
 ---
-Interpreting sentences 3 and 4 requires looking at the title
+Interpreting sentences 3 and 4 requires looking at the title.
+The study is a rare case of a balanced design+empirical contribution.
+Our interpretation will call it a design study.

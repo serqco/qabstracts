@@ -19,7 +19,7 @@ into test cases is time-intensive and can be error prone.
 In this work,
 we propose an inference technique called ChemFlow which extracts
 3 types of invariants from an existing CRN model.
-{{objective,design}}
+{{objective}}
 The extracted
 invariants can then be used for test generation or model validation
 against program implementations.
