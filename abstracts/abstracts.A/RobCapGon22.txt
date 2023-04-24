@@ -10,7 +10,7 @@ developers work alongside occasional, volunteer developers, so the overall effor
 {{gap}}
 The objective of this work it to develop a simple
 effort estimation model for FOSS projects, based on the historic data of developers’ effort.
-{{objective,-ignorediff}}
+{{objective}}
 The model is fed with direct developer feedback to ensure its accuracy.
 {{design}}
 After extracting
