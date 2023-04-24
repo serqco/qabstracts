@@ -20,13 +20,13 @@ This article argues the need for context- and fairness-aware in-process crowdwor
 We motivate this study through a pilot study, revealing
 the prevalence of long-sized non-yielding windows, i.e., no new bugs are revealed in consecutive test reports
 during the process of a crowdtesting task.
-{{result}}
+{{method,result}}
 This indicates the potential opportunity for accelerating crowdtesting by recommending appropriate workers in a dynamic manner, so that the non-yielding windows could
 be shortened.
 {{design}}
 Besides, motivated by the popularity bias in existing crowdworker recommendation approach,
 this study also aims at alleviating the unfairness in recommendations.
-{{design}}
+{{objective}}
 Driven by these observations, this article proposes a context- and fairness-aware in-process crowdworker
 recommendation approach, iRec2.0, to detect more bugs earlier, shorten the non-yielding windows, and alleviate the unfairness in recommendations.
 {{design}}

@@ -12,7 +12,7 @@ As a result, relationships between some values are not reflected by the analysis
 Many applications of taint tracking either benefit from or rely on these relationships being traced, but past
 works have found that tracking control flows resulted in over-tainting, dramatically reducing the precision
 of the taint tracking system.
-{{background}}
+{{gap}}
 In this article, we introduce Conflux, alternative semantics for propagating
 taint tags along control flows.
 {{objective}}

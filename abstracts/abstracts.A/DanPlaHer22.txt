@@ -16,7 +16,7 @@ recompilation, re-bundling, metadata-removal and re-packaging.
 {{result}}
 In particular, we found that more than 87 percent (56 percent, resp.) of
 the vulnerable Java classes considered occur in Maven Central in re-bundled (re-packaged, resp.) form.
-{{method}}
+{{result}}
 We assessed the impact of
 these modifications on the performance of the open-source vulnerability scanners OWASP Dependency-Check (OWASP) and Eclipse
 Steady, GitHub Security Alerts, and three commercial scanners.
