@@ -20,11 +20,11 @@ We
 start with the first large-scale empirical study of 362𝐾 crashes and
 their blamed methods reported to WER by tens of thousands of ap-
 plications running in the field.
-{{method:i2}}
+{{design}}
 The analysis provides valuable in-
 sights on where and how the crashes happen and what methods to
 blame for the crashes.
-{{a-result}}
+{{design}}
 These insights enable us to develop Deep-
 Analyze, a novel multi-task sequence labeling approach for identi-
 fying blamed frames in stack traces.

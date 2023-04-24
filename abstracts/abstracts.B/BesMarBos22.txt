@@ -31,7 +31,7 @@ As a second step, this study sets out to specifically
 provide a detailed assessment of additional and in-depth analysis of technical debt management strategies based
 on an encouraging mindset and attitude from both managers and technical roles to understand how, when and by
 whom such strategies are adopted in practice.
-{{method:i1}}
+{{a-method}}
 Results:
 {{h-result}}
 Our findings show that having a technical debt management strategy (specially based on encouragement)

@@ -9,17 +9,17 @@ BigCloneBench, are constructed and selected as benchmarks to assess and compare 
 models for detecting semantic clones.
 {{background}}
 However, there is no study to investigate whether an evaluation benchmark dataset such as BigCloneBench is properly used to evaluate models for detecting semantic code clones.
-{{gap}}
+{{objective}}
 In this article, we present an experimental study to show that BigCloneBench typically includes semantic
 clone pairs that use the same identifier names, which however are not used in non-semantic-clone pairs.
 {{a-method,result}}
 Subsequently, we propose an undesirable-by-design Linear-Model that considers only which identifiers appear
 in a code fragment; this model can achieve high effectiveness for detecting semantic clones when evaluated
 on BigCloneBench, even comparable to state-of-the-art deep learning models recently proposed for detecting semantic clones.
-{{design,result:i1}}
+{{method:u1,result:i1}}
 To alleviate these issues, we abstract a subset of the identifier names (including type,
 variable, and method names) in BigCloneBench to result in AbsBigCloneBench and use AbsBigCloneBench
 to better assess the effectiveness of deep learning models on the task of detecting semantic clones.
-{{design}}
+{{method}}
 ---
 This is a horribly complex and confusing abstract and seems to me like a good example to demonstrate, how a confusing abstract structure results in a very confusing abstract.
