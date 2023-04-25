@@ -35,8 +35,10 @@ def execute(args: qscript.Namespace):
 
 default_section_heading = r"\n\n((\d\d?) .+)\n\n"  # group 2 must be section number
 default_end_of_concl = (r"\n("
-                        r"Acknowledgments?|ACKNOWLEDGMENTS?|"
+                        r"Acknowledgments?|Acknowledgments? [A-Z].+|ACKNOWLEDGMENTS?|"
                         r"CRediT .{10,36}|"
+                        r"Declarations|"
+                        r"Open Access This article is licensed under .+|"
                         r"References\s?|REFERENCES|"
                         r"APPENDIX|Appendix( A(: .+)?)?"
                         r")\n")
@@ -79,9 +81,8 @@ layouttypes = dict(  # None means "We have no clue!"
         laparams=pdfl.LAParams(),
         section_heading=default_section_heading,
         end_of_concl=default_end_of_concl,
-        removestuff=(r"\x0c\d+\s+Page\s+\d+\s+of\s+\d+",
-                     r"Page\s+\d+\s+of\s+\d+\s+\d+",
-                     r"\x0c?Empir\s+Software\s+Eng\s\(20\d\d\)\s+\d+:\d+"),
+        removestuff=(r"(\x0c|\n)\d+\s+Page\s+\d+\s+of\s+\d+\n\n",
+                     r"(\x0c|\n)Empir\s+Software\s+Eng\s\(20\d\d\)\s+\d+:\s?\d+\n\n"),
         applies_to=["EMSE", ]),
 )
 
@@ -112,8 +113,8 @@ def find_headings(matches: tg.List[re.Match]) -> tg.List[re.Match]:
     lastnumber = 0
     for mm in matches:
         thisnumber = int(mm.group(2))  # see regexp in layouttypes
-        if thisnumber > lastnumber and thisnumber <= lastnumber+2:
-            # we allow gaps of 1 to accomodate occasional multiline-long headings
+        if thisnumber > lastnumber and thisnumber <= lastnumber+1:
+            # Allow gaps of 1 to accomodate occasional multiline-long headings? Better not.
             result.append(mm)
             lastnumber = thisnumber
     return result
