@@ -30,50 +30,56 @@ def add_arguments(subparser: qscript.ArgumentParser):
 
 def execute(args: qscript.Namespace):
     ep.extract_parts(conclusion_from_pdf, layouttypes, 
-                     args.layouttype, args.outputdir, args.inputfile)
+                     args.layout , args.outputdir, args.inputfile)
 
 
 default_section_heading = r"\n\n((\d\d?) .+)\n\n"  # group 2 must be section number
-default_end_of_concl = (r"\n(Acknowledgments?|ACKNOWLEDGMENTS?|CRediT .{10,36}|"
-                        r"References\s?|REFERENCES|Appendix( A(: .+)?)?)\n")
+default_end_of_concl = (r"\n("
+                        r"Acknowledgments?|ACKNOWLEDGMENTS?|"
+                        r"CRediT .{10,36}|"
+                        r"References\s?|REFERENCES|"
+                        r"APPENDIX|Appendix( A(: .+)?)?"
+                        r")\n")
 # Map from a layouttype name to a layout description and list of venues where it applies:
 layouttypes = dict(  # None means "We have no clue!"
     acmconf=dict(
         laparams=pdfl.LAParams(),
         section_heading=r"\n\n((\d\d?)\s+[^a-z\n]+)\n",
         end_of_concl=default_end_of_concl,
-        remove_pars=(r"\d+",  # page number
+        removestuff=(r"\n\n\d+\n\n",  # page number
                      r"\x0c.+\n\n.+"),  # page header
         applies_to=[ep.is_acmconf_icse, ]),
     acmtrans=dict(
         laparams=pdfl.LAParams(),
-        section_heading=default_section_heading,
+        section_heading=r"\n\n((\d\d?) .+)\n",
         end_of_concl=default_end_of_concl,
-        remove_pars=(),
+        removestuff=(r"\n\n\x0c.*\n",  # page header
+                     r"\n\n\d+:\d+\n",  # page number if split off of page header
+                     ),
         applies_to=["TOSEM", ]),
     elsevier=dict(
         laparams=pdfl.LAParams(),
         section_heading=r"\n\n((\d\d?)\. .+)\n\n",
         end_of_concl=default_end_of_concl,
-        remove_pars=(),
+        removestuff=(),
         applies_to=["IST", ]),
     ieeeconf=dict(
         laparams=pdfl.LAParams(),
         section_heading=default_section_heading,
         end_of_concl=default_end_of_concl,
-        remove_pars=(),
+        removestuff=(),
         applies_to=[ep.is_ieeeconf_icse, ]),
     ieeetrans=dict(
         laparams=pdfl.LAParams(),
         section_heading=default_section_heading,
         end_of_concl=default_end_of_concl,
-        remove_pars=(),
+        removestuff=(),
         applies_to=["TSE", ]),
     springer=dict(
         laparams=pdfl.LAParams(),
         section_heading=default_section_heading,
         end_of_concl=default_end_of_concl,
-        remove_pars=(r"\x0c\d+\s+Page\s+\d+\s+of\s+\d+",
+        removestuff=(r"\x0c\d+\s+Page\s+\d+\s+of\s+\d+",
                      r"Page\s+\d+\s+of\s+\d+\s+\d+",
                      r"\x0c?Empir\s+Software\s+Eng\s\(20\d\d\)\s+\d+:\d+"),
         applies_to=["EMSE", ]),
@@ -85,7 +91,8 @@ def conclusion_from_pdf(layout: ep.LayoutDescriptor, pdffile: str) -> str:
     with open(pdffile, 'rb') as f:
         pdfhl.extract_text_to_fp(f, out, laparams=layout['laparams'], 
                                  output_type='text', codec=None)
-    txt = ep.more_readable(out.getvalue(), layout['remove_pars'])
+    txt = ep.more_readable(out.getvalue())
+    txt = ep.remove_stuff(txt, layout['removestuff'])
     headings_mms = find_headings([mm for mm in re.finditer(layout['section_heading'], txt)])
     headings_txt = "\n".join([mm.group(1) for mm in headings_mms])
     # return "%s\n***\n%s" % (headings_txt, txt)  # use for debugging
