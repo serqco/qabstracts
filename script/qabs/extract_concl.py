@@ -30,7 +30,7 @@ def add_arguments(subparser: qscript.ArgumentParser):
 
 def execute(args: qscript.Namespace):
     ep.extract_parts(conclusion_from_pdf, layouttypes, 
-                     args.layout , args.outputdir, args.inputfile)
+                     args.layout, args.outputdir, args.inputfile)
 
 
 default_section_heading = r"\n\n((\d\d?) .+)\n\n"  # group 2 must be section number
@@ -75,9 +75,9 @@ layouttypes = dict(  # None means "We have no clue!"
         laparams=pdfl.LAParams(),
         section_heading=r"\n\n((\d\d?)\s+[^a-z\n]+)\n",  # UPPERCASE, no empty line may follow
         end_of_concl=default_end_of_concl,
-        removestuff=(# r"\n\n\d\d+\n\n",  # page number
-                     r"\n\x0c.+\n",  # page header
-                     r"\nIEEE TRANSACTIONS ON .+, VOL. .+ 20\d\d\n\n"),
+        removestuff=(r"\n\x0c.+\n\n\d+\n\n",  # page header left
+                     r"\n\x0c\d+\n\n.+(TRANSACTIONS|:).+\n\n",  # page header right
+                    ),
         applies_to=["TSE", ]),
     springer=dict(
         laparams=pdfl.LAParams(),
@@ -93,11 +93,10 @@ def conclusion_from_pdf(layout: ep.LayoutDescriptor, pdffile: str) -> str:
     out = io.StringIO()
     with open(pdffile, 'rb') as f:
         pdfhl.extract_text_to_fp(f, out, laparams=layout['laparams'], 
-                                 output_type='text', codec=None)
+                                 output_type='text', codec="")
     txt = ep.more_readable(out.getvalue())
-    # print("###1:", txt)
     txt = ep.remove_stuff(txt, layout['removestuff'])
-    # print("###2:", txt)
+    # print("###post-removestuff:", txt)
     headings_mms = find_headings([mm for mm in re.finditer(layout['section_heading'], txt)])
     headings_txt = "".join([f"# {mm.group(1)}\n" for mm in headings_mms])
     # return "%s\n***\n%s" % (headings_txt, txt)  # use for debugging
