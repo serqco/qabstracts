@@ -46,14 +46,14 @@ default_end_of_concl = (r"\n("
 layouttypes = dict(  # None means "We have no clue!"
     acmconf=dict(
         laparams=pdfl.LAParams(),
-        section_heading=r"\n\n((\d\d?)\s+[^a-z\n]+)\n",
+        section_heading=r"\n\n((\d\d?)\s+[^a-z\n]+)\n",  # UPPERCASE, no empty line may follow
         end_of_concl=default_end_of_concl,
         removestuff=(r"\n\n\d+\n\n",  # page number
                      r"\x0c.+\n\n.+"),  # page header
         applies_to=[ep.is_acmconf_icse, ]),
     acmtrans=dict(
         laparams=pdfl.LAParams(),
-        section_heading=r"\n\n((\d\d?) .+)\n",
+        section_heading=r"\n\n((\d\d?) .+)\n",  # no empty line may follow
         end_of_concl=default_end_of_concl,
         removestuff=(r"\n\n\x0c.*\n",  # page header
                      r"\n\n\d+:\d+\n",  # page number if split off of page header
@@ -61,7 +61,7 @@ layouttypes = dict(  # None means "We have no clue!"
         applies_to=["TOSEM", ]),
     elsevier=dict(
         laparams=pdfl.LAParams(),
-        section_heading=r"\n\n((\d\d?)\. .+)\n\n",
+        section_heading=r"\n\n((\d\d?)\. .+)\n\n",  # number ends with dot
         end_of_concl=default_end_of_concl,
         removestuff=(),
         applies_to=["IST", ]),
@@ -73,9 +73,11 @@ layouttypes = dict(  # None means "We have no clue!"
         applies_to=[ep.is_ieeeconf_icse, ]),
     ieeetrans=dict(
         laparams=pdfl.LAParams(),
-        section_heading=default_section_heading,
+        section_heading=r"\n\n((\d\d?)\s+[^a-z\n]+)\n",  # UPPERCASE, no empty line may follow
         end_of_concl=default_end_of_concl,
-        removestuff=(),
+        removestuff=(# r"\n\n\d\d+\n\n",  # page number
+                     r"\n\x0c.+\n",  # page header
+                     r"\nIEEE TRANSACTIONS ON .+, VOL. .+ 20\d\d\n\n"),
         applies_to=["TSE", ]),
     springer=dict(
         laparams=pdfl.LAParams(),
@@ -93,9 +95,11 @@ def conclusion_from_pdf(layout: ep.LayoutDescriptor, pdffile: str) -> str:
         pdfhl.extract_text_to_fp(f, out, laparams=layout['laparams'], 
                                  output_type='text', codec=None)
     txt = ep.more_readable(out.getvalue())
+    # print("###1:", txt)
     txt = ep.remove_stuff(txt, layout['removestuff'])
+    # print("###2:", txt)
     headings_mms = find_headings([mm for mm in re.finditer(layout['section_heading'], txt)])
-    headings_txt = "\n".join([mm.group(1) for mm in headings_mms])
+    headings_txt = "".join([f"# {mm.group(1)}\n" for mm in headings_mms])
     # return "%s\n***\n%s" % (headings_txt, txt)  # use for debugging
     conclusion_plus_rest = txt[headings_mms[-1].start(1):]
     mm = re.search(layout['end_of_concl'], conclusion_plus_rest)
