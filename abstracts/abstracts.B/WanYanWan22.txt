@@ -29,7 +29,7 @@ this study also aims at alleviating the unfairness in recommendations.
 {{objective}}
 Driven by these observations, this article proposes a context- and fairness-aware in-process crowdworker
 recommendation approach, iRec2.0, to detect more bugs earlier, shorten the non-yielding windows, and alleviate the unfairness in recommendations.
-{{objective}}
+{{design}}
 It consists of three main components: (1) the modeling of dynamic
 testing context, (2) the learning-based ranking component, and (3) the multi-objective optimization-based reranking
 component. 
