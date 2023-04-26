@@ -35,7 +35,7 @@ def execute(args: qscript.Namespace):
 
 default_section_heading = r"\n\n((\d\d?) .+)\n\n"  # group 2 must be section number
 default_end_of_concl = (r"\n("
-                        r"Acknowledgments?|Acknowledgments? [A-Z].+|ACKNOWLEDGMENTS?|"
+                        r"Acknowledge?ments?|Acknowledge?ments? [A-Z].+|ACKNOWLEDGE?MENTS?|"
                         r"CRediT .{10,36}|"
                         r"Declarations|Declaration of [Cc]ompeting [Ii]nterest.?\s*|"
                         r"Open Access This article is licensed under .+|"
