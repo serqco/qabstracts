@@ -26,7 +26,7 @@ def add_arguments(subparser: qscript.ArgumentParser):
 
 def execute(args: qscript.Namespace):
     ep.extract_parts(abstract_from_pdf, layouttypes, 
-                     args.layouttype, args.outputdir, args.inputfile)
+                     args.layout, args.outputdir, args.inputfile)
 
 
 # Map from a layouttype name to a layout description and list of venues where it applies:

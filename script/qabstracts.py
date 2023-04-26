@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
 
-
-import qscript.cmd.select_sample
-import qscript.cmd.prepare_sample
-import qscript.cmd.fix_encoding
+import qscript.argparse_subcommand
 import qscript.cmd.check_codings
 import qscript.cmd.compare_codings
+import qscript.cmd.fix_encoding
+import qscript.cmd.prepare_ann 
+import qscript.cmd.select_sample
 import qabs.export
 import qabs.extract_abs
-import qabs.extract_concl
 import qabs.plot
-import qscript.cmd.prepare_ann 
-import qscript.argparse_subcommand
+import qabs.prepare_sample
 
 explanation = """Handles various steps of the qabstracts study."""
 
@@ -19,14 +17,13 @@ explanation = """Handles various steps of the qabstracts study."""
 def main():
     parser = qscript.argparse_subcommand.ArgumentParser(epilog=explanation)
     parser.scan(qscript.cmd.select_sample,
-                qscript.cmd.prepare_sample,
                 qscript.cmd.fix_encoding,
                 qscript.cmd.check_codings,
                 qscript.cmd.compare_codings,
                 qabs.export,
                 qabs.extract_abs,
-                qabs.extract_concl,
                 qabs.plot,
+                qabs.prepare_sample,
                 strict=True)
     parser.execute_subcommand()
 
