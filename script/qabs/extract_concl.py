@@ -37,7 +37,7 @@ default_section_heading = r"\n\n((\d\d?) .+)\n\n"  # group 2 must be section num
 default_end_of_concl = (r"\n("
                         r"Acknowledgments?|Acknowledgments? [A-Z].+|ACKNOWLEDGMENTS?|"
                         r"CRediT .{10,36}|"
-                        r"Declarations|"
+                        r"Declarations|Declaration of [Cc]ompeting [Ii]nterest.?\s*|"
                         r"Open Access This article is licensed under .+|"
                         r"References\s?|REFERENCES|"
                         r"APPENDIX|Appendix( A(: .+)?)?"
@@ -63,11 +63,12 @@ layouttypes = dict(  # None means "We have no clue!"
         laparams=pdfl.LAParams(),
         section_heading=r"\n\n((\d\d?)\. .+)\n\n",  # number ends with dot
         end_of_concl=default_end_of_concl,
-        removestuff=(),
+        removestuff=(r"\nInformationandSoftwareTechnology.+\x0c.+\n\n",
+                    ),
         applies_to=["IST", ]),
     ieeeconf=dict(
         laparams=pdfl.LAParams(),
-        section_heading=default_section_heading,
+        section_heading=default_section_heading,  # not so! to be done
         end_of_concl=default_end_of_concl,
         removestuff=(),
         applies_to=[ep.is_ieeeconf_icse, ]),
