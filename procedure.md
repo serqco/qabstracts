@@ -85,6 +85,7 @@ whenever you check in any file and send an email if there are any problems.
     (which you will want to pick from `sample-who-what.txt` or a checking script message)
   - Git `commit`
   - Perhaps also Git `push`, `pull` (with rebase, not merge), `log`. 
+    - 🥸 __Pro tip__: Call `git config pull.rebase true` once to have all `git pull`s in this repo do rebases automatically 
 - You can mix Git use on the command line with Git use in the IDE.
   For instance, the IDE is unbeatably good for creating commits,
   but some people prefer the command line for `push`, `pull` and `log`.
