@@ -23,27 +23,27 @@ Method:
 {{h-method}}
 We follow a mixed-method approach to iteratively develop and evaluate a framework for identifying and
 managing SEC.
-{{method}}
+{{design}}
 In so doing, we use the results of an extensive literature review, focus group discussions with
 experts from academia and industry, and data collected through interviews with 138 individuals with a super­
 visory role in the software industry.
-{{method}}
+{{design}}
 Results:
 {{h-result}}
 Drawing on the Kano model and Competency Framework for Software Engineers, we propose a Unified
 Competence Gate for Software Professionals (UComGSP), a framework for identifying and managing SEC.
-{{a-result}}
+{{design,a-design}}
 The
 UComGSP consists of 62 hard competencies, 63 soft competencies, and 25 essential SEC competencies.
-{{result}}
+{{design}}
 Addi­
 tionally, we propose three stakeholders’ satisfaction levels for SEC assessment:
-{{result}}
+{{design}}
 basic, performance, and delighter.
-{{result}}
+{{design}}
 Furthermore, based on empirical observation, we report 27 competencies not mentioned in the reviewed liter­
 ature; 11 of them are considered essential competencies.
-{{result}}
+{{result,a-method}}
 Conclusion:
 {{h-conclusion}}
 Competence development involves different stakeholders, including software professionals, educa­
@@ -57,5 +57,3 @@ Future research is needed to evaluate the effectiveness of the proposed framewor
 development projects.
 {{fneed}}
 ---
-The codings completely flip depending on whether the "Framework" is considered as the result of an empirical study
-(Franz' perspective) or an artifact (Lutz' perspective).

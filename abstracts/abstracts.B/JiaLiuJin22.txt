@@ -10,7 +10,7 @@ are either inaccurate or confined to specific identifiers.
 {{gap}}
 To this end, in this paper, we propose a generic and accurate approach to
 expand identifier abbreviations by leveraging both semantic relation and transfer expansion.
-{{objective,design}}
+{{objective}}
 One of the key insights of the approach is
 that abbreviations in the name of software entity e have a great chance to find their full terms in names of software entities that are
 semantically related to e.
@@ -30,7 +30,7 @@ identical abbreviations within the same application.
 {{result}}
 However, the risk of transfer varies according to various factors, e.g., length of
 abbreviations, the physical distance between abbreviations, and semantic relations between abbreviations.
-{{limitation}}
+{{result}}
 Based on these findings,
 we design nine heuristics for transfer expansion and propose a learning-based approach to prioritize both transfer heuristics and
 semantic-based expansion heuristics.

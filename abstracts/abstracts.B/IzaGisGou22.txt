@@ -14,7 +14,7 @@ and the developer's code context.
 {{gap}}
 In this work, we present CodeFill, a language model for autocom-
 pletion that combines learned structure and naming information.
-{{objective,design}}
+{{objective}}
 Using a parallel Transformer architecture and multi-task learning,
 CodeFill consumes sequences of source code token names and their
 equivalent AST token types.

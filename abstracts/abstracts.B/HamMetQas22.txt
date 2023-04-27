@@ -18,7 +18,7 @@ the language or the target blockchain platform.
 {{objective}}
 In which, we present our second-generation smart contract
 language iContractML 2.0.
-{{a-design}}
+{{objective}}
 Methods:
 {{h-method}}
 We follow a feature-oriented approach to analyze three different blockchain platforms and propose
