@@ -2,25 +2,25 @@ An automated test data generation method for void pointers and function pointers
 
 Automated test data generation for unit testing C/C++ functions using concolic methods is well-known
 for improving software quality while reducing human testing effort.
-{{}}
+{{background}}
 However, there have been only a few
 researches related to generating test data for void pointers and function pointers which are commonly used
 in C/C++ libraries and embedded projects.
-{{}}
+{{gap}}
 This paper proposes a concolic-based method named VFP (V oid
 and F unction Pointers test data generation) to generate test data for void pointers and function pointers.
-{{}}
+{{objective}}
 The
 key idea of VFP method is to preprocess the source code of the project under test to find all possible types
 of void pointers and references of function pointers.
-{{}}
+{{design}}
 These types and references are used in the initial test
 data generating phase of the concolic testing method.
-{{}}
+{{design}}
 VFP method is implemented in VFP verification tool to
 test on various C/C++ libraries and embedded projects.
-{{}}
+{{design}}
 The experimental results show that VFP significantly
 improves the coverage of the generated test data in comparison with existing methods.
-{{}}
+{{result:i2}}
 ---

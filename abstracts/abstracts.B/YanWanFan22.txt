@@ -1,51 +1,51 @@
 Enhancing software modularization via semantic outliers filtration and label propagation.
 
 Context:
-{{}}
+{{h-background}}
 Software systems’ modular structure often drifts from the intended design throughout evolution.
-{{}}
+{{background}}
 To
 improve the modular structure of a software system, the software clustering technology aiming to partition
 a software system into meaningful modules is demanding.
-{{}}
+{{background}}
 Many clustering approaches rely on semantic
 information, which cluster software entities that use similar vocabulary.
-{{}}
+{{background}}
 However, the existence of semantic
 outliers obstructing the clustering process is hardly considered.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 To overcome the existence of semantic outliers, this paper proposes a two-stage software clustering
 approach named EVOL (Enhancing Via Outliers filtration and Label propagation).
-{{}}
+{{objective}}
 Methods:
-{{}}
+{{h-method}}
 A feature density-based outliers detecting algorithm is used to compute the local outlier factor of
 each feature.
-{{}}
+{{design}}
 Accordingly, we filter out the semantic outliers and cluster remaining high-quality features to
 construct a partition skeleton; After that, assign each outlier into a suitable cluster by label propagation.
-{{}}
+{{design}}
 Results:
-{{}}
+{{h-result}}
 To assess the effectiveness of the proposed approach, this paper conducts experiments on six folders
 from Mozilla Firefox and other four software systems, referring to the original design concepts and modular
 structure provided by the developers.
-{{}}
+{{method}}
 The average of the evaluation metric MoJoFM shows significant
 improvement from 6% to 35% over the other six state-of-art clustering techniques.
-{{}}
+{{method,result}}
 The results demonstrate
 that the filtration of the outliers facilitates the clustering results, and label propagation could place the outliers
 into a suitable cluster.
-{{}}
+{{result:i2}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 In this paper, we propose EVOL, a new software clustering approach that considers semantic
 outliers filtration and label propagation.
-{{}}
+{{summary}}
 The experiment results show that the proposed approach EVOL can
 be very useful to enhance the quality of the software modularization.
-{{}}
+{{summary,-hype}}
 ---

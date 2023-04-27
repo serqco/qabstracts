@@ -90,14 +90,14 @@ DanPlaHer22   Lutz        Lloyd
 HouBel22      Lutz        Lloyd
 BaiJiaCap22   Lutz        Lloyd
 #----- Block 11
-FloMorZha22   Lutz        -Lloyd
-WerLiLow22    Lutz        -Lloyd
-RanTërKhe22   Lutz        -Lloyd
-YanWanFan22   Lutz        -Lloyd
-MadNagBir22   Lutz        -Lloyd
-KukPinAmm22   Lutz        -Lloyd
-HöpHaaTic22   Lutz        -Lloyd
-TunTraLe22    Lutz        -Lloyd
+FloMorZha22   Lutz        Lloyd
+WerLiLow22    Lutz        Lloyd
+RanTërKhe22   Lutz        Lloyd
+YanWanFan22   Lutz        Lloyd
+MadNagBir22   Lutz        Lloyd
+KukPinAmm22   Lutz        Lloyd
+HöpHaaTic22   Lutz        Lloyd
+TunTraLe22    Lutz        Lloyd
 #----- Block 12
 BarStoFit22   Lutz
 GôlAraRos22   Lutz
