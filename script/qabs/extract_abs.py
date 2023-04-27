@@ -1,7 +1,7 @@
 import re
 import subprocess as sub
 
-import qscript.cmd.extract_part as ep
+import qscript.extract_part as ep
 import qscript
 
 meaning = """Heuristically obtains abstracts from PDF files.

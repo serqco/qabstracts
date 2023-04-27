@@ -1,4 +1,4 @@
-import qscript.cmd.prepare_sample as prep
+import qscript.prepare_sample as prep
 
 import qabs.extract_abs as ea
 import qscript

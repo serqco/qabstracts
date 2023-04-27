@@ -1,6 +1,6 @@
 # pytest tests
 
-import qscript.cmd.prepare_ann as p
+import qscript.prepare_ann as p
 
 ann = "\n{{}}\n"
 tests = [

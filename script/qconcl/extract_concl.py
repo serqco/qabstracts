@@ -1,12 +1,11 @@
 import io
-import os
 import re
 import typing as tg
 
 import pdfminer.high_level as pdfhl
 import pdfminer.layout as pdfl
 
-import qscript.cmd.extract_part as ep
+import qscript.extract_part as ep
 import qscript
 
 meaning = """Heuristically obtains the last sections (conclusion section) from PDF files.
