@@ -1,4 +1,5 @@
 import io
+import os
 import re
 import typing as tg
 
@@ -53,10 +54,11 @@ layouttypes = dict(  # None means "We have no clue!"
         applies_to=[ep.is_acmconf_icse, ]),
     acmtrans=dict(
         laparams=pdfl.LAParams(),
-        section_heading=r"\n\n((\d\d?) .+)\n",  # no empty line may follow
+        section_heading=r"\n\n?((\d\d?)\s+[^a-z\n]{3,200})\n\n?",  # no empty line may follow nor precede!
         end_of_concl=default_end_of_concl,
         removestuff=(r"\n\n\x0c.*\n",  # page header
                      r"\n\n\d+:\d+\n",  # page number if split off of page header
+                     r"\n\nACM Transactions .+20\d\d\.?\n\n",  # page header without formfeed
                      ),
         applies_to=["TOSEM", ]),
     elsevier=dict(
@@ -96,15 +98,16 @@ def conclusion_from_pdf(layout: ep.LayoutDescriptor, pdffile: str) -> str:
         pdfhl.extract_text_to_fp(f, out, laparams=layout['laparams'], 
                                  output_type='text', codec="")
     txt = ep.more_readable(out.getvalue())
+    # print("###pre-removestuff:", txt)
     txt = ep.remove_stuff(txt, layout['removestuff'])
     # print("###post-removestuff:", txt)
     headings_mms = find_headings([mm for mm in re.finditer(layout['section_heading'], txt)])
     headings_txt = "".join([f"# {mm.group(1)}\n" for mm in headings_mms])
-    # return "%s\n***\n%s" % (headings_txt, txt)  # use for debugging
+    # print("###headings:", layout['section_heading'], '\n', headings_txt)
     conclusion_plus_rest = txt[headings_mms[-1].start(1):]
     mm = re.search(layout['end_of_concl'], conclusion_plus_rest)
     concl_endpos = mm.start() if mm else len(conclusion_plus_rest)-1
-    return "%s\n\n%s" % (headings_txt, conclusion_plus_rest[:concl_endpos])
+    return "\n%s.\n\n%s" % (headings_txt, conclusion_plus_rest[:concl_endpos])
 
 
 def find_headings(matches: tg.List[re.Match]) -> tg.List[re.Match]:
