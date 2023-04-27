@@ -6,7 +6,7 @@ spite their popularity, programmers have difficulty using them.
 {{background,gap}}
 This paper identifies 8 anti-patterns in promise-based JavaScript
 code that are prevalent across popular JavaScript repositories.
-{{result}}
+{{objective,result}}
 We
 present a light-weight static analysis for automatically detecting
 these anti-patterns.

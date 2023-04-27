@@ -11,7 +11,7 @@ However, there is limited synthesized knowledge on Software Engineering (SE)
 approaches for building, operating, and maintaining AI-based systems.
 {{gap}}
 To collect and analyze state-of-theart knowledge about SE for AI-based systems, we conducted a systematic mapping study.
-{{objective,method}}
+{{objective}}
 We considered 248
 studies published between January 2010 and March 2020.
 {{method}}
@@ -35,5 +35,5 @@ Our results are valuable for:
 researchers, to quickly understand the state-of-the-art and
 learn which topics need more research; practitioners, to learn about the approaches and challenges that SE
 entails for AI-based systems; and, educators, to bridge the gap among SE and AI in their curricula.
-{{a-fneed,conclusion}}
+{{conclusion}}
 ---

@@ -7,7 +7,7 @@ to enrich the context and convey additional emotion.
 {{background}}
 With the increasing emoji use in software developmentrelated communication, it has become important to understand why software developers are using emojis and
 their impact.
-{{objective}}
+{{need}}
 Objective:
 {{h-objective}}
 Gaining a deeper understanding is essential because the intention of emoji usage might be affected

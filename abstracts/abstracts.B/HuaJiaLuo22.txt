@@ -5,7 +5,7 @@ code change in a software system.
 {{background}}
 In this paper, we present a boosting way for change impact analysis via mapping the historical
 change-patterns to current CIA task in a cross-project scenario.
-{{objective,design}}
+{{objective}}
 The change-patterns reflect the coupling dependencies between
 changed entities in a change set.
 {{design}}
