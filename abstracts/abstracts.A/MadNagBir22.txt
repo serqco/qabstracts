@@ -26,13 +26,13 @@ introduce bugs.
 Motivated by these findings, we design, implement, and deploy a service named Concurrent
 Edit Detector (ConE) that proactively detects pull requests containing concurrent edits, to help mitigate the
 problems caused by them.
-{{method}}
+{{objective}}
 ConE has been designed to scale, and to minimize false alarms while still flagging
 relevant concurrently edited files.
-{{method}}
+{{design}}
 Key concepts of ConE include the detection of the Extent of Overlap between
 pull requests, and the identification of Rarely Concurrently Edited Files.
-{{method}}
+{{design}}
 To evaluate ConE, we report on its
 operational deployment on 234 repositories inside Microsoft.
 {{method}}
