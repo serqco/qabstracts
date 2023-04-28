@@ -72,14 +72,14 @@ WonWagTre22   Lutz        Julian
 YuHuLi22      Lutz        Julian
 MaMocZar22    Lutz        Julian
 #----- Block 9
-GerMarLat22   Lloyd
-RahImtSto22   Lloyd
-WanZhaSui22   Lloyd
-ArtHarPra22   Lloyd
-FirFirRos22   Lloyd
-LiuGaoXia22   Lloyd
-LuLiLiu22     Lloyd
-WhiKri22      Lloyd
+GerMarLat22   Lloyd       -Julian
+RahImtSto22   Lloyd       -Julian
+WanZhaSui22   Lloyd       -Julian
+ArtHarPra22   Lloyd       -Julian
+FirFirRos22   Lloyd       -Julian
+LiuGaoXia22   Lloyd       -Julian
+LuLiLiu22     Lloyd       -Julian
+WhiKri22      Lloyd       -Julian
 #----- Block 10
 HeMenChe22    Lutz        Lloyd
 ValMarPan22   Lutz        Lloyd
