@@ -1,38 +1,38 @@
 CloudRaid: Detecting Distributed Concurrency Bugs via Log Mining and Enhancement.
 
 Cloud systems suffer from distributed concurrency bugs, which often lead to data loss and service outage.
-{{}}
+{{background}}
 This paper
 presents CLOUDRAID, a new automatical tool for finding distributed concurrency bugs efficiently and effectively.
-{{}}
+{{objective}}
 Distributed concurrency
 bugs are notoriously difficult to find as they are triggered by untimely interaction among nodes, i.e., unexpected message orderings.
-{{}}
+{{background}}
 To
 detect concurrency bugs in cloud systems efficiently and effectively, CLOUDRAID analyzes and tests automatically only the message
 orderings that are likely to expose errors.
-{{}}
+{{design}}
 Specifically, CLOUDRAID mines the logs from previous executions to uncover the message
 orderings that are feasible but inadequately tested.
-{{}}
+{{design}}
 In addition, we also propose a log enhancing technique to introduce new logs
 automatically in the system being tested.
-{{}}
+{{design}}
 These extra logs added improve further the effectiveness of CLOUDRAID without introducing
 any noticeable performance overhead.
-{{}}
+{{claim}}
 Our log-based approach makes it well-suited for live systems.
-{{}}
+{{claim}}
 We have applied CLOUDRAID to
 analyze six representative distributed systems:
-{{}}
+{{method}}
 Hadoop2/Yarn, HBase, HDFS, Cassandra, Zookeeper, and Flink.
-{{}}
+{{method}}
 CLOUDRAID has
 succeeded in testing 60 different versions of these six systems (10 versions per system) in 35 hours, uncovering 31 concurrency bugs,
 including nine new bugs that have never been reported before.
-{{}}
+{{result}}
 For these nine new bugs detected, which have all been confirmed by
 their original developers, three are critical and have already been fixed.
-{{}}
+{{method,result}}
 ---

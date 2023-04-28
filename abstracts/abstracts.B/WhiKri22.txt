@@ -1,30 +1,30 @@
 TCTracer: Establishing test-to-code traceability links using dynamic and static techniques.
 
 Test-to-code traceability links model the relationships between test artefacts and code artefacts.
-{{}}
+{{background}}
 When utilised during the development process, these links help developers to keep
 test code in sync with tested code, reducing the rate of test failures and missed faults.
-{{}}
+{{background}}
 Testto-code traceability links can also help developers to maintain an accurate mental model of
 the system, reducing the risk of architectural degradation when making changes.
-{{}}
+{{background}}
 However,
 establishing and maintaining these links manually places an extra burden on developers and
 is error-prone.
-{{}}
+{{gap}}
 This paper presents TCTRACER, an approach and implementation for the
 automatic establishment of test-to-code traceability links.
-{{}}
+{{objective}}
 Unlike existing work, TCTRACER
 operates at both the method level and the class level, allowing us to establish links between
 tests and functions, as well as between test classes and tested classes.
-{{}}
+{{design}}
 We improve over existing techniques by combining an ensemble of new and existing techniques that utilise both
 dynamic and static information and exploiting a synergistic flow of information between the
 method and class levels.
-{{}}
+{{result:i1,design:i2u1}}
 An evaluation of TCTRACER using five large, well-studied open
 source systems demonstrates that, on average, we can establish test-to-function links with a
 mean average precision (MAP) of 85% and test-class-to-class links with an MAP of 92%.
-{{}}
+{{method,result}}
 ---
