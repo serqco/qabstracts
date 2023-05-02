@@ -70,7 +70,7 @@ whenever you check in any file and send an email if there are any problems.
 - [Set up SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 - Start a shell and the ssh-agent, add your SSH keys to the agent,
   visit the place where your `qabstracts` work directory should be created, and do
-  `git clone git@github.com:serqco/qabstracts.git`.
+  `git clone --recurse-submodules git@github.com:serqco/qabstracts.git`.
 - `cd qabstracts`. This directory is where you will do 
   all the git calls (if you do them from the command line rather than the IDE) and 
   Python calls.
