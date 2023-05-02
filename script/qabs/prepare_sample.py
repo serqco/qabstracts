@@ -11,4 +11,5 @@ def add_arguments(subparser: qscript.ArgumentParser):
     
 
 def execute(args: qscript.Namespace):
-    prep.execute_template(args, ea.abstract_from_pdf, ea.layouttypes)
+    helper = qscript.Namespace()
+    prep.execute_template(args, ea.abstract_from_pdf, ea.layouttypes, helper)

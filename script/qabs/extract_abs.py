@@ -1,3 +1,4 @@
+import argparse
 import re
 import subprocess as sub
 
@@ -25,8 +26,9 @@ def add_arguments(subparser: qscript.ArgumentParser):
 
 
 def execute(args: qscript.Namespace):
+    helper = argparse.Namespace()
     ep.extract_parts(abstract_from_pdf, layouttypes, 
-                     args.layout, args.outputdir, args.inputfile)
+                     args.layout, helper, args.outputdir, args.inputfile)
 
 
 # Map from a layouttype name to a layout description and list of venues where it applies:
@@ -76,7 +78,6 @@ def abstract_from_pdf(layouttype: ep.LayoutDescriptor, pdffile: str) -> str:
         return abstract_from_page(layouttype, left_column(page1))
     else:
         assert False, f"impossible col: {cols}"
-        return ""
 
 
 def page1_from_pdf(pdffile: str, keeplayout: bool) -> str:
