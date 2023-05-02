@@ -4,11 +4,28 @@ on:
   push:
     paths:
       - '.github/workflows/fullstudy.yml'
+      - 'Makefile'
       - 'abstracts/**'
       - 'script/**'
       - 'tex/**'
 jobs:
-  process-fullstudy:  # yml errors? try  https://rhysd.github.io/actionlint/
+  check-and-compare-codings:  # yml errors? try  https://rhysd.github.io/actionlint/
+    runs-on: ubuntu-22.04
+    steps:
+      - name: check out
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+      - name: check and compare codings
+        run: |
+          git log --oneline -10
+          pip -q install -r requirements.txt
+          set -e
+          echo "*****************************"
+          echo "****** full study    ********"
+          echo "*****************************"
+          python script/qabstracts.py check-codings abstracts && python script/qabstracts.py compare-codings abstracts
+  process-fullstudy:
     runs-on: ubuntu-22.04
     steps:
       - name: check out
@@ -17,16 +34,10 @@ jobs:
           submodules: recursive
       - name: build
         run: |
-          git log --oneline -10
           pip -q install -r requirements.txt
-          set -e
-          echo "*****************************"
-          echo "****** full study    ********"
-          echo "*****************************"
-          python script/qabstracts.py check-codings abstracts && python script/qabstracts.py compare-codings abstracts 
           make export
           make plot
-          sudo apt install texlive-xetex
+          sudo apt install texlive-xetex latexmk
           make pdf
       - name: upload PDF
         uses: actions/upload-artifact@v3
