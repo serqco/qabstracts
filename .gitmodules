@@ -1,0 +1,3 @@
+[submodule "script/qscript"]
+	path = script/qscript
+	url = git@github.com:serqco/qscript-framework.git
