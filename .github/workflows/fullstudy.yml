@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: check out
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
       - name: build
         run: |
           git log --oneline -10
