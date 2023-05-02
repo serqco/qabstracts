@@ -132,25 +132,25 @@ def ab_subsets(df: pd.DataFrame) -> pt.Subsets:
     ab_subsets_list = [
         pt.Rows(label="all", 
                 x=1.0, color="red",
-                rows=lambda df: df.is_struc | ~df.is_struc),
+                rows=lambda dfr: dfr.is_struc | ~dfr.is_struc),
         pt.Rows(label="struc",
                 x=2.5, color="darkgreen",
-                rows=lambda df: df.is_struc),
+                rows=lambda dfr: dfr.is_struc),
         pt.Rows(label="unstruc",
                 x=3.5, color="darkgreen",
-                rows=lambda df: ~df.is_struc),
+                rows=lambda dfr: ~dfr.is_struc),
         pt.Rows(label="design",
                 x=4.5, color="mediumblue",
-                rows=lambda df: df.is_design),
+                rows=lambda dfr: dfr.is_design),
         pt.Rows(label="empir",
                 x=5.5, color="mediumblue",
-                rows=lambda df: ~df.is_design),
+                rows=lambda dfr: ~dfr.is_design),
     ]
     x = 7.0  # add per-venue subsets after a gap
     for venue in sorted(df.venue.unique()):
         ab_subsets_list.append(pt.Rows(label=venue, x=x,  
                                        color="grey" if venue == "IST" else "darkgrey",
-                                       rows=lambda df, venue=venue: df.venue == venue))
+                                       rows=lambda dfr, venue_=venue: dfr.venue == venue_))
         x += 1.0
     return pt.Subsets(ab_subsets_list)
 
@@ -160,22 +160,22 @@ def ab_topicfractions_values(df: pd.DataFrame) -> pt.Subsets:
     ab_topicfractions_list = [
         pt.Values(label="Background",
                   x=1.0,
-                  values=lambda df: df.fraction_background),
+                  values=lambda dfr: dfr.fraction_background),
         pt.Values(label="Objective",
                   x=2.0,
-                  values=lambda df: df.fraction_objective),
+                  values=lambda dfr: dfr.fraction_objective),
         pt.Values(label="Design",
                   x=3.0,
-                  values=lambda df: df.fraction_design),
+                  values=lambda dfr: dfr.fraction_design),
         pt.Values(label="Methods",
                   x=4.0,
-                  values=lambda df: df.fraction_method),
+                  values=lambda dfr: dfr.fraction_method),
         pt.Values(label="Results",
                   x=5.0,
-                  values=lambda df: df.fraction_result),
+                  values=lambda dfr: dfr.fraction_result),
         pt.Values(label="Conclusion",
                   x=6.0,
-                  values=lambda df: df.fraction_conclusion),
+                  values=lambda dfr: dfr.fraction_conclusion),
     ]
     return pt.Subsets(ab_topicfractions_list)
 
