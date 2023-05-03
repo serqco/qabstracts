@@ -2,51 +2,52 @@ Fairness-aware Configuration of Machine Learning Libraries.
 
 This paper investigates the parameter space of machine learning
 (ML) algorithms in aggravating or mitigating fairness bugs.
-{{}}
+{{objective}}
 Data-
 driven software is increasingly applied in social-critical applications
 where ensuring fairness is of paramount importance.
-{{}}
+{{background}}
 The existing
 approaches focus on addressing fairness bugs by either modify-
 ing the input dataset or modifying the learning algorithms.
-{{}}
+{{background}}
 On
 the other hand, the selection of hyperparameters, which provide
 finer controls of ML algorithms, may enable a less intrusive ap-
 proach to influence the fairness.
-{{}}
+{{background}}
 Can hyperparameters amplify or
 suppress discrimination present in the input dataset?
-{{}}
+{{objective}}
 How can we
 help programmers in detecting, understanding, and exploiting the role
 of hyperparameters to improve the fairness?
-{{}}
+{{objective}}
 We design three search-based software testing algorithms to un-
 cover the precision-fairness frontier of the hyperparameter space.
-{{}}
+{{method}}
 We complement these algorithms with statistical debugging to ex-
 plain the role of these parameters in improving fairness.
-{{}}
+{{method}}
 We imple-
 ment the proposed approaches in the tool Parfait-ML (PARameter
 FAIrness Testing for ML Libraries) and show its effectiveness and
 utility over five mature ML algorithms as used in six social-critical
 applications.
-{{}}
+{{method}}
 In these applications, our approach successfully iden-
 tified hyperparameters that significantly improve (vis-a-vis the
 state-of-the-art techniques) the fairness without sacrificing preci-
 sion.
-{{}}
+{{result}}
 Surprisingly, for some algorithms (e.g., random forest), our
 approach showed that certain configuration of hyperparameters
 (e.g., restricting the search space of attributes) can amplify biases
 across applications.
-{{}}
+{{result}}
 Upon further investigation, we found intuitive
 explanations of these phenomena, and the results corroborate simi-
 lar observations from the literature.
-{{}}
+{{a-result,conclusion}}
 ---
+Super unique and interesting abstract structure.
