@@ -14,7 +14,7 @@ chronously.
 Existing test generators cannot effectively test such
 APIs because they only sequence API calls, but do not nest one call
 into the callback function of another.
-{{background}}
+{{gap}}
 This paper presents Nessie,
 the first feedback-directed unit test generator that supports nesting
 of API calls and that tests asynchronous callbacks.
@@ -23,7 +23,7 @@ Nesting API calls
 enables a test to use values produced by an API that are available
 only once a callback has been invoked, and is often necessary to
 ensure that methods are invoked in a specific order.
-{{background}}
+{{design}}
 The core con-
 tributions of our approach are a tree-based representation of unit
 tests with callbacks and a novel algorithm to iteratively generate

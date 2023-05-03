@@ -11,7 +11,7 @@ the system, reducing the risk of architectural degradation when making changes.
 However,
 establishing and maintaining these links manually places an extra burden on developers and
 is error-prone.
-{{background}}
+{{gap}}
 This paper presents TCTRACER, an approach and implementation for the
 automatic establishment of test-to-code traceability links.
 {{objective}}

@@ -36,6 +36,6 @@ and 20 AI (Artificial Intelligence) venues to investigate these issues.
 We also re-ran four representative DL
 models in SE to investigate important factors that may strongly affect the reproducibility and replicability of
 a study.
-{{method}}
+{{method,-ignorediff}}
 ---
 Lots of background in their explicit objective section.

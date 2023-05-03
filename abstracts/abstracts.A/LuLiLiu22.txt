@@ -34,6 +34,6 @@ including nine new bugs that have never been reported before.
 {{result}}
 For these nine new bugs detected, which have all been confirmed by
 their original developers, three are critical and have already been fixed.
-{{result}}
+{{method,result}}
 ---
 Interesting claims made early in the abstract.
