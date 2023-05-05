@@ -1,7 +1,7 @@
 # Overall procedure for executing the 'qabstracts' study
 
 created: Lutz Prechelt, 2022-09-21  
-changed: Lutz Prechelt, 2023-03-06
+changed: Lutz Prechelt, 2023-05-05
 
 
 ## 1. Overall procedure
@@ -109,40 +109,38 @@ The scripts are programs to be called from the command line.
 
 ## 3. Coders: Annotating one block of abstracts
 
-This is the prestudy version of the description.
-The final version will talk of `abstracts/` instead of `prestudy2/`.
 
 ### 3.1 Long version for learning
 
 1. `git pull`
-2. Edit `prestudy2/sample-who-what.txt`.
+2. Edit `abstracts/sample-who-what.txt`.
    Find the first block B that has an empty column C and that you have not yet worked on.
    Enter your firstname with a leading dash in all rows of the leftmost column C of block B,
    e.g. `-Lutz`. This reserves those files for you to annotate so that nobody else works on them.
-3. `git add prestudy2/sample-who-what.txt; git commit -m"<firstname> will code block <B> <C>"; git push`    
+3. `git add abstracts/sample-who-what.txt; git commit -m"<firstname> will code block <B> <C>"; git push`    
    For instance, if you are Lutz and you picked column `abstracts.A` in block 3, 
    the commit message is **"Lutz will code block 3 A"**.  
    Make sure the pull and the push are no more than 3 minutes apart so that it becomes
    unlikely that your edit conflicts with somebody else's.
-4. For each abstracts file in your block (e.g. `prestudy2/abstracts.A/AbcDefGhi21.txt`):
+4. For each abstracts file in your block (e.g. `abstracts/abstracts.A/AbcDefGhi21.txt`):
    1. Classify each sentence with usually one or sometimes two or three codes.
    2. Step back. Is anything special about this abstract that we should remember?
       For instance, does it contain anything that makes a good example in the article?
       Then add a remark below (but usually not).
-5. Edit `prestudy2/sample-who-what.txt` and remove the dashes you inserted in step 2,
+5. Edit `abstracts/sample-who-what.txt` and remove the dashes you inserted in step 2,
    leaving your name only. This reports that the annotations of those files are done.
 6. If you have Python set up, run
-   `python script/qabstracts.py check-codings prestudy2`  
+   `python script/qabstracts.py check-codings abstracts`  
    If all it says is a list of coders, all is well.
    Otherwise, repair any problems you find, even if you have not produced them (if the solution is obvious).  
    This checked the codings in isolation. Next is checking them against those of your fellow coder:  
-   `python script/qabstracts.py compare-codings --onlyfor <firstname> prestudy2`  
+   `python script/qabstracts.py compare-codings --onlyfor <firstname> abstracts`  
    If problems occur here, consult with your fellow coder and resolve them together.  
    If you have no Python, skip this step.
    If your Python is not found, try `python3` in the commands above.
 7. Now add the files of the block to the git index
    using either `git add -i` or (preferably) the git GUI of your choice.
-8. `git add prestudy2/sample-who-what.txt; git commit -m"<firstname> has coded block <B> <C>"`
+8. `git add abstracts/sample-who-what.txt; git commit -m"<firstname> has coded block <B> <C>"`
    (e.g. **"Lutz has coded block 3 A"**)
 9. Make sure you got the commit message right.
    Use `git commit --amend -m"<firstname> has coded block <B> <C>"` if not.
@@ -157,7 +155,7 @@ Took a while? Yes. But the next block will be so much quicker!
 
 - pull; reserve a block in 'sample-who-what.txt'; commit (e.g. **"Lutz will code block 3 A"**); push
 - code the abstracts
-- possibly run 'check-codings' and 'compare-codings'
+- run 'check-codings' and 'compare-codings'
 - adjust 'sample-who-what.txt'; commit it and all abstracts (e.g. **"Lutz has coded block 3 A"**); push
 
 
@@ -165,16 +163,17 @@ Took a while? Yes. But the next block will be so much quicker!
 
 - Once you have coded a block, it is "yours" and you'll never need to make a reservation
   again when you want to modify its files.
-- If you have made **syntactical** mistakes and get messages in the 
-  "check individual files" department, 
+- If you have made **syntactical** mistakes and get messages from `check-codings` ("check individual files"), 
   correct them ASAP (because they block the more important "check pairs of files" messages)
   and commit them with messages of the form  
   **"Lutz fixed block 3 A"**
 - You can and should do this for such mistakes of other coders as well
-- If you made **semantical** changes to a block of yours (whether based on solo decisions
+- If you made **semantical** changes to a block of yours (after messages from `compare-codings`,
+  no matter whether the changes are based on solo decisions
   or after discussing messages with your fellow coder), 
   commit them with messages of the form  
   **"Lutz adjusted block 3 A"**
+
 
 ## 4. Evaluators: Questions to answer
 
@@ -201,7 +200,7 @@ For density measures, use three denominators: #sentences, #words, #chars.
     empirical ones in `result`
 - Frequency of `a-*` codes
 - Frequency of `claim` and `-hype`
-- Frequency of unresolved intercoder differences (`ignorediff`)
+- Frequency of unresolved intercoder differences (`-ignorediff`)
 - Common abstracts structures (clustering) in terms of their basics stretches sequence
 
 ### 4.2 Qualitative evaluation
