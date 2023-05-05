@@ -32,4 +32,5 @@ created: Lutz Prechelt, 2023-01-27
   Several smaller optimizations and one larger change (adding `gap` and several other codes)
   to the codebook until end of April.
 - 2023-03-10 intro meeting with Franz Zieris and Julian Frattini.
+- 2023-05-02 introduced script/qscript submodule and qconclusions team
 - ...
