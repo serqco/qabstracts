@@ -101,8 +101,9 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
 
 def ser_ab_structures(df: pd.DataFrame) -> pd.DataFrame:
     strucs = df[df['topic'] != 'other'] \
-        .groupby(['citekey', 'coder'])[['topic', 'is_struc']] \
+        .groupby(['citekey', 'coder'])[['citekey', 'topic', 'is_struc']] \
         .aggregate(
+            citekey=_nagg('citekey', 'min'),
             topicstructure=_nagg('topic', topicletters),
             is_struc=_nagg('is_struc', 'any'))
     return strucs
@@ -182,7 +183,11 @@ def ab_topicfractions_values(df: pd.DataFrame) -> pt.Subsets:
 
 def print_all_stats(datasets: argparse.Namespace, outputdir: str):
     # print_abtype_table(datasets.by_ab)
-    ...
+    df = datasets.ab_structures  # abbreviation
+    canonical_structure = 'bgomrc'
+    good_abstracts = df.loc[df['topicstructure'] == canonical_structure]
+    print(f"abstracts with canonical structure '{canonical_structure}':", 
+          list(good_abstracts['citekey'].unique()))
 
 
 def print_abtype_table(df: pd.DataFrame):
