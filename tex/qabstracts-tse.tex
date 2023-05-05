@@ -14,8 +14,14 @@
 \newcommand{\Plot}[2]{%
 	\begin{figure}[!t]%
 		\centering\includegraphics[width=\columnwidth]{#1}%
-		\vspace{-6mm}\caption{#2}\label{#1}%
+		\vspace{-4mm}\caption{#2}\label{#1}%
 	\end{figure}}
+
+\newcommand{\Plotwide}[2]{%
+	\begin{figure*}%
+		\centering\includegraphics[width=\textwidth]{#1}%
+		\vspace{-4mm}\caption{#2}\label{#1}%
+    \end{figure*}}
 
 \newcommand{\Todo}[1]{\bgroup\bf\Large #1\egroup}
 \newcommand{\Quote}[1]{\bgroup\it #1\egroup}
@@ -23,7 +29,7 @@
 
 \begin{document}
 	
-\title{How (Not) To Write a Software Engineering Abstract}
+\title{How (Not) To Write a\\Software Engineering Abstract}
 
 \author{Annie Author1, Bert Author2
 \thanks{A. Author1 is with A University, Btown, Ccountry}
@@ -39,14 +45,14 @@
 Abstracts are a very valuable element in a software engineering research article,
 but not all abstracts are as informative as they could be.
 \emph{Objective:} 
-Characterize the structure of abstracts in top venues, 
-observe deficiencies, 
+Characterize the structure of abstracts in high-quality venues, 
+observe and quantify deficiencies, 
 suggest guidelines for writing informative abstracts.
 \emph{Methods:}
-Use open coding to derive concepts that explaining relevant properties of abstracts
-and to identify the prototypical structure of abstracts.
+Use open coding to derive concepts that explain relevant properties of abstracts
+and identify the archetypical structure of abstracts.
 Use quantitative content analysis to objectively characterize abstract structure
-over a sample of 500!!! abstracts from five high-quality venues.
+over a sample of 500!!! abstracts from five presumably high-quality venues.
 Use exploratory data analysis to find recurring issues in abstracts.
 Compare the prototypical structure to actual structures to derive
 guidelines for producing informative abstracts.
@@ -58,8 +64,6 @@ guidelines for producing informative abstracts.
 but (3)~artifact-centric works need a different structured format.
 (4)~The community should start requiring conclusions that generalize, 
 which currently are often missing.
-\emph{Background:}
-
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -255,34 +259,49 @@ Venues: Prescribe structured abstracts: Background (not Context); Design (if nee
 \appendix
 \section{Basic statistics}
 
-\Plot{boxplots_sentences}{%
-  Typical abstracts are 8 to 14 sentences long.
-  Structured abstracts tend to be longer than unstructured ones.
-  IST requires structured abstracts, the other venues do not.}
 \Plot{boxplots_words}{%
   Typical abstracts are 190 to 280 words long. 
   Structured abstracts tend to be longer than unstructured ones, 
   although IST abstracts overall (including the design articles) do not.}
-\Plot{boxplots_fraction_introduction}{%
-  Authors invest about a third of the space into the introduction:
-  background/context information and perhaps explaining a research gap.
-  Structured abstracts tend have less of this???}
-\Plot{boxplots_fraction_conclusion}{%
-  Many abstracts offer no generalization.
-  This is worst at ICSE (with over 75\%)
-  and best at IST, which is the only venue where a majority of articles formulates a generalization.}
 \Plot{boxplots_icount}{%
   A majority of abstracts has one or more "informativeness gaps".
   The problem tends to be smaller in structured abstracts.}
 \Plot{boxplots_ucount}{%
   Some abstracts have understandability gaps where an important concept is not explained at all.
   !!!}
+\Plotwide{zerofractionbar_xletgroups_topicmissingfractions}{%
+	How often is a topic not present at all in an abstract?
+	The plots in each group show these different subsets of abstracts:
+	all, structured, non-structured, design, empirical, EMSE, ICSE, IST, TOSEM, TSE}
+\Plotwide{box_xletgroups_topicfractions}{%
+	Per-topic distribution of the amount of space used for that topic.
+	The plots in each group show these different subsets of abstracts:
+	all, structured, non-structured, design, empirical, EMSE, ICSE, IST, TOSEM, TSE}
+\Plot{ab_topicstructure_freqs_design}{%
+  The frequency of different trains-of-thought in the abstract for design articles.
+  The label is a string of stretch-code characters:
+  b-ackground, g-ap, o-bjective, d-esign, m-ethod, r-esult, c-onclusion, f-uture.}
+\Plot{ab_topicstructure_freqs_empir}{%
+	The frequency of different trains-of-thought in the abstract for empirical articles.
+	Same characters as before, except that d cannot occur.}
+\Plot{boxplots_fraction_introduction}{%
+	Authors invest about a third of the space into the introduction:
+	background/context information and perhaps explaining a research gap.
+	Structured abstracts tend to have less of this???}
+\Plot{boxplots_fraction_conclusion}{%
+	Many abstracts offer no conclusion, i.e., no explicit generalization of the immediate result.
+	This is worst at ICSE (with over 75\%)
+	and best at IST, which is the only venue where a majority of articles formulates a generalization.}
+\Plot{boxplots_sentences}{%
+	Typical abstracts are 8 to 14 sentences long.
+	Structured abstracts tend to be longer than unstructured ones.
+	IST requires structured abstracts, the other venues do not.}
 \Plot{lowess_gaps_by_fracintro}{%
-  This plot checks the expectation that spending much space on background
-  will correlate with more i and u gaps.
-  This is not the case.
-  Each dot is one coding of an abstract, 
-  the line is a locally weighted linear regression.}
+	This plot checks the expectation that spending much space on background
+	will correlate with more i and u gaps.
+	This is not the case.
+	Each dot is one coding of an abstract, 
+	the line is a locally weighted linear regression.}
 
 %\begin{figure}[!t]
 %\centering
