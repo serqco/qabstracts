@@ -213,8 +213,10 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
     ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
                          60/25.4, tse_pagewidth_mm/25.4, 
                          datasets.ab_topicfractions_values, datasets.ab_subsets)
-    pt.plot_xletgroups(ctx, pt.add_boxplotlet, "topicfractions",
-                       "space per topic [%]", ymax=100)
+    pt.plot_xletgroups(ctx, pt.add_boxplotlet, "box", "topicfractions",
+                       "space per topic [%]", ymax=50)
+    pt.plot_xletgroups(ctx, pt.add_zerofractionbarplotlet, "zerofractionbar", "topicmissingfractions",
+                       "how often missing [%]", ymax=100)
 
 
 def plot_ab_topicstructure_freqs_design(df: pd.DataFrame, outputdir: str):
