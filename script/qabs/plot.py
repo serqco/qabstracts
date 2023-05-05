@@ -194,7 +194,8 @@ def print_abtype_table(df: pd.DataFrame):
 def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str):
     # mpl.use('PDF')
     if plotall:
-        plot_ab_topicstructure_freqs(datasets.ab_structures, outputdir)
+        plot_ab_topicstructure_freqs_design(datasets.ab_structures, outputdir)
+        plot_ab_topicstructure_freqs_empir(datasets.ab_structures, outputdir)
         ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
                              60/25.4, tse_pagewidth_mm/25.4, datasets.ab_subsets)
         pt.plot_boxplots(ctx, 'words', ymax=500)
@@ -216,19 +217,30 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
                        "space per topic [%]", ymax=100)
 
 
+def plot_ab_topicstructure_freqs_design(df: pd.DataFrame, outputdir: str):
+    design_df = df.loc[df['topicstructure'].str.contains('d')]
+    plot_ab_topicstructure_freqs(design_df, outputdir)
+
+
+def plot_ab_topicstructure_freqs_empir(df: pd.DataFrame, outputdir: str):
+    empir_df = df.loc[~df['topicstructure'].str.contains('d')]
+    plot_ab_topicstructure_freqs(empir_df, outputdir)
+
+
 def plot_ab_topicstructure_freqs(df: pd.DataFrame, outputdir: str):
     """Barplot of how often the most common train-of-thought structures occur."""
     plt.figure()
-    freqs = df.topicstructure.value_counts()
-    topfreqs = freqs[freqs > 1]
+    freqs = df.topicstructure.value_counts() / 2  # each abstract is coded twice, but should count only 1
+    topfreqs = freqs[freqs > 2]
     plt.grid(axis='y', linewidth=0.1)
     plt.bar(range(len(topfreqs)), topfreqs, tick_label=topfreqs.index)
     plt.xticks(rotation=-30, ha="left")
-    plt.yticks(range(0, topfreqs.max()+1, 2))
+    plt.yticks(range(0, int(topfreqs.max()+1), 2))
     plt.xlabel("abstracts' structure")
     plt.ylabel("frequency")
     plt.subplots_adjust(bottom=0.18)
-    plt.savefig(pt.plotfilename(outputdir))
+    filename = pt.plotfilename(outputdir, nesting=1)
+    plt.savefig(filename)
 
 
 def _nagg(colname, func) -> pd.NamedAgg:
