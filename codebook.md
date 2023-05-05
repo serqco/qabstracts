@@ -1,7 +1,7 @@
 # Codebook and coding rules for qabstracts study
 
 created: Lutz Prechelt, 2022-07-14  
-changed: Lutz Prechelt, 2023-04-17
+changed: Lutz Prechelt, 2023-05-05
 
 
 ## 1. Coding rules: Fundamentals
@@ -334,7 +334,7 @@ Apply them with your own good judgment and keep in mind that
   Using a wide window or the word-wrapped-view mode of your text editor
   may be helpful. Beware of actual word wrapping, though!
 - If you find an additional `{{}}` at a spot where there is no sentence end,
-  just leave it empty. Do not remove it.
+  remove it and its entire line.
 - These rules are used for making it easier to align corresponding abstracts files
   of multiple coders.
   For alignment, the contents of the `{{}}` pairs are compared simply in order
