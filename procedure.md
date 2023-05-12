@@ -44,6 +44,7 @@ whenever you check in any file and send an email if there are any problems.
 - Just use whatever IDE or editor you are most familiar with.
   Learn how to open a file by partial filename instead of by browsing; 
   you will need this a lot when resolving disagreements.
+- After cloning, do `git config pull.rebase true` once to have all `git pull`s in this repo do rebases automatically 
 - Set up Python (see below) if you want to run the checking scripts locally.
 
 ### 2.2 I have no development setup and want the simplest possible solution
@@ -71,6 +72,7 @@ whenever you check in any file and send an email if there are any problems.
 - Start a shell and the ssh-agent, add your SSH keys to the agent,
   visit the place where your `qabstracts` work directory should be created, and do
   `git clone --recurse-submodules git@github.com:serqco/qabstracts.git`.
+- After cloning, do `git config pull.rebase true` once to have all `git pull`s in this repo do rebases automatically
 - `cd qabstracts`. This directory is where you will do 
   all the git calls (if you do them from the command line rather than the IDE) and 
   Python calls.
@@ -85,7 +87,6 @@ whenever you check in any file and send an email if there are any problems.
     (which you will want to pick from `sample-who-what.txt` or a checking script message)
   - Git `commit`
   - Perhaps also Git `push`, `pull` (with rebase, not merge), `log`. 
-    - 🥸 __Pro tip__: Call `git config pull.rebase true` once to have all `git pull`s in this repo do rebases automatically 
 - You can mix Git use on the command line with Git use in the IDE.
   For instance, the IDE is unbeatably good for creating commits,
   but some people prefer the command line for `push`, `pull` and `log`.
