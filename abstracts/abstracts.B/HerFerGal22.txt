@@ -21,7 +21,7 @@ This
 paper (i) proposes a new sampler named BDDSampler, (ii) presents a new statistical test
 to verify sampler uniformity, and (iii) reports the evaluation of BDDSampler and five
 other state-of-the-art samplers: KUS, QuickSampler, Smarch, Spur, and Unigen2.
-{{objective,a-design,method}}
+{{objective,a-design}}
 Our
 experimental results show only BDDSampler satisfies both scalability and uniformity.
 {{result}}
