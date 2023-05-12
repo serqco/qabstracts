@@ -3,13 +3,13 @@
 
 Instruction reordering and interleavings in program execution under relaxed memory semantics result in
 non-intuitive behaviors, making it difficult to provide assurances about program correctness.
-{{gap}}
+{{background}}
 Studies have
 shown that up to 90% of the concurrency bugs reported by state-of-the-art static analyzers are false alarms.
 {{background}}
 As
 a result, filtering false alarms and detecting real concurrency bugs is a challenging problem.
-{{gap}}
+{{background}}
 Unsurprisingly,
 this problem has attracted the interest of the research community over the past few decades.
 {{background}}

@@ -25,6 +25,6 @@ Conclusion:
 {{h-conclusion}}
 MMRE is not a proper measure of the accuracy of estimates of the median or mean effort, but may be used for the accuracy evaluation of estimates of most
 likely effort.
-{{result}}
+{{summary}}
 ---
 Appears to be a theoretical paper.
