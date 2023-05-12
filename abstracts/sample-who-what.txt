@@ -108,14 +108,14 @@ BraFriHol22   Lutz        Lloyd
 LinLiZha22    Lutz        Lloyd
 NaeAla22      Lutz        Lloyd
 #----- Block 13
-FanWeiJin22   Lutz        -Julian
-SahÖzyTos22   Lutz        -Julian
-LiuLiSwa22    Lutz        -Julian
-JaiPurSha22   Lutz        -Julian
+FanWeiJin22   Lutz        Julian
+SahÖzyTos22   Lutz        Julian
+LiuLiSwa22    Lutz        Julian
+JaiPurSha22   Lutz        Julian
 # Pezzè22  an editorial, not an article
-NadRodNag22   Lutz        -Julian
-JørHalLie22   Lutz        -Julian
-HerFerGal22   Lutz        -Julian
+NadRodNag22   Lutz        Julian
+JørHalLie22   Lutz        Julian
+HerFerGal22   Lutz        Julian
 #----- Block 14
 YeGuMar22     Lutz
 JiaTanDam22   Lutz

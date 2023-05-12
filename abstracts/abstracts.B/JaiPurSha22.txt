@@ -3,31 +3,31 @@
 
 Instruction reordering and interleavings in program execution under relaxed memory semantics result in
 non-intuitive behaviors, making it difficult to provide assurances about program correctness.
-{{}}
+{{background}}
 Studies have
 shown that up to 90% of the concurrency bugs reported by state-of-the-art static analyzers are false alarms.
-{{}}
+{{background}}
 As
 a result, filtering false alarms and detecting real concurrency bugs is a challenging problem.
-{{}}
+{{background}}
 Unsurprisingly,
 this problem has attracted the interest of the research community over the past few decades.
-{{}}
+{{background}}
 Nonetheless,
 many of the existing techniques rely on analyzing source code, rarely consider the effects introduced by
 compilers, and assume a sequentially consistent memory model.
-{{}}
+{{gap}}
 In a practical setting, however, developers
 often do not have access to the source code, and even commodity architectures such as x86 and ARM are not
 sequentially consistent.
-{{}}
+{{gap}}
 In this work, we present Bird, a prototype tool, to dynamically detect harmful data races in x86 binaries
 under relaxed memory models, TSO and PSO.
-{{}}
+{{objective}}
 Bird employs source-DPOR to explore all distinct feasible interleavings for a multithreaded application.
-{{}}
+{{design}}
 Our evaluation of Bird on 42 publicly available benchmarks and
 its comparison with the state-of-the-art tools indicate Bird’s potential in effectively detecting data races in
 software binaries.
-{{}}
+{{method,a-result}}
 ---
