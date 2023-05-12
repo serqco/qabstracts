@@ -37,5 +37,5 @@ we employ an advantage reward to train both networks and conduct a set of experi
 {{design,method:i1}}
 The experimental
 results demonstrate that our approach outperforms the baselines by around 22 to 45 percent in BLEU-1 and outperforms the state-ofthe-art approaches by around 5 to 60 percent in terms of S-BLEU and C-BLEU.
-{{result}}
+{{result:u3}}
 ---

@@ -31,10 +31,10 @@ skills to participate in the augmenters' maintenance phase.
 In order to allow this, we also provide support for
 the development phase to bootstrap a first version of the augmenter and to reduce the load on developers in
 both phases, development and maintenance.
-{{design}}
+{{objective}}
 We present an analysis of more than eight thousand augmenters,
 which helped us devise the approach.
-{{design}}
+{{method}}
 Finally, we present an experiment with 48 participants to validate our
 approach.
 {{method}}
