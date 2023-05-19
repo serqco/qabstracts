@@ -19,15 +19,15 @@ C/C++, and an LTL property.
 It finds violations, or counterexample
 traces, of the LTL property in stateful software systems; however,
 it does not achieve verification.
-{{design}}
+{{design,limitation}}
 Our work substantially extends
 directed greybox fuzzing to witness arbitrarily complex event or-
 derings.
-{{design}}
+{{design,-ignorediff}}
 We note that existing directed greybox fuzzing approaches
 are limited to witnessing reaching a location or witnessing simple
 event orderings like use-after-free.
-{{design}}
+{{background}}
 At the same time, compared
 to model checkers, our approach finds the counterexamples faster,
 thereby finding more counterexamples within a given time budget.

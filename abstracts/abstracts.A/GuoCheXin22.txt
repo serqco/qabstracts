@@ -38,5 +38,5 @@ We finally highlight that PMA has the ability
 to reduce human efforts by recommending and augmenting missing key aspects for vulnerability databases,
 and to facilitate other research works such as severity level prediction of CVEs based on the vulnerability
 descriptions.
-{{result:i2}}
+{{conclusion,fposs}}
 ---

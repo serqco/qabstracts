@@ -35,7 +35,7 @@ Conclusion:
 {{h-conclusion}}
 On the one hand, our findings open the way to better management of software maintenance
 activities when dealing with software vulnerabilities.
-{{conclusion}}
+{{fposs}}
 Indeed, vulnerability class information could be exploited
 to better predict how much code will be affected by the fixing, how the structural properties of the code (i.e.,
 complexity, coupling, cohesion, size) will change, and the effort required for the fix.

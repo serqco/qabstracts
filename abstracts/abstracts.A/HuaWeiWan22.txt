@@ -45,5 +45,5 @@ Conclusions:
 {{h-conclusion}}
 We propose a straightforward but effective dynamic combination of IR-based and neural-based
 comment generation, which outperforms state-of-the-art approaches by a substantial margin.
-{{conclusion}}
+{{conclusion,-ignorediff}}
 ---
