@@ -7,7 +7,7 @@ Despite
 their success, they rely on the availability of large amounts of par-
 allel data to fine-tune the semantic mappings between queries and
 code.
-{{background}}
+{{gap}}
 This restricts their practicality in domain-specific languages
 with relatively scarce and expensive data.
 {{gap}}

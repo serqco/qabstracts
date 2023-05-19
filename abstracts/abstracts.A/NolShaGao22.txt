@@ -15,7 +15,7 @@ trust in automatically generated patches.
 Based on the feedback
 from the survey on developer preferences, we quantitatively evalu-
 ate existing test-suite based program repair tools.
-{{a-method}}
+{{a-method, -ignorediff}}
 We find that they
 cannot produce high-quality patches within a top-10 ranking and
 an acceptable time period of 1 hour.
