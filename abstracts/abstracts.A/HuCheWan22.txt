@@ -35,7 +35,7 @@ of generated documentation from automatic metrics is different from that evaluat
 {{result}}
 Thus, these automatic metrics are not reliable enough to replace human evaluation for code documentation
 generation tasks.
-{{conclusion}}
+{{conclusion, -ignorediff}}
 In addition, METEOR shows the strongest correlation (with moderate Pearson correlation
 r about 0.7) to human evaluation metrics.
 {{result}}

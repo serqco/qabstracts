@@ -15,7 +15,7 @@ We found that:
 code reviews are prevalent discussion categories; (2) there is a positive relationship between
 project member involvement and discussion frequency; (3) developers consider GitHub Discussions useful but face the problem of topic duplication between Discussions and Issues;
 (4) Discussions play a crucial role in advancing the development of projects; and (5) positive sentiment in Discussions is more frequent than in Stack Overflow posts.
-{{result,claim}}
+{{result}}
 Our findings
 are a first step towards data-informed guidance for using GitHub Discussions, opening up
 avenues for future work on this novel communication channel.
