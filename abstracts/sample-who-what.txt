@@ -135,14 +135,14 @@ KalNorVog22   Lutz        -Lloyd
 ReiJahMoc22   Lutz        -Lloyd
 TawSarPet22   Lutz        -Lloyd
 #----- Block 16
-FahAhmBeh22   Lutz        -Julian
-HuaWeiWan22   Lutz        -Julian
-RusMasSto22   Lutz        -Julian
-LiuFenYin22   Lutz        -Julian
-MenDonLi22    Lutz        -Julian
-WuYanMa22     Lutz        -Julian
-CanSorFor22   Lutz        -Julian
-GuoCheXin22   Lutz        -Julian
+FahAhmBeh22   Lutz        Julian
+HuaWeiWan22   Lutz        Julian
+RusMasSto22   Lutz        Julian
+LiuFenYin22   Lutz        Julian
+MenDonLi22    Lutz        Julian
+WuYanMa22     Lutz        Julian
+CanSorFor22   Lutz        Julian
+GuoCheXin22   Lutz        Julian
 #----- Block 17
 WanLutQia22   Lutz
 MeyAlmKel22   Lutz

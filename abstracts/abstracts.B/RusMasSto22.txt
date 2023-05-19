@@ -2,33 +2,32 @@ From anecdote to evidence: the relationship between personality and need for cog
 
 There is considerable anecdotal evidence suggesting that software engineers enjoy engaging
 in solving puzzles and other cognitive efforts.
-{{}}
+{{background}}
 A tendency to engage in and enjoy effortful
 thinking is referred to as a person’s ‘need for cognition.’ In this article we study the relationship between software engineers’ personality traits and their need for cognition.
-{{}}
+{{background,objective}}
 Through
 a large-scale sample study of 483 respondents we collected data to capture the six ‘bright’
 personality traits of the HEXACO model of personality, and three ‘dark’ personality traits.
-{{}}
+{{method:u1}}
 Data were analyzed using several methods including a multiple Bayesian linear regression
 analysis.
-{{}}
+{{method}}
 The results indicate that ca.
-{{}}
 33% of variation in developers’ need for cognition can
 be explained by personality traits.
-{{}}
+{{result}}
 The Bayesian analysis suggests four traits to be of particular interest in predicting need for cognition:
-{{}}
+{{result}}
 openness to experience, conscientiousness,
 honesty-humility, and emotionality.
-{{}}
+{{result}}
 Further, we also find that need for cognition of software
 engineers is, on average, higher than in the general population, based on a comparison with
 prior studies.
-{{}}
+{{result}}
 Given the importance of human factors for software engineers’ performance in
 general, and problem solving skills in particular, our findings suggest several implications
 for recruitment, working behavior, and teaming.
-{{}}
+{{a-conclusion}}
 ---

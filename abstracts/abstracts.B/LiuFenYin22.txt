@@ -2,45 +2,45 @@ DeepState: Selecting Test Suites to Enhance the Robustness of Recurrent Neural N
 
 Deep Neural Networks (DNN) have achieved tremendous success
 in various software applications.
-{{}}
+{{background}}
 However, accompanied by out-
 standing effectiveness, DNN-driven software systems could also
 exhibit incorrect behaviors and result in some critical accidents
 and losses.
-{{}}
+{{background}}
 The testing and optimization of DNN-driven software
 systems rely on a large number of labeled data that often require
 many human efforts, resulting in high test costs and low efficiency.
-{{}}
+{{background}}
 Although plenty of coverage-based criteria have been proposed to
 assist in the data selection of convolutional neural networks, it is
 difficult to apply them on Recurrent Neural Network (RNN) models
 due to the difference between the working nature.
-{{}}
+{{gap}}
 In this paper, we propose a test suite selection tool DeepState
 towards the particular neural network structures of RNN models
 for reducing the data labeling and computation cost.
-{{}}
+{{objective}}
 DeepState
 selects data based on a stateful perspective of RNN, which identifies
 the possibly misclassified test by capturing the state changes of
 neurons in RNN models.
-{{}}
+{{design}}
 We further design a test selection method
 to enable testers to obtain a test suite with strong fault detection
 and model improvement capability from a large dataset.
-{{}}
+{{design}}
 To evalu-
 ate DeepState, we conduct an extensive empirical study on pop-
 ular datasets and prevalent RNN models containing image and
 text processing tasks.
-{{}}
+{{method:i2}}
 The experimental results demonstrate that
 DeepState outperforms existing coverage-based techniques in se-
 lecting tests regarding effectiveness and the inclusiveness of bug
 cases.
-{{}}
+{{result:i2}}
 Meanwhile, we observe that the selected data can improve
 the robustness of RNN models effectively.
-{{}}
+{{conclusion}}
 ---
