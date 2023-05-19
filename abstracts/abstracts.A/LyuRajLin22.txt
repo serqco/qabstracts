@@ -13,12 +13,10 @@ community when deriving interpretations, such as interpreting models with subopt
 the impact of such violations on the interpretation consistency has not been studied.
 {{background}}
 In this article, we investigate the consistency of AIOps model interpretation along three dimensions:
-{{objective}}
 internal consistency, external consistency, and time consistency.
 {{objective}}
 We conduct a case study on two AIOps
 tasks:
-{{method}}
 predicting Google cluster job failures and Backblaze hard drive failures.
 {{method}}
 We find that the randomness from learners, hyperparameter tuning, and data sampling should be controlled to generate consistent interpretations.
