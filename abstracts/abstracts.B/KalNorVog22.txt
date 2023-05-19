@@ -1,48 +1,48 @@
 A systematic literature review on counterexample explanation.
 
 Context:
-{{}}
+{{h-background}}
 Safety is of paramount importance for cyber–physical systems in domains such as automotive,
 robotics, and avionics.
-{{}}
+{{background}}
 Formal methods such as model checking are one way to ensure the safety of cyber–
 physical systems.
-{{}}
+{{background}}
 However, adoption of formal methods in industry is hindered by usability issues, particularly
 the difficulty of understanding model checking results.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 We want to provide an overview of the state of the art for counterexample explanation by
 investigating the contexts, techniques, and evaluation of research approaches in this field.
-{{}}
+{{objective}}
 This overview shall
 provide an understanding of current and guide future research.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 To provide this overview, we conducted a systematic literature review.
-{{}}
+{{method}}
 The survey comprises 116
 publications that address counterexample explanations for model checking.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 Most primary studies provide counterexample explanations graphically or as traces, minimize counterexamples to reduce complexity, localize errors in the models expressed in the input formats of model
 checkers, support linear temporal logic or computation tree logic specifications, and use model checkers of
 the Symbolic Model Verifier family.
-{{}}
+{{result}}
 Several studies evaluate their approaches in safety-critical domains with
 industrial applications.
-{{}}
+{{result}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 We notably see a lack of research on counterexample explanation that targets probabilistic and
 real-time systems, leverages the explanations to domain-specific models, and evaluates approaches in user
 studies.
-{{}}
+{{result}}
 We conclude by discussing the adequacy of different types of explanations for users with varying
 domain and formal methods expertise, showing the need to support laypersons in understanding model
 checking results to increase adoption of formal methods in industry.
-{{}}
+{{result,fneed}}
 ---
