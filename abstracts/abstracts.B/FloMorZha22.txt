@@ -35,7 +35,7 @@ associated with unusual implementation decisions or code smells.
 {{result}}
 Third, we develop a toolassisted protocol that allows us to identify 256 additional trace links for the data constraints
 implemented using the 13 most common patterns.
-{{method}}
+{{method,result}}
 We find that almost half of these data
 constraints have multiple enforcing statements, which are code clones of different types.
 {{result}}

@@ -16,7 +16,7 @@ subsequent words by maximizing the likelihood of subsequent ground truth words, 
 the entire word sequence from scratch.
 {{background}}
 As a result, such drawbacks lead to inferior and inconsistent comment generation accuracy.
-{{background}}
+{{gap}}
 To
 address the above limitations, this paper presents a new code summarization approach using hierarchical attention network by
 incorporating multiple code features, including type-augmented abstract syntax trees and program control flows.

@@ -36,5 +36,5 @@ In the biological models we showed invariants to
 developers and they confirmed that some of these point to parts of
 the model that are biologically incorrect or incomplete suggesting
 we may be able to use ChemFlow to improve model quality.
-{{result,conclusion}}
+{{method,result,conclusion}}
 ---
