@@ -44,5 +44,5 @@ studies.
 We conclude by discussing the adequacy of different types of explanations for users with varying
 domain and formal methods expertise, showing the need to support laypersons in understanding model
 checking results to increase adoption of formal methods in industry.
-{{result,fneed}}
+{{a-conclusion,fneed}}
 ---

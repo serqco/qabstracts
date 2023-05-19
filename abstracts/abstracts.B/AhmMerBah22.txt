@@ -24,5 +24,5 @@ and their associated attacks to identify potential attacks and threats in blockc
 {{method}}
 Our mapping approach aims to guide architects to make justifiable design decisions that will result in more secure
 implementations.
-{{conclusion}}
+{{objective}}
 ---
