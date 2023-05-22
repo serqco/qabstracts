@@ -30,4 +30,5 @@ Based on our findings, we distill a list of lessons learned for both practitione
 and researchers, indicating directions for future work.
 {{a-conclusion,a-fposs}}
 ---
-I felt very uncomfortable with my original code of {{conclusion}} on the final sentence. Your coding makes a lot of sense and makes it much clearer.
+I felt very uncomfortable with my original code of conclusion on the final sentence.
+Your coding makes a lot of sense and makes it much clearer.
