@@ -1,55 +1,57 @@
 A comprehensive empirical study on bug characteristics of deep learning frameworks.
 
 Context:
-{{}}
+{{h-background}}
 Deep Learning (DL) frameworks enable developers to build DNN models without learning the
 underlying algorithms and models.
-{{}}
+{{background}}
 While some of these DL-based software systems have been deployed in
 safety-critical areas, such as self-driving cars and medical diagnostics, for DL frameworks, characterizing their
 bugs and thus helping researchers to design specific quality assurance techniques become desperately needed.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 Our research aims to characterize bugs typical of DL frameworks at the source code level for an
 in-depth analysis of bug symptoms, root causes, and bug fixes.
-{{}}
+{{objective}}
 In this way, we hope to provide insights for
 researchers to design automatic quality assurance techniques, such as automatic repair techniques and fault
 location techniques, applicable to DL frameworks and DL-based software systems.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 We started by summarizing the DL framework reference architecture and proposing the DL framework
 bug taxonomy.
-{{}}
+{{method:i1}}
 Then, we mined 1,127 DL framework bug reports from eight popular DL frameworks and
 labeled the bug types, root causes, and symptoms.
-{{}}
+{{method:i1u1}}
 Finally, we discussed the bug characteristics and explored
 how developers could possibly deal with these bugs.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 Our main findings are:
-{{}}
+{{result}}
 (i) DNN model building bugs and general type bugs accounted for one-third
 of the total defects.
-{{}}
+{{result:u1}}
 (ii) DNN model building bugs are more prone to algorithm logic constraints, internal API
 errors, and data/numerical errors.
-{{}}
+{{result:u1}}
 (iii) Fifteen bug-fixing patterns are summarized, providing reference for
 common DL framework bug repair and future research on the development of automatic DL framework bug
 detection tools.
-{{}}
+{{result,fposs}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 By analyzing the bug-fixing changes, we characterize the occurrences, root causes, symptoms,
 and fixing of these bugs.
-{{}}
+{{summary}}
 The study results have provided researchers with insights into how to ensure DL
 framework quality and presented actionable suggestions for DL framework developers to improve their code
 quality.
-{{}}
+{{summary}}
 ---
+"...become desperately needed": We could compile a list of words for what is presumably
+strong hyperbole and study those spots. We have not coded those much yet.

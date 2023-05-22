@@ -2,41 +2,41 @@ Tracking bad updates in mobile apps: a search-based approach.
 
 The rapid growth of the mobile applications development industry raises several new challenges to developers as they need to respond quickly to the users’ needs in a world of
 continuous changes.
-{{}}
+{{background}}
 Indeed, mobile apps undergo frequent updates to introduce new features, fix reported issues or adapt to new technological or environment changes.
-{{}}
+{{background}}
 Hence,
 introducing changes in this context is risky and can harmfully impact the application rating
 and competitiveness.
-{{}}
+{{background}}
 Thus, ensuring that the application updates are deployed in a controlled way is of crucial importance.
-{{}}
+{{background}}
 To better support mobile applications evolution and
 cut-off the costs of users dissatisfaction, we propose in this paper, APPTRACKER, a novel
 approach to automatically track bad release updates in Android applications (i.e., releases
 with higher percentage of negative reviews relative to the prior releases).
-{{}}
+{{objective}}
 We formulate the
 problem as a three-class classification problem to label the apps updates as bad, neutral or
 good.
-{{}}
+{{design}}
 To solve this problem, we evolve bad release detection rules using Multi-Objective
 Genetic Programming (MOGP) based on the adaptation of the Non-dominated Sorting
 Genetic Algorithm (NSGA-II).
-{{}}
+{{design:i1}}
 In particular, the search process aims to provide the optimal
 trade-off between two conflicting objectives to deal with the considered classes.
-{{}}
+{{design:i1}}
 We evaluate our approach and investigate the performance of both within-project and cross-project
 validation scenarios on a benchmark of 50,700 updates from 1,717 free Android apps from
 Google Play Store.
-{{}}
+{{method}}
 The statistical tests revealed that our approach achieves a clear advantage
 over machine learning approaches (e.g., random forest, decision tree, etc.) with significant improvements of 18% and 6% in terms of F1-score within-project and cross-project
 validations, respectively.
-{{}}
+{{result}}
 Furthermore, the features analysis reveals that (1) the previous
 updates ratings and (2) the APK size are the most important features for both within and
 cross-project scenarios.
-{{}}
+{{result}}
 ---
