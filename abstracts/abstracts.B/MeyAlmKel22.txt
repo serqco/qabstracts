@@ -2,31 +2,31 @@ Examining Penetration Tester Behavior in the Collegiate Penetration Testing Comp
 
 
 Penetration testing is a key practice toward engineering secure software.
-{{}}
+{{background}}
 Malicious actors have many tactics
 at their disposal, and software engineers need to know what tactics attackers will prioritize in the first few
 hours of an attack.
-{{}}
+{{background}}
 Projects like MITRE ATT&CK™ provide knowledge, but how do people actually deploy
 this knowledge in real situations?
-{{}}
+{{background}}
 A penetration testing competition provides a realistic, controlled environment with which to measure and compare the efficacy of attackers.
-{{}}
+{{background}}
 In this work, we examine the details
 of vulnerability discovery and attacker behavior with the goal of improving existing vulnerability assessment
 processes using data from the 2019 Collegiate Penetration Testing Competition (CPTC).
-{{}}
+{{objective,method}}
 We constructed 98
 timelines of vulnerability discovery and exploits for 37 unique vulnerabilities discovered by 10 teams of penetration testers.
-{{}}
+{{method}}
 We grouped related vulnerabilities together by mapping to Common Weakness Enumerations
 and MITRE ATT&CK™
-{{}}
+{{method}}
 We found that (1) vulnerabilities related to improper resource control (e.g., session
 fixation) are discovered faster and more often, as well as exploited faster, than vulnerabilities related to improper access control (e.g., weak password requirements), (2) there is a clear process followed by penetration
 testers of discovery/collection to lateral movement/pre-attack.
-{{}}
+{{result:i3}}
 Our methodology facilitates quicker analysis
 of vulnerabilities in future CPTC events.
-{{}}
+{{fposs}}
 ---
