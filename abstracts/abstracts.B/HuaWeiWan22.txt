@@ -15,7 +15,7 @@ Aim:
 {{h-objective}}
 However, despite the tremendous progress, our pilot study reveals that the current combination is not
 generalizable and can lead to performance degradation.
-{{gap}}
+{{result}}
 In this paper, we propose a straightforward but
 effective approach to tackle the issue of existing combinations of these two comment generation approaches.
 {{objective}}

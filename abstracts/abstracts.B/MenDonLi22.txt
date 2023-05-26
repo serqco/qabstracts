@@ -35,7 +35,7 @@ thereby finding more counterexamples within a given time budget.
 Our LTL-Fuzzer tool, built on top of the AFL fuzzer, is shown
 to be effective in detecting bugs in well-known protocol imple-
 mentations, such as OpenSSL and Telnet.
-{{claim}}
+{{result}}
 We use LTL-Fuzzer to
 reproduce known vulnerabilities (CVEs), to find 15 zero-day bugs
 by checking properties extracted from RFCs (for which 12 CVEs
