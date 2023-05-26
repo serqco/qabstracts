@@ -35,7 +35,7 @@ ManyBugs benchmark, Trident successfully repaired two new bugs that previous app
 {{method,result}}
 Adding patches with side
 effects to the search space can exacerbate test-overfitting.
-{{result}}
+{{result, -ignorediff}}
 We experimentally demonstrate that the simple heuristic of preferring
 patches with the fewest side effects alleviates the problem.
 {{design,result}}

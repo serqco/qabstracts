@@ -34,7 +34,7 @@ of the presented techniques.
 {{method,result}}
 We achieve state-of-the-art results on most of the tasks using word sequences as
 tokens.
-{{result:i1,design}}
+{{result:i1}}
 Conclusion:
 {{h-conclusion}}
 Requirements can be effectively classified into functional and different non-functional categories

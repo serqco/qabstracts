@@ -17,8 +17,7 @@ be constructed automatically, thus potentially reducing development effort.
 We also evaluate the efficiency
 of synthesised transformations.
 {{a-result}}
-Our novel contributions are:
-{{design}}
+Our novel contributions are
 • The concept of correspondence patterns between metamodels of a transformation.
 {{design}}
 • Requirements analysis of transformations using natural language processing (NLP) and machine learning (ML).
@@ -29,4 +28,3 @@ Our novel contributions are:
 language.
 {{design}}
 ---
-The "contributions" part does not fit well with our codebook.
