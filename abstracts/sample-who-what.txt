@@ -153,14 +153,14 @@ UddGuéKho22   Lutz        -Lloyd
 SheBanKum22   Lutz        -Lloyd
 BomBonGal22   Lutz        -Lloyd
 #----- Block 18
-SahUraMah22   Lutz
-ArdBotCop22   Lutz
-ParBarMec22   Lutz
-AlDAhmMah22   Lutz
-LanRahFan22   Lutz
-JunTra22      Lutz
-UttPal22      Lutz
-GinMarMar22   Lutz
+SahUraMah22   Lutz        -Julian
+ArdBotCop22   Lutz        -Julian
+ParBarMec22   Lutz        -Julian
+AlDAhmMah22   Lutz        -Julian
+LanRahFan22   Lutz        -Julian
+JunTra22      Lutz        -Julian
+UttPal22      Lutz        -Julian
+GinMarMar22   Lutz        -Julian
 #----- Block 19
 CasZamNov22   Lutz
 LiWanNgu22    Lutz
