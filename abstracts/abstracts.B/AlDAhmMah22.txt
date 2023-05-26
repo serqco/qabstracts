@@ -1,44 +1,44 @@
 An end-to-end deep learning system for requirements classification using recurrent neural networks.
 
 Context:
-{{}}
+{{h-background}}
 Existing requirements classification approaches mainly use lexical and syntactical features to classify
 requirements using both traditional machine learning and deep learning approaches with promising results.
-{{}}
+{{background}}
 However, the existing techniques depend on word and sentence structures and employ preprocessing and
 feature engineering techniques to classify requirements from textual natural language documents.
-{{}}
+{{gap}}
 Moreover,
 existing studies deal with requirements classification as binary or multiclass classification problems and not
 as multilabel classification, although a given requirement can belong to multiple classes at the same time.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 The objective of this study is to classify requirements into functional and different non-functional
 types with minimal preprocessing and to model the task as a multilabel classification problem.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 In this paper, we use Bidirectional Gated Recurrent Neural Networks (BiGRU) to classify requirements
 using raw text.
-{{}}
+{{design}}
 We investigated two different approaches:
-{{}}
+{{design}}
 (i) using word sequences as tokens and (ii) using
 character sequences as tokens.
-{{}}
+{{design}}
 Results:
-{{}}
+{{h-result}}
 Experiments conducted on the publicly available PROMISE and EHR datasets show the effectiveness
 of the presented techniques.
-{{}}
+{{method,result:i1}}
 We achieve state-of-the-art results on most of the tasks using word sequences as
 tokens.
-{{}}
+{{result:i2}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 Requirements can be effectively classified into functional and different non-functional categories
 using the presented recurrent neural networks-based deep learning system, which involves minimal text
 prepossessing and no feature engineering.
-{{}}
+{{conclusion}}
 ---

@@ -1,51 +1,51 @@
 Consolidating a common perspective on Technical Debt and its Management through a Tertiary Study.
 
 Context:
-{{}}
+{{h-background}}
 Technical Debt (TD) contextualizes the technical decisions on shortcuts and workarounds during software
 development, positively and negatively influencing software evolution.
-{{}}
+{{background}}
 However, TD still seems to confound
 with any issue occurring during software development, impacting its proper understanding and management in
 software projects.
-{{}}
+{{gap}}
 Goal:
-{{}}
+{{h-objective}}
 To synthesize evidence regarding the conceptualization, characteristics, and management of TD in software
 projects.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 To undertake a tertiary study to strengthen the knowledge of TD using the principles of Grounded
 Theory to support qualitative analysis.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 Nineteen secondary studies provide evidence on TD and its management.
-{{}}
+{{result}}
 They provided information
 regarding the TD’s understanding (definitions and characteristics) and management (actions and technologies).
-{{}}
+{{result}}
 Some causes, such as project constraints, technical decisions, and team members, promote different types of TD
 in software projects.
-{{}}
+{{result}}
 The secondary studies also supported identifying the impacts of TD regarding project
 management, team members, the organization’s business, and internal software quality.
-{{}}
+{{result}}
 Besides helping identify
 TD challenges, such studies contributed to integrating a conjectured conceptual model of TD that can support
 future discussions and investigations regarding TD’s understanding and management.
-{{}}
+{{a-result}}
 Conclusions:
-{{}}
+{{h-conclusion}}
 The set of evidence regarding TD’s understanding, actions, and technologies to manage TD can aid
 software practitioners in their software projects.
-{{}}
+{{conclusion}}
 However, it is observable an interpretation overload regarding
 its definition, inducing to classify any issue occurring during the software development as TD.
-{{}}
+{{conclusion}}
 Therefore, further
 discussions and investigations still represent essential steps towards consolidating a common perspective on TD
 and its management.
-{{}}
+{{fneed}}
 ---
