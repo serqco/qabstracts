@@ -2,30 +2,30 @@ Newcomer OSS-Candidates: Characterizing Contributions of Novice Developers to Gi
 
 The ability of an Open Source Software (OSS) project to attract, onboard, and retain any
 newcomer is vital to its livelihood.
-{{}}
+{{background}}
 Although, evidence suggests an upsurge in novice
 developers joining social coding platforms (such as GitHub), the extent to which their activities result in a OSS contribution is unknown.
-{{}}
+{{gap}}
 Henceforth, we execute the protocols of
 a registered report to study activities of a “Newcomer OSS-Candidate”, who is a novice
 developer that is new to that social coding platform, and has the intention to later onboard
 an OSS project.
-{{}}
+{{objective}}
 Using GitHub as a case platform, we analyze 171 identified Newcomer
 OSS-Candidates to characterize their contribution activities.
-{{}}
+{{method}}
 Results show that Newcomer
 OSS-Candidates are likely to target software based repositories (i.e., 66%), and their first
 contributions are mainly associated with development (commits) and maintenance (PRs).
-{{}}
+{{result:i1}}
 Newcomer OSS-Candidates are less likely to practice social coding, but eventually end up
 onboarding (i.e., 30% quantitative, 70% follow-up survey) an OSS project.
-{{}}
+{{result:i1u2}}
 Furthermore,
 they cite finding a way to start as the most challenging barrier to contribute.
-{{}}
+{{result}}
 Our work
 reveals insights on how newcomers to social coding platforms are potential sources of OSS
 contributions.
-{{}}
+{{summary}}
 ---
