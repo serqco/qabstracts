@@ -14,12 +14,12 @@ common when it comes to the analysis of control system logs, which often take th
 In this situation, an execution
 trace amounts to a multivariate time-series of input and output signals, where different states of the system correspond to different “phases”
 in the time-series.
-{{design}}
+{{design, -ignorediff}}
 From an inference perspective, the challenge is to detect when these phase changes take place.
-{{design}}
+{{design, -ignorediff}}
 Unfortunately, most
 existing solutions are either univariate, make assumptions about the data distribution, or have limited learning power.
-{{gap}}
+{{background}}
 In this paper we
 propose a hybrid deep neural network that accepts as input a multivariate time series and applies a set of convolutional and recurrent layers
 to learn the non-linear correlations between signals and the patterns over time.
@@ -31,7 +31,7 @@ from different products with similar execution characteristics.
 Our experimental results on two UAV autopilot case studies (one industrial and
 one open-source) indicate that our approach is highly accurate (over 90% F1 score for state classification) and significantly improves
 baselines (by up to 102% for change point detection).
-{{result}}
+{{method,result}}
 Using transfer learning we also show that up to 90% of the maximum achievable F1
 scores in the open-source case study can be achieved by reusing the trained models from the industrial case and only fine tuning them using
 as low as 5 labeled samples, which reduces the manual labeling effort by 98%.

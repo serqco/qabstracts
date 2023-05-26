@@ -25,7 +25,7 @@ and MITRE ATT&CK™
 We found that (1) vulnerabilities related to improper resource control (e.g., session
 fixation) are discovered faster and more often, as well as exploited faster, than vulnerabilities related to improper access control (e.g., weak password requirements), (2) there is a clear process followed by penetration
 testers of discovery/collection to lateral movement/pre-attack.
-{{method:i3}}
+{{result:i3}}
 Our methodology facilitates quicker analysis
 of vulnerabilities in future CPTC events.
 {{fposs}}
