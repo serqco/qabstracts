@@ -37,5 +37,5 @@ not in the source code.
 However, while our study indicates that open-source developers use
 links to external systems, such as bug identifiers, to annotate high-priority SATD, better tool
 support is required for SATD management.
-{{result}}
+{{result,-ignorediff}}
 ---
