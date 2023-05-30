@@ -2,28 +2,28 @@ Verifix: Verified Repair of Programming Assignments.
 
 
 Automated feedback generation for introductory programming assignments is useful for programming education.
-{{}}
+{{background}}
 Most works try to generate feedback to correct a student program by comparing its behavior with an
 instructor’s reference program on selected tests.
-{{}}
+{{background}}
 In this work, our aim is to generate verifiably correct program repairs as student feedback.
-{{}}
+{{objective}}
 A student-submitted program is aligned and composed with a reference
 solution in terms of control flow, and the variables of the two programs are automatically aligned via predicates describing the relationship between the variables.
-{{}}
+{{design}}
 When verification attempt for the obtained aligned
 program fails, we turn a verification problem into a MaxSMT problem whose solution leads to a minimal
 repair.
-{{}}
+{{design}}
 We have conducted experiments on student assignments curated from a widely deployed intelligent
 tutoring system.
-{{}}
+{{method:i2}}
 Our results show that generating verified repair without sacrificing the overall repair rate is
 possible.
-{{}}
+{{result:i1}}
 In fact, our implementation, Verifix, is shown to outperform Clara, a state-of-the-art tool, in terms
 of repair rate.
-{{}}
+{{result:i1}}
 This shows the promise of using verified repair to generate high confidence feedback in programming pedagogy settings.
-{{}}
+{{a-fposs}}
 ---

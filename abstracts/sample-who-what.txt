@@ -261,14 +261,14 @@ WagWyr22      Lutz
 XuCheHe22     Lutz
 HuGuoCor22    Lutz
 #----- Block 30
-WuWuZho22     -Lutz
-IrsBörPet22   -Lutz
-FahGruBey22   -Lutz
-ReiZam22      -Lutz
-HeBarNic22    -Lutz
-AhmFanYi22    -Lutz
+WuWuZho22     Lutz
+IrsBörPet22   Lutz
+FahGruBey22   Lutz
+ReiZam22      Lutz
+HeBarNic22    Lutz
+AhmFanYi22    Lutz
 # LiuXiaLo22 duplicate ID (TOSEM and TSE): TOSEM article is removed from sample   
-MarKesVer22   -Lutz
+MarKesVer22   Lutz
 #----- Block 31
 SteNicInv22   
 KapTseKyr22   
