@@ -31,7 +31,7 @@ in software projects.
 {{result}}
 The secondary studies also supported identifying the impacts of TD regarding project
 management, team members, the organization’s business, and internal software quality.
-{{result}}
+{{a-result}}
 Besides helping identify
 TD challenges, such studies contributed to integrating a conjectured conceptual model of TD that can support
 future discussions and investigations regarding TD’s understanding and management.

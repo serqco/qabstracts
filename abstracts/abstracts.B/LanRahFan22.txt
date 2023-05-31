@@ -16,16 +16,15 @@ be constructed automatically, thus potentially reducing development effort.
 {{result}}
 We also evaluate the efficiency
 of synthesised transformations.
-{{method:i2}}
-Our novel contributions are:
-{{result}}
+{{method:i2,-ignorediff}}
+Our novel contributions are
 • The concept of correspondence patterns between metamodels of a transformation.
-{{a-result}}
+{{a-result,-ignorediff}}
 • Requirements analysis of transformations using natural language processing (NLP) and machine learning (ML).
-{{a-result}}
+{{a-result,-ignorediff}}
 • Symbolic MTBE using “predictive specification” to infer transformations from examples.
-{{a-result}}
+{{a-result,-ignorediff}}
 • Transformation generation in multiple MT languages and in Java, from an abstract intermediate
 language.
-{{a-result}}
+{{a-result,-ignorediff}}
 ---
