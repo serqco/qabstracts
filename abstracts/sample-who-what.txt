@@ -171,14 +171,14 @@ MasPasBav22   Lutz        Lloyd
 SunZhaFan22   Lutz        Lloyd
 CheCheWan22   Lutz        Lloyd
 #----- Block 20
-StrDinLin22   Lutz        -Julian
-NgoPasBri22   Lutz        -Julian
-PatZhaPap22   Lutz        -Julian
-GaoZhuZha22   Lutz        -Julian
-FraMénVog22   Lutz        -Julian
-ZhaFuLi22     Lutz        -Julian
-ChoGueSil22   Lutz        -Julian
-VysMcIAda22   Lutz        -Julian
+StrDinLin22   Lutz        Julian
+NgoPasBri22   Lutz        Julian
+PatZhaPap22   Lutz        Julian
+GaoZhuZha22   Lutz        Julian
+FraMénVog22   Lutz        Julian
+ZhaFuLi22     Lutz        Julian
+ChoGueSil22   Lutz        Julian
+VysMcIAda22   Lutz        Julian
 #----- Block 21
 TiaLiPia22    Lutz
 SuFanChe22    Lutz
