@@ -19,7 +19,7 @@ From an inference perspective, the challenge is to detect when these phase chang
 {{background}}
 Unfortunately, most
 existing solutions are either univariate, make assumptions about the data distribution, or have limited learning power.
-{{gap}}
+{{background}}
 In this paper we
 propose a hybrid deep neural network that accepts as input a multivariate time series and applies a set of convolutional and recurrent layers
 to learn the non-linear correlations between signals and the patterns over time.
