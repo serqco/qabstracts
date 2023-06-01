@@ -8,7 +8,7 @@ list of potential buggy files that may need further investigation.
 {{background}}
 Although IRBL approaches have shown promising results, most prior
 research only leverages the textual information that is “visible” in bug reports, such as bug description or title.
-{{gap}}
+{{background}}
 However, in addition to
 the textual description of the bug, developers also often attach logs in bug reports.
 {{background}}

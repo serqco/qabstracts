@@ -57,5 +57,5 @@ Conclusion:
 It can be concluded that (1) BDTCR is an effective TCR technique; (2) BDTCR is a robust TCR
 technique that can effectively resist the interference of the mismatch of test target signatures; (3) BDTCR is
 practical to help developers write test cases quickly and effectively.
-{{conclusion,-hype}}
+{{conclusion,claim}}
 ---
