@@ -23,7 +23,7 @@ present an approach to mine relations between the named entities for automatical
 {{design}}
 We have deployed SoftNER at Microsoft, a major cloud service
 provider and have evaluated it on more than 2 months of cloud incidents.
-{{method}}
+{{design,method}}
 We show that
 SoftNER’s unsupervised pipeline learns the software entity types from unstructured incident data with high precision of 0.96 (at rank 50) and 0.77 (at rank 100).
 {{result}}
