@@ -32,7 +32,7 @@ such as dispersion, ownership, and development activity.
 {{result}}
 In terms of mitigation, we propose GreedyFlake â€“ a test effort prioritization
 algorithm to maximize return on investment when tackling the problem of flakily covered program elements.
-{{design}}
+{{method}}
 We find that GreedyFlake
 outperforms baseline approaches by at least eight percentage points of Area Under the Cost Effectiveness Curve.
 {{result}}
