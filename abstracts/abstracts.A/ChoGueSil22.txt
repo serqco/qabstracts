@@ -29,7 +29,7 @@ for evaluating how well an artifact works to support a team in software analytic
 {{conclusion}}
 Furthermore, it
 can be applied to explore and discover interaction patterns in different software activities.
-{{conclusion}}
+{{conclusion,-ignorediff}}
 ---
 objective reads like a design paper. Coded "Method:" part as design grudgingly,
 only to find in the results that the article is purely empirical.
