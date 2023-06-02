@@ -1,38 +1,38 @@
 A conceptual model for unifying variability in space and time: Rationale, validation, and illustrative applications.
 
 With the increasing demand for customized systems and rapidly evolving technology, software engineering faces many challenges.
-{{}}
+{{background}}
 A particular challenge is the development and
 maintenance of systems that are highly variable both in space (concurrent variations of
 the system at one point in time) and time (sequential variations of the system, due to
 its evolution).
-{{}}
+{{background}}
 Recent research aims to address this challenge by managing variability in
 space and time simultaneously.
-{{}}
+{{background}}
 However, this research originates from two different areas,
 software product line engineering and software configuration management, resulting in nonuniform terminologies and a varying understanding of concepts.
-{{}}
+{{background}}
 These problems hamper
 the communication and understanding of involved concepts, as well as the development of
 techniques that unify variability in space and time.
-{{}}
+{{gap[}}
 To tackle these problems, we performed
 an iterative, expert-driven analysis of existing tools from both research areas to derive a conceptual model that integrates and unifies concepts of both dimensions of variability.
-{{}}
+{{objective,design}}
 In this
 article, we first explain the construction process and present the resulting conceptual model.
-{{}}
+{{objective}}
 We validate the model and discuss its coverage and granularity with respect to established
 concepts of variability in space and time.
-{{}}
+{{method}}
 Furthermore, we perform a formal concept analysis to discuss the commonalities and differences among the tools we considered.
-{{}}
+{{method}}
 Finally,
 we show illustrative applications to explain how the conceptual model can be used in practice to derive conforming tools.
-{{}}
+{{method}}
 The conceptual model unifies concepts and relations used in
 software product line engineering and software configuration management, provides a unified terminology and common ground for researchers and developers for comparing their
 works, clarifies communication, and prevents redundant developments.
-{{}}
+{{conclusion,fposs}}
 ---

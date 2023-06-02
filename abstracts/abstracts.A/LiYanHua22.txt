@@ -14,7 +14,6 @@ PAC-model robustness property.
 {{objective}}
 The innovation of our work is the
 integration of model learning into PAC robustness analysis:
-{{design}}
 that is,
 we construct a PAC guarantee on the model level instead of sample
 distribution, which induces a more faithful and accurate robustness

@@ -15,7 +15,6 @@ case.
 {{objective}}
 Towards predicting patch correctness in APR, we propose a novel yet simple hypothesis on how the link
 between the patch behavior and failing test specifications can be drawn:
-{{design}}
 similar failing test cases should require
 similar patches.
 {{design}}

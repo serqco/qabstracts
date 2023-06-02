@@ -21,7 +21,6 @@ With one-year effort, we (1) extensively investigated these framework-specific e
 exceptions.
 {{design}}
 Specifically, we aim to understand the framework-specific exceptions from several perspectives:
-{{design}}
 (i) their characteristics
 (e.g., manifestation locations, fault taxonomy), (ii) the developers' testing practices, (iii) existing bug detection techniques’
 effectiveness, (iv) their reproducibility and (v) bug fixes.
@@ -35,7 +34,6 @@ types, etc.), and 3,696 ground-truth exceptions (real faults manifested by autom
 complexities and diverse exception types.
 {{design}}
 Based on our findings, we also built two prototype tools:
-{{design}}
 Stoat+, an optimized dynamic
 testing tool, which quickly uncovered three previously-unknown, fixed crashes in Gmail and Google+; ExLocator, an exception
 localization tool, which can locate the root causes of specific exception types.

@@ -1,53 +1,53 @@
 An empirical study on ML DevOps adoption trends, efforts, and benefits analysis.
 
 Context:
-{{}}
+{{h-background}}
 Machine Learning (ML), including Deep Learning(DL), based systems, have become ubiquitous in
 today’s solutions to many real-world problems.
-{{}}
+{{background}}
 ML-based approaches are being applied to solve complex
 problems such as autonomous driving, recommendation systems, etc.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 To improve the quality and deliverability of ML-based applications, the software development
 community is adopting state-of-the-art DevOps practices within them.
-{{}}
+{{background}}
 However, we currently lack knowledge
 about the DevOps adoption trends, maintenance efforts and benefits among ML-based projects, and this work
 attempts to remedy this knowledge-gap.
-{{}}
+{{gap,objective}}
 Methods:
-{{}}
+{{h-method}}
 In this research work, we conducted a large-scale empirical analysis on 4031 ML projects, including
 1116 ML Tools and 2915 ML Applied projects to quantify DevOps adoption, maintenance effort and benefits.
-{{}}
+{{method}}
 To characterize the development behaviors, we performed configuration-script-analysis and commit-changeanalysis on DevOps configuration files.
-{{}}
+{{method}}
 To compare the characteristics of ML DevOps to those of traditional
 software projects, we performed the same analysis on 4076 non-ML projects.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 Our analysis identified that ML projects, more specifically ML-Applied projects, have a slower, lower,
 and less efficient adoption of DevOps tools in general.
-{{}}
+{{result:i3}}
 DevOps configuration files in ML-Applied projects
 tended to experience more frequent changes than ML-Tool projects and were less likely to occur in conjunction
 with build and bug fixes.
-{{}}
+{{result:i2}}
 It’s also evident that adopting DevOps in ML projects correlates with an increase
 in development productivity, code quality, and a decrease in bug resolution time, especially in ML-Applied
 projects which have the most to gain by adopting these tools.
-{{}}
+{{result:i3}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 We identified the characteristics and improvement scopes of ML DevOps, such as the slower
 adoption of DevOps in certain ML projects, and the need for automatic configuration synchronization tools
 for these projects.
-{{}}
+{{summary}}
 We also identified the improvements the productivity of ML teams and projects associated
 with DevOps adoption, including better code quality, more frequent code sharing and integration and faster
 issue resolution.
-{{}}
+{{summary}}
 ---
