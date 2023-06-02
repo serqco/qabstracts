@@ -31,7 +31,7 @@ Wireshark project.
 {{method}}
 GraphSAGE model using source code representation via ASTs achieves the highest AUC
 rate, while CNN models using token representations achieves the highest recall, precision and F1 measure.
-{{result:i2u1}}
+{{result:i2:u1}}
 Conclusion:
 {{h-conclusion}}
 Representing functions with their structural information extracted from ASTs, either in token

@@ -20,7 +20,7 @@ contributions are mainly associated with development (commits) and maintenance (
 {{result:i1}}
 Newcomer OSS-Candidates are less likely to practice social coding, but eventually end up
 onboarding (i.e., 30% quantitative, 70% follow-up survey) an OSS project.
-{{result:i1u2}}
+{{result:i1:u2}}
 Furthermore,
 they cite finding a way to start as the most challenging barrier to contribute.
 {{result}}

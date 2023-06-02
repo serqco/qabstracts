@@ -25,7 +25,7 @@ bug taxonomy.
 {{method:i1}}
 Then, we mined 1,127 DL framework bug reports from eight popular DL frameworks and
 labeled the bug types, root causes, and symptoms.
-{{method:i1u1}}
+{{method:i1:u1}}
 Finally, we discussed the bug characteristics and explored
 how developers could possibly deal with these bugs.
 {{method}}

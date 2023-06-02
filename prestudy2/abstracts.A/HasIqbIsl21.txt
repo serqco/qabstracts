@@ -16,7 +16,7 @@ Following the four-step framework of
 the BSC strategy, we– 1) defined the operation goals of this research, 2) defined a set of
 metrics to measure the effectiveness of code reviews, 3) developed an automated mechanism to measure those metrics, and 4) developed and evaluated a monitoring application to
 inform the key stakeholders.
-{{design:i1u1}}
+{{design:i1:u1}}
 Our automated model to identify useful code reviews achieves
 7.88% and 14.39% improvement in terms of accuracy and minority class F1 score respectively over the models proposed in prior studies.
 {{method,result:u1,-ignorediff}}

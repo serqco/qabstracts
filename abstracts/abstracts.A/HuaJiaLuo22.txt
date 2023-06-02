@@ -23,5 +23,5 @@ change-pattern, we will reward the impacted confidence of the entity.
 {{design}}
 Accuracy improvements are observed in the experiments when
 applying our boosting method to three famous CIA tools, i.e., ImpactMiner, JRipples and ROSE.
-{{result:i1u1,method}}
+{{result:i1:u1,method}}
 ---

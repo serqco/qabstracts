@@ -24,7 +24,7 @@ revisions of software.
 {{method:i3}}
 The empirical analyses reveal that there are discrepancies in the distributions of violations that are detected and those
 that are fixed, in terms of occurrences, spread and categories, which can provide insights into prioritizing violations.
-{{result:i6u1, claim}}
+{{result:i6:u1, claim}}
 To automatically identify
 patterns in violations and their fixes, we propose an approach that utilizes convolutional neural networks to learn features and clustering to
 regroup similar instances.

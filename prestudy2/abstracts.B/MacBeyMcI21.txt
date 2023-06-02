@@ -19,7 +19,7 @@ respectively.
 {{method, result}}
 We then present two studies using the build changes extracted from 144 open
 source Java projects to study the frequency and time of build changes.
-{{method:i1u1}}
+{{method:i1:u1}}
 The results show
 that the top-10 most frequent change types account for 51% of the build changes.
 {{result}}

@@ -25,7 +25,7 @@ We validated that the most influential error causing
 failures in builds are missing external artifacts, and the less influential is compiling errors.
 {{result:i2}}
 We observed some facts that could lead to the effect of the build tool on past compilability.
-{{result:i1u1}}
+{{result:i1:u1}}
 Conclusions We provide details on what aspects have a strong and a shallow influence on
 past compilability, giving ideas of how to improve it.
 {{h-conclusion,a-result,a-conclusion}}

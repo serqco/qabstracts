@@ -22,7 +22,7 @@ tests and functions, as well as between test classes and tested classes.
 We improve over existing techniques by combining an ensemble of new and existing techniques that utilise both
 dynamic and static information and exploiting a synergistic flow of information between the
 method and class levels.
-{{result,design:i3u1}}
+{{result,design:i3:u1}}
 An evaluation of TCTRACER using five large, well-studied open
 source systems demonstrates that, on average, we can establish test-to-function links with a
 mean average precision (MAP) of 85% and test-class-to-class links with an MAP of 92%.
