@@ -31,7 +31,7 @@ Results:
 {{h-result}}
 Our analysis identified that ML projects, more specifically ML-Applied projects, have a slower, lower,
 and less efficient adoption of DevOps tools in general.
-{{result}}
+{{result:i3}}
 DevOps configuration files in ML-Applied projects
 tended to experience more frequent changes than ML-Tool projects and were less likely to occur in conjunction
 with build and bug fixes.
@@ -39,7 +39,7 @@ with build and bug fixes.
 It’s also evident that adopting DevOps in ML projects correlates with an increase
 in development productivity, code quality, and a decrease in bug resolution time, especially in ML-Applied
 projects which have the most to gain by adopting these tools.
-{{result}}
+{{result:i3}}
 Conclusion:
 {{h-conclusion}}
 We identified the characteristics and improvement scopes of ML DevOps, such as the slower
