@@ -1,9 +1,13 @@
 # pytest tests
 
-import qscript.annotations
+import qscript.annotations as annot
 import qscript.cmd.check_codings as cc
+import qscript.icc as icc
 
-annots = qscript.annotations.Annotations()  # reused globally in order to read codebook only once
+import qabstracts
+
+qabstracts.register_implclasses()
+annots = icc.init(annot.Annotations)  # reused globally in order to read codebook only once
 
 
 def test_check_code():

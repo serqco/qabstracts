@@ -1,6 +1,10 @@
-import qscript.annotations
+import qscript.annotations as annot
+import qscript.icc as icc
 
-annots = qscript.annotations.Annotations()  # global, for reuse to read codebook only once
+import qabstracts
+
+qabstracts.register_implclasses()
+annots = icc.init(annot.Annotations)  # reads codebook
 
 
 def test_codings_of():

@@ -5,8 +5,12 @@ import typing as tg
 
 import qscript.annotations as annot
 import qscript.cmd.compare_codings as cc
+import qscript.icc as icc
 
-annots = annot.Annotations()  # for every test to use, so we read the codebook only once
+import qabstracts
+
+qabstracts.register_implclasses()
+annots = icc.init(annot.Annotations)  # for every test to use, so we read the codebook only once
 
 
 def test_compare_codings2(capsys):
