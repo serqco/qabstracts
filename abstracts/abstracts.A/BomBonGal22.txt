@@ -44,3 +44,7 @@ the development of critical software under emergency.
 ---
 According to 'objective', a design article, but the design approach is apparently a
 participant-observation case study, for which our codebook is odd.
+Nevertheless, the resulting "guidelines" are an artifact, so I consider the work
+a design article.
+Lloyd did not feel like this because he felt this was a methods work and 
+methods works were so empirical in nature that calling them design was inappropriate.
