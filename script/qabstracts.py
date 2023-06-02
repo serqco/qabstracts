@@ -2,9 +2,11 @@
 
 import qscript.annotations as qa 
 import qscript.argparse_subcommand
+import qscript.cmd.compare_codings as qccc
 import qscript.icc as icc
 
 import qabs.annotations_abs as qaa
+import qabs.compare_codings_abs as qcca
 import qabs.export
 import qabs.extract_abs
 import qabs.plot
@@ -28,6 +30,8 @@ def main():
 def register_implclasses():
     icc.register_class(qa.Codebook, qaa.CodebookAbstracts)
     icc.register_class(qa.Annotations, qaa.AnnotationsAbstracts)
+    icc.register_class(qccc.CodingsComparator, qcca.CodingsComparatorAbstracts)
+
 
 if __name__ == "__main__":
     main()
