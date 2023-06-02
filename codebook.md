@@ -45,9 +45,10 @@ All codes are singular; semicolon means OR.
 The codes described here are meant to be (nearly) objective;
 we strive for high inter-coder agreement.
 
-If a code ends with `:iu`, this means it can have an "IU suffix".
+If a code ends with `:i\d:u\d` (which is a regular expression), 
+this means it can have an "IU suffix".
 The meaning of IU suffixes is explained in Section 4.
-Actual `:iu` suffixes look for instance like this:
+Actual IU suffixes look for instance like this:
 `:i1`, `:u2`, `:i2u1` or nothing (i.e., the suffix can also be missing). 
 An IU suffix codifies subjective property counts of two properties
 `i` and `u`, each with a default value of 0.
@@ -112,7 +113,7 @@ The first describes what the study is about,
 the second describes what it found.
 
 From _Introduction_ to _Study Description_:
-- code `objective:u`:  
+- code `objective:u\d`:  
   one or more of this work's 
   top-level research goals,
   specific top-level research interests, or
@@ -124,7 +125,7 @@ From _Introduction_ to _Study Description_:
   assign two codes in any case.
 
 From _Study Description_ to _Outlook_:
-- code `conclusion:u`:  
+- code `conclusion:u\d`:  
   A take-home message that is less specific than one or more results.
   Usually a generalization from the results, sometimes a non-obvious existence proof statement.
 
@@ -147,9 +148,9 @@ The above list sketches the default structure of a structured abstract.
 
 ### 2.4 Core codes for _Study Description_
 
-- code `method:iu`:  
+- code `method:i\d:u\d`:  
   information about the approach or setup of an empirical (or possibly purely mathematical) study.
-- code `design:iu`:  
+- code `design:i\d:u\d`:  
   To be used only if the article is artifact-centric instead of purely empirical, i.e., 
   if the article's main contribution is an artifact or the knowledge how to build it,
   not the empirical results obtained with its help.
@@ -168,24 +169,24 @@ The above list sketches the default structure of a structured abstract.
   - Statements about the design of subordinate artifacts, 
     that do not represent the main contribution but rather only aid an empirical study, 
     are classified as `method`.
-- code `result:iu`:  
+- code `result:i\d:u\d`:  
   information about the immediate outcome of a study in the form of
-  empirical results. See `claim:iu`.
-- code `summary:u`:  
+  empirical results. See `claim`.
+- code `summary:u\d`:  
   A statement that summarizes several results, but does not provide new information.
   A summary statement does not generalize beyond the immediate results.
 
 ### 2.5 Core codes for _Outlook_
 
-- code `fgap:u`:  
+- code `fgap:u\d`:  
   Statement about what is still not known after the study.
-- code `fneed:u`:  
+- code `fneed:u\d`:  
   Statement about what future research should be done (by whoever).
   Also used when authors "hope" (etc.) for certain research to be done. 
-- code `fposs:u`:  
+- code `fposs:u\d`:  
   Statement about what future research is now possible (i.e., could now be done, by whoever).  
   Note: Statements what practitioners can now do are `conclusion`!
-- code `fwork:u`:  
+- code `fwork:u\d`:  
   Statement about what future research the authors intend to do.
 
 
@@ -226,15 +227,15 @@ although it is logically part of Study Description, not Outlook.
 
 ### 2.7 Less common codes
 
-- code `claim:iu`:  
+- code `claim:i\d:u\d`:  
   A non-empirical would-be result statement.
   In the article itself, the statement may have empirical backing, but in the abstract
   we cannot see which or where it may stem from.
   If position and phrasing allow it to be considered `background`, `objective`, or `conclusion`, use these.
-- code `limitation:u`:  
+- code `limitation:u\d`:  
   information about limitations, threats to validity, and the like
   of the study or its results.
-- code `resourcepointer:iu`:  
+- code `resourcepointer:i\d:u\d`:  
   A reference to a concrete external resource such as 
   a software artifact, materials package, data package, appendix,
   or similar item.
@@ -349,7 +350,7 @@ Apply them with your own good judgment and keep in mind that
   but the correction is obvious, correct it.
 
 
-## 4. Coding rules: The `:iu` suffixes for subjective codings
+## 4. Coding rules: The IU suffixes for subjective codings (`:i\d:u\d`)
 
 We grade two **aspects**, each on a cardinality scale (count scale, absolute scale):
 - informativeness gaps `i`: At how many spots the abstract noticably fails to provide information 
@@ -367,7 +368,7 @@ What we do _not_ want to assess is:
 
 **Syntax:** `i`and `u` are provided in the IU suffix of certain codes, see Section 2.
 There are four cases, explained by example:
-- `:i4u3`: the sentence has 4 informativess gaps and 3 understandability gaps;
+- `:i4:u3`: the sentence has 4 informativess gaps and 3 understandability gaps;
 - `:i2`: 2 informativess gaps and 0 understandability gaps;
 - `:u1`: 0 informativess gaps and 1 understandability gap;
 - `` (no suffix at all): 0 informativess gaps and 0 understandability gaps.
@@ -470,9 +471,9 @@ grade as if you were only normally knowledgable
 in order to make agreement with your fellow coder more likely.
 
 
-### 4.4 Rationale: Which codes have `:iu` suffixes?
+### 4.4 Rationale: Which codes have IU suffixes?
 
-We use `:iu` suffixes only for a few codes for the following reasons:
+We use IU suffixes only for some codes for the following reasons:
 - `objective`, `method` (or `design`) and `result` form the backbone of an abstract,
   so we must judge those parts.  
   On the other hand:
