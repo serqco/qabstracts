@@ -19,14 +19,14 @@ devices in similar emergency situations.
 Method:
 {{h-method}}
 We conducted a case study.
-{{method}}
+{{design}}
 We had full access to source code, comments on code, change
 requests, test reports, every deliverable (60 in total) produced for the software certification (safety concepts,
 requirements specifications, architecture and design, testing activities, etc.), notes, whiteboard sketches, emails,
 etc.
-{{method}}
+{{design}}
 We validated both lessons learned and guidelines with experts.
-{{method}}
+{{design}}
 Findings:
 {{h-result}}
 We contribute a set of validated lessons learned and a set of validated guidelines, together with a
@@ -37,7 +37,7 @@ Conclusion:
 In this work we share our experience in certifying software for healthcare devices produced
 under emergency, i.e. with strict and pressing time constraints and with the difficulty of establishing a
 heterogeneous development team made of volunteers.
-{{conclusion}}
+{{design}}
 We believe that the guidelines will help engineers during
 the development of critical software under emergency.
 {{conclusion}}
