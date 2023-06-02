@@ -266,7 +266,7 @@ although it is logically part of Study Description, not Outlook.
   - code `a-summary`
 
 
-### 2.9 Extra codes
+### 2.9 Extra codes (Optional codes)
 
 These codes can never occur alone, only in conjunction with one of the others.
 They start with a dash to signal this and should be given last. 
@@ -304,7 +304,7 @@ They start with a dash to signal this and should be given last.
 In contrast to the sentence classifications, which are intended to be objective
 (hence the use of two coders and the use of `-ignorediff` where objectivity reaches its limits),
 the codes `-hype`, `-incredible`, and `-timid` are optional additional attributes
-that are considered subjective. 
+that are considered subjective and need not agree between coders. 
 Apply them with your own good judgment and keep in mind that
 "we are gentle in detecting negative aspects".
 
