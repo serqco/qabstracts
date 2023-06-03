@@ -100,7 +100,7 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
         if code not in codes_done:
             codes_done.add(code)
             assert abstract.codebook.exists_with_suffix(code)
-            icount, ucount = abstract.annots.split_suffix(csuffix)
+            icount, ucount = abstract.annots.get_iu_counts(csuffix)
             prt_record(abstract, idx, words, chars,
                        code, abstract.codebook.topic(code), icount, ucount)
 

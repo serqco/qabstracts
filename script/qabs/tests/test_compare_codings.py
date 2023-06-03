@@ -18,12 +18,12 @@ def test_compare_codings2(capsys):
         return [annot.AnnotatedSentence(1, pair[0], pair[1]) for pair in la_pairs]
 
     def mycc(la_pairs1, la_pairs2):
-        return cc.compare_codings2("A", "Name1", l_a_s(la_pairs1), 
-                                   "B", "Name2", l_a_s(la_pairs2), 
-                                   "TEST", 1, annots)
+        ctx = cc.ComparatorContext("A", "Name1", "B", "Name2", "TEST")
+        comparator.compare_codings2(ctx, l_a_s(la_pairs1), l_a_s(la_pairs2), 1, annots)
 
     def check(la_pairs1, la_pairs2, outputelem, appears=True):
-        msgcount = mycc(la_pairs1, la_pairs2)
+        old_msgcount = comparator.msgcount
+        mycc(la_pairs1, la_pairs2)
         captured = capsys.readouterr()
         if captured.err: 
             print(captured.err, file=sys.stderr)
@@ -33,23 +33,24 @@ def test_compare_codings2(capsys):
             else:
                 assert (outputelem not in captured.out), captured.out
         else:
-            assert msgcount == 0
+            assert comparator.msgcount == old_msgcount
 
-    check([("line", "{{a, b}}")], [("line", "{{a, b}}")], 
-          None)
-    check([("line", "{{a, b:i4}}")], [("line", "{{a, b:i4}}")], 
-          None)
-    check([("line", "{{a, b:4}}")], [("line", "{{}}")], 
+    comparator = icc.init(cc.CodingsComparator)
+    check([("line", "{{method, result}}")], [("line", "{{method, result}}")], 
+          "")
+    check([("line", "{{method, result:i4}}")], [("line", "{{method, result:i4}}")], 
+          "")
+    check([("line", "{{method}}")], [("line", "{{}}")], 
           "Incomplete annotation")
-    check([("line", "{{a, b}}")], [("different line", "{{a, b}}")], 
+    check([("line", "{{method}}")], [("different line", "{{method}}")], 
           "should be at parallel points")
-    check([("line", "{{a, b, %s}}" % cc.IGNORE)], [("line", "{{a, b, %s}}" % cc.IGNORE)], 
+    check([("line", "{{method, %s}}" % cc.IGNORE)], [("line", "{{method, %s}}" % cc.IGNORE)], 
           "should only appear in one coding")
-    check([("line", "{{a, b, c}}")], [("line", "b, c}}")], 
+    check([("line", "{{method, result}}")], [("line", "{{method}}")], 
           "sets of codes applied are different")
-    check([("line", "{{a, b, c}}")], [("line", "{{a, b, %s}}" % cc.IGNORE)], 
+    check([("line", "{{method, result}}")], [("line", "{{method, %s}}" % cc.IGNORE)], 
           "sets of codes applied are different", appears=False)
-    check([("line", "{{a, design:i4}}")], [("line", "{{a, design:i7}}")], 
+    check([("line", "{{design:i4}}")], [("line", "{{design:i7}}")], 
           "Very different numbers of informativeness gaps")
-    check([("line", "{{a, result:u1}}")], [("line", "{{a, result:u4}}")], 
-          "counts are more different than allowed", appears=False)
+    check([("line", "{{design:i4}}")], [("line", "{{design:i7, %s}}" % cc.IGNORE)], 
+          "Very different numbers of informativeness gaps", appears=False)

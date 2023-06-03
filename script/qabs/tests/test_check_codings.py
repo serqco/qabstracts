@@ -12,24 +12,22 @@ annots = icc.init(annot.Annotations)  # reused globally in order to read codeboo
 
 def test_check_code():
     check_code_tests = [
-        ("background", None, None),
-        ("a-result", None, None),
-        ("-hype", None, None),
-        ("method", None, None),
+        ("background", "", None),
+        ("a-result", "", None),
+        ("-hype", "", None),
+        ("method", "", None),
         ("method", ":i4", None),
-        ("background", ":i1", "should not have an IU suffix"),
-        ("bjective", None, "unknown"),
+        ("background", ":i1", "suffix 'i1' not allowed for code 'background': background:"),
+        ("bjective", "", "unknown"),
         ("metho", "u1", "unknown"),
     ]
     for code, suffix, result_fragment in check_code_tests:
-        result = annots.wrong_coding_msg(code, suffix)
-        if result_fragment is None:
-            is_correct = result is None
+        try:
+            annots.check_coding(code, suffix)
+        except annot.Codebook.CodingError as exc:
+            assert result_fragment in exc.args[0]
         else:
-            is_correct = (result.find(result_fragment) != -1) 
-        if not is_correct:
-            print(f"test({code}, {suffix}, {result_fragment}) -> {result}")
-        assert is_correct
+            assert not result_fragment
 
 
 def test_report_errors_within_braces():
