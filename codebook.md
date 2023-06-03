@@ -109,7 +109,7 @@ The first describes what the study is about,
 the second describes what it found.
 
 From _Introduction_ to _Study Description_:
-- code `objective:u\d`:  
+- code `objective:hype:u\d`:  
   one or more of this work's 
   top-level research goals,
   specific top-level research interests, or
@@ -168,6 +168,8 @@ The above list sketches the default structure of a structured abstract.
 - code `result:hype:incredible:i\d:u\d`:  
   information about the immediate outcome of a study in the form of
   empirical results. See `claim`.
+  If the information is questionable because insufficient explanation of the underlying method
+  was provided, use a `u` suffix to mark the doubts.
 - code `summary:hype:incredible:u\d`:  
   A statement that summarizes several results, but does not provide new information.
   A summary statement does not generalize beyond the immediate results.
@@ -223,6 +225,11 @@ although it is logically part of Study Description, not Outlook.
 
 ### 2.7 Less common codes
 
+- code `claim:i\d:u\d`:
+  A non-empirical would-be result statement.
+  In the article itself, the statement may have empirical backing, but in the abstract
+  we cannot see which or where it may stem from.
+  If position and phrasing allow it to be considered `background`, `objective`, or `conclusion`, use these.
 - code `limitation:u\d`:  
   information about limitations, threats to validity, and the like
   of the study or its results.
@@ -318,12 +325,10 @@ We describe the flags first and the much more complicated quantitative "IU" suff
   only emphasized ones do ("This is tremendously helpful because...").
   "very" does not count as hype.
   The most common places for this to occur are 
-  `result`, `conclusion`, `fposs`, `need`, `method`.  
+  `need`, `method`, and `conclusion`.  
 - suffix `:incredible`:  
   The sentence makes a statement that is very hard to believe, even after considering
   possible information that the reader of the abstract does not have.
-  The most common places for this to occur are 
-  `result`, `summary`, `conclusion`.  
 - suffix `:timid`:  
   Applies to `conclusion` only. 
   To be used when the generalization made is overly vague or small.
