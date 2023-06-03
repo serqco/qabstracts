@@ -45,17 +45,13 @@ All codes are singular; semicolon means OR.
 The codes described here are meant to be (nearly) objective;
 we strive for high inter-coder agreement.
 
-If a code ends with `:i\d:u\d` (which is a regular expression), 
-this means it can have an "IU suffix".
-The meaning of IU suffixes is explained in Section 4.
-Actual IU suffixes look for instance like this:
-`:i1`, `:u2`, `:i2u1` or nothing (i.e., the suffix can also be missing). 
-An IU suffix codifies subjective property counts of two properties
-`i` and `u`, each with a default value of 0.
+A code may allow for one or more suffixes, which provide additional
+detail and are considered subjective.
+The meaning of the suffixes is explained in Section 3.
 
 Our annotation checking script gathers the set of codes to check
 for directly from the present file by looking for strings of the form
-"code `something-or-other`".
+"code `something-or-other:suffix1:othersuffix`".
 Make sure all code declarations take this form and no other things do.
 
 
@@ -125,7 +121,7 @@ From _Introduction_ to _Study Description_:
   assign two codes in any case.
 
 From _Study Description_ to _Outlook_:
-- code `conclusion:u\d`:  
+- code `conclusion:hype:incredible:timid:u\d`:  
   A take-home message that is less specific than one or more results.
   Usually a generalization from the results, sometimes a non-obvious existence proof statement.
 
@@ -137,20 +133,20 @@ The above list sketches the default structure of a structured abstract.
 - code `background`:  
   Information about the larger topic area of the work, the state-of-the-art,
   related work, what is known.
-- code `gap`:  
+- code `gap:hype`:  
   A statement of what is not yet known or 
   what is so far difficult to achieve in research or in practice
   which directly leads over to the topic of the present work (the `objective`).
-- code `need`:  
+- code `need:hype`:  
   A postulate about what research needs to be performed
   which directly leads over to the topic of the present work (the `objective`).
 
 
 ### 2.4 Core codes for _Study Description_
 
-- code `method:i\d:u\d`:  
+- code `method:hype:i\d:u\d`:  
   information about the approach or setup of an empirical (or possibly purely mathematical) study.
-- code `design:i\d:u\d`:  
+- code `design:hype:i\d:u\d`:  
   To be used only if the article is artifact-centric instead of purely empirical, i.e., 
   if the article's main contribution is an artifact or the knowledge how to build it,
   not the empirical results obtained with its help.
@@ -169,10 +165,10 @@ The above list sketches the default structure of a structured abstract.
   - Statements about the design of subordinate artifacts, 
     that do not represent the main contribution but rather only aid an empirical study, 
     are classified as `method`.
-- code `result:i\d:u\d`:  
+- code `result:hype:incredible:i\d:u\d`:  
   information about the immediate outcome of a study in the form of
   empirical results. See `claim`.
-- code `summary:u\d`:  
+- code `summary:hype:incredible:u\d`:  
   A statement that summarizes several results, but does not provide new information.
   A summary statement does not generalize beyond the immediate results.
 
@@ -183,7 +179,7 @@ The above list sketches the default structure of a structured abstract.
 - code `fneed:u\d`:  
   Statement about what future research should be done (by whoever).
   Also used when authors "hope" (etc.) for certain research to be done. 
-- code `fposs:u\d`:  
+- code `fposs:hype:u\d`:  
   Statement about what future research is now possible (i.e., could now be done, by whoever).  
   Note: Statements what practitioners can now do are `conclusion`!
 - code `fwork:u\d`:  
@@ -227,11 +223,6 @@ although it is logically part of Study Description, not Outlook.
 
 ### 2.7 Less common codes
 
-- code `claim:i\d:u\d`:  
-  A non-empirical would-be result statement.
-  In the article itself, the statement may have empirical backing, but in the abstract
-  we cannot see which or where it may stem from.
-  If position and phrasing allow it to be considered `background`, `objective`, or `conclusion`, use these.
 - code `limitation:u\d`:  
   information about limitations, threats to validity, and the like
   of the study or its results.
@@ -267,47 +258,23 @@ although it is logically part of Study Description, not Outlook.
   - code `a-summary`
 
 
-### 2.9 Extra codes (Optional codes)
+### 2.9 `-ignorediff`
 
-These codes can never occur alone, only in conjunction with one of the others.
-They start with a dash to signal this and should be given last. 
+All of the above codes are meant to be objective, which means that both
+coders should arrive at the same coding.
+This works most of the time, but has its limits when strage formulations
+or overly complex sentences occur.
+When the resulting coding discrepancies were flagged by the checking script,
+it may happen that even after the coders have explained their respective views to each other
+they can still not agree on a joint coding.
 
-- code `-hype`:  
-  The sentence praises the work beyond what a factual statement might state.
-  The code does not talk about the truth of the statement (which is often difficult
-  to judge from the abstract alone), but about the tone in which
-  the statement is made.
-  Plain positive properties do not qualify ("This is helpful because..."),
-  only emphasized ones do ("This is tremendously helpful because...").
-  "very" does not count as hype.
-  The most common places for this to occur are 
-  `result`, `conclusion`, `fposs`, `need`, `method`.  
+In that case one of them (and only one of them) has to add `-ignorediff` to the coding
+to signal to the checking script that it must no longer flag this discrepancy.
+
 - code `-ignorediff`:  
   If the script flags a coding discrepancy that, after discussion, you and your fellow coder
   agree should be left in (because the two codings represent two different reasonable interpretations),
   add this code in one (and only one) of the codings to mark the discrepancy as resolved.
-- code `-incredible`:  
-  The sentence makes a statement that is very hard to believe, even after considering
-  possible information that the reader of the abstract does not have.
-  The most common places for this to occur are 
-  `result`, `summary`, `conclusion`.  
-- code `-problemstmt`:  
-  The sentence formulates a statement of a problem to be solved that is more general
-  than the study's `objective`. 
-  Typically only (but then frequently) found in `need` statements.  
-  (This code is for collecting data for a possible future research interest.
-  We only want to find some examples, so not everybody needs to apply this code all the time.
-  Feel free to overlook as many instances as needed to avoid slowing you down.)
-- code `-timid`:  
-  Applies to `conclusion` only. 
-  To be used when the generalization made is overly vague or small.
-
-In contrast to the sentence classifications, which are intended to be objective
-(hence the use of two coders and the use of `-ignorediff` where objectivity reaches its limits),
-the codes `-hype`, `-incredible`, and `-timid` are optional additional attributes
-that are considered subjective and need not agree between coders. 
-Apply them with your own good judgment and keep in mind that
-"we are gentle in detecting negative aspects".
 
 
 ### 2.10 Codes for special circumstances
@@ -323,34 +290,46 @@ Apply them with your own good judgment and keep in mind that
   It must always eventually be replaced with a proper code.
 
 
-## 3. Coding rules: Avoiding inter-coder discrepancies
+## 3. Codebook: Suffixes
 
-- The layout of an abstracts file is rigid.
-  Make changes only between the existing `{{}}` pairs and nowhere else:
-  No additions or modifications, including linebreaks.
-- _Exception:_ When there is no blank after a sentence end, our script will
-  overlook that sentence end. If you detect this, insert a `{{}}` on a
-  line of its own in between the sentences and use it for coding normally.
-- Some lines are long. 
-  Using a wide window or the word-wrapped-view mode of your text editor
-  may be helpful. Beware of actual word wrapping, though!
-- If you find an additional `{{}}` at a spot where there is no sentence end,
-  remove it and its entire line.
-- These rules are used for making it easier to align corresponding abstracts files
-  of multiple coders.
-  For alignment, the contents of the `{{}}` pairs are compared simply in order
-  of the `{{}}` pairs' occurrence and expected to be equivalent.
-- _Exception:_ Codes starting with a dash ("minor codes"), such as `-hype`, 
-  may be present in one coding without being present in the other.
-- A GitHub action will check for discrepancies after every push and notify
-  the committer if any problem is found.
-  Please correct such problems promptly, because the next person doing a push
-  will get them as well and be confused.
-  If you receive a notification of a problem you have not created yourself
-  but the correction is obvious, correct it.
+As we saw above, a code may have one or more suffixes.
+Suffixes are optional, so in a concrete coding, each suffix can be present or missing.
+
+In contrast to the sentence classifications, which are intended to be objective
+(hence the use of two coders and the use of `-ignorediff` where objectivity reaches its limits),
+suffixes are optional additional attributes
+that are considered subjective and need not (or not fully) agree between coders. 
+Apply them with your own good judgment and keep in mind that
+"we are gentle in detecting negative aspects".
+
+There are binary suffixes, acting as flags, and 
+variable suffixes that provide quantitative information.
+We describe the flags first and the much more complicated quantitative "IU" suffixes then.
 
 
-## 4. Coding rules: The IU suffixes for subjective codings (`:i\d:u\d`)
+### 3.1 Flags
+
+- suffix `:hype`:  
+  The sentence praises the work beyond what a factual statement might state.
+  The code does not talk about the truth of the statement (which is often difficult
+  to judge from the abstract alone), but about the tone in which
+  the statement is made.
+  Plain positive properties do not qualify ("This is helpful because..."),
+  only emphasized ones do ("This is tremendously helpful because...").
+  "very" does not count as hype.
+  The most common places for this to occur are 
+  `result`, `conclusion`, `fposs`, `need`, `method`.  
+- suffix `:incredible`:  
+  The sentence makes a statement that is very hard to believe, even after considering
+  possible information that the reader of the abstract does not have.
+  The most common places for this to occur are 
+  `result`, `summary`, `conclusion`.  
+- suffix `:timid`:  
+  Applies to `conclusion` only. 
+  To be used when the generalization made is overly vague or small.
+
+
+### 3.2 About IU suffixes (`:i\d:u\d`)
 
 We grade two **aspects**, each on a cardinality scale (count scale, absolute scale):
 - informativeness gaps `i`: At how many spots the abstract noticably fails to provide information 
@@ -358,29 +337,23 @@ We grade two **aspects**, each on a cardinality scale (count scale, absolute sca
 - understandability gaps `u`: At how many spots the abstract is unclear or ambiguous
   to the given reader.
 
-**Goals:** What we want to assess by these is: 
-- Is the space used efficiently to convey a lot of information in the abstract?
-- Can I (as a reader) digest the information well?
+**Goals:** What we want to assess is: 
+- `i`: Is the space used efficiently to convey a lot of information in the abstract?
+- `u`: Can I (as a reader) digest the information well?
 What we do _not_ want to assess is:
-- Does the information conveyed cover the most _relevant_ things to be said
+- `i`: Does the information conveyed cover the most _relevant_ things to be said
   about the article?
-- Is the understanding I have achieved actually correct?
+- `u`: Is the understanding I have achieved actually correct?
 
-**Syntax:** `i`and `u` are provided in the IU suffix of certain codes, see Section 2.
+**Syntax:** 
 There are four cases, explained by example:
 - `:i4:u3`: the sentence has 4 informativess gaps and 3 understandability gaps;
 - `:i2`: 2 informativess gaps and 0 understandability gaps;
 - `:u1`: 0 informativess gaps and 1 understandability gap;
 - `` (no suffix at all): 0 informativess gaps and 0 understandability gaps.
 
-If the sentence has only 1 code annotated to it, the counts pertain to the entire sentence.
-If there are two or more codes annotated to it, the counts pertain only to the respective part.
 
-If a code is declared with suffix `:u` (instead of `:iu`), only understandability gaps
-can be annoted in codings using that code.
-
-
-### 4.1 Informativeness gaps: `i`
+### 3.3 IU suffixes: Informativeness gaps (`i\d`)
 
 The number of spots in the abstract I have found where I feel that the abstract 
 fails to provide information it presumably could have provided without requiring much
@@ -413,7 +386,7 @@ Typical cases:
   without needing an extra annotation to state this.
 
 
-### 4.2 Understandability gaps: `u`
+### 3.4 IU suffixes: Understandability gaps (`u\d`)
 
 The spots in the abstract I have found where I feel that the abstract 
 is ambiguous ("I wonder whether this means A or B") or downright unclear ("Huh?").
@@ -433,7 +406,7 @@ Typical cases:
   No groups were mentioned or are obvious so far, so "regrouping" is a mysterious notion. 
 
 
-### 4.3 What to count or not to count
+### 3.5 IU suffixes: What to count or not to count
 
 Information or understanding that are provided by a subsequent sentence in the abstract
 do not count as gaps.
@@ -471,7 +444,7 @@ grade as if you were only normally knowledgable
 in order to make agreement with your fellow coder more likely.
 
 
-### 4.4 Rationale: Which codes have IU suffixes?
+### 3.6 Rationale: Which codes have IU suffixes?
 
 We use IU suffixes only for some codes for the following reasons:
 - `objective`, `method` (or `design`) and `result` form the backbone of an abstract,
@@ -486,7 +459,7 @@ We use IU suffixes only for some codes for the following reasons:
 - The notion is not applicable to `h-*` codes.
 
 
-### 4.5 Historical notes
+### 3.7 Historical notes
 
 - Until 2022-10-21, we used a three-level ordinal scale (low, ok, high) for
   informativeness and understandability, but this had two disadvantages:
@@ -502,6 +475,33 @@ We use IU suffixes only for some codes for the following reasons:
   this will be the usual case), even the best abstract will not have 
   much appeal to me.    
   Decision: We do not grade appeal.
+
+
+## 4. Coding rules: Avoiding inter-coder discrepancies
+
+- The layout of an abstracts file is rigid.
+  Make changes only between the existing `{{}}` pairs and nowhere else:
+  No additions or modifications, including linebreaks.
+- _Exception:_ When there is no blank after a sentence end, our script will
+  overlook that sentence end. If you detect this, insert a `{{}}` on a
+  line of its own in between the sentences and use it for coding normally.
+- Some lines are long. 
+  Using a wide window or the word-wrapped-view mode of your text editor
+  may be helpful. Beware of actual word wrapping, though!
+- If you find an additional `{{}}` at a spot where there is no sentence end,
+  remove it and its entire line.
+- These rules are used for making it easier to align corresponding abstracts files
+  of multiple coders.
+  For alignment, the contents of the `{{}}` pairs are compared simply in order
+  of the `{{}}` pairs' occurrence and expected to be equivalent.
+- _Exception:_ Codes starting with a dash ("minor codes"), such as `-hype`, 
+  may be present in one coding without being present in the other.
+- A GitHub action will check for discrepancies after every push and notify
+  the committer if any problem is found.
+  Please correct such problems promptly, because the next person doing a push
+  will get them as well and be confused.
+  If you receive a notification of a problem you have not created yourself
+  but the correction is obvious, correct it.
 
 
 ## 5 Adding remarks on an abstract
