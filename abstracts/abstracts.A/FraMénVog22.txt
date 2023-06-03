@@ -45,7 +45,7 @@ decades, like elicitation or requirement quality criteria.
 Conclusions:
 {{h-conclusion}}
 The study is valuable for both researchers and practitioners.
-{{conclusion,-timid}}
+{{conclusion:timid}}
 Researchers can use the reasons respondents gave for positive and negative perceptions and the suggested research topics to help
 make their research more appealing to practitioners and thus more prone to industry adoption.
 {{fposs}}

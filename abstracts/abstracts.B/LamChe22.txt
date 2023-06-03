@@ -9,7 +9,7 @@ support their creation, maintenance, and usage practices.
 This paper represents an important
 step in which we explored the issues that design system projects usually deal with and the
 perceptions and values of design system project leaders.
-{{objective,-hype}}
+{{objective:hype}}
 Through this exploration, we aim
 to investigate the needs for tools that support the design system approach.
 {{objective}}

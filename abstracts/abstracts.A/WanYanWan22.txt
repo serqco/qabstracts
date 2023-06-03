@@ -45,5 +45,5 @@ and consequently have potential of saving testing cost by a median of 8%–12%.
 Meanwhile, the recommendation
 frequency of the crowdworker drop from 34%–60% to 5%–26% under different scenarios, indicating its
 potential in alleviating the unfairness among crowdworkers.
-{{result,conclusion,-timid}}
+{{result,conclusion:timid}}
 ---

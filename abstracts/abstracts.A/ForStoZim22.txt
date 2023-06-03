@@ -21,6 +21,6 @@ and interrupting their focus, was a challenge.
 Our surveys led to powerful narratives from respondents and
 revealed the scale at which these experiences exist to provide insights as to how the future of (pandemic)
 remote work can evolve.
-{{conclusion,-hype}}
+{{conclusion:hype}}
 ---
 The third sentence appears to be mostly an Objective, but with method squeezed in-between. Can we annotate objective twice..? Or do we just be content with the first Objective?

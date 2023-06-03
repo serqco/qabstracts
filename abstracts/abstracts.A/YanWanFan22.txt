@@ -47,7 +47,7 @@ outliers filtration and label propagation.
 {{summary}}
 The experiment results show that the proposed approach EVOL can
 be very useful to enhance the quality of the software modularization.
-{{summary,-hype}}
+{{summary:hype}}
 ---
 First conclusion sentence is a mere repetition (summary): 
 "In this paper, we propose EVOL, a new software clustering approach that considers semantic

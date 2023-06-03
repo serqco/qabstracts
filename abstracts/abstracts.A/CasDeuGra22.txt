@@ -40,5 +40,5 @@ Conclusions:
 {{h-conclusion}}
 Our study contributes to encourage software engineering researchers in considering the opportunities to automate privacy detection in the early phase of design, by also exploiting transfer learning
 models.
-{{conclusion, -incredible}}
+{{conclusion:incredible}}
 ---
