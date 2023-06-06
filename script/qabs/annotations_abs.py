@@ -3,7 +3,9 @@ import re
 import typing as tg
 
 import qscript.annotations as qa
-from qscript.annotations import IUIUcount
+
+
+IUIUcount = tg.Tuple[int, int, int, int]
 
 
 class CodebookAbstracts(qa.Codebook):
