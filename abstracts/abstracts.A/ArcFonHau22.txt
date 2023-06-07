@@ -29,7 +29,6 @@ performed a statistical analysis to provide evidence of the significance of the 
 {{a-result}}
 The conclusions obtained
 from this evaluation are:
-{{conclusion}}
 humans have to be involved at the right time in the process (or results can even get
 worse), and artefact-independence can be achieved without worsening the results.
 {{conclusion}}
