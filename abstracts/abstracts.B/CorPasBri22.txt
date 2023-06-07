@@ -2,45 +2,45 @@ Mutation Analysis for Cyber-Physical Systems: Scalable Solutions and Results in 
 
 On-board embedded software developed for spaceflight systems (space software) must adhere to stringent software quality
 assurance procedures.
-{{}}
+{{background}}
 For example, verification and validation activities are typically performed and assessed by third party
 organizations.
-{{}}
+{{background}}
 To further minimize the risk of human mistakes, space agencies, such as the European Space Agency (ESA), are
 looking for automated solutions for the assessment of software testing activities, which play a crucial role in this context.
-{{}}
+{{background}}
 Though space
 software is our focus here, it should be noted that such software shares the above considerations, to a large extent, with embedded
 software in many other types of cyber-physical systems.
-{{}}
+{{background}}
 Over the years, mutation analysis has shown to be a promising solution for the
 automated assessment of test suites; it consists of measuring the quality of a test suite in terms of the percentage of injected faults
 leading to a test failure.
-{{}}
+{{background}}
 A number of optimization techniques, addressing scalability and accuracy problems, have been proposed to
 facilitate the industrial adoption of mutation analysis.
-{{}}
+{{background}}
 However, to date, two major problems prevent space agencies from enforcing
 mutation analysis in space software development.
-{{}}
+{{gap}}
 First, there is uncertainty regarding the feasibility of applying mutation analysis
 optimization techniques in their context.
-{{}}
+{{gap}}
 Second, most of the existing techniques either can break the real-time requirements common
 in embedded software or cannot be applied when the software is tested in Software Validation Facilities, including CPU emulators and
 sensor simulators.
-{{}}
+{{gap}}
 In this paper, we enhance mutation analysis optimization techniques to enable their applicability to embedded
 software and propose a pipeline that successfully integrates them to address scalability and accuracy issues in this context, as
 described above.
-{{}}
+{{objective}}
 Further, we report on the largest study involving embedded software systems in the mutation analysis literature.
-{{}}
+{{a-method}}
 Our
 research is part of a research project funded by ESA ESTEC involving private companies (GomSpace Luxembourg and LuxSpace) in
 the space sector.
-{{}}
+{{design}}
 These industry partners provided the case studies reported in this paper; they include an on-board software system
 managing a microsatellite currently on-orbit, a set of libraries used in deployed cubesats, and a mathematical library certified by ESA.
-{{}}
+{{method}}
 ---

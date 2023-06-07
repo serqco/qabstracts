@@ -216,14 +216,14 @@ AlaKraPaa22   Lloyd
 SonJobRan22   Lloyd
 ChePenChe22   Lloyd
 #----- Block 25
-RusSto22      Lutz		  -Lloyd 
-LiuLiDen22    Lutz		  -Lloyd
-CorPasBri22   Lutz		  -Lloyd
-KraHanHas22   Lutz		  -Lloyd
-NiXiaLo22     Lutz		  -Lloyd
-CheJinZho22   Lutz		  -Lloyd
-GarDegJim22   Lutz		  -Lloyd
-BiaTon22      Lutz		  -Lloyd
+RusSto22      Lutz		  Lloyd 
+LiuLiDen22    Lutz		  Lloyd
+CorPasBri22   Lutz		  Lloyd
+KraHanHas22   Lutz		  Lloyd
+NiXiaLo22     Lutz		  Lloyd
+CheJinZho22   Lutz		  Lloyd
+GarDegJim22   Lutz		  Lloyd
+BiaTon22      Lutz		  Lloyd
 #----- Block 26
 WuSheChe22    Lutz
 DasPhi22      Lutz
