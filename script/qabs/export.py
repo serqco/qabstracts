@@ -5,9 +5,10 @@ import typing as tg
 from numbers import Number
 
 import qscript.annotations as annot
-import qscript.icc as icc
 import qscript.metadata
 import qscript
+
+import qabs.annotations_abs as annota
 
 NAN_VALUE = "NA"  # R's "not available" value
 meaning = """Splits each annotated file into one record per coding.
@@ -23,7 +24,7 @@ def add_arguments(subparser: qscript.ArgumentParser):
 
 
 def execute(args: qscript.Namespace):
-    annots = icc.init(annot.Annotations)
+    annots = annota.AnnotationsAbstracts()
     venue = qscript.metadata.Venue(args.workdir)
     what = qscript.metadata.WhoWhat(args.workdir)
     prt_head()
@@ -45,8 +46,8 @@ class Abstract:
     volume: str
     coder_letter: str
     coder: str
-    annots: annot.Annotations  # for convenience
-    codebook: annot.Codebook  # for convenience
+    annots: annota.AnnotationsAbstracts  # for convenience
+    codebook: annota.CodebookAbstracts  # for convenience
 
 
 def export_for_file(filename: str, abstract: Abstract):
@@ -75,14 +76,16 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
         if code not in codes_done and abstract.codebook.is_extra_code(code):
             codes_done.add(code)
             prt_record(abstract, idx, words, chars,
-                       abstract.annots.bare_codename(code), abstract.codebook.topic(code), math.nan, math.nan)
+                       abstract.annots.bare_codename(code), csuffix, abstract.codebook.topic(code), 
+                       math.nan, math.nan)
     # ----- process h-* codes (which count only 1 word):
     for code, csuffix in codings:
         if code not in codes_done and abstract.codebook.is_heading_code(code):
             codes_done.add(code)
             prt_record(abstract, idx,
                        1 if multiple else words, H_LEN if multiple else chars,
-                       abstract.annots.bare_codename(code), abstract.codebook.topic(code), 0, 0)
+                       abstract.annots.bare_codename(code), csuffix, abstract.codebook.topic(code), 
+                       0, 0)
     words -= len(codes_done)
     chars -= H_LEN * len(codes_done)  # the approximation matters only if there are unprocessed codings left
     remaining = len(codings) - len(codes_done)
@@ -94,29 +97,31 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
         if code not in codes_done and not csuffix:
             codes_done.add(code)
             prt_record(abstract, idx, words, chars,
-                       code, abstract.codebook.topic(code), 0, 0)
+                       code, csuffix, abstract.codebook.topic(code), 
+                       0, 0)
     # ----- process remaining codes with explicit or implicit IU suffix:
     for code, csuffix in codings:
         if code not in codes_done:
             codes_done.add(code)
-            assert abstract.codebook.exists_with_suffix(code)
+            assert abstract.codebook.can_have_iu_suffix(code)
             icount, ucount = abstract.annots.get_iu_counts(csuffix)
             prt_record(abstract, idx, words, chars,
-                       code, abstract.codebook.topic(code), icount, ucount)
+                       code, csuffix, abstract.codebook.topic(code), 
+                       icount, ucount)
 
 
 def prt_head():
     """Print header line for output file. Corresponds to prt_record."""
     prt("citekey\tvenue\tvolume\tcoder\tcodername")
     prt("sidx\twords\tchars")
-    prt("code\ttopic\ticount\tucount", end_line=True)
+    prt("code\tsuffixes\ttopic\ticount\tucount", end_line=True)
 
 
 def prt_record(a: Abstract, idx: int, words: Number, chars: Number,
-               code: str, topic: str, icount: Number, ucount: Number):
+               code: str, suffixes: str, topic: str, icount: Number, ucount: Number):
     prt(f"{a.citekey}\t{a.venue}\t{a.volume}\t{a.coder_letter}\t{a.coder}")  # file-related
     prt(f"{idx}\t{_numberish(words)}\t{_numberish(chars)}")  # sentence-related
-    prt(f"{code}\t{topic}\t{_numberish(icount)}\t{_numberish(ucount)}", end_line=True)  # coding-related
+    prt(f"{code}\t{suffixes}\t{topic}\t{_numberish(icount)}\t{_numberish(ucount)}", end_line=True)  # coding-related
 
 
 def prt(value: tg.Any, end_line=False):
