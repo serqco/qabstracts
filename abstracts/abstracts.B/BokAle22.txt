@@ -1,41 +1,41 @@
 A Hybrid Distributed EA Approach for Energy Optimisation on Smartphones.
 
 For many people, mobile platforms are now an essential part of everyday life.
-{{}}
+{{background}}
 A defining
 feature of mobile platforms is their reliance on battery performance.
-{{}}
+{{background}}
 Due to this reliance,
 there is a pressing need for mobile applications that minimise their own impact on batteries.
-{{}}
+{{background}}
 While mobile platforms are improving their capabilities in terms of policing the energy
 use of applications and rationing energy-hungry devices, mobile application developers still
 lack knowledge in how to write energy efficient programs.
-{{}}
+{{background}}
 Recent work in automatic program improvement using heuristic search over randomly generated program variants has
 shown some promise in terms of producing reductions in programs’ energy-use.
-{{}}
+{{background}}
 A challenge
 in this work is accurately measuring the energy-use of program variants.
-{{}}
+{{background}}
 One approach to
 measurement is to use each platform’s internal meter to assess variants on the device itself.
-{{}}
+{{background}}
 This approach has advantages in terms of measuring actual energy-use on each platform but
 is not ideal for the search for program variants that perform well across multiple platforms.
-{{}}
+{{gap}}
 The work in this paper addresses this problem by using an island-like evolutionary search
 mode to simultaneously evolve variants on multiple platforms.
-{{}}
+{{objective}}
 Island models of evolutionary search conduct search on multiple platforms in parallel and share promising variants.
-{{}}
+{{design}}
 The results show that this approach has advantages over isolated evolution in terms of speeding up evolution on each platform and improving the efficiency of search.
-{{}}
+{{result:i2}}
 Validation results
 show that the island-inspired model is able to evolve variants with good cross-platform performance.
-{{}}
+{{result:i1}}
 In addition, it evolves a solution that outperforms best found solutions using a
 sequential evolutionary algorithm on it is native platform with an effect size greater than
 90%.
-{{}}
+{{result}}
 ---

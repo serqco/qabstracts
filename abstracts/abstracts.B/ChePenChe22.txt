@@ -2,44 +2,44 @@
 
 In the daily development process, developers often need assistance in finding a sequence
 of APIs to accomplish their development tasks.
-{{}}
+{{background}}
 Existing deep learning models, which
 have recently been developed for recommending one single API, can be adapted by
 using encoder-decoder models together with beam search to generate API sequence recommendations.
-{{}}
+{{background}}
 However, the generated API sequence recommendations heavily rely on
 the probabilities of API suggestions at each decoding step, which do not take into account
 other domain-specific factors (e.g., whether an API suggestion satisfies the program syntax
 and how diverse the API sequence recommendations are).
-{{}}
+{{background}}
 Moreover, it is difficult for developers to find similar API sequence recommendations, distinguish different API sequence
 recommendations, and make a selection when the API sequence recommendations are
 ordered by probabilities.
-{{}}
+{{background}}
 Thus, what we need is more than deep learning.
-{{}}
+{{need}}
 In this paper, we
 propose an approach, named COOK, to combine deep learning models with post-processing
 strategies for API sequence recommendation.
-{{}}
+{{objective}}
 Specifically, we enhance beam search with
 code-specific heuristics to improve the quality of API sequence recommendations.
-{{}}
+{{design}}
 We
 develop a clustering algorithm to cluster API sequence recommendations so as to make it
 easier for developers to find similar API sequence recommendations and distinguish different API sequence recommendations.
-{{}}
+{{design}}
 We also propose a method to generate a summary for
 each cluster to help developers understand the API sequence recommendations.
-{{}}
+{{design}}
 Our evaluation results have shown that (1) three deep learning models with our heuristic-enhanced
 beam search achieved better performance than with the original beam search in terms of
 CIDEr-1, CIDEr-5 and CIDEr-10 scores, with an average improvement of 1.8, 2.3 and 2.3,
 respectively; and (2) our clustering algorithm achieved high performance on six metrics and
 outperformed two variant clustering algorithms.
-{{}}
+{{result:i2:u1}}
 Moreover, our user study with 24 participants shows that COOK can help developers accomplish programming tasks faster and pass
 more test cases, and the participants confirm that clusters and summaries indeed help them
 understand and select the correct API sequence recommendations.
-{{}}
+{{method,result:i2}}
 ---

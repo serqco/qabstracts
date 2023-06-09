@@ -2,32 +2,32 @@ Mining Similar Methods for Test Adaptation.
 
 Developers may choose to implement a library despite the existence of similar libraries, considering factors such as
 computational performance, language or platform dependency, accuracy, convenience, and completeness of an API.
-{{}}
+{{background}}
 As a result,
 GitHub hosts several library projects that have overlaps in their functionalities.
-{{}}
+{{background}}
 These overlaps have been of interest to developers from
 the perspective of code reuse or the preference of one implementation over the other.
-{{}}
+{{background}}
 Through an empirical study, we explore the extent
 and nature of existence of these similarities in the library functions.
-{{}}
+{{objective}}
 We have further studied whether the similarity of functions across
 different libraries and their associated test suites can be leveraged to reveal defects in one another.
-{{}}
+{{objective}}
 We see scope for effectively using
 the mining of test suites from the perspective of revealing defects in a program or its documentation.
-{{}}
+{{result}}
 Another noteworthy observation
 made in the study is that similar functions may exist across libraries implemented in the same language as well as in different
 languages.
-{{}}
+{{result}}
 Identifying the challenges that lie in building a testing tool, we automate the entire process in METALLICUS, a test mining and
 recommendation tool.
-{{}}
+{{design}}
 METALLICUS returns a test suite for the given input of a query function and a template for its test suite.
-{{}}
+{{design}}
 On a dataset
 of query functions taken from libraries implemented in Java or Python, METALLICUS revealed 46 defects.
-{{}}
+{{method:i1,result}}
 ---

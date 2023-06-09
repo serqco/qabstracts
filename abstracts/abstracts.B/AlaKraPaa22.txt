@@ -1,51 +1,51 @@
 The journey to technical excellence in agile software development.
 
 Context:
-{{}}
+{{h-background}}
 Technical excellence is a nebulous term in agile software development.
-{{}}
+{{background}}
 This vagueness is risky
 because it may lead to misunderstandings and to agile implementations that may overlook a key principle
 of agile development.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 This study investigates how agile practitioners interpret the concept of technical excellence brought
 up in Principle 9 of the Agile manifesto.
-{{}}
+{{objective}}
 Moreover, we investigate how agile practitioners put the concept into
 practice and what conditions facilitate putting technical excellence into practice.
-{{}}
+{{objective}}
 Methods:
-{{}}
+{{h-method}}
 We conducted semi-structured interviews with twenty agile practitioners, coded the data inductively,
 and performed two sessions to validate the emerging findings.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 We find that technical excellence is first and foremost a mindset that is underpinned by continuous
 attention to sustainable code, continuous learning, and teamwork.
-{{}}
+{{result}}
 Fostering technical excellence requires the
 adoption of design and development practices, such as continuous architecting, and is supported by continuous
 learning.
-{{}}
+{{result}}
 We also identify three enabling conditions for technical excellence:
-{{}}
+{{result}}
 Leadership support, customer buyin, and psychological safety.
-{{}}
+{{result}}
 These enablers provide teams with leeway to nurture their pursuit of technical
 excellence.
-{{}}
+{{result}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 Our findings highlight the key role of people-based strategies in promoting technical excellence
 in agile software development.
-{{}}
+{{conclusion}}
 They show that the attainment of technical excellence does not only involve
 technical practices.
-{{}}
+{{conclusion}}
 On the contrary, it relies on social and organizational support and, most importantly, a
 mindset.
-{{}}
+{{conclusion}}
 ---

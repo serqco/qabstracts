@@ -4,39 +4,39 @@
 Online toxicity is ubiquitous across the internet and its negative
 impact on the people and that online communities that it effects
 has been well documented.
-{{}}
+{{background}}
 However, toxicity manifests differently
 on various platforms and toxicity in open source communities,
 while frequently discussed, is not well understood.
-{{}}
+{{gap}}
 We take a first
 stride at understanding the characteristics of open source toxicity
 to better inform future work on designing effective intervention
 and detection methods.
-{{}}
+{{objective}}
 To this end, we curate a sample of 100 toxic
 GitHub issue discussions combining multiple search and sampling
 strategies.
-{{}}
+{{method}}
 We then qualitatively analyze the sample to gain an
 understanding of the characteristics of open-source toxicity.
-{{}}
+{{method}}
 We
 find that the pervasive forms of toxicity in open source differ from
 those observed on other platforms like Reddit of Wikipedia.
-{{}}
+{{result}}
 In our
 sample, some of the most prevalent forms of toxicity are entitled,
 demanding, and arrogant comments from project users as well as
 insults arising from technical disagreements.
-{{}}
+{{result}}
 In addition, not all toxicity was written by people external to the projects; project
 members were also common authors of toxicity.
-{{}}
+{{result}}
 We als discuss
 the implications of our findings.
-{{}}
+{{a-conclusion}}
 Among others we hope that our
 findings will be useful for future detection work.
-{{}}
+{{fposs}}
 ---
