@@ -7,11 +7,11 @@ Typically, this problem is tackled by training binary classifiers
 on historical data.
 {{background}}
 Unfortunately, recent research has shown that such approaches underperform due to the following two reasons:
-{{background}}
+{{gap}}
 a) the imbalanced nature of the problem, and b) the
 inherently noisy historical data, i.e., most vulnerabilities are discovered much later than they
 are introduced.
-{{background}}
+{{gap}}
 This misleads classifiers as they learn to recognize actual vulnerable components as non-vulnerable.
 {{gap}}
 To tackle these issues, we propose TROVON, a technique that

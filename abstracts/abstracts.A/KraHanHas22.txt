@@ -41,7 +41,7 @@ visualizations.
 {{summary}}
 The preliminary results indicate the need for more research regarding effectiveness, usability,
 and acceptance.
-{{conclusion}}
+{{fneed}}
 Unlike related work, we approach the latter by introducing a multi-user augmented reality
 environment for software visualizations based on off-the-shelf mobile devices.
 {{summary:u1}}

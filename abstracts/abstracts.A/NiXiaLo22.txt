@@ -34,5 +34,5 @@ change-level features in the dimension of size (i.e., LT), diffusion (i.e., NF),
 TC) are the most important features for indicating the defect-proneness of a change on JavaScript projects;
 and (4) project-related features (i.e., Stars, Branches, Def Ratio, Changes, Files, Defective, and Forks) have a
 high association with the probability of a change to be a defect-prone one on JavaScript projects.
-{{method,result}}
+{{method,result:i3}}
 ---

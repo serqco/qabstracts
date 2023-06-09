@@ -38,7 +38,7 @@ achieves the best performance on all indicators except Popt, followed by AMR; (2
 introduction of BMEL improves the performance on non-effort-aware indicators statistically significantly except
 F1-score; compared with BMEL, the introduction of AMR improves the performance throughout all indicators
 statistically significantly.
-{{method,result}}
+{{method,result:i2,-ignorediff}}
 Conclusion:
 {{h-conclusion}}
 BMEL+AMR can effectively improve HDP performance by eliminating heterogeneity and dealing
