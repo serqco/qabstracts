@@ -32,7 +32,9 @@ number of lines of code or chunks changed in the merge scenario) are stronger co
 characteristics (e.g., the number of lines of code or chunks in conflict), (iii) we devise a taxonomy of four types of challenges in merge conflict
 resolution, and (iv) we observed that the inherent dependencies among conflicting and non-conflicting code is one of the main factors
 influencing the merge conflict resolution time.
-{{conclusion}}
+{{conclusion,-ignorediff}}
 ---
 Three conclusions mixing past tense with present tense general statements.
-The effect is that they do not sound very conclusionish.
+Why? I think the authors are treating their survey responses as gospel.
+The effect is that they (mostly) sound conclusionish, in a wrong way, because the overall
+structure is meant to be method-result-method-result.
