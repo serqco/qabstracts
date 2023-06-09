@@ -45,7 +45,7 @@ not resilient and exhibit constant growth and unbounded performance violations o
 {{result}}
 The application of our methodology to a real in-production system identified additional
 resilience profiles that were not observed in the in-vitro experiments.
-{{result:i1}}
+{{method,result:i1}}
 These profiles show
 the ability of services to react differently to the same solicitation.
 {{result}}
@@ -61,7 +61,7 @@ of performance violations of in-vitro and in-production real-world systems.
 Furthermore,
 the cost of our model calibration heuristics, based on the mathematical expression of the
 selected non-linear growth models, is limited.
-{{conclusion}} 
+{{conclusion}}
 We discussed how the resulting models can
 shed some light on the trend of performance violations and help engineers to spot problematic microservice operations that exhibit performance issues. 
 {{conclusion}}
