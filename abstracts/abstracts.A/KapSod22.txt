@@ -26,7 +26,7 @@ our tool yields an effort estimate for developing it.
 {{design}}
 Our method achieves the highest standardized accuracy score of 87.26% (with Cliff’s δ = 0.88 at 99.999%
 confidence level) and 42.7% with the automatically transformed linear baseline model.
-{{claim}}
+{{claim,-ignorediff}}
 Our software artifacts
 are available at https://doi.org/10.5281/zenodo.5095723.
 {{resourcepointer}}

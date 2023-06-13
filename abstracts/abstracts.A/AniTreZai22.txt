@@ -26,5 +26,5 @@ overarching strategies that developers apply when testing.
 {{result}}
 Third, we compare and relate our observations with the existing body of
 knowledge and propose future studies that would advance our knowledge on the topic.
-{{a-result,fposs}}
+{{a-result,a-fposs}}
 ---
