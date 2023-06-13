@@ -20,7 +20,7 @@ on search-based software engineering (SBSE) methods.
 Although because of comprehensiveness and versatility
 SBSE is considered an appropriate method for automatic refactoring, it has its downsides, the most important of
 which are the uncertainty of the results and the exponential execution time.
-{{background}}
+{{gap}}
 Method:
 {{h-method}}
 In this research, a solution is proposed inspired by search-based refactoring while taking advantage of
