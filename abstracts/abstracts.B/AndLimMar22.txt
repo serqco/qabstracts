@@ -2,31 +2,31 @@ Guaranteeing Timed Opacity using Parametric Timed Model Checking.
 
 
 Information leakage can have dramatic consequences on systems security.
-{{}}
+{{background}}
 Among harmful information leaks,
 the timing information leakage occurs whenever an attacker successfully deduces confidential internal information.
-{{}}
+{{background}}
 In this work, we consider that the attacker has access (only) to the system execution time.
-{{}}
+{{objective}}
 We address
 the following timed opacity problem:
-{{}}
+{{objective}}
 given a timed system, a private location and a final location, synthesize
 the execution times from the initial location to the final location for which one cannot deduce whether the
 system went through the private location.
-{{}}
+{{objective}}
 We also consider the full timed opacity problem, asking whether
 the system is opaque for all execution times.
-{{}}
+{{objective}}
 We show that these problems are decidable for timed automata
 (TAs) but become undecidable when one adds parameters, yielding parametric timed automata (PTAs).
-{{}}
+{{result}}
 We
 identify a subclass with some decidability results.
-{{}}
+{{result}}
 We then devise an algorithm for synthesizing PTAs parameter valuations guaranteeing that the resulting TA is opaque.
-{{}}
+{{result}}
 We finally show that our method can also apply
 to program analysis.
-{{}}
+{{result}}
 ---

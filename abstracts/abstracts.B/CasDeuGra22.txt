@@ -1,44 +1,44 @@
 Detecting privacy requirements from User Stories with NLP transfer learning models.
 
 Context:
-{{}}
+{{h-background}}
 To provide privacy-aware software systems, it is crucial to consider privacy from the very beginning
 of the development.
-{{}}
+{{background}}
 However, developers do not have the expertise and the knowledge required to embed the
 legal and social requirements for data protection into software systems.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 We present an approach to decrease privacy risks during agile software development by automatically detecting privacy-related information in the context of user story requirements, a prominent notation in
 agile Requirement Engineering (RE).
-{{}}
+{{objective}}
 Methods:
-{{}}
+{{h-method}}
 The proposed approach combines Natural Language Processing (NLP) and linguistic resources with
 deep learning algorithms to identify privacy aspects into User Stories.
-{{}}
+{{design}}
 NLP technologies are used to extract
 information regarding the semantic and syntactic structure of the text.
-{{}}
+{{design}}
 This information is then processed by a
 pre-trained convolutional neural network, which paved the way for the implementation of a Transfer Learning
 technique.
-{{}}
+{{design}}
 We evaluate the proposed approach by performing an empirical study with a dataset of 1680 user
 stories.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 The experimental results show that deep learning algorithms allow to obtain better predictions than
 those achieved with conventional (shallow) machine learning methods.
-{{}}
+{{result:i2}}
 Moreover, the application of Transfer
 Learning allows to considerably improve the accuracy of the predictions, ca. 10%.
-{{}}
+{{result:u1}}
 Conclusions:
-{{}}
+{{h-conclusion}}
 Our study contributes to encourage software engineering researchers in considering the opportunities to automate privacy detection in the early phase of design, by also exploiting transfer learning
 models.
-{{}}
+{{conclusion}}
 ---

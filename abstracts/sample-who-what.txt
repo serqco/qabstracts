@@ -243,14 +243,14 @@ BraZai22      Lutz        Lloyd
 BriRouSei22   Lutz        Lloyd
 AmrMaoSeg22   Lutz        Lloyd
 #----- Block 28
-GiaMasMag22   Lutz        -Lloyd
-CasDeuGra22   Lutz        -Lloyd
-YanHeXia22    Lutz        -Lloyd
-SaiOunAha22   Lutz        -Lloyd
-AndLimMar22   Lutz        -Lloyd
-SunSunPha22   Lutz        -Lloyd
-LinWilHal22   Lutz        -Lloyd
-CheZhuHu22    Lutz        -Lloyd
+GiaMasMag22   Lutz        Lloyd
+CasDeuGra22   Lutz        Lloyd
+YanHeXia22    Lutz        Lloyd
+SaiOunAha22   Lutz        Lloyd
+AndLimMar22   Lutz        Lloyd
+SunSunPha22   Lutz        Lloyd
+LinWilHal22   Lutz        Lloyd
+CheZhuHu22    Lutz        Lloyd
 #----- Block 29
 VelJamSie22   Lutz
 CopAlé22      Lutz
