@@ -35,7 +35,7 @@ software and propose a pipeline that successfully integrates them to address sca
 described above.
 {{objective}}
 Further, we report on the largest study involving embedded software systems in the mutation analysis literature.
-{{a-method}}
+{{a-method,a-result}}
 Our
 research is part of a research project funded by ESA ESTEC involving private companies (GomSpace Luxembourg and LuxSpace) in
 the space sector.

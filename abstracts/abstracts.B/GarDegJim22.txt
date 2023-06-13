@@ -17,7 +17,7 @@ This misleads classifiers as they learn to recognize actual vulnerable component
 To tackle these issues, we propose TROVON, a technique that
 learns from known vulnerable components rather than from vulnerable and non-vulnerable
 components, as typically performed.
-{{objective,design}}
+{{objective}}
 We perform this by contrasting the known vulnerable,
 and their respective fixed components.
 {{design}}
