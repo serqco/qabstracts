@@ -2,24 +2,24 @@ SPVF: security property assisted vulnerability fixing via attention-based models
 
 The past few years have witnessed the wide application of machine learning models to fix
 vulnerabilities automatically.
-{{}}
+{{background}}
 However, existing approaches cannot capture the characteristics of vulnerabilities that are helpful to improve the effectiveness of automated vulnerability
 fixing.
-{{}}
+{{gap}}
 In this paper, we propose a novel approach for automatically fixing vulnerabilities,
 called SPVF.
-{{}}
+{{objective}}
 SPVF captures the security property from the descriptive information about
 the vulnerability.
-{{}}
+{{design}}
 SPVF is based on the attention mechanism and uses the abstract syntax
 tree as well as the security properties, integrating them using the pointer generator.
-{{}}
+{{design}}
 The
 experimental results on two public datasets show that SPVF outperforms the state-of-the-art
 approaches by 13% for C/C++ and 47% for Python.
-{{}}
+{{method,result:i1}}
 And SPVF is capable of successfully
 fixing 153 C/C++ vulnerabilities and 276 Python vulnerabilities.
-{{}}
+{{result}}
 ---
