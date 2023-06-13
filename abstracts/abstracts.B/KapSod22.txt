@@ -3,31 +3,31 @@ OSS Effort Estimation Using Software Features Similarity and Developer Activity-
 
 Software development effort estimation (SDEE) generally involves leveraging the information about the effort
 spent in developing similar software in the past.
-{{}}
+{{background}}
 Most organizations do not have access to sufficient and
 reliable forms of such data from past projects.
-{{}}
+{{background}}
 As such, the existing SDEE methods suffer from low usage and
 accuracy.
-{{}}
+{{gap}}
 We propose an efficient SDEE method for open source software, which provides accurate and fast effort
 estimates.
-{{}}
+{{objective}}
 The significant contributions of our article are (i) novel SDEE software metrics derived from developer activity information of various software repositories, (ii) an SDEE dataset comprising the SDEE metrics’
 values derived from approximately 13,000 GitHub repositories from 150 different software categories, and
 (iii) an effort estimation tool based on SDEE metrics and a software description similarity model.
-{{}}
+{{objective}}
 Our software
 description similarity model is basically a machine learning model trained using the PVA on the software
 product descriptions of GitHub repositories.
-{{}}
+{{design}}
 Given the software description of a newly envisioned software,
 our tool yields an effort estimate for developing it.
-{{}}
+{{design}}
 Our method achieves the highest standardized accuracy score of 87.26% (with Cliff’s δ = 0.88 at 99.999%
 confidence level) and 42.7% with the automatically transformed linear baseline model.
-{{}}
+{{result}}
 Our software artifacts
 are available at https://doi.org/10.5281/zenodo.5095723.
-{{}}
+{{resourcepointer}}
 ---

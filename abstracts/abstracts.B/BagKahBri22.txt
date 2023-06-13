@@ -2,29 +2,29 @@ Reinforcement Learning for Test Case Prioritization.
 
 Continuous Integration (CI) significantly reduces integration problems, speeds up development time, and shortens release
 time.
-{{}}
+{{background}}
 However, it also introduces new challenges for quality assurance activities, including regression testing, which is the focus of this
 work.
-{{}}
+{{background}}
 Though various approaches for test case prioritization have shown to be very promising in the context of regression testing,
 specific techniques must be designed to deal with the dynamic nature and timing constraints of CI.
-{{}}
+{{background}}
 Recently, Reinforcement Learning
 (RL) has shown great potential in various challenging scenarios that require continuous adaptation, such as game playing, real-time
 ads bidding, and recommender systems.
-{{}}
+{{background}}
 Inspired by this line of work and building on initial efforts in supporting test case prioritization
 with RL techniques, we perform here a comprehensive investigation of RL-based test case prioritization in a CI context.
-{{}}
+{{objective}}
 To this end,
 taking test case prioritization as a ranking problem, we model the sequential interactions between the CI environment and a test case
 prioritization agent as an RL problem, using three alternative ranking models.
-{{}}
+{{design}}
 We then rely on carefully selected and tailored state-ofthe-art RL techniques to automatically and continuously learn a test case prioritization strategy, whose objective is to be as close as
 possible to the optimal one.
-{{}}
+{{design}}
 Our extensive experimental analysis shows that the best RL solutions provide a significant accuracy
 improvement over previous RL-based work, with prioritization strategies getting close to being optimal, thus paving the way for using
 RL to prioritize test cases in a CI context.
-{{}}
+{{method:i2,result:i2,conclusion}}
 ---
