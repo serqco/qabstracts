@@ -137,6 +137,7 @@ The above list sketches the default structure of a structured abstract.
   A statement of what is not yet known or 
   what is so far difficult to achieve in research or in practice
   which directly leads over to the topic of the present work (the `objective`).
+  - Multiple `gap` sentences can be coded together (without non-`gap` sentences in between) as long as they still lead directly over to the topic of the presented work. This is a known and accepted violation of the "1-sentence forward context" rule above.
 - code `need:hype`:  
   A postulate about what research needs to be performed
   which directly leads over to the topic of the present work (the `objective`).
