@@ -10,7 +10,7 @@ behind network communication.
 {{background}}
 To comprehend what is going on in the software the vast amount of runtime
 data (traces) needs to be reduced and visualized.
-{{background}}
+{{need}}
 Objective:
 {{h-objective}}
 This work explores more effective visualizations to support program comprehension based on

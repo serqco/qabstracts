@@ -16,7 +16,7 @@ combinations of language variants that produce undesired effects at the model le
 {{gap}}
 To attack this problem, we first present a
 classification of instantiability properties for language product lines.
-{{design}}
+{{objective}}
 Then, we propose a novel approach to lifting the satisfiability
 checking of model properties of individual language variants, to the product line level.
 {{objective}}
@@ -25,3 +25,5 @@ proposal in the MERLIN tool, and demonstrate the efficiency gains of our lifted 
 each individual language variant.
 {{design,result:i1}}
 ---
+A 3-sentence sequence of "First... Then... Finally" is coded as objective, objective, design+result.
+That is curious.

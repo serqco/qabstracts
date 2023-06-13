@@ -5,13 +5,13 @@ vulnerabilities automatically.
 {{background}}
 However, existing approaches cannot capture the characteristics of vulnerabilities that are helpful to improve the effectiveness of automated vulnerability
 fixing.
-{{background}}
+{{gap}}
 In this paper, we propose a novel approach for automatically fixing vulnerabilities,
 called SPVF.
 {{objective}}
 SPVF captures the security property from the descriptive information about
 the vulnerability.
-{{design}}
+{{objective}}
 SPVF is based on the attention mechanism and uses the abstract syntax
 tree as well as the security properties, integrating them using the pointer generator.
 {{design}}
