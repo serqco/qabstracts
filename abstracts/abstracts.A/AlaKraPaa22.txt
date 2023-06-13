@@ -7,7 +7,7 @@ Technical excellence is a nebulous term in agile software development.
 This vagueness is risky
 because it may lead to misunderstandings and to agile implementations that may overlook a key principle
 of agile development.
-{{background}}
+{{gap}}
 Objective:
 {{h-objective}}
 This study investigates how agile practitioners interpret the concept of technical excellence brought

@@ -7,17 +7,18 @@ long been a concern of high priority for the software engineering community.
 The problem of two cultures,
 research conducted in a vacuum (disconnected from the real world), or misaligned time horizons are just
 some of the many complex challenges standing in the way of successful industry–academia collaborations.
-{{background}}
+{{gap}}
 This article reports on the experience of research collaboration and knowledge co-creation between industry
 and academia in software engineering as a way to bridge the research–practice collaboration gap.
 {{objective}}
 Our experience spans 14 years of collaboration between researchers in software engineering and the European and
 Norwegian software and IT industry.
-{{background}}
+{{method}}
 Using the participant observation and interview methods, we have collected and afterwards analyzed an extensive record of qualitative data.
 {{method}}
 Drawing upon the findings made and
 the experience gained, we provide a set of 14 patterns and 14 anti-patterns for industry–academia collaborations, aimed to support other researchers and practitioners in establishing and running research collaboration
 projects in software engineering.
-{{result,conclusion}}
+{{result,fposs}}
 ---
+Sentence 4 is extremely off, both in its content and its phrasing. Reads as Background, but also Method..?

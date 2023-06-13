@@ -37,7 +37,7 @@ beam search achieved better performance than with the original beam search in te
 CIDEr-1, CIDEr-5 and CIDEr-10 scores, with an average improvement of 1.8, 2.3 and 2.3,
 respectively; and (2) our clustering algorithm achieved high performance on six metrics and
 outperformed two variant clustering algorithms.
-{{method,result:i1:u1}}
+{{result:i1:u1}}
 Moreover, our user study with 24 participants shows that COOK can help developers accomplish programming tasks faster and pass
 more test cases, and the participants confirm that clusters and summaries indeed help them
 understand and select the correct API sequence recommendations.

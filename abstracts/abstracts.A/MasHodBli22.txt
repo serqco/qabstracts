@@ -9,12 +9,12 @@ how and why it diverges from Scrum by the book.
 Through a Grounded Theory study involving semi-structured interviews of 45
 participants from 30 companies and observations of five teams, we present our findings on how Scrum works in practice as compared
 to how it is presented in its formative books.
-{{method}}
+{{method,objective}}
 We identify significant variations in these practices such as work breakdown, estimation,
 prioritization, assignment, the associated roles and artefacts, and discuss the underlying rationales driving the variations.
 {{result}}
 Critically, we
 claim that not all variations are process misuse/abuse and propose a nuanced classification approach to understanding variations as
 standard, necessary, contextual, and clear deviations for successful Scrum use and adaptation.
-{{result}}
+{{conclusion}}
 ---
