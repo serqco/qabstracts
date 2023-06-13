@@ -38,7 +38,7 @@ of the total defects.
 {{result:u1}}
 (ii) DNN model building bugs are more prone to algorithm logic constraints, internal API
 errors, and data/numerical errors.
-{{result:u1}}
+{{result:i3:u1}}
 (iii) Fifteen bug-fixing patterns are summarized, providing reference for
 common DL framework bug repair and future research on the development of automatic DL framework bug
 detection tools.
