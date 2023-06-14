@@ -11,7 +11,7 @@ called SPVF.
 {{objective}}
 SPVF captures the security property from the descriptive information about
 the vulnerability.
-{{design}}
+{{objective}}
 SPVF is based on the attention mechanism and uses the abstract syntax
 tree as well as the security properties, integrating them using the pointer generator.
 {{design}}
