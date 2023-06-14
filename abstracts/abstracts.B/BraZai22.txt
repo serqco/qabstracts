@@ -5,7 +5,7 @@ years.
 {{background}}
 While current tools can generate powerful regression or crash-reproducing test cases,
 these are often kept separately from the maintained test suite.
-{{gap}}
+{{background}}
 In this paper, we leverage the
 developer's familiarity with test cases amplified from existing, manually written developer
 tests.
