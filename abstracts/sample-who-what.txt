@@ -252,14 +252,14 @@ SunSunPha22   Lutz        Lloyd
 LinWilHal22   Lutz        Lloyd
 CheZhuHu22    Lutz        Lloyd
 #----- Block 29
-VelJamSie22   Lutz
-CopAlé22      Lutz
-RehWanKul22   Lutz
-EldZahShu22   Lutz
-KriTanSul22   Lutz
-WagWyr22      Lutz
-XuCheHe22     Lutz
-HuGuoCor22    Lutz
+VelJamSie22   Lutz        -Julian
+CopAlé22      Lutz        -Julian
+RehWanKul22   Lutz        -Julian
+EldZahShu22   Lutz        -Julian
+KriTanSul22   Lutz        -Julian
+WagWyr22      Lutz        -Julian
+XuCheHe22     Lutz        -Julian
+HuGuoCor22    Lutz        -Julian
 #----- Block 30
 WuWuZho22     Lutz
 IrsBörPet22   Lutz
