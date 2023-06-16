@@ -1,23 +1,22 @@
 Reuse of Similarly Behaving Software Through Polymorphism-Inspired Variability Mechanisms.
 
 In many cases, software artifacts share similarity across projects and development teams.
-{{}}
+{{background}}
 However, often this similarity is only
 partially reflected on the level of design and implementation, and therefore the possibilities for its detection are limited in current variability
 analysis, clone detection, and application search approaches.
-{{}}
+{{gap}}
 In this paper, we propose a method for identification and comparison of
 similarly behaving software.
-{{}}
+{{objective}}
 The method, supported by a prototype tool, analyzes the behavioral similarity of object-oriented code artifacts
 based on shallow (behavior interface) and deep (behavior transformation) descriptions of the exhibited operations.
-{{}}
+{{design}}
 It further recommends on
 suitable mechanisms inspired by the notion of polymorphism in order to guide and support current and future reuse.
-{{}}
+{{design}}
 The approach was
 evaluated on two data-sets, obtained following two different scenarios:
-{{}}
 clone-and-own and independent development by different teams.
-{{}}
+{{method}}
 ---

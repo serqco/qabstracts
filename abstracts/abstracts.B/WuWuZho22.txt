@@ -3,32 +3,32 @@ Time-travel Investigation: Toward Building a Scalable Attack Detection Framework
 
 Ethereum has been attracting lots of attacks, hence there is a pressing need to perform timely investigation
 and detect more attack instances.
-{{}}
+{{background}}
 However, existing systems suffer from the scalability issue due to the following reasons.
-{{}}
+{{gap}}
 First, the tight coupling between malicious contract detection and blockchain data importing
 makes them infeasible to repeatedly detect different attacks.
-{{}}
+{{gap}}
 Second, the coarse-grained archive data makes
 them inefficient to replay transactions.
-{{}}
+{{gap}}
 Third, the separation between malicious contract detection and runtime state recovery consumes lots of storage.
-{{}}
+{{gap}}
 In this article, we propose a scalable attack detection framework named EthScope, which overcomes the
 scalability issue by neatly re-organizing the Ethereum state and efficiently locating suspicious transactions.
-{{}}
+{{objective}}
 It
 leverages the fine-grained state to support the replay of arbitrary transactions and proposes a well-designed
 schema to optimize the storage consumption.
-{{}}
+{{design}}
 The performance evaluation shows that EthScope can solve the
 scalability issue, i.e., efficiently performing a large-scale analysis on billions of transactions, and a speedup of
 around 2,300× when replaying transactions.
-{{}}
+{{method:i1,result:i1}}
 It also has lower storage consumption compared with existing
 systems.
-{{}}
+{{result:i1}}
 Further analysis shows that EthScope can help analysts understand attack behaviors and detect
 more attack instances.
-{{}}
+{{result}}
 ---

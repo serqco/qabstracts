@@ -2,37 +2,37 @@ Generation of refactoring algorithms by grammatical evolution.
 
 Recent machine learning studies present accurate results generating prediction models to
 identify refactoring operations for a program.
-{{}}
+{{background}}
 However, such works are limited to prediction, i.e., they learn refactoring operations strictly as applied by developers, but there
 are possibilities that they might not consider.
-{{}}
+{{background}}
 On the other hand, the Search-Based Software Refactoring (SBR) field applies search algorithms to find refactoring operations in a
 vast space of possibilities to improve diverse quality attributes.
-{{}}
+{{background}}
 Nevertheless, existing SBR
 approaches do not generate a model as machine learning studies, and then, they need to
 be reapplied individually for each program needing refactoring.
-{{}}
+{{gap}}
 To mitigate this limitation,
 this work introduces a novel SBR learning approach that generates refactoring algorithms
 capable of providing refactoring operations to several programs.
-{{}}
+{{objective}}
 These algorithms are composed of procedures that use rules to determine the refactoring operations.
-{{}}
+{{design}}
 To create the
 algorithms, a learning process first extracts refactoring patterns from programs by grouping
 their elements that were refactored in similar ways.
-{{}}
+{{design}}
 After that, a Grammatical Evolution
 (GE) is applied to generate the algorithms based on a grammar encompassing details of the
 extracted patterns.
-{{}}
+{{design}}
 GE works to generate an algorithm that provides refactoring operations
 similar to those applied in practice while improving quality attributes, such as modularity.
-{{}}
+{{design}}
 The approach is evaluated using refactoring data from 40 Java programs of GitHub repositories.
-{{}}
+{{method}}
 The algorithms are tested against different programs, obtaining an overall average of
 60% of modularity improvement and 50% of similarity with actual refactoring operations.
-{{}}
+{{result}}
 ---
