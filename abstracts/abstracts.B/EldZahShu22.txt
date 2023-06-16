@@ -1,42 +1,42 @@
 Do I really need all this work to find vulnerabilities?
 
 Context:
-{{}}
+{{h-background}}
 Applying vulnerability detection techniques is one of many tasks using the limited
 resources of a software project.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 The goal of this research is to assist managers and other decision-makers in making informed choices about the use of software vulnerability detection techniques through
 an empirical study of the efficiency and effectiveness of four techniques on a Java-based
 web application.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 We apply four different categories of vulnerability detection techniques – systematic manual penetration testing (SMPT), exploratory manual penetration testing (EMPT),
 dynamic application security testing (DAST), and static application security testing (SAST)
 – to an open-source medical records system.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 We found the most vulnerabilities using SAST.
-{{}}
+{{result:i1}}
 However, EMPT found more
 severe vulnerabilities.
-{{}}
+{{result:i1}}
 With each technique, we found unique vulnerabilities not found using
 the other techniques.
-{{}}
+{{result}}
 The efficiency of manual techniques (EMPT, SMPT) was comparable to or better than the efficiency of automated techniques (DAST, SAST) in terms of
 Vulnerabilities per Hour (VpH).
-{{}}
+{{result:i2}}
 Conclusions:
-{{}}
+{{h-conclusion}}
 The vulnerability detection technique practitioners should select may vary
 based on the goals and available resources of the project.
-{{}}
+{{conclusion}}
 If the goal of an organization
 is to find “all” vulnerabilities in a project, they need to use as many techniques as their
 resources allow.
-{{}}
+{{conclusion}}
 ---

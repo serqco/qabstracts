@@ -2,31 +2,31 @@ Data-Driven Loop Bound Learning for Termination Analysis.
 
 Termination is a fundamental liveness property for program verifi-
 cation.
-{{}}
+{{background}}
 A loop bound is an upper bound of the number of loop itera-
 tions for a given program.
-{{}}
+{{background}}
 The existence of a loop bound evidences
 the termination of the program.
-{{}}
+{{background}}
 This paper employs a reinforced
 black-box learning approach for termination proving, consisting of
 a loop bound learner and a validation checker.
-{{}}
+{{objective}}
 We present efficient
 data-driven algorithms for inferring various kinds of loop bounds,
 including simple loop bounds, conjunctive loop bounds, and lexico-
 graphic loop bounds.
-{{}}
+{{design}}
 We also devise an efficient validation checker
 by integrating a quick bound checking algorithm and a two-way
 data sharing mechanism.
-{{}}
+{{design}}
 We implemented a prototype tool called
 ddlTerm.
-{{}}
+{{design}}
 Experiments on publicly accessible benchmarks show that
 ddlTerm outperforms state-of-the-art termination analysis tools by
 solving 13-48% more benchmarks and saving 40-77% solving time.
-{{}}
+{{method:i1,result}}
 ---

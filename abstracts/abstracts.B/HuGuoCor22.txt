@@ -3,33 +3,33 @@ An Empirical Study on Data Distribution-Aware Test Selection for Deep Learning E
 
 Similar to traditional software that is constantly under evolution, deep neural networks need to evolve upon
 the rapid growth of test data for continuous enhancement (e.g., adapting to distribution shift in a new environment for deployment).
-{{}}
+{{background}}
 However, it is labor intensive to manually label all of the collected test data.
-{{}}
+{{background}}
 Test
 selection solves this problem by strategically choosing a small set to label.
-{{}}
+{{background}}
 Via retraining with the selected
 set, deep neural networks will achieve competitive accuracy.
-{{}}
+{{background}}
 Unfortunately, existing selection metrics involve three main limitations:
-{{}}
+{{gap}}
 (1) using different retraining processes, (2) ignoring data distribution shifts, and
 (3) being insufficiently evaluated.
-{{}}
+{{gap}}
 To fill this gap, we first conduct a systemically empirical study to reveal the
 impact of the retraining process and data distribution on model enhancement.
-{{}}
+{{objective}}
 Then based on our findings,
 we propose DAT, a novel distribution-aware test selection metric.
-{{}}
+{{objective}}
 Experimental results reveal that retraining
 using both the training and selected data outperforms using only the selected data.
-{{}}
+{{result}}
 None of the selection
 metrics perform the best under various data distributions.
-{{}}
+{{result}}
 By contrast, DAT effectively alleviates the impact
 of distribution shifts and outperforms the compared metrics by up to five times and 30.09% accuracy improvement for model enhancement on simulated and in-the-wild distribution shift scenarios, respectively.
-{{}}
+{{result}}
 ---
