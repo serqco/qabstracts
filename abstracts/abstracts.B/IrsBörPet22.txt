@@ -30,7 +30,7 @@ BDD specification base; (1) normalized compression similarity (NCS) and (2) simi
 {{design}}
 A semiautomated approach based on NCS and SR was developed and applied to two industrial cases to identify
 refactoring candidates.
-{{design}}
+{{design,method}}
 Our results show that our approach can identify candidates for refactoring 6o times
 faster than a manual approach.
 {{result}}
