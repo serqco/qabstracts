@@ -19,7 +19,7 @@ Method:
 Using Action Research, we have developed an approach for identifying refactoring candidates in BDD
 specifications based on two measures of similarity and applied the approach in two projects of a large software
 organization.
-{{method}}
+{{design}}
 The accuracy of the measures for identifying refactoring candidates was then evaluated against
 an approach based on machine learning and a manual approach based on practitioner perception.
 {{method}}
@@ -30,7 +30,7 @@ BDD specification base; (1) normalized compression similarity (NCS) and (2) simi
 {{design}}
 A semiautomated approach based on NCS and SR was developed and applied to two industrial cases to identify
 refactoring candidates.
-{{a-design,method}}
+{{design,method}}
 Our results show that our approach can identify candidates for refactoring 6o times
 faster than a manual approach.
 {{result}}

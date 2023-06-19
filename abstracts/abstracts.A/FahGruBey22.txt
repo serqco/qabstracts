@@ -14,7 +14,7 @@ underlying legacy application reengineering process to cloud platforms.
 {{background}}
 As such, the effective interoperability
 and tailoring of these methods become problematic due to the lack of integrated and consistent standard models.
-{{background}}
+{{gap}}
 Objective:
 {{h-objective}}
 We design, implement, and evaluate a novel framework called MLSAC (Migration of Legacy Software
@@ -44,7 +44,7 @@ science research approach.
 Results:
 {{h-result}}
 Our framework is an accessible guide of what legacy-to-cloud reengineering methods can look like.
-{{design}}
+{{design,-ignorediff}}
 The
 efficacy of the framework is demonstrated by modeling real-world reengineering scenarios and obtaining user
 feedback.
