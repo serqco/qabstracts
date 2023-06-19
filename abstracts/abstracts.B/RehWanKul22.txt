@@ -5,12 +5,12 @@ newcomer is vital to its livelihood.
 {{background}}
 Although, evidence suggests an upsurge in novice
 developers joining social coding platforms (such as GitHub), the extent to which their activities result in a OSS contribution is unknown.
-{{background}}
+{{gap}}
 Henceforth, we execute the protocols of
 a registered report to study activities of a “Newcomer OSS-Candidate”, who is a novice
 developer that is new to that social coding platform, and has the intention to later onboard
 an OSS project.
-{{method}}
+{{objective}}
 Using GitHub as a case platform, we analyze 171 identified Newcomer
 OSS-Candidates to characterize their contribution activities.
 {{method}}

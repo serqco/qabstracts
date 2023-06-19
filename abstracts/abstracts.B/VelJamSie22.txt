@@ -27,5 +27,5 @@ support those needs.
 Two user studies, with a total of 20 developers,
 validate and confirm that the information that we provide helps de-
 velopers debug the performance of configurable software systems.
-{{method,result:i1}}
+{{method,conclusion}}
 ---

@@ -42,7 +42,7 @@ Conclusions:
 {{h-conclusion}}
 We propose a taxonomy for use in future GUI-based testing research to improve the general
 quality of studies in the domain.
-{{conclusion}}
+{{summary}}
 In addition, the taxonomy is perceived to help enable more replication
 studies as well as macro-analysis of the current body of research.
 {{fposs}}
