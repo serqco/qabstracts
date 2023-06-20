@@ -86,23 +86,38 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
     topicparts = primary.groupby(['citekey', 'coder', 'topic']).agg(
             topicwords=_nagg('words', 'sum'),
     )
+    codeparts = primary.groupby(['citekey', 'coder', 'code']).agg(
+            codewords=_nagg('words', 'sum'),
+    )
 
-    def add_fraction_x(result: pd.DataFrame, x: str) -> pd.DataFrame:
+    def add_topicfraction_x(result: pd.DataFrame, x: str) -> pd.DataFrame:
+        py_x = x.replace('-', '_')  # make name usable as a python identifier
         result = pd.merge(result, topicparts.query(f"topic=='{x}'"), 'left', on=('citekey', 'coder'))
-        result = result.rename(columns=dict(topicwords=f'words_{x}'), errors="raise")
-        result[f'fraction_{x}'] = (100 * result[f'words_{x}'] / result.words).fillna(0)
+        result = result.rename(columns=dict(topicwords=f'words_{py_x}'), errors="raise")
+        result[f'fraction_{py_x}'] = (100 * result[f'words_{py_x}'] / result.words).fillna(0)
         return result
 
-    res = add_fraction_x(res, 'background')
-    res = add_fraction_x(res, 'gap')
-    res = add_fraction_x(res, 'objective')
-    res = add_fraction_x(res, 'design')
-    res = add_fraction_x(res, 'method')
-    res = add_fraction_x(res, 'result')
-    res = add_fraction_x(res, 'summary')
-    res = add_fraction_x(res, 'conclusion')
-    res = add_fraction_x(res, 'future')
-    res = add_fraction_x(res, 'other')
+    def add_codefraction_x(result: pd.DataFrame, x: str) -> pd.DataFrame:
+        py_x = x.replace('-', '_')  # make name usable as a python identifier
+        result = pd.merge(result, codeparts.query(f"code=='{x}'"), 'left', on=('citekey', 'coder'))
+        result = result.rename(columns=dict(codewords=f'words_{py_x}'), errors="raise")
+        result[f'fraction_{py_x}'] = (100 * result[f'words_{py_x}'] / result.words).fillna(0)
+        return result
+
+    res = add_topicfraction_x(res, 'background')
+    res = add_topicfraction_x(res, 'gap')
+    res = add_topicfraction_x(res, 'objective')
+    res = add_topicfraction_x(res, 'design')
+    res = add_topicfraction_x(res, 'method')
+    res = add_topicfraction_x(res, 'result')
+    res = add_topicfraction_x(res, 'summary')
+    res = add_topicfraction_x(res, 'conclusion')
+    res = add_topicfraction_x(res, 'future')
+    res = add_topicfraction_x(res, 'other')
+    res = add_codefraction_x(res, 'a-method')
+    res = add_codefraction_x(res, 'a-result')
+    res = add_codefraction_x(res, 'a-conclusion')
+    res = add_codefraction_x(res, 'a-fposs')
     res['fraction_introduction'] = res.fraction_background + res.fraction_gap
     res['total_gaps'] = res.icount + res.ucount + 3 * res.announcecount  # count each 'a-*' as 3 gaps
     return res
@@ -135,6 +150,7 @@ def create_all_subsets(datasets: argparse.Namespace):
     """Add pt.Subsets entries in datasets."""
     datasets.ab_subsets = ab_subsets(datasets.by_ab)
     datasets.ab_topicfractions_values = ab_topicfractions_values(datasets.by_ab)
+    datasets.ab_missinginfofractions_values = ab_missinginfofractions_values(datasets.by_ab)
 
 
 def ab_subsets(df: pd.DataFrame) -> pt.Subsets:
@@ -188,6 +204,34 @@ def ab_topicfractions_values(df: pd.DataFrame) -> pt.Subsets:
                   values=lambda dfr: dfr.fraction_conclusion),
     ]
     return pt.Subsets(ab_topicfractions_list)
+
+
+def ab_missinginfofractions_values(df: pd.DataFrame) -> pt.Subsets:
+    """subsets for frequency of a-*, :i, :u"""
+    ab_missinginfofractions_list = [
+        pt.Values(label="Methods",
+                  x=1.0,
+                  values=lambda dfr: dfr.fraction_a_method),
+        pt.Values(label="Results",
+                  x=2.0,
+                  values=lambda dfr: dfr.fraction_a_result),
+        pt.Values(label="Conclusion",
+                  x=3.0,
+                  values=lambda dfr: dfr.fraction_a_conclusion),
+        pt.Values(label="Poss.fut.res.",
+                  x=4.0,
+                  values=lambda dfr: dfr.fraction_a_fposs),
+        pt.Values(label="Detail",
+                  x=5.0,
+                  values=lambda dfr: dfr.icount),
+        pt.Values(label="Detail (>1)",
+                  x=6.0,
+                  values=lambda dfr: dfr.icount > 1),
+        pt.Values(label="Term",
+                  x=7.0,
+                  values=lambda dfr: dfr.ucount),
+    ]
+    return pt.Subsets(ab_missinginfofractions_list)
 
 
 def print_all_stats(args: argparse.Namespace, datasets: argparse.Namespace, outputdir: str):
@@ -265,6 +309,7 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
                        outputdir, "gaps_by_fracintro",
                        xmax=100, ymax=15, frac=0.75)
         
+    # ----- topicfraction plots:
     ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
                          60/25.4, tse_pagewidth_mm/25.4, 
                          datasets.ab_topicfractions_values, datasets.ab_subsets)
@@ -272,6 +317,12 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
                        "space per topic [%]", ymax=50)
     pt.plot_xletgroups(ctx, pt.add_zerofractionbarplotlet, "zerofractionbar", "topicmissingfractions",
                        "how often missing [%]", ymax=100)
+    # ----- frequency of a-* codes and iu gaps:
+    ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
+                         60/25.4, tse_pagewidth_mm/25.4, 
+                         datasets.ab_missinginfofractions_values, datasets.ab_subsets)
+    pt.plot_xletgroups(ctx, pt.add_nonzerofractionbarplotlet, "nonzerofractionbar", "missinginfofractions",
+                       "how often occuring [%]", ymax=66)
 
 
 def plot_ab_topicstructure_freqs_design(df: pd.DataFrame, outputdir: str):
