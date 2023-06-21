@@ -15,7 +15,7 @@ The present paper introduces a randomized
 control trial (RCT) on the understandability of collection operations
 performed on 20 participants with the dependent variables response
 time and correctness.
-{{method:i1}}
+{{objective,method:i1}}
 As tasks, subjects had to determine the results
 for collection operations (either defined with the Stream API or with
 loops).

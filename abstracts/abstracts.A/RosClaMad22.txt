@@ -5,7 +5,7 @@ schedules for the selection of competitive bidders.
 {{background}}
 The challenge is that common agile sizing measures such as story points and user
 stories are not practical for early estimation as these are often reported after contract award in DoD.
-{{background}}
+{{gap}}
 This study provides a set of effort
 and schedule estimation models for agile projects using a sizing measure that is available before proposal evaluation based on data
 from 36 DoD agile projects.

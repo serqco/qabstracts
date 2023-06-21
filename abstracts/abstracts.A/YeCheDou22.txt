@@ -10,11 +10,11 @@ system libraries.
 {{result:i1:u2}}
 However, existing techniques mainly focus on
 inferring third-party package dependencies.
-{{background}}
+{{gap}}
 Therefore, they can
 lack other necessary dependencies and violate version constraints,
 thus resulting in program build failures and runtime errors.
-{{background}}
+{{gap}}
 This paper proposes a knowledge-based technique named PyEGo,
 which can automatically infer dependencies of third-party packages,
 the Python interpreter, and system libraries at compatible versions

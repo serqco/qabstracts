@@ -20,7 +20,7 @@ gap of knowledge on the state of the practice concerning the accessibility of mo
 We aim to (i)
 verify how accessibility guidelines are implemented in mobile applications through a coding strategy and (ii) survey mobile developers on the issues and challenges of dealing with
 accessibility in practice.
-{{objective}}
+{{objective,method}}
 The key results of the study show that most accessibility guidelines are ignored when developing mobile apps.
 {{result:i1}}
 This behavior is mainly due to the lack of

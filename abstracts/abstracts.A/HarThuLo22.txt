@@ -42,5 +42,5 @@ updates.
 {{result}}
 Moreover, our manual and automated evaluation shows that AndroEvolve updates
 are more readable than CocciEvolve updates.
-{{method:u2,result:i1}}
+{{method:u2,result:i1,-ignorediff}}
 ---
