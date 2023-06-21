@@ -240,7 +240,7 @@ def ab_missinginfofractions_values(df: pd.DataFrame) -> pt.Subsets:
 
 def print_all_stats(args: argparse.Namespace, datasets: argparse.Namespace, outputdir: str):
     # print_abtype_table(datasets.by_ab)
-    # print_ignorediff_table(datasets.df_primary1)
+    print_ignorediff_table(datasets.df_primary1)
     if args.withoutdesignworks:
         comment_out_design_works(args.withoutdesignworks, datasets.by_ab)
     df = datasets.ab_structures  # abbreviation
@@ -259,6 +259,8 @@ def print_abtype_table(df: pd.DataFrame):
 def print_ignorediff_table(codings: pd.DataFrame):
     _printheader()
     df2 = codings[(codings.code != 'ignorediff') & (codings.ignorediff == 1)]
+    print("a-* -ignorediff cases:")
+    print(df2.query('code.str.startswith("a-")', engine='python').loc[:, ['citekey', 'sidx', 'code']])
     res = pd.crosstab(index=df2['code'], columns="count")
     print(res)
 
