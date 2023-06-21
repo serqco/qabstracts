@@ -1,47 +1,48 @@
 Improving microservices extraction using evolutionary search.
 
 Context:
-{{}}
+{{h-background}}
 Microservices constitute a modern style of building software applications as collections of small,
 cohesive, and loosely coupled services, i.e., modules, that are developed, deployed, and scaled independently.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 The migration from legacy systems towards the microservice-based architecture is not a trivial
 task.
-{{}}
+{{background}}
 It is still manual, time-consuming, error-prone and subsequently costly.
-{{}}
+{{background}}
 The most critical and challenging
 issue is the cost-effective identification of microservices boundaries that ensure adequate granularity and
 cohesiveness.
-{{}}
+{{gap}}
 Method:
-{{}}
+{{h-method}}
 To address this problem, we introduce in this paper a novel approach, named MSExtractor, that
 formulates microservices identification as a multi-objective optimization problem.
-{{}}
+{{objective}}
 The proposed solution aims
 at decomposing a legacy application into a set of cohesive, loosely-coupled and coarse-grained services.
-{{}}
+{{objective}}
 We employ the Indicator-Based Evolutionary Algorithm (IBEA) to drive a search process towards optimal
 microservices identification while considering structural and semantic dependencies in the source code.
-{{}}
+{{design}}
 Results:
-{{}}
+{{h-result}}
 We conduct an empirical evaluation on a benchmark of seven software systems to assess the efficiency
 of our approach.
-{{}}
+{{method}}
 Results show that MSExtractor is able to carry out an effective identification of relevant
 microservice candidates and outperforms three other existing approaches.
-{{}}
+{{result:i2}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 In this paper, we show that MSExtractor is able to extract cohesive and loosely coupled services
 with higher performance than three other considered methods.
-{{}}
+{{summary}}
 However, we advocate that while automated
 microservices identification approaches are very helpful, the role of the human experts remains crucial to
 validate and calibrate the extracted microservices.
-{{}}
+{{conclusion}}
 ---
+SUPER INTERESTING EXAMPLE where their abstract headers are misaligned with the actual content, for almost every section

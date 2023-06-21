@@ -7,34 +7,35 @@ ANDREA ROMDHANA, DIBRIS - Università degli Studi di Genova, FBK-ICT, Security &
 ALESSIO MERLO, DIBRIS - Università degli Studi di Genova
 MARIANO CECCATO, Università di Verona
 PAOLO TONELLA, Università della Svizzera italiana
+{{cruft}}
 The state space of Android apps is huge, and its thorough exploration during testing remains a significant
 challenge.
-{{}}
+{{background}}
 The best exploration strategy is highly dependent on the features of the app under test.
-{{}}
+{{background}}
 Reinforcement Learning (RL) is a machine learning technique that learns the optimal strategy to solve a task by trial
 and error, guided by positive or negative reward, rather than explicit supervision.
-{{}}
+{{background}}
 Deep RL is a recent extension of RL that takes advantage of the learning capabilities of neural networks.
-{{}}
+{{background}}
 Such capabilities make Deep
 RL suitable for complex exploration spaces such as one of Android apps.
-{{}}
+{{background}}
 However, state-of-the-art, publicly
 available tools only support basic, Tabular RL.
-{{}}
+{{gap}}
 We have developed ARES, a Deep RL approach for black-box
 testing of Android apps.
-{{}}
+{{objective}}
 Experimental results show that it achieves higher coverage and fault revelation than
 the baselines, including state-of-the-art tools, such as TimeMachine and Q-Testing.
-{{}}
+{{result:i2}}
 We also investigated the
 reasons behind such performance qualitatively, and we have identified the key features of Android apps that
 make Deep RL particularly effective on them to be the presence of chained and blocking activities.
-{{}}
+{{method,result}}
 Moreover,
 we have developed FATE to fine-tune the hyperparameters of Deep RL algorithms on simulated apps, since
 it is computationally expensive to carry it out on real apps.
-{{}}
+{{design:u1}}
 ---
