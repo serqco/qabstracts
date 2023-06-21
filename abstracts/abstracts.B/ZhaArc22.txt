@@ -1,11 +1,5 @@
 Adaptive Hypermutation for Search-Based System Test Generation: A Study on REST APIs with EvoMaster.
 
-Adaptive Hypermutation for Search-Based System Test
-Generation:
-{{}}
-A Study on REST APIs with EvoMaster
-MAN ZHANG, Kristiania University College, Norway
-ANDREA ARCURI, Kristiania University College and Oslo Metropolitan University, Norway
 REST web services are widely popular in industry, and search techniques have been successfully used to
 automatically generate system-level test cases for those systems.
 {{}}

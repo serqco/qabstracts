@@ -279,14 +279,14 @@ HarThuLo22    Lutz        Lloyd
 MehHan22      Lutz        Lloyd
 GreNucPal22   Lutz        Lloyd
 #----- Block 32
-NerBarOli22   -Lutz
-WuJiaXia22a   -Lutz
-MoyPufWeb22   -Lutz
-NikBraMor22   -Lutz
-NagHal22      -Lutz
-ZhaArc22      -Lutz
-LiaHanLi22    -Lutz
-HorBesVan22   -Lutz
+NerBarOli22   Lutz
+WuJiaXia22a   Lutz
+MoyPufWeb22   Lutz
+NikBraMor22   Lutz
+NagHal22      Lutz
+ZhaArc22      Lutz
+LiaHanLi22    Lutz
+HorBesVan22   Lutz
 #----- Block 33
 LiuNak22      Lloyd
 TurArtMis22   Lloyd

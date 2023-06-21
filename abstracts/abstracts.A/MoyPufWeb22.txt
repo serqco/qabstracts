@@ -1,61 +1,61 @@
 Uses of business process modeling in agile software development projects.
 
 Context:
-{{}}
+{{h-background}}
 Agile methodologies and frameworks are widely used in software development projects because of
 their support for continuous change and delivery.
-{{}}
+{{background}}
 Agile software development advocates de-prioritizing aspects
 such as processes and documentation.
-{{}}
+{{background}}
 In traditional software engineering methodologies, however, business
 process models have been extensively used to support these aspects.
-{{}}
+{{background}}
 Up until now, it is unclear to what extent
 recommendations to focus on code imply that conceptual modeling should be discontinued.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 The objective of this study is to investigate this hypothesis.
-{{}}
+{{objective}}
 More specifically, we develop
 a theoretical argument of how business process models are and can be used to support agile software
 development projects.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 To this end, we use a multi-method study design.
-{{}}
+{{method}}
 First, we conduct a systematic literature review,
 in which we identify studies on the usage of business process models in agile software development.
-{{}}
+{{method:i1}}
 Second,
 we apply procedures from thematic synthesis to analyze the connection between these uses and the phases of
 the development cycle.
-{{}}
+{{method}}
 Third, we use a focus group design with practitioners to systematically reflect upon
 how these uses can help regarding four categories of challenges in agile software development:
-{{}}
+{{method}}
 management,
 team, technology, and process.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 From 37 relevant studies, we distill 15 different uses.
-{{}}
+{{result:u1}}
 The results highlight the benefits of process
 modeling as an instrument to support agile software development projects from different angles and in all
 project phases.
-{{}}
+{{result}}
 Process modeling appears to be particularly relevant for the first phases of the development
 cycle, and for management and process issues in agile projects.
-{{}}
+{{result}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 We conclude that business process models indeed provide benefits for agile software development
 projects.
-{{}}
+{{conclusion}}
 Our findings have practical implications and emphasize the need for future research on modeling and
 agile development.
-{{}}
+{{a-conclusion,a-fneed}}
 ---

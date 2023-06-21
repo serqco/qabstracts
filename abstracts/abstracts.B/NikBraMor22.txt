@@ -1,16 +1,5 @@
 Automatic Fault Detection for Deep Learning Programs Using Graph Transformations.
 
-Automatic Fault Detection for Deep Learning Programs
-Using Graph Transformations
-AMIN NIKANJAM, K.
-{{}}
-N.
-{{}}
-Toosi University of Technology, Iran and SWAT Lab., Polytechnique Montreal,
-Canada
-
-HOUSSEM BEN BRAIEK, MOHAMMAD MEHDI MOROVATI, and FOUTSE KHOMH,
-SWAT Lab., Polytechnique Montreal, Canada
 Nowadays, we are witnessing an increasing demand in both corporates and academia for exploiting Deep
 Learning (DL) to solve complex real-world problems.
 {{}}
