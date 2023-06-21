@@ -270,14 +270,14 @@ AhmFanYi22    Lutz        Julian
 # LiuXiaLo22 duplicate ID (TOSEM and TSE): TOSEM article is removed from sample   
 MarKesVer22   Lutz        Julian
 #----- Block 31
-SteNicInv22   Lutz
-KapTseKyr22   Lutz
-LamMarSia22   Lutz
-RosClaMad22   Lutz
-YeCheDou22    Lutz
-HarThuLo22    Lutz
-MehHan22      Lutz
-GreNucPal22   Lutz
+SteNicInv22   Lutz        -Lloyd
+KapTseKyr22   Lutz        -Lloyd
+LamMarSia22   Lutz        -Lloyd
+RosClaMad22   Lutz        -Lloyd
+YeCheDou22    Lutz        -Lloyd
+HarThuLo22    Lutz        -Lloyd
+MehHan22      Lutz        -Lloyd
+GreNucPal22   Lutz        -Lloyd
 #----- Block 32
 NerBarOli22   -Lutz
 WuJiaXia22a   -Lutz
