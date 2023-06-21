@@ -58,6 +58,10 @@ def create_all_datasets(df: pd.DataFrame):
 def df_primary1(df: pd.DataFrame) -> pd.DataFrame:
     """Input data w/o 'extra' codes, plus some helper columns"""
     res = df.query('words > 0').copy()  # suppress the auxiliary codes (extra codes)
+    res['ignorediff'] = 0  # default
+    ignorediffs = df.query('code == "ignorediff"')
+    for index, row in ignorediffs.iterrows():
+        res.loc[(res.citekey == row['citekey']) & (res.sidx == row['sidx']), 'ignorediff'] = 1
     res['is_announce'] = res.code.str.contains('^a-')  # per-sentence entry, must be counted
     res['is_struc'] = res.code.str.contains('^h-')  # per-sentence entry, must be aggregated
     res['is_design'] = res.code == 'design'  # per-sentence entry, must be aggregated
@@ -236,6 +240,7 @@ def ab_missinginfofractions_values(df: pd.DataFrame) -> pt.Subsets:
 
 def print_all_stats(args: argparse.Namespace, datasets: argparse.Namespace, outputdir: str):
     # print_abtype_table(datasets.by_ab)
+    # print_ignorediff_table(datasets.df_primary1)
     if args.withoutdesignworks:
         comment_out_design_works(args.withoutdesignworks, datasets.by_ab)
     df = datasets.ab_structures  # abbreviation
@@ -250,6 +255,12 @@ def print_abtype_table(df: pd.DataFrame):
     res = df.groupby(['is_struc', 'is_design']).count()["venue"]  # pick _any_ 1 column
     print(res)
 
+
+def print_ignorediff_table(codings: pd.DataFrame):
+    _printheader()
+    df2 = codings[(codings.code != 'ignorediff') & (codings.ignorediff == 1)]
+    res = pd.crosstab(index=df2['code'], columns="count")
+    print(res)
 
 def comment_out_design_works(samplewhowhatfile: str, df: pd.DataFrame):
     """
