@@ -1,7 +1,7 @@
 # Codebook and coding rules for qabstracts study
 
 created: Lutz Prechelt, 2022-07-14  
-changed: Lutz Prechelt, 2023-05-05
+changed: Lutz Prechelt, 2023-06-21
 
 
 ## 1. Coding rules: Fundamentals
@@ -243,8 +243,8 @@ although it is logically part of Study Description, not Outlook.
 ### 2.8 "Announcements"
 
 - codes of the form `a-<xyz>` designate announcements:  
-  A statement announcing (hence the `a-`) that the article body will 
-  contain information of the `<xyz>` type, 
+  A statement announcing (hence the `a-`) or implying that the article body will
+  or should contain information of the `<xyz>` type, 
   but this and the next sentence do not contain such information.
   - code `a-background` (hopefully never to be seen)
   - code `a-claim` (hopefully never to be seen)
