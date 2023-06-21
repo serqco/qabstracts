@@ -3,25 +3,25 @@ Verification of Distributed Systems via Sequential Emulation.
 
 Sequential emulation is a semantics-based technique to automatically reduce property checking of distributed
 systems to the analysis of sequential programs.
-{{}}
+{{background}}
 An automated procedure takes as input a formal specification
 of a distributed system, a property of interest, and the structural operational semantics of the specification
 language and generates a sequential program whose execution traces emulate the possible evolutions of the
 considered system.
-{{}}
+{{background}}
 The problem as to whether the property of interest holds for the system can then be
 expressed either as a reachability or as a termination query on the program.
-{{}}
+{{background}}
 This allows to immediately
 adapt mature verification techniques developed for general-purpose languages to domain-specific languages,
 and to effortlessly integrate new techniques as soon as they become available.
-{{}}
+{{background}}
 We test our approach on a
 selection of concurrent systems originated from different contexts from population protocols to models of
 flocking behaviour.
-{{}}
+{{method}}
 By combining a comprehensive range of program verification techniques, from traditional
 symbolic execution to modern inductive-based methods such as property-directed reachability, we are able
 to draw consistent and correct verification verdicts for the considered systems.
-{{}}
+{{design,result:i1}}
 ---

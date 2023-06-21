@@ -2,45 +2,45 @@ AndroEvolve: automated Android API update with data flow analysis and variable d
 
 The Android operating system is frequently updated, with each version bringing a new
 set of APIs.
-{{}}
+{{background}}
 New versions may involve API deprecation; Android apps using deprecated
 APIs need to be updated to ensure the apps’ compatibility with old and new Android versions.
-{{}}
+{{background}}
 Updating deprecated APIs is a time-consuming endeavor.
-{{}}
+{{background}}
 Hence, automating the
 updates of Android APIs can be beneficial for developers.
-{{}}
+{{background}}
 CocciEvolve is the state-of-theart approach for this automation.
-{{}}
+{{background}}
 However, it has several limitations, including its inability
 to resolve out-of-method variables and the low code readability of its updates due to the
 addition of temporary variables.
-{{}}
+{{gap}}
 In an attempt to further improve the performance of automated Android API update, we propose an approach named AndroEvolve, that addresses
 the limitations of CocciEvolve through the addition of data flow analysis and variable name
 denormalization.
-{{}}
+{{objective}}
 Data flow analysis enables AndroEvolve to resolve the value of any variable within the file scope.
-{{}}
+{{design}}
 Variable name denormalization replaces temporary variables
 that may present in the CocciEvolve update with appropriate values in the target file.
-{{}}
+{{design}}
 We
 have evaluated the performance of AndroEvolve and the readability of its updates on 372
 target files containing 565 deprecated API usages.
-{{}}
+{{method}}
 Each target file represents a file from
 an Android application that uses a deprecated API in its code.
-{{}}
+{{method}}
 AndroEvolve successfully
 updates 481 out of 565 deprecated API invocations correctly, achieving an accuracy of
 85.1%.
-{{}}
+{{result}}
 Compared to CocciEvolve, AndroEvolve produces 32.9% more instances of correct
 updates.
-{{}}
+{{result}}
 Moreover, our manual and automated evaluation shows that AndroEvolve updates
 are more readable than CocciEvolve updates.
-{{}}
+{{a-method,result:i1}}
 ---
