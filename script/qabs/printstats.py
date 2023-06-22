@@ -7,15 +7,16 @@ import qscript.plottypes as pt
 
 
 def print_all_stats(args: argparse.Namespace, datasets: argparse.Namespace, outputdir: str):
-    # print_abtype_table(datasets.by_ab)
-    print_ignorediff_table(datasets.df_primary1)
-    if args.withoutdesignworks:
-        comment_out_design_works(args.withoutdesignworks, datasets.by_ab)
-    df = datasets.ab_structures  # abbreviation
-    canonical_structure = 'bgomrc'
-    good_abstracts = df.loc[df['topicstructure'] == canonical_structure]
-    print(f"abstracts with canonical structure '{canonical_structure}':", 
-          list(good_abstracts['citekey'].unique()))
+    if args.printall:
+        # print_abtype_table(datasets.by_ab)
+        print_ignorediff_table(datasets.df_primary1)
+        if args.withoutdesignworks:
+            comment_out_design_works(args.withoutdesignworks, datasets.by_ab)
+        df = datasets.ab_structures  # abbreviation
+        canonical_structure = 'bgomrc'
+        good_abstracts = df.loc[df['topicstructure'] == canonical_structure]
+        print(f"abstracts with canonical structure '{canonical_structure}':", 
+              list(good_abstracts['citekey'].unique()))
 
 
 def comment_out_design_works(samplewhowhatfile: str, df: pd.DataFrame):

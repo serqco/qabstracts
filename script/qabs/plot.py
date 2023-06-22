@@ -5,8 +5,8 @@ from matplotlib import pyplot as plt
 
 import qscript.plottypes as pt
 import qscript
-import dataframes
-import printstats
+import qabs.dataframes
+import qabs.printstats
 
 tse_columnwidth_mm = 88
 tse_pagewidth_mm = 180
@@ -21,6 +21,8 @@ meaning = """Computes derived data and creates plots and stats outputs.
 def add_arguments(subparser: qscript.ArgumentParser):
     subparser.add_argument('--plotall', action='store_const', const=True,
                            help="run all plots, not only those currently under development")
+    subparser.add_argument('--printall', action='store_const', const=True,
+                           help="print all text outputs, not only those currently under development")
     subparser.add_argument('--withoutdesignworks', type=str, default="",
                            metavar="sample-who-what.txt",
                            help="ad-hoc extension for preparing qconclusions:\n"
@@ -35,9 +37,9 @@ def add_arguments(subparser: qscript.ArgumentParser):
 
 def execute(args: qscript.Namespace):
     df = read_datafile(args.datafile)
-    datasets = dataframes.create_all_datasets(df)
-    dataframes.create_all_subsets(datasets)
-    printstats.print_all_stats(args, datasets, args.outputdir)
+    datasets = qabs.dataframes.create_all_datasets(df)
+    qabs.dataframes.create_all_subsets(datasets)
+    qabs.printstats.print_all_stats(args, datasets, args.outputdir)
     create_all_plots(args.plotall, datasets, args.outputdir)
 
 

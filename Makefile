@@ -20,7 +20,10 @@ pdf:
 	cd tex; latexmk qabstracts-tse
 
 plot:
-	$(QABSTRACTS) plot --plotall $(EXPORTFILE) img
+	$(QABSTRACTS) plot --plotall --printall $(EXPORTFILE) img
+
+plot0:
+	$(QABSTRACTS) plot $(EXPORTFILE) img
 
 plot1:
 	$(QABSTRACTS) plot $(EXPORTFILE) img
