@@ -133,7 +133,7 @@ def plot_qabstracts_timeline(outputdir: str):
     plt.figure()
     plt.yticks([], [])  # y values are meaningless
     plt.xlim(df.datefrom.min(), df.dateto.max())
-    plt.ylim(df.y.min() - THICKNESS/2 - 0.1, df.y.max() + THICKNESS/2 + 0.1)
+    plt.ylim(df.y.max() + THICKNESS/2 + 0.1, df.y.min() - THICKNESS/2 - 0.1)
     plt.barh(y=df.y, width=df.dateto-df.datefrom, height=df.h/4*THICKNESS, left=df.datefrom, color=df.col)
     for idx, row in df.iterrows():
         plt.text(x=row.datefrom, y=row.y + THICKNESS/2 + 0.05, s=row.label)
