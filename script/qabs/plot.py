@@ -1,5 +1,7 @@
 import argparse
+import datetime as dt
 
+import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 
@@ -51,14 +53,17 @@ def read_datafile(datafile: str) -> pd.DataFrame:
 def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str):
     # mpl.use('PDF')
     if plotall:
+        # ----- topicstructure plots:
         plot_ab_topicstructure_freqs_design(datasets.ab_structures, outputdir)
         plot_ab_topicstructure_freqs_empir(datasets.ab_structures, outputdir)
+        # ----- boxplots counts:
         ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
                              60/25.4, tse_pagewidth_mm/25.4, datasets.ab_subsets)
         pt.plot_boxplots(ctx, 'words', ymax=500)
         pt.plot_boxplots(ctx, 'icount', ymax=10)
         pt.plot_boxplots(ctx, 'ucount', ymax=10)
         pt.plot_boxplots(ctx, 'sentences', ymax=25)
+        # ----- boxplots fractions:
         pt.plot_boxplots(ctx, 'fraction_introduction', ymax=100)
         pt.plot_boxplots(ctx, 'fraction_conclusion', ymax=100)
         pt.plot_boxplots(ctx, 'fraction_other', ymax=100)
@@ -66,21 +71,23 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
                        datasets.by_ab.total_gaps, "#gaps",
                        outputdir, "gaps_by_fracintro",
                        xmax=100, ymax=15, frac=0.75)
-        
-    # ----- topicfraction plots:
-    ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
-                         60/25.4, tse_pagewidth_mm/25.4, 
-                         datasets.ab_topicfractions_values, datasets.ab_subsets)
-    pt.plot_xletgroups(ctx, pt.add_boxplotlet, "box", "topicfractions",
-                       "space per topic [%]", ymax=50)
-    pt.plot_xletgroups(ctx, pt.add_zerofractionbarplotlet, "zerofractionbar", "topicmissingfractions",
-                       "how often missing [%]", ymax=100)
-    # ----- frequency of a-* codes and iu gaps:
-    ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
-                         60/25.4, tse_pagewidth_mm/25.4, 
-                         datasets.ab_missinginfofractions_values, datasets.ab_subsets)
-    pt.plot_xletgroups(ctx, pt.add_nonzerofractionbarplotlet, "nonzerofractionbar", "missinginfofractions",
-                       "how often occuring [%]", ymax=66)
+        # ----- topicfraction plots:
+        ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
+                             60/25.4, tse_pagewidth_mm/25.4, 
+                             datasets.ab_topicfractions_values, datasets.ab_subsets)
+        pt.plot_xletgroups(ctx, pt.add_boxplotlet, "box", "topicfractions",
+                           "space per topic [%]", ymax=50)
+        pt.plot_xletgroups(ctx, pt.add_zerofractionbarplotlet, "zerofractionbar", "topicmissingfractions",
+                           "how often missing [%]", ymax=100)
+        # ----- frequency of a-* codes and iu gaps:
+        ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
+                             60/25.4, tse_pagewidth_mm/25.4, 
+                             datasets.ab_missinginfofractions_values, datasets.ab_subsets)
+        pt.plot_xletgroups(ctx, pt.add_nonzerofractionbarplotlet, "nonzerofractionbar", "missinginfofractions",
+                           "how often occuring [%]", ymax=66)
+
+    # ----- timeline:
+    plot_qabstracts_timeline(outputdir)
 
 
 def plot_ab_topicstructure_freqs_design(df: pd.DataFrame, outputdir: str):
@@ -107,6 +114,30 @@ def plot_ab_topicstructure_freqs(df: pd.DataFrame, outputdir: str):
     plt.subplots_adjust(bottom=0.18)
     filename = pt.plotfilename(outputdir, nesting=1)
     plt.savefig(filename)
+
+
+def plot_qabstracts_timeline(outputdir: str):
+    def d(datestring: str):
+        return dt.datetime.strptime(datestring, "%Y-%m-%d")
+    THICKNESS = 0.5
+    data = (  # very incomplete and unvalidated
+        ("2022-07-12", "2022-07-22", 1, 3, "yellow", "prestudy1"),
+        ("2022-10-01", "2022-11-16", 1, 4, "orange", "prestudy2"),
+        ("2023-01-27", "2023-08-31", 1, 4, "red",    "fullstudy (coding)"),
+        ("2022-07-14", "2023-06-21", 2, 4, "green",  "codebook devpmt."),
+    )
+    df = pd.DataFrame.from_records(data, columns=("datefrom", "dateto", "y", "h", "col", "label"))
+    df.datefrom = df.datefrom.map(d)  # convert to dates
+    df.dateto = df.dateto.map(d)
+    print(df.columns)
+    plt.figure()
+    plt.yticks([], [])  # y values are meaningless
+    plt.xlim(df.datefrom.min(), df.dateto.max())
+    plt.ylim(df.y.min() - THICKNESS/2 - 0.1, df.y.max() + THICKNESS/2 + 0.1)
+    plt.barh(y=df.y, width=df.dateto-df.datefrom, height=df.h/4*THICKNESS, left=df.datefrom, color=df.col)
+    for idx, row in df.iterrows():
+        plt.text(x=row.datefrom, y=row.y + THICKNESS/2 + 0.05, s=row.label)
+    plt.savefig(pt.plotfilename(outputdir))
 
 
 if __name__ == '__main__':
