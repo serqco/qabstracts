@@ -42,6 +42,6 @@ the present study gives evidence that
 declarative code on collections using the Stream API based on
 lambda expressions has a large, positive effect in comparison to
 traditional loops.
-{{summary}}
+{{conclusion}}
 ---
 I'm not sure what these special symbols Mloop and Mstream are.
