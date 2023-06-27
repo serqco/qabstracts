@@ -2,40 +2,40 @@ Adaptive Hypermutation for Search-Based System Test Generation: A Study on REST 
 
 REST web services are widely popular in industry, and search techniques have been successfully used to
 automatically generate system-level test cases for those systems.
-{{}}
+{{background}}
 In this article, we propose a novel mutation
 operator which is designed specifically for test generation at system-level, with a particular focus on REST
 APIs.
-{{}}
+{{objective}}
 In REST API testing, and often in system testing in general, an individual can have a long and complex
 chromosome.
-{{}}
+{{background}}
 Furthermore, there are two specific issues:
-{{}}
+{{background}}
 (1) fitness evaluation in system testing is highly
 costly compared with the number of objectives (e.g., testing targets) to optimize for; and (2) a large part of
 the genotype might have no impact on the phenotype of the individuals (e.g., input data that has no impact on
 the execution flow in the tested program).
-{{}}
+{{background}}
 Due to these issues, it might be not suitable to apply a typical low
 mutation rate like 1/n (where n is the number of genes in an individual), which would lead to mutating only
 one gene on average.
-{{}}
+{{background}}
 Therefore, in this article, we propose an adaptive weight-based hypermutation, which is
 aware of the different characteristics of the mutated genes.
-{{}}
+{{design}}
 We developed adaptive strategies that enable the
 selection and mutation of genes adaptively based on their fitness impact and mutation history throughout the
 search.
-{{}}
+{{design}}
 To assess our novel proposed mutation operator, we implemented it in the EvoMaster tool, integrated
 in the MIO algorithm, and further conducted an empirical study with three artificial REST APIs and four realworld REST APIs.
-{{}}
+{{method}}
 Results show that our novel mutation operator demonstrates noticeable improvements
 over the default MIO.
-{{}}
+{{result:i1}}
 It provides a significant improvement in performance for six out of the seven case
 studies, where the relative improvement is up to +12.09% for target coverage, +12.69% for line coverage, and
 +32.51% for branch coverage.
-{{}}
+{{result}}
 ---

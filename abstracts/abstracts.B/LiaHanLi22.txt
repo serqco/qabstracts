@@ -2,38 +2,38 @@ Modeling function-level interactions for file-level bug localization.
 
 Automatic bug localization, i.e., automatically locating potential buggy source files given
 a bug report, plays an essential role in software engineering.
-{{}}
+{{background}}
 For instance, bug localization
 helps developers fix bugs quickly.
-{{}}
+{{background}}
 Although information retrieval-based bug localization
 methods are simple and easy to understand, it is difficult for them to bridge the lexical
 gap between bug reports and programs and capture the rich structural information in programs.
-{{}}
+{{background}}
 Deep learning-based bug localization (DLBL) methods can utilize the structural
 information of the program, but they cannot handle long code sequences well.
-{{}}
+{{background}}
 For example, CNN fails to capture remote code interaction features, while RNN (like LSTM, GRU)
 is vulnerable to gradient disappearance or burst when facing long code sequences.
-{{}}
+{{background}}
 Additionally, DLBL methods fail to model metadata features such as bug-fixing recency and
 frequency.
-{{}}
+{{background}}
 In this paper, we research how to locate buggy files by learning function-level
 features.
-{{}}
+{{objective}}
 Specifically, we propose a new framework called FLIM that can extract semantic
 features of a program at the function level and then calculates the relevance between natural and programming language by aggregating function-level interactions.
-{{}}
+{{design}}
 We leverage a
 fine-tuned language model to treat the bug localization task as a code retrieval task, and
 use a learning-to-rank model to fuse the function-level semantic features with IR features
 to calculate the final relevance.
-{{}}
+{{design}}
 We evaluate FLIM by conducting extensive experiments on
 widely-used six software projects.
-{{}}
+{{method}}
 Experimental results demonstrate that FLIM outperforms
 six state-of-the-art methods of bug localization.
-{{}}
+{{result:i1}}
 ---
