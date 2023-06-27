@@ -25,7 +25,7 @@ reporting strategies largely based on improving their own willpower to concentra
 {{result}}
 We discuss how using
 Reason’s Swiss Cheese model may help reduce errors during software development.
-{{conclusion}}
+{{conclusion,-ignorediff}}
 This model ensures that layers of tool, process
 and management mitigation are in place to prevent developer errors from causing system failures.
 {{conclusion}}

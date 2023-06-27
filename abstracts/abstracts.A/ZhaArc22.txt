@@ -30,7 +30,7 @@ search.
 {{design}}
 To assess our novel proposed mutation operator, we implemented it in the EvoMaster tool, integrated
 in the MIO algorithm, and further conducted an empirical study with three artificial REST APIs and four realworld REST APIs.
-{{design,method}}
+{{method}}
 Results show that our novel mutation operator demonstrates noticeable improvements
 over the default MIO.
 {{result}}

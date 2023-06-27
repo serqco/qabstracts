@@ -35,6 +35,6 @@ widely-used six software projects.
 {{method}}
 Experimental results demonstrate that FLIM outperforms
 six state-of-the-art methods of bug localization.
-{{conclusion}}
+{{conclusion,-ignorediff}}
 ---
 A pattern to look for: conclusion without results
