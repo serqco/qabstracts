@@ -26,7 +26,7 @@ This enables the use of Haskell, a monadic functional programming language, to p
 {{design}}
 Such calculated quantum programs prepared in Haskell are pushed through Quipper and the Qiskit interface to IBM Q quantum
 devices.
-{{design}}
+{{method:u1}}
 The generated quantum circuits – often quite large – exhibit the predicted behaviour.
 {{result:i1}}
 However, running them on real quantum

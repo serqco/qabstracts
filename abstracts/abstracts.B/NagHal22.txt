@@ -10,7 +10,7 @@ looked in detail at why code errors have been made from a human perspective.
 {{gap}}
 We use Human Error Theory to frame our exploratory
 study and use semi-structured interviews to uncover a preliminary understanding of the errors developers make while coding.
-{{objective,method}}
+{{objective}}
 We look
 particularly at the Skill-based (SB) errors reported by 27 professional software developers.
 {{method}}

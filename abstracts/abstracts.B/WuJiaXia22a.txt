@@ -3,55 +3,55 @@ Evaluating and Improving Neural Program-Smoothing-based Fuzzing.
 Fuzzing nowadays has been commonly modeled as an optimization
 problem, e.g., maximizing code coverage under a given time budget
 via typical search-based solutions such as evolutionary algorithms.
-{{}}
+{{background}}
 However, such solutions are widely argued to cause inefficient
 computing resource usage, i.e., inefficient mutations.
-{{}}
+{{background}}
 To address
 this issue, two neural program-smoothing-based fuzzers, Neuzz
 and MTFuzz, have been recently proposed to approximate pro-
 gram branching behaviors via neural network models, which input
 byte sequences of a seed and output vectors representing program
 branching behaviors.
-{{}}
+{{background}}
 Moreover, assuming that mutating the bytes
 with larger gradients can better explore branching behaviors, they
 develop strategies to mutate such bytes for generating new seeds
 as test cases.
-{{}}
+{{background}}
 Meanwhile, although they have been shown to be
 effective in the original papers, they were only evaluated upon a
 limited dataset.
-{{}}
+{{gap}}
 In addition, it is still unclear how their key tech-
 nical components and whether other factors can impact fuzzing
 performance.
-{{}}
+{{gap}}
 To further investigate neural program-smoothing-
 based fuzzing, we first construct a large-scale benchmark suite
 with a total of 28 popular open-source projects.
-{{}}
+{{objective,method}}
 Then, we exten-
 sively evaluate Neuzz and MTFuzz on such benchmarks.
-{{}}
+{{method}}
 The eval-
 uation results suggest that their edge coverage performance can
 be unstable.
-{{}}
+{{result}}
 Moreover, neither neural network models nor muta-
 tion strategies can be consistently effective, and the power of their
 gradient-guidance mechanisms have been compromised.
-{{}}
+{{claim,result}}
 Inspired
 by such findings, we propose a simplistic technique, PreFuzz, which
 improves neural program-smoothing-based fuzzers with a resourceefficient
 edge selection mechanism to enhance their gradient guidance
 and a probabilistic byte selection mechanism to further boost
 mutation effectiveness.
-{{}}
+{{method}}
 Our evaluation results indicate that PreFuzz
 can significantly increase the edge coverage of Neuzz/MTFuzz, and
 also reveal multiple practical guidelines to advance future research
 on neural program-smoothing-based fuzzing.
-{{}}
+{{result:i1,a-fposs}}
 ---
