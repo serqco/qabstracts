@@ -22,11 +22,11 @@ as test cases.
 Meanwhile, although they have been shown to be
 effective in the original papers, they were only evaluated upon a
 limited dataset.
-{{background}}
+{{background,-ignorediff}}
 In addition, it is still unclear how their key tech-
 nical components and whether other factors can impact fuzzing
 performance.
-{{background}}
+{{background,-ignorediff}}
 To further investigate neural program-smoothing-
 based fuzzing, we first construct a large-scale benchmark suite
 with a total of 28 popular open-source projects.
