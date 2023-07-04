@@ -288,14 +288,14 @@ ZhaArc22      Lutz        Julian
 LiaHanLi22    Lutz        Julian
 HorBesVan22   Lutz        Julian
 #----- Block 33
-LiuNak22      Lloyd
-TurArtMis22   Lloyd
-CaoLiLi22     Lloyd
-HumKhoAnt22   Lloyd
-RomMerCec22   Lloyd
-SelOunSai22   Lloyd
-WuJiaXia22    Lloyd
-WanXuCha22    Lloyd
+LiuNak22      Lloyd       -Julian
+TurArtMis22   Lloyd       -Julian
+CaoLiLi22     Lloyd       -Julian
+HumKhoAnt22   Lloyd       -Julian
+RomMerCec22   Lloyd       -Julian
+SelOunSai22   Lloyd       -Julian
+WuJiaXia22    Lloyd       -Julian
+WanXuCha22    Lloyd       -Julian
 #----- Block 34
 HusPerWhi22   
 KelKabPle22   
