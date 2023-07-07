@@ -1,34 +1,34 @@
 Towards privacy compliance: A design science study in a small organization.
 
 Context:
-{{}}
+{{h-background}}
 Complying with privacy regulations has taken on new importance with the introduction of the EU’s
 General Data Protection Regulation (GDPR) and other privacy regulations.
-{{}}
+{{background}}
 Privacy measures are becoming
 a paramount requirement demanding software organizations’ attention as recent privacy breaches such as
 the Capital One data breach affected millions of customers.
-{{}}
+{{background}}
 Software organizations, however, struggle with
 achieving privacy compliance.
-{{}}
+{{background}}
 In particular, there is a lack of research into the organizational practices and
 challenges involved in compliance, particularly for small and medium enterprises (SMEs), which represent a
 sizeable portion of organizations.
-{{}}
+{{background}}
 Many SMEs use a continuous software engineering (CSE) approach, which
 introduces additional adoption and application challenges.
-{{}}
+{{gap}}
 For example, the fast pace of CSE makes it harder
 for SMEs that are already more resource constrained to prioritize non-functional requirements such as privacy.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 This paper aims to fill a gap in the under-researched area of continuous compliance with privacy
 requirements in practice, by investigating how a continuous practicing SME dealt with GDPR compliance.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 Using design science, we conducted an in-depth ethnographically informed study over the span of
-{{}}
+{{method}}
 ---
