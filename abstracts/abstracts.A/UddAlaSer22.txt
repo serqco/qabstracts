@@ -47,7 +47,7 @@ The analysis of developer discussions
 in the early months of a pandemic will help various stakeholders (e.g., software companies)
 make important decision early to alleviate developer problems if such a pandemic or similar
 emergency situation occurs in near future.
-{{conculsion}}
+{{conclusion}}
 Software engineering research can make further
 efforts to develop automated tools for remote work (e.g., automated documentation).
 {{fposs}}
