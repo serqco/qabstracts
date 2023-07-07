@@ -24,5 +24,5 @@ using the “vibration” technique, and how a test oracle can be automatically 
 We also describe a
 controlled experiment to evaluate the effectiveness of the method and discuss the important issues in relation to the performance and
 applicability of the method.
-{{method,a-conclusion,a-result}}
+{{method,a-conclusion}}
 ---

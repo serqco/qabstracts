@@ -36,7 +36,7 @@ Stubbifier supports the ECMAScript 2019 standard.
 In an empirical evaluation on 15 Node.js
 applications and 75 clients of these applications, Stubbifier reduced application size by 56%
 on average while incurring only minor performance overhead.
-{{method:u1}}
+{{method:u1,result}}
 The evaluation also shows
 that Stubbifier’s guarded execution mode is capable of preventing several known injection
 vulnerabilities that are manifested in stubbed-out code.

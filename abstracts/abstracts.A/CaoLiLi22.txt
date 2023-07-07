@@ -43,8 +43,8 @@ The experiment results show that
 SemMT outperforms existing metrics, achieving an increase of 34.2% and 15.4% on accuracy and F-score, respectively.
 {{result}}
 We also study the possibility of further enhancing the performance by combining various metrics.
-{{design}}
+{{fposs}}
 Finally, we discuss a solution to locate the suspicious trip in round-trip translation, which provides hints for
 bug diagnosis.
-{{design:u2}}
+{{a-fposs}}
 ---
