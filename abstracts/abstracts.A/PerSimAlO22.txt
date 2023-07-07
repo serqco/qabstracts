@@ -2,33 +2,33 @@ How do i refactor this? An empirical study on refactoring trends and topics in S
 
 An essential part of software maintenance and evolution, refactoring is performed by developers, regardless of technology or domain, to improve the internal quality of the system,
 and reduce its technical debt.
-{{}}
+{{background}}
 However, choosing the appropriate refactoring strategy is not
 always straightforward, resulting in developers seeking assistance.
-{{}}
+{{background}}
 Although research in
 refactoring is well-established, with several studies altering between the detection of refactoring opportunities and the recommendation of appropriate code changes, little is known
 about their adoption in practice.
-{{}}
+{{background}}
 Analyzing the perception of developers is critical to understand better what developers consider to be problematic in their code and how they handle
 it.
-{{}}
+{{background}}
 Additionally, there is a need for bridging the gap between refactoring, as research, and
 its adoption in practice, by extracting common refactoring intents that are more suitable for
 what developers face in reality.
-{{}}
+{{background}}
 In this study, we analyze refactoring discussions on Stack
 Overflow through a series of quantitative and qualitative experiments.
-{{}}
+{{objective}}
 Our results show that
 Stack Overflow is utilized by a diverse set of developers for refactoring assistance for a variety of technologies.
-{{}} 
+{{result}}
 Our observations show five areas that developers typically require help
 with refactoring– Code Optimization, Tools and IDEs, Architecture and Design Patterns,
 Unit Testing, and Database.
-{{}}
+{{result}}
 We envision our findings better bridge the support between traditional 
 (or academic) aspects of refactoring and their real-world applicability, including
 better tool support.
-{{}}
+{{conclusion}}
 ---

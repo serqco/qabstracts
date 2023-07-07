@@ -1,32 +1,32 @@
 Factors Affecting On-Time Delivery in Large-Scale Agile Software Development.
 
 Late delivery of software projects and cost overruns have been common problems in the software industry for decades.
-{{}}
+{{background}}
 Both problems are manifestations of deficiencies in effort estimation during project planning.
-{{}}
+{{background}}
 With software projects being complex
 socio-technical systems, a large pool of factors can affect effort estimation and on-time delivery.
-{{}}
+{{background}}
 To identify the most relevant factors
 and their interactions affecting schedule deviations in large-scale agile software development, we conducted a mixed-methods case
 study at ING:
-{{}}
+{{objective,method}}
 two rounds of surveys revealed a multitude of organizational, people, process, project and technical factors which were
 then quantified and statistically modeled using software repository data from 185 teams.
-{{}}
+{{method}}
 We find that factors such as requirements
 refinement, task dependencies, organizational alignment and organizational politics are perceived to have the greatest impact on ontime delivery, whereas proxy measures such as project size, number of dependencies, historical delivery performance and team
 familiarity can help explain a large degree of schedule deviations.
-{{}}
+{{result}}
 We also discover hierarchical interactions among factors:
-{{}}
+{{result}}
 organizational factors are perceived to interact with people factors, which in turn impact technical factors.
-{{}}
+{{result}}
 We compose our findings in
 the form of a conceptual framework representing influential factors and their relationships to on-time delivery.
-{{}}
+{{result}}
 Our results can help
 practitioners identify and manage delay risks in agile settings, can inform the design of automated tools to predict schedule overruns
 and can contribute towards the development of a relational theory of software project management.
-{{}}
+{{conclusion,fposs}}
 ---
