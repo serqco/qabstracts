@@ -306,14 +306,14 @@ UddAlaSer22   Lloyd
 MirLatPro22   Lloyd
 # LiWerErn22 Abstract is cut off.
 #----- Block 35
-ObaNagSpe22   
-PerSimAlO22   
-TriWieSar22   
-GuoZhoYao22   
-RodUrqMen22   
-KulGreDeu22   
-AlbGorHer22   
-JahCev22   
+ObaNagSpe22   -Lloyd
+PerSimAlO22   -Lloyd
+TriWieSar22   -Lloyd
+GuoZhoYao22   -Lloyd
+RodUrqMen22   -Lloyd
+KulGreDeu22   -Lloyd
+AlbGorHer22   -Lloyd
+JahCev22      -Lloyd
 #----- Block 36
 ShrHalEdw22   
 AliMus22   
