@@ -7,16 +7,13 @@ import qscript.plottypes as pt
 
 
 def print_all_stats(args: argparse.Namespace, datasets: argparse.Namespace, outputdir: str):
+    print_iucount_stats(datasets.df_primary1, datasets.by_ab)
     if args.printall:
         # print_abtype_table(datasets.by_ab)
-        print_ignorediff_table(datasets.df_primary1)
         if args.withoutdesignworks:
             comment_out_design_works(args.withoutdesignworks, datasets.by_ab)
-        df = datasets.ab_structures  # abbreviation
-        canonical_structure = 'bgomrc'
-        good_abstracts = df.loc[df['topicstructure'] == canonical_structure]
-        print(f"abstracts with canonical structure '{canonical_structure}':", 
-              list(good_abstracts['citekey'].unique()))
+        print_abstracts_with_canonical_structure(datasets.ab_structures)
+        print_ignorediff_stats(datasets.df_primary1, datasets.by_ab)
 
 
 def comment_out_design_works(samplewhowhatfile: str, df: pd.DataFrame):
@@ -65,13 +62,48 @@ def print_abtype_table(df: pd.DataFrame):
     print(res)
 
 
-def print_ignorediff_table(codings: pd.DataFrame):
+def print_abstracts_with_canonical_structure(df):
     _printheader()
-    df2 = codings[(codings.code != 'ignorediff') & (codings.ignorediff == 1)]
-    print("a-* -ignorediff cases:")
-    print(df2.query('code.str.startswith("a-")', engine='python').loc[:, ['citekey', 'sidx', 'code']])
-    res = pd.crosstab(index=df2['code'], columns="count")
-    print(res)
+    canonical_structure = 'bgomrc'
+    good_abstracts = df.loc[df['topicstructure'] == canonical_structure]
+    print(f"abstracts with structure '{canonical_structure}':\n",
+          list(good_abstracts['citekey'].unique()))
+
+
+def print_ignorediff_stats(codings: pd.DataFrame, abstracts: pd.DataFrame):
+    _printheader()
+    ignorediff_codings = codings[(codings.code != 'ignorediff') & (codings.ignorediff == 1)]
+    # print("### a-* -ignorediff cases:")
+    # print(ignorediff_codings.query('code.str.startswith("a-")', engine='python').loc[:, ['citekey', 'sidx', 'code']])
+    print("### -ignorediff counts:")
+    # TODO: find ignorediff code pairs (the single codes are misleading: could have been the other one)
+    per_code_count = pd.crosstab(index=ignorediff_codings['code'], columns="count")
+    print(per_code_count.sort_values(by='count', ascending=False))
+    per_code_percent = pd.crosstab(index=ignorediff_codings['code'], columns="count", 
+                                   normalize='columns').round(3) * 100
+    per_code_percent.columns = ['percent']
+    print(per_code_percent.sort_values(by='percent', ascending=False))
+    print("### #abstracts with N -ignorediff cases:")
+    per_abstract_count = pd.crosstab(index=ignorediff_codings['citekey'], columns="count")
+    per_abstract_count.columns = ['ignorediffN']
+    per_count_count = pd.crosstab(index=per_abstract_count['ignorediffN'], columns="count", margins=True)
+    per_count_count.columns = ['abstractsN', 'total']
+    print(per_count_count)
+    print("total # abstracts: ", abstracts.shape[0])
+    print("---")
+
+
+def print_iucount_stats(codings: pd.DataFrame, abstracts: pd.DataFrame):
+    _printheader()
+    for which in ('icount', 'ucount'):
+        codings_with_iucount = codings[codings[which] > 0]
+        per_code_percent = pd.crosstab(index=codings_with_iucount['code'], columns="count", 
+                                       normalize='columns').round(3) * 100
+        per_code_percent.columns = ['percent']
+        per_code_percent.index.name = which
+        print(per_code_percent.sort_values(by='percent', ascending=False))
+
+    
 
 def _printheader():
     """Print separator header giving the function name from two stackframes up."""
