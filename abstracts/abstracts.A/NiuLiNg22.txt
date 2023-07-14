@@ -3,33 +3,33 @@ SPT-Code: Sequence-to-Sequence Pre-Training for Learning Source Code Representat
 Recent years have seen the successful application of large pre-
 trained models to code representation learning, resulting in sub-
 stantial improvements on many code-related downstream tasks.
-{{}}
+{{background}}
 But there are issues surrounding their application to SE tasks.
-{{}}
+{{background}}
 First,
 the majority of the pre-trained models focus on pre-training only
 the encoder of the Transformer.
-{{}}
+{{gap}}
 For generation tasks that are ad-
 dressed using models with the encoder-decoder architecture, how-
 ever, there is no reason why the decoder should be left out during
 pre-training.
-{{}}
+{{gap}}
 Second, many existing pre-trained models, including
 state-of-the-art models such as T5-learning, simply reuse the pre-
 training tasks designed for natural languages.
-{{}}
+{{gap}}
 Moreover, to learn
 the natural language description of source code needed eventually
 for code-related tasks such as code summarization, existing pre-
 training tasks require a bilingual corpus composed of source code
 and the associated natural language description, which severely
 limits the amount of data for pre-training.
-{{}}
+{{gap}}
 To this end, we propose
 SPT-Code, a sequence-to-sequence pre-trained model for source
 code.
-{{}}
+{{objective}}
 In order to pre-train SPT-Code in a sequence-to-sequence
 manner and address the aforementioned weaknesses associated
 with existing pre-training tasks, we introduce three pre-training
@@ -38,9 +38,9 @@ knowledge of source code, the corresponding code structure, as well
 as a natural language description of the code without relying on
 any bilingual corpus, and eventually exploit these three sources of
 information when it is applied to downstream tasks.
-{{}}
+{{design}}
 Experimental
 results demonstrate that SPT-Code achieves state-of-the-art perfor-
 mance on five code-related downstream tasks after fine-tuning.
-{{}}
+{{method:i1,result:i2:u1}}
 ---

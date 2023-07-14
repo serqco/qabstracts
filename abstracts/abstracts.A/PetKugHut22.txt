@@ -1,49 +1,49 @@
 Defining adaptivity and logical architecture for engineering (smart) self-adaptive cyber-physical systems.
 
 Context:
-{{}}
+{{h-background}}
 Modern cyber-physical systems (CPSs) are embedded in the physical world and intrinsically operate
 in a continuously changing and uncertain environment or operational context.
-{{}}
+{{background}}
 To meet their business goals and
 preserve or even improve specific adaptation goals, besides the variety of run-time uncertainties and changes
 to which the CPSs are exposed—the systems need to self-adapt.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 The current literature in this domain still lacks a precise definition of what self-adaptive systems are
 and how they differ from those considered non-adaptive.
-{{}}
+{{background}}
 Therefore, in order to answer how to engineer selfadaptive CPSs or self-adaptive systems in general, we first need to answer what is adaptivity, correspondingly
 self-adaptive systems.
-{{}}
+{{need}}
 Method:
-{{}}
+{{h-method}}
 In this paper, we first formally define the notion of adaptivity.
-{{}}
+{{objective}}
 Second, within the frame of the formal
 definitions, we propose a logical architecture for engineering decentralised self-adaptive CPSs that operate in
 dynamic, uncertain, and partially observable operational contexts.
-{{}}
+{{objective}}
 This logical architecture provides a structure
 and serves as a foundation for the implementation of a class of self-adaptive CPSs.
-{{}}
+{{objective}}
 Results:
-{{}}
+{{h-result}}
 First, our results show that in order to answer if a system is adaptive, the right framing is necessary:
-{{}}
+{{result}}
 the system's adaptation goals, its context, and the time period in which the system is adaptive.
-{{}}
+{{result}}
 Second, we
 discuss the benefits of our architecture by comparing it with the MAPE-K conceptual model.
-{{}}
+{{a-result,method}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 Commonly accepted definitions of adaptivity and self-adaptive systems are necessary for work
 in this domain to be compared and discussed since the same terms are often used with different semantics.
-{{}}
+{{conclusion}}
 Furthermore, in modern self-adaptive CPSs, which operate in dynamic and uncertain contexts, it is insufficient
 if the adaptation logic is specified during the system's design, but instead, the adaptation logic itself needs to
 adapt and "learn" during run-time.
-{{}}
+{{conclusion}}
 ---
