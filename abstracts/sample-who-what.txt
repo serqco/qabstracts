@@ -315,14 +315,14 @@ KulGreDeu22   Lloyd
 AlbGorHer22   Lloyd
 JahCev22      Lloyd
 #----- Block 36
-ShrHalEdw22   
-AliMus22   
-NiuLiNg22   
-FouConMen22   
-PetKugHut22   
-CheSuo22   
-PreMohVil22   
-WuXuNiu22   
+ShrHalEdw22   -Lloyd
+AliMus22      -Lloyd
+NiuLiNg22     -Lloyd
+FouConMen22   -Lloyd
+PetKugHut22   -Lloyd
+CheSuo22      -Lloyd
+PreMohVil22   -Lloyd
+WuXuNiu22     -Lloyd
 #----- Block 37
 AsaGas22   
 SaiOunMka22   
