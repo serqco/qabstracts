@@ -1,5 +1,7 @@
 import argparse
 import datetime as dt
+import subprocess
+import typing as tg
 
 import numpy as np
 import pandas as pd
@@ -87,7 +89,7 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
                            "how often occuring [%]", ymax=66)
 
     # ----- timeline:
-    plot_qabstracts_timeline(outputdir)
+    plot_qabstracts_timeline_commits(outputdir)
 
 
 def plot_ab_topicstructure_freqs_design(df: pd.DataFrame, outputdir: str):
@@ -116,7 +118,7 @@ def plot_ab_topicstructure_freqs(df: pd.DataFrame, outputdir: str):
     plt.savefig(filename)
 
 
-def plot_qabstracts_timeline(outputdir: str):
+def plot_qabstracts_timeline_bars(outputdir: str):
     def d(datestring: str):
         return dt.datetime.strptime(datestring, "%Y-%m-%d")
     THICKNESS = 0.5
@@ -138,6 +140,38 @@ def plot_qabstracts_timeline(outputdir: str):
     for idx, row in df.iterrows():
         plt.text(x=row.datefrom, y=row.y + THICKNESS/2 + 0.05, s=row.label)
     plt.savefig(pt.plotfilename(outputdir))
+
+
+def plot_qabstracts_timeline_commits(outputdir: str):
+    """stripplots of the timestamps of various subsets of git commits"""
+    # ----- configs of the stripplots:
+    cases = [  # y, label, symbol, files
+        (5.0, "training", "T", "prestudy2/abstracts.?"),
+        (4.0, "codebook", "C", "codebook.md procedure.md"),
+        (3.0, "coding",   "A", "abstracts/abstracts.A"),
+        (2.8, "",         "B", "abstracts/abstracts.B"),
+        (2.0, "stat. eval.", "E", "script/qabs/plot.py script/qabs/printstats.py"),
+    ]
+    # ----- set up the plot:
+    plt.figure()
+    plt.yticks([y for y,l,s,f in cases], [l for y,l,s,f in cases])
+    plt.xlim(dt.date(2022, 6, 1), dt.date(2023, 10, 31))
+    # ----- plot the stripplots:
+    for y, label, symbol, files in cases:
+        timestamps = _git_commit_timestamps(files)
+        datetimes = [dt.datetime.fromtimestamp(ts) for ts in timestamps]
+        ys = np.random.uniform(low=y-0.2, high=y+0.2, size=len(datetimes))
+        plt.scatter(datetimes, ys, marker=f"${symbol}$", linewidths=0.1)  #  
+        # break
+    # ----- save the plot:
+    plt.savefig(pt.plotfilename(outputdir))
+
+def _git_commit_timestamps(filespec: str) -> tg.Sequence[int]:
+    git_cmd_base = "git log --pretty='format:%at' "  # one unix timestamp per line
+    result = subprocess.run(git_cmd_base + filespec, shell=True, capture_output=True)
+    assert not result.stderr, result.stderr
+    timestamps = [int(line) for line in result.stdout.splitlines(keepends=False)]
+    return timestamps
 
 
 if __name__ == '__main__':
