@@ -1,6 +1,5 @@
 import dataclasses
 import math
-import re
 import typing as tg
 from numbers import Number
 
@@ -64,9 +63,8 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
     and how to determine icount and ucount.
     """
     H_LEN = 10  # assumed number of chars corresponding to a h-* coding if there are multiple codings
-    sentence2 = _unlinebreak(annot_sentence.sentence)
-    words = _count_words(sentence2)
-    chars = len(sentence2)
+    words = annot_sentence.words
+    chars = annot_sentence.chars
     readability = annot_sentence.fk_readability  # counted N times for N-fold encodings
     no_readability = math.nan  # what should not be included in the total abstract average
     codings = (set(abstract.annots.split_into_codings(annot_sentence.annotation)) -
@@ -130,11 +128,6 @@ def prt(value: tg.Any, end_line=False):
     print(value, end='\n' if end_line else '\t')
 
 
-def _count_words(s: str) -> int:
-    spaces = re.findall(r"\s+", s)
-    return len(spaces) + 1  # each group of one-or-more blanks separates two words
-
-
 def _numberish(val) -> str:
     """Provide formatted string for value which may be int or NaN or a float that needs rounding."""
     if math.isnan(val):
@@ -143,8 +136,3 @@ def _numberish(val) -> str:
         return str(val)
     else:
         return "%.1f" % val
-
-
-def _unlinebreak(s: str) -> str:
-    """Dehyphenate words and replace normal line breaks by blanks."""
-    return s.replace("-\n", "").replace("\n", " ")  # will a hyphen _always_ come out as an ASCII dash?
