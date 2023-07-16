@@ -1,3 +1,4 @@
+fkscore
 matplotlib
 numpy
 pandas
