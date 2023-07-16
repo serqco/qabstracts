@@ -38,6 +38,7 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
              sentences=_nagg('sidx', 'max'),
              words=_nagg('words', 'sum'), 
              chars=_nagg('chars', 'sum'), 
+             fkscore=_nagg('fkscore', 'mean'), 
              codes=_nagg('code', 'count'), 
              utopics=_nagg('topic', 'nunique'),
              icount=_nagg('icount', 'sum'), 
@@ -81,6 +82,7 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
     res = add_codefraction_x(res, 'a-result')
     res = add_codefraction_x(res, 'a-conclusion')
     res = add_codefraction_x(res, 'a-fposs')
+    res['avg_wordlength'] = (res.chars - 1.2*res.words) / res.words  # deduct spaces and punctuation
     res['fraction_introduction'] = res.fraction_background + res.fraction_gap
     res['total_gaps'] = res.icount + res.ucount + 3 * res.announcecount  # count each 'a-*' as 3 gaps
     return res
