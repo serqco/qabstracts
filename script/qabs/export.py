@@ -67,6 +67,8 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
     sentence2 = _unlinebreak(annot_sentence.sentence)
     words = _count_words(sentence2)
     chars = len(sentence2)
+    readability = annot_sentence.fk_readability  # counted N times for N-fold encodings
+    no_readability = math.nan  # what should not be included in the total abstract average
     codings = (set(abstract.annots.split_into_codings(annot_sentence.annotation)) -
                {abstract.codebook.IGNORECODE})  # forget IGNORECODEs
     codes_done = set(abstract.codebook.GARBAGE_CODES)  # consider them done right from the start
@@ -75,7 +77,7 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
     for code, csuffix in codings:
         if code not in codes_done and abstract.codebook.is_extra_code(code):
             codes_done.add(code)
-            prt_record(abstract, idx, words, chars,
+            prt_record(abstract, idx, words, chars, no_readability,  # words, chars: sic?
                        abstract.annots.bare_codename(code), csuffix, abstract.codebook.topic(code), 
                        math.nan, math.nan)
     # ----- process h-* codes (which count only 1 word):
@@ -83,7 +85,7 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
         if code not in codes_done and abstract.codebook.is_heading_code(code):
             codes_done.add(code)
             prt_record(abstract, idx,
-                       1 if multiple else words, H_LEN if multiple else chars,
+                       1 if multiple else words, H_LEN if multiple else chars, no_readability,
                        abstract.annots.bare_codename(code), csuffix, abstract.codebook.topic(code), 
                        0, 0)
     words -= len(codes_done)
@@ -96,7 +98,7 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
     for code, csuffix in codings:
         if code not in codes_done and not csuffix:
             codes_done.add(code)
-            prt_record(abstract, idx, words, chars,
+            prt_record(abstract, idx, words, chars, readability,
                        code, csuffix, abstract.codebook.topic(code), 
                        0, 0)
     # ----- process remaining codes with explicit or implicit IU suffix:
@@ -105,7 +107,7 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
             codes_done.add(code)
             assert abstract.codebook.can_have_iu_suffix(code)
             icount, ucount = abstract.annots.get_iu_counts(csuffix)
-            prt_record(abstract, idx, words, chars,
+            prt_record(abstract, idx, words, chars, readability,
                        code, csuffix, abstract.codebook.topic(code), 
                        icount, ucount)
 
@@ -113,14 +115,14 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
 def prt_head():
     """Print header line for output file. Corresponds to prt_record."""
     prt("citekey\tvenue\tvolume\tcoder\tcodername")
-    prt("sidx\twords\tchars")
+    prt("sidx\twords\tchars\tfkscore")
     prt("code\tsuffixes\ttopic\ticount\tucount", end_line=True)
 
 
-def prt_record(a: Abstract, idx: int, words: Number, chars: Number,
+def prt_record(a: Abstract, idx: int, words: Number, chars: Number, fkscore: Number,
                code: str, suffixes: str, topic: str, icount: Number, ucount: Number):
     prt(f"{a.citekey}\t{a.venue}\t{a.volume}\t{a.coder_letter}\t{a.coder}")  # file-related
-    prt(f"{idx}\t{_numberish(words)}\t{_numberish(chars)}")  # sentence-related
+    prt(f"{idx}\t{_numberish(words)}\t{_numberish(chars)}\t{_numberish(fkscore)}")  # sentence-related
     prt(f"{code}\t{suffixes}\t{topic}\t{_numberish(icount)}\t{_numberish(ucount)}", end_line=True)  # coding-related
 
 
