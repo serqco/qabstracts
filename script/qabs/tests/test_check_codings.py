@@ -14,8 +14,8 @@ def test_check_code():
     check_code_tests = [
         ("background", "", None),
         ("a-result", "", None),
-        ("-hype", "", None),
         ("method", "", None),
+        ("result", "hype", None),
         ("method", ":i4", None),
         ("background", ":i1", "suffix 'i1' not allowed for code 'background': background:"),
         ("bjective", "", "unknown"),
@@ -36,10 +36,10 @@ def test_report_errors_within_braces():
         ("{{background}}", 0),
         ("{{objective,method}}", 0),
         ("{{objective, method:i3}}", 0),
-        ("{{method,result:u1,-hype}}", 0),
+        ("{{method,result:u1:hype}}", 0),
         ("{{backgr}}", 1),
         ("{{objective:2, method:i}}", 2),
-        ("{{method,result,-hype,stuff}}", 1),
+        ("{{method,result:hype,stuff}}", 1),
     ]
     for annot, errcount in tests:
         errors = cc.report_errors_within_braces(annot, annots)
