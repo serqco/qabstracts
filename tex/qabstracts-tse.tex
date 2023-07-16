@@ -229,7 +229,9 @@ And in almost all of those cases, including \cite{DupKhoLeb03} and \cite{ShaHar0
 the answer is: structured abstracts have fewer quality issues.
 
 Such research can be highly influential.
-For instance, \cite{HarSydBlu96} is cited in the CONSORTS report \cite{MohHopSch12},
+For instance, \cite{HarSydBlu96} 
+% https://journals.sagepub.com/doi/epdf/10.1177/016555159602200503
+is cited in the CONSORTS report \cite{MohHopSch12},
 which defines reporting guidelines for controlled experiments and has about
 10000 citations.
 
@@ -259,10 +261,10 @@ Prestudy2 was for codebook refinement,
 coding procedure development,
 and coder training.
 Fullstudy was for all other elements.
-See Figure~\ref{qabstracts_timeline} for a timeline of the lengthier aspects of the study.
+See Figure~\ref{qabstracts_timeline_commits} for a timeline of the lengthier aspects of the study.
 
-\Plot{qabstracts_timeline}{%
-	When the longer parts and elements of the study happened. (VEEERY PRELIMINARY!!!)}
+\Plot{qabstracts_timeline_commits}{%
+	Timeline of the main study phases and their individual events.}
 
 
 \subsection{Data Availability}
@@ -431,6 +433,18 @@ Venues: Prescribe structured abstracts: Background (not Context); Design (if nee
 	Typical abstracts are 8 to 14 sentences long.
 	Structured abstracts tend to be longer than unstructured ones.
 	IST requires structured abstracts, the other venues do not.}
+\Plot{boxplots_avg_wordlength}{%
+	The average length of words is similar in all subgroups.}
+\Plot{boxplots_fkscore}{%
+	Flesch-Kincaid 'reading ease' readability score, higher is better.
+    Values under 50 are considered difficult to read (college-level material).
+    Under 30: very difficult to read (graduate level, suitable for abstracts).
+	Under 10: extremely difficult to read (overly difficult).
+    Differences between subgroups are modest. 
+	ICSE is best (mean 20), TOSEM is worst (mean 13).
+    Structured abstracts are just as difficult as nonstructured ones
+    if one ignores the "Methods:" etc. headings as we did here.
+}
 \Plot{boxplots_icount}{%
   A majority of abstracts has one or more "informativeness gaps".
   The problem tends to be smaller in structured abstracts.}
