@@ -33,4 +33,8 @@ created: Lutz Prechelt, 2023-01-27
   to the codebook until end of April.
 - 2023-03-10 intro meeting with Franz Zieris and Julian Frattini.
 - 2023-05-02 introduced script/qscript submodule and qconclusions team
+- 2023-07-04 half of the theoretical maximum of blocks is done: 33
+- 2023-07-12 agreement to drive forward the analysis and article-writing to see
+  where we actually need more data.
+  (Today, the study has been running for exactly one year.)
 - ...
