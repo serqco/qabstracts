@@ -41,7 +41,7 @@ Analysing
 the differences in these systems allows us to get insights into where the diversity in the
 behaviour of these systems comes from, how does it evolve and whether this has any effect
 on the alerting behaviour of these IDSs.
-{{conclusion}
+{{conclusion}}
 This analysis gives insight to security architects on
 how they can combine and layer these systems in a defence-in-depth deployment.
 {{conclusion}}
