@@ -5,6 +5,7 @@
 %\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
 %\usepackage{stfloats}
 \usepackage{url}
+\usepackage{hyperref}
 %\usepackage{verbatim}
 \usepackage{graphicx}
 \graphicspath{ {../img} {.} }
@@ -23,8 +24,12 @@
 		\vspace{-4mm}\caption{#2}\label{#1}%
     \end{figure*}}
 
-\newcommand{\Todo}[1]{\bgroup\bf\Large #1\egroup}
-\newcommand{\Quote}[1]{\bgroup\it #1\egroup}
+\newcommand{\Cb}[1]{\bgroup\scshape #1\egroup}  % typeset a code name
+\newcommand{\Prg}[1]{\bgroup\ttfamily #1\egroup}  % typeset commands etc.
+
+\newcommand{\Todo}[1]{\bgroup\bfseries\Large #1\egroup}
+\newcommand{\Quote}[1]{\bgroup\itshape ``#1´´\egroup}
+\newcommand{\QuoteCB}[1]{\Quote{#1}}
 
 
 \begin{document}
@@ -96,6 +101,7 @@ The present article aims at substantiating this impression.
 
 % we use the numbers only in this subsection and the next;
 % everywhere else we repeat the question or paraphrase it.
+\noindent 
 We ask several questions:
 \begin{enumerate}
 	\item What does a typical well-written abstract look like?
@@ -113,19 +119,19 @@ the answer to number 5 we consider a conclusion from the answers to the other fo
 
 No firm expectations regarding questions 1 and 2 exist for engineering articles,
 so qualitative methods will have to be used for them:
-We start our research by open coding \cite{StrCor90} in order to derive a vocabulary (a set of concepts or codes)
+We start our research by open coding~\cite{StrCor90} in order to derive a vocabulary (a set of concepts or codes)
 by which the nature of a particular abstract can be characterized.
 
-At the same time, we intend to convince even people who are skeptical of qualitative research
+We intend to convince even people who are skeptical of qualitative research
 regarding our answers to questions 3, 4, and 5 and regarding the need to improve
 the quality of software engineering abstracts.
-Therefore, we continue the research by performing a nearly objective 
-quantitative content analysis for number 3
-and apply an elaborate seven-step approach that even allows for quantifying the
-remaining amount of subjectivity we could not eliminate.
+Therefore, we continue the research by performing a repeatable
+quantitative content analysis~\cite[Chapter 7]{Krippendorff04} for number 3
+on a large sample of presumably high-quality abstracts
+and apply an elaborate seven-step approach for maximizing its reliability.
 
 The final stage is the statistical evaluation of the content analysis data,
-which is again exploratory in principle, but actually straightforward in both
+which is again exploratory and is straightforward in both
 the questions it asks and the statistical methdods it uses for answering them.
 
 
@@ -133,7 +139,7 @@ the questions it asks and the statistical methdods it uses for answering them.
 
 Our contributions correspond to the research questions as follows:
 \begin{enumerate}
-	\item As for the structure of well-written abstracts, we present an "abstract archetype"
+	\item As for the structure of well-written abstracts, we present an ``abstract archetype´´
 	  that describes fixed parts of the structure and degrees of freedom. 
 	\item We describe and discuss !!! types of deficiency 
 	\item We quantify the frequency of each deficiency for the entire sample of abstracts
@@ -156,24 +162,24 @@ Instead, we only provide examples of the different major perspectives of those s
 and otherwise focus on what has been done in the software engineering domain.
 
 
-\subsection{Abstract Structure}
+\subsection{Abstracts Structure}
 
-Swales introduced "genre analysis" as a means for teaching academic reading and writing
-especially to non-native speakers in 1990 \cite{Swales90}.
+Swales introduced ``genre analysis´´ as a means for teaching academic reading and writing
+especially to non-native speakers in 1990~\cite{Swales90}.
 Genres are text types and genre analysis means deconstructing the composition
 of texts (of that text type) in terms that help understand the elements in
 terms of their syntactical structure, content, role, and interrelationships
 (e.g. their relative position within the whole).
 
 For our purposes here, the most relevant idea from genre analysis is the notion
-of "moves", which are, roughly speaking, the building blocks used by the writers
+of ``moves´´, which are, roughly speaking, the building blocks used by the writers
 for making their overall point.
 Several studies have looked at the move structure of research abstracts
 in different fields such as 
-applied linguistics \cite{DosSantos96} or
-protozoology \cite{CroOpp06}.
+applied linguistics~\cite{DosSantos96} or
+protozoology~\cite{CroOpp06}.
 Despite the differences of research content, they find very similar move structures.
-For instance, \cite{CroOpp06} formulates
+For instance,~\cite{CroOpp06} formulates
 \begin{quote}
 	move 1 situates the research within the scientific community;\\
 	move 2 introduces the research by either describing the main features of the
@@ -188,11 +194,11 @@ but abstracts of artifact-centric works (tool building) do not fit this model an
 an extended one.
 
 
-\subsection{Abstract Quality}
+\subsection{Abstracts Quality}
 
-Once a "good" structure for abstracts is known, it provides an approach for
+Once a ``good´´ structure for abstracts is known, it provides an approach for
 discussing the quality of specific actual abstracts.
-For instance, \cite{CroOpp06}, where quality assessment is not a main goal,
+For instance~\cite{CroOpp06}, where quality assessment is not a main goal,
 nevertheless finds that one third of the 12 abstracts studied
 is lacking move 2 (stating a purpose).
 
@@ -221,17 +227,17 @@ In this manner,
 In many cases, and in particular in those parts of the biomedical domain 
 where controlled experiments are the norm, quality-oriented studies do not study
 quality in general.
-For instance neither \cite{DupKhoLeb03} nor \cite{ShaHar06} reports
+For instance neither~\cite{DupKhoLeb03} nor~\cite{ShaHar06} reports
 which of their items are missing most frequently.
 Rather, their research question is the relative quality of structured abstracts
 versus unstructured ones. 
-And in almost all of those cases, including \cite{DupKhoLeb03} and \cite{ShaHar06},
+And in almost all of those cases, including~\cite{DupKhoLeb03} and~\cite{ShaHar06},
 the answer is: structured abstracts have fewer quality issues.
 
 Such research can be highly influential.
-For instance, \cite{HarSydBlu96} 
+For instance,~\cite{HarSydBlu96} 
 % https://journals.sagepub.com/doi/epdf/10.1177/016555159602200503
-is cited in the CONSORTS report \cite{MohHopSch12},
+is cited in the CONSORTS report~\cite{MohHopSch12},
 which defines reporting guidelines for controlled experiments and has about
 10000 citations.
 
@@ -244,77 +250,346 @@ which defines reporting guidelines for controlled experiments and has about
 
 \subsection{Overview}
 
-\noindent
-This is a mixed-method study, consisting of three nominally sequential structural parts
-(Prestudy1, Prestudy2, Fullstudy) and
-four overlapping and partially iterative semantic elements
-(codebook development, quantitative content analysis,
-statistical evaluation, interpretation).
+Our study is a full-blown content analysis in the sense of Krippendorff~\cite{Krippendorff04}:
+not just a counting exercise with a fixed codebook, 
+but rather an iterative codebook development before (and during) the counting
+and an extensive abductive inference exercise after the counting.
+
+It can be conceptualized as consisting of four widely overlapping stages or phases
+as shown in Figure~\ref{qabstracts_timeline_commits}:
+%
+\Plot{qabstracts_timeline_commits}{%
+	Timeline of the main study phases and their individual events.
+    Each character's x-coordinate represents the time of a git commit.
+    The vertical scattering is added for legibility only and is not meaningful.}
+%
+Codebook development, which started first and is described in Sections~\ref{meth_codingrules}
+and \ref{meth_codebook},
+defined the rules and target concepts of the counting.
+Training was for developing a joint understanding of the codebook and also contributed
+greatly to the codebook's early evolution;  
+it is described in Section~\ref{meth_training}
+Coding worked on a large sample of abstracts from top-quality venues described in 
+Section~\ref{meth_sample} and produced the count data subsequently used in the statistical analysis.
+Coding is described in Section~\ref{meth_coding}.
+Statistical evaluation 
 
 Overall, we consider our study to be a qualitative one, but note that the middle two elements,
-quantitative content analysis and statistical evaluation,
-are compatible with a positivist epistemology (with "objective" results) so that 
+coding and statistical evaluation,
+are compatible with a positivist epistemology (with ``objective´´ results) so that 
 the final interpretation is done on a solid quantitative foundation.
-
-Prestudy1 was for initial codebook development.
-Prestudy2 was for codebook refinement,
-coding procedure development,
-and coder training.
-Fullstudy was for all other elements.
-See Figure~\ref{qabstracts_timeline_commits} for a timeline of the lengthier aspects of the study.
-
-\Plot{qabstracts_timeline_commits}{%
-	Timeline of the main study phases and their individual events.}
 
 
 \subsection{Data Availability}
 
-\noindent
-Full detail, including detailed execution history, available on GitHub:
-Codebook, handling procedure, coded abstracts, scripts for automation, scripts for stats and plots.
+We publish not only the outcome of our study, but also most parts of its development and
+execution history in full detail: as a git version respository.
+It includes all versions of the 
+codebook, handling procedure, coded abstracts, Python scripts for automation,
+Python scripts for tabulations and plots, and the manuscript of this article.
+Find it at \url{https://github.com/serqco/qabstracts/}.
 
 
-\subsection{Codebook Development}
+\subsection{Coding Rules}\label{meth_codingrules}
 
-\noindent
-Open coding in GTM fashion (grounding, constant comparison, concept memos).
-Initially structured abstract (describe!); then discovered archetype and extended set of codes; lots of clarification during coder training.
-49!!! codes; see codebook for details.
-Codes for key parts are subtle ( e.g. gap must lead "directly" to objective).
+Besides the definition of the content categories (codes),
+our codebook contains global rules for the coding that can be summarized as follows: 
+we code by sentence; 
+we prefer single codes per sentence over multi-codings; 
+for chosing a code, we act like readers and consider only what we have seen before plus 
+one sentence forward context when needed and only when needed; 
+be friendly and avoid coding negative properties whenever an alterative, more positive 
+interpretation is plausible as well.
 
 
-\subsection{Coding Rules}
+\subsection{Codebook Development}\label{meth_codebook}
 
-\noindent
-by sentence; prefer single codes; consider only 1 sentence forward context (like readers); be friendly
+
+\subsubsection{\Cb{background, objective, method, result, conclusion}}
+
+The codebook was initialized with concepts for the five sections commonly used 
+in a structured abstract\footnote{In Krippendorfs terminology, this is an ``established theories´´ justification
+of analytical constructs~\cite[Section 9.2.3]{Krippendorff04}.}: 
+\Cb{background, objective, method, result, conclusion}.
+These represent, respectively: context information, the study goal or question, 
+empirical approach, empirical outcomes, and a take-home message that generalizes beyond the results.
+
+Each code is defined by a short verbal explanation.
+For example the definition of \Cb{method} reads
+\QuoteCB{information about the approach or setup of an empirical (or possibly purely mathematical) study.}.
+The initial definitions were made more and more precise and unambiguous by later
+codebook refinements.
+For example for \Cb{method}, the part \QuoteCB{(or possibly purely mathematical)} was initially not present
+and was added when we encountered the first of those (very few) purely mathematical studies
+during the coding process and were confused which code was appropriate for some sentence.
+To help disambiguation, a few of the definitions need to be much longer than the above.
+
+
+\subsubsection{Artifact-centric studies: \Cb{design}}
+
+In a phase internally called ``prestudy´´, the codebook was then refined and extended
+based on coding attempts for a stratified sample of 20 abstracts from ICSE 2021.
+% we used every 7th article, which constitutes stratification by virtue of the
+% topic-centric session blocks in which the program is arranged.
+We quickly recognized that additional codes were 
+needed\footnote{In Krippendorfs terminology, this is an ``expert knowledge and experience´´ justification
+    of analytical constructs~\cite[Section 9.2.2]{Krippendorff04}:
+    As software engineering researchers, we recognize when a sentence makes a different kind
+    of contribution to an abstract than can be described by existing codes,
+	and we are able to define what kind of contribution it is.}.
+Most importantly\footnote{For brevity, we leave rare or unimportant codes out of the description.}, 
+many software engineering articles do not predominantly talk about
+an empirical study, their focus is the design of some artifact, most often a tool,
+sometimes a method or something else.
+Much of the abstract is then spent on design considerations, design decisions,
+techniques applied in implementation, and so on.
+Such artifact-centric studies, although they also usually contain an empirical study,
+are very different in nature from purely empirical studies; 
+we therefore introduced the code \Cb{design} to mark such material.
+\Cb{design} has the longest definition of all our codes: 170 words.
+
+
+\subsubsection{Refinements: \Cb{gap, summary, fposs} etc.}
+
+At various later points during the work, we recognized a need for more granular coding
+in order to capture differences in abstract writing we wanted to measure.
+This led to the splitting of existing codes and the introduction of additional ones.
+We then reworked existing codings to use the new codes consistently throughout.
+
+The most important cases of such additional codes are these:
+\Cb{gap} sentences state what is unknown or not yet possible.
+\Cb{summary} sentences summarize several results, but do not provide new information.
+In contrast to a \Cb{conclusion}, a summary statement does not generalize beyond the immediate results.
+\Cb{fposs}, \Cb{fneed}, \Cb{fwork} sentences occur at the end of abstracts.
+They state what future work is now possible, needed, or planned-by-the-authors.
+
+% TODO: examples of gap, summary, fposs, conclusion
+
+
+\subsubsection{Subjective additions: \Cb{:i, :u, :hype}}
+
+The codes described so far aim at codifying repeatable properties,
+where several well-trained coders will come to the same result with high probability.
+In addition, we defined a number of suffixes for codes, by which coders can provide
+additional information for which the expectation of agreement is much lower.
+These are also not neutral, like the codes themselves, but all describe some 
+kind of deficiency.
+The most important of these suffixes are the following:
+
+Informativeness gaps are spots in a sentence where the coder desired to know
+additional detail that is presumably available to the authors and 
+that can presumably be provided in very little space.
+Example (from LiuFenYin22): 
+\Quote{To evaluate DeepState, we conduct an extensive empirical study on popular datasets 
+and prevalent RNN models containing image and text processing tasks.}
+This sentence was coded as \Cb{method:i2}, because the coder asked himself
+\Quote{How many datasets? How many RNN models?}
+The answers are both given in that article's Table 3: Four datasets, three models.
+The authors could and should have given that information in the abstract.
+
+Understandability gaps are spots in a sentence where the coder finds his usual intuitive 
+half-understanding of a term used in the abstract insufficient for understanding
+the abstract overall.
+
+\Todo{example of :u1}
+
+The \Cb{:hype} suffix marks statements that praise the article far more
+than warranted, often by using exaggerated adverbs such as ``extremely´´.
+
+
+\subsubsection{Codes for announcements: \Cb{a-*}}
+
+Sometimes, statements do not merely have informativeness gaps,
+they provide no concrete information at all.
+We call such statements announcements (because their presence insinuates there will
+be information about this in the article body) and provide extra codes for them.
+
+For example, here is a real method announcement from BesMarBos22:
+\Quote{As a second step, this study sets out to specifically
+  provide a detailed assessment of additional and in-depth analysis of technical debt management strategies based
+  on an encouraging mindset and attitude from both managers and technical roles to understand how, when and by
+  whom such strategies are adopted in practice.}
+So many words, yet we learn nothing about how 
+the assessment\footnote{Also, the sentence appears to be broken in that part.} 
+or the analysis work.
+
+Here is a results announcement from FlyChaDye22:
+\Quote{Based on those results, we then used the Boa and Software
+  Heritage infrastructures to help identify and quantify several sources of dirty Git timestamp data.}
+The first part is \Cb{method}, the second should have been \Cb{result},
+but, alas, we learn nothing about those sources' nature or number or impact.
+
+
+\subsubsection{Codes for headings: \Cb{h-*}}
+
+We also have codes for the headings used in structured abstracts.
+These codes are conceptual, i.e., for instance 
+\Quote{Aim:}, \Quote{Goal:}, \Quote{Objective:}, \Quote{Question:}, and their plural forms
+would all be coded as \Cb{h-objective}.
+Likewise, there are \Cb{h-background}, \Cb{h-method}, and so on.
+We recognize structured abstracts by the presence of such a heading code.
+
+
+\subsection{Training}
+
+The training phase (internally called ``prestudy2´´) served two purposes:
+Finding/repairing deficiencies in the codebook,
+and arriving at a joint interpretation of it across the four coders 
+(the four authors\footnote{Four more people were involved in the training phase at some
+  point but did not eventually join the study.})
+As you can see in Figure~\ref{qabstracts_timeline_commits},
+the training phase extended over almost half a year and triggered
+the majority of the codebook improvements.
+
+In the training phase, we perfected the mechanics of the coding process
+described below, in particular the very useful \Prg{compare-codings} script
+and email routine,
+and generally formed as a research team.
 
 
 \subsection{Sample}
 
+We decided not to aim for a broad selection of all software engineering research,
+but rather concentrate on what is presumably the highest quality material:
+The ICSE technical research track,
+the three journals allowed for journal-first presentations at ICSE
+(Empirical Software Engineering EMSE, 
+ACM Transactions on Software Engineering and Methodology TOSEM, 
+IEEE Transactions on Software Engineering TSE).
+Since we expected to find that structured abstracts had better quality
+than unstructured ones, we added a fifth venue that required structured abstracts:
+Information and Software Technology (IST, an Elsevier journal).
+IST has published many very good systematic literature reviews and methods works,
+but is not \emph{generally} considered a top-quality venue.
+
+We wanted to draw a random sample of 100 articles per venue from the
+2022 volumes, but found that TOSEM has published only 86 articles per year,
+so we ended up at 486 articles initially.
+A few of those later had to be removed because they were other things,
+often editorials.
+Furthermore, we eventually did not need quite as much data for answering our
+questions and stopped coding after !!! abstracts.
+Still, ours is the largest manual study of abstracts we know of.
+
+Volume downloading, sampling, and abstract extration into publishable 
+and annotation-ready text files were all done automatically by the
+retrievelit\footnote{\url{https://github.com/serqco/retrievelit/}},
+select-sample, and prepare-sample scripts, respectively.
+
+
+\subsection{Coding process}
+
 \noindent
-Presumably-top-quality venues EMSE, ICSE TR, TOSEM, TSE,
-plus IST for structured abstracts.
-Random sample from 2022 population.
-100 each, but TOSEM smaller.
+We code each abstract twice, by so-called coders A and B.\ 
+Abstracts are held in text files in separate directories \Prg{abstracts.A} and \Prg{abstracts.B}.
+Each sentence is followed by a line containing \Prg{\{\{\}\}} and into this pair of
+double braces the coders will enter their codings,
+such as \Prg{\{\{method,result:i2\}\}} for a complex sentence that contains substantial
+amounts of method information as well as results with two informativeness gaps.
+We batch the coding in blocks of 8 abstracts each.
+The procedure, coordinated via git, is best explained by example, 
+which we do in the following two subsections. 
 
 
-\subsection{Quantitative Content Analysis and Inter-Coder Disagreements}
+\subsubsection{Coding}
 
-\noindent
-Extract abstracts from PDFs; automatically split by sentence; manually add codes in {{}};
-code each abstract twice; script checks compatibility; coder B reconsiders; coder A reconsiders;
-A and B discuss remainder and resolve or add -ignorediff.
+1. When Lloyd wanted to code a block of abstracts on 2023-05-26,
+he found the next available block to be Block 17 B.
+(Lutz had coded Block 17 A previously.)
+Lloyd reserved the block in the coordination file \Prg{sample-who-what.txt}
+and performed the coding.
 
-Split disagreements into simple mistakes (and resolve those) and actual interpretation differences
-(limits of objectivity; actually usually quality issues, see below).
+2. He then ran \Prg{check-codings} to test his codings (for the occasional typo etc.)
+against the codebook and corrected the mistakes, if any.
+
+3. He then ran \Prg{compare-codings} to compare his codings against Lutz'.
+This script creates one report block for each sentence where the codings
+of coders A and B are not compatible.
+Compatible means: Differing at most in the subjective suffixes, but not in the codes
+(and not by more than one in the numbers of informativeness gaps and understandabity gaps).
+If Lloyd found a report block where Lutz' coding was obivously correct and his own
+obviously wrong, he would simply correct his coding.
+
+4. He would then commit his coded abstracts into git.
+
+
+\subsubsection{Handling disagreements}
+
+5. For the remaining report blocks, Lloyd would write an email to Lutz explaining his reasoning.
+
+6. Lutz would read through that email and categorize the report blocks into the following cases:
+a) Lloyd's coding is obviously correct, Lutz' own is a simple clerical error.
+Lutz would correct his coding and respond accordingly.
+Figure~\ref{email-MeyAlmKel22.png} shows such a case.\\
+b) Lutz finds Lloyd's coding clearly incorrect. 
+He would respond with an explanation why he thinks so.\\
+c) Lutz finds Lloyd's coding acceptable, but his own coding preferable.
+He would respond with an explanation of his reasoning and suggest that Lloyd
+either adjust his coding or add an \Cb{:ignorediff} suffix to it.
+This suffix silences the \Prg{compare-codings} script for this particular report block,
+so that the coding difference is now officially accepted.\\
+d) Lutz finds his own coding acceptable, but Lloyds preferable.
+He would either adjust his coding or add an \Cb{:ignorediff} suffix to it
+and respond accordingly.\\
+e) Lutz finds both codings equally acceptable.
+He would add an \Cb{:ignorediff} suffix to his own
+and respond accordingly, explaining is reasoning.\\
+
+7. Lutz would commit his corrected abstracts and send the response email.
+
+8. Lloyd would read the response email and usually act on it to finish the handling of 
+Block 17.
+Only very rarely would he disagree with something to a degree that would make
+another round of emails necessary.
+
+\begin{figure*}%
+	\centering\fbox{\includegraphics[width=0.95\textwidth]{email-MeyAlmKel22.png}}%
+	\vspace{-2mm}\caption{Excerpt from Lutz' response email during the disagreements handling
+	  for Block 17: 
+	  Report block from the \Prg{compare-codings} script at the top,
+	  text line from Lloyds first email in the middle,
+	  Lutz' response below.
+	  This one was a simple case; 
+	  sometimes several lines of text are provided by each coder.
+	  Overall, Lloyd's first email contained report blocks for 9 disagreements
+	  in 4 abstracts, both typical numbers.}\label{email-MeyAlmKel22.png}%
+\end{figure*}
+
+
+\subsubsection{Effect of this procedure}
+
+Most content analyses code most material only once, 
+then code a random subsample twice, 
+compute some coefficient of agreement, 
+report it as a measure of good-enough coding quality,
+and that's that.
+
+In contrast, our above-described procedure has two effects:
+\begin{enumerate}
+	\item It maximizes the quality of the coding.
+	  Very few clerical errors will have managed to escape our discussion process
+	  and the definitions of all codes that are sometimes difficult to tell apart
+	  have been refined until they were very mature.
+	\item It finds all those spots in the sample where the abstracts are so convoluted
+	  or strangely formulated that even our careful code definitions do not lead
+	  to a canonical judgment.
+	  These spots should clearly be considered to be badly written -- which is great,
+	  because that is what our study is interested in.
+\end{enumerate}
 
 
 \subsection{Statistical Evaluation}
 
-\noindent
-Plot-centric; straightforward; no bothering with confidence intervals.
+The difficult part of our statistical evaluation is asking the right questions;
+our data provides a lot of possibilities.
+In contrast, the actual statistical techniques are simple and straightforward:
+Mostly tabulations of counts or percentages, bar plots, and box plots.
 
-Verbal terms for frequencies: 
+We mostly refrain from performing significance tests or computing confidence intervals,
+because most analyses are exploratory, not driven by specific expectations or theories.
+The one exception from this rule is the comparison of structured versus unstructured abstracts.
+
+!!!Verbal terms for frequencies: 
 rare (less than 5\%),
 not rare (5-20\%),
 common (20-35\%),
@@ -324,8 +599,7 @@ dominant (over 50\%).
 
 \subsection{Interpretation}
 
-\noindent
-Driven by research interest; grounded as far as possible.
+!!!Driven by research interest; grounded as far as possible.
 Makes use of impressions not captured in the data.
 Choice of examples reflects those.
 
@@ -387,7 +661,7 @@ Should be over 90\% of articles.
 \subsection{How To: Structured Abstracts are more orderly}
 
 \noindent
-Re-analysis of "Convoluted Trains of Thought". 
+Re-analysis of ``Convoluted Trains of Thought´´. 
 
 
 
@@ -443,10 +717,10 @@ Venues: Prescribe structured abstracts: Background (not Context); Design (if nee
     Differences between subgroups are modest. 
 	ICSE is best (mean 20), TOSEM is worst (mean 13).
     Structured abstracts are just as difficult as nonstructured ones
-    if one ignores the "Methods:" etc. headings as we did here.
+    if one ignores the ``Methods:´´ etc. headings as we did here.
 }
 \Plot{boxplots_icount}{%
-  A majority of abstracts has one or more "informativeness gaps".
+  A majority of abstracts has one or more ``informativeness gaps´´.
   The problem tends to be smaller in structured abstracts.}
 \Plot{boxplots_ucount}{%
   Some abstracts have understandability gaps where an important concept is not explained at all.
@@ -462,7 +736,7 @@ Venues: Prescribe structured abstracts: Background (not Context); Design (if nee
 \Plotwide{nonzerofractionbar_xletgroups_missinginfofractions}{%
 	What fraction of abstracts has the following gaps?
 	Only announcing (instead of describing) methods, results, conclusions, possible future research.
-	Not reporting simple details ("informativeness gaps"), not explaining key terms ("understandability gaps").
+	Not reporting simple details (``informativeness gaps´´), not explaining key terms (``understandability gaps´´).
 	Announcing is generally not rare, in particular for results, and tends to be less pronounced
 	at IST. 
 	Missing to include detail once is dominant.
@@ -502,9 +776,10 @@ Venues: Prescribe structured abstracts: Background (not Context); Design (if nee
 
 \subsection{Acknowledgments}
 \noindent We thank Gesine Milde for cleansing the automatically extracted abstract texts.
-
-
-
+	
+\bibliographystyle{IEEEtran}
+\bibliography{special.bib}
+	
 %\begin{IEEEbiographynophoto}{Jane Doe}
 %Biography text here without a photo.
 %\end{IEEEbiographynophoto}

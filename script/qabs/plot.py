@@ -125,8 +125,8 @@ def plot_qabstracts_timeline_commits(outputdir: str):
     """stripplots of the timestamps of various subsets of git commits"""
     # ----- configs of the stripplots:
     cases = [  # y, label, symbol, files
-        (5.0, "training", "T", "prestudy2/abstracts.?"),
-        (4.0, "codebook", "C", "codebook.md procedure.md"),
+        (5.0, "codebook", "C", "codebook.md procedure.md"),
+        (4.0, "training", "T", "prestudy2/abstracts.?"),
         (3.0, "coding",   "A", "abstracts/abstracts.A"),
         (2.8, "",         "B", "abstracts/abstracts.B"),
         (2.0, "stat. eval.", "E", "script/qabs/plot.py script/qabs/printstats.py"),
