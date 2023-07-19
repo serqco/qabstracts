@@ -7,13 +7,13 @@ import qscript.plottypes as pt
 
 
 def print_all_stats(args: argparse.Namespace, datasets: argparse.Namespace, outputdir: str):
-    print_iucount_stats(datasets.df_primary1, datasets.by_ab)
     if args.printall:
         # print_abtype_table(datasets.by_ab)
         if args.withoutdesignworks:
             comment_out_design_works(args.withoutdesignworks, datasets.by_ab)
         print_abstracts_with_canonical_structure(datasets.ab_structures)
         print_ignorediff_stats(datasets.df_primary1, datasets.by_ab)
+        print_iucount_stats(datasets.df_primary1, datasets.by_ab)
 
 
 def comment_out_design_works(samplewhowhatfile: str, df: pd.DataFrame):
