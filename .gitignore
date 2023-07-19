@@ -6,6 +6,7 @@ img/*.png
 prestudy/pdf/
 prestudy/testdata.git
 results/
+tex/*.out
 tex/*.pdf
 tex/relatedworks/
 volumes/*/*.pdf
