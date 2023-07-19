@@ -333,14 +333,14 @@ NguGru22      Lloyd
 HanMeh22      Lloyd
 TyaSibSur22   Lloyd
 #----- Block 38
-LorMadMon22   
-LiYuWan22   
-WeiDenYan22   
-HuMarCza22   
-GarRaiFel22   
-JiaCheWan22   
-LinCasSer22   
-EbrTusMah22   
+LorMadMon22   -Lloyd
+LiYuWan22     -Lloyd
+WeiDenYan22   -Lloyd
+HuMarCza22    -Lloyd
+GarRaiFel22   -Lloyd
+JiaCheWan22   -Lloyd
+LinCasSer22   -Lloyd
+EbrTusMah22   -Lloyd
 #----- Block 39
 PapGroSub22   
 JaiVaiIye22   
