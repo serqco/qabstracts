@@ -2,36 +2,36 @@ Verification Approach for Refactoring Transformation Rules of State-Based Models
 
 With the increased adoption of Model-Driven Engineering (MDE), where models are being used as the primary artifact of
 software, it is apparent that greater attention to the quality of the models is necessary.
-{{}}
+{{background}}
 Traditionally, refactoring is used to enhance the
 quality of software systems at the source-code level; however, applying refactoring at the model level will have a more significant
 improvement on the system.
-{{}}
+{{background}}
 After refactoring a model, proving that it still preserves its original behavior is crucial.
-{{}}
+{{background}}
 In this paper, we
 present a process for applying refactoring transformations to the Extended Finite State Machine (EFSM) models using verified
 transformation rules that have been proven to preserve the model's original behavior.
-{{}}
+{{objective}}
 We provide a simplified three-step verification
 approach that can be used to prove that a transformation rule will generate a transformed model that is semantically equivalent to the
 original model.
-{{}}
+{{design}}
 To do this, we formally define semantical equivalence at three different levels of granularity:
-{{}}
+{{design}}
 models, sub-models, and
 transitions.
-{{}}
+{{design}}
 Additionally, we introduce five model transformation rules and we demonstrate how our verification approach is used to
 prove the correctness of these rules.
-{{}}
+{{design}}
 Finally, we present two case studies where we apply the proposed transformation process which
 adopts the five verified transformation rules.
-{{}}
+{{method}}
 Using model testing, we show that applying a sequence of transformations using the
 verified transformation rules will keep both the original and the transformed model semantically equivalent.
-{{}}
+{{result}}
 Additionally, the case
 studies show that model transformation can be used to enhance certain pre-defined model characteristics.
-{{}}
+{{result}}
 ---

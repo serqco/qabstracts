@@ -324,14 +324,14 @@ CheSuo22      Lloyd
 PreMohVil22   Lloyd
 WuXuNiu22     Lloyd
 #----- Block 37
-AsaGas22      -Lloyd
-SaiOunMka22   -Lloyd
-ArcGal22      -Lloyd
-AlmKorTah22   -Lloyd
-ZhoSioWan22   -Lloyd
-NguGru22      -Lloyd
-HanMeh22      -Lloyd
-TyaSibSur22   -Lloyd
+AsaGas22      Lloyd
+SaiOunMka22   Lloyd
+ArcGal22      Lloyd
+AlmKorTah22   Lloyd
+ZhoSioWan22   Lloyd
+NguGru22      Lloyd
+HanMeh22      Lloyd
+TyaSibSur22   Lloyd
 #----- Block 38
 LorMadMon22   
 LiYuWan22   
