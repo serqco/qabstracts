@@ -297,13 +297,13 @@ SelOunSai22   Lloyd       Julian
 WuJiaXia22    Lloyd       Julian
 WanXuCha22    Lloyd       Julian
 #----- Block 34
-HusPerWhi22   Lloyd
-KelKabPle22   Lloyd
-YedMen22      Lloyd
-YanShiHe22    Lloyd
-LiPenXia22    Lloyd
-UddAlaSer22   Lloyd
-MirLatPro22   Lloyd
+HusPerWhi22   Lloyd       -Julian
+KelKabPle22   Lloyd       -Julian
+YedMen22      Lloyd       -Julian
+YanShiHe22    Lloyd       -Julian
+LiPenXia22    Lloyd       -Julian
+UddAlaSer22   Lloyd       -Julian
+MirLatPro22   Lloyd       -Julian
 # LiWerErn22 Abstract is cut off.
 #----- Block 35
 ObaNagSpe22   Lloyd
