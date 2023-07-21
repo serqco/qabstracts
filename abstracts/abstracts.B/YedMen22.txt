@@ -2,18 +2,18 @@ On the Value of Oversampling for Deep Learning in Software Defect Prediction.
 
 One truism of deep learning is that the automatic feature engineering (seen in the first layers of those networks) excuses
 data scientists from performing tedious manual feature engineering prior to running DL.
-{{}}
+{{background}}
 For the specific case of deep learning for
 defect prediction, we show that that truism is false.
-{{}}
+{{objective}}
 Specifically, when we pre-process data with a novel oversampling technique called
 fuzzy sampling, as part of a larger pipeline called GHOST (Goal-oriented Hyper-parameter Optimization for Scalable Training), then we
 can do significantly better than the prior DL state of the art in 14/20 defect data sets.
-{{}}
+{{design,result}}
 Our approach yields state-of-the-art results
 significantly faster deep learners.
-{{}}
+{{result:i1}}
 These results present a cogent case for the use of oversampling prior to applying deep learning on
 software defect prediction datasets.
-{{}}
+{{conclusion}}
 ---

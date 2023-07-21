@@ -2,53 +2,53 @@ A qualitative study of developers&apos; discussions of their problems and joys d
 
 Many software developers started to work from home on a short notice during the early
 periods of COVID-19.
-{{}}
+{{background}}
 A number of previous papers have studied the wellbeing and productivity of software developers during COVID-19.
-{{}}
+{{background}}
 The studies mainly use surveys based on
 predefined questionnaires.
-{{}}
+{{background}}
 In this paper, we investigate the problems and joys that software
 developers experienced during the early months of COVID-19 by analyzing their discussions in online forum devRant, where discussions can be open and not bound by predefined
 survey questionnaires.
-{{}}
+{{objective,method}}
 The devRant platform is designed for developers to share their joys
 and frustrations of life.
-{{}}
+{{method}}
 We manually analyze 825 devRant posts between January and April
 12, 2020 that developers created to discuss their situation during COVID-19.
-{{}}
+{{method}}
 WHO declared
 COVID-19 as pandemic on March 11, 2020.
-{{}}
+{{background}}
 As such, our data offers us insights in the
 early months of COVID-19.
-{{}}
+{{method}}
 We manually label each post along two dimensions:
-{{}}
+{{method}}
 the topics of the discussion and the expressed sentiment polarity (positive, negative, neutral).
-{{}}
+{{method}}
 We
 observed 19 topics that we group into six categories:
-{{}}
+{{result}}
 Workplace & Professional aspects,
 Personal & Family well-being, Technical Aspects, Lockdown preparedness, Financial concerns, and Societal and Educational concerns.
-{{}}
+{{result}}
 Around 49% of the discussions are negative
 and 26% are positive.
-{{}}
+{{result}}
 We find evidence of developers’ struggles with lack of documentation
 to work remotely and with their loneliness while working from home.
-{{}}
+{{result}}
 We find stories of
 their job loss with little or no savings to fallback to.
-{{}}
+{{result}}
 The analysis of developer discussions
 in the early months of a pandemic will help various stakeholders (e.g., software companies)
 make important decision early to alleviate developer problems if such a pandemic or similar
 emergency situation occurs in near future.
-{{}}
+{{fposs}}
 Software engineering research can make further
 efforts to develop automated tools for remote work (e.g., automated documentation).
-{{}}
+{{fposs}}
 ---
