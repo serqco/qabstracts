@@ -610,6 +610,48 @@ Choice of examples reflects those.
 %========================================================================
 \section{Results}
 
+\subsection{Length and Readability}
+
+Typical abstracts (the middle half) are 200 to 290 words long
+and 8 to 14 sentences long.
+Structured abstracts tend to be longer than unstructured ones.
+\ifarxiv{See Figures \ref{boxplots_words} to \ref{boxplots_avg_wordlength} for details.}
+The official word limits of 
+150--250 for EMSE,
+maximum 300 for IST, and
+recommended maximum 250 for TSE
+are disobeyed by more than a quarter of all articles for each of these three venues.
+
+The Flesch-Kincaid readability score is a widely used metric that judges
+readability based only on the number of words per sentence and the number of 
+syllables per word. 
+Values under 30 represent graduate-level difficulty,
+under 10 extreme difficulty for native speakers.
+Considering that most community members are not native speakers of English,
+we judge 20 to 30 to be a range suitable for researcher audiences and so 
+we call anything over 30 ``good´´, 
+20 to 30 ``normal´´, and 
+under 20 ``overly difficult´´.
+
+See Figure~\ref{boxplots_fkscore} for the results:
+only about 10\% of all abstracts have good readability,
+less than 40\% have normal readability,
+and a majority is overly difficult --- one quarter is even below 10!
+ICSE is a bit better than the other venues,
+TOSEM is worse.
+
+\Plot{boxplots_fkscore}{%
+	Flesch-Kincaid 'reading ease' readability score, higher is better.
+    Values under 50 are considered difficult to read (college-level material).
+    Under 30: very difficult to read (graduate level, acceptable for abstracts).
+	Under 10: extremely difficult to read (overly difficult).
+    Differences between subgroups are modest. 
+	ICSE is best (mean 20), TOSEM is worst (mean 13).
+    Structured abstracts are just as difficult as nonstructured ones
+    if one ignores the ``Methods:´´ etc. headings as we did here.
+}
+
+
 \subsection{Design Articles vs. Empirical Articles}
 
 \noindent
@@ -699,85 +741,9 @@ Venues: Prescribe structured abstracts: Background (not Context); Design (if nee
 
 
 %========================================================================
-\appendix
-\section{Basic statistics}
-
-\Plot{boxplots_words}{%
-  Typical abstracts are 190 to 280 words long. 
-  Structured abstracts tend to be longer than unstructured ones, 
-  although IST abstracts overall (including the design articles) do not.}
-\Plot{boxplots_sentences}{%
-	Typical abstracts are 8 to 14 sentences long.
-	Structured abstracts tend to be longer than unstructured ones.
-	IST requires structured abstracts, the other venues do not.}
-\Plot{boxplots_avg_wordlength}{%
-	The average length of words is similar in all subgroups.}
-\Plot{boxplots_fkscore}{%
-	Flesch-Kincaid 'reading ease' readability score, higher is better.
-    Values under 50 are considered difficult to read (college-level material).
-    Under 30: very difficult to read (graduate level, suitable for abstracts).
-	Under 10: extremely difficult to read (overly difficult).
-    Differences between subgroups are modest. 
-	ICSE is best (mean 20), TOSEM is worst (mean 13).
-    Structured abstracts are just as difficult as nonstructured ones
-    if one ignores the ``Methods:´´ etc. headings as we did here.
-}
-\Plot{boxplots_icount}{%
-  A majority of abstracts has one or more ``informativeness gaps´´.
-  The problem tends to be smaller in structured abstracts.}
-\Plot{boxplots_ucount}{%
-  Some abstracts have understandability gaps where an important concept is not explained at all.
-  !!!}
-\Plotwide{zerofractionbar_xletgroups_topicmissingfractions}{%
-	How often is a topic not present at all in an abstract?\\
-	The plots in each group show these different subsets of abstracts:
-	all, structured, non-structured, design, empirical, EMSE, ICSE, IST, TOSEM, TSE}
-\Plotwide{box_xletgroups_topicfractions}{%
-	Per-topic distribution of the amount of space used for that topic.\\
-	The plots in each group show these different subsets of abstracts:
-	all, structured, non-structured, design, empirical, EMSE, ICSE, IST, TOSEM, TSE}
-\Plotwide{nonzerofractionbar_xletgroups_missinginfofractions}{%
-	What fraction of abstracts has the following gaps?
-	Only announcing (instead of describing) methods, results, conclusions, possible future research.
-	Not reporting simple details (``informativeness gaps´´), not explaining key terms (``understandability gaps´´).
-	Announcing is generally not rare, in particular for results, and tends to be less pronounced
-	at IST. 
-	Missing to include detail once is dominant.
-	Doing this several times is frequent and worse for design articles.
-	Not explaining key terms is not rare and worst at EMSE.\\
-	The plots in each group show these different subsets of abstracts:
-	all, structured, non-structured, design, empirical, EMSE, ICSE, IST, TOSEM, TSE}
-\Plot{ab_topicstructure_freqs_design}{%
-  The frequency of different trains-of-thought in the abstract for design articles.
-  The label is a string of stretch-code characters:
-  b-ackground, g-ap, o-bjective, d-esign, m-ethod, r-esult, c-onclusion, f-uture.}
-\Plot{ab_topicstructure_freqs_empir}{%
-	The frequency of different trains-of-thought in the abstract for empirical articles.
-	Same characters as before, except that d cannot occur.}
-\Plot{boxplots_fraction_introduction}{%
-	Authors invest about a third of the space into the introduction:
-	background/context information and perhaps explaining a research gap.
-	Structured abstracts tend to have less of this???}
-\Plot{boxplots_fraction_conclusion}{%
-	Many abstracts offer no conclusion, i.e., no explicit generalization of the immediate result.
-	This is worst at ICSE (with over 75\%)
-	and best at IST, which is the only venue where a majority of articles formulates a generalization.}
-\Plot{lowess_gaps_by_fracintro}{%
-	This plot checks the expectation that spending much space on background
-	will correlate with more i and u gaps.
-	This is not the case.
-	Each dot is one coding of an abstract, 
-	the line is a locally weighted linear regression.}
-
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{fig1}
-%\caption{This is the caption for one fig.}
-%\label{fig1}
-%\end{figure}
 
 
-\subsection{Acknowledgments}
+\subsection*{Acknowledgments}
 \noindent We thank Gesine Milde for cleansing the automatically extracted abstract texts.
 	
 \bibliographystyle{IEEEtran}
