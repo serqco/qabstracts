@@ -12,14 +12,17 @@
 \usepackage{balance}
 \hyphenation{semi-conduc-tor IEEE-Xplore}
 
+\newcommand{\ifarxiv}[1]{#1}  % activate this for the ArXiv version of the document
+%\newcommand{\ifarxiv}[1]{}  % activate this for the journal version of the document
+
 \newcommand{\Plot}[2]{%
-	\begin{figure}[!t]%
+	\begin{figure}[htb]%
 		\centering\includegraphics[width=\columnwidth]{#1}%
 		\vspace{-4mm}\caption{#2}\label{#1}%
 	\end{figure}}
 
 \newcommand{\Plotwide}[2]{%
-	\begin{figure*}%
+	\begin{figure*}[tbp]%
 		\centering\includegraphics[width=\textwidth]{#1}%
 		\vspace{-4mm}\caption{#2}\label{#1}%
     \end{figure*}}
@@ -535,14 +538,7 @@ e) Lutz finds both codings equally acceptable.
 He would add an \Cb{:ignorediff} suffix to his own
 and respond accordingly, explaining is reasoning.\\
 
-7. Lutz would commit his corrected abstracts and send the response email.
-
-8. Lloyd would read the response email and usually act on it to finish the handling of 
-Block 17.
-Only very rarely would he disagree with something to a degree that would make
-another round of emails necessary.
-
-\begin{figure*}%
+\begin{figure*}[tbp]%
 	\centering\fbox{\includegraphics[width=0.95\textwidth]{email-MeyAlmKel22.png}}%
 	\vspace{-2mm}\caption{Excerpt from Lutz' response email during the disagreements handling
 	  for Block 17: 
@@ -554,6 +550,13 @@ another round of emails necessary.
 	  Overall, Lloyd's first email contained report blocks for 9 disagreements
 	  in 4 abstracts, both typical numbers.}\label{email-MeyAlmKel22.png}%
 \end{figure*}
+
+7. Lutz would commit his corrected abstracts and send the response email.
+
+8. Lloyd would read the response email and usually act on it to finish the handling of 
+Block 17.
+Only very rarely would he disagree with something to a degree that would make
+another round of emails necessary.
 
 
 \subsubsection{Effect of this procedure}
@@ -787,7 +790,8 @@ Venues: Prescribe structured abstracts: Background (not Context); Design (if nee
 %\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig1.png}}]{IEEE Publications Technology Team}
 %In this paragraph you can place your educational, professional background and research and other interests.\end{IEEEbiography}
 
-
+\ifarxiv{\input{appendix}}
+	
 \end{document}
 
 

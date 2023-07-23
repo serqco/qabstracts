@@ -1,0 +1,70 @@
+% appendix, to be included in the ArXiv version, but not the journal version.
+
+\appendix
+
+\renewcommand{\thefigure}{A.\arabic{figure}}
+\def\topfraction{1.0}
+\def\bottomfraction{1.0}
+
+
+This appendix contains figures that provide additional detail for information
+that is only summarized in the article proper.
+
+
+\Plot{boxplots_words}{%
+  Typical abstracts are 190 to 280 words long. 
+  Structured abstracts tend to be longer than unstructured ones.}
+\Plot{boxplots_sentences}{%
+	Typical abstracts are 8 to 14 sentences long.
+	The values for structured abstracts are inflated by the section headings,
+	which each count as a sentence if they terminate in a colon.}
+\Plot{boxplots_avg_wordlength}{%
+	The average number of characters in a word is similar in all subgroups.}
+
+
+\Plot{boxplots_icount}{%
+  A majority of abstracts has one or more ``informativeness gaps´´.
+  The problem tends to be smaller in structured abstracts.}
+\Plot{boxplots_ucount}{%
+  Some abstracts have understandability gaps where an important concept is not explained at all.
+  !!!}
+\Plotwide{zerofractionbar_xletgroups_topicmissingfractions}{%
+	How often is a topic not present at all in an abstract?\\
+	The plots in each group show these different subsets of abstracts:
+	all, structured, non-structured, design, empirical, EMSE, ICSE, IST, TOSEM, TSE}
+\Plotwide{box_xletgroups_topicfractions}{%
+	Per-topic distribution of the amount of space used for that topic.\\
+	The plots in each group show these different subsets of abstracts:
+	all, structured, non-structured, design, empirical, EMSE, ICSE, IST, TOSEM, TSE}
+\Plotwide{nonzerofractionbar_xletgroups_missinginfofractions}{%
+	What fraction of abstracts has the following gaps?
+	Only announcing (instead of describing) methods, results, conclusions, possible future research.
+	Not reporting simple details (``informativeness gaps´´), not explaining key terms (``understandability gaps´´).
+	Announcing is generally not rare, in particular for results, and tends to be less pronounced
+	at IST. 
+	Missing to include detail once is dominant.
+	Doing this several times is frequent and worse for design articles.
+	Not explaining key terms is not rare and worst at EMSE.\\
+	The plots in each group show these different subsets of abstracts:
+	all, structured, non-structured, design, empirical, EMSE, ICSE, IST, TOSEM, TSE}
+\Plot{ab_topicstructure_freqs_design}{%
+  The frequency of different trains-of-thought in the abstract for design articles.
+  The label is a string of stretch-code characters:
+  b-ackground, g-ap, o-bjective, d-esign, m-ethod, r-esult, c-onclusion, f-uture.}
+\Plot{ab_topicstructure_freqs_empir}{%
+	The frequency of different trains-of-thought in the abstract for empirical articles.
+	Same characters as before, except that d cannot occur.}
+\Plot{boxplots_fraction_introduction}{%
+	Authors invest about a third of the space into the introduction:
+	background/context information and perhaps explaining a research gap.
+	Structured abstracts tend to have less of this???}
+\Plot{boxplots_fraction_conclusion}{%
+	Many abstracts offer no conclusion, i.e., no explicit generalization of the immediate result.
+	This is worst at ICSE (with over 75\%)
+	and best at IST, which is the only venue where a majority of articles formulates a generalization.}
+\Plot{lowess_gaps_by_fracintro}{%
+	This plot checks the expectation that spending much space on background
+	will correlate with more i and u gaps.
+	This is not the case.
+	Each dot is one coding of an abstract, 
+	the line is a locally weighted linear regression.}
