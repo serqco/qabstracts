@@ -30,5 +30,6 @@ We implemented our framework in the tool syrup 2.0.
 Through large-scale experiments on real-world
 smart contracts, we analyze performance improvements for different SMT encodings, as well as tradeoffs
 between quality of optimizations and required optimization time.
-{{method,a-result}}
+{{method}}
 ---
+The last sentence reads as a-result as well, given the discussion of "performance improvements" and "tradeoffs", but this is entirely too nuanced for our codes.

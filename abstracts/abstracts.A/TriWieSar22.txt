@@ -7,7 +7,7 @@ perspectives.
 {{background}}
 Practitioners and researchers need to understand more about the phenomenon; however, studies about women in open source are spread across multiple fields, including information systems, software
 engineering, and social science.
-{{background}}
+{{gap}}
 This article systematically maps, aggregates, and synthesizes the state-of-theart on women’s participation in OSS.
 {{objective}}
 It focuses on women contributors’ representation and demographics,
@@ -27,7 +27,7 @@ higher rates of pull-request acceptances than men.
 {{result}}
 Women make both code and non-code contributions, and
 their motivations to contribute include learning new skills, altruism, reciprocity, and kinship.
-{{}}
+{{result}}
 Challenges that
 women face in OSS are mainly social, including lack of peer parity and non-inclusive communication from a
 toxic culture.
