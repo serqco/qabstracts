@@ -11,10 +11,10 @@ framework, with the aim to understand:
 {{method}}
 (a) practitioners’ perceptions of human values and their role in software engineering; (b)
 practices that practitioners use to address human values in software; and (c) challenges they face during this process.
-{{objective}}
+{{objective,-ignorediff}}
 We report our
 findings from two contrasting case organizations on how practitioners “engineer” values in their unique organizational settings.
-{{a-result}}
+{{result}}
 We
 found evidence that organizational culture significantly contributes to how values are addressed in software.
 {{result}}

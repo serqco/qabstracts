@@ -19,7 +19,7 @@ operation engineers of microservice systems from ten companies.
 {{objective,method}}
 Our survey results offer
 a number of findings.
-{{a-result}}
+{{result}}
 For example, large microservice systems commonly adopt a tracing
 and analysis pipeline, and the implementations of the pipeline in different companies reflect
 different tradeoffs among a variety of concerns.
