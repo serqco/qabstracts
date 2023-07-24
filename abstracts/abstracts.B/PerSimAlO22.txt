@@ -9,17 +9,17 @@ always straightforward, resulting in developers seeking assistance.
 Although research in
 refactoring is well-established, with several studies altering between the detection of refactoring opportunities and the recommendation of appropriate code changes, little is known
 about their adoption in practice.
-{{gap}}
+{{background}}
 Analyzing the perception of developers is critical to understand better what developers consider to be problematic in their code and how they handle
 it.
-{{gap}}
+{{background}}
 Additionally, there is a need for bridging the gap between refactoring, as research, and
 its adoption in practice, by extracting common refactoring intents that are more suitable for
 what developers face in reality.
-{{gap}}
+{{background}}
 In this study, we analyze refactoring discussions on Stack
 Overflow through a series of quantitative and qualitative experiments.
-{{objective,method}}
+{{method}}
 Our results show that
 Stack Overflow is utilized by a diverse set of developers for refactoring assistance for a variety of technologies.
 {{result}} 
@@ -30,5 +30,6 @@ Unit Testing, and Database.
 We envision our findings better bridge the support between traditional 
 (or academic) aspects of refactoring and their real-world applicability, including
 better tool support.
-{{fposs}}
+{{fposs,-ignorediff}}
 ---
+Sentence 7 should contain an objective, but it simply doesn't: it is a method statement and the authors never really declare the objective of their work.

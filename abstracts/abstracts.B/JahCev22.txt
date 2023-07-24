@@ -7,7 +7,7 @@ software maintenance.
 {{background}}
 However, manual bug fixing scheduling can be time-consuming, cumbersome, and
 error-prone.
-{{gap}}
+{{background}}
 Objective:
 {{h-objective}}
 In this paper, we propose the Schedule and Dependency-aware Bug Triage (S-DABT), a bug
@@ -38,7 +38,7 @@ Via the simulation of the issue tracking
 system, we also show how incorporating the schedule in the model formulation reduces the bug fixing time,
 improves the assignment accuracy, and utilizes the capability of each developer without much comprising in
 the model run times.
-{{method,result:i2}}
+{{result:i2}}
 Conclusion:
 {{h-conclusion}}
 We find that S-DABT decreases the complexity of the bug dependency graph by prioritizing
@@ -48,3 +48,4 @@ Consequently,
 we recommend considering developers’ schedules while automating bug triage.
 {{conclusion}}
 ---
+It is unclear whether the simulation mentioned in sentence 13 is the same method as the "numerical study" mentioned two sentences prior.

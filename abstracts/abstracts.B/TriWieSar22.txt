@@ -35,5 +35,5 @@ toxic culture.
 We found 10 strategies reported in the literature, which we mapped to the reported challenges.
 {{result}}
 Based on these results, we provide guidelines for future research and practice.
-{{a-fwork}}
+{{a-conclusion}}
 ---
