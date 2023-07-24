@@ -33,7 +33,6 @@ that ignores the naturalness requirement.
 On attack-
 ing CodeBERT, our approach can achieve attack success rates of
 53.62%, 27.79%, and 35.78% across three downstream tasks:
-{{method,result}}
 vulnera-
 bility prediction, clone detection and code authorship attribution.
 {{method,result}}

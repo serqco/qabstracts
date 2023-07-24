@@ -49,5 +49,5 @@ reasonable performance (accuracy ∼90%).
 We further explore the influence of different steps in our approach,
 such as the choice of visual representations or the classification algorithm, to eventually discuss the promises
 and limitations of this research direction.
-{{a-conclusion}}
+{{a-conclusion,a-limitation}}
 ---
