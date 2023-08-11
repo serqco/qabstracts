@@ -1,56 +1,56 @@
 Layout merging with relative positioning in Concern-Oriented Reuse hierarchies.
 
 Context:
-{{}}
+{{h-background}}
 The advent of modeling in software engineering, like other engineering fields, has revolutionized
 the formalism and pace of software development.
-{{}}
+{{background}}
 However, software applications are not built from scratch,
 instead, other existing software artifacts are reused and combined with new artifacts.
-{{}}
+{{background}}
 This notion of software
 reuse has been in existence for decades.
-{{}}
+{{background}}
 When structural models such as class diagrams are reused, the
 reusing and reused models often need to be merged and the result visualized to the modeler.
-{{}}
+{{background}}
 However, layout
 mechanisms such as GraphViz, JGraphX, and other related layout tools do not retain the original layout and
 rather arbitrarily layout the merged models.
-{{}}
+{{gap}}
 Therefore, important information that corresponds to the mental
 map of a modeler and is conveyed by the specific layout is currently lost.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 This paper aims to establish layout algorithms to retain the original layout information from a
 set of individual but interrelated models after they are merged during software reuse to preserve a modeler’s
 mental map of the models.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 In this work, rpGraph uses the relative positioning of model elements to retain the general layout
 of a single reusing model and a single reused model (two-model merge).
-{{}}
+{{design}}
 Additionally, rpGraph integrates its
 two-model merge approach into a multi-model merge in a reuse hierarchy to preserve the general topology of
 several interrelated models.
-{{}}
+{{design}}
 Our findings are evaluated with 20 example single-model reuses from a library of
 reusable software model artifacts.
-{{}}
+{{method}}
 We further carry out a case study in a reuse hierarchy framework, Concern
 Oriented Reuse (CORE), where rpGraph is applied to the layout of reusable artifacts, which result from a merge
 of several individual models.
-{{}}
+{{method}}
 Result:
-{{}}
+{{h-result}}
 A comparison of the merged layouts of rpGraph, GraphViz, and JGraphX shows that rpGraph performs
 better in terms of retaining the original layouts.
-{{}}
+{{result:i1}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 Considering relative positioning during model merge increases the degree with which original
 layouts can be preserved.
-{{}}
+{{conclusion}}
 ---
