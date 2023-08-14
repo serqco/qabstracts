@@ -36,3 +36,4 @@ demonstrate the effectiveness of SKIPCI in providing relevant CI skip commit rec
 projects from practitioner's point of view.
 {{result}}
 ---
+This article is primarily a design article (it presents a software artifact) but the current labels do not include any "design" code.
