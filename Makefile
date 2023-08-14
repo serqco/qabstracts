@@ -24,6 +24,3 @@ plot:
 
 plot0:
 	$(QABSTRACTS) plot $(EXPORTFILE) img
-
-plot1:
-	$(QABSTRACTS) plot $(EXPORTFILE) img
