@@ -38,6 +38,7 @@ jobs:
           make export
           make plot
           sudo apt install texlive-xetex latexmk
+          ls -lR
           make pdf
       - name: upload PDF
         uses: actions/upload-artifact@v3
