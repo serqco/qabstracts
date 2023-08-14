@@ -324,14 +324,14 @@ CheSuo22      Lloyd       Julian
 PreMohVil22   Lloyd       Julian
 WuXuNiu22     Lloyd       Julian
 #----- Block 37
-AsaGas22      Lloyd
-SaiOunMka22   Lloyd
-ArcGal22      Lloyd
-AlmKorTah22   Lloyd
-ZhoSioWan22   Lloyd
-NguGru22      Lloyd
-HanMeh22      Lloyd
-TyaSibSur22   Lloyd
+AsaGas22      Lloyd       -Julian
+SaiOunMka22   Lloyd       -Julian
+ArcGal22      Lloyd       -Julian
+AlmKorTah22   Lloyd       -Julian
+ZhoSioWan22   Lloyd       -Julian
+NguGru22      Lloyd       -Julian
+HanMeh22      Lloyd       -Julian
+TyaSibSur22   Lloyd       -Julian
 #----- Block 38
 LorMadMon22   Lloyd
 LiYuWan22     Lloyd
