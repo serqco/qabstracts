@@ -36,7 +36,7 @@ the system's adaptation goals, its context, and the time period in which the sys
 {{result}}
 Second, we
 discuss the benefits of our architecture by comparing it with the MAPE-K conceptual model.
-{{a-result:u1,method}}
+{{a-result,method}}
 Conclusion:
 {{h-conclusion}}
 Commonly accepted definitions of adaptivity and self-adaptive systems are necessary for work
