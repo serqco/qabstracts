@@ -1,48 +1,48 @@
 Dynamical analysis of diversity in rule-based open source network intrusion detection systems.
 
 Diverse layers of defence play an important role in the design of defence-in-depth architectures.
-{{}}
+{{background}}
 The use of Intrusion Detection Systems (IDSs) are ubiquitous in this design.
-{{}}
+{{background}}
 But
 the selection of the "right" IDSs in various configurations is an important decision that the
 security architects need to make.
-{{}}
+{{background}}
 Additionally, the ability of these IDSs to adapt to the evolving threat-landscape also needs to be investigated.
-{{}}
+{{need}}
 To help with these decisions, we need
 rigorous quantitative analysis.
-{{}}
+{{need}}
 In this paper, we present a diversity analysis of open-source
 IDSs, Snort and Suricata, to help security architects tune/deploy these IDSs.
-{{}}
+{{objective}}
 We analyse
 two types of diversities in these IDSs; configurational diversity and functional diversity.
-{{}}
+{{method}}
 In
 the configurational diversity analysis, we investigate the diversity in the sets of rules and
 the Blacklisted IP Addresses (BIPAs) these IDSs use in their configurations.
-{{}}
+{{method}}
 The functional
 diversity analysis investigates the differences in alerting behaviours of these IDSs when they
 analyse real network traffic, and how these differences evolve.
-{{}}
+{{method}}
 The configurational diversity
 experiment utilises snapshots of the rules and BIPAs collected over a period of 5 months,
 from May to October 2017.
-{{}}
+{{method}}
 The snapshots have been collected for three different off-theshelf default configurations of the Snort IDS and the Emerging Threats (ET) configuration
 of the Suricata IDS.
-{{}}
+{{method}}
 The functional diversity investigates the alerting behaviour of these two
 IDSs for a sample of the real network traffic collected in the same time window.
-{{}}
+{{method}}
 Analysing
 the differences in these systems allows us to get insights into where the diversity in the
 behaviour of these systems comes from, how does it evolve and whether this has any effect
 on the alerting behaviour of these IDSs.
-{{}}
+{{a-result}}
 This analysis gives insight to security architects on
 how they can combine and layer these systems in a defence-in-depth deployment.
-{{}}
+{{conclusion}}
 ---
