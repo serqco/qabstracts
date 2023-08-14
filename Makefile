@@ -24,3 +24,6 @@ plot:
 
 plot0:
 	$(QABSTRACTS) plot $(EXPORTFILE) img
+
+plotall:
+	$(QABSTRACTS) plot --plotall --plottimeline --printall $(EXPORTFILE) img

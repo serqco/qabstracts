@@ -37,7 +37,7 @@ jobs:
           pip -q install -r requirements.txt
           make export
           make plot
-          ls img
+          ls -l img
           sudo apt install texlive-xetex latexmk
           make pdf
       - name: upload PDF

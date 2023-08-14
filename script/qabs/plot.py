@@ -25,6 +25,8 @@ meaning = """Computes derived data and creates plots and stats outputs.
 def add_arguments(subparser: qscript.ArgumentParser):
     subparser.add_argument('--plotall', action='store_const', const=True,
                            help="run all plots, not only those currently under development")
+    subparser.add_argument('--plottimeline', action='store_const', const=True,
+                           help="run the expensive git timeline plot, too")
     subparser.add_argument('--printall', action='store_const', const=True,
                            help="print all text outputs, not only those currently under development")
     subparser.add_argument('--withoutdesignworks', type=str, default="",
@@ -44,7 +46,7 @@ def execute(args: qscript.Namespace):
     datasets = qabs.dataframes.create_all_datasets(df)
     qabs.dataframes.create_all_subsets(datasets)
     qabs.printstats.print_all_stats(args, datasets, args.outputdir)
-    create_all_plots(args.plotall, datasets, args.outputdir)
+    create_all_plots(args.plotall, args.plottimeline, datasets, args.outputdir)
 
 
 def read_datafile(datafile: str) -> pd.DataFrame:
@@ -52,7 +54,7 @@ def read_datafile(datafile: str) -> pd.DataFrame:
     return df
 
 
-def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str):
+def create_all_plots(plotall: bool, plottimeline: bool, datasets: argparse.Namespace, outputdir: str):
     # mpl.use('PDF')
     if plotall:
         # ----- topicstructure plots:
@@ -92,6 +94,7 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
                              datasets.ab_missinginfofractions_values, datasets.ab_subsets)
         pt.plot_xletgroups(ctx, pt.add_nonzerofractionbarplotlet, "nonzerofractionbar", "missinginfofractions",
                            "how often occuring [%]", ymax=66)
+    if plottimeline:
         # ----- timeline:
         plot_qabstracts_timeline_commits(outputdir)
     ctx = pt.PlotContext(outputdir, "", datasets.by_ab,
