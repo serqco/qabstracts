@@ -2,23 +2,23 @@ Enhancing Search-based Testing with Testability Transformations for Existing API
 
 Search-based software testing (SBST) has been shown to be an effective technique to generate test cases
 automatically.
-{{}}
+{{background}}
 Its effectiveness strongly depends on the guidance of the fitness function.
-{{}}
+{{background}}
 Unfortunately, a
 common issue in SBST is the so-called flag problem, where the fitness landscape presents a plateau that provides no guidance to the search.
-{{}}
+{{gap}}
 In this article, we provide a series of novel testability transformations aimed
 at providing guidance in the context of commonly used API calls (e.g., strings that need to be converted into
 valid date/time objects).
-{{}}
+{{objective}}
 We also provide specific transformations aimed at helping the testing of REST Web
 Services.
-{{}}
+{{objective}}
 We implemented our novel techniques as an extension to EvoMaster, an SBST tool that generates
 system-level test cases.
-{{}}
+{{design}}
 Experiments on nine open-source REST web services, as well as an industrial web
 service, show that our novel techniques improve performance significantly.
-{{}}
+{{method,result:i1}}
 ---

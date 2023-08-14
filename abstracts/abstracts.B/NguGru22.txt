@@ -2,36 +2,36 @@ BEDIVFUZZ: Integrating Behavioral Diversity into Generator-based Fuzzing.
 
 A popular metric to evaluate the performance of fuzzers is branch
 coverage.
-{{}}
+{{background}}
 However, we argue that focusing solely on covering many
 different branches (i.e., the richness) is not sufficient since the ma-
 jority of the covered branches may have been exercised only once,
 which does not inspire a high confidence in the reliability of the
 covered code.
-{{}}
+{{background}}
 Instead, the distribution of the executed branches
 (i.e., the evenness) should also be considered.
-{{}}
+{{background}}
 That is, behavioral
 diversity is only given if the generated inputs not only trigger
 many different branches, but also trigger them evenly often with
 diverse inputs.
-{{}}
+{{background}}
 We introduce BeDivFuzz, a feedback-driven fuzzing
 technique for generator-based fuzzers.
-{{}}
+{{objective}}
 BeDivFuzz distinguishes
 between structure-preserving and structure-changing mutations in
 the space of syntactically valid inputs, and biases its mutation strat-
 egy towards validity and behavioral diversity based on the received
 program feedback.
-{{}}
+{{design}}
 We have evaluated BeDivFuzz on Ant, Maven,
 Rhino, Closure, Nashorn, and Tomcat.
-{{}}
+{{method}}
 The results show that Be-
 DivFuzz achieves better behavioral diversity than the state of the
 art, measured by established biodiversity metrics, namely the Hill
 numbers, from the field of ecology.
-{{}}
+{{result:u1:i1}}
 ---
