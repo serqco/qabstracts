@@ -37,8 +37,8 @@ jobs:
           pip -q install -r requirements.txt
           make export
           make plot
+          ls img
           sudo apt install texlive-xetex latexmk
-          ls -lR
           make pdf
       - name: upload PDF
         uses: actions/upload-artifact@v3
