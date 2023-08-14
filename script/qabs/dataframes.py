@@ -76,7 +76,7 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
     res = add_topicfraction_x(res, 'result')
     res = add_topicfraction_x(res, 'summary')
     res = add_topicfraction_x(res, 'conclusion')
-    res = add_topicfraction_x(res, 'future')
+    res = add_topicfraction_x(res, 'outlook')
     res = add_topicfraction_x(res, 'other')
     res = add_codefraction_x(res, 'a-method')
     res = add_codefraction_x(res, 'a-result')
@@ -115,6 +115,7 @@ def create_all_subsets(datasets: argparse.Namespace):
     """Add pt.Subsets entries in datasets."""
     datasets.ab_subsets = ab_subsets(datasets.by_ab)
     datasets.ab_topicfractions_values = ab_topicfractions_values(datasets.by_ab)
+    datasets.ab_topicfractions0_values = ab_topicfractions0_values(datasets.by_ab)
     datasets.ab_missinginfofractions_values = ab_missinginfofractions_values(datasets.by_ab)
 
 
@@ -167,6 +168,37 @@ def ab_topicfractions_values(df: pd.DataFrame) -> pt.Subsets:
         pt.Values(label="Conclusion",
                   x=6.0,
                   values=lambda dfr: dfr.fraction_conclusion),
+        pt.Values(label="Outlook",
+                  x=7.0,
+                  values=lambda dfr: dfr.fraction_outlook),
+    ]
+    return pt.Subsets(ab_topicfractions_list)
+
+
+def ab_topicfractions0_values(df: pd.DataFrame) -> pt.Subsets:
+    """subsets for fraction_x space-per-topic variables when we are interested in zero-fractions"""
+    ab_topicfractions_list = [
+        pt.Values(label="Background",
+                  x=1.0,
+                  values=lambda dfr: dfr.fraction_background),
+        pt.Values(label="Gap",
+                  x=2.0,
+                  values=lambda dfr: dfr.fraction_gap),
+        pt.Values(label="Objective",
+                  x=3.0,
+                  values=lambda dfr: dfr.fraction_objective),
+        pt.Values(label="Methods",
+                  x=4.0,
+                  values=lambda dfr: dfr.fraction_method),
+        pt.Values(label="Results",
+                  x=5.0,
+                  values=lambda dfr: dfr.fraction_result),
+        pt.Values(label="Conclusion",
+                  x=6.0,
+                  values=lambda dfr: dfr.fraction_conclusion),
+        pt.Values(label="Outlook",
+                  x=7.0,
+                  values=lambda dfr: dfr.fraction_outlook),
     ]
     return pt.Subsets(ab_topicfractions_list)
 

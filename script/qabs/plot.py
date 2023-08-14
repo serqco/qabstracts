@@ -81,6 +81,9 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
                              datasets.ab_topicfractions_values, datasets.ab_subsets)
         pt.plot_xletgroups(ctx, pt.add_boxplotlet, "box", "topicfractions",
                            "space per topic [%]", ymax=50)
+        ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
+                             60/25.4, tse_pagewidth_mm/25.4, 
+                             datasets.ab_topicfractions0_values, datasets.ab_subsets)
         pt.plot_xletgroups(ctx, pt.add_zerofractionbarplotlet, "zerofractionbar", "topicmissingfractions",
                            "how often missing [%]", ymax=100)
         # ----- frequency of a-* codes and iu gaps:

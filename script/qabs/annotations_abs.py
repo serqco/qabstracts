@@ -22,7 +22,7 @@ class CodebookAbstracts(qa.Codebook):
             objective='objective',
             design='design', method='method', result='result', claim='result', summary='summary',
             conclusion='conclusion',
-            fposs='future', fneed='future', fgap='future', fwork='future',
+            fposs='outlook', fneed='outlook', fgap='outlook', fwork='outlook',
             limitation='other', resourcepointer='other', X='other',
         )
 
