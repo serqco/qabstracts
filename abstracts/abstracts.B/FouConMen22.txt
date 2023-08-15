@@ -27,5 +27,5 @@ Our
 findings provide novel empirical insights to practitioners to promote micro-collaborative
 coding practices, and to academics to conduct further research towards understanding and
 automating the micro-collaboration process.
-{{a-result,a-fposs}}
+{{a-result,a-fposs,-ignorediff}}
 ---
