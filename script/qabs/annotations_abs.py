@@ -22,8 +22,8 @@ class CodebookAbstracts(qa.Codebook):
             objective='objective',
             design='design', method='method', result='result', claim='result', summary='summary',
             conclusion='conclusion',
-            fposs='outlook', fneed='outlook', fgap='outlook', fwork='outlook',
-            limitation='other', resourcepointer='other', X='other',
+            fposs='Outlook', fneed='Outlook', fgap='Outlook', fwork='Outlook',
+            limitation='_other', resourcepointer='_other', X='_other',
         )
 
 

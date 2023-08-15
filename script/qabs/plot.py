@@ -60,6 +60,7 @@ def create_all_plots(plotall: bool, plottimeline: bool, datasets: argparse.Names
         # ----- topicstructure plots:
         plot_ab_topicstructure_freqs_design(datasets.ab_structures, outputdir)
         plot_ab_topicstructure_freqs_empir(datasets.ab_structures, outputdir)
+        plot_ab_topicstructure_freqs_empir_structured(datasets.ab_structures, outputdir)
         # ----- boxplots counts:
         ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
                              60/25.4, tse_pagewidth_mm/25.4, datasets.ab_subsets)
@@ -108,6 +109,12 @@ def plot_ab_topicstructure_freqs_design(df: pd.DataFrame, outputdir: str):
 
 def plot_ab_topicstructure_freqs_empir(df: pd.DataFrame, outputdir: str):
     empir_df = df.loc[~df['topicstructure'].str.contains('d')]
+    plot_ab_topicstructure_freqs(empir_df, outputdir)
+
+
+def plot_ab_topicstructure_freqs_empir_structured(df: pd.DataFrame, outputdir: str):
+    dfstruc = df.loc[df.is_struc]
+    empir_df = dfstruc.loc[~dfstruc['topicstructure'].str.contains('d')]
     plot_ab_topicstructure_freqs(empir_df, outputdir)
 
 
