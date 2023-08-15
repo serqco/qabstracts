@@ -7,7 +7,7 @@ Its effectiveness strongly depends on the guidance of the fitness function.
 {{background}}
 Unfortunately, a
 common issue in SBST is the so-called flag problem, where the fitness landscape presents a plateau that provides no guidance to the search.
-{{}}
+{{gap}}
 In this article, we provide a series of novel testability transformations aimed
 at providing guidance in the context of commonly used API calls (e.g., strings that need to be converted into
 valid date/time objects).

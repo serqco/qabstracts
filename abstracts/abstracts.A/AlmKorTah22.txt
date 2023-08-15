@@ -18,7 +18,6 @@ approach that can be used to prove that a transformation rule will generate a tr
 original model.
 {{design}}
 To do this, we formally define semantical equivalence at three different levels of granularity:
-{{design}}
 models, sub-models, and
 transitions.
 {{design}}

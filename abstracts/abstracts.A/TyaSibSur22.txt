@@ -39,7 +39,7 @@ amongst agile team members working across different parts of the world.
 Conclusion:
 {{h-conclusion}}
 This study culminates into a framework for building trust in distributed agile teams.
-{{conclusion}}
+{{a-result}}
 The proposed
 framework has been developed empirically and has five components that influence trust building.
 {{summary}}

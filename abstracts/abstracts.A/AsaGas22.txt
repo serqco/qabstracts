@@ -9,7 +9,7 @@ the selection of the "right" IDSs in various configurations is an important deci
 security architects need to make.
 {{background}}
 Additionally, the ability of these IDSs to adapt to the evolving threat-landscape also needs to be investigated.
-{{background}}
+{{need}}
 To help with these decisions, we need
 rigorous quantitative analysis.
 {{need}}
@@ -41,7 +41,7 @@ Analysing
 the differences in these systems allows us to get insights into where the diversity in the
 behaviour of these systems comes from, how does it evolve and whether this has any effect
 on the alerting behaviour of these IDSs.
-{{conclusion}}
+{{a-result}}
 This analysis gives insight to security architects on
 how they can combine and layer these systems in a defence-in-depth deployment.
 {{conclusion}}
