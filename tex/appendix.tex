@@ -21,6 +21,11 @@ that is only summarized in the article proper.
 \Plot{boxplots_avg_wordlength}{%
 	The average number of characters in a word is similar in all subgroups.}
 
+\Plot{ab_topicstructure_freqs_empir_structured}{%
+  The frequency of different trains-of-thought in the abstract for empirical articles
+  using a structured abstract format.
+  The "Method:" etc. subheadings are ignored for structured abstracts in all three plots.}
+
 
 \Plot{boxplots_icount}{%
   A majority of abstracts has one or more ``informativeness gaps´´.
@@ -28,6 +33,7 @@ that is only summarized in the article proper.
 \Plot{boxplots_ucount}{%
   Some abstracts have understandability gaps where an important concept is not explained at all.
   !!!}
+
 \Plotwide{box_xletgroups_topicfractions}{%
 	Per-topic distribution of the amount of space used for that topic.\\
 	The plots in each group show these different subsets of abstracts:
@@ -43,13 +49,6 @@ that is only summarized in the article proper.
 	Not explaining key terms is not rare and worst at EMSE.\\
 	The plots in each group show these different subsets of abstracts:
 	all, structured, non-structured, design, empirical, EMSE, ICSE, IST, TOSEM, TSE}
-\Plot{ab_topicstructure_freqs_design}{%
-  The frequency of different trains-of-thought in the abstract for design articles.
-  The label is a string of stretch-code characters:
-  b-ackground, g-ap, o-bjective, d-esign, m-ethod, r-esult, c-onclusion, f-uture.}
-\Plot{ab_topicstructure_freqs_empir}{%
-	The frequency of different trains-of-thought in the abstract for empirical articles.
-	Same characters as before, except that d cannot occur.}
 \Plot{boxplots_fraction_introduction}{%
 	Authors invest about a third of the space into the introduction:
 	background/context information and perhaps explaining a research gap.
@@ -58,6 +57,7 @@ that is only summarized in the article proper.
 	Many abstracts offer no conclusion, i.e., no explicit generalization of the immediate result.
 	This is worst at ICSE (with over 75\%)
 	and best at IST, which is the only venue where a majority of articles formulates a generalization.}
+
 \Plot{lowess_gaps_by_fracintro}{%
 	This plot checks the expectation that spending much space on background
 	will correlate with more i and u gaps.

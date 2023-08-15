@@ -752,7 +752,65 @@ half of all -- yet again very rarely in structured abstracts\footnote{Note that
 
 \subsection{How Not To: Convoluted Trains of Thought}
 
-Topicstructure sequences; Archetype violations.
+Leaving out important parts from an abstract is not the only way for wrecking
+the abstract's value, however.
+There are also abstracts where the train-of-thought is so convoluted
+that they become difficult to read.
+
+For quantifying this, we map each abstract to a short sequence of letters,
+where each letter stands for a contiguous stretch of sentences in the abstract
+that have the same content type; the letter designates that content type.
+
+For instance, an abstract that follows a minimal incarnation of the Archetype
+for an empirical article would be encoded as bomrc, which stands for
+the content types sequence background, objective, methods, results, conclusion.
+
+The full list of abstracts structures is too long to show it here.
+It has 95!!! entries for empirical articles and 122!!! entries for design articles.
+Most of these have only one or two instances, though; 
+we restrict ourselves to the types that occur with higher frequency here. 
+Note that a frequency of e.g. 2.5 simply means that the two coders did not agree.
+The results are shown in 
+Figure~\ref{ab_topicstructure_freqs_empir} for empirical articles and
+Figure~\ref{ab_topicstructure_freqs_design} for design articles.
+
+\Plot{ab_topicstructure_freqs_empir}{%
+  The frequency of different trains-of-thought in the abstract for empirical articles.
+  The label is a string of stretch-code characters:
+  b-ackground, g-ap, o-bjective, d-esign, m-ethod, r-esult, s-ummary, c-onclusion, O-utlook.}
+\Plot{ab_topicstructure_freqs_design}{%
+  The frequency of different trains-of-thought in the abstract for design articles.
+  Same characters as before, except that d can now in fact occur.}
+
+\subsubsection{Empirical articles}
+
+Let us start with the simpler empirical articles.
+We see that the most sensible structures are also the most frequent (bars 1, 2, 3):
+Archetypical with or without a \Cb{gap} statement, perhaps with an \emph{Outlook}.
+But from bar 4 on, the abstracts are more or less pathological:
+The first few are mostly missing a conclusion, later on (not shown in the figure)
+follow all kinds of curious structures such as, to pick an admittedly extreme case,
+bgomrcsrsc: two conclusions, two summaries, summary after conclusion.
+
+\subsubsection{Design articles}
+
+It naturally gets worse for the design articles with their more complicated structure:
+Even the top two structures are missing a conclusion
+and we find complex repetitive structures starting at bar 5.
+Not all of these are automatically bad. 
+In particular, having two small empirical studies, resulting in a nice bgodmrmrc structure,
+can make a lot of sense for the reader.
+But this has its limits: An abstract with structure bodmrmrmrmr is overloaded.
+It can also easily get out of hand, as confirmed by the examples bobdrmrmr and bomdmrmrmrsmrc.
+
+\subsubsection{Structured abstracts}
+
+Today's conventions for structured abstracts may be a bit restrictive
+(e.g. by not accomodating the useful mrmr substructure), 
+but they result in more orderly abstracts:
+There are only 27!!! different abstract structures for the structured abstracts of empirical articles
+versus 95!!! for empirical articles overall.
+
 
 
 \subsection{How Not To: Uninformative Formulations}
