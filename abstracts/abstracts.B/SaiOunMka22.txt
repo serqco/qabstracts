@@ -15,16 +15,16 @@ Evolutionary Algorithm (SPEA-2).
 {{objective}}
 Our approach aims to provide the optimal trade-off between two conflicting objectives to deal with
 both skipped and non-skipped commits.
-{{objective}}
+{{design}}
 We evaluate our approach and investigate the performance of both within and cross-project
 validations on a benchmark of 14,294 CI commits from 15 projects that use Travis CI system.
 {{method}}
 The statistical tests revealed that our
 approach shows a clear advantage over the baseline approaches with average scores of 92% and 84% in terms of AUC for crossvalidation and cross-project validations respectively.
-{{result:i1}}
+{{result:i1:u1}}
 Furthermore, the features analysis reveals that documentation changes, terms
 appearing in the commit message and the committer experience are the most prominent features in CI skip detection.
-{{result}}
+{{result:i3}}
 When it comes to
 the cross-project scenario, the results reveal that besides the documentation changes, there is a strong link between current and
 previous commits results.
@@ -36,4 +36,3 @@ demonstrate the effectiveness of SKIPCI in providing relevant CI skip commit rec
 projects from practitioner's point of view.
 {{result}}
 ---
-This article is primarily a design article (it presents a software artifact) but the current labels do not include any "design" code.
