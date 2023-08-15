@@ -19,23 +19,22 @@ Many
 tools exist to detect code smells in mobile apps, based specifically on static analysis techniques.
 {{background}}
 In this paper, we are especially interested in two tools:
-{{background}}
 PAPRIKA and ADOCTOR.
-{{background}}
+{{method}}
 Both tools use representative techniques from the literature and contain behavioural code
 smells.
 {{background}}
 We analyse the effectiveness of behavioural code smells detection in practice within
 the tools of concern by performing an empirical study of code smells detected in apps.
-{{objective}}
+{{method}}
 This
 empirical study aims to answer two research questions.
-{{method}}
+{{objective}}
 First, are the detection tools effective in detecting behavioural code smells?
-{{method}}
+{{objective}}
 Second, are the behavioural code smells detected
 by the tools consistent with their original literal definition?
-{{method}}
+{{objective}}
 We emphasise the limitations
 of detection using only static techniques and the lessons learned from our empirical study.
 {{a-conclusion}}
@@ -43,3 +42,4 @@ This study shows that established static analysis methods deemed to be effective
 smells detection are inadequate for behavioural mobile code smells detection.
 {{result:u1}}
 ---
+Not sure if this abstract is okay as it is coded. We should double check this. Strange method statements before objective.

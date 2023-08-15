@@ -15,14 +15,14 @@ should be able to trigger the buggy code.
 However, existing compiler testing approaches only consider the
 latter to generate effective test programs, but just run them under several pre-defined optimization levels
 (e.g., -O0, -O1, -O2, -O3, -Os in GCC).
-{{background}}
+{{gap}}
 To better understand the influence of compiler optimizations on compiler testing, we conduct the first
 empirical study, and find that (1) all the bugs detected under the widely-used optimization levels are also
 detected under the explored optimization settings (we call a combination of optimization flags turned on for
 compilation an optimization setting), while 83.54% of bugs are only detected under the latter; (2) there exist
 both inhibition effect and promotion effect among optimization flags for compiler testing, indicating the
 necessity and challenges of considering the factor of compiler optimizations in compiler testing.
-{{method,result}}
+{{objective,method,result}}
 We then propose the first approach, called COTest, by considering both factors to test compilers.
 {{objective}}
 Specifically, COTest first adopts machine-learning (the XGBoost algorithm) to model the relationship between test

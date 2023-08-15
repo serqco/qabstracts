@@ -27,7 +27,7 @@ dynamic, uncertain, and partially observable operational contexts.
 {{objective}}
 This logical architecture provides a structure
 and serves as a foundation for the implementation of a class of self-adaptive CPSs.
-{{objective}}
+{{design}}
 Results:
 {{h-result}}
 First, our results show that in order to answer if a system is adaptive, the right framing is necessary:
