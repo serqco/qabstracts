@@ -14,6 +14,7 @@ def print_all_stats(args: argparse.Namespace, datasets: argparse.Namespace, outp
         print_abstracts_with_canonical_structure(datasets.ab_structures)
         print_ignorediff_stats(datasets.df_primary1, datasets.by_ab)
         print_iucount_stats(datasets.df_primary1, datasets.by_ab)
+    print_abstracts_structures_counts(datasets.ab_structures)
 
 
 def comment_out_design_works(samplewhowhatfile: str, df: pd.DataFrame):
@@ -68,6 +69,20 @@ def print_abstracts_with_canonical_structure(df):
     good_abstracts = df.loc[df['topicstructure'] == canonical_structure]
     print(f"abstracts with structure '{canonical_structure}':\n",
           list(good_abstracts['citekey'].unique()))
+
+
+def print_abstracts_structures_counts(df):
+    _printheader()
+    alltypes = df.topicstructure.value_counts().index
+    alltypes_structured = df.loc[df.is_struc].topicstructure.value_counts().index
+    for_empir = [t for t in alltypes if "d" not in t]
+    for_empir_struc = [t for t in alltypes_structured if "d" not in t]
+    for_design = [t for t in alltypes if "d" in t]
+    print(f"abstracts structures empirical: {for_empir}")
+    print(f"abstracts structures empirical (structured only): {for_empir_struc}")
+    print(f"abstracts structures design: {for_design}")
+    print(f"#abstracts structures: empirical {len(for_empir)}, "
+          f"empirical structured {len(for_empir_struc)}, design {len(for_design)}")
 
 
 def print_ignorediff_stats(codings: pd.DataFrame, abstracts: pd.DataFrame):
