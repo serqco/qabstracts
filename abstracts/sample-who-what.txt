@@ -333,14 +333,14 @@ NguGru22      Lloyd       Julian
 HanMeh22      Lloyd       Julian
 TyaSibSur22   Lloyd       Julian
 #----- Block 38
-LorMadMon22   Lloyd       -Julian
-LiYuWan22     Lloyd       -Julian
-WeiDenYan22   Lloyd       -Julian
-HuMarCza22    Lloyd       -Julian
+LorMadMon22   Lloyd       Julian
+LiYuWan22     Lloyd       Julian
+WeiDenYan22   Lloyd       Julian
+HuMarCza22    Lloyd       Julian
 # GarRaiFel22 Abstract of special issue introduction
-JiaCheWan22   Lloyd       -Julian
-LinCasSer22   Lloyd       -Julian
-EbrTusMah22   Lloyd       -Julian
+JiaCheWan22   Lloyd       Julian
+LinCasSer22   Lloyd       Julian
+EbrTusMah22   Lloyd       Julian
 #----- Block 39
 PapGroSub22   
 JaiVaiIye22   

@@ -2,29 +2,29 @@ Are You Still Working on This? An Empirical Study on Pull Request Abandonment.
 
 The great success of numerous community-based open source software (OSS) is based on volunteers continuously
 submitting contributions, but ensuring sustainability is a persistent challenge in OSS communities.
-{{}}
+{{background}}
 Although the motivations behind and
 barriers to OSS contributors’ joining and retention have been extensively studied, the impacts of, reasons for and solutions to
 contribution abandonment at the individual level have not been well studied, especially for pull-based development.
-{{}}
+{{gap}}
 To bridge this gap,
 we present an empirical study on pull request abandonment based on a sizable dataset.
-{{}}
+{{objective}}
 We manually examine 321 abandoned pull
 requests on GitHub and then quantify the manual observations by surveying 710 OSS developers.
-{{}}
+{{method}}
 We find that while the lack of
 integrators’ responsiveness and the lack of contributors’ time and interest remain the main reasons that deter contributors from
 participation, limitations during the processes of patch updating and consensus reaching can also cause abandonment.
-{{}}
+{{result:i3}}
 We also show
 the significant impacts of pull request abandonment on project management and maintenance.
-{{}}
+{{result:i1}}
 Moreover, we elucidate the strategies
 used by project integrators to cope with abandoned pull requests and highlight the need for a practical handover mechanism.
-{{}}
+{{result,fneed}}
 We
 discuss the actionable suggestions and implications for OSS practitioners and tool builders, which can help to upgrade the
 infrastructure and optimize the mechanisms of OSS communities.
-{{}}
+{{conclusion,fposs}}
 ---

@@ -2,47 +2,47 @@ Styler: learning formatting conventions to repair Checkstyle violations.
 
 Ensuring the consistent usage of formatting conventions is an important aspect of modern
 software quality assurance.
-{{}}
+{{background}}
 To do so, the source code of a project should be checked against
 the formatting conventions (or rules) adopted by its development team, and then the detected
 violations should be repaired if any.
-{{}}
+{{background}}
 While the former task can be automatically done by format checkers implemented in linters, there is no satisfactory solution for the latter.
-{{}}
+{{gap}}
 Manually
 fixing formatting convention violations is a waste of developer time and code formatters do
 not take into account the conventions adopted and configured by developers for the used
 linter.
-{{}}
+{{gap}}
 In this paper, we present STYLER, a tool dedicated to fixing formatting rule violations raised by format checkers using a machine learning approach.
-{{}}
+{{objective}}
 For a given project,
 STYLER first generates training data by injecting violations of the project-specific rules in
 violation-free source code files.
-{{}}
+{{design}}
 Then, it learns fixes by feeding long short-term memory
 neural networks with the training data encoded into token sequences.
-{{}}
+{{design}}
 Finally, it predicts
 fixes for real formatting violations with the trained models.
-{{}}
+{{design}}
 Currently, STYLER supports
 a single checker, Checkstyle, which is a highly configurable and popular format checker
 for Java.
-{{}}
+{{design}}
 In an empirical evaluation, STYLER repaired 41% of 26,791 Checkstyle violations mined from 104 GitHub projects.
-{{}}
+{{method,result}}
 Moreover, we compared STYLER with the IntelliJ
 plugin CHECKSTYLE-IDEA and the machine-learning-based code formatters NATURALIZE
 and CODEBUFF.
-{{}}
+{{method}}
 We found out that STYLER fixes violations of a diverse set of Checkstyle
 rules (24/25 rules), generates smaller repairs in comparison to the other systems, and predicts repairs in seconds once trained on a project.
-{{}}
+{{result:i2}}
 Through a manual analysis, we identified
 cases in which STYLER does not succeed to generate correct repairs, which can guide further improvements in STYLER.
-{{}}
+{{method,a-result,fposs}}
 Finally, the results suggest that STYLER can be useful to
 help developers repair Checkstyle formatting violations.
-{{}}
+{{conclusion}}
 ---
