@@ -10,7 +10,7 @@ as identifying developers’ emotions expressed in code comments and extracting 
 Given the large amount of relevant studies available, it can take considerable time for researchers
 and developers to figure out which approaches they can adopt in their own studies and what perils these
 approaches entail.
-{{background}}
+{{gap}}
 We conducted a systematic literature review involving 185 papers.
 {{objective}}
 More specifically, we present (1) welldefined categories of opinion mining-related software development activities, (2) available opinion mining approaches, whether they are evaluated when adopted in other studies, and how their performance is compared,

@@ -7,7 +7,7 @@ cessful deployment.
 {{background}}
 Assurance relies on the availability of precisely
 specified and, ideally, machine-verifiable requirements.
-{{gap}}
+{{background}}
 MVCs with
 state-of-the-art performance rely on machine learning (ML) and
 training data, but largely lack such requirements.
@@ -38,10 +38,10 @@ our requirements.
 Further, we show that our reliability require-
 ments are feasible and reusable by evaluating our methods on 13
 state-of-the-art pre-trained image classification models.
-{{method}}
+{{result,method}}
 Finally, we
 demonstrate that our approach detects reliability gaps in MVCs
 that other existing methods are unable to detect.
-{{result:i1}}
+{{result:i1,method}}
 ---
 Sentence 9 is a very large and hairy sentence.

@@ -22,7 +22,7 @@ the significant impacts of pull request abandonment on project management and ma
 {{result:i1}}
 Moreover, we elucidate the strategies
 used by project integrators to cope with abandoned pull requests and highlight the need for a practical handover mechanism.
-{{conclusion,fneed}}
+{{result,fneed}}
 We
 discuss the actionable suggestions and implications for OSS practitioners and tool builders, which can help to upgrade the
 infrastructure and optimize the mechanisms of OSS communities.

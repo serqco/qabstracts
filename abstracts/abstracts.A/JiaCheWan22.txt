@@ -44,13 +44,12 @@ Conclusion:
 {{h-conclusion}}
 Our analysis reveals that without considering the occurrence of false satisfactions, MT may
 overestimate the system's conformance to the relevant MR.
-{{result}}
+{{conclusion}}
 Furthermore, our experiments empirically show
 that conclusions derived from MT can be adversely affected when there are many false satisfactions.
-{{result}}
+{{conclusion}}
 Our
 findings will help the MT community to adopt a more fair and reliable way of using the test outcomes of MT,
 and can also inspire the development of solid foundations for MT.
-{{conclusion}}
+{{fposs}}
 ---
-This is a mess of an abstract. It has headers, but does not follow them, and words many sentences as a mix of method, result, conclusion, and summary.
