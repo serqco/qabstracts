@@ -25,7 +25,7 @@ application of MT to sentiment analysis (SA) systems.
 {{objective}}
 An in-depth analysis of the essence of false satisfactions
 reveals the situations where they would occur, and how they would affect the effectiveness of MT.
-{{method,result}}
+{{result}}
 Furthermore,
 20 metamorphic relations (MRs) are identified for supporting a user-oriented evaluation of SA systems.
 {{result}}
@@ -47,7 +47,7 @@ overestimate the system's conformance to the relevant MR.
 {{conclusion}}
 Furthermore, our experiments empirically show
 that conclusions derived from MT can be adversely affected when there are many false satisfactions.
-{{result}}
+{{conclusion}}
 Our
 findings will help the MT community to adopt a more fair and reliable way of using the test outcomes of MT,
 and can also inspire the development of solid foundations for MT.

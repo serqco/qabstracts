@@ -41,7 +41,7 @@ rules (24/25 rules), generates smaller repairs in comparison to the other system
 {{result:i2}}
 Through a manual analysis, we identified
 cases in which STYLER does not succeed to generate correct repairs, which can guide further improvements in STYLER.
-{{method,a-result,fposs}}
+{{method,limitation,fposs}}
 Finally, the results suggest that STYLER can be useful to
 help developers repair Checkstyle formatting violations.
 {{conclusion}}

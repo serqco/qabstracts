@@ -26,5 +26,5 @@ used by project integrators to cope with abandoned pull requests and highlight t
 We
 discuss the actionable suggestions and implications for OSS practitioners and tool builders, which can help to upgrade the
 infrastructure and optimize the mechanisms of OSS communities.
-{{conclusion,fposs}}
+{{conclusion}}
 ---

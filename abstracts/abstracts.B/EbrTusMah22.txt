@@ -5,7 +5,7 @@ Modern application stores enable developers to classify their apps by choosing f
 or genres, such as health, games, and music.
 {{background}}
 These categories are typically static—new categories do not necessarily emerge over time to reflect innovations in the mobile software landscape.
-{{background}}
+{{background,-ignorediff}}
 With thousands of apps
 classified under each category, locating apps that match a specific consumer interest can be a challenging task.
 {{gap}}
@@ -34,3 +34,4 @@ The results show that GloVe combined with Support Vector Machines can
 produce app classifications that are aligned to a large extent with human-generated classifications.
 {{result:i1}}
 ---
+Disagreement in sentence 2: it is not clear which challenge is being overcome (locating relevant apps vs. classifying apps correctly)
