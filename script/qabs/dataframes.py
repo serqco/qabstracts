@@ -28,6 +28,7 @@ def df_primary1(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
+    """A dataframe with records that aggregate data at the level of one abstract."""
     # ----- do basic aggregation from codings to abstracts:
     res = primary.groupby(['citekey', 'coder']) \
         .agg(_citekey=_nagg('citekey', 'min'),
@@ -47,14 +48,15 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
              is_struc=_nagg('is_struc', 'any'), 
              is_design=_nagg('is_design', 'any'))
     # ----- add derived variables:
-    topicparts = primary.groupby(['citekey', 'coder', 'topic']).agg(
+    topicparts = primary.groupby(['citekey', 'coder', 'topic']).agg(  # num of words pertaining to topic
             topicwords=_nagg('words', 'sum'),
     )
-    codeparts = primary.groupby(['citekey', 'coder', 'code']).agg(
+    codeparts = primary.groupby(['citekey', 'coder', 'code']).agg(  # num of words pertaining to code
             codewords=_nagg('words', 'sum'),
     )
 
     def add_topicfraction_x(result: pd.DataFrame, x: str) -> pd.DataFrame:
+        """Which fraction of the abstract's total number of words pertains to topic x?"""
         py_x = x.replace('-', '_')  # make name usable as a python identifier
         result = pd.merge(result, topicparts.query(f"topic=='{x}'"), 'left', on=('citekey', 'coder'))
         result = result.rename(columns=dict(topicwords=f'words_{py_x}'), errors="raise")
@@ -62,6 +64,7 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
         return result
 
     def add_codefraction_x(result: pd.DataFrame, x: str) -> pd.DataFrame:
+        """Which fraction of the abstract's total number of words pertains to code x?"""
         py_x = x.replace('-', '_')  # make name usable as a python identifier
         result = pd.merge(result, codeparts.query(f"code=='{x}'"), 'left', on=('citekey', 'coder'))
         result = result.rename(columns=dict(codewords=f'words_{py_x}'), errors="raise")
@@ -204,27 +207,27 @@ def ab_topicfractions0_values(df: pd.DataFrame) -> pt.Subsets:
 
 
 def ab_missinginfofractions_values(df: pd.DataFrame) -> pt.Subsets:
-    """subsets for frequency of a-*, :i, :u"""
+    """subsets for frequency of :i, a-*, :u"""
     ab_missinginfofractions_list = [
-        pt.Values(label="Methods",
+        pt.Values(label="Inf.gap",
                   x=1.0,
-                  values=lambda dfr: dfr.fraction_a_method),
-        pt.Values(label="Results",
-                  x=2.0,
-                  values=lambda dfr: dfr.fraction_a_result),
-        pt.Values(label="Conclusion",
-                  x=3.0,
-                  values=lambda dfr: dfr.fraction_a_conclusion),
-        pt.Values(label="Poss.fut.res.",
-                  x=4.0,
-                  values=lambda dfr: dfr.fraction_a_fposs),
-        pt.Values(label="Detail",
-                  x=5.0,
                   values=lambda dfr: dfr.icount),
-        pt.Values(label="Detail (>1)",
+        pt.Values(label="Inf.gap (≥3)",
+                  x=2.0,
+                  values=lambda dfr: dfr.icount >= 3),
+        pt.Values(label="Ann. method",
+                  x=3.0,
+                  values=lambda dfr: dfr.fraction_a_method),
+        pt.Values(label="Ann. result",
+                  x=4.0,
+                  values=lambda dfr: dfr.fraction_a_result),
+        pt.Values(label="Ann. concl.",
+                  x=5.0,
+                  values=lambda dfr: dfr.fraction_a_conclusion),
+        pt.Values(label="Ann. poss.fut.res.",
                   x=6.0,
-                  values=lambda dfr: dfr.icount > 1),
-        pt.Values(label="Term",
+                  values=lambda dfr: dfr.fraction_a_fposs),
+        pt.Values(label="Und.gap",
                   x=7.0,
                   values=lambda dfr: dfr.ucount),
     ]
