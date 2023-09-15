@@ -13,8 +13,8 @@ def print_all_stats(args: argparse.Namespace, datasets: argparse.Namespace, outp
             comment_out_design_works(args.withoutdesignworks, datasets.by_ab)
         print_abstracts_with_canonical_structure(datasets.ab_structures)
         print_ignorediff_stats(datasets.df_primary1, datasets.by_ab)
-        print_iucount_stats(datasets.df_primary1, datasets.by_ab)
-    print_abstracts_structures_counts(datasets.ab_structures)
+        print_abstracts_structures_counts(datasets.ab_structures)
+    print_gaps_stats(datasets.df_primary1, datasets.by_ab)
 
 
 def comment_out_design_works(samplewhowhatfile: str, df: pd.DataFrame):
@@ -120,7 +120,7 @@ def print_ignorediff_stats(codings: pd.DataFrame, abstracts: pd.DataFrame):
     print("---")
 
 
-def print_iucount_stats(codings: pd.DataFrame, abstracts: pd.DataFrame):
+def print_gaps_stats(codings: pd.DataFrame, abstracts: pd.DataFrame):
     _printheader()
     for which in ('icount', 'ucount'):
         codings_with_iucount = codings[codings[which] > 0]
@@ -129,6 +129,11 @@ def print_iucount_stats(codings: pd.DataFrame, abstracts: pd.DataFrame):
         per_code_percent.columns = ['percent']
         per_code_percent.index.name = which
         print(per_code_percent.sort_values(by='percent', ascending=False))
+    per_count_percent = pd.crosstab(index=abstracts.announcecount, columns="announcecount",
+                                    normalize=True).round(3) * 100
+    per_count_percent.columns = ['percent']
+    per_count_percent.index.name = 'abstract_has_announce'
+    print(per_count_percent.sort_values(by='percent', ascending=False))
 
     
 
