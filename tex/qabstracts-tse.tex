@@ -32,8 +32,10 @@
 
 \newcommand{\Todo}[1]{\bgroup\bfseries\Large #1\egroup}
 \newcommand{\Quote}[1]{\bgroup\itshape ``#1´´\egroup}
+\newcommand{\Pseudoquote}[1]{\bgroup\itshape ``#1´´\egroup}
 \newcommand{\QuoteCB}[1]{\Quote{#1}}
-
+\newcommand{\Describegroups}{The plots in each group show these different subsets of abstracts:
+	all, structured, non-structured, design, empirical, EMSE, ICSE, IST, TOSEM, TSE.}
 
 \begin{document}
 	
@@ -730,8 +732,7 @@ This is shown in Figure~\ref{zerofractionbar_xletgroups_topicmissingfractions}.
 
 \Plotwide{zerofractionbar_xletgroups_topicmissingfractions}{%
 	How often is a topic not present at all in an abstract?\\
-	The plots in each group show these different subsets of abstracts:
-	all, structured, non-structured, design, empirical, EMSE, ICSE, IST, TOSEM, TSE}
+	\Describegroups}
 
 The often-missing parts \Cb{gap} and \emph{Outlook} are clearly optional, 
 so it is not a problem that they are often not present.
@@ -812,10 +813,87 @@ There are only 27!!! different abstract structures for the structured abstracts 
 versus 95!!! for empirical articles overall.
 
 
-
 \subsection{How Not To: Uninformative Formulations}
 
-Informativeness gaps; Announcements.
+A milder way of reducing the usefulness of an abstract is using formulations that
+fail to provide information that, at this point, would be useful to the reader and 
+could be provided using only very few additional words.
+
+Our investigation has identified and then quantified two types
+of such lacks of informativeness. 
+We call them informativeness gaps and announcements, respectively.
+
+\subsubsection{Informativeness gaps}
+
+Look at the following result statement:
+\Quote{random sampling is rare} [BalRal22]. %EMSE
+If at this point the reader expects the work contains something more
+concrete than \Quote{rare}, this is an informativeness gap.
+And indeed the article in question contains this information in its
+Table 4 and therefore could and should have said 
+\Pseudoquote{random sampling is rare (8\% of cases)}.
+
+Informativeness gaps appear mostly in results statements (82\% of the gaps)
+or method statements (16\% of the gaps).
+Most (but not all) of them could be filled by a number.
+They tend to cluster,
+like here:
+\Quote{The results show that PRINS can process large logs much faster 
+  than a publicly available and well-known state-of-the-art tool, 
+  without significantly compromising the accuracy of inferred models.} [ShiBiaBri22] %EMSE
+This sentence has three informativeness gaps. 
+A better formulation could have been:
+\Pseudoquote{The results show that PRINS can often process logs an order of magnitude faster 
+  than the well-known state-of-the-art tool MINT, 
+  but never lost more than 7 percentage points of balanced accuracy.}!!!
+
+More than half of all abstracts have an informativeness gap
+and 18\%!!! have three or more.
+See the leftmost two groups of Figure~\ref{nonzerofractionbar_xletgroups_missinginfofractions} 
+for details.
+
+\Plotwide{nonzerofractionbar_xletgroups_missinginfofractions}{%
+	What fraction of abstracts has the following uninformative types of formulations?\\
+	One-or-more or three-or-more informativeness gaps (i.e. missed opportunities for being more specific).\\
+	Some sentence that only announces (instead of describing) a method, result, conclusion, or 
+	possible future research.\\
+	One or more understandability gaps.\\
+	Informativeness gaps are epidemic, worse(!) for structured abstracts.
+	Announcing is generally not rare, in particular for results, and tends to be less pronounced
+	at IST. 
+	Not explaining key terms is not rare and worst at EMSE.\\
+	\Describegroups}
+
+\subsubsection{Announcements}
+
+Occasionally, a sentence will not merely miss to report some specific piece of information
+but rather fail to provide any useful information at all and merely hint at
+information to be found in the article body.
+We call such a sentence an announcement.
+
+Example 1:
+\Quote{As a second step, this study sets out to specifically
+  provide a detailed assessment of additional and in-depth analysis of technical debt management strategies based
+  on an encouraging mindset and attitude from both managers and technical roles to understand how, when and by
+  whom such strategies are adopted in practice.} [BesMarBos22]
+So many words, so little information in this would-be method statement!
+Here is what the sentence could have said instead:
+\Pseudoquote{We then surveyed 26 managers and 46 technical people, followed by clarifying interviews 
+  with 4 managers and 2 developers in order to understand how the managers perceive how they are encouraging
+  developers to manage technical debt and how the developers perceive the encouragement they receive.}
+% based on BasMarBos Sections 3.2.1, 3.2.3, Table 2
+
+Example 2:
+\Quote{Finally we provide guidelines/best practices for researchers utilizing time-based data
+from Git repositories.} [FliChaDye22]  %EMSE
+This could have been a result statement such as the following:
+\Pseudoquote{We provide 6 guidelines. For instance, cutting off all commits before 2014
+  will get rid of about 98\% of all bad commits.}
+
+Announcements are a waste of space and a nuisance for the reader, 
+yet 24\% of all abstracts have at least one.
+See groups three to six of Figure~\ref{nonzerofractionbar_xletgroups_missinginfofractions} 
+for details.
 
 
 \subsection{How Not To: Undefined Inportant Terms}
