@@ -2,23 +2,23 @@ Forecasting Architectural Decay From Evolutionary History.
 
 As a software system evolves, its architecture tends to decay, leading to the occurrence of architectural elements that
 become resistant to maintenance or prone to defects.
-{{}}
+{{background}}
 To address this problem, engineers can significantly benefit from determining
 which architectural elements will decay before that decay actually occurs.
-{{}}
+{{background}}
 Forecasting decay allows engineers to take steps to prevent
 decay, such as focusing maintenance resources on the architectural elements most likely to decay.
-{{}}
+{{background}}
 To that end, we construct novel
 models that predict the quality of an architectural element by utilizing multiple architectural views (both structural and semantic) and
 architectural metrics as features for prediction.
-{{}}
+{{objective,design}}
 We conduct an empirical study using our prediction models on 38 versions of five
 systems.
-{{}}
+{{method}}
 Our findings show that we can predict low architectural quality, i.e., architectural decay, with high performance—even for
 cases of decay that suddenly occur in an architectural module.
-{{}}
+{{result:i1}}
 We further report the factors that best predict architectural quality.
-{{}}
+{{result:i1}}
 ---
