@@ -1,4 +1,7 @@
 % Article about SE abstracts quality (qabstracts) for IEEE Trans. on Software Engineering
+% TODO:
+% - https://bjoern.brembs.net/2016/01/even-without-retractions-top-journals-publish-the-least-reliable-science/
+
 \documentclass[10pt,journal,compsoc]{IEEEtran}
 
 \usepackage{cite}
@@ -533,14 +536,14 @@ b) Lutz finds Lloyd's coding clearly incorrect.
 He would respond with an explanation why he thinks so.\\
 c) Lutz finds Lloyd's coding acceptable, but his own coding preferable.
 He would respond with an explanation of his reasoning and suggest that Lloyd
-either adjust his coding or add an \Cb{:ignorediff} suffix to it.
+either adjust his coding or add an \Cb{-ignorediff} marker to it.
 This suffix silences the \Prg{compare-codings} script for this particular report block,
 so that the coding difference is now officially accepted.\\
 d) Lutz finds his own coding acceptable, but Lloyds preferable.
-He would either adjust his coding or add an \Cb{:ignorediff} suffix to it
+He would either adjust his coding or add an \Cb{-ignorediff} marker to it
 and respond accordingly.\\
 e) Lutz finds both codings equally acceptable.
-He would add an \Cb{:ignorediff} suffix to his own
+He would add an \Cb{-ignorediff} marker to his own
 and respond accordingly, explaining is reasoning.\\
 
 \begin{figure*}[tbp]%
@@ -903,7 +906,19 @@ Understandability gaps
 
 \subsection{How Not To: Ambiguous Formulations}
 
-Ignorediffs
+Codings with an \Cb{-ignorediff} marker indicate cases where the coders could not agree
+despite discussion: the respective sentence (or sentence part) is so highly ambiguous that
+more than one role for it is similarly likely.
+Obviously, such ambiguous formulations do not represent good abstract writing.
+
+In our data, we found 74!!! such cases overall, spread over 30!!! different abstracts,
+so that 5\%!!! of all abstracts have one or more such problems.
+A total of 14!!! different codes are involved.
+The most frequent 5!!! of them cover 61\%!!! of the total:
+design, conclusion, result, a-result, and method.
+
+Although a detailed discussion and more examples could be interesting, 
+we find the phenomenon is not frequent enough to warrant more detail.
 
 
 \subsection{How-Not-To Summary}
