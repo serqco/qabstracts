@@ -1,56 +1,56 @@
 UX professionals' learning and usage of UX methods in agile.
 
 Context:
-{{}}
+{{h-background}}
 The usage of User Experience (UX) methods has been studied through the years.
-{{}}
+{{background}}
 However, little is known
 about UX professionals' lifelong learning processes related to UX methods in Agile, choosing what UX methods to
 use, and the enablers and hindrances for using the UX methods.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 The study aims to broaden current knowledge about UX professionals' lifelong learning practices to
 understand their work situations better.
-{{}}
+{{objective}}
 The paper describes how UX professionals learn about and choose UX
 methods, their frequency of use, and the enablers and barriers when using the UX methods in Agile.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 An interview study was conducted with 13 UX professionals from various industries and two countries
 working with Agile and UX.
-{{}}
+{{method}}
 We used a qualitative approach, and a thematic analysis was carried out to answer
 the research questions.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 The results show that support from colleagues is an essential component for learning about the methods
 and how to use UX methods.
-{{}}
+{{result}}
 Time pressure makes UX professionals choose methods they know will deliver their
 desired results.
-{{}}
+{{result}}
 Prototyping, user testing, user journeys, and workshops are the most frequently used UX
 methods.
-{{}}
+{{result}}
 Additionally, the results show that UX professionals think that the UX methods are often too compli­
 cated and take too long to learn.
-{{}}
+{{result}}
 Additionally, they find it challenging to integrate UX methods into Agile.
-{{}}
+{{result}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 These findings indicate that UX methods might work better if designed to be less complicated and
 deliver results more efficiently.
-{{}}
+{{conclusion}}
 Moreover, collegial and peer learning is central to UX professionals.
-{{}}
+{{conclusion}}
 The HCI
 community could be more active in supporting this culture by sharing information and learning.
-{{}}
+{{fposs}}
 Finally, the
 usability and UX of the tools affect which UX methods are used.
-{{}}
+{{conclusion}}
 ---

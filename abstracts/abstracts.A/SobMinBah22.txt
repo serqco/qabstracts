@@ -2,31 +2,31 @@ Continuous and Proactive Software Architecture Evaluation: An IoT Case.
 
 
 Design-time evaluation is essential to build the initial software architecture to be deployed.
-{{}}
+{{background}}
 However, experts'
 assumptions made at design-time are unlikely to remain true indefinitely in systems that are characterized by
 scale, hyperconnectivity, dynamism, and uncertainty in operations (e.g. IoT).
-{{}}
+{{background}}
 Therefore, experts' design-time
 decisions can be challenged at run-time.
-{{}}
+{{background}}
 A continuous architecture evaluation that systematically assesses
 and intertwines design-time and run-time decisions is thus necessary.
-{{}}
+{{background}}
 This paper proposes the first proactive approach to continuous architecture evaluation of the system leveraging the support of simulation.
-{{}}
+{{objective}}
 The
 approach evaluates software architectures by not only tracking their performance over time, but also forecasting their likely future performance through machine learning of simulated instances of the architecture.
-{{}}
+{{design:u1}}
 This enables architects to make cost-effective informed decisions on potential changes to the architecture.
-{{}}
+{{design}}
 We perform an IoT case study to show how machine learning on simulated instances of architecture can
 fundamentally guide the continuous evaluation process and influence the outcome of architecture decisions.
-{{}}
+{{method}}
 A series of experiments is conducted to demonstrate the applicability and effectiveness of the approach.
-{{}}
+{{a-method}}
 We
 also provide the architect with recommendations on how to best benefit from the approach through choice
 of learners and input parameters, grounded on experimentation and evidence.
-{{}}
+{{design:u1}}
 ---
