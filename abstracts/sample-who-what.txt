@@ -342,14 +342,14 @@ JiaCheWan22   Lloyd       Julian
 LinCasSer22   Lloyd       Julian
 EbrTusMah22   Lloyd       Julian
 #----- Block 39
-PapGroSub22   Lutz        -Franz
-JaiVaiIye22   Lutz        -Franz
-GarKouGho22   Lutz        -Franz
-LiLuZha22     Lutz        -Franz
-LiuLiFu22     Lutz        -Franz
-WalGhaAla22   Lutz        -Franz
-BocSchApe22   Lutz        -Franz
-QamSülTüz22   Lutz        -Franz
+PapGroSub22   Lutz        Franz
+JaiVaiIye22   Lutz        Franz
+GarKouGho22   Lutz        Franz
+LiLuZha22     Lutz        Franz
+LiuLiFu22     Lutz        Franz
+WalGhaAla22   Lutz        Franz
+BocSchApe22   Lutz        Franz
+QamSülTüz22   Lutz        Franz
 #----- Block 40
 MasGarCal22   Lutz
 GuiSarKri22   Lutz

@@ -3,35 +3,35 @@ Jigsaw: Large Language Models meet Program Synthesis.
 Large pre-trained language models such as GPT-3 [10], Codex [11],
 and Google's language model [7] are now capable of generating
 code from natural language specifications of programmer intent.
-{{}}
+{{background}}
 We view these developments with a mixture of optimism and cau-
 tion.
-{{}}
+{{background}}
 On the optimistic side, such large language models have the
 potential to improve productivity by providing an automated AI
 pair programmer for every programmer in the world.
-{{}}
+{{background}}
 On the cau-
 tionary side, since these large language models do not understand
 program semantics, they offer no guarantees about quality of the
 suggested code.
-{{}}
+{{gap}}
 In this paper, we present an approach to augment
 these large language models with post-processing steps based on
 program analysis and synthesis techniques, that understand the
 syntax and semantics of programs.
-{{}}
+{{objective}}
 Further, we show that such tech-
 niques can make use of user feedback and improve with usage.
-{{}}
+{{objective}}
 We
 present our experiences from building and evaluating such a tool
 Jigsaw, targeted at synthesizing code for using Python Pandas API
 using multi-modal inputs.
-{{}}
+{{a-design,a-result}}
 Our experience suggests that as these
 large language models evolve for synthesizing code from intent,
 Jigsaw has an important role to play in improving the accuracy of
 the systems.
-{{}}
+{{conclusion}}
 ---
