@@ -26,7 +26,7 @@ To demonstrate the practicability of our measurement and analysis method,
 we investigate 10 substantial and popular open-source software projects and show that, if sub-groups evolve,
 modeling these sub-groups helps predict the future evolution of interaction levels of programmers and groups
 of developers.
-{{method,a-result}}
+{{method,result:i1}}
 Our method allows maintainers and other stakeholders of open-source software projects to assess instabilities and organizational changes in developer interaction and can be applied to different use cases
 in organizational analysis, such as understanding the dynamics of a specific incident or discussion.
 {{conclusion}}

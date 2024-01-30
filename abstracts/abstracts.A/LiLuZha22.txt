@@ -8,7 +8,7 @@ standards for judging the severity of vulnerabilities.
 {{background}}
 More importantly, tools fail to identify
 all the vulnerabilities accurately and comprehensively as the evolution of vulnerabilities.
-{{background}}
+{{gap}}
 To this end, we first propose a vulnerability assessment model to unify the vulnerability measurement standards.
 {{objective}}
 Next, we design a static analysis tool called SmartFast, which

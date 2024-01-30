@@ -15,7 +15,7 @@ On the cau-
 tionary side, since these large language models do not understand
 program semantics, they offer no guarantees about quality of the
 suggested code.
-{{background}}
+{{gap}}
 In this paper, we present an approach to augment
 these large language models with post-processing steps based on
 program analysis and synthesis techniques, that understand the
@@ -33,5 +33,5 @@ Our experience suggests that as these
 large language models evolve for synthesizing code from intent,
 Jigsaw has an important role to play in improving the accuracy of
 the systems.
-{{a-result}}
+{{a-result,-ignorediff}}
 ---
