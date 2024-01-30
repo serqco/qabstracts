@@ -8,7 +8,7 @@ which architectural elements will decay before that decay actually occurs.
 {{background}}
 Forecasting decay allows engineers to take steps to prevent
 decay, such as focusing maintenance resources on the architectural elements most likely to decay.
-{{need}}
+{{background}}
 To that end, we construct novel
 models that predict the quality of an architectural element by utilizing multiple architectural views (both structural and semantic) and
 architectural metrics as features for prediction.

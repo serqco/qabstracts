@@ -13,7 +13,7 @@ To this end, we first propose a vulnerability assessment model to unify the vuln
 {{objective}}
 Next, we design a static analysis tool called SmartFast, which
 expresses the contract source code as a novel intermediate representation named SmartIR.
-{{design}}
+{{objective,design}}
 Using preset rules and taint tracking technology, SmartFast matches SmartIR to locate the
 vulnerability code.
 {{design}}
