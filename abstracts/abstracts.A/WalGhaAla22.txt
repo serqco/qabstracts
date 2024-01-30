@@ -30,7 +30,7 @@ number of defects in a given code entity (e.g., class).
 {{objective}}
 One of our major findings is the
 usefulness of the Network Portrait Divergence metric, borrowed from the information theory domain, to aid the understanding of software evolution.
-{{design}}
+{{design,-ignorediff}}
 To validate our approach, we
 examined 29 different open-source Java projects from GitHub and then demonstrated the
 proposed approach using 9 use cases with defect data from the the PROMISE dataset.

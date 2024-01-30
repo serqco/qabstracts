@@ -20,5 +20,5 @@ Our findings show that we can predict low architectural quality, i.e., architect
 cases of decay that suddenly occur in an architectural module.
 {{result:i1}}
 We further report the factors that best predict architectural quality.
-{{result:i1}}
+{{a-result}}
 ---
