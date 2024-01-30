@@ -37,4 +37,6 @@ created: Lutz Prechelt, 2023-01-27
 - 2023-07-12 agreement to drive forward the analysis and article-writing to see
   where we actually need more data.
   (Today, the study has been running for exactly one year.)
+- 2023-09-29 long pause (it just happens)
+- 2024-01-29 work resumes
 - ...
