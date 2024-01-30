@@ -2,27 +2,29 @@ On the Reliability of Coverage-Based Fuzzer Benchmarking.
 
 Given a program where none of our fuzzers finds any bugs, how do
 we know which fuzzer is better?
-{{}}
+{{background}}
 In practice, we often look to code
 coverage as a proxy measure of fuzzer effectiveness and consider
 the fuzzer which achieves more coverage as the better one.
-{{}}
+{{background}}
 Indeed, evaluating 10 fuzzers for 23 hours on 24 programs, we
 find that a fuzzer that covers more code also finds more bugs.
-{{}}
+{{method:u1,result}}
 There
 is a very strong correlation between the coverage achieved and the
 number of bugs found by a fuzzer.
-{{}}
+{{result:i1}}
 Hence, it might seem reasonable
 to compare fuzzers in terms of coverage achieved, and from that
 derive empirical claims about a fuzzer's superiority at finding bugs.
-{{}}
+{{method:u1}}
 Curiously enough, however, we find no strong agreement on
 which fuzzer is superior if we compared multiple fuzzers in terms
 of coverage achieved instead of the number of bugs found.
-{{}}
+{{result:u1}}
 The
 fuzzer best at achieving coverage, may not be best at finding bugs.
-{{}}
+{{conclusion}}
 ---
+
+This is one weird abstract!

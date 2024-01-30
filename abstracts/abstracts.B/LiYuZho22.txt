@@ -2,37 +2,37 @@ Redundancy, Context, and Preference: An Empirical Study of Duplicate Pull Reques
 
 OSS projects are being developed by globally distributed contributors, who often collaborate through the pull-based model
 today.
-{{}}
+{{background}}
 While this model lowers the barrier to entry for OSS developers by synthesizing, automating and optimizing the contribution process,
 coordination among an increasing number of contributors remains as a challenge due to the asynchronous and self-organized nature of
 distributed development.
-{{}}
+{{background}}
 In particular, duplicate contributions, where multiple different contributors unintentionally submit duplicate pull
 requests to achieve the same goal, are an elusive problem that may waste effort in automated testing, code review and software
 maintenance.
-{{}}
+{{background}}
 While the issue of duplicate pull requests has been highlighted, to what extent duplicate pull requests affect the development
 in OSS communities has not been well investigated.
-{{}}
+{{gap}}
 In this paper, we conduct a mixed-approach study to bridge this gap.
-{{}}
+{{objective,a-method}}
 Based on a
 comprehensive dataset constructed from 26 popular GitHub projects, we obtain the following findings:
-{{}}
+{{method}}
 (a) Duplicate pull requests result in
 redundant human and computing resources, exerting a significant impact on the contribution and evaluation process.
-{{}}
+{{result:i1}}
 (b) Contributors'
 inappropriate working patterns and the drawbacks of their collaborating environment might result in duplicate pull requests.
-{{}}
+{{result}}
 (c) Compared
 to non-duplicate pull requests, duplicate pull requests have significantly different features, e.g., being submitted by inexperienced
 contributors, being fixing bugs, touching cold files, and solving tracked issues.
-{{}}
+{{result}}
 (d) Integrators choosing between duplicate pull requests
 prefer to accept those with early submission time, accurate and high-quality implementation, broad coverage, test code, high maturity,
 deep discussion, and active response.
-{{}}
+{{result}}
 Finally, actionable suggestions and implications are proposed for OSS practitioners.
-{{}}
+{{a-conclusion}}
 ---

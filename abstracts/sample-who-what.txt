@@ -351,14 +351,14 @@ WalGhaAla22   Lutz        Franz
 BocSchApe22   Lutz        Franz
 QamSülTüz22   Lutz        Franz
 #----- Block 40
-MasGarCal22   Lutz        -Franz
-GuiSarKri22   Lutz        -Franz
-CajLárGei22   Lutz        -Franz
-SobMinBah22   Lutz        -Franz
-WidPraHar22   Lutz        -Franz
-BöhSzeMet22   Lutz        -Franz
-AmnPoe22      Lutz        -Franz
-LiYuZho22     Lutz        -Franz
+MasGarCal22   Lutz        Franz
+GuiSarKri22   Lutz        Franz
+CajLárGei22   Lutz        Franz
+SobMinBah22   Lutz        Franz
+WidPraHar22   Lutz        Franz
+BöhSzeMet22   Lutz        Franz
+AmnPoe22      Lutz        Franz
+LiYuZho22     Lutz        Franz
 #----- Block 41
 GreStrSha22   
 HuaLiaChe22   
