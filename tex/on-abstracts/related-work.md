@@ -1,5 +1,6 @@
 # Other research on abstracts
 
+Google-Scholar: "structure of a research article", structure article abstract
 
 ## CroOpp06: A genre analysis of scientific abstracts
 
@@ -35,12 +36,22 @@ Journal of the American Academy of Dermatology, 0.64 ± 0.15; P = .045)
 and between formats (structured, 0.71 ± 0.11; and unstructured, 0.56 ± 0.18; P = .002)."
 
 
+# Hartley94: Three ways to improve the clarity of journal abstracts
+
+https://bpspsychub.onlinelibrary.wiley.com/doi/abs/10.1111/j.2044-8279.1994.tb01106.x
+
+
 ## Pinto06: A grounded theory on abstracts quality: Weighting variables and attributes
 
 A survey[sic!] that quantifies what authors and readers, respectively, think about
 finds six variables describing the abstracting process and
 eight attributes describing abstracts.
 Questionable quality.
+
+
+## PitBra98: Can the Accuracy of Abstracts Be Improved by Providing Specific Instructions? A Randomized Controlled Trial
+
+https://jamanetwork.com/journals/jama/fullarticle/187740
 
 
 ## PitBraBur99: Accuracy of Data in Abstracts of Published Research Articles
@@ -58,6 +69,9 @@ for example, 1 abstract3 gave the estimated 15-year survival as 48%,
 whereas the body of the text indicated it to be 58%."
 
 
+## Rimrott07: The discourse structure of research articles abstracts–A rhetorical structure theory (RST) analysis
+
+
 ## ShaAlA20: Reporting quality and spin in abstracts of randomized clinical trials of periodontal therapy and cardiovascular disease outcomes
 
 https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0230843
@@ -67,3 +81,15 @@ Finds that most have relevant gaps in the abstract's reporting and most
 make overly positive statements (spin).
 
 
+## Xu19: Comparing Rhetorical Structure of Research Article Abstracts Written by Native English Writers and Chinese Writers
+
+
+## YasQam14: The application of Swales' model in writing a research article introduction
+
+
+# Other relevant sources
+
+## HamBer13: Confusing Claims for Data: A Critique of Common Practices for Presenting Qualitative Research on Learning
+
+https://www.tandfonline.com/doi/full/10.1080/10508406.2013.802652  
+About proper handling of rater disagreements.
