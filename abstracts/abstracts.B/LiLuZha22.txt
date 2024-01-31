@@ -30,5 +30,5 @@ Besides,
 compared with other tools, SmartFast can detect more kinds of vulnerabilities (119) with a
 higher precision rate (98.43%) and a recall rate (85.12%), which confirms the conclusion of
 the theoretical analysis in the paper.
-{{result,a-conclusion}}
+{{result}}
 ---
