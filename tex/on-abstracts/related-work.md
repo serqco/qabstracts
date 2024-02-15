@@ -36,7 +36,13 @@ Journal of the American Academy of Dermatology, 0.64 ± 0.15; P = .045)
 and between formats (structured, 0.71 ± 0.11; and unstructured, 0.56 ± 0.18; P = .002)."
 
 
-# Hartley94: Three ways to improve the clarity of journal abstracts
+## FauLubKur20: Rhetorical Moves and Linguistic Complexity of Research Article Abstracts in International Applied Linguistics Journals
+
+This study concludes that applied linguistics abstracts from international
+journals have typical conventions to adhere.
+
+
+## Hartley94: Three ways to improve the clarity of journal abstracts
 
 https://bpspsychub.onlinelibrary.wiley.com/doi/abs/10.1111/j.2044-8279.1994.tb01106.x
 
@@ -72,6 +78,12 @@ whereas the body of the text indicated it to be 58%."
 ## Rimrott07: The discourse structure of research articles abstracts–A rhetorical structure theory (RST) analysis
 
 
+## SalagerMeyer90: Discoursal fiaws in Medical English abstracts: A genre analysis per research- and text-type
+
+"Only 52% of the abstracts we studies are well structured." 
+Explains four types of flaw.
+
+
 ## ShaAlA20: Reporting quality and spin in abstracts of randomized clinical trials of periodontal therapy and cardiovascular disease outcomes
 
 https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0230843
@@ -79,6 +91,10 @@ https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0230843
 Analyzes 24 controlled experiment reports' abstracts.
 Finds that most have relevant gaps in the abstract's reporting and most
 make overly positive statements (spin).
+
+## ShaHar06: Structured abstracts: Do they improve the quality of information in abstracts?
+
+Yes, according to our 29-item checklist.
 
 
 ## Xu19: Comparing Rhetorical Structure of Research Article Abstracts Written by Native English Writers and Chinese Writers
