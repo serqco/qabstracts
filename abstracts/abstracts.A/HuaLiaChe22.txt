@@ -3,27 +3,27 @@ Reviewing rounds prediction for code patches.
 Code review is one of the common activities to guarantee the reliability of software, while
 code review is time-consuming as it requires reviewers to inspect the source code of each
 patch.
-{{}}
+{{background}}
 A patch may be reviewed more than once before it is eventually merged or abandoned, and then such a patch may tighten the development schedule of the developers and
 further affect the development progress of a project.
-{{}}
+{{background}}
 Thus, a tool that predicts early on how
 long a patch will be reviewed can help developers take self-inspection beforehand for the
 patches that require long-time review.
-{{}}
+{{background}}
 In this paper, we propose a novel method, PMCost, to
 predict the reviewing rounds of a patch.
-{{}}
+{{objective}}
 PMCost uses a number of features, including patch
 meta-features, code diff features, personal experience features and patch textual features, to
 better reflect code changes and review process.
-{{}}
+{{design}}
 To examine the benefits of PMCost, we perform experiments on three large open source projects, namely Eclipse, OpenDaylight and
 OpenStack.
-{{}}
+{{method}}
 The encouraging experimental results demonstrate the feasibility and effectiveness of our approach.
-{{}}
+{{result:i1}}
 Besides, we further study the why the proposed features contribute to
 the reviewing rounds prediction.
-{{}}
+{{method:i1}}
 ---

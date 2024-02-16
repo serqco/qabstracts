@@ -1,41 +1,41 @@
 Heuristic and Neural Network Based Prediction of Project-Specific API Member Access.
 
 Code completion is to predict the rest of a statement a developer is typing.
-{{}}
+{{background}}
 Although advanced code completion approaches
 have greatly improved the accuracy of code completion in modern IDEs, it remains challenging to predict project-specific API method
 invocations or field accesses because little knowledge about such elements could be learned in advance.
-{{}}
+{{gap}}
 To this end, in this paper we
 propose an accurate approach called HeeNAMA to suggesting the next project-specific API member access.
-{{}}
+{{objective}}
 HeeNAMA focuses on a
 specific but common case of code completion:
-{{}}
+{{design}}
 suggesting the following member access whenever a project-specific API instance is
 followed by a dot on the right hand side of an assignment.
-{{}}
+{{design}}
 By focusing on such a specific case, HeeNAMA can take full advantages of
 the context of the code completion, including the type of the left hand side expression of the assignment, the identifier on the left hand
 side, the type of the base instance, and similar assignments typed in before.
-{{}}
+{{design}}
 All such information together enables highly accurate code
 completion.
-{{}}
+{{claim}}
 Given an incomplete assignment, HeeNAMA generates the initial candidate set according to the type of the base instance,
 and excludes those candidates that are not type compatible with the left hand side of the assignment.
-{{}}
+{{design}}
 If the enclosing project contains
 assignments highly similar to the incomplete assignment, it makes suggestions based on such assignments.
-{{}}
+{{design}}
 Otherwise, it selects the
 one from the initial candidate set that has the greatest lexical similarity with the left hand side of the assignment.
-{{}}
+{{design}}
 Finally, it employs a
 neural network to filter out risky predictions, which guarantees high precision.
-{{}}
+{{design}}
 Evaluation results on open-source applications suggest
 that compared to the state-of-the-art approaches and the state-of-the-practice tools HeeNAMA improves precision and recall by
 70.68 and 25.23 percent, relatively.
-{{}}
+{{method:i1,result}}
 ---
