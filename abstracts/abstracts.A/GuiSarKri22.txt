@@ -10,7 +10,7 @@ selection and configuration depending on the software under test (SUT).
 {{gap}}
 In this paper, we propose a novel multi-objective evolutionary
 hyper-heuristic approach, dubbed Sentinel, to automate the generation of optimal cost reduction strategies for every new SUT.
-{{objective}}
+{{objective,design}}
 We
 evaluate Sentinel by carrying out a thorough empirical study involving 40 releases of 10 open-source real-world software systems and
 both baseline and state-of-the-art strategies as a benchmark.

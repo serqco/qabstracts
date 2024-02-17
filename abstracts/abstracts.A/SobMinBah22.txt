@@ -12,7 +12,7 @@ decisions can be challenged at run-time.
 {{background}}
 A continuous architecture evaluation that systematically assesses
 and intertwines design-time and run-time decisions is thus necessary.
-{{background}}
+{{need}}
 This paper proposes the first proactive approach to continuous architecture evaluation of the system leveraging the support of simulation.
 {{objective}}
 The

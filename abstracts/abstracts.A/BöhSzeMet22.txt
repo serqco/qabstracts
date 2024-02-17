@@ -17,7 +17,7 @@ number of bugs found by a fuzzer.
 Hence, it might seem reasonable
 to compare fuzzers in terms of coverage achieved, and from that
 derive empirical claims about a fuzzer's superiority at finding bugs.
-{{conclusion:timid}}
+{{conclusion:timid,-ignorediff}}
 Curiously enough, however, we find no strong agreement on
 which fuzzer is superior if we compared multiple fuzzers in terms
 of coverage achieved instead of the number of bugs found.

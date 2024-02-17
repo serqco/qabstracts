@@ -15,7 +15,7 @@ While the issue of duplicate pull requests has been highlighted, to what extent 
 in OSS communities has not been well investigated.
 {{gap}}
 In this paper, we conduct a mixed-approach study to bridge this gap.
-{{a-method}}
+{{objective}}
 Based on a
 comprehensive dataset constructed from 26 popular GitHub projects, we obtain the following findings:
 {{method}}
