@@ -2,39 +2,39 @@ An empirical evaluation of a novel domain-specific language - modelling vehicle 
 
 Domain-specific languages (DSLs) are a popular approach among software engineers who
 demand for a tailored development interface.
-{{}}
+{{background}}
 A DSL-based approach allows to encapsulate
 the intricacies of the target platform in transformations that turn DSL models into executable
 software code.
-{{}}
+{{background}}
 Often, DSLs are even claimed to reduce development complexity to a level
 that allows them to be successfully applied by domain-experts with limited programming
 knowledge.
-{{}}
+{{background}}
 Recent research has produced some scientifically backed insights on the benefits and limitations of DSLs.
-{{}}
+{{background}}
 Further empirical studies are required to build a sufficient
 body of knowledge from which support for different claims related to DSLs can be derived.
-{{}}
+{{gap}}
 In this research study, we adopt current DSL evaluation approaches to investigate potential
 gains in terms of effectiveness and efficiency, through the application of our DSL Athos,
 a language developed for the domain of traffic and transportation simulation and optimisation.
-{{}}
+{{objective}}
 We compare Athos to the alternative of using an application library defined within
 a general-purpose language (GPL).
-{{}}
+{{method}}
 We specified two sets of structurally identical tasks
 from the domain of vehicle routing problems and asked study groups with differing levels
 of programming knowledge to solve the tasks with the two approaches.
-{{}}
+{{method}}
 The results show
 that inexperienced participants achieved considerable gains in effectiveness and efficiency
 with the usage of Athos DSL.
-{{}}
+{{result:i2}}
 Though hinting at Athos being the more efficient approach,
 the results were less distinct for more experienced programmers.
-{{}}
+{{result:i1}}
 The vast majority of
 participants stated to prefer working with Athos over the usage of the presented GPL’s API.
-{{}}
+{{result:i1}}
 ---

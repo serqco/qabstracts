@@ -4,42 +4,44 @@ Context-Aware Code Change Embedding for Better Patch Correctness Assessment.
 Despite the capability in successfully fixing more and more real-world bugs, existing Automated Program
 Repair (APR) techniques are still challenged by the long-standing overfitting problem (i.e., a generated patch
 that passes all tests is actually incorrect).
-{{}}
+{{background}}
 Plenty of approaches have been proposed for automated patch
 correctness assessment (APCA).
-{{}}
+{{background}}
 Nonetheless, dynamic ones (i.e., those that needed to execute tests) are
 time-consuming while static ones (i.e., those built on top of static code features) are less precise.
-{{}}
+{{background}}
 Therefore,
 embedding techniques have been proposed recently, which assess patch correctness via embedding token
 sequences extracted from the changed code of a generated patch.
-{{}}
+{{background}}
 However, existing techniques rarely considered the context information and program structures of a generated patch, which are crucial for patch
 correctness assessment as revealed by existing studies.
-{{}}
+{{gap}}
 In this study, we explore the idea of context-aware
 code change embedding considering program structures for patch correctness assessment.
-{{}}
+{{objective}}
 Specifically, given
 a patch, we not only focus on the changed code but also take the correlated unchanged part into consideration,
 through which the context information can be extracted and leveraged.
-{{}}
+{{design}}
 We then utilize the AST path technique for representation where the structure information from AST node can be captured.
-{{}}
+{{design}}
 Finally, based on
 several pre-defined heuristics, we build a deep learning based classifier to predict the correctness of the patch.
-{{}}
+{{design}}
 We implemented this idea as Cache and performed extensive experiments to assess its effectiveness.
-{{}}
+{{design,method}}
 Our results demonstrate that Cache can (1) perform better than previous representation learning based techniques
 (e.g., Cache relatively outperforms existing techniques by ≈6%, ≈3%, and ≈16%, respectively under three diverse experiment settings), and (2) achieve overall higher performance than existing APCA techniques while
 even being more precise than certain dynamic ones including PATCH-SIM (92.9% vs.
-{{}}
+{{result}}
 83.0%).
-{{}}
+{{result}}
 Further results
 reveal that the context information and program structures leveraged by Cache contributed significantly to
 its outstanding performance.
-{{}}
+{{result}}
 ---
+Not really sure if sentence 5 counts as a gap. The authors describe what has not been done before, not what is difficult to do.
+Sentences 11 and 12 area actually 1 sentence.

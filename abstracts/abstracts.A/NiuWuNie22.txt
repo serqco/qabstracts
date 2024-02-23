@@ -2,41 +2,42 @@ A Theory of Pending Schemas in Combinatorial Testing.
 
 Combinatorial Testing (CT) is an effective testing technique for detecting failures which are triggered by the interactions of
 various factors that influence the behaviour of a system.
-{{}}
+{{background}}
 Although many studies in CT have designed elaborate test suites (called
 covering arrays) to systemically check each possible factor interaction, they provide weak support to locate the concrete failureinducing interactions, i.e., the Minimal Failure-causing Schemas (MFS).
-{{}}
+{{background}}
 To this end, a variety of MFS identification approaches have
 been proposed.
-{{}}
+{{background}}
 However, as this study reveals, these approaches suffer from various issues such as cannot identify multiple
 overlapping MFSs, cannot handle MFSs with high degrees, cannot be applied to systems with large number of parameters, etc.
-{{}}
+{{background,result}}
 These
 issues are essentially caused by the exponential computing complexity of checking every interaction in the test cases.
-{{}}
+{{background}}
 Therefore, they
 can only focus on a subset of all the possible interactions, resulting in many interactions unnoticed.
-{{}}
+{{background}}
 Ignoring these unnoticed
 interactions could potentially cause failures that have never been systematically checked.
-{{}}
+{{background}}
 Hence, it is beneficial for MFS identification
 approaches to identify these interactions.
-{{}}
+{{background}}
 In order to account for these unnoticed interactions in CT, this study introduces the notion of
 pending schema, based on which a theoretical framework of CT schemas is established.
-{{}}
+{{objective}}
 In particular, we formally define the
 determinability of a schema in CT with respect to given information; as such, the yet-to-be determined schemas are exactly the pending
 schemas.
-{{}}
+{{design}}
 The relationships between the different schemas (faulty, healthy, and pending) and test cases are also theoretically analyzed.
-{{}}
+{{method}}
 Based on which, we further propose three formulas, along with three corresponding algorithms, for the identification of the pending
 schemas in failing test cases, and formally prove their correctness.
-{{}}
+{{design}}
 As a result, we reduce the complexity of obtaining pending schemas
 with respect to the number of factors that may have influences on the software.
-{{}}
+{{result:i1}}
 ---
+This is an odd case. Sentence 4, where the abstract still discusses the background, mixes in a result statement ("as this study reveals"). Not sure how to code this properly.

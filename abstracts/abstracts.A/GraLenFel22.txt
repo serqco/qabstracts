@@ -2,31 +2,31 @@ Psychometrics in Behavioral Software Engineering: A Methodological Introduction 
 
 
 A meaningful and deep understanding of the human aspects of software engineering (SE) requires psychological constructs to be considered.
-{{}}
+{{background}}
 Psychology theory can facilitate the systematic and sound development
 as well as the adoption of instruments (e.g., psychological tests, questionnaires) to assess these constructs.
-{{}}
+{{background}}
 In
 particular, to ensure high quality, the psychometric properties of instruments need evaluation.
-{{}}
+{{background}}
 In this article,
 we provide an introduction to psychometric theory for the evaluation of measurement instruments for SE researchers.
-{{}}
+{{objective}}
 We present guidelines that enable using existing instruments and developing new ones adequately.
-{{}}
+{{a-result}}
 We conducted a comprehensive review of the psychology literature framed by the Standards for Educational
 and Psychological Testing.
-{{}}
+{{method}}
 We detail activities used when operationalizing new psychological constructs,
 such as item pooling, item review, pilot testing, item analysis, factor analysis, statistical property of items,
 reliability, validity, and fairness in testing and test bias.
-{{}}
+{{method}}
 We provide an openly available example of a psychometric evaluation based on our guideline.
-{{}}
+{{result}}
 We hope to encourage a culture change in SE research towards the
 adoption of established methods from psychology.
-{{}}
+{{fposs}}
 To improve the quality of behavioral research in SE, studies
 focusing on introducing, validating, and then using psychometric instruments need to be more common.
-{{}}
+{{fneed}}
 ---
