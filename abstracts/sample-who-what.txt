@@ -378,14 +378,14 @@ HofUrqCha22   Julian
 AlmGay22      Julian
 BarDuDav22    Julian
 #----- Block 43
-LiaCheLi22    -Julian
-OniLet22      -Julian
-TanFeiAvg22   -Julian
-XuVasNeu22    -Julian
-ReyGarBen22   -Julian
-HanYanMa22    -Julian
-WarCruLe22    -Julian
-VieMatRoc22   -Julian
+LiaCheLi22    Julian
+OniLet22      Julian
+TanFeiAvg22   Julian
+XuVasNeu22    Julian
+ReyGarBen22   Julian
+HanYanMa22    Julian
+WarCruLe22    Julian
+VieMatRoc22   Julian
 #----- Block 44
 KhaShiBia22   
 ChaHonBak22   

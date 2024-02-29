@@ -2,55 +2,56 @@ The role of bug report evolution in reliable fixing estimation.
 
 Context Bug reports contain information that can be used by researchers and practitioners
 to better understand the bug fixing process and to enable the estimation of the effort necessary to fix bugs.
-{{}}
+{{h-background,background}}
 In general, estimation models are built using the data (e.g., fixing time,
 severity, number of comments, number of attachments, and number of patches) present in
 the reports of fixed bugs (i.e., the report final's state).
-{{}}
+{{background}}
 However, we claim that this approach
 is not reliable in a real setting.
-{{}}
+{{background}}
 Effort estimation is necessary for bug fix scheduling and
 team allocation tasks, which happens closer to the bug report opening than its closing.
-{{}}
+{{background}}
 At
 that moment, the data available in the bug report is less informative than the data used to
 build the model, which may lead to an unrealistic estimation.
-{{}}
+{{background}}
 Objective We propose a new approach to estimate bug-fixing time, i.e., the time span
 between the moment the bug was first reported until the bug is considered fixed.
-{{}}
+{{h-objective,objective}}
 We consider not only the final state of the bug report to create our estimation model but all the
 previous available states, different from some previous studies that do not consider the
 reports' updates.
-{{}}
+{{design}}
 The concept of bug report evolution is used to create a dataset containing
 all investigated report states.
-{{}}
+{{design}}
 Method First, we verify how often the bug reports and their fields are updated.
-{{}}
+{{h-method,method}}
 Next, we
 evaluate our approach using different machine learning methods as a classification problem, with distinct output configurations, and class balancing techniques.
-{{}}
+{{method}}
 The experimental
 analysis is performed with data from the JIRA issue tracking system of ten open-source
 projects.
-{{}}
+{{method}}
 By leveraging the best models (considering all possible configurations) for the different states of the evolution of a bug report, we can assess whether there are significant
 differences in the models' estimation ability due to the report's state.
-{{}}
+{{method}}
 Results We gathered evidence that the reports' fields are updated often, which characterizes
 the reports’ evolution, impacting the building of bug-fixing estimation models.
-{{}}
+{{h-result,result}}
 The models'
 evaluation shows promising results 0.44 up to 0.85, precision values from 0.34 up to 0.74
 and recall values from 0.62 up to 0.99, depending on the project.
-{{}}
+{{result}}
 Conclusions Our experiments show that field updates have a meaningful impact on the
 models' performance. Furthermore, we present a new approach to deal with the bug report
 evolution by considering each report version as an independent report.
-{{}} 
+{{h-conclusion,conclusion}} 
 Finally, we also make
 available our dataset to the community.
-{{}}
+{{a-resourcepointer}}
 ---
+This abstract is ill-structured. The headlines (which deserve headline-codes) are joined with sentences and the second-to-last sentence should be split up at the full stop.

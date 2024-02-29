@@ -2,27 +2,27 @@ Analyzing Uncertainty in Release Planning: A Method and Experiment for Fixed-Dat
 
 
 Release planning - deciding what features to implement in upcoming releases of a software system - is a critical activity in iterative software development.
-{{}}
+{{background}}
 Many release planning methods exist, but most ignore the
 inevitable uncertainty in estimating software development effort and business value.
-{{}}
+{{gap}}
 The article's objective
 is to study whether analyzing uncertainty during release planning generates better release plans than if
 uncertainty is ignored.
-{{}}
+{{objective}}
 To study this question, we have developed a novel release planning method under uncertainty, called BEARS, that models uncertainty using Bayesian probability distributions and recommends
 release plans that maximize expected net present value and expected punctuality.
-{{}}
+{{design}}
 We then compare release
 plans recommended by BEARS to those recommended by methods that ignore uncertainty on 32 release
 planning problems.
-{{}}
+{{method}}
 The experiment shows that BEARS recommends release plans with higher expected net
 present value and expected punctuality than methods that ignore uncertainty, thereby indicating the harmful
 effects of ignoring uncertainty during release planning.
-{{}}
+{{result:i2}}
 These results highlight the importance of eliciting
 and analyzing uncertainty in software effort and value estimations and call for increased research in these
 areas.
-{{}}
+{{conclusion}}
 ---

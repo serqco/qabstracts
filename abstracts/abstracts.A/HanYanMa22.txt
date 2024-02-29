@@ -3,46 +3,46 @@ Control Parameters Considered Harmful: Detecting Range Specification Bugs in Dro
 In order to support a variety of missions and deal with different
 flight environments, drone control programs typically provide con-
 figurable control parameters.
-{{}}
+{{background}}
 However, such a flexibility introduces
 vulnerabilities.
-{{}}
+{{background}}
 One such vulnerability, referred to as range specifica-
 tion bugs, has been recently identified.
-{{}}
+{{background}}
 The vulnerability originates
 from the fact that even though each individual parameter receives
 a value in the recommended value range, certain combinations of
 parameter values may affect the drone physical stability.
-{{}}
+{{gap}}
 In this
 paper, we develop a novel learning-guided search system to find
 such combinations, that we refer to as incorrect configurations.
-{{}}
+{{objective}}
 Our
 system applies metaheuristic search algorithms mutating config-
 urations to detect the configuration parameters that have values
 driving the drone to unstable physical states.
-{{}}
+{{design}}
 To guide the muta-
 tions, our system leverages a machine learning based predictor as
 the fitness evaluator.
-{{}}
+{{design}}
 Finally, by utilizing multi-objective optimiza-
 tion, our system returns the feasible ranges based on the mutation
 search results.
-{{}}
+{{design}}
 Because in our system the mutations are guided by a
 predictor, evaluating the parameter configurations does not require
 realistic/simulation executions.
-{{}}
+{{design}}
 Therefore, our system supports a
 comprehensive and yet efficient detection of incorrect configurations.
-{{}}
+{{design}}
 We have carried out an experimental evaluation of our system.
-{{}}
+{{method}}
 The evaluation results show that the system successfully reports potentially
 incorrect configurations, of which over 85% lead to actual
 unstable physical states.
-{{}}
+{{result}}
 ---
