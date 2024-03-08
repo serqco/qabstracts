@@ -3,26 +3,26 @@ SSPCatcher: Learning to catch security patches.
 Timely patching (i.e., the act of applying code changes to a program source code) is
 paramount to safeguard users and maintainers against dire consequences of malicious
 attacks.
-{{}}
+{{background}}
 In practice, patching is prioritized following the nature of the code change that is
 committed in the code repository.
-{{}}
+{{background}}
 When such a change is labeled as being security-relevant,
 i.e., as fixing a vulnerability, maintainers rapidly spread the change, and users are notified
 about the need to update to a new version of the library or of the application.
-{{}}
+{{background}}
 Unfortunately,
 oftentimes, some security-relevant changes go unnoticed as they represent silent fixes of vulnerabilities.
-{{}}
+{{gap}}
 In this paper, we propose SSPCATCHER, a Co-Training-based approach to catch
 security patches (i.e., patches that address vulnerable code) as part of an automatic monitoring service of code repositories.
-{{}}
+{{objective}}
 Leveraging different classes of features, we empirically
 show that such automation is feasible and can yield a precision of over 80% in identifying
 security patches, with an unprecedented recall of over 80%.
-{{}}
+{{method,result}}
 Beyond such a benchmarking
 with ground truth data which demonstrates an improvement over the state-of-the-art, we
 confirmed that SSPCATCHER can help catch security patches that were not reported as such.
-{{}}
+{{result}}
 ---

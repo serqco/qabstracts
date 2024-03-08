@@ -387,14 +387,14 @@ HanYanMa22    Julian
 WarCruLe22    Julian
 VieMatRoc22   Julian
 #----- Block 44
-KhaShiBia22   -Julian
-ChaHonBak22   -Julian
-WanZhaZha22   -Julian
-RodKhvAlo22   -Julian
-PraForRas22   -Julian
-PonSutArt22   -Julian
-KasNisKam22   -Julian
-SawBisMoh22   -Julian
+KhaShiBia22   Julian
+ChaHonBak22   Julian
+WanZhaZha22   Julian
+RodKhvAlo22   Julian
+PraForRas22   Julian
+PonSutArt22   Julian
+KasNisKam22   Julian
+SawBisMoh22   Julian
 #----- Block 45
 AmaAbuTor22   
 CheXiaLo22   

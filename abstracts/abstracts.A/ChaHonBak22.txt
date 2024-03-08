@@ -1,25 +1,25 @@
 Enhancing Dynamic Symbolic Execution by Automatically Learning Search Heuristics.
 
 We present a technique to automatically generate search heuristics for dynamic symbolic execution.
-{{}}
+{{objective}}
 A key challenge in
 dynamic symbolic execution is how to effectively explore the program’s execution paths to achieve high code coverage in a limited time
 budget.
-{{}}
+{{background}}
 Dynamic symbolic execution employs a search heuristic to address this challenge, which favors exploring particular types of
 paths that are most likely to maximize the final coverage.
-{{}}
+{{background}}
 However, manually designing a good search heuristic is nontrivial and typically
 ends up with suboptimal and unstable outcomes.
-{{}}
+{{gap}}
 The goal of this paper is to overcome this shortcoming of dynamic symbolic execution
 by automatically learning search heuristics.
-{{}}
+{{objective}}
 We define a class of search heuristics, namely a parametric search heuristic, and present
 an algorithm that efficiently finds an optimal heuristic for each subject program.
-{{}}
+{{design}}
 Experimental results with industrial-strength symbolic
 execution tools (e.g., KLEE) show that our technique can successfully generate search heuristics that significantly outperform existing
 manually-crafted heuristics in terms of branch coverage and bug-finding.
-{{}}
+{{method,result:i1}}
 ---
