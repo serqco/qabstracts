@@ -34,9 +34,9 @@
 \newcommand{\Prg}[1]{\bgroup\ttfamily #1\egroup}  % typeset commands etc.
 
 \newcommand{\Todo}[1]{\bgroup\bfseries\Large #1\egroup}
-\newcommand{\Quote}[1]{\bgroup\itshape ``#1´´\egroup}
-\newcommand{\Pseudoquote}[1]{\bgroup\itshape ``#1´´\egroup}
-\newcommand{\QuoteCB}[1]{\Quote{#1}}
+\newcommand{\Quote}[1]{\bgroup\itshape ``#1''\egroup}  % quote from real abstract
+\newcommand{\Pseudoquote}[1]{\bgroup\itshape ``#1''\egroup}  % quote from fictive abstract
+\newcommand{\QuoteCB}[1]{\Quote{#1}}  % quote from codebook
 \newcommand{\Describegroups}{The plots in each group show these different subsets of abstracts:
 	all, structured, non-structured, design, empirical, EMSE, ICSE, IST, TOSEM, TSE.}
 
@@ -147,7 +147,7 @@ the questions it asks and the statistical methdods it uses for answering them.
 
 Our contributions correspond to the research questions as follows:
 \begin{enumerate}
-	\item As for the structure of well-written abstracts, we present an ``abstract archetype´´
+	\item As for the structure of well-written abstracts, we present an ``abstract archetype''
 	  that describes fixed parts of the structure and degrees of freedom. 
 	\item We describe and discuss !!! types of deficiency 
 	\item We quantify the frequency of each deficiency for the entire sample of abstracts
@@ -172,7 +172,7 @@ and otherwise focus on what has been done in the software engineering domain.
 
 \subsection{Abstracts Structure}
 
-Swales introduced ``genre analysis´´ as a means for teaching academic reading and writing
+Swales introduced ``genre analysis'' as a means for teaching academic reading and writing
 especially to non-native speakers in 1990~\cite{Swales90}.
 Genres are text types and genre analysis means deconstructing the composition
 of texts (of that text type) in terms that help understand the elements in
@@ -180,7 +180,7 @@ terms of their syntactical structure, content, role, and interrelationships
 (e.g. their relative position within the whole).
 
 For our purposes here, the most relevant idea from genre analysis is the notion
-of ``moves´´, which are, roughly speaking, the building blocks used by the writers
+of ``moves'', which are, roughly speaking, the building blocks used by the writers
 for making their overall point.
 Several studies have looked at the move structure of research abstracts
 in different fields such as 
@@ -204,7 +204,7 @@ an extended one.
 
 \subsection{Abstracts Quality}
 
-Once a ``good´´ structure for abstracts is known, it provides an approach for
+Once a ``good'' structure for abstracts is known, it provides an approach for
 discussing the quality of specific actual abstracts.
 For instance~\cite{CroOpp06}, where quality assessment is not a main goal,
 nevertheless finds that one third of the 12 abstracts studied
@@ -284,11 +284,11 @@ Statistical evaluation
 
 Overall, we consider our study to be a qualitative one, but note that the middle two elements,
 coding and statistical evaluation,
-are compatible with a positivist epistemology (with ``objective´´ results) so that 
+are compatible with a positivist epistemology (with ``objective'' results) so that 
 the final interpretation is done on a solid quantitative foundation.
 
 
-\subsection{Data Availability}
+\subsection{Data Availability}\label{dataavailability}
 
 We publish not only the outcome of our study, but also most parts of its development and
 execution history in full detail: as a git version respository.
@@ -298,7 +298,7 @@ Python scripts for tabulations and plots, and the manuscript of this article.
 Find it at \url{https://github.com/serqco/qabstracts/}.
 
 
-\subsection{Coding Rules}\label{meth_codingrules}
+\subsection{General Coding Rules}\label{meth_codingrules}
 
 Besides the definition of the content categories (codes),
 our codebook contains global rules for the coding that can be summarized as follows: 
@@ -310,13 +310,13 @@ be friendly and avoid coding negative properties whenever an alterative, more po
 interpretation is plausible as well.
 
 
-\subsection{Codebook Development}\label{meth_codebook}
+\subsection{Codebook and Codebook Development}\label{meth_codebook}
 
 
 \subsubsection{\Cb{background, objective, method, result, conclusion}}
 
 The codebook was initialized with concepts for the five sections commonly used 
-in a structured abstract\footnote{In Krippendorfs terminology, this is an ``established theories´´ justification
+in a structured abstract\footnote{In Krippendorfs terminology, this is an ``established theories'' justification
 of analytical constructs~\cite[Section 9.2.3]{Krippendorff04}.}: 
 \Cb{background, objective, method, result, conclusion}.
 These represent, respectively: context information, the study goal or question, 
@@ -333,14 +333,14 @@ during the coding process and were confused which code was appropriate for some 
 To help disambiguation, a few of the definitions need to be much longer than the above.
 
 
-\subsubsection{Artifact-centric studies: \Cb{design}}\label{design}
+\subsubsection{Artifact-centric Studies: \Cb{design}}\label{design}
 
-In a phase internally called ``prestudy´´, the codebook was then refined and extended
+In a phase internally called ``prestudy'', the codebook was then refined and extended
 based on coding attempts for a stratified sample of 20 abstracts from ICSE 2021.
 % we used every 7th article, which constitutes stratification by virtue of the
 % topic-centric session blocks in which the program is arranged.
 We quickly recognized that additional codes were 
-needed\footnote{In Krippendorfs terminology, this is an ``expert knowledge and experience´´ justification
+needed\footnote{In Krippendorfs terminology, this is an ``expert knowledge and experience'' justification
     of analytical constructs~\cite[Section 9.2.2]{Krippendorff04}:
     As software engineering researchers, we recognize when a sentence makes a different kind
     of contribution to an abstract than can be described by existing codes,
@@ -357,7 +357,7 @@ we therefore introduced the code \Cb{design} to mark such material.
 \Cb{design} has the longest definition of all our codes: 170 words.
 
 We call the articles that contain at least one \Cb{design} code in their abstract
-``design works´´, the others ``empirical works´´.
+``design works'', the others ``empirical works''.
 
 
 \subsubsection{Refinements: \Cb{gap, summary, fposs} etc.}
@@ -377,7 +377,7 @@ They state what future work is now possible, needed, or planned-by-the-authors.
 % TODO: examples of gap, summary, fposs, conclusion
 
 
-\subsubsection{Subjective additions: \Cb{:i, :u, :hype}}
+\subsubsection{Subjective Additions: \Cb{:i, :u, :hype}}
 
 The codes described so far aim at codifying repeatable properties,
 where several well-trained coders will come to the same result with high probability.
@@ -405,10 +405,10 @@ the abstract overall.
 \Todo{example of :u1}
 
 The \Cb{:hype} suffix marks statements that praise the article far more
-than warranted, often by using exaggerated adverbs such as ``extremely´´.
+than warranted, often by using exaggerated adverbs such as ``extremely''.
 
 
-\subsubsection{Codes for announcements: \Cb{a-*}}
+\subsubsection{Codes for Announcements: \Cb{a-*}}
 
 Sometimes, statements do not merely have informativeness gaps,
 they provide no concrete information at all.
@@ -431,7 +431,7 @@ The first part is \Cb{method}, the second should have been \Cb{result},
 but, alas, we learn nothing about those sources' nature or number or impact.
 
 
-\subsubsection{Codes for headings: \Cb{h-*}}
+\subsubsection{Codes for Headings: \Cb{h-*}}
 
 We also have codes for the headings used in structured abstracts.
 These codes are conceptual, i.e., for instance 
@@ -441,9 +441,9 @@ Likewise, there are \Cb{h-background}, \Cb{h-method}, and so on.
 We recognize structured abstracts by the presence of such a heading code.
 
 
-\subsection{Training}
+\subsection{Training}\label{meth_training}
 
-The training phase (internally called ``prestudy2´´) served two purposes:
+The training phase (internally called ``prestudy2'') served two purposes:
 Finding/repairing deficiencies in the codebook,
 and arriving at a joint interpretation of it across the four coders 
 (the four authors\footnote{Four more people were involved in the training phase at some
@@ -458,7 +458,7 @@ and email routine,
 and generally formed as a research team.
 
 
-\subsection{Sample}
+\subsection{Sample}\label{meth_sample}
 
 We decided not to aim for a broad selection of all software engineering research,
 but rather concentrate on what is presumably the highest quality material:
@@ -488,9 +488,8 @@ retrievelit\footnote{\url{https://github.com/serqco/retrievelit/}},
 select-sample, and prepare-sample scripts, respectively.
 
 
-\subsection{Coding process}
+\subsection{Coding Process}\label{meth_coding}
 
-\noindent
 We code each abstract twice, by so-called coders A and B.\ 
 Abstracts are held in text files in separate directories \Prg{abstracts.A} and \Prg{abstracts.B}.
 Each sentence is followed by a line containing \Prg{\{\{\}\}} and into this pair of
@@ -504,16 +503,16 @@ which we do in the following two subsections.
 
 \subsubsection{Coding}
 
-1. When Lloyd wanted to code a block of abstracts on 2023-05-26,
+\indent Step 1. When Lloyd wanted to code a block of abstracts on 2023-05-26,
 he found the next available block to be Block 17 B.
 (Lutz had coded Block 17 A previously.)
 Lloyd reserved the block in the coordination file \Prg{sample-who-what.txt}
 and performed the coding.
 
-2. He then ran \Prg{check-codings} to test his codings (for the occasional typo etc.)
+Step 2. He then ran \Prg{check-codings} to test his codings (for the occasional typo etc.)
 against the codebook and corrected the mistakes, if any.
 
-3. He then ran \Prg{compare-codings} to compare his codings against Lutz'.
+Step 3. He then ran \Prg{compare-codings} to compare his codings against Lutz'.
 This script creates one report block for each sentence where the codings
 of coders A and B are not compatible.
 Compatible means: Differing at most in the subjective suffixes, but not in the codes
@@ -521,15 +520,15 @@ Compatible means: Differing at most in the subjective suffixes, but not in the c
 If Lloyd found a report block where Lutz' coding was obivously correct and his own
 obviously wrong, he would simply correct his coding.
 
-4. He would then commit his coded abstracts into git.
+Step 4. He would then commit his coded abstracts into git.
 
 
-\subsubsection{Handling disagreements}
+\subsubsection{Handling Disagreements}
 
-5. For the remaining report blocks, Lloyd would write an email to Lutz explaining his reasoning.
+\indent Step 5b. For the remaining report blocks, Lloyd would write an email to Lutz explaining his reasoning.
 
-6. Lutz would read through that email and categorize the report blocks into the following cases:
-a) Lloyd's coding is obviously correct, Lutz' own is a simple clerical error.
+Step 6. Lutz would read through that email and categorize the report blocks into the following cases:\\
+a) Lloyd's coding is obviously correct, Lutz' own is a clerical error.
 Lutz would correct his coding and respond accordingly.
 Figure~\ref{email-MeyAlmKel22.png} shows such a case.\\
 b) Lutz finds Lloyd's coding clearly incorrect. 
@@ -544,30 +543,30 @@ He would either adjust his coding or add an \Cb{-ignorediff} marker to it
 and respond accordingly.\\
 e) Lutz finds both codings equally acceptable.
 He would add an \Cb{-ignorediff} marker to his own
-and respond accordingly, explaining is reasoning.\\
+and respond accordingly, explaining is reasoning.
 
-\begin{figure*}[tbp]%
-	\centering\fbox{\includegraphics[width=0.95\textwidth]{email-MeyAlmKel22.png}}%
-	\vspace{-2mm}\caption{Excerpt from Lutz' response email during the disagreements handling
-	  for Block 17: 
-	  Report block from the \Prg{compare-codings} script at the top,
-	  text line from Lloyds first email in the middle,
-	  Lutz' response below.
-	  This one was a simple case; 
-	  sometimes several lines of text are provided by each coder.
-	  Overall, Lloyd's first email contained report blocks for 9 disagreements
-	  in 4 abstracts, both typical numbers.}\label{email-MeyAlmKel22.png}%
-\end{figure*}
+Step 7. Lutz would commit his corrected abstracts and send the response email.
 
-7. Lutz would commit his corrected abstracts and send the response email.
-
-8. Lloyd would read the response email and usually act on it to finish the handling of 
+Step 8. Lloyd would read the response email and usually act on it to finish the handling of 
 Block 17.
 Only very rarely would he disagree with something to a degree that would make
 another round of emails necessary.
 
+\begin{figure*}[tbp]%
+	\centering\fbox{\includegraphics[width=0.95\textwidth]{email-MeyAlmKel22.png}}%
+	\vspace{-2mm}\caption{Excerpt from Lutz' response email during the disagreements handling
+		for Block 17: 
+		Report block from the \Prg{compare-codings} script at the top,
+		text line from Lloyds first email in the middle,
+		Lutz' response below.
+		This one was a simple case; 
+		sometimes several lines of text are provided by each coder.
+		Overall, Lloyd's first email contained report blocks for 9 disagreements
+		in 4 abstracts, both typical numbers.}\label{email-MeyAlmKel22.png}%
+\end{figure*}
 
-\subsubsection{Effect of this procedure}
+
+\subsubsection{Effect of this Procedure}
 
 Most content analyses code most material only once, 
 then code a random subsample twice, 
@@ -598,14 +597,16 @@ Mostly tabulations of counts or percentages, bar plots, and box plots.
 
 We mostly refrain from performing significance tests or computing confidence intervals,
 because most analyses are exploratory, not driven by specific expectations or theories.
-The one exception from this rule is the comparison of structured versus unstructured abstracts.
+Also, most phenomena we report are gradual by nature.
+The one exception from this rule is the comparison of 
+structured versus unstructured abstracts!!!.
 
-!!!Verbal terms for frequencies: 
+In this spirit, we often use the following verbal terms for frequencies: 
 rare (less than 5\%),
 not rare (5-20\%),
 common (20-35\%),
 frequent (35-50\%),
-dominant (over 50\%).
+dominant (over 50\%).!!!
 
 
 \subsection{Interpretation}
@@ -614,6 +615,25 @@ dominant (over 50\%).
 Makes use of impressions not captured in the data.
 Choice of examples reflects those.
 
+
+\subsection{Use of Examples}
+
+We will use examples from real abstracts from our sample to illustrate
+some of our statements. 
+We identify their source by a citation key
+formed from three letters each of the first three authors' names.
+For example article 1 in block 1 in our study was written by
+Fregnan, Petrulio, Di Geronimo, and Bacchelli
+and would be identified as [FrePetGer22].
+
+We select those examples for the clarity of the phenomenon in question,
+not for the abstract's quality.
+For the source of every positive example there are others that are
+as good or better.
+For the source of every negative example there are others that are
+as bad or worse.
+Since the use of an example is not about the article it stems from,
+we do not include those articles in our references list.
 
 %========================================================================
 \section{Results}
@@ -630,16 +650,17 @@ maximum 300 for IST, and
 recommended maximum 250 for TSE
 are disobeyed by more than a quarter of all articles for each of these three venues.
 
-The Flesch-Kincaid readability score is a widely used metric that judges
-readability based only on the number of words per sentence and the number of 
+The Flesch-Kincaid ``reading ease'' readability score \cite{KinFisRog75}
+is a validated and widely used metric that judges readability of English text
+based only on the number of words per sentence and the number of 
 syllables per word. 
 Values under 30 represent graduate-level difficulty,
 under 10 extreme difficulty for native speakers.
 Considering that most community members are not native speakers of English,
 we judge 20 to 30 to be a range suitable for researcher audiences and so 
-we call anything over 30 ``good´´, 
-20 to 30 ``normal´´, and 
-under 20 ``overly difficult´´.
+we call anything over 30 ``good'', 
+20 to 30 ``normal'', and 
+under 20 ``overly difficult''.
 
 See Figure~\ref{boxplots_fkscore} for the results:
 only about 10\% of all abstracts have good readability,
@@ -656,7 +677,7 @@ TOSEM is worse.
     Differences between subgroups are modest. 
 	ICSE is best (mean 20), TOSEM is worst (mean 13).
     Structured abstracts are just as difficult as nonstructured ones
-    if one ignores the ``Methods:´´ etc. headings as we did here.
+    if one ignores the ``Methods:'' etc. headings as we did here.
 }
 
 
@@ -669,7 +690,7 @@ That depends on how the authors phrase their goal in their
 \Cb{objective} statement.
 Consider the following goal statements:
 
-!!!
+\Todo{Find 2 examples}
 
 The first puts the artifact at the center, so this is a design work.
 The second puts empirical results at the center, so this is an empirical work
@@ -694,7 +715,7 @@ structured abstracts, our codebook is more fine grained;
 the \Cb{design} code is but one example. 
 
 During our sensemaking process, we had a number of insights regarding
-how a well-written abstract ``ticks´´, which we eventually distilled into
+how a well-written abstract ``ticks'', which we eventually distilled into
 the following template, which we call the software engineering abstracts archetype:
 
 \begin{enumerate}
@@ -724,7 +745,7 @@ the following template, which we call the software engineering abstracts archety
 The archetype describes all variants of abstracts that have a natural train of thought,
 so any deviation will lead to a less easily understandable abstract.
 
-!!!example(s)?
+\Todo{Find short, good example}
 
 
 \subsection{How Not To: Missing Elements}
@@ -786,7 +807,7 @@ Figure~\ref{ab_topicstructure_freqs_design} for design articles.
   The frequency of different trains-of-thought in the abstract for design articles.
   Same characters as before, except that d can now in fact occur.}
 
-\subsubsection{Empirical articles}
+\subsubsection{Empirical Articles}
 
 Let us start with the simpler empirical articles.
 We see that the most sensible structures are also the most frequent (bars 1, 2, 3):
@@ -796,7 +817,7 @@ The first few are mostly missing a conclusion, later on (not shown in the figure
 follow all kinds of curious structures such as, to pick an admittedly extreme case,
 bgomrcsrsc: two conclusions, two summaries, summary after conclusion.
 
-\subsubsection{Design articles}
+\subsubsection{Design Articles}
 
 It naturally gets worse for the design articles with their more complicated structure:
 Even the top two structures are missing a conclusion
@@ -807,13 +828,14 @@ can make a lot of sense for the reader.
 But this has its limits: An abstract with structure bodmrmrmrmr is overloaded.
 It can also easily get out of hand, as confirmed by the examples bobdrmrmr and bomdmrmrmrsmrc.
 
-\subsubsection{Structured abstracts}
+\subsubsection{Structured Abstracts}
 
 Today's conventions for structured abstracts may be a bit restrictive
-(e.g. by not accomodating the useful mrmr substructure), 
-but they result in more orderly abstracts:
+(e.g. by not accommodating the useful mrmr substructure), 
+but they do result in more orderly abstracts:
 There are only 27!!! different abstract structures for the structured abstracts of empirical articles
 versus 95!!! for empirical articles overall.
+(!!! replace 95 by mean of same-sized samples)
 
 
 \subsection{How Not To: Uninformative Formulations}
@@ -826,7 +848,7 @@ Our investigation has identified and then quantified two types
 of such lacks of informativeness. 
 We call them informativeness gaps and announcements, respectively.
 
-\subsubsection{Informativeness gaps}
+\subsubsection{Informativeness Gaps}
 
 Look at the following result statement:
 \Quote{random sampling is rare} [BalRal22]. %EMSE
@@ -951,7 +973,7 @@ And only x\% have all of these properties.
 
 \subsection{How To: Structured Abstracts are more orderly}
 
-Re-analysis of ``Convoluted Trains of Thought´´. 
+Re-analysis of ``Convoluted Trains of Thought''. 
 
 x\% no announcement, x\% no gap, x\% follow archetype, x\% have acceptable readability score.
 And only x\% have all of these properties.
@@ -962,13 +984,58 @@ And only x\% have all of these properties.
 %========================================================================
 \section{Limitations and Threats to Validity}
 
-\noindent
-Internal: careful procedure, internal validity issues unlikely.
-Construct: cannot measure informativeness; cannot measure understandability;
-our proxy measures are less informative and only 90\% valid.
-Generalizability: 
-results should generalize to neighboring years in same venues;
-results not better in second-tier venues?
+\subsection{Interpretivist Perspective}
+
+In terms of Tracy's quality criteria for qualitative research \cite{Tracy10},
+our study has very nice properties, because our readers inhabit
+the domain of abstract reading and abstract writing themselves.
+
+The topic's worthiness is obvious, the amount of data is large,
+as is the number of constructs used.
+Challenges are discussed below.
+Hopefully, our constructs and findings resonate with you;
+they certainly resonate with us.
+Should you find our description insufficiently thick,
+you can easily look up lots of additional examples in our raw data
+described in Section~\ref{dataavailability}.
+
+
+\subsection{Positivist Perspective}
+
+Internal validity is the degree to which the stated method 
+was followed correctly.
+We do not expect much problem in this regard.
+The most difficult-to-avoid problem in our study is slips of concentration
+during coding which result in coding mistakes.
+However, the laborious coding procedure 
+described in Section~\ref{meth_coding}
+makes it very unlikely for such mistakes to slip through.
+Most other steps were automated, so mistakes would be systematic
+and not likely to escape our attention.
+
+Construct validity is the degree to which the design
+of the study is adequate for the phenomenon to be understood.
+Here, our study has obvious limitations:
+It ideally ought to measure the informativeness and understandability of 
+abstracts. However, both of these are reader-dependent, so
+measuring them would involve a reading study with many readers.
+This would face huge problems in getting a representative set of readers,
+could never scale to the hundreds of abstracts we look at here,
+and, whichever operationalization it chose, 
+it would be imperfect and controversial.
+We therefore decided to analyze properties of abstracts
+that are arguably problematic, although we cannot say just how
+problematic in each case, resulting in count statistics only.
+
+External validity is the degree to which the results generalize
+to other sets of abstracts:
+Here, we expect that our results generalize well to 
+neighboring (past and future) years in the same venues
+we studied, perhaps a bit less for ICSE because of its 
+varying location and hence more varying authors.
+Whether it also generalizes to other venues
+we cannot know, but we were surprised if venues of lower
+scientific reputation had articles with better abstracts.
 
 
 %========================================================================
