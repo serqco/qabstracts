@@ -387,14 +387,14 @@ HanYanMa22    Julian      Franz
 WarCruLe22    Julian      Franz
 VieMatRoc22   Julian      Franz
 #----- Block 44
-KhaShiBia22   Julian
-ChaHonBak22   Julian
-WanZhaZha22   Julian
-RodKhvAlo22   Julian
-PraForRas22   Julian
-PonSutArt22   Julian
-KasNisKam22   Julian
-SawBisMoh22   Julian
+KhaShiBia22   Julian      -Franz
+ChaHonBak22   Julian      -Franz
+WanZhaZha22   Julian      -Franz
+RodKhvAlo22   Julian      -Franz
+PraForRas22   Julian      -Franz
+PonSutArt22   Julian      -Franz
+KasNisKam22   Julian      -Franz
+SawBisMoh22   Julian      -Franz
 #----- Block 45
 AmaAbuTor22   Julian
 CheXiaLo22    Julian
