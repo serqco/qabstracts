@@ -2,46 +2,46 @@ Deja Vu: semantics-aware recording and replay of high-speed eye tracking and int
 
 The paper introduces a fundamental technological problem with collecting high-speed eye
 tracking data while studying software engineering tasks in an integrated development environment.
-{{}}
+{{a-gap}}
 The use of eye trackers is quickly becoming an important means to study software
 developers and how they comprehend source code and locate bugs.
-{{}}
+{{background}}
 High quality eye trackers can record upwards of 120 to 300 gaze points per second.
-{{}}
+{{background}}
 However, it is not always
 possible to map each of these points to a line and column position in a source code file (in
 the presence of scrolling and file switching) in real time at data rates over 60 gaze points
 per second without data loss.
-{{}}
+{{gap}}
 Unfortunately, higher data rates are more desirable as they
 allow for finer granularity and more accurate study analyses.
-{{}}
+{{gap}}
 To alleviate this technological
 problem, a novel method for eye tracking data collection is presented.
-{{}}
+{{objective}}
 Instead of performing gaze analysis in real time, all telemetry (keystrokes, mouse movements, and eye tracker
 output) data during a study is recorded as it happens.
-{{}}
+{{design}}
 Sessions are then replayed at a much
 slower speed allowing for ample time to map gaze point positions to the appropriate file,
 line, and column to perform additional analysis.
-{{}}
+{{design}}
 A description of the method and corresponding tool, Deja Vu, is presented.
-{{}}
+{{a-design}}
 An evaluation of the method and tool is conducted
 using three different eye trackers running at four different speeds (60 Hz, 120 Hz, 150 Hz,
 and 300 Hz).
-{{}}
+{{method}}
 This timing evaluation is performed in Visual Studio, Eclipse, and Atom IDEs.
-{{}}
+{{method}}
 Results show that Deja Vu can playback 100% of the data recordings, correctly mapping the
 gaze to corresponding elements, making it a well-founded and suitable post processing step
 for future eye tracking studies in software engineering.
-{{}}
+{{result}}
 Finally, a proof of concept replication analysis of four tasks from two previous studies is performed.
-{{}}
+{{method}}
 Due to using the Deja
 Vu approach, this replication resulted in richer collected data and improved on the number
 of distinct syntactic categories that gaze was mapped on in the code.
-{{}}
+{{result:i2}}
 ---

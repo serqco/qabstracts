@@ -1,42 +1,42 @@
 An onboarding model for integrating newcomers into agile project teams.
 
 Context:
-{{}}
+{{h-background}}
 A stable team is deemed optimal for agile software development project success; however, all teams
 change membership over time.
-{{}}
+{{background}}
 Newcomers joining an agile project team must rapidly assimilate into the
 organisational and project environment.
-{{}}
+{{background}}
 They must do this while learning how to contribute effectively and
 without seriously interrupting project progress.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 This paper addresses how newcomers integrate into an established agile project team and how agile
 practices assist with onboarding.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 A single, qualitative case study approach was used, investigating a co-located agile project team in a
 large IT department who regularly onboard inexperienced newcomers.
-{{}}
+{{method}}
 Analysis was abductive, consisting of
 inductive coding and theming using categories from an existing onboarding theory.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 We describe the team's onboarding practices and adjustments and present an agile onboarding model
 that encompasses onboarding activities, individual adjustments, and workplace adjustments.
-{{}}
+{{result}}
 Conclusions:
-{{}}
+{{h-conclusion}}
 A mixture of general and specific agile onboarding practices contribute to successful onboarding in
 an agile team.
-{{}}
+{{conclusion:u2}}
 We provide practical guidelines to improve onboarding practice in agile teams.
-{{}}
+{{a-result}}
 Our major new
 contribution is an extended model of onboarding for agile teams.
-{{}}
+{{a-result}}
 ---
