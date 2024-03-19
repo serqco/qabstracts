@@ -34,9 +34,7 @@ We implemented this idea as Cache and performed extensive experiments to assess 
 {{design,method:i1}}
 Our results demonstrate that Cache can (1) perform better than previous representation learning based techniques
 (e.g., Cache relatively outperforms existing techniques by ≈6%, ≈3%, and ≈16%, respectively under three diverse experiment settings), and (2) achieve overall higher performance than existing APCA techniques while
-even being more precise than certain dynamic ones including PATCH-SIM (92.9% vs.
-{{result}}
-83.0%).
+even being more precise than certain dynamic ones including PATCH-SIM (92.9% vs. 83.0%).
 {{result}}
 Further results
 reveal that the context information and program structures leveraged by Cache contributed significantly to
