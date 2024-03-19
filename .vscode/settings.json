@@ -14,7 +14,7 @@
                 }
             ]
         },
-        "(\\{\\{)(.+[\\, ])?(objective)(:u\\d+)?([, ].+)?(\\}\\})": {
+        "(\\{\\{)(.+[\\, ])?(objective)(:(u\\d+|hype))?([, ].+)?(\\}\\})": {
             "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
             "decorations": [
                 {},
@@ -31,7 +31,7 @@
                 {}
             ]
         },
-        "(\\{\\{)(.+[\\, ])?(conclusion)(:(u\\d+|timid))?([, ].+)?(\\}\\})": {
+        "(\\{\\{)(.+[\\, ])?(conclusion)(:(u\\d+|hype|incredible|timid))?([, ].+)?(\\}\\})": {
             "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
             "decorations": [
                 {},
@@ -74,7 +74,7 @@
                 {}
             ]
         },
-        "(\\{\\{)(.+[\\, ])?(need)([, ].+)?(\\}\\})": {
+        "(\\{\\{)(.+[\\, ])?(need)(:hype)?([, ].+)?(\\}\\})": {
             "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
             "decorations": [
                 {},
@@ -82,6 +82,10 @@
                 {
                     "color": "rgb(20,200,20)",
                     "fontWeight": "bold"
+                },
+                {
+                    "color": "rgb(110,180,0)",
+                    "fontWeight": "normal"
                 },
                 {},
                 {}
