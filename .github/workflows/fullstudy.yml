@@ -38,6 +38,7 @@ jobs:
           make export
           make plot
           ls -l img
+          sudo apt-get update
           sudo apt install texlive-xetex latexmk
           make pdf
       - name: upload PDF
