@@ -15,10 +15,12 @@ In
 this article, we perform the first comprehensive investigation of the promise and challenges of using such
 technology inside the PyCharm IDE, asking, "At the current state of technology does it improve developer
 productivity or accuracy, how does it affect the developer experience, and what are the remaining gaps and
-challenges?"� To facilitate the study, we first develop a plugin for the PyCharm IDE that implements a hybrid of
+challenges?"
+{{objective}}
+To facilitate the study, we first develop a plugin for the PyCharm IDE that implements a hybrid of
 code generation and code retrieval functionality, and we orchestrate virtual environments to enable collection
 of many user events (e.g., web browsing, keystrokes, fine-grained code edits).
-{{objective,method}}
+{{method}}
 We ask developers with various
 backgrounds to complete 7 varieties of 14 Python programming tasks ranging from basic file manipulation
 to machine learning or data visualization, with or without the help of the plugin.
@@ -36,4 +38,3 @@ data and software to pave the road for future empirical studies on this topic, a
 code generation models.
 {{a-resourcepointer,fposs}}
 ---
-Sentence 4 should be split up

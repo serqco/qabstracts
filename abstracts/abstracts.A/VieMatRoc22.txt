@@ -47,11 +47,12 @@ evaluation shows promising results 0.44 up to 0.85, precision values from 0.34 u
 and recall values from 0.62 up to 0.99, depending on the project.
 {{result}}
 Conclusions Our experiments show that field updates have a meaningful impact on the
-models' performance. Furthermore, we present a new approach to deal with the bug report
+models' performance.
+{{h-conclusion,conclusion}}
+Furthermore, we present a new approach to deal with the bug report
 evolution by considering each report version as an independent report.
-{{h-conclusion,conclusion}} 
+{{conclusion}}
 Finally, we also make
 available our dataset to the community.
 {{a-resourcepointer}}
 ---
-This abstract is ill-structured. The headlines (which deserve headline-codes) are joined with sentences and the second-to-last sentence should be split up at the full stop.
