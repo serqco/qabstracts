@@ -378,14 +378,14 @@ HofUrqCha22   Julian      Franz
 AlmGay22      Julian      Franz
 BarDuDav22    Julian      Franz
 #----- Block 43
-LiaCheLi22    Julian
-OniLet22      Julian
-TanFeiAvg22   Julian
-XuVasNeu22    Julian
-ReyGarBen22   Julian
-HanYanMa22    Julian
-WarCruLe22    Julian
-VieMatRoc22   Julian
+LiaCheLi22    Julian      -Franz
+OniLet22      Julian      -Franz
+TanFeiAvg22   Julian      -Franz
+XuVasNeu22    Julian      -Franz
+ReyGarBen22   Julian      -Franz
+HanYanMa22    Julian      -Franz
+WarCruLe22    Julian      -Franz
+VieMatRoc22   Julian      -Franz
 #----- Block 44
 KhaShiBia22   Julian
 ChaHonBak22   Julian
