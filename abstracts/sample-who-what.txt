@@ -369,14 +369,14 @@ ZhaSuLiu22    Julian      Franz
 ZyrPetGua22   Julian      Franz
 JiaLiuJia22   Julian      Franz
 #----- Block 42
-LiuPenMar22   Julian
-LinWanWen22   Julian
-GraLenFel22   Julian
-YuKeuXia22    Julian
-NiuWuNie22    Julian
-HofUrqCha22   Julian
-AlmGay22      Julian
-BarDuDav22    Julian
+LiuPenMar22   Julian      -Franz
+LinWanWen22   Julian      -Franz
+GraLenFel22   Julian      -Franz
+YuKeuXia22    Julian      -Franz
+NiuWuNie22    Julian      -Franz
+HofUrqCha22   Julian      -Franz
+AlmGay22      Julian      -Franz
+BarDuDav22    Julian      -Franz
 #----- Block 43
 LiaCheLi22    Julian
 OniLet22      Julian
