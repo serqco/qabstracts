@@ -1,49 +1,49 @@
 Predicting the precise number of software defects: Are we there yet?
 
 Context:
-{{}}
+{{h-background}}
 Defect Number Prediction (DNP) models can offer more benefits than classification-based defect
 prediction.
-{{}}
+{{background}}
 Recently, many researchers proposed to employ regression algorithms for DNP, and found that the
 algorithms achieve low Average Absolute Error (AAE) and high Pred(0.3) values.
-{{}}
+{{background}}
 However, since the defect
 datasets generally contain many non-defective modules, even if a DNP model predicts the number of defects
 in all modules as zero, the AAE value of the model will be low and Pred(0.3) value will be high.
-{{}}
+{{background}}
 Therefore,
 the good performance of the regression algorithms in terms of AAE and Pred(0.3) may be questioned due to
 the imbalanced distribution of the number of defects.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 To revisit the impact of regression algorithms for predicting the precise number of defects.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 We examine the practical effects of 12 widely-used regression algorithms, two data resampling algorithm (SmoteR and ROS), and three ensemble learning algorithms (gradient boosting regression, AdaBoost.R2,
 and Bagging), one feature selection method (information gain) and one parameter optimization method (grid
 search) for predicting the precise number of defects on the 18 PROMISE datasets.
-{{}}
+{{method}}
 We propose to evaluate the
 AAE and Pred(0.3) values for the modules with different numbers of defects separately.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 The AAE values for defective modules are very high and the Pred(0.3) values are very low, i.e., the
 regression algorithms are very inaccurate for predicting the precise number of defects in defective modules.
-{{}}
+{{result}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 The problem of predicting the precise number of defects via regression algorithms is far from
 being solved.
-{{}}
+{{conclusion}}
 We recommend that software testers use regression algorithms to rank modules for testing
 resource allocation, rather than predict the precise number of defects to evaluate the software reliability and
 maintenance effort.
-{{}}
+{{conclusion}}
 In addition, most existing DNP studies employing the whole AAE and Pred(0.3) values of
 all modules as the evaluation metrics for the proposed DNP algorithms should be revisited.
-{{}}
+{{fneed}}
 ---

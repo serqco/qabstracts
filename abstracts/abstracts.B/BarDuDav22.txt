@@ -2,60 +2,62 @@ Exploiting Input Sanitization for Regex Denial of Service.
 
 Web services use server-side input sanitization to guard against
 harmful input.
-{{}}
+{{background}}
 Some web services publish their sanitization logic
 to make their client interface more usable, e.g., allowing clients to
 debug invalid requests locally.
-{{}}
+{{background}}
 However, this usability practice poses
 a security risk.
-{{}}
+{{background}}
 Specifically, services may share the regexes they use
 to sanitize input strings — and regex-based denial of service (ReDoS)
 is an emerging threat.
-{{}}
+{{background}}
 Although prominent service outages caused
 by ReDoS have spurred interest in this topic, we know little about
 the degree to which live web services are vulnerable to ReDoS.
-{{}}
+{{gap}}
 In this paper, we conduct the first black-box study measuring
 the extent of ReDoS vulnerabilities in live web services.
-{{}}
+{{objective}}
 We apply
 the Consistent Sanitization Assumption:
-{{}}
+{{method}}
 that client-side sanitization
 logic, including regexes, is consistent with the sanitization logic on
 the server-side.
-{{}}
+{{method}}
 We identify a service's regex-based input sanitiza-
 tion in its HTML forms or its API, find vulnerable regexes among
 these regexes, craft ReDoS probes, and pinpoint vulnerabilities.
-{{}}
+{{method}}
 We
 analyzed the HTML forms of 1,000 services and the APIs of 475
 services.
-{{}}
+{{method}}
 Of these, 355 services publish regexes; 17 services publish
 unsafe regexes; and 6 services are vulnerable to ReDoS through
 their APIs (6 domains; 15 subdomains).
-{{}}
+{{result}}
 Both Microsoft and Ama-
 zon Web Services patched their web services as a result of our
 disclosure.
-{{}}
+{{result}}
 Since these vulnerabilities were from API specifications,
 not HTML forms, we proposed a ReDoS defense for a popular API
 validation library, and our patch has been merged.
-{{}}
+{{design}}
 To summarize:
-{{}}
+{{summary}}
 in client-visible sanitization logic, some web services advertise Re-
 DoS vulnerabilities in plain sight.
-{{}}
+{{summary}}
 Our results motivate short-term
 patches and long-term fundamental solutions.
-{{}}
+{{conclusion:u1}}
 "Make measurable what cannot be measured." - Galileo Galilei
-{{}}
+{{X}}
 ---
+
+This abstract includes actual real-world effects of their work. This goes beyond an empirical research result, but it also not a summary or conclusion.
