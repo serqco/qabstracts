@@ -360,14 +360,14 @@ BöhSzeMet22   Lutz        Franz
 AmnPoe22      Lutz        Franz
 LiYuZho22     Lutz        Franz
 #----- Block 41
-GreStrSha22   Julian
-HuaLiaChe22   Julian   
-CorRweFra22   Julian
-MoWeiFen22    Julian
-ZhaHu22       Julian
-ZhaSuLiu22    Julian
-ZyrPetGua22   Julian
-JiaLiuJia22   Julian
+GreStrSha22   Julian      -Franz
+HuaLiaChe22   Julian      -Franz
+CorRweFra22   Julian      -Franz
+MoWeiFen22    Julian      -Franz
+ZhaHu22       Julian      -Franz
+ZhaSuLiu22    Julian      -Franz
+ZyrPetGua22   Julian      -Franz
+JiaLiuJia22   Julian      -Franz
 #----- Block 42
 LiuPenMar22   Julian
 LinWanWen22   Julian
