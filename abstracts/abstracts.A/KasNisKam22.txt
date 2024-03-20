@@ -18,7 +18,6 @@ light-weight reviews with web applications.
 {{background}}
 However, it is uncertain about the nature of SATD comments
 that are introduced in the review process:
-{{gap}}
 impact, frequency, characteristics, and triggers.
 {{gap}}
 Herein, this study
