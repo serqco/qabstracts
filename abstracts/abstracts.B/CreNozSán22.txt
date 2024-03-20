@@ -1,54 +1,54 @@
 The role of awareness and gamification on technical debt management.
 
 Context:
-{{}}
+{{h-background}}
 Managing technical debt and developing easy-to-maintain software are very important aspects for
 technological companies.
-{{}}
+{{background}}
 Integrated development environments (IDEs) and static measurement and analysis
 tools are used for this purpose.
-{{}}
+{{background}}
 Meanwhile, gamification also is gaining popularity in professional settings,
 particularly in software development.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 This paper aims to analyse the improvement in technical debt indicators due to the use of
 techniques to raise developers’ awareness of technical debt and the introduction of gamification into technical
 debt management.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 A quasi-experiment that manipulates a training environment with three different treatments was
 conducted.
-{{}}
+{{method}}
 The first treatment was based on training in the concept of technical debt, bad smells and
 refactoring, while using multiple plugins in IDEs to obtain reports on quality indicators of both the code
 and the tests.
-{{}}
+{{method}}
 The second treatment was based on enriching previous training with the use of SonarQube to
 continuously raise awareness of technical debt.
-{{}}
+{{method}}
 The third was based on adding a gamification component to
 technical debt management based on a contest with a top ten ranking.
-{{}}
+{{method}}
 The results of the first treatment are
 compared with the use of SonarQube for continuously raising developers’ awareness of technical debt; while
 the possible effect of gamification is compared with the results of the previous treatment.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 It was observed that continuously raising awareness using a technical debt management tool, such
 as SonarQube, significantly improves the technical debt indicators of the code developed by the participants
 versus using multiple code and test quality checking tools.
-{{}}
+{{result:i1}}
 On the other hand, incorporating some kind
 of competition between developers by defining a contest and creating a ranking does not bring about any
 significant differences in the technical debt indicators.
-{{}}
+{{result:i1}}
 Conclusion:
-{{}}
+{{h-conclusion}}
 Investment in staff training through tools to raise developers’ awareness of technical debt and
 incorporating it into continuous integration pipelines does bring improvements in technical debt management.
-{{}}
+{{conclusion}}
 ---

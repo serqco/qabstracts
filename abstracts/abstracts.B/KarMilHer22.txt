@@ -2,26 +2,26 @@ Software system comparison with semantic source code embeddings.
 
 This paper presents a novel approach for comparing software systems by calculating the
 robust Hausdorff distance between semantic source code embeddings of individual software components, i.e., methods.
-{{}}
+{{objective}}
 The proposed approach represents each software as a set
 of vectors, where every vector is a semantic source code embedding of a particular method.
-{{}}
+{{design}}
 The code embeddings are constructed from abstract syntax trees of the methods with the
 help of attention-based neural network models that capture the semantics of the methods.
-{{}}
+{{design}}
 Previous research has shown that comparing semantic source code embeddings can reveal
 semantic relationships between the two methods.
-{{}}
+{{background}}
 We utilize this characteristic to estimate
 the semantic similarity between the two software systems by computing the robust Hausdorff distance.
-{{}}
+{{design}}
 In the experiment, a pre-trained code2vec neural network model is used to
 create the source code vector representations of several open-source Java-based libraries.
-{{}}
+{{method}}
 Several variations of the robust Hausdorff distance are evaluated.
-{{}}
+{{method}}
 The results show that the
 proposed approach can effectively estimate the semantic similarity, reflecting the software
 library's scopes, software evolution, and individual parts (e.g., packages) of those libraries.
-{{}}
+{{result:i1}}
 ---

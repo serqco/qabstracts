@@ -396,14 +396,14 @@ PonSutArt22   Julian      Franz
 KasNisKam22   Julian      Franz
 SawBisMoh22   Julian      Franz
 #----- Block 45
-AmaAbuTor22   Julian      -Franz
-CheXiaLo22    Julian      -Franz
-JobApe22      Julian      -Franz
-KarMilHer22   Julian      -Franz
-WanGaoWan22   Julian      -Franz
-RaiWoh22      Julian      -Franz
-CaoAhmRub22   Julian      -Franz
-CreNozSán22   Julian      -Franz
+AmaAbuTor22   Julian      Franz
+CheXiaLo22    Julian      Franz
+JobApe22      Julian      Franz
+KarMilHer22   Julian      Franz
+WanGaoWan22   Julian      Franz
+RaiWoh22      Julian      Franz
+CaoAhmRub22   Julian      Franz
+CreNozSán22   Julian      Franz
 #----- Block 46
 SejSch22   
 HaqShiBri22   

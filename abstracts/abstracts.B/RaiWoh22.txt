@@ -1,48 +1,50 @@
 Recruiting credible participants for field studies in software engineering research.
 
 Context:
-{{}}
+{{h-background}}
 Software practitioners are a primary provider of information for field studies in software engineering.
-{{}}
+{{background}}
 Research typically recruits practitioners through some kind of sampling.
-{{}}
+{{background}}
 But sampling may not in itself recruit
 the "right" participants.
-{{}}
+{{gap}}
 Objective:
-{{}}
+{{h-objective}}
 To assess existing guidance on participant recruitment, and to propose and illustrate a framework
 for recruiting professional practitioners as credible participants in field studies of software engineering.
-{{}}
+{{objective}}
 Methods:
-{{}}
+{{h-method}}
 We review existing guidelines, checklists and other advisory sources on recruiting participants for
 field studies.
-{{}}
+{{design}}
 We develop a framework, partly based on our prior research and on the research of others.
-{{}}
+{{design}}
 We
 search for and select three exemplar studies (a case study, an interview study and a survey study) and use
 those to illustrate the framework.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 Whilst existing guidance recognises the importance of recruiting participants, there is limited guidance
 on how to recruit the "right" participants.
-{{}}
+{{background}}
 The framework suggests the conceptualisation of participants as
 "research instruments" or, alternatively, as a sampling frame for items of interest.
-{{}}
+{{design}}
 The exemplars suggest
 that at least some members of the research community are aware of the need to carefully recruit the "right"
 participants.
-{{}}
+{{result}}
 Conclusions:
-{{}}
+{{h-conclusion}}
 The framework is intended to encourage researchers to think differently about the involvement of
 practitioners in field studies of software engineering.
-{{}}
+{{conclusion}}
 Also, the framework identifies a number of characteristics
 not explicitly addressed by existing guidelines.
-{{}}
+{{result:i1}}
 ---
+
+To me, this is an artifact-centric article, where the framework is being designed (so reviewing existing guidelines is part of the design of the artifact) and the practitioners are other researchers, so encouraging them is a "conclusion".
