@@ -8,7 +8,7 @@ apps are afflicted with bugs.
 {{background}}
 Previous work observed that DNN bug
 fix patterns are different from traditional bug fix patterns.
-{{gap}}
+{{background}}
 Further-
 more, those buggy models are non-trivial to diagnose and fix due
 to inexplicit errors with several options to fix them.
@@ -46,7 +46,7 @@ numerical errors during training.
 Also, it can provide actionable in-
 sights for fix whereas DeepLocalize can only report faults that lead
 to numerical errors during training.
-{{result}}
+{{claim}}
 DeepDiagnosis manifests the
 best capabilities of fault detection, bug localization, and symptoms
 identification when compared to other approaches.

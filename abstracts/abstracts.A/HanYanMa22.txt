@@ -14,7 +14,7 @@ The vulnerability originates
 from the fact that even though each individual parameter receives
 a value in the recommended value range, certain combinations of
 parameter values may affect the drone physical stability.
-{{gap}}
+{{background}}
 In this
 paper, we develop a novel learning-guided search system to find
 such combinations, that we refer to as incorrect configurations.

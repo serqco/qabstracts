@@ -9,7 +9,7 @@ While logging has been essential to support explanations and understandability o
 behaviour, several issues still persist, such as the high cost for managing large logs, not knowing what to log,
 and the inability of logging techniques to relate events to each other or to specific occurrences of high-level
 activities in the system.
-{{background}}
+{{gap}}
 Objective:
 {{h-objective}}
 Cronista is an alternative to logging for systems that act on top of runtime models.
@@ -26,7 +26,7 @@ Method:
 {{h-method}}
 Cronista’s architecture is described with the current design and the implementation of its high-level
 components for single-machine, multi-threaded systems.
-{{design}}
+{{a-design}}
 Cronista is applied to a traffic-simulation case study.
 {{method}}
 The trade-offs of two different storage solutions are evaluated, i.e. the CDO model repositories, and JanusGraph
@@ -37,7 +37,7 @@ Results:
 Integrating Cronista into the case study requires only minor code changes.
 {{result}}
 Cronista collected provenance graphs for the simulations as they ran, using both CDO and JanusGraph.
-{{result}}
+{{design,-ignorediff}}
 Both solutions highlighted the
 cause of a seeded defect in the system.
 {{result}}

@@ -24,11 +24,11 @@ of many user events (e.g., web browsing, keystrokes, fine-grained code edits).
 We ask developers with various
 backgrounds to complete 7 varieties of 14 Python programming tasks ranging from basic file manipulation
 to machine learning or data visualization, with or without the help of the plugin.
-{{method}}
+{{method:i1}}
 While qualitative surveys
 of developer experience are largely positive, quantitative results with regards to increased productivity, code
 quality, or program correctness are inconclusive.
-{{result}}
+{{method:i1,result}}
 Further analysis identifies several pain points that could
 improve the effectiveness of future machine learning-based code generation/retrieval developer assistants
 and demonstrates when developers prefer code generation over code retrieval and vice versa.

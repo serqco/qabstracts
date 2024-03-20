@@ -51,7 +51,7 @@ models' performance.
 {{h-conclusion,conclusion}}
 Furthermore, we present a new approach to deal with the bug report
 evolution by considering each report version as an independent report.
-{{conclusion}}
+{{design}}
 Finally, we also make
 available our dataset to the community.
 {{a-resourcepointer}}
