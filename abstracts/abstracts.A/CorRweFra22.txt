@@ -19,7 +19,7 @@ behaviour of a given test suite.
 Thereby, FlakiMe equips researchers
 with ways to investigate the impact of test flakiness on their tech-
 niques under laboratory-controlled conditions.
-{{design}}
+{{objective}}
 To demonstrate the
 application of FlakiMe, we use it to assess the impact of flakiness on
 mutation testing and program repair (the PRAPR and ARJA meth-

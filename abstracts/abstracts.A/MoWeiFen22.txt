@@ -26,12 +26,12 @@ whether we can simplify the prediction models.
 Results:
 {{h-result}}
 Through our evaluation on eighteen large-scale projects, we have presented:
-{{result}}
+{{method}}
 (1) conducting methodlevel bug prediction has potentials of saving a large portion of effort on code reviews and inspections; (2)
 models using the proposed code metrics or history measures could achieve a good prediction performance;
 (3) the prediction importance of each metric distributes differently; (4) a highly simplified prediction model
 could be derived by just using a few important metrics.
-{{result;conclusion}}
+{{result:i3;conclusion}}
 Conclusion:
 {{h-conclusion}}
 This study presents how to systematically build models for predicting bug-prone methods, and

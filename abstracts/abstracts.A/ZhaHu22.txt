@@ -28,7 +28,7 @@ ward evaluation for incomplete programs is as efficient as that for
 complete programs in that it is only 21𝑚𝑠 slower on a program with
 10 holes than that on its full program, and our extended forward
 evaluation makes no difference.
-{{method}}
+{{method,result}}
 Furthermore, we use quick sort and
 student grades, two nontrivial examples of incomplete programs,
 to demonstrate its usefulness in algorithm teaching and program
