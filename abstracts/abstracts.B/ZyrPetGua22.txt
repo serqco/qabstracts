@@ -2,7 +2,7 @@ Deja Vu: semantics-aware recording and replay of high-speed eye tracking and int
 
 The paper introduces a fundamental technological problem with collecting high-speed eye
 tracking data while studying software engineering tasks in an integrated development environment.
-{{a-gap}}
+{{objective}}
 The use of eye trackers is quickly becoming an important means to study software
 developers and how they comprehend source code and locate bugs.
 {{background}}

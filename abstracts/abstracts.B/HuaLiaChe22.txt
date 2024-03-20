@@ -10,7 +10,7 @@ further affect the development progress of a project.
 Thus, a tool that predicts early on how
 long a patch will be reviewed can help developers take self-inspection beforehand for the
 patches that require long-time review.
-{{gap}}
+{{background}}
 In this paper, we propose a novel method, PMCost, to
 predict the reviewing rounds of a patch.
 {{objective}}

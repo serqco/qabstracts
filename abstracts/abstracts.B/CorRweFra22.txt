@@ -7,7 +7,7 @@ the presence of the same defects.
 However, this assumption is not
 always true because some test failures are due to so-called flaky
 tests, i.e., tests with non-deterministic outcomes.
-{{gap}}
+{{background}}
 To help testing re-
 searchers better investigate flakiness, we introduce a test flakiness
 assessment and experimentation platform, called FlakiMe.

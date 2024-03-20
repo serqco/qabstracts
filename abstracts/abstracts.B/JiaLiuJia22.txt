@@ -21,7 +21,7 @@ side, the type of the base instance, and similar assignments typed in before.
 {{design}}
 All such information together enables highly accurate code
 completion.
-{{objective}}
+{{objective,-ignorediff}}
 Given an incomplete assignment, HeeNAMA generates the initial candidate set according to the type of the base instance,
 and excludes those candidates that are not type compatible with the left hand side of the assignment.
 {{design}}
