@@ -20,7 +20,7 @@ challenges?"
 To facilitate the study, we first develop a plugin for the PyCharm IDE that implements a hybrid of
 code generation and code retrieval functionality, and we orchestrate virtual environments to enable collection
 of many user events (e.g., web browsing, keystrokes, fine-grained code edits).
-{{design}}
+{{method}}
 We ask developers with various
 backgrounds to complete 7 varieties of 14 Python programming tasks ranging from basic file manipulation
 to machine learning or data visualization, with or without the help of the plugin.
