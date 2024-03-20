@@ -15,7 +15,7 @@ in all modules as zero, the AAE value of the model will be low and Pred(0.3) val
 Therefore,
 the good performance of the regression algorithms in terms of AAE and Pred(0.3) may be questioned due to
 the imbalanced distribution of the number of defects.
-{{background}}
+{{gap}}
 Objective:
 {{h-objective}}
 To revisit the impact of regression algorithms for predicting the precise number of defects.

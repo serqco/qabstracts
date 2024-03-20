@@ -11,7 +11,7 @@ been proposed.
 {{background}}
 However, as this study reveals, these approaches suffer from various issues such as cannot identify multiple
 overlapping MFSs, cannot handle MFSs with high degrees, cannot be applied to systems with large number of parameters, etc.
-{{background,result}}
+{{result}}
 These
 issues are essentially caused by the exponential computing complexity of checking every interaction in the test cases.
 {{background}}
@@ -35,7 +35,7 @@ The relationships between the different schemas (faulty, healthy, and pending) a
 {{method}}
 Based on which, we further propose three formulas, along with three corresponding algorithms, for the identification of the pending
 schemas in failing test cases, and formally prove their correctness.
-{{design}}
+{{design,method}}
 As a result, we reduce the complexity of obtaining pending schemas
 with respect to the number of factors that may have influences on the software.
 {{result:i1}}

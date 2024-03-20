@@ -15,7 +15,7 @@ Recent research has produced some scientifically backed insights on the benefits
 {{background}}
 Further empirical studies are required to build a sufficient
 body of knowledge from which support for different claims related to DSLs can be derived.
-{{gap}}
+{{need}}
 In this research study, we adopt current DSL evaluation approaches to investigate potential
 gains in terms of effectiveness and efficiency, through the application of our DSL Athos,
 a language developed for the domain of traffic and transportation simulation and optimisation.

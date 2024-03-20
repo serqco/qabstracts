@@ -12,7 +12,7 @@ needs, and the different roles APIs play in these questions and their answers.
 {{objective}}
 We derive a taxonomy, complementing existing ones,
 through an empirical study of 266 SO posts.
-{{design}}
+{{method}}
 We then develop and evaluate an approach for the automated identification of the fine-grained
 developer needs in SO threads, which takes a thread as input and outputs the corresponding developer needs, the types of information
 expressing them, and the roles of API elements relevant to the needs.

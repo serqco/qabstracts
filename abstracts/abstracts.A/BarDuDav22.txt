@@ -47,7 +47,7 @@ disclosure.
 Since these vulnerabilities were from API specifications,
 not HTML forms, we proposed a ReDoS defense for a popular API
 validation library, and our patch has been merged.
-{{conclusion}}
+{{design}}
 To summarize:
 {{summary}}
 in client-visible sanitization logic, some web services advertise Re-
