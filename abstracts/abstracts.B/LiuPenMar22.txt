@@ -16,8 +16,10 @@ through an empirical study of 266 SO posts.
 We then develop and evaluate an approach for the automated identification of the fine-grained
 developer needs in SO threads, which takes a thread as input and outputs the corresponding developer needs, the types of information
 expressing them, and the roles of API elements relevant to the needs.
-{{design,method:i1}}
+{{design}}
 To show a practical application of our taxonomy, we introduce and
 evaluate an approach for the automated retrieval of SO questions, based on these developer needs.
-{{design,method:i1}}
+{{method:i1}}
 ---
+
+It's unclear how many "approaches" they are talking about. One? Two?
