@@ -14,7 +14,7 @@
                 }
             ]
         },
-        "(\\{\\{)(.+[\\, ])?(objective)(:(u\\d+|hype))?([, ].+)?(\\}\\})": {
+        "(\\{\\{)(.+[\\, ])?(objective)(:hype)?(:u\\d+)?([, ].+)?(\\}\\})": {
             "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
             "decorations": [
                 {},
@@ -25,13 +25,18 @@
                 },
                 {
                     "color": "rgb(0,180,0)",
+                    "fontWeight": "normal",
+                    "fontStyle": "italic"
+                },
+                {
+                    "color": "rgb(0,180,0)",
                     "fontWeight": "normal"
                 },
                 {},
                 {}
             ]
         },
-        "(\\{\\{)(.+[\\, ])?(conclusion)(:(u\\d+|hype|incredible|timid))?([, ].+)?(\\}\\})": {
+        "(\\{\\{)(.+[\\, ])?(conclusion)(:(|hype|incredible|timid))?(:u\\d+)?([, ].+)?(\\}\\})": {
             "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
             "decorations": [
                 {},
@@ -39,6 +44,11 @@
                 {
                     "color": "rgb(20,200,20)",
                     "fontWeight": "bold"
+                },
+                {
+                    "color": "rgb(110,180,0)",
+                    "fontWeight": "normal",
+                    "fontStyle": "italic"
                 },
                 {
                     "color": "rgb(110,180,0)",
@@ -85,7 +95,8 @@
                 },
                 {
                     "color": "rgb(110,180,0)",
-                    "fontWeight": "normal"
+                    "fontWeight": "normal",
+                    "fontStyle": "italic"
                 },
                 {},
                 {}
@@ -125,7 +136,7 @@
                 {}
             ]
         },
-        "(\\{\\{)(.+[\\, ])?(result)(:(i\\d+u\\d+|i\\d+|u\\d+))?([, ].+)?(\\}\\})": {
+        "(\\{\\{)(.+[\\, ])?(result)(:hype)?(:(i\\d+u\\d+|i\\d+|u\\d+))?([, ].+)?(\\}\\})": {
             "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
             "decorations": [
                 {},
@@ -133,6 +144,11 @@
                 {
                     "color": "rgb(20,200,20)",
                     "fontWeight": "bold"
+                },
+                {
+                    "color": "rgb(0,180,0)",
+                    "fontWeight": "normal",
+                    "fontStyle": "italic"
                 },
                 {
                     "color": "rgb(0,180,0)",
@@ -603,20 +619,6 @@
                 {}
             ]
         },
-        "(\\{\\{)(.+[\\, ])?(\\-hype)([, ].+)?(\\}\\})": {
-            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
-            "decorations": [
-                {},
-                {},
-                {
-                    "color": "rgb(150,150,255)",
-                    "fontWeight": "normal",
-                    "fontStyle": "italic"
-                },
-                {},
-                {}
-            ]
-        },
         "(\\{\\{)(.+[\\, ])?(\\-ignorediff)([, ].+)?(\\}\\})": {
             "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
             "decorations": [
@@ -631,35 +633,7 @@
                 {}
             ]
         },
-        "(\\{\\{)(.+[\\, ])?(\\-incredible)([, ].+)?(\\}\\})": {
-            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
-            "decorations": [
-                {},
-                {},
-                {
-                    "color": "rgb(150,150,255)",
-                    "fontWeight": "normal",
-                    "fontStyle": "italic"
-                },
-                {},
-                {}
-            ]
-        },
         "(\\{\\{)(.+[\\, ])?(\\-problemstmt)([, ].+)?(\\}\\})": {
-            "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
-            "decorations": [
-                {},
-                {},
-                {
-                    "color": "rgb(150,150,255)",
-                    "fontWeight": "normal",
-                    "fontStyle": "italic"
-                },
-                {},
-                {}
-            ]
-        },
-        "(\\{\\{)(.+[\\, ])?(\\-timid)([, ].+)?(\\}\\})": {
             "filterFileRegex": "[a-z]{1,9}[0-9]{2}\\.txt",
             "decorations": [
                 {},
