@@ -25,7 +25,7 @@ We provide an openly available example of a psychometric evaluation based on our
 {{a-result}}
 We hope to encourage a culture change in SE research towards the
 adoption of established methods from psychology.
-{{fposs}}
+{{fneed}}
 To improve the quality of behavioral research in SE, studies
 focusing on introducing, validating, and then using psychometric instruments need to be more common.
 {{fneed}}
