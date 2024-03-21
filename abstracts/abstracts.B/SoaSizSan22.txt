@@ -1,45 +1,45 @@
 The effects of continuous integration on software development: a systematic literature review.
 
 Context Continuous integration (CI) is a software engineering technique that proclaims frequent activities to assure the software product health.
-{{}}
+{{h-background,background}}
 Researchers and practitioners mention
 several benefits related to CI.
-{{}}
+{{background}}
 However, no systematic study surveys state of the art regarding
 such benefits or cons.
-{{}}
+{{gap}}
 Objective This study aims to identify and interpret empirical evidence regarding how CI
 impacts software development.
-{{}}
+{{h-objective,objective}}
 Method Through a Systematic Literature Review, we search for studies in six digital
 libraries.
-{{}}
+{{h-method,method}}
 Starting from 479 studies, we select 101 empirical studies that evaluate CI in the
 context of software development.
-{{}}
+{{method}}
 We thoroughly read and extract information regarding (i)
 the CI environment, (ii) findings related to the effects of CI, and (iii) the employed research
 methods.
-{{}}
+{{method}}
 We apply a thematic synthesis to group and summarize the findings.
-{{}}
+{{method}}
 Results Existing research has explored the positive effects of CI, such as better cooperation,
 or negative effects, such as adding technical and process challenges.
-{{}}
+{{h-result,result}}
 From our thematic synthesis, we identify six themes:
-{{}}
+{{result}}
 development activities, software process, quality assurance,
 integration patterns, issues & defects, and build patterns.
-{{}}
+{{result}}
 Conclusions Empirical research in CI has been increasing over recent years.
-{{}}
+{{h-conclusion,result}}
 We found that
 much of the existing research reveals that CI brings positive effects to software development.
-{{}}
+{{result}}
 However, CI may also bring technical challenges to software development teams.
-{{}}
+{{result}}
 Despite
 the overall positive outlook regarding CI, we still find room for improvements in the existing
 empirical research that evaluates the effects of CI.
-{{}}
+{{a-fneed}}
 ---

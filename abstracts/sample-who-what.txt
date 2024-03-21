@@ -405,14 +405,14 @@ RaiWoh22      Julian      Franz
 CaoAhmRub22   Julian      Franz
 CreNozSán22   Julian      Franz
 #----- Block 46
-SejSch22      Franz       -Julian
-HaqShiBri22   Franz       -Julian
-SoaSizSan22   Franz       -Julian
-PanXuPei22    Franz       -Julian
-AbiRahOpe22   Franz       -Julian
-AlkAlaKeb22   Franz       -Julian
-OliNetChe22   Franz       -Julian
-LiaLiSha22    Franz       -Julian
+SejSch22      Franz       Julian
+HaqShiBri22   Franz       Julian
+SoaSizSan22   Franz       Julian
+PanXuPei22    Franz       Julian
+AbiRahOpe22   Franz       Julian
+AlkAlaKeb22   Franz       Julian
+OliNetChe22   Franz       Julian
+LiaLiSha22    Franz       Julian
 #----- Block 47
 VogNeuFis22   
 SmiBibAmp22   

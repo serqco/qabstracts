@@ -1,55 +1,55 @@
 A comparison of machine learning algorithms on design smell detection using balanced and imbalanced dataset: A study of God class.
 
 Context:
-{{}}
+{{h-background}}
 Design smell detection has proven to be a significant activity that has an aim of not only enhancing
 the software quality but also increasing its life cycle.
-{{}}
+{{background}}
 Objective:
-{{}}
+{{h-objective}}
 This work investigates whether machine learning approaches can effectively be leveraged for
 software design smell detection.
-{{}}
+{{objective}}
 Additionally, this paper provides a comparatively study, focused on using
 balanced datasets, where it checks if avoiding dataset balancing can be of any influence on the accuracy and
 behavior during design smell detection.
-{{}}
+{{objective}}
 Method:
-{{}}
+{{h-method}}
 A set of experiments have been conducted-using 28 Machine Learning classifiers aimed at detecting
 God classes.
-{{}}
+{{method}}
 This experiment was conducted using a dataset formed from 12,587 classes of 24 software systems,
 in which 1,958 classes were manually validated.
-{{}}
+{{method}}
 Results:
-{{}}
+{{h-result}}
 Ultimately, most classifiers obtained high performances,-with Cat Boost showing a higher performance.
-{{}}
+{{result:i1}}
 Also, it is evident from the experiments conducted that data balancing does not have any significant
 influence on the accuracy of detection.
-{{}}
+{{result}}
 This reinforces the application of machine learning in real scenarios
 where the data is usually imbalanced by the inherent nature of design smells.
-{{}}
+{{conclusion}}
 Conclusions:
-{{}}
+{{h-conclusion}}
 Machine learning approaches can effectively be used as a leverage for God class detection.
-{{}}
+{{conclusion}}
 While
 in this paper we have employed SMOTE technique for data balancing, it is worth noting that there exist
 other methods of data balancing and with other design smells.
-{{}}
+{{method,limitation}}
 Furthermore, it is also important to note that
 application of those other methods may improve the results, in our experiments SMOTE did not improve God
 class detection.
-{{}}
+{{result}}
 The results are not fully generalizable because only one design smell is studied with projects developed in
 a single programming language, and only one balancing technique is used to compare with the imbalanced
 case.
-{{}}
+{{limitation}}
 But these results are promising for the application in real design smells detection scenarios as mentioned
 above and the focus on other measures, such as Kappa, ROC, and MCC, have been used in the assessment of
 the classifier behavior.
-{{}}
+{{conclusion}}
 ---
