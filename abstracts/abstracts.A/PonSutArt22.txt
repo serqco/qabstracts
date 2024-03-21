@@ -13,9 +13,9 @@ In this work, we aim at bridging this gap.
 {{objective}}
 We present Crucial, a system to program highly-parallel
 stateful serverless applications.
-{{design}}
+{{objective}}
 Crucial retains the simplicity of serverless computing.
-{{design}}
+{{objective}}
 It is built upon the
 key insight that FaaS resembles to concurrent programming at the scale of a datacenter.
 {{design}}
@@ -40,8 +40,8 @@ ML library to serverless.
 The ported application is up to 30% faster than with a dedicated high-end server.
 {{result}}
 Finally, we attest that Crucial can rival in performance with a single-machine, multi-threaded implementation of a complex coordination problem.
-{{result}}
+{{result:u1}}
 Overall, Crucial delivers all these benefits with less than 6% of
 changes in the code bases of the evaluated applications.
-{{conclusion}}
+{{result:u2}}
 ---

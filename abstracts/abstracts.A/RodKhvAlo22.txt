@@ -26,10 +26,10 @@ frames.
 Besides, due to data distribution differences among software projects, parameters
 that are learned using machine learning algorithms are necessary to provide more flexibility
 to the methods.
-{{need}}
+{{background}}
 In this paper, we propose TraceSim – an approach for crash report deduplication which combines TF-IDF, optimum global alignment, and machine learning (ML)
 in a novel way.
-{{objective}}
+{{objective,design}}
 Moreover, we propose a new evaluation methodology for this task that is
 more comprehensive and robust than previously used evaluation approaches.
 {{objective}}
