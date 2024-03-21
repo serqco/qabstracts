@@ -44,10 +44,10 @@ Amalfi
 improves on the state of the art in that it is lightweight, requiring
 only a few seconds per package to extract features and run the
 classifiers, and gives good results in practice:
-{{result:i1}}
+{{claim}}
 running it on 96287
 package versions published over the course of one week, we were
 able to identify 95 previously unknown malware samples, with a
 manageable number of false positives.
-{{result:i1}}
+{{result:i1,method}}
 ---
