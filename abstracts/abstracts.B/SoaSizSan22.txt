@@ -41,5 +41,5 @@ However, CI may also bring technical challenges to software development teams.
 Despite
 the overall positive outlook regarding CI, we still find room for improvements in the existing
 empirical research that evaluates the effects of CI.
-{{a-fneed}}
+{{result}}
 ---

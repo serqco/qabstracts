@@ -37,7 +37,7 @@ perceived as design or implementation problems.
 {{result:i1}}
 Our results suggest that the studied design
 smells could be introduced mainly during refactoring and maintenance activities, and during regular development tasks.
-{{result}}
+{{conclusion}}
 Our results also point that multi-language design smells are
 perceived as harmful and have negative impacts on software quality.
 {{result}}

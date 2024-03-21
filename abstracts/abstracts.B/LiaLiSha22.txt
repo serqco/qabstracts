@@ -33,14 +33,14 @@ properties.
 {{result:i1}}
 In particular, although the top tuned DNN models usually have very similar accuracy, they may
 have significantly different performance in terms of other aspects (e.g., inference latency).
-{{result:i1}}
+{{result:i1,-ignorediff}}
 We also observe
 that model optimization has a confounding effect on the impact of hyperparameters on DNN model performance.
 {{result}}
 For example, two sets of hyperparameters may result in standard models with similar performance
 but their performance may become significantly different after they are optimized and deployed on the mobile
 device.
-{{result}}
+{{result,-ignorediff}}
 Our findings highlight that practitioners can benefit from paying attention to a variety of performance
 properties and the confounding effect of model optimization when tuning and optimizing their DNN models.
 {{conclusion}}

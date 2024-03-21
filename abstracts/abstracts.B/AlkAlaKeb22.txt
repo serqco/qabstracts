@@ -39,7 +39,7 @@ Machine learning approaches can effectively be used as a leverage for God class 
 While
 in this paper we have employed SMOTE technique for data balancing, it is worth noting that there exist
 other methods of data balancing and with other design smells.
-{{method,limitation}}
+{{method:u1,limitation}}
 Furthermore, it is also important to note that
 application of those other methods may improve the results, in our experiments SMOTE did not improve God
 class detection.
