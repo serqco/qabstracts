@@ -26,7 +26,7 @@ Furthermore, we discuss the capabilities of existing malware
 detection tools, put them in context of the properties observed in
 the analyzed malware, and identify gaps and future research direc-
 tions.
-{{result}}
+{{result,fneed}}
 We believe that our detailed analysis of the recent, evasive
 malware will be of interest to researchers and practitioners and
 will help further improve malware detection tools.

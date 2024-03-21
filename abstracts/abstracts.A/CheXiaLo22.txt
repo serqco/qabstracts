@@ -37,6 +37,6 @@ and 0.8673 of AUC in average.
 {{result}}
 According to the feedback of developers who exclude selfdestruct functions,
 we propose suggestions to help developers use selfdestruct functions in Ethereum smart contracts better.
-{{result}}
+{{a-result}}
 ---
 This article contains five individual studies: (1) an online survey on reasons to include or exclude a selfdestruct function, (2) a method to find self-destructed contracts and their successors, (3) an analysis of difference between those contracts, (4) a tool to detect problems incentivizing selfdestruction, and (5) an empirical evaluation of that tool.
