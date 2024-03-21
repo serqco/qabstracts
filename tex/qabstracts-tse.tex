@@ -207,7 +207,7 @@ but abstracts of artifact-centric works (tool building) do not fit this model an
 an extended one.
 
 
-\subsection{Abstracts Quality}
+\subsection{Abstracts Quality}\label{relatedworkquality}
 
 Several studies on abstracts focus on quality assessment,
 most often in subfields of the biomedical domain.
@@ -256,11 +256,9 @@ For instance~\cite{CroOpp06} remarks
 that one third of the 12 analyzed abstracts is lacking move 2 (stating a purpose).
 
 
-\subsection{Structured vs.\ Unstructured Abstracts}
+\subsection{Structured vs.\ Unstructured Abstracts}\label{relatedworkstructured}
 
-In many cases, and in particular in those parts of the biomedical domain
-where controlled experiments are the norm, quality-oriented studies do not study
-quality in general.
+Many studies of abstracts quality do not study quality in general.
 For instance neither~\cite{DupKhoLeb03} nor~\cite{ShaHar06} reports
 which of their checklist items are missing most frequently.
 Rather, their research question is the relative quality of structured
@@ -268,13 +266,49 @@ versus unstructured abstracts.
 And in almost all of those cases, including~\cite{DupKhoLeb03} and~\cite{ShaHar06},
 the answer is: structured abstracts have fewer quality issues.
 
+A structured abstract is one that uses a prescribed sequence of 
+intermediate headings, such as Background, Objective, Methods, Results,
+Conclusions or some similar set.
+
 Such research can be highly influential.
 For instance, the CONSORTS report~\cite{MohHopSch12}
 (containing guidelines for reporting controlled experiments, with over 10,000 citations),
 relies on such a study \cite{HarSydBlu96} to recommend structured abstracts.
 % https://journals.sagepub.com/doi/epdf/10.1177/016555159602200503
 
-!!!Budgen work!!!
+In software engineering, Kitchenham proposed
+Evidence Based Software Engineering (EBSE) in 2004 \cite{KitDybJor04}.
+EBSE relies a lot on Systematic Literature Reviews (SLR).
+The practicality of SLRs hinges on the informativeness of abstracts:
+Can the researcher decide quickly and reliably, whether the present article
+belongs in the study or not?
+
+Therefore, Kitchenham performed two studies on structured abstracts
+in software engineering.
+The first took 23 published non-structured abstracts, 
+converted them into structured ones,
+and compared the two versions. 
+It found that the structured abstracts were much longer,
+but also had much better readability scores \cite{KitBreOwe08}.
+
+The second, by Budgen, Kitchenham, and others \cite{BudKitCha08},
+is a controlled experiment based on similar pairs of abstracts
+rewritten into the structure 
+Background, Aim, Methods, Results, Conclusions.
+20 students and 44 researchers and practitioners
+each judge one structured and one different unstructured abstract
+for completeness (using an 18-item checklist) and 
+clarity (using a vague 1-to-10 scale).
+The structured format was found to increase the 
+completeness score by 6.6 and the clarity score by 3.0.
+70\% of the subjects also preferred the structured format
+subjectively.
+
+Both studies use only abstracts of purely empirical studies,
+not tool-building works, 
+which have very different (and more complicated) properties
+as we will see.
+
 
 
 %========================================================================
