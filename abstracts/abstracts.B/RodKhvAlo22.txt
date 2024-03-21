@@ -32,7 +32,7 @@ in a novel way.
 {{objective,design}}
 Moreover, we propose a new evaluation methodology for this task that is
 more comprehensive and robust than previously used evaluation approaches.
-{{design}}
+{{design,-ignorediff}}
 TraceSim significantly outperforms seven baselines and state-of-the-art methods in the majority of the
 scenarios.
 {{result:i1}}

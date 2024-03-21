@@ -18,10 +18,9 @@ In this paper, we conduct a thorough structural analysis aiming
 to provide an interpretation of pre-trained language models for
 source code (e.g., CodeBERT, and GraphCodeBERT) from three
 distinctive perspectives:
-{{objective}}
 (1) attention analysis, (2) probing on the
 word embedding, and (3) syntax tree induction.
-{{method}}
+{{method,objective}}
 Through compre-
 hensive analysis, this paper reveals several insightful findings that
 may inspire future studies:

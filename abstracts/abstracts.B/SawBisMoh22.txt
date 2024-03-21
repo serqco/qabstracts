@@ -20,7 +20,7 @@ security patches (i.e., patches that address vulnerable code) as part of an auto
 Leveraging different classes of features, we empirically
 show that such automation is feasible and can yield a precision of over 80% in identifying
 security patches, with an unprecedented recall of over 80%.
-{{design,result}}
+{{design:i1,result}}
 Beyond such a benchmarking
 with ground truth data which demonstrates an improvement over the state-of-the-art, we
 confirmed that SSPCATCHER can help catch security patches that were not reported as such.
