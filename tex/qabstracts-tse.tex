@@ -197,8 +197,12 @@ such as this five-move structure~\cite{CroOpp06}:
 	(4)~state the results;
 	(5)~draw conclusions or suggests practical applications.
 \end{quote}
-We found a similar structure
-for empirical works in software engineering (see Section~\ref{archetype}),
+This reflects, in slightly extended form, the IMRAD structure 
+(Introduction, Methods, Results, and Discussion) of the body of scientific articles
+that has gradually become the norm since the 1940s \cite{SolPer04}.
+
+We found a similar structure for abstracts of 
+empirical works in software engineering (see Section~\ref{archetype}),
 but abstracts of artifact-centric works (tool building) do not fit this model and need
 an extended one.
 
@@ -212,28 +216,45 @@ all randomized controlled trials (controlled experiments).
 This allows formulating very specific expectations what information should be
 presented in an abstract and allows performing the analysis in checklist fashion,
 for example:
-% TODO The list format gives this bits of information a lot of weight. Necessary?
-\begin{itemize}
-  \item In clinical dermatology, \cite{DupKhoLeb03} used a 30-item checklist on 197 abstracts
-        for computing a 0-to-1 score and found mean scores between 0.64 and 0.78 for their various subgroups.
-  \item In dental medicine, \cite{ShaHar06} used a 29-item checklist on 100 abstracts
-        and found a mean score of only 0.54.
-     % suggests an 8-move structure for structured abstracts:
-     % objective, design, setting, patients, interventions, outcome measure, results, conclusion.
-     % per-move deficit rates are not reported.
-  \item In !!!field, \cite{} used a !!!-item checklist on !!! abstracts
-        and found !!!\% of them to have deficiencies.
-\end{itemize}
+In clinical dermatology, \cite{DupKhoLeb03} used a 30-item checklist on 197 abstracts
+  for computing a 0-to-1 score and found mean scores between 0.64 and 0.78 for their various subgroups.
+In dental medicine, \cite{ShaHar06} used a 29-item checklist on 100 abstracts
+  and found a mean score of only 0.54.
+  % suggests an 8-move structure for structured abstracts:
+  % objective, design, setting, patients, interventions, outcome measure, results, conclusion.
+  % per-move deficit rates are not reported.
+Among 303 abstracts of cost-effectiveness analyses,
+  29\% did not report the baseline to which the intervention
+  had been compared \cite{RosGreSto05}.
+Among 146 abstracts of meta-analyses in peridontology, 
+  33\% did not even report the direction in which  
+  % it is indeed 32.9% percent: (146-15-83)/146, Table 2
+  the evidence was pointing \cite{FagLiuHud14}.
+  
+Various studies have investigated ``spin'' in the context of significance testing.
+The term covers two types of behavior: 
+Using language that sounds more positive than warranted or
+reporting a secondary or alternative statistic as if it was the main one of interest.
+Among all abstracts reporting non-significant results, studies found spin in 
+  45\% of abstracts of orthopedic controlled experiments (\cite{ArtZaaChe20}),
+  44\% in emergency medicine (\cite{ReyRidBro20}),
+  56\% in psychiatry and psychology (\cite{JelRobBow20}),
+  and 58\% for the conclusions alone across a broad set of 
+    medical controlled experiments (\cite{BouDutRav10}).
 
-In fields with more heterogenous studies, the operationalization of
+Unfortunately, the methods of those studies are not applicable to a 
+broad sample of software engineering works, because
+in fields with heterogeneous study structures such as ours, the operationalization of
 \emph{quality} is less straight-forward.
-One approach for discussing the quality of an abstract could be through considering
-a known ``good'' structure for abstracts.
-For instance~\cite{CroOpp06} (where quality assessment was not a main goal),
-finds that one third of the 12 analyzed abstracts is lacking move 2 (stating a purpose).
+For example, spin can take many more forms in software engineering articles
+than is assumed by the studies mentioned above and it is difficult
+to decide which forms are acceptable and which are not.
 
-!!!something else about what we mean when we say "good" abstract? or, if we don't have a pre-existing
-opinion, at least what kind of definition we seek?
+One approach for discussing the quality of a software engineering abstract 
+could be through comparing to a known ``good'' structure for abstracts.
+For instance~\cite{CroOpp06} remarks
+that one third of the 12 analyzed abstracts is lacking move 2 (stating a purpose).
+
 
 \subsection{Structured vs.\ Unstructured Abstracts}
 
