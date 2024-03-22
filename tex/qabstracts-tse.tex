@@ -1,5 +1,6 @@
 % Article about SE abstracts quality (qabstracts) for IEEE Trans. on Software Engineering
 % TODO:
+% - decide which part of figure discussion belongs into caption and which into the body text
 % - https://bjoern.brembs.net/2016/01/even-without-retractions-top-journals-publish-the-least-reliable-science/
 
 \documentclass[10pt,journal,compsoc]{IEEEtran}
@@ -12,6 +13,7 @@
 %\usepackage{verbatim}
 \usepackage{graphicx}
 \graphicspath{ {../img} {.} }
+\usepackage{xcolor}
 \usepackage{balance}
 \hyphenation{semi-conduc-tor IEEE-Xplore}
 
@@ -34,10 +36,14 @@
 \newcommand{\Prg}[1]{\bgroup\ttfamily #1\egroup}  % typeset commands and script names
 \newcommand{\Art}[1]{\bgroup[#1]\egroup} % typeset article references
 
-\newcommand{\Todo}[1]{\bgroup\bfseries\Large #1\egroup}
+\newcommand{\Todo}[1]{\textcolor{red}{\sffamily ((#1))}}
 \newcommand{\Quote}[1]{\bgroup\itshape ``#1''\egroup}  % quote from real abstract
 \newcommand{\Pseudoquote}[1]{\bgroup\itshape ``#1''\egroup}  % quote from fictive abstract
 \newcommand{\QuoteCB}[1]{\Quote{#1}}  % quote from codebook
+\newcommand{\Describeboxplots}{The box shows the 25-to-75 percentile, 
+	the whiskers are 10- and 90-percentile,
+	the grey bar is the median,
+	the fat dot is the mean.}
 \newcommand{\Describegroups}{The plots in each group show these different subsets of abstracts:
 	all, structured, non-structured, design, empirical, EMSE, ICSE, IST, TOSEM, TSE.}
 
@@ -819,7 +825,47 @@ so any deviation will lead to a less easily understandable abstract.
 \Todo{Find short, good example}
 
 
-\subsection{How Not To: Missing Elements}
+\subsection{How Not To: Inefficient Allocation of Space}\label{inefficient_allocation}
+
+If one reads those abstracts, one can hardly help notice that some of them 
+spend a lot of space on \Cb{background}, although its only purpose is to situate
+the objective and make it understandable.
+Here is an example from an article titled
+``!!!'':
+\begin{quote}
+  \Todo{Does an example pay off here?}	
+\end{quote}	
+
+Other abstracts manage to solve the same problem in a wonderfully concise manner:
+\begin{quote}
+	\Todo{Find example}	
+\end{quote}	
+
+\Plotwide{box_xletgroups_topicfractions}{%
+	Per-topic distribution of the amount of space used for that topic.\\
+	\Describeboxplots
+	\Describegroups}
+
+\Plot{box_xletgroups_conclusionfractions}{%
+	Comparison of the amounts of remaining space devoted to the conclusion for abstracts
+	with a rather short background section (lowest quarter) vs those
+	with a long one (highest quarter).
+	The latter conclusions are shorter even though the indicated percentage 
+	pertains to the part of the abstract after the background only.\\
+	\Describegroups}
+
+As we can see in the Background group of boxplots in Figure~\ref{box_xletgroups_topicfractions},
+some venues have a quarter of articles that spend one third or more of the abstract space
+on background. This leads to deficiencies later on, as we can see in
+Figure~\ref{box_xletgroups_conclusionfractions}:
+The conclusion is the potentially most useful part of the abstract,
+the take-home message, 
+but with a long background section, it tends to become pronouncedly shorter.
+
+Background lengths are more benign for structured abstracts.
+
+
+\subsection{How Not To: Missing Elements}\label{missing elements}
 
 Given the archetype, one way to approach an analysis of abstracts quality is to ask
 how often key parts of an abstract are missing entirely.
@@ -835,15 +881,14 @@ so it is not a problem that they are often not present.
 
 \Cb{method} and \Cb{result} are sometimes missing (and this is a problem),
 but never in structured abstracts.
-This is the first of several indications that structured abstracts are indeed a good idea.
 
 The shocking part of this analysis is \Cb{conclusion}, which ought to be present
 as the key take-home message in any abstract, but is in fact missing in more than
 half of all -- yet again very rarely in structured abstracts\footnote{Note that
   the prompt of having to write something after a "Conclusion:" keyword
   alone cannot guarantee this:
-  The statement put there can be (and sometimes is) something else e.g. a \Cb{result} statement
-  or \Cb{summary}.}
+  The statement put there can be (and sometimes is) something else,
+  typically a \Cb{result} statement or \Cb{summary}.}
 
 
 \subsection{How Not To: Convoluted Trains of Thought}
@@ -1135,7 +1180,7 @@ Venues: Prescribe structured abstracts: Background (not Context); Design (if nee
 \bibliographystyle{IEEEtran}
 \bibliography{special.bib}
 
-%\begin{IEEEbiographynophoto}{Jane Doe}
+%\begin{IEEEbiographynophoto}{Jane Doe} 
 %Biography text here without a photo.
 %\end{IEEEbiographynophoto}
 
