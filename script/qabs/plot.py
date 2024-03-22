@@ -98,8 +98,11 @@ def create_all_plots(plotall: bool, plottimeline: bool, datasets: argparse.Names
     if plottimeline:
         # ----- timeline:
         plot_qabstracts_timeline_commits(outputdir)
-    ctx = pt.PlotContext(outputdir, "", datasets.by_ab,
-                         60 / 25.4, tse_pagewidth_mm / 25.4, datasets.ab_subsets)
+    ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
+                         60/25.4, tse_columnwidth_mm/25.4, 
+                         datasets.ab_conclusionfractions_bybg_values, datasets.ab_subsets)
+    pt.plot_xletgroups(ctx, pt.add_boxplotlet, "box", "conclusionfractions",
+                       "space per topic [%]", ymax=30)
 
 
 def plot_ab_topicstructure_freqs_design(df: pd.DataFrame, outputdir: str):

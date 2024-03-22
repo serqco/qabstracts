@@ -1,5 +1,6 @@
 import argparse
 
+import numpy as np
 import pandas as pd
 
 import qscript.annotations as annot
@@ -56,7 +57,7 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
     )
 
     def add_topicfraction_x(result: pd.DataFrame, x: str) -> pd.DataFrame:
-        """Which fraction of the abstract's total number of words pertains to topic x?"""
+        """Which percentage of the abstract's total number of words pertains to topic x?"""
         py_x = x.replace('-', '_')  # make name usable as a python identifier
         result = pd.merge(result, topicparts.query(f"topic=='{x}'"), 'left', on=('citekey', 'coder'))
         result = result.rename(columns=dict(topicwords=f'words_{py_x}'), errors="raise")
@@ -64,7 +65,7 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
         return result
 
     def add_codefraction_x(result: pd.DataFrame, x: str) -> pd.DataFrame:
-        """Which fraction of the abstract's total number of words pertains to code x?"""
+        """Which percentage of the abstract's total number of words pertains to code x?"""
         py_x = x.replace('-', '_')  # make name usable as a python identifier
         result = pd.merge(result, codeparts.query(f"code=='{x}'"), 'left', on=('citekey', 'coder'))
         result = result.rename(columns=dict(codewords=f'words_{py_x}'), errors="raise")
@@ -79,14 +80,21 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
     res = add_topicfraction_x(res, 'result')
     res = add_topicfraction_x(res, 'summary')
     res = add_topicfraction_x(res, 'conclusion')
-    res = add_topicfraction_x(res, 'outlook')
+    res = add_topicfraction_x(res, 'Outlook')
     res = add_topicfraction_x(res, 'other')
     res = add_codefraction_x(res, 'a-method')
     res = add_codefraction_x(res, 'a-result')
     res = add_codefraction_x(res, 'a-conclusion')
     res = add_codefraction_x(res, 'a-fposs')
-    res['avg_wordlength'] = (res.chars - 1.2*res.words) / res.words  # deduct spaces and punctuation
     res['fraction_introduction'] = res.fraction_background + res.fraction_gap
+    q25, q75 = res.fraction_background.quantile([0.25, 0.75])
+    res['fraction_conclusion_longbg'] = np.where(res.fraction_background >= q75, 
+                                                 res.fraction_conclusion / (1-res.fraction_background/100),
+                                                 np.NaN)
+    res['fraction_conclusion_shortbg'] = np.where(res.fraction_background <= q25, 
+                                                  res.fraction_conclusion / (1-res.fraction_background/100),
+                                                  np.NaN)
+    res['avg_wordlength'] = (res.chars - 1.2*res.words) / res.words  # deduct spaces and punctuation
     res['total_gaps'] = res.icount + res.ucount + 3 * res.announcecount  # count each 'a-*' as 3 gaps
     return res
 
@@ -120,7 +128,7 @@ def create_all_subsets(datasets: argparse.Namespace):
     datasets.ab_topicfractions_values = ab_topicfractions_values(datasets.by_ab)
     datasets.ab_topicfractions0_values = ab_topicfractions0_values(datasets.by_ab)
     datasets.ab_missinginfofractions_values = ab_missinginfofractions_values(datasets.by_ab)
-
+    datasets.ab_conclusionfractions_bybg_values = ab_conclusionfractions_bybg_values(datasets.by_ab)
 
 def ab_subsets(df: pd.DataFrame) -> pt.Subsets:
     """Subsets of abstracts"""
@@ -173,7 +181,7 @@ def ab_topicfractions_values(df: pd.DataFrame) -> pt.Subsets:
                   values=lambda dfr: dfr.fraction_conclusion),
         pt.Values(label="Outlook",
                   x=7.0,
-                  values=lambda dfr: dfr.fraction_outlook),
+                  values=lambda dfr: dfr.fraction_Outlook),
     ]
     return pt.Subsets(ab_topicfractions_list)
 
@@ -201,9 +209,22 @@ def ab_topicfractions0_values(df: pd.DataFrame) -> pt.Subsets:
                   values=lambda dfr: dfr.fraction_conclusion),
         pt.Values(label="Outlook",
                   x=7.0,
-                  values=lambda dfr: dfr.fraction_outlook),
+                  values=lambda dfr: dfr.fraction_Outlook),
     ]
     return pt.Subsets(ab_topicfractions_list)
+
+
+def ab_conclusionfractions_bybg_values(df: pd.DataFrame) -> pt.Subsets:
+    """subsets for fraction_conclusion space-per-topic for abstracts with short vs. long background sections"""
+    ab_conclusionfractions_list = [
+        pt.Values(label="Conclusion\n(after short Background)",
+                  x=1.0,
+                  values=lambda dfr: dfr.fraction_conclusion_shortbg),
+        pt.Values(label="Conclusion\n(after long Background)",
+                  x=2.0,
+                  values=lambda dfr: dfr.fraction_conclusion_longbg),
+    ]    
+    return pt.Subsets(ab_conclusionfractions_list)
 
 
 def ab_missinginfofractions_values(df: pd.DataFrame) -> pt.Subsets:
