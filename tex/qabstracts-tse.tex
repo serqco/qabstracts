@@ -34,7 +34,8 @@
 
 \newcommand{\Cb}[1]{\bgroup\scshape #1\egroup}  % typeset a code name
 \newcommand{\Prg}[1]{\bgroup\ttfamily #1\egroup}  % typeset commands and script names
-\newcommand{\Art}[1]{\bgroup[#1]\egroup} % typeset article references
+\newcommand{\Art}[1]{\bgroup[#1]\egroup} % typeset article references  TODO: use!
+\newcommand{\Sah}[1]{\bgroup\scshape #1\egroup}  % typeset a structured abstract heading  TODO: use!
 
 \newcommand{\Todo}[1]{\textcolor{red}{\sffamily ((#1))}}
 \newcommand{\Quote}[1]{\bgroup\itshape ``#1''\egroup}  % quote from real abstract
@@ -407,7 +408,8 @@ based on coding attempts for a stratified sample of 20 abstracts from ICSE 2021.
 We quickly recognized that additional codes were
 needed.\footnote{In Krippendorff's terminology, this is an ``expert knowledge and experience'' justification
     of analytical constructs~\cite[Section 9.2.2]{Krippendorff04}:
-    As software engineering researchers, we recognize when a sentence makes a different kind
+    Being software engineering researchers ourselves, 
+    we recognize when a sentence makes a different kind
     of contribution to an abstract than can be described by existing codes,
     and we are able to define what kind of contribution it is.}
 Most importantly,
@@ -865,6 +867,11 @@ but with a long background section, it tends to become pronouncedly shorter.
 Background lengths are more benign for structured abstracts.
 
 
+\subsection{How Not To: Murky \Cb{objective} statements}\label{murkyobjectives}
+
+!!!
+
+
 \subsection{How Not To: Missing Elements}\label{missing elements}
 
 Given the archetype, one way to approach an analysis of abstracts quality is to ask
@@ -891,7 +898,7 @@ half of all -- yet again very rarely in structured abstracts\footnote{Note that
   typically a \Cb{result} statement or \Cb{summary}.}
 
 
-\subsection{How Not To: Convoluted Trains of Thought}
+\subsection{How Not To: Convoluted Trains of Thought}\label{convoluted}
 
 Leaving out important parts from an abstract is not the only way for wrecking
 the abstract's value, however.
@@ -964,7 +971,7 @@ Our investigation has identified and then quantified two types
 of such lacks of informativeness.
 We call them informativeness gaps and announcements, respectively.
 
-\subsubsection{Informativeness Gaps}
+\subsubsection{Informativeness Gaps}\label{igaps}
 
 Look at the following result statement:
 \Quote{random sampling is rare} \Art{BalRal22}. %EMSE
@@ -1005,7 +1012,7 @@ for details.
 	Not explaining key terms is not rare and worst at EMSE.\\
 	\Describegroups}
 
-\subsubsection{Announcements}
+\subsubsection{Announcements}\label{announcements}
 
 Occasionally, a sentence will not merely miss to report some specific piece of information
 but rather fail to provide any useful information at all and merely hint at
@@ -1037,7 +1044,7 @@ See groups three to six of Figure~\ref{nonzerofractionbar_xletgroups_missinginfo
 for details.
 
 
-\subsection{How Not To: Undefined Important Terms}
+\subsection{How Not To: Undefined Important Terms}\label{ugaps}
 
 It is normal that the reader of an abstract has only a fuzzy understanding
 of what certain terms in the abstract mean.
@@ -1062,7 +1069,7 @@ About 17\%!!! of all abstracts have one or more understandability gaps.
 The issue is most pronounced at ICSE.
 
 
-\subsection{How Not To: Ambiguous Formulations}
+\subsection{How Not To: Ambiguous Formulations}\label{ambiguity}
 
 Codings with an \Cb{-ignorediff} marker indicate cases where the coders could not agree
 despite discussion: the respective sentence (or sentence part) is so highly ambiguous that
@@ -1079,7 +1086,7 @@ Although a detailed discussion and more examples could be interesting,
 we find the phenomenon is not frequent enough to warrant more detail.
 
 
-\subsection{How-Not-To Summary}
+\subsection{How-Not-To Summary}\label{hownotto_summary}
 
 Good quality means: Follows archetype, acceptable readability score, no announcement, no gap.
 Should large majority (over 75\% of articles).
@@ -1087,9 +1094,12 @@ Indeed x\% no announcement, x\% no gap, x\% follow archetype, x\% have acceptabl
 And only x\% have all of these properties.
 
 
-\subsection{How To: Structured Abstracts are more orderly}
+\subsection{How To: Structured Abstracts are more orderly}\label{structuredgood}
 
 Re-analysis of ``Convoluted Trains of Thought''.
+
+Table: percentage of: all/unstructured/structured have which deficiency,\\
+Total: have any deficiency.
 
 x\% no announcement, x\% no gap, x\% follow archetype, x\% have acceptable readability score.
 And only x\% have all of these properties.
@@ -1164,11 +1174,74 @@ scientific reputation had articles with better abstracts.
 
 \subsection{How To: Guidelines for Well-Written Abstracts}
 
-\noindent
-Authors: Follow archetype; write a structured abstract; consider a 'gap'; pack all information you can; formulate a take-home message (conclusion)
+\subsubsection{For Authors}
 
-Venues: Prescribe structured abstracts: Background (not Context); Design (if needed); Method/Methods; Results; or: Substudy 1/Substudy 2; Conclusion
+The steps cross-reference the article sections that supply 
+detail or evidence.
 
+\begin{enumerate}
+  \item Write a structured abstract, not a free-flowing one 
+    (see Section \ref{structuredgood}).
+    Take care to avoid announcements (see Section \ref{announcements}),
+    understandability gaps (see Section \ref{ugaps}),
+    and sentences with an unclear role (see Section \ref{ambiguity}).
+    Provide helpful detail, perhaps simplified, if it consumes barely any space
+    (see Section \ref{igaps}).
+  \item Write a \Sah{Background} section that provides just enough context
+    and motivation to understand the subsequent \Sah{Objective} 
+    (see Section \ref{inefficient_allocation}).
+  \item Decide on your main contribution. 
+    Is your article a design article or an empirical one?
+    Write an \Sah{Objective} that expresses both succinctly 
+    (see Sections \ref{design} and \ref{murkyobjectives}).
+  \item If your work is a design article, 
+    write a \Sah{Design} section.
+    Cover all key ideas (typically two to four), avoid non-key information.
+  \item If you have multiple near-independent empirical sub-studies and
+    your work is a design article,
+    use two or three combined \Sah{Method and Results} sections.
+    Each of these will typically be a single sentence of the form
+    ``We do-this-and-that and find this-and-that.''
+    (see Section \ref{convoluted}).
+    Otherwise write separate \Sah{Methods} and \Sah{Results} sections
+    as follows.
+  \item Write a \Sah{Methods} section that explains what you have done
+    for your empirical study. 
+    Be as specific as you can do concisely.
+    In particular, mention the amount of data used (see Section \ref{igaps}).
+  \item Write a \Sah{Results} section that explains the main outcomes
+    of your study.
+    If you have many results, report the one or two most important ones.
+    If you have many results of equal importance, report the 
+    one or two most interesting ones or just provide examples.
+    Be specific and beware of announcements (see Section \ref{announcements}).
+  \item Write a \Sah{Conclusion} section that generalizes from your results.
+    What should the reader take home?
+    What do we now know that we did not know before?
+    The broader the conclusion, the higher the relevance of your work,
+    but the lower its credibility. 
+    Find a formulation with relevance and good enough credibility.
+    Expect to later be proven wrong for some of your works, but not for many
+    (see Section \ref{inefficient_allocation}).
+  \item An outlook on future possibilities \emph{can} be part of your \Sah{Conclusion},
+    but is usually better left to the body of your article.
+\end{enumerate}
+
+
+\subsubsection{For Venues}
+
+Structured abstracts are not currently used widely in software engineering.
+In their usual form, which does not suit design articles, 
+this is understandable, even appropriate.
+
+In the above extended form, however, structured abstracts promise
+better abstracts quality than a free-style format.
+Therefore, venues should require structured abstracts in this
+engineering-ready format.
+
+For your call for papers, feel free to copy the above text and
+either remove the ``see Section'' cross references or
+point authors to this article for the underlying evidence.
 
 
 %========================================================================
