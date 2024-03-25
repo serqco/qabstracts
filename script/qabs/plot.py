@@ -149,14 +149,14 @@ def plot_qabstracts_timeline_commits(outputdir: str):
     ]
     # ----- set up the plot:
     plt.figure()
-    plt.yticks([y for y,l,s,f in cases], [l for y,l,s,f in cases])
+    plt.yticks([y for y, l, s, f in cases], [l for y, l, s, f in cases])
     plt.xlim(dt.date(2022, 6, 1), dt.date(2023, 10, 31))
     # ----- plot the stripplots:
     for y, label, symbol, files in cases:
         timestamps = _git_commit_timestamps(files)
         datetimes = [dt.datetime.fromtimestamp(ts) for ts in timestamps]
         ys = np.random.uniform(low=y-0.2, high=y+0.2, size=len(datetimes))
-        plt.scatter(datetimes, ys, marker=f"${symbol}$", linewidths=0.1)  #  
+        plt.scatter(datetimes, ys, marker=f"${symbol}$", linewidths=0.1)  # noqa
         # break
     # ----- save the plot:
     plt.savefig(pt.plotfilename(outputdir))

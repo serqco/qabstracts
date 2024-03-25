@@ -60,4 +60,3 @@ class AnnotationsAbstracts(qa.Annotations):
         mm = re.search(self.UCOUNT_REGEXP, cfullsuffix)
         ucount = 0 if not mm else int(mm.group(1))
         return icount, ucount
-

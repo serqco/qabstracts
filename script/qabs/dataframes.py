@@ -6,6 +6,7 @@ import pandas as pd
 import qscript.annotations as annot
 import qscript.plottypes as pt
 
+
 def create_all_datasets(df: pd.DataFrame):
     datasets = argparse.Namespace()
     datasets.df = df  # the raw datafile
@@ -56,36 +57,28 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
             codewords=_nagg('words', 'sum'),
     )
 
-    def add_topicfraction_x(result: pd.DataFrame, x: str) -> pd.DataFrame:
-        """Which percentage of the abstract's total number of words pertains to topic x?"""
+    def add_wordsfraction(result: pd.DataFrame, which: str, x: str) -> pd.DataFrame:
+        """Which percentage of the abstract's total number of words pertains to the which-part with value x?"""
         py_x = x.replace('-', '_')  # make name usable as a python identifier
-        result = pd.merge(result, topicparts.query(f"topic=='{x}'"), 'left', on=('citekey', 'coder'))
-        result = result.rename(columns=dict(topicwords=f'words_{py_x}'), errors="raise")
-        result[f'fraction_{py_x}'] = (100 * result[f'words_{py_x}'] / result.words).fillna(0)
-        return result
-
-    def add_codefraction_x(result: pd.DataFrame, x: str) -> pd.DataFrame:
-        """Which percentage of the abstract's total number of words pertains to code x?"""
-        py_x = x.replace('-', '_')  # make name usable as a python identifier
-        result = pd.merge(result, codeparts.query(f"code=='{x}'"), 'left', on=('citekey', 'coder'))
+        result = pd.merge(result, codeparts.query(f"{which}=='{x}'"), 'left', on=('citekey', 'coder'))
         result = result.rename(columns=dict(codewords=f'words_{py_x}'), errors="raise")
         result[f'fraction_{py_x}'] = (100 * result[f'words_{py_x}'] / result.words).fillna(0)
         return result
 
-    res = add_topicfraction_x(res, 'background')
-    res = add_topicfraction_x(res, 'gap')
-    res = add_topicfraction_x(res, 'objective')
-    res = add_topicfraction_x(res, 'design')
-    res = add_topicfraction_x(res, 'method')
-    res = add_topicfraction_x(res, 'result')
-    res = add_topicfraction_x(res, 'summary')
-    res = add_topicfraction_x(res, 'conclusion')
-    res = add_topicfraction_x(res, 'Outlook')
-    res = add_topicfraction_x(res, 'other')
-    res = add_codefraction_x(res, 'a-method')
-    res = add_codefraction_x(res, 'a-result')
-    res = add_codefraction_x(res, 'a-conclusion')
-    res = add_codefraction_x(res, 'a-fposs')
+    res = add_wordsfraction(res, 'topic', 'background')
+    res = add_wordsfraction(res, 'topic', 'gap')
+    res = add_wordsfraction(res, 'topic', 'objective')
+    res = add_wordsfraction(res, 'topic', 'design')
+    res = add_wordsfraction(res, 'topic', 'method')
+    res = add_wordsfraction(res, 'topic', 'result')
+    res = add_wordsfraction(res, 'topic', 'summary')
+    res = add_wordsfraction(res, 'topic', 'conclusion')
+    res = add_wordsfraction(res, 'topic', 'Outlook')
+    res = add_wordsfraction(res, 'topic', 'other')
+    res = add_wordsfraction(res, 'code', 'a-method')
+    res = add_wordsfraction(res, 'code', 'a-result')
+    res = add_wordsfraction(res, 'code', 'a-conclusion')
+    res = add_wordsfraction(res, 'code', 'a-fposs')
     res['fraction_introduction'] = res.fraction_background + res.fraction_gap
     q25, q75 = res.fraction_background.quantile([0.25, 0.75])
     res['fraction_conclusion_longbg'] = np.where(res.fraction_background >= q75, 
@@ -129,6 +122,7 @@ def create_all_subsets(datasets: argparse.Namespace):
     datasets.ab_topicfractions0_values = ab_topicfractions0_values(datasets.by_ab)
     datasets.ab_missinginfofractions_values = ab_missinginfofractions_values(datasets.by_ab)
     datasets.ab_conclusionfractions_bybg_values = ab_conclusionfractions_bybg_values(datasets.by_ab)
+
 
 def ab_subsets(df: pd.DataFrame) -> pt.Subsets:
     """Subsets of abstracts"""
@@ -258,5 +252,3 @@ def ab_missinginfofractions_values(df: pd.DataFrame) -> pt.Subsets:
 def _nagg(colname, func) -> pd.NamedAgg:
     """Abbreviation for pd.NamedAgg."""
     return pd.NamedAgg(column=colname, aggfunc=func)
-
-

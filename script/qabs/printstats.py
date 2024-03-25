@@ -97,7 +97,8 @@ def print_ignorediff_stats(codings: pd.DataFrame, abstracts: pd.DataFrame):
     _printheader()
     ignorediff_codings = codings[(codings.code != 'ignorediff') & (codings.ignorediff == 1)]
     print("### -ignorediff counts:")
-    true_ignorediff_codings = ignorediff_codings.groupby(by=['citekey', 'sidx']).apply(remove_shared_codes_from_code_pairs)
+    true_ignorediff_codings = ignorediff_codings.groupby(by=['citekey', 'sidx']) \
+        .apply(remove_shared_codes_from_code_pairs)
     # print(ignorediff_codings[['coder', 'code']])
     per_code_count = pd.crosstab(index=true_ignorediff_codings['code'], columns="count",
                                  margins=True, margins_name='TOTAL')
@@ -130,11 +131,8 @@ def print_gaps_stats(codings: pd.DataFrame, abstracts: pd.DataFrame):
     per_count_percent.columns = ['percent']
     per_count_percent.index.name = 'abstract_has_announce'
     print(per_count_percent.sort_values(by='percent', ascending=False))
-
     
 
 def _printheader():
     """Print separator header giving the function name from two stackframes up."""
     print("##########", pt.funcname(2))
-
-

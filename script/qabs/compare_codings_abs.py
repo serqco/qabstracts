@@ -1,5 +1,6 @@
 import qscript.cmd.compare_codings as qccc
 
+
 class CodingsComparatorAbstracts(qccc.CodingsComparator):
     def check_suffixes(self, annots, as1, as2, ctx, maxcountdiff):
         for code, counts in annots.codes_with_iucounts(as1.annotation, as2.annotation).items():
