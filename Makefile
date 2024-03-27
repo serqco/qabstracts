@@ -27,3 +27,6 @@ plot0:
 
 plot_incl_timeline:
 	$(QABSTRACTS) plot --plotall --plottimeline --printall $(EXPORTFILE) img
+	
+printall:
+	$(QABSTRACTS) plot --printall $(EXPORTFILE) img
