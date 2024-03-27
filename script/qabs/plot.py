@@ -5,7 +5,7 @@ import typing as tg
 
 import numpy as np
 import pandas as pd
-from matplotlib import pyplot as plt
+from matplotlib import pyplot as plt, dates as mdates
 
 import qscript.plottypes as pt
 import qscript
@@ -150,7 +150,9 @@ def plot_qabstracts_timeline_commits(outputdir: str):
     # ----- set up the plot:
     plt.figure()
     plt.yticks([y for y, l, s, f in cases], [l for y, l, s, f in cases])
-    plt.xlim(dt.date(2022, 6, 1), dt.date(2023, 10, 31))
+    plt.xlim(dt.date(2022, 6, 1), dt.date(2024, 4, 30))
+    # fix label frequency: https://matplotlib.org/stable/gallery/text_labels_and_annotations/date.html
+    #   xaxis.set_major_locator(mdates.MonthLocator(bymonth=(1, 7)))
     # ----- plot the stripplots:
     for y, label, symbol, files in cases:
         timestamps = _git_commit_timestamps(files)
