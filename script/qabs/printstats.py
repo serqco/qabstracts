@@ -8,7 +8,7 @@ import qscript.plottypes as pt
 
 def print_all_stats(args: argparse.Namespace, datasets: argparse.Namespace, outputdir: str):
     if args.printall:
-        # print_abtype_table(datasets.by_ab)
+        print_abtype_table(datasets.by_ab)
         if args.withoutdesignworks:
             comment_out_design_works(args.withoutdesignworks, datasets.by_ab)
         print_abstracts_with_canonical_structure(datasets.ab_structures)
@@ -60,8 +60,10 @@ def comment_out_design_works(samplewhowhatfile: str, df: pd.DataFrame):
 def print_abtype_table(df: pd.DataFrame):
     _printheader()
     res = df.groupby(['is_struc', 'is_design']).count()["venue"]  # pick _any_ 1 column
-    print(res)
-
+    print(res/2)
+    res2 = df.groupby(['venue']).count()["words"]  # pick _any_ 1 column
+    print(res2/2)
+    print("Total:", len(df), "codings of abstracts, ", len(df)//2, "abstracts")
 
 def print_abstracts_with_canonical_structure(df):
     _printheader()
@@ -78,9 +80,9 @@ def print_abstracts_structures_counts(df):
     for_empir = [t for t in alltypes if "d" not in t]
     for_empir_struc = [t for t in alltypes_structured if "d" not in t]
     for_design = [t for t in alltypes if "d" in t]
-    print(f"abstracts structures empirical: {for_empir}")
-    print(f"abstracts structures empirical (structured only): {for_empir_struc}")
-    print(f"abstracts structures design: {for_design}")
+    print(f"#abstracts structures empirical:\n{for_empir}")
+    print(f"#abstracts structures empirical (structured only):\n{for_empir_struc}")
+    print(f"#abstracts structures design:\n{for_design}")
     print(f"#abstracts structures: empirical {len(for_empir)}, "
           f"empirical structured {len(for_empir_struc)}, design {len(for_design)}")
 
