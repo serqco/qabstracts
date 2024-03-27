@@ -73,7 +73,7 @@ suggest guidelines for writing informative abstracts.
 Use open coding to derive concepts that explain relevant properties of abstracts
 and identify the archetypical structure of abstracts.
 Use quantitative content analysis to objectively characterize abstract structure
-over a sample of 500!!! abstracts from five presumably high-quality venues.
+over a sample of 362!!! abstracts from five presumably high-quality venues.
 Use exploratory data analysis to find recurring issues in abstracts.
 Compare the prototypical structure to actual structures to derive
 guidelines for producing informative abstracts.
@@ -143,7 +143,7 @@ regarding our answers to questions 3, 4, and 5 and regarding the need to improve
 the quality of software engineering abstracts.
 Therefore, we continue the research by performing a repeatable
 quantitative content analysis~\cite[Ch. 7]{Krippendorff04} for number 3
-on a large sample (!!!) of presumably high-quality abstracts
+on a large sample of 362!!! presumably high-quality abstracts
 and apply an elaborate seven-step approach for maximizing its reliability.
 
 The final stage is the statistical evaluation of the content analysis data,
@@ -442,12 +442,12 @@ In contrast to a \Cb{conclusion}, a summary statement does not generalize beyond
 \Cb{fposs}, \Cb{fneed}, \Cb{fwork} sentences occur at the end of abstracts.
 They state what future work is now possible, needed, or planned-by-the-authors.
 
-% TODO: examples of gap, summary, fposs, conclusion
+\Todo{examples of gap, summary, fposs, conclusion?}
 
 
 \subsubsection{Subjective Additions: \Cb{:i, :u, :hype}}
 
-% TODO: Maybe move those additions to the end, to separate objective and subjective codes?
+\Todo{Maybe move those additions to the end, to separate objective and subjective codes?}
 
 The codes described so far aim at codifying repeatable properties,
 where several well-trained coders will come to the same result with high probability.
@@ -549,19 +549,23 @@ so we ended up at 486 articles initially.
 A few of those later had to be removed because they were other things,
 often editorials.
 Furthermore, we eventually did not need quite as much data for answering our
-questions and stopped coding after !!! abstracts.
+questions and stopped coding after 362!!! abstracts\footnote{After a few abstracts 
+	turned out to be other things like editorials and were dropped, 
+	our sample is not perfectly balanced, but has 
+    EMSE:73!!!, ICSE:74, IST:71, TOSEM:71, TSE:73 abstracts. \Todo{balance it?}.
 Still, ours is the largest manual study of abstracts we know of.
 
 Volume downloading, sampling, and abstract extraction into publishable
 and annotation-ready text files were all done automatically by the
 retrievelit\footnote{\url{https://github.com/serqco/retrievelit/}},
-select-sample, and prepare-sample scripts, respectively.
+select-sample, and prepare-sample scripts, respectively, except
+that the EMSE article format required manual abstracts cleansing.
 
 
 \subsection{Coding Process}\label{meth_coding}
 
-% TODO Explain the self-selection of blocks and the slight steering ("More Franz/Julian combinations, please");
-%      characterize the eventual distribution of blocks to coders.
+\Todo{Explain the self-selection of blocks and the slight steering ("More Franz/Julian combinations, please")?
+      Characterize the eventual distribution of blocks to coders?}
 
 We code each abstract twice, by so-called coders A and B.
 Abstracts are held in text files in separate directories \Prg{abstracts.A} and \Prg{abstracts.B}.
@@ -600,7 +604,7 @@ Step 4. He would then commit his coded abstracts into git.
 
 % TODO What about Step 5a?
 
-\indent Step 5b. For the remaining report blocks, Lloyd would write an email to Lutz explaining his reasoning.
+\indent Step 5. For the remaining report blocks, Lloyd would write an email to Lutz explaining his reasoning.
 
 Step 6. Lutz would read through that email and categorize the report blocks into the following cases:\\
 a) Lloyd's coding is obviously correct, Lutz' own is a clerical error.
@@ -619,7 +623,7 @@ He would either adjust his coding or add an \Cb{-ignorediff} marker to it
 and respond accordingly.\\
 e) Lutz finds both codings equally acceptable.
 He would add an \Cb{-ignorediff} marker to his own
-and respond accordingly, explaining is reasoning.
+and respond accordingly, explaining his reasoning.
 
 Step 7. Lutz would commit his corrected abstracts and send the response email.
 
@@ -644,8 +648,8 @@ another round of emails necessary.
 
 \subsubsection{Effect of this Procedure}
 
-Most content analyses code most material only once,
-then code a random subsample twice,
+Most content analyses code most of their material only once,
+then code a random subsample a second time,
 compute some coefficient of agreement,
 report it as a measure of good-enough coding quality,
 and that's that.
@@ -653,13 +657,14 @@ and that's that.
 In contrast, our above-described procedure has two effects:
 \begin{enumerate}
 	\item It maximizes the quality of the coding.
-	  Very few clerical errors will have managed to escape our discussion process
-	  and the definitions of all codes that are sometimes difficult to tell apart
+	  Very few clerical errors, if any, will have managed to escape our discussion process.
+	  Besides, the definitions of all codes that are sometimes difficult to tell apart
 	  have been refined until they were very mature.
 	\item It finds all those spots in the sample where the abstracts are so convoluted
 	  or strangely formulated that even our careful code definitions do not lead
 	  to a canonical judgment.
-	  These spots should clearly be considered to be badly written -- which is great,
+	  These spots, which will be marked by a \Cb{-ignorediff} annotation in our data,
+	  should clearly be considered to be badly written -- which is great,
 	  because that is what our study is interested in.
 \end{enumerate}
 Note that, technically speaking, our procedure also leads to a 100\% perfect inter-coder agreement,
@@ -678,7 +683,7 @@ We mostly refrain from performing significance tests or computing confidence int
 because most analyses are exploratory, not driven by specific expectations or theories.
 Also, most phenomena we report are gradual by nature.
 The one exception from this rule is the comparison of
-structured versus unstructured abstracts!!!.
+structured versus unstructured abstracts.  \Todo{perform significance test}
 
 In this spirit, we often use the following verbal terms for frequencies:
 rare (less than 5\%),
@@ -929,6 +934,9 @@ Figure~\ref{ab_topicstructure_freqs_design} for design articles.
 \Plot{ab_topicstructure_freqs_design}{%
   The frequency of different trains-of-thought in the abstract for design articles.
   Same characters as before, except that d can now in fact occur.}
+
+% !!!CheXiaLo22 presents five studies
+
 
 \subsubsection{Empirical Articles}
 
