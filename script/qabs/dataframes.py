@@ -57,28 +57,28 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
             codewords=_nagg('words', 'sum'),
     )
 
-    def add_wordsfraction(result: pd.DataFrame, which: str, x: str) -> pd.DataFrame:
-        """Which percentage of the abstract's total number of words pertains to the which-part with value x?"""
+    def add_wordsfraction(result: pd.DataFrame, grouping, variable: str, x: str) -> pd.DataFrame:
+        """Which percentage of the abstract's total number of words pertains to the <variable>-part with value x?"""
         py_x = x.replace('-', '_')  # make name usable as a python identifier
-        result = pd.merge(result, codeparts.query(f"{which}=='{x}'"), 'left', on=('citekey', 'coder'))
-        result = result.rename(columns=dict(codewords=f'words_{py_x}'), errors="raise")
+        result = pd.merge(result, grouping.query(f"{variable}=='{x}'"), 'left', on=('citekey', 'coder'))
+        result = result.rename(columns={f"{variable}words": f'words_{py_x}'}, errors="raise")
         result[f'fraction_{py_x}'] = (100 * result[f'words_{py_x}'] / result.words).fillna(0)
         return result
 
-    res = add_wordsfraction(res, 'topic', 'background')
-    res = add_wordsfraction(res, 'topic', 'gap')
-    res = add_wordsfraction(res, 'topic', 'objective')
-    res = add_wordsfraction(res, 'topic', 'design')
-    res = add_wordsfraction(res, 'topic', 'method')
-    res = add_wordsfraction(res, 'topic', 'result')
-    res = add_wordsfraction(res, 'topic', 'summary')
-    res = add_wordsfraction(res, 'topic', 'conclusion')
-    res = add_wordsfraction(res, 'topic', 'Outlook')
-    res = add_wordsfraction(res, 'topic', 'other')
-    res = add_wordsfraction(res, 'code', 'a-method')
-    res = add_wordsfraction(res, 'code', 'a-result')
-    res = add_wordsfraction(res, 'code', 'a-conclusion')
-    res = add_wordsfraction(res, 'code', 'a-fposs')
+    res = add_wordsfraction(res, topicparts, 'topic', 'background')
+    res = add_wordsfraction(res, topicparts, 'topic', 'gap')
+    res = add_wordsfraction(res, topicparts, 'topic', 'objective')
+    res = add_wordsfraction(res, topicparts, 'topic', 'design')
+    res = add_wordsfraction(res, topicparts, 'topic', 'method')
+    res = add_wordsfraction(res, topicparts, 'topic', 'result')
+    res = add_wordsfraction(res, topicparts, 'topic', 'summary')
+    res = add_wordsfraction(res, topicparts, 'topic', 'conclusion')
+    res = add_wordsfraction(res, topicparts, 'topic', 'Outlook')
+    res = add_wordsfraction(res, topicparts, 'topic', 'other')
+    res = add_wordsfraction(res, codeparts, 'code', 'a-method')
+    res = add_wordsfraction(res, codeparts, 'code', 'a-result')
+    res = add_wordsfraction(res, codeparts, 'code', 'a-conclusion')
+    res = add_wordsfraction(res, codeparts, 'code', 'a-fposs')
     res['fraction_introduction'] = res.fraction_background + res.fraction_gap
     q25, q75 = res.fraction_background.quantile([0.25, 0.75])
     res['fraction_conclusion_longbg'] = np.where(res.fraction_background >= q75, 
