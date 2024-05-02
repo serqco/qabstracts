@@ -1,5 +1,6 @@
 import argparse
 import datetime as dt
+import json
 import subprocess
 import typing as tg
 
@@ -10,6 +11,7 @@ from matplotlib import pyplot as plt, dates as mdates
 import qscript.plottypes as pt
 import qscript
 import qabs.dataframes
+import qabs.extract_git_timestamps
 import qabs.printstats
 
 tse_columnwidth_mm = 88
@@ -25,8 +27,6 @@ meaning = """Computes derived data and creates plots and stats outputs.
 def add_arguments(subparser: qscript.ArgumentParser):
     subparser.add_argument('--plotall', action='store_const', const=True,
                            help="run all plots, not only those currently under development")
-    subparser.add_argument('--plottimeline', action='store_const', const=True,
-                           help="run the expensive git timeline plot, too")
     subparser.add_argument('--printall', action='store_const', const=True,
                            help="print all text outputs, not only those currently under development")
     subparser.add_argument('--withoutdesignworks', type=str, default="",
@@ -44,9 +44,11 @@ def add_arguments(subparser: qscript.ArgumentParser):
 def execute(args: qscript.Namespace):
     df = read_datafile(args.datafile)
     datasets = qabs.dataframes.create_all_datasets(df)
+    with open(qabs.extract_git_timestamps.git_timestamp_file, 'rt', encoding='utf8') as f:
+        datasets.timestamps = json.load(f)
     qabs.dataframes.create_all_subsets(datasets)
     qabs.printstats.print_all_stats(args, datasets, args.outputdir)
-    create_all_plots(args.plotall, args.plottimeline, datasets, args.outputdir)
+    create_all_plots(args.plotall, datasets, args.outputdir)
 
 
 def read_datafile(datafile: str) -> pd.DataFrame:
@@ -54,7 +56,7 @@ def read_datafile(datafile: str) -> pd.DataFrame:
     return df
 
 
-def create_all_plots(plotall: bool, plottimeline: bool, datasets: argparse.Namespace, outputdir: str):
+def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str):
     # mpl.use('PDF')
     if plotall:
         # ----- topicstructure plots:
@@ -95,14 +97,13 @@ def create_all_plots(plotall: bool, plottimeline: bool, datasets: argparse.Names
                              datasets.ab_missinginfofractions_values, datasets.ab_subsets)
         pt.plot_xletgroups(ctx, pt.add_nonzerofractionbarplotlet, "nonzerofractionbar", "missinginfofractions",
                            "how often occuring [%]", ymax=66)
-    if plottimeline:
-        # ----- timeline:
-        plot_qabstracts_timeline_commits(outputdir)
-    ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
-                         60/25.4, tse_columnwidth_mm/25.4, 
-                         datasets.ab_conclusionfractions_bybg_values, datasets.ab_subsets)
-    pt.plot_xletgroups(ctx, pt.add_boxplotlet, "box", "conclusionfractions",
-                       "space per topic [%]", ymax=30)
+        ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
+                             60/25.4, tse_columnwidth_mm/25.4, 
+                             datasets.ab_conclusionfractions_bybg_values, datasets.ab_subsets)
+        pt.plot_xletgroups(ctx, pt.add_boxplotlet, "box", "conclusionfractions",
+                           "space per topic [%]", ymax=30)
+    # ----- timeline:
+    plot_qabstracts_timeline_commits(outputdir, datasets.timestamps)
 
 
 def plot_ab_topicstructure_freqs_design(df: pd.DataFrame, outputdir: str):
@@ -137,40 +138,43 @@ def plot_ab_topicstructure_freqs(df: pd.DataFrame, outputdir: str):
     plt.savefig(filename)
 
 
-def plot_qabstracts_timeline_commits(outputdir: str):
+def plot_qabstracts_timeline_commitsOLD(outputdir: str, all_timestamps: dict[str,list[int]]):
     """stripplots of the timestamps of various subsets of git commits"""
     # ----- configs of the stripplots:
-    cases = [  # y, label, symbol, files
-        (5.0, "codebook", "C", "codebook.md procedure.md"),
-        (4.0, "training", "T", "prestudy2/abstracts.?"),
-        (3.0, "coding",   "A", "abstracts/abstracts.A"),
-        (2.8, "",         "B", "abstracts/abstracts.B"),
-        (2.0, "stat. eval.", "E", "script/qabs/plot.py script/qabs/printstats.py"),
-    ]
+    cases = qabs.extract_git_timestamps.git_timestamp_cases
     # ----- set up the plot:
     plt.figure()
     plt.yticks([y for y, l, s, f in cases], [l for y, l, s, f in cases])
     plt.xlim(dt.date(2022, 6, 1), dt.date(2024, 4, 30))
     # fix label frequency: https://matplotlib.org/stable/gallery/text_labels_and_annotations/date.html
-    #   xaxis.set_major_locator(mdates.MonthLocator(bymonth=(1, 7)))
     # ----- plot the stripplots:
     for y, label, symbol, files in cases:
-        timestamps = _git_commit_timestamps(files)
-        datetimes = [dt.datetime.fromtimestamp(ts) for ts in timestamps]
+        datetimes = [dt.datetime.fromtimestamp(ts) for ts in all_timestamps[files]]
         ys = np.random.uniform(low=y-0.2, high=y+0.2, size=len(datetimes))
         plt.scatter(datetimes, ys, marker=f"${symbol}$", linewidths=0.1)  # noqa
-        # break
     # ----- save the plot:
     plt.savefig(pt.plotfilename(outputdir))
 
 
-def _git_commit_timestamps(filespec: str) -> tg.Sequence[int]:
-    # an expensive operation!
-    git_cmd_base = "git log --pretty='format:%at' "  # one unix timestamp per line
-    result = subprocess.run(git_cmd_base + filespec, shell=True, capture_output=True)
-    assert not result.stderr, result.stderr
-    timestamps = [int(line) for line in result.stdout.splitlines(keepends=False)]
-    return timestamps
+def plot_qabstracts_timeline_commits(outputdir: str, all_timestamps: dict[str,list[int]]):
+    """stripplots of the timestamps of various subsets of git commits"""
+    # ----- configs of the stripplots:
+    cases = qabs.extract_git_timestamps.git_timestamp_cases
+    # ----- set up the plot:
+    fig, axs = plt.subplots()
+    axs.set_yticks([y for y, l, s, f in cases], [l for y, l, s, f in cases])
+    axs.set_xlim(dt.date(2022, 6, 1), dt.date(2024, 4, 30))
+    # fix label frequency: https://matplotlib.org/stable/gallery/text_labels_and_annotations/date.html
+    axs.xaxis.set_major_locator(mdates.MonthLocator(bymonth=(1, 7)))
+    axs.xaxis.set_minor_locator(mdates.MonthLocator(bymonth=range(1, 12+1)))
+    axs.grid(axis='x', linestyle=':')
+    # ----- plot the stripplots:
+    for y, label, symbol, files in cases:
+        datetimes = [dt.datetime.fromtimestamp(ts) for ts in all_timestamps[files]]
+        ys = np.random.uniform(low=y-0.2, high=y+0.2, size=len(datetimes))
+        axs.scatter(datetimes, ys, marker=f"${symbol}$", linewidths=0.1)  # noqa
+    # ----- save the plot:
+    plt.savefig(pt.plotfilename(outputdir))
 
 
 if __name__ == '__main__':

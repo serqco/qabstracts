@@ -9,6 +9,7 @@ import qabs.annotations_abs as qaa
 import qabs.compare_codings_abs as qcca
 import qabs.export
 import qabs.extract_abs
+import qabs.extract_git_timestamps
 import qabs.plot
 import qabs.prepare_sample
 
@@ -21,6 +22,7 @@ def main():
     parser.scan("qscript.cmd.*",
                 qabs.export,
                 qabs.extract_abs,
+                qabs.extract_git_timestamps,
                 qabs.plot,
                 qabs.prepare_sample,
                 strict=True)

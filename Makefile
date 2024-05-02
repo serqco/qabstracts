@@ -2,6 +2,7 @@ QABSTRACTS=python3 script/qabstracts.py
 STUDYDIR=abstracts
 
 EXPORTFILE=results/$(STUDYDIR)-results.tsv
+TIMESTAMPFILE=results/git_timestamps.json
 
 all:
 	echo "There is no top-level target. Pick a specific one:"
@@ -15,18 +16,16 @@ compare-codings:
 
 export:
 	$(QABSTRACTS) export $(STUDYDIR) >$(EXPORTFILE)
+	$(QABSTRACTS) extract-git-timestamps
 
 pdf:
 	cd tex; latexmk -bibtex qabstracts-tse
 
-plot:
+plotall:
 	$(QABSTRACTS) plot --plotall --printall $(EXPORTFILE) img
 
-plot0:
+plot:
 	$(QABSTRACTS) plot $(EXPORTFILE) img
 
-plot_incl_timeline:
-	$(QABSTRACTS) plot --plotall --plottimeline --printall $(EXPORTFILE) img
-	
 printall:
 	$(QABSTRACTS) plot --printall $(EXPORTFILE) img

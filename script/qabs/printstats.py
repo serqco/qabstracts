@@ -14,7 +14,7 @@ def print_all_stats(args: argparse.Namespace, datasets: argparse.Namespace, outp
         print_abstracts_with_canonical_structure(datasets.ab_structures)
         print_abstracts_structures_counts(datasets.ab_structures)
         print_gaps_stats(datasets.df_primary1, datasets.by_ab)
-    print_ignorediff_stats(datasets.df_primary1, datasets.by_ab)
+        print_ignorediff_stats(datasets.df_primary1, datasets.by_ab)
 
 
 def comment_out_design_works(samplewhowhatfile: str, df: pd.DataFrame):
