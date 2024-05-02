@@ -5,6 +5,8 @@
 
 \documentclass[10pt,journal,compsoc]{IEEEtran}
 
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
 \usepackage{cite}
 %\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
 %\usepackage{stfloats}
@@ -37,7 +39,8 @@
 \newcommand{\Art}[1]{\bgroup[#1]\egroup} % typeset article references  TODO: use!
 \newcommand{\Sah}[1]{\bgroup\scshape #1\egroup}  % typeset a structured abstract heading  TODO: use!
 
-\newcommand{\Todo}[1]{\textcolor{red}{\sffamily ((#1))}}
+\newcounter{todonumber}
+\newcommand{\Todo}[1]{\stepcounter{todonumber}\textcolor{red}{\sffamily ((\arabic{todonumber}: #1))}}
 \newcommand{\Quote}[1]{\bgroup\itshape ``#1''\egroup}  % quote from real abstract
 \newcommand{\Pseudoquote}[1]{\bgroup\itshape ``#1''\egroup}  % quote from fictive abstract
 \newcommand{\QuoteCB}[1]{\Quote{#1}}  % quote from codebook
@@ -52,9 +55,12 @@
 
 \title{How (Not) To Write a\\Software Engineering Abstract}
 
-\author{Annie Author1, Bert Author2
-\thanks{A. Author1 is with A University, Btown, Ccountry}
-\thanks{B. Author2 is with D University, Etown, Fcountry}}
+\author{Lutz Prechelt
+\thanks{L. Prechelt is with Freie Universität Berlin, Germany},
+Lloyd Montgomery
+\thanks{L. Montgomery is with Universität Hamburg, Germany},
+Julian Frattini, Franz Zieris
+\thanks{J. Frattini and Franz Zieris are with BTH, Karlskrona, Sweden}}
 
 \markboth{IEEE Transactions on Software Engineering}%
 {How (Not) To Write a Software Engineering Abstract}
@@ -78,7 +84,7 @@ Use exploratory data analysis to find recurring issues in abstracts.
 Compare the prototypical structure to actual structures to derive
 guidelines for producing informative abstracts.
 \emph{Results:}
-!!!
+\Todo{summarize results}
 \emph{Conclusions:}
 (1)~Even in top venues, many abstracts are far from ideal.
 (2)~Structured abstracts tend to be better than unstructured ones,
@@ -379,7 +385,7 @@ interpretation is plausible as well.
 \subsection{Codebook and Codebook Development}\label{meth_codebook}
 
 
-\subsubsection{\Cb{background, objective, method, result, conclusion}}
+\subsubsection{\Cb{background, objective, method, result, conclusion}}\label{meth_basicparts}
 
 The codebook was initialized with concepts for the five sections commonly used
 in a structured abstract:\footnote{In Krippendorff's terminology, this is an ``established theories'' justification
@@ -420,9 +426,9 @@ sometimes a method or something else.
 Much of the abstract is then spent on design considerations, design decisions,
 techniques applied in implementation, and so on.
 Such artifact-centric studies, although they also usually contain an empirical study,
-are very different in nature from purely empirical studies;
-we therefore introduced the code \Cb{design} to mark such material.
-\Cb{design} has the longest definition of all our codes: 170 words.
+are quite different in nature from purely empirical studies;
+we therefore introduced the code \Cb{design} to mark such material.\footnote{\Cb{design} has
+  the most detailed definition of all our codes: 170 words.}
 
 We call the articles that contain at least one \Cb{design} coding in their abstract
 ``design works'', the others ``empirical works''.
@@ -445,9 +451,38 @@ They state what future work is now possible, needed, or planned-by-the-authors.
 \Todo{examples of gap, summary, fposs, conclusion?}
 
 
-\subsubsection{Subjective Additions: \Cb{:i, :u, :hype}}
+\subsubsection{Codes for Announcements: \Cb{a-*}}
 
-\Todo{Maybe move those additions to the end, to separate objective and subjective codes?}
+Sometimes, statements insinuate there will be certain information 
+in the article body, but do not provide any concrete information themselves.
+We call such statements announcements and provide extra codes for them.
+
+For example, here is an \Cb{a-method} (method announcement) from \Art{BesMarBos22}:
+\Quote{As a second step, this study sets out to specifically
+  provide a detailed assessment of additional and in-depth analysis of technical debt management strategies based
+  on an encouraging mindset and attitude from both managers and technical roles to understand how, when and by
+  whom such strategies are adopted in practice.}
+Despite the long sentence, we learn nothing about how the assessment
+or the analysis work.
+
+Here is an \Cb{a-result} (results announcement) from \Art{FlyChaDye22}:
+\Quote{Based on those results, we then used the Boa and Software
+  Heritage infrastructures to help identify and quantify several sources of dirty Git timestamp data.}
+The first part is \Cb{method}, the second should have been \Cb{result},
+but, alas, we learn nothing about those sources' nature or number or impact.
+
+
+\subsubsection{Codes for Headings: \Cb{h-*}}
+
+We also have codes for the headings (only the headings words themselves) used in structured abstracts.
+These codes are conceptual, i.e., for instance
+\Quote{Aim:}, \Quote{Goal:}, \Quote{Objective:}, \Quote{Question:}, and their plural forms
+would all be coded as \Cb{h-objective}.
+Likewise, there are \Cb{h-background}, \Cb{h-method}, and so on.
+We recognize structured abstracts by the presence of such a heading code.
+
+
+\subsubsection{Subjective Additions: \Cb{:i, :u, :hype}}
 
 The codes described so far aim at codifying repeatable properties,
 where several well-trained coders will come to the same result with high probability.
@@ -472,43 +507,12 @@ Understandability gaps are spots in a sentence where the coder finds their usual
 half-understanding of a term used in the abstract insufficient for understanding
 the abstract overall.
 
-\Todo{example of :u1}
+\Todo{easy-to-understand example of :u1}
 
 The \Cb{:hype} suffix marks statements that praise the article far more
 than warranted, often by using exaggerated adverbs such as ``extremely''.
-
-
-\subsubsection{Codes for Announcements: \Cb{a-*}}
-
-Sometimes, statements do not merely have informativeness gaps,
-they provide no concrete information at all.
-We call such statements announcements (because their presence insinuates there will
-be information about this in the article body) and provide extra codes for them.
-
-For example, here is an \Cb{a-method} (method announcement) from \Art{BesMarBos22}:
-\Quote{As a second step, this study sets out to specifically
-  provide a detailed assessment of additional and in-depth analysis of technical debt management strategies based
-  on an encouraging mindset and attitude from both managers and technical roles to understand how, when and by
-  whom such strategies are adopted in practice.}
-So many words, yet we learn nothing about how
-the assessment
-or the analysis work.
-
-Here is an \Cb{a-result} (results announcement) from \Art{FlyChaDye22}:
-\Quote{Based on those results, we then used the Boa and Software
-  Heritage infrastructures to help identify and quantify several sources of dirty Git timestamp data.}
-The first part is \Cb{method}, the second should have been \Cb{result},
-but, alas, we learn nothing about those sources' nature or number or impact.
-
-
-\subsubsection{Codes for Headings: \Cb{h-*}}
-
-We also have codes for the headings used in structured abstracts.
-These codes are conceptual, i.e., for instance
-\Quote{Aim:}, \Quote{Goal:}, \Quote{Objective:}, \Quote{Question:}, and their plural forms
-would all be coded as \Cb{h-objective}.
-Likewise, there are \Cb{h-background}, \Cb{h-method}, and so on.
-We recognize structured abstracts by the presence of such a heading code.
+We have not applied this code consistently, so its uses only provide examples,
+but not measurements.
 
 
 \subsection{Training}\label{meth_training}
@@ -549,10 +553,9 @@ so we ended up at 486 articles initially.
 A few of those later had to be removed because they were other things,
 often editorials.
 Furthermore, we eventually did not need quite as much data for answering our
-questions and stopped coding after 362!!! abstracts\footnote{After a few abstracts 
-	turned out to be other things like editorials and were dropped, 
-	our sample is not perfectly balanced, but has 
-    EMSE:73!!!, ICSE:74, IST:71, TOSEM:71, TSE:73 abstracts. \Todo{balance it?}.
+questions and stopped coding after 362!!! abstracts\footnote{After abstracts 
+	were dropped, our sample is no longer perfectly balanced, but has 
+    EMSE:73!!!, ICSE:74, IST:71, TOSEM:71, TSE:73 abstracts. \Todo{do we need to balance it?}}.
 Still, ours is the largest manual study of abstracts we know of.
 
 Volume downloading, sampling, and abstract extraction into publishable
@@ -564,9 +567,6 @@ that the EMSE article format required manual abstracts cleansing.
 
 \subsection{Coding Process}\label{meth_coding}
 
-\Todo{Explain the self-selection of blocks and the slight steering ("More Franz/Julian combinations, please")?
-      Characterize the eventual distribution of blocks to coders?}
-
 We code each abstract twice, by so-called coders A and B.
 Abstracts are held in text files in separate directories \Prg{abstracts.A} and \Prg{abstracts.B}.
 Each sentence is followed by a line containing \Prg{\{\{\}\}} and into this pair of
@@ -574,6 +574,8 @@ double braces the coder would enter their codings,
 such as \Prg{\{\{method,result:i2\}\}} for a complex sentence that contains substantial
 amounts of method information as well as results with two informativeness gaps.
 We batch the coding in blocks of 8 abstracts each.
+Coders pick and process blocks based on their available time, resulting in different numbers of blocks
+done by each author, between 13 blocks for Franz and 31 blocks for Lutz. 
 The procedure, coordinated via git, is best explained by example,
 which we do in the following two subsections.
 
@@ -602,9 +604,9 @@ Step 4. He would then commit his coded abstracts into git.
 
 \subsubsection{Handling Disagreements}
 
-% TODO What about Step 5a?
 
 \indent Step 5. For the remaining report blocks, Lloyd would write an email to Lutz explaining his reasoning.
+\Todo{What about Step 5a?}
 
 Step 6. Lutz would read through that email and categorize the report blocks into the following cases:\\
 a) Lloyd's coding is obviously correct, Lutz' own is a clerical error.
@@ -678,6 +680,12 @@ The difficult part of our statistical evaluation is asking the right questions;
 our data provides a lot of possibilities.
 In contrast, the actual statistical techniques are simple and straightforward:
 Mostly tabulations of counts or percentages, bar plots, and box plots.
+We define two binary properties of abstracts: 
+A \emph{complete} abstract contains all of the basic elements described in 
+Section~\ref{meth_basicparts}.
+A \emph{proper} abstract is complete and does not have any of the deficiencies
+described in the results section as making an abstract improper.
+\Todo{add subsection with an evaluation of these two}
 
 We mostly refrain from performing significance tests or computing confidence intervals,
 because most analyses are exploratory, not driven by specific expectations or theories.
@@ -690,14 +698,16 @@ rare (less than 5\%),
 not rare (5-20\%),
 common (20-35\%),
 frequent (35-50\%),
-dominant (over 50\%).!!!
+dominant (over 50\%).\Todo{Find spots where these should be used but are not.}
 
 
 \subsection{Interpretation}
 
-!!!Driven by research interest; grounded as far as possible.
-Makes use of impressions not captured in the data.
-Choice of examples reflects those.
+Our interpretation of the measurements is driven by our research interest and
+guided by our expertise as software engineering researchers who read abstracts.
+Whenever we mark a phenomenon as a weakness, we will provide a justification from that angle
+and provide an example to allow the reader to relate to the justification.
+\Todo{Find spots where such an example is missing.}
 
 
 \subsection{Use of Examples}
@@ -744,13 +754,13 @@ Considering that most community members are not native speakers of English,
 we judge 20 to 30 to be a range suitable for researcher audiences and so
 we call anything over 30 ``good'',
 20 to 30 ``normal'', and
-under 20 ``overly difficult''.
+under 20 ``improper''.
 
 See Figure~\ref{boxplots_fkscore} for the results:
 only about 10\% of all abstracts have good readability,
 less than 40\% have normal readability,
-and a majority is overly difficult --- one quarter is even below 10!
-ICSE is a bit better than the other venues,
+and a majority is improper --- almost a quarter is even below 10!
+ICSE tends to be better than the other venues,
 TOSEM is worse.
 
 \Plot{boxplots_fkscore}{%
@@ -784,12 +794,13 @@ Mixed cases are rare and then the coders will decide which aspect has more weigh
 
 In design works, a large fraction of the abstract will be devoted to
 describing design considerations for that artifact;
-in our data: typically 16\% to 34\% of the words.
+in our data: typically 16\% to 34\%!!! of the words.
 The empirical study, which usually exists as well, then usually has a mere
 supporting role (validating the claims made in the artifact discussion)
 and is correspondingly given less space:
-7\%--15\% (versus 12\%--23\%) for description of empirical method,
+7\%--16\% (versus 12\%--23\% for empirical works) for description of empirical method,
 12\%--24\% (versus 18\%--32\%) for description of empirical results.
+Design work abstracts are barely longer than empirical work abstracts.
 
 
 \subsection{The Abstracts Archetype}\label{archetype}
@@ -827,9 +838,9 @@ the following template, which we call the software engineering abstracts archety
 \end{enumerate}
 
 The archetype describes all variants of abstracts that have a natural train of thought,
-so any deviation will lead to a less easily understandable abstract.
+deviations will tend to lead to a less easily understandable abstract.
 
-\Todo{Find short, good example}
+\Todo{Find short, good, unstructured example and mark it up.}
 
 
 \subsection{How Not To: Inefficient Allocation of Space}\label{inefficient_allocation}
@@ -840,7 +851,7 @@ the objective and make it understandable.
 Here is an example from an article titled
 ``!!!'':
 \begin{quote}
-  \Todo{Does an example pay off here?}	
+  \Todo{Does an example pay off here? It needs a lot of space}	
 \end{quote}	
 
 Other abstracts manage to solve the same problem in a wonderfully concise manner:
@@ -849,7 +860,10 @@ Other abstracts manage to solve the same problem in a wonderfully concise manner
 \end{quote}	
 
 \Plotwide{box_xletgroups_topicfractions}{%
-	Per-topic distribution of the amount of space used for that topic.\\
+	Per-topic distribution of the amount of space used for that topic.
+	These ``topics'' are groupings of related codes; e.g. Outlook stands for the union of
+	\Cb{fposs}, \Cb{fneed}, \Cb{fgap}, \Cb{fwork}, 
+	and all corresponding \Cb{a-*} and (theoretically) \Cb{h-*} codes.\\
 	\Describeboxplots
 	\Describegroups}
 
@@ -874,7 +888,21 @@ Background lengths are more benign for structured abstracts.
 
 \subsection{How Not To: Murky \Cb{objective} statements}\label{murkyobjectives}
 
-!!!
+The \Cb{objective} statement is the key means by with an abstract communicates
+to the reader what the work is all about. 
+Getting it wrong is therefore probably the single biggest mistake to make
+for the abstract writer.
+
+We saw a number of near-incomprehensible cases in our sample.
+For instance
+\Todo{horrible objectives statement example 1}
+should better have said
+\Todo{appropriate replacement for example 1}.
+And
+\Todo{horrible objectives statement example 2}
+should better have said
+\Todo{appropriate replacement for example 2}.
+
 
 
 \subsection{How Not To: Missing Elements}\label{missing elements}
@@ -905,8 +933,8 @@ half of all -- yet again very rarely in structured abstracts\footnote{Note that
 
 \subsection{How Not To: Convoluted Trains of Thought}\label{convoluted}
 
-Leaving out important parts from an abstract is not the only way for wrecking
-the abstract's value, however.
+Botching the \Cb{objective} statement or leaving out important parts from an abstract
+are not the only ways for wrecking the abstract's value, however.
 There are also abstracts where the train-of-thought is so convoluted
 that they become difficult to read.
 
@@ -926,6 +954,7 @@ Note that a frequency of e.g. 2.5 simply means that the two coders did not agree
 The results are shown in
 Figure~\ref{ab_topicstructure_freqs_empir} for empirical articles and
 Figure~\ref{ab_topicstructure_freqs_design} for design articles.
+\Todo{leave out these plots to save space?}
 
 \Plot{ab_topicstructure_freqs_empir}{%
   The frequency of different trains-of-thought in the abstract for empirical articles.
@@ -966,7 +995,7 @@ Today's conventions for structured abstracts may be a bit restrictive
 but they do result in more orderly abstracts:
 There are only 27!!! different abstract structures for the structured abstracts of empirical articles
 versus 95!!! for empirical articles overall.
-(!!! replace 95 by mean of same-sized samples)
+\Todo{replace 95 by mean of same-sized samples}
 
 
 \subsection{How Not To: Uninformative Formulations}
@@ -991,7 +1020,7 @@ Table 4 and therefore could and should have said
 
 Informativeness gaps appear mostly in results statements (82\% of the gaps)
 or method statements (16\% of the gaps).
-Most (but not all) of them could be filled by a number.
+Most (if not all) of them could be filled by a number.
 They tend to cluster,
 like here:
 \Quote{The results show that PRINS can process large logs much faster
@@ -1003,7 +1032,7 @@ A better formulation could have been:
   than the well-known state-of-the-art tool MINT,
   but never lost more than 7 percentage points of balanced accuracy.}!!!
 
-More than half of all abstracts have an informativeness gap
+More than half of all abstracts have an informativeness gap (making them improper)
 and 18\%!!! have three or more.
 See the leftmost two groups of Figure~\ref{nonzerofractionbar_xletgroups_missinginfofractions}
 for details.
@@ -1026,28 +1055,28 @@ Occasionally, a sentence will not merely miss to report some specific piece of i
 but rather fail to provide any useful information at all and merely hint at
 information to be found in the article body.
 We call such a sentence an announcement.
+\Todo{Should we cross-reference back to the respective methods section here? And elsewhere as well?}
 
-Example 1:
+Example 1 (method announcement):
 \Quote{As a second step, this study sets out to specifically
   provide a detailed assessment of additional and in-depth analysis of technical debt management strategies based
   on an encouraging mindset and attitude from both managers and technical roles to understand how, when and by
   whom such strategies are adopted in practice.} \Art{BesMarBos22}
-So many words, so little information in this would-be method statement!
 Here is what the sentence could have said instead:
 \Pseudoquote{We then surveyed 26 managers and 46 technical people, followed by clarifying interviews
   with 4 managers and 2 developers in order to understand how the managers perceive how they are encouraging
   developers to manage technical debt and how the developers perceive the encouragement they receive.}
 % based on BasMarBos Sections 3.2.1, 3.2.3, Table 2
 
-Example 2:
+Example 2 (results announcement):
 \Quote{Finally we provide guidelines/best practices for researchers utilizing time-based data
 from Git repositories.} \Art{FliChaDye22}  %EMSE
-This could have been a result statement such as the following:
+This should have been a result statement such as the following:
 \Pseudoquote{We provide 6 guidelines. For instance, cutting off all commits before 2014
   will get rid of about 98\% of all bad commits.}
 
 Announcements are a waste of space and a nuisance for the reader,
-yet 24\% of all abstracts have at least one.
+yet 24\% of all abstracts have at least one and we consider those improper.
 See groups three to six of Figure~\ref{nonzerofractionbar_xletgroups_missinginfofractions}
 for details.
 
@@ -1056,12 +1085,12 @@ for details.
 
 It is normal that the reader of an abstract has only a fuzzy understanding
 of what certain terms in the abstract mean.
-In a good abstract, the approximate meaning of a statement using such a term
+In a good abstract, the \emph{approximate} meaning of a statement using such a term
 still comes across.
 Sometimes, however, this is not the case:
 The uncertainty regarding the meaning of the term becomes so large
 that the sentence containing it becomes incomprehensible.
-We call such a term use an understandability gap.
+We call such a term use an understandability gap and consider such abstracts to be improper.
 
 Here is an example:
 \Quote{The results of evaluating the generality of the iContractML 2.0 reference model show
@@ -1082,36 +1111,33 @@ The issue is most pronounced at ICSE.
 Codings with an \Cb{-ignorediff} marker indicate cases where the coders could not agree
 despite discussion: the respective sentence (or sentence part) is so highly ambiguous that
 more than one role for it is similarly likely.
-Obviously, such ambiguous formulations do not represent good abstract writing.
+Obviously, such ambiguous formulations do not represent good abstract writing
+and we consider such abstracts to be improper.
 
 In our data, we found 74!!! such cases overall, spread over 30!!! different abstracts,
 so that 5\%!!! of all abstracts have one or more such problems.
 A total of 14!!! different codes are involved.
-The most frequent 5!!! of them cover 61\%!!! of the total:
-design, conclusion, result, a-result, and method.
-
-Although a detailed discussion and more examples could be interesting,
-we find the phenomenon is not frequent enough to warrant more detail.
+% The most frequent 5!!! of them cover 61\%!!! of the total:
+% design, conclusion, result, a-result, and method.
 
 
 \subsection{How-Not-To Summary}\label{hownotto_summary}
 
-Good quality means: Follows archetype, acceptable readability score, no announcement, no gap.
-Should large majority (over 75\% of articles).
-Indeed x\% no announcement, x\% no gap, x\% follow archetype, x\% have acceptable readability score.
+\Todo{implement 'complete' and 'proper' (and its parts) in printstats.}
+
+Summing up, a proper abstract should
+\Todo{collect the properties}.
+Given that we have looked at what are usually considered top-quality venues,
+one should expect that a large majority of abstracts fulfills those criteria.
+However, only x\% have property1, only x\% have property2, only x\% have property3, [\ldots]. 
 And only x\% have all of these properties.
+Only x\% are at least complete in the sense that they describe
+background, objective, methods, results, and formulate a conclusion.
 
 
 \subsection{How To: Structured Abstracts are more orderly}\label{structuredgood}
 
-Re-analysis of ``Convoluted Trains of Thought''.
-
-Table: percentage of: all/unstructured/structured have which deficiency,\\
-Total: have any deficiency.
-
-x\% no announcement, x\% no gap, x\% follow archetype, x\% have acceptable readability score.
-And only x\% have all of these properties.
-
+\Todo{ditto for structured abstracts, probably as a side-by-side plot of the partial criteria.}
 
 
 
@@ -1121,7 +1147,7 @@ And only x\% have all of these properties.
 \subsection{Interpretivist Perspective}
 
 In terms of Tracy's quality criteria for qualitative research \cite{Tracy10},
-our study has very nice properties, because our readers inhabit
+our study has nice properties, because our readers inhabit
 the domain of abstract reading and abstract writing themselves.
 
 The topic's worthiness is obvious, the amount of data is large,
@@ -1139,7 +1165,7 @@ described in Section~\ref{dataavailability}.
 Internal validity is the degree to which the stated method
 was followed correctly.
 We do not expect much problem in this regard.
-The most difficult-to-avoid problem in our study is slips of concentration
+The most difficult-to-avoid problem in our study is lapses of concentration
 during coding which result in coding mistakes.
 However, the laborious coding procedure
 described in Section~\ref{meth_coding}
@@ -1168,7 +1194,7 @@ neighboring (past and future) years in the same venues
 we studied, perhaps a bit less for ICSE because of its
 varying location and hence more varying authors.
 Whether it also generalizes to other venues
-we cannot know, but we were surprised if venues of lower
+we cannot know, but we would be surprised if venues of lower
 scientific reputation had articles with better abstracts.
 
 
@@ -1176,8 +1202,18 @@ scientific reputation had articles with better abstracts.
 \section{Conclusions}
 
 
-\subsection{...}
-\noindent
+\subsection{Too Few Abstracts Have Good Quality}
+
+\Todo{spell out}
+Only !!!\% are even complete,
+only !!!\% also fulfill modest additional criteria: !!!list them!!!
+and this despite us analyzing only presumably high quality venues.
+
+We conclude the software engineering research community should pay
+more attention to abstract-writing.
+Presumably, introducing a structured abstract format 
+and accompanying writing instructions that suit 
+engineering research would help.
 
 
 \subsection{How To: Guidelines for Well-Written Abstracts}
@@ -1202,6 +1238,8 @@ detail or evidence.
     Is your article a design article or an empirical one?
     Write an \Sah{Objective} that expresses both succinctly 
     (see Sections \ref{design} and \ref{murkyobjectives}).
+    If your background information contains a corresponding \Sah{Gap} statement,
+    mark it as such.
   \item If your work is a design article, 
     write a \Sah{Design} section.
     Cover all key ideas (typically two to four), avoid non-key information.
@@ -1235,6 +1273,7 @@ detail or evidence.
     but is usually better left to the body of your article.
 \end{enumerate}
 
+\Todo{Take a good short design work abstract and show it in this format?}
 
 \subsubsection{For Venues}
 
@@ -1242,8 +1281,11 @@ Structured abstracts are not currently used widely in software engineering.
 In their usual form, which does not suit design articles, 
 this is understandable, even appropriate.
 
-In the above extended form, however, structured abstracts promise
-better abstracts quality than a free-style format.
+In the above extended form, however, 
+(allowing \Sah{Gap} statements, 
+allowing \Sah{Design} sections, 
+allowing multiple \Sah{Methods and Results} sections) 
+structured abstracts promise better abstracts quality than a free-style format.
 Therefore, venues should require structured abstracts in this
 engineering-ready format.
 
