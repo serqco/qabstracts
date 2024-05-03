@@ -55,12 +55,12 @@
 
 \title{How (Not) To Write a\\Software Engineering Abstract}
 
-\author{Lutz Prechelt
+\author{Lutz Prechelt%
 \thanks{L. Prechelt is with Freie Universität Berlin, Germany},
-Lloyd Montgomery
+Lloyd Montgomery%
 \thanks{L. Montgomery is with Universität Hamburg, Germany},
-Julian Frattini, Franz Zieris
-\thanks{J. Frattini and Franz Zieris are with BTH, Karlskrona, Sweden}}
+Julian Frattini, Franz Zieris%
+\thanks{J. Frattini and F. Zieris are with BTH, Karlskrona, Sweden}}
 
 \markboth{IEEE Transactions on Software Engineering}%
 {How (Not) To Write a Software Engineering Abstract}
@@ -567,7 +567,7 @@ that the EMSE article format required manual abstracts cleansing.
 
 \subsection{Coding Process}\label{meth_coding}
 
-We code each abstract twice, by so-called coders A and B.
+We code each abstract twice, by so-called coders A~and~B.
 Abstracts are held in text files in separate directories \Prg{abstracts.A} and \Prg{abstracts.B}.
 Each sentence is followed by a line containing \Prg{\{\{\}\}} and into this pair of
 double braces the coder would enter their codings,
@@ -925,10 +925,10 @@ but never in structured abstracts.
 The shocking part of this analysis is \Cb{conclusion}, which ought to be present
 as the key take-home message in any abstract, but is in fact missing in more than
 half of all -- yet again very rarely in structured abstracts\footnote{Note that
-  the prompt of having to write something after a "Conclusion:" keyword
+  the prompt of having to write something after a ``Conclusion:'' keyword
   alone cannot guarantee this:
   The statement put there can be (and sometimes is) something else,
-  typically a \Cb{result} statement or \Cb{summary}.}
+  typically a \Cb{result} statement or \Cb{summary}.}.
 
 
 \subsection{How Not To: Convoluted Trains of Thought}\label{convoluted}
@@ -1095,7 +1095,7 @@ We call such a term use an understandability gap and consider such abstracts to 
 Here is an example:
 \Quote{The results of evaluating the generality of the iContractML 2.0 reference model show
   that it is 91.7\% lucid and 72.2\% laconic.} \Art{HamMetQas22}
-Neither of the terms "lucid" or "laconic" have been introduced before, so that
+Neither of the terms ``lucid'' or ``laconic'' have been introduced before, so that
 this sentence has two understandability gaps and
 an average reader is not able to make sense of this statement
 which represents half of the work's results.
@@ -1225,15 +1225,15 @@ detail or evidence.
 
 \begin{enumerate}
   \item Write a structured abstract, not a free-flowing one 
-    (see Section \ref{structuredgood}).
-    Take care to avoid announcements (see Section \ref{announcements}),
-    understandability gaps (see Section \ref{ugaps}),
-    and sentences with an unclear role (see Section \ref{ambiguity}).
+    (see Section~\ref{structuredgood}).
+    Take care to avoid announcements (see Section~\ref{announcements}),
+    understandability gaps (see Section~\ref{ugaps}),
+    and sentences with an unclear role (see Section~\ref{ambiguity}).
     Provide helpful detail, perhaps simplified, if it consumes barely any space
-    (see Section \ref{igaps}).
+    (see Section~\ref{igaps}).
   \item Write a \Sah{Background} section that provides just enough context
     and motivation to understand the subsequent \Sah{Objective} 
-    (see Section \ref{inefficient_allocation}).
+    (see Section~\ref{inefficient_allocation}).
   \item Decide on your main contribution. 
     Is your article a design article or an empirical one?
     Write an \Sah{Objective} that expresses both succinctly 
@@ -1248,19 +1248,19 @@ detail or evidence.
     use two or three combined \Sah{Method and Results} sections.
     Each of these will typically be a single sentence of the form
     ``We do-this-and-that and find this-and-that.''
-    (see Section \ref{convoluted}).
+    (see Section~\ref{convoluted}).
     Otherwise write separate \Sah{Methods} and \Sah{Results} sections
     as follows.
   \item Write a \Sah{Methods} section that explains what you have done
     for your empirical study. 
     Be as specific as you can do concisely.
-    In particular, mention the amount of data used (see Section \ref{igaps}).
+    In particular, mention the amount of data used (see Section~\ref{igaps}).
   \item Write a \Sah{Results} section that explains the main outcomes
     of your study.
     If you have many results, report the one or two most important ones.
     If you have many results of equal importance, report the 
     one or two most interesting ones or just provide examples.
-    Be specific and beware of announcements (see Section \ref{announcements}).
+    Be specific and beware of announcements (see Section~\ref{announcements}).
   \item Write a \Sah{Conclusion} section that generalizes from your results.
     What should the reader take home?
     What do we now know that we did not know before?
@@ -1268,7 +1268,7 @@ detail or evidence.
     but the lower its credibility. 
     Find a formulation with relevance and good enough credibility.
     Expect to later be proven wrong for some of your works, but not for many
-    (see Section \ref{inefficient_allocation}).
+    (see Section~\ref{inefficient_allocation}).
   \item An outlook on future possibilities \emph{can} be part of your \Sah{Conclusion},
     but is usually better left to the body of your article.
 \end{enumerate}

@@ -96,7 +96,7 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
                              60/25.4, tse_pagewidth_mm/25.4, 
                              datasets.ab_missinginfofractions_values, datasets.ab_subsets)
         pt.plot_xletgroups(ctx, pt.add_nonzerofractionbarplotlet, "nonzerofractionbar", "missinginfofractions",
-                           "how often occuring [%]", ymax=66)
+                           "how often occurring [%]", ymax=66)
         ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
                              60/25.4, tse_columnwidth_mm/25.4, 
                              datasets.ab_conclusionfractions_bybg_values, datasets.ab_subsets)
