@@ -36,13 +36,15 @@ jobs:
         run: |
           pip -q install -r requirements.txt
           make export
-          make plot
+          make plotall
+          # We check out only the last revision -> no Git history -> no timeline data -> use pre-rendered timeline from version control
+          git restore img/qabstracts_timeline_commits.pdf
           ls -l img
           sudo apt-get update
           sudo apt install texlive-xetex latexmk
           make pdf
       - name: upload PDF
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with: 
           name: 'qabstracts-tse.pdf'
           path: 'tex/qabstracts-tse.pdf'

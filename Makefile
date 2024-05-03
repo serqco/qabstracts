@@ -19,7 +19,7 @@ export:
 	$(QABSTRACTS) extract-git-timestamps
 
 pdf:
-	cd tex; latexmk -bibtex qabstracts-tse
+	cd tex; latexmk -pdf -bibtex qabstracts-tse
 
 plotall:
 	$(QABSTRACTS) plot --plotall --printall $(EXPORTFILE) img
