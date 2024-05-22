@@ -8,6 +8,7 @@ CODES_OF_COMPLETE_ABSTRACT = ['background', 'objective', 'method', 'result', 'co
 SIGNIFICANCE_LEVEL: float = 0.05
 
 def read_datafile(datafile: str) -> pd.DataFrame:
+    """Read data to dataframe"""
     df = pd.read_csv(datafile, sep='\t', index_col=False)
     return df
 
@@ -133,4 +134,3 @@ if __name__ == '__main__':
 
     p_proper = test_significance(dep_proper=True)
     print(f'The difference in abstract properness is {"" if p_proper < SIGNIFICANCE_LEVEL else "not "}statistically significant (p = {p_proper:.2%}) for structured vs. unstructured abstracts.')
-    
