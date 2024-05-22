@@ -130,7 +130,7 @@ def test_significance(dep_proper: bool=False) -> float:
 if __name__ == '__main__':
     # for tryout during development
     p_complete = test_significance(dep_proper=False)
-    print(f'The difference in abstract completeness is {"" if p_complete < SIGNIFICANCE_LEVEL else "not "}statistically significant (p = {p_complete:.2%}) for structured vs. unstructured abstracts.')
+    print(f'The difference in abstract completeness is {"" if p_complete < SIGNIFICANCE_LEVEL else "not "}statistically significant (p = {p_complete:.4}) for structured vs. unstructured abstracts.')
 
     p_proper = test_significance(dep_proper=True)
-    print(f'The difference in abstract properness is {"" if p_proper < SIGNIFICANCE_LEVEL else "not "}statistically significant (p = {p_proper:.2%}) for structured vs. unstructured abstracts.')
+    print(f'The difference in abstract properness is {"" if p_proper < SIGNIFICANCE_LEVEL else "not "}statistically significant (p = {p_proper:.4}) for structured vs. unstructured abstracts.')
