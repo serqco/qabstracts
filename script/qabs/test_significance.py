@@ -1,14 +1,16 @@
 import pandas as pd
 import numpy as np
 
-from scipy.stats import chisquare
+from scipy.stats import chi2_contingency
+
+# list of codes required in an abstract to be considered "complete"
+CODES_OF_COMPLETE_ABSTRACT = ['background', 'objective', 'method', 'result', 'conclusion']
+SIGNIFICANCE_LEVEL: float = 0.05
 
 def read_datafile(datafile: str) -> pd.DataFrame:
     df = pd.read_csv(datafile, sep='\t', index_col=False)
     return df
 
-# list of codes required in an abstract to be considered "complete"
-codes_of_complete_abstract = ['background', 'objective', 'method', 'result', 'conclusion']
 def is_complete(data: pd.DataFrame, abs_id: str) -> bool:
     """Determine, whether an abstract contains at least one instance of the following codes: background, objective, method, result, and conclusion.
 
@@ -24,7 +26,7 @@ def is_complete(data: pd.DataFrame, abs_id: str) -> bool:
     abstract_codes: list[str] = data[data['citekey'] == abs_id]['code'].values
 
     # determine whether all codes required for completeness are contained in the abstract
-    return all(code in abstract_codes for code in codes_of_complete_abstract)
+    return all(code in abstract_codes for code in CODES_OF_COMPLETE_ABSTRACT)
 
 def is_proper(data: pd.DataFrame, abs_id: str) -> bool:
     """Determine, whether an abstract is considered proper, i.e., is complete, contains no informativeness gap, no announcement, no undefined important term, and no ambiguous formulation 
@@ -106,13 +108,13 @@ def compile_data(df: pd.DataFrame) -> pd.DataFrame:
                                                columns=['structured', 'complete', 'proper'])
     return dfa
 
-def test_significance(dep_proper: bool=False):
-    """Perform a test of significant difference in the dependent variable when stratifying by the independent variable.
+def test_significance(dep_proper: bool=False) -> float:
+    """Perform a test of statistically significant difference in the dependent variable when stratifying by the independent variable. Given that the independent variable (structuredness) and dependent variables (completeness and properness) are all binary, apply a Chi2 test of independence.
     
     parameters:
         dep_proper : True when using properness as the dependent variable, false when using completeness
         
-    returns: list of value counts"""
+    returns: p-value of the Chi2 test of significant difference"""
 
     # load the data and compile (dfc) the required view
     df: pd.DataFrame = read_datafile('./results/abstracts-results.tsv')
@@ -120,12 +122,15 @@ def test_significance(dep_proper: bool=False):
     
     # count the occurrences of the dependent variable stratified by the independent variable "structured"
     dependent_variable: str = 'proper' if dep_proper else 'complete'
-    return dfc[['structured', dependent_variable]].value_counts()
+    contingency_table = pd.crosstab(dfc['structured'], dfc[dependent_variable])
+    _, p, _, _ = chi2_contingency(contingency_table)
+    return p
 
 if __name__ == '__main__':
     # for tryout during development
-    print('Testing whether abstract structuredness affects abstract completeness:')
-    print(test_significance(dep_proper=False))
+    p_complete = test_significance(dep_proper=False)
+    print(f'The difference in abstract completeness is {"" if p_complete < SIGNIFICANCE_LEVEL else "not "}statistically significant (p = {p_complete:.2%}) for structured vs. unstructured abstracts.')
 
-    print('\nTesting whether abstract structuredness affects abstract properness:')
-    print(test_significance(dep_proper=True))
+    p_proper = test_significance(dep_proper=True)
+    print(f'The difference in abstract properness is {"" if p_proper < SIGNIFICANCE_LEVEL else "not "}statistically significant (p = {p_proper:.2%}) for structured vs. unstructured abstracts.')
+    
