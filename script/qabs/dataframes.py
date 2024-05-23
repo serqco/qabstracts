@@ -11,7 +11,7 @@ def create_all_datasets(df: pd.DataFrame):
     datasets = argparse.Namespace()
     datasets.df = df  # the raw datafile
     datasets.df_primary1 = df_primary1(df)
-    datasets.by_ab = df_by_ab(datasets.df_primary1)
+    datasets.by_abstract = df_by_abstract(datasets.df_primary1)
     datasets.ab_structures = ser_ab_structures(datasets.df_primary1)
     return datasets
 
@@ -29,7 +29,7 @@ def df_primary1(df: pd.DataFrame) -> pd.DataFrame:
     return res
 
 
-def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
+def df_by_abstract(primary: pd.DataFrame) -> pd.DataFrame:
     """A dataframe with records that aggregate data at the level of one abstract."""
     # ----- do basic aggregation from codings to abstracts:
     res = primary.groupby(['citekey', 'coder']) \
@@ -41,6 +41,7 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
              sentences=_nagg('sidx', 'max'),
              words=_nagg('words', 'sum'), 
              chars=_nagg('chars', 'sum'), 
+             ignorediffs=_nagg('ignorediff', 'sum'), 
              fkscore=_nagg('fkscore', 'mean'), 
              codes=_nagg('code', 'count'), 
              utopics=_nagg('topic', 'nunique'),
@@ -64,6 +65,10 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
         result = result.rename(columns={f"{variable}words": f'words_{py_x}'}, errors="raise")
         result[f'fraction_{py_x}'] = (100 * result[f'words_{py_x}'] / result.words).fillna(0)
         return result
+    
+    def has_topic(topicname: str) -> bool:
+        topicid = topicname.replace('-', '_')  # make name usable as a python identifier
+        return res[f"fraction_{topicid}"] > 0
 
     res = add_wordsfraction(res, topicparts, 'topic', 'background')
     res = add_wordsfraction(res, topicparts, 'topic', 'gap')
@@ -89,6 +94,15 @@ def df_by_ab(primary: pd.DataFrame) -> pd.DataFrame:
                                                   np.NaN)
     res['avg_wordlength'] = (res.chars - 1.2*res.words) / res.words  # deduct spaces and punctuation
     res['total_gaps'] = res.icount + res.ucount + 3 * res.announcecount  # count each 'a-*' as 3 gaps
+    res['is_complete'] = (has_topic('background') | has_topic('gap')) & \
+            has_topic('objective') & has_topic('method') & has_topic('result') & has_topic('conclusion') 
+    res['is_proper'] = (res['is_complete'] & # section 4.6
+                        (res['fkscore'] >= 20) &  # section 4.1/3.10 
+                        (res['icount'] == 0) &  # section 4.8.1
+                        (res['announcecount'] == 0) &  # section 4.8.2
+                        (res['ucount'] == 0) &  # section 4.9
+                        (res['ignorediffs'] == 0))  # section 4.10
+                        # 4.2, 4.3 are irrelevant; we have no criteria for 4.4, 4.5, 4.7
     return res
 
 
@@ -117,11 +131,12 @@ def topicletters(topics: pd.Series) -> str:
 
 def create_all_subsets(datasets: argparse.Namespace):
     """Add pt.Subsets entries in datasets."""
-    datasets.ab_subsets = ab_subsets(datasets.by_ab)
-    datasets.ab_topicfractions_values = ab_topicfractions_values(datasets.by_ab)
-    datasets.ab_topicfractions0_values = ab_topicfractions0_values(datasets.by_ab)
-    datasets.ab_missinginfofractions_values = ab_missinginfofractions_values(datasets.by_ab)
-    datasets.ab_conclusionfractions_bybg_values = ab_conclusionfractions_bybg_values(datasets.by_ab)
+    datasets.ab_subsets = ab_subsets(datasets.by_abstract)
+    datasets.ab_topicfractions_values = ab_topicfractions_values(datasets.by_abstract)
+    datasets.ab_topicfractions0_values = ab_topicfractions0_values(datasets.by_abstract)
+    datasets.ab_missinginfofractions_values = ab_missinginfofractions_values(datasets.by_abstract)
+    datasets.ab_totalqualityfractions_values = ab_totalqualityfractions_values(datasets.by_abstract)
+    datasets.ab_conclusionfractions_bybg_values = ab_conclusionfractions_bybg_values(datasets.by_abstract)
 
 
 def ab_subsets(df: pd.DataFrame) -> pt.Subsets:
@@ -247,6 +262,19 @@ def ab_missinginfofractions_values(df: pd.DataFrame) -> pt.Subsets:
                   values=lambda dfr: dfr.ucount),
     ]
     return pt.Subsets(ab_missinginfofractions_list)
+
+
+def ab_totalqualityfractions_values(df: pd.DataFrame) -> pt.Subsets:
+    """subsets for frequency of is_complete and is_proper"""
+    ab_totalqualityfractions_list = [
+        pt.Values(label="complete",
+                  x=1.0,
+                  values=lambda dfr: dfr.is_complete),
+        pt.Values(label="proper",
+                  x=2.0,
+                  values=lambda dfr: dfr.is_proper),
+    ]
+    return pt.Subsets(ab_totalqualityfractions_list)
 
 
 def _nagg(colname, func) -> pd.NamedAgg:
