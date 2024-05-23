@@ -2,19 +2,22 @@ import argparse
 import sys
 
 import pandas as pd
+import scipy
 
 import qscript.plottypes as pt
 
 
 def print_all_stats(args: argparse.Namespace, datasets: argparse.Namespace, outputdir: str):
     if args.printall:
-        print_abtype_table(datasets.by_ab)
+        print_abtype_table(datasets.by_abstract)
         if args.withoutdesignworks:
-            comment_out_design_works(args.withoutdesignworks, datasets.by_ab)
+            comment_out_design_works(args.withoutdesignworks, datasets.by_abstract)
         print_abstracts_with_canonical_structure(datasets.ab_structures)
         print_abstracts_structures_counts(datasets.ab_structures)
-        print_gaps_stats(datasets.df_primary1, datasets.by_ab)
-        print_ignorediff_stats(datasets.df_primary1, datasets.by_ab)
+        print_gaps_stats(datasets.df_primary1, datasets.by_abstract)
+        print_ignorediff_stats(datasets.df_primary1, datasets.by_abstract)
+    print_test(datasets.by_abstract, 'is_complete')
+    print_test(datasets.by_abstract, 'is_proper')
 
 
 def comment_out_design_works(samplewhowhatfile: str, df: pd.DataFrame):
@@ -134,6 +137,19 @@ def print_gaps_stats(codings: pd.DataFrame, abstracts: pd.DataFrame):
     per_count_percent.index.name = 'abstract_has_announce'
     print(per_count_percent.sort_values(by='percent', ascending=False))
     
+
+def print_test(df: pd.DataFrame, criterion: str):
+    df_struc = df.query('is_struc')
+    df_unstruc = df.query('not is_struc')
+    struc_success = len(df_struc.query(f'{criterion} > 0'))
+    struc_failure = len(df_struc) - struc_success
+    unstruc_success = len(df_unstruc.query(f'{criterion} > 0'))
+    unstruc_failure = len(df_unstruc) - unstruc_success
+    testdf = pd.DataFrame([[struc_success, struc_failure], [unstruc_success, unstruc_failure]],
+                          columns=['yes', 'no'], index=['structured', 'unstructured'])
+    chi2, p, dof, expected = scipy.stats.chi2_contingency(testdf)
+    print("Test '%s': chi2:%5.1f, p:%6.4f, df:%d" % (criterion, chi2, p, dof))
+    print(testdf)
 
 def _printheader():
     """Print separator header giving the function name from two stackframes up."""

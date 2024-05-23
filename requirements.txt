@@ -3,4 +3,5 @@ numpy
 pandas
 pdfminer.six
 pytest
+scipy
 statsmodels
