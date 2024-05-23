@@ -58,13 +58,16 @@ def read_datafile(datafile: str) -> pd.DataFrame:
 
 def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str):
     # mpl.use('PDF')
+    height1 = 60/25.4
+    wideplot = tse_pagewidth_mm/25.4
+    onecolumnplot = tse_columnwidth_mm/25.4
     if plotall:
         # ----- topicstructure plots:
         plot_ab_topicstructure_freqs_design(datasets.ab_structures, outputdir)
         plot_ab_topicstructure_freqs_empir(datasets.ab_structures, outputdir)
         plot_ab_topicstructure_freqs_empir_structured(datasets.ab_structures, outputdir)
         # ----- boxplots counts:
-        ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
+        ctx = pt.PlotContext(outputdir, "", datasets.by_abstract, 
                              60/25.4, tse_pagewidth_mm/25.4, datasets.ab_subsets)
         pt.plot_boxplots(ctx, 'sentences', ymax=25)
         pt.plot_boxplots(ctx, 'words', ymax=500)
@@ -76,34 +79,35 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
         pt.plot_boxplots(ctx, 'fraction_introduction', ymax=100)
         pt.plot_boxplots(ctx, 'fraction_conclusion', ymax=100)
         pt.plot_boxplots(ctx, 'fraction_other', ymax=100)
-        pt.plot_lowess(datasets.by_ab.fraction_introduction, "space for introduction [%]",
-                       datasets.by_ab.total_gaps, "#gaps",
+        pt.plot_lowess(datasets.by_abstract.fraction_introduction, "space for introduction [%]",
+                       datasets.by_abstract.total_gaps, "#gaps",
                        outputdir, "gaps_by_fracintro",
                        xmax=100, ymax=15, frac=0.75)
         # ----- topicfraction plots:
-        ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
-                             60/25.4, tse_pagewidth_mm/25.4, 
+        ctx = pt.PlotContext(outputdir, "", datasets.by_abstract, height1, wideplot, 
                              datasets.ab_topicfractions_values, datasets.ab_subsets)
         pt.plot_xletgroups(ctx, pt.add_boxplotlet, "box", "topicfractions",
                            "space per topic [%]", ymax=50)
-        ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
-                             60/25.4, tse_pagewidth_mm/25.4, 
+        ctx = pt.PlotContext(outputdir, "", datasets.by_abstract, height1, wideplot, 
                              datasets.ab_topicfractions0_values, datasets.ab_subsets)
         pt.plot_xletgroups(ctx, pt.add_zerofractionbarplotlet, "zerofractionbar", "topicmissingfractions",
                            "how often missing [%]", ymax=100)
         # ----- frequency of a-* codes and iu gaps:
-        ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
-                             60/25.4, tse_pagewidth_mm/25.4, 
+        ctx = pt.PlotContext(outputdir, "", datasets.by_abstract, height1, wideplot, 
                              datasets.ab_missinginfofractions_values, datasets.ab_subsets)
         pt.plot_xletgroups(ctx, pt.add_nonzerofractionbarplotlet, "nonzerofractionbar", "missinginfofractions",
                            "how often occurring [%]", ymax=66)
-        ctx = pt.PlotContext(outputdir, "", datasets.by_ab, 
-                             60/25.4, tse_columnwidth_mm/25.4, 
+        ctx = pt.PlotContext(outputdir, "", datasets.by_abstract, height1, onecolumnplot, 
                              datasets.ab_conclusionfractions_bybg_values, datasets.ab_subsets)
         pt.plot_xletgroups(ctx, pt.add_boxplotlet, "box", "conclusionfractions",
                            "space per topic [%]", ymax=30)
-    # ----- timeline:
-    plot_qabstracts_timeline_commits(outputdir, datasets.timestamps)
+        # ----- timeline:
+        plot_qabstracts_timeline_commits(outputdir, datasets.timestamps)
+    # ----- fraction of complete and of proper abstracts:
+    ctx = pt.PlotContext(outputdir, "", datasets.by_abstract, height1, onecolumnplot,
+                         datasets.ab_totalqualityfractions_values, datasets.ab_subsets)
+    pt.plot_xletgroups(ctx, pt.add_nonzerofractionbarplotlet, "nonzerofractionbar", "totalqualityfractions",
+                       "how often occurring [%]", ymax=100)
 
 
 def plot_ab_topicstructure_freqs_design(df: pd.DataFrame, outputdir: str):
