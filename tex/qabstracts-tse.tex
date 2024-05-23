@@ -687,7 +687,7 @@ because even the cases of \Cb{-ignorediff} indicate that
 the coders agree on multiple plausible interpretations of one sentence.
 
 
-\subsection{Statistical Evaluation}
+\subsection{Statistical Evaluation}\label{statisticalevaluation}
 
 The difficult part of our statistical evaluation is asking the right questions;
 our data provides a lot of possibilities.
@@ -1145,22 +1145,52 @@ A total of 14!!! different codes are involved.
 
 \subsection{How-Not-To Summary}\label{hownotto_summary}
 
-\Todo{implement 'complete' and 'proper' (and its parts) in printstats.}
+Summing up, a proper abstract should be \emph{complete}, i.e. it should provide at least 
+a minimal amount of information of types  \Cb{background} (\Cb{or gap}),
+\Cb{objective}, \Cb{methods}, \Cb{results}, and \Cb{conclusion}, the
+canonical IMRAD structure.
 
-Summing up, a proper abstract should
-\Todo{collect the properties}.
-Given that we have looked at what are usually considered top-quality venues,
-one should expect that a large majority of abstracts fulfills those criteria.
-However, only x\% have property1, only x\% have property2, only x\% have property3, [\ldots]. 
-And only x\% have all of these properties.
-Only x\% are at least complete in the sense that they describe
-background, objective, methods, results, and formulate a conclusion.
+However, as we see in Figure~\ref{nonzerofractionbar_xletgroups_totalqualityfractions},
+a majority of abstracts fails this very basic quality criterion, a depressing result.
+
+	
+\Plot{nonzerofractionbar_xletgroups_totalqualityfractions}{%
+	What fraction of abstracts is \emph{complete} in the sense of 
+	Sections~\ref{statisticalevaluation} and \ref{hownotto_summary}?
+	What fraction of abstracts is \emph{proper} in the sense of 
+	Section~\ref{statisticalevaluation}?\\
+    Only 42\% of abstracts are complete. 
+	Less than 30\% of unstructured abstracts and of design article abstracts are complete.
+	Structured abstracts are much better and therefore all four supposedly top-quality venues
+	are beat by the much lower regarded IST which requires structured abstracts.\\
+	Less than 5\% of abstracts are proper.
+	Here, too, structured abstracts are much better than unstructured ones.
+	Our TOSEM sample has not a single proper abstract.
+	After that, ICSE is worse than all remaining subgroups considered.
+	\Describegroups}
+
+Our moderately stricter criterion of being \emph{proper} involves 
+being complete, having acceptable Flesh/Kincaide readability,
+and having neither informativeness gaps nor understandability gaps or highly ambiguous sentences.
+Given this list of criteria, improper abstracts will happen from time to time
+even for careful authors.
+Nevertheless, we believe that a majority of abstracts could and should be proper in this sense.
+Yet what we find is that only about one in twenty of them indeed are.
+TOSEM and ICSE are still worse than that.
+We expected to find many problems in abstracts but still find this outcome astonishingly bad. 
 
 
 \subsection{How To: Structured Abstracts are more orderly}\label{structuredgood}
 
-\Todo{ditto for structured abstracts, probably as a side-by-side plot of the partial criteria.}
+This study is mostly exploratory.
+Our only clear expectation at the start was that structured abstracts would be
+somehow better (whatever that was going to mean) than unstructured ones.
+Therefore, we perform two statistical hypothesis tests here that compare
+structured to unstructured abstracts.
 
+We find that structured abstracts are significantly more often complete ($\chi^2=260, p < 0.001$)
+and significantly more often proper ($\chi^2=17.7, p < 0.001$).
+The expectation appears to be very clearly correct.
 
 
 %========================================================================
