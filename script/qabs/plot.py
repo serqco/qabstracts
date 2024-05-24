@@ -107,7 +107,7 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
     ctx = pt.PlotContext(outputdir, "", datasets.by_abstract, height1, onecolumnplot,
                          datasets.ab_totalqualityfractions_values, datasets.ab_subsets)
     pt.plot_xletgroups(ctx, pt.add_nonzerofractionbarplotlet, "nonzerofractionbar", "totalqualityfractions",
-                       "how often occurring [%]", ymax=100)
+                       "how often occurring [%]", ymax=63)
 
 
 def plot_ab_topicstructure_freqs_design(df: pd.DataFrame, outputdir: str):
