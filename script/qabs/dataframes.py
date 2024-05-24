@@ -61,14 +61,16 @@ def df_by_abstract(primary: pd.DataFrame) -> pd.DataFrame:
     def add_wordsfraction(result: pd.DataFrame, grouping, variable: str, x: str) -> pd.DataFrame:
         """Which percentage of the abstract's total number of words pertains to the <variable>-part with value x?"""
         py_x = x.replace('-', '_')  # make name usable as a python identifier
+        prefix = "code" if variable == 'code' else ""  # topicfractions: fraction_x, codefractions: codefraction_x
+        wordcountname = f'words_{py_x}{prefix}'
         result = pd.merge(result, grouping.query(f"{variable}=='{x}'"), 'left', on=('citekey', 'coder'))
-        result = result.rename(columns={f"{variable}words": f'words_{py_x}'}, errors="raise")
-        result[f'fraction_{py_x}'] = (100 * result[f'words_{py_x}'] / result.words).fillna(0)
+        result = result.rename(columns={f"{variable}words": wordcountname}, errors="raise")
+        result[f'{prefix}fraction_{py_x}'] = (100 * result[wordcountname] / result.words).fillna(0)
         return result
     
-    def has_topic(topicname: str) -> bool:
-        topicid = topicname.replace('-', '_')  # make name usable as a python identifier
-        return res[f"fraction_{topicid}"] > 0
+    def has_code(codename: str) -> bool:
+        codeid = codename.replace('-', '_')  # make name usable as a python identifier
+        return res[f"codefraction_{codeid}"] > 0
 
     res = add_wordsfraction(res, topicparts, 'topic', 'background')
     res = add_wordsfraction(res, topicparts, 'topic', 'gap')
@@ -80,6 +82,12 @@ def df_by_abstract(primary: pd.DataFrame) -> pd.DataFrame:
     res = add_wordsfraction(res, topicparts, 'topic', 'conclusion')
     res = add_wordsfraction(res, topicparts, 'topic', 'Outlook')
     res = add_wordsfraction(res, topicparts, 'topic', 'other')
+    res = add_wordsfraction(res, codeparts, 'code', 'background')
+    res = add_wordsfraction(res, codeparts, 'code', 'gap')
+    res = add_wordsfraction(res, codeparts, 'code', 'objective')
+    res = add_wordsfraction(res, codeparts, 'code', 'method')
+    res = add_wordsfraction(res, codeparts, 'code', 'result')
+    res = add_wordsfraction(res, codeparts, 'code', 'conclusion')
     res = add_wordsfraction(res, codeparts, 'code', 'a-method')
     res = add_wordsfraction(res, codeparts, 'code', 'a-result')
     res = add_wordsfraction(res, codeparts, 'code', 'a-conclusion')
@@ -94,8 +102,8 @@ def df_by_abstract(primary: pd.DataFrame) -> pd.DataFrame:
                                                   np.NaN)
     res['avg_wordlength'] = (res.chars - 1.2*res.words) / res.words  # deduct spaces and punctuation
     res['total_gaps'] = res.icount + res.ucount + 3 * res.announcecount  # count each 'a-*' as 3 gaps
-    res['is_complete'] = (has_topic('background') | has_topic('gap')) & \
-            has_topic('objective') & has_topic('method') & has_topic('result') & has_topic('conclusion') 
+    res['is_complete'] = (has_code('background') | has_code('gap')) & \
+            has_code('objective') & has_code('method') & has_code('result') & has_code('conclusion') 
     res['is_proper'] = (res['is_complete'] & # section 4.6
                         (res['fkscore'] >= 20) &  # section 4.1/3.10 
                         (res['icount'] == 0) &  # section 4.8.1
