@@ -141,14 +141,21 @@ def print_gaps_stats(codings: pd.DataFrame, abstracts: pd.DataFrame):
 def print_test(df: pd.DataFrame, criterion: str):
     df_struc = df.query('is_struc')
     df_unstruc = df.query('not is_struc')
+    total = len(df)
+    struc_total = len(df_struc)
     struc_success = len(df_struc.query(f'{criterion} > 0'))
-    struc_failure = len(df_struc) - struc_success
+    struc_failure = struc_total - struc_success
+    unstruc_total = len(df_unstruc)
     unstruc_success = len(df_unstruc.query(f'{criterion} > 0'))
-    unstruc_failure = len(df_unstruc) - unstruc_success
+    unstruc_failure = unstruc_total - unstruc_success
     testdf = pd.DataFrame([[struc_success, struc_failure], [unstruc_success, unstruc_failure]],
                           columns=['yes', 'no'], index=['structured', 'unstructured'])
     chi2, p, dof, expected = scipy.stats.chi2_contingency(testdf)
     print("Test '%s': chi2:%5.1f, p:%6.4f, df:%d" % (criterion, chi2, p, dof))
+    print("          yes: total %4.1f%%, structured %4.1f%%, unstructured %4.1f%%" % 
+          (100 * (struc_success + unstruc_success) / total,
+           100 * struc_success  / total,
+           100 * unstruc_success  / total))
     print(testdf)
 
 def _printheader():
