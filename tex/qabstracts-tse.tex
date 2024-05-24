@@ -1,7 +1,8 @@
 % Article about SE abstracts quality (qabstracts) for IEEE Trans. on Software Engineering
-% TODO:
+% \Todo:
 % - decide which part of figure discussion belongs into caption and which into the body text
 % - https://bjoern.brembs.net/2016/01/even-without-retractions-top-journals-publish-the-least-reliable-science/
+% - check consistent use of \Cb, \Sah, \Art and of \Quote, \Pseudoquote, \QuoteCB
 
 \documentclass[10pt,journal,compsoc]{IEEEtran}
 
@@ -36,8 +37,8 @@
 
 \newcommand{\Cb}[1]{\bgroup\scshape #1\egroup}  % typeset a code name
 \newcommand{\Prg}[1]{\bgroup\ttfamily #1\egroup}  % typeset commands and script names
-\newcommand{\Art}[1]{\bgroup[#1]\egroup} % typeset article references  TODO: use!
-\newcommand{\Sah}[1]{\bgroup\scshape #1\egroup}  % typeset a structured abstract heading  TODO: use!
+\newcommand{\Art}[1]{\bgroup[#1]\egroup} % typeset article references
+\newcommand{\Sah}[1]{\bgroup\scshape #1\egroup}  % typeset a structured abstract heading
 
 \newcounter{todonumber}
 \newcommand{\Todo}[1]{\stepcounter{todonumber}\textcolor{red}{\sffamily ((\arabic{todonumber}: #1))}}
@@ -84,9 +85,13 @@ Use exploratory data analysis to find recurring issues in abstracts.
 Compare the prototypical structure to actual structures to derive
 guidelines for producing informative abstracts.
 \emph{Results:}
-\Todo{summarize results}
+Only 29\%!!! of our abstracts are complete, i.e., provide background, objective,
+method, result, and conclusion information.
+For structured abstracts, the fraction is twice as big.
+Only 3\%!!! of our abstracts also have acceptable Flesh/Kincaide readability and have
+neither informativeness gaps nor understandability gaps or highly ambiguous sentences.
 \emph{Conclusions:}
-(1)~Even in top venues, many abstracts are far from ideal.
+(1)~Even in top venues, a large majority of abstracts are far from ideal.
 (2)~Structured abstracts tend to be better than unstructured ones,
 but (3)~artifact-centric works need a different structured format.
 (4)~The community should start requiring conclusions that generalize,
@@ -663,7 +668,7 @@ another round of emails necessary.
 
 \subsubsection{Effect of this Procedure}
 
-Most content analyses code most of their material only once,
+Most content analyzes code most of their material only once,
 then code a random subsample a second time,
 compute some coefficient of agreement,
 report it as a measure of good-enough coding quality,
@@ -829,7 +834,6 @@ the \Cb{design} code is but one example.
 During our sensemaking process, we had a number of insights regarding
 how a well-written abstract ``ticks'', which we eventually distilled into
 the following template, which we call the software engineering abstracts archetype:
-\Todo{Provide IMRAD-based justification}
 
 \begin{enumerate}
 \item An abstract consists of three parts, in this order:
@@ -922,7 +926,7 @@ And
 should better have said
 \Todo{appropriate replacement for example 2}.
 
-\Todo{Argue with lengthy email discussions and number of :ignorediff codes.}
+\Todo{Argue with lengthy email discussions.}
 
 
 
@@ -975,7 +979,7 @@ Note that a frequency of e.g. 2.5 simply means that the two coders did not agree
 The results are shown in
 Figure~\ref{ab_topicstructure_freqs_empir} for empirical articles and
 Figure~\ref{ab_topicstructure_freqs_design} for design articles.
-\Todo{leave out these plots to save space?}
+\Todo{leave out these plots to save space? Or even move entire(?) section to appendix?}
 
 \Plot{ab_topicstructure_freqs_empir}{%
   The frequency of different trains-of-thought in the abstract for empirical articles.
@@ -1170,7 +1174,7 @@ a majority of abstracts fails this very basic quality criterion, a depressing re
 	\Describegroups}
 
 Our moderately stricter criterion of being \emph{proper} involves 
-being complete, having acceptable Flesh/Kincaide readability,
+being complete, having acceptable Flesch/Kincaid readability,
 and having neither informativeness gaps nor understandability gaps or highly ambiguous sentences.
 Given this list of criteria, improper abstracts will happen from time to time
 even for careful authors.
@@ -1258,10 +1262,27 @@ scientific reputation had articles with better abstracts.
 
 \subsection{Too Few Abstracts Have Good Quality}
 
-\Todo{spell out}
-Only !!!\% are even complete,
-only !!!\% also fulfill modest additional criteria: !!!list them!!!
-and this despite us analyzing only presumably high quality venues.
+Only 29\%!!! of the investigated software engineering research article abstracts are 
+complete according to the IMRAD structure long established for abstracts in science
+(Figure~\ref{nonzerofractionbar_xletgroups_totalqualityfractions}).
+In particular, about half of all abstracts never formulate a conclusion in the sense of
+a generalizing take-home message (Figure~\ref{zerofractionbar_xletgroups_topicmissingfractions}).
+Only 3\%!!! of the abstracts are complete and also fulfill modest additional criteria of 
+informativeness and understandability 
+(Figures~\ref{boxplots_fkscore} and \ref{nonzerofractionbar_xletgroups_missinginfofractions}, 
+Section~\ref{ambiguity}).
+We define and quantify further quality issues not included in the above number 
+(Figures~\ref{box_xletgroups_topicfractions}, \ref{box_xletgroups_conclusionfractions}, 
+\ref{nonzerofractionbar_xletgroups_missinginfofractions}, 
+Sections~\ref{murkyobjectives} and \ref{convoluted}).
+This low abstracts quality is despite the fact that we analyzed only venues
+supposed to have high quality.
+
+This is deplorable, because for most readers of a typical article, 
+the abstract is all they will ever look at.\Todo{reference needed}
+With the above level of abstracts quality, they will get far less 
+well informed than they could have been and the spread of knowledge
+will be slowed down accordingly, needlessly wasting public money.
 
 We conclude the software engineering research community should pay
 more attention to abstract-writing.
@@ -1276,7 +1297,6 @@ engineering research would help.
 
 The steps cross-reference the article sections that supply 
 detail or evidence.
-\Todo{When finished, put into .md file in our repo and provide the URL.}
 
 \begin{enumerate}
   \item Write a structured abstract, not a free-flowing one 
@@ -1340,13 +1360,16 @@ In the above extended form, however,
 (allowing \Sah{Gap} statements, 
 allowing \Sah{Design} sections, 
 allowing multiple \Sah{Methods and Results} sections) 
-structured abstracts promise better abstracts quality than a free-style format.
-Therefore, venues should require structured abstracts in this
+structured abstracts promise better abstracts quality than a free-style format
+because our results strongly suggest that a structured format is helpful for 
+completeness. Previous results show that it is also helpful for understandability.
+Therefore, venues should require structured abstracts in our new,
 engineering-ready format.
 
-For your call for papers, feel free to copy the above text and
-either remove the ``see Section'' cross references or
-point authors to this article for the underlying evidence.
+For your call for papers, feel free to copy the above text,
+point your readers to the online version
+\Todo{Put into .md file in our repo and provide the URL.},
+or point authors to this article for the underlying evidence.
 
 
 %========================================================================
