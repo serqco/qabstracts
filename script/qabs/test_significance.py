@@ -4,7 +4,7 @@ import numpy as np
 from scipy.stats import chi2_contingency
 
 # list of codes required in an abstract to be considered "complete"
-CODES_OF_COMPLETE_ABSTRACT = ['background', 'objective', 'method', 'result', 'conclusion']
+CODES_OF_COMPLETE_ABSTRACT = ['objective', 'method', 'result', 'conclusion']
 SIGNIFICANCE_LEVEL: float = 0.05
 
 def read_datafile(datafile: str) -> pd.DataFrame:
@@ -12,7 +12,7 @@ def read_datafile(datafile: str) -> pd.DataFrame:
     df = pd.read_csv(datafile, sep='\t', index_col=False)
     return df
 
-def is_complete(data: pd.DataFrame, abs_id: str) -> bool:
+def is_complete(data: pd.DataFrame, abs_id: str, coder_id: str) -> bool:
     """Determine, whether an abstract contains at least one instance of the following codes: background, objective, method, result, and conclusion.
 
     parameters:
@@ -24,12 +24,15 @@ def is_complete(data: pd.DataFrame, abs_id: str) -> bool:
         false -- otherwise
     """
     # obtain all codes associated with the given abstract
-    abstract_codes: list[str] = data[data['citekey'] == abs_id]['code'].values
+    abstract_codes: list[str] = data[(data['citekey'] == abs_id) & (data['coder'] == coder_id)]['topic'].values
 
     # determine whether all codes required for completeness are contained in the abstract
-    return all(code in abstract_codes for code in CODES_OF_COMPLETE_ABSTRACT)
+    abstract_contains_all: bool = all(code in abstract_codes for code in CODES_OF_COMPLETE_ABSTRACT)
+    abstract_contains_one: bool = ('background' in abstract_codes) or ('gap' in abstract_codes)
+    return abstract_contains_all and abstract_contains_one
+    
 
-def is_proper(data: pd.DataFrame, abs_id: str) -> bool:
+def is_proper(data: pd.DataFrame, abs_id: str, coder_id: str) -> bool:
     """Determine, whether an abstract is considered proper, i.e., is complete, contains no informativeness gap, no announcement, no undefined important term, and no ambiguous formulation 
 
     parameters:
@@ -41,10 +44,10 @@ def is_proper(data: pd.DataFrame, abs_id: str) -> bool:
         false -- otherwise
     """
     # obtain the subset of the data set representing the abstract
-    abstract = data[data['citekey'] == abs_id]
+    abstract = data[(data['citekey'] == abs_id) & (data['coder'] == coder_id)]
 
     # check whether the abstract is complete (criterion (1))
-    if not is_complete(abstract, abs_id):
+    if not is_complete(abstract, abs_id, coder_id):
         return False
     
     # sum the icount and ucount and check whether both are 0 (criteria (2) and (3))
@@ -62,10 +65,15 @@ def is_proper(data: pd.DataFrame, abs_id: str) -> bool:
     # check whether the abstract contains no ignorediff flag (criterion (5))
     if 'ignorediff' in abstract_codes:
         return False
+    
+    # check that none of the sentences has a fkscore below 20
+    #improper_sentences = abstract[abstract['fkscore'] < 20]
+    #if len(improper_sentences) > 0:
+    #    return False
 
     return True
 
-def is_structured(data: pd.DataFrame, abs_id: str) -> bool:
+def is_structured(data: pd.DataFrame, abs_id: str, coder_id: str) -> bool:
     """Determine, whether an abstract is considered structured 
 
     parameters:
@@ -77,7 +85,7 @@ def is_structured(data: pd.DataFrame, abs_id: str) -> bool:
         false -- otherwise
     """
     # obtain all codes associated with the given abstract
-    abstract_codes: list[str] = data[data['citekey'] == abs_id]['code'].values
+    abstract_codes: list[str] = data[(data['citekey'] == abs_id) & (data['coder'] == coder_id)]['code'].values
 
     # check for h- codes
     header_codes: list[str] = [code for code in abstract_codes if code.startswith('h-')]
@@ -94,16 +102,22 @@ def compile_data(df: pd.DataFrame) -> pd.DataFrame:
 
     # obtain a list of unique abstract IDs
     abs_ids: list = list(set(df['citekey']))
+    coder_ids: list = ['A', 'B']
     
     # for each abstract, determine whether it is structured, complete, and proper
     data: dict[dict] = {}
-    for abs_id in abs_ids:
-        complete: bool = is_complete(df, abs_id)
-        data[abs_id] = {
-            'structured': is_structured(df, abs_id),
-            'complete': complete,
-            'proper': (is_proper(df, abs_id) if complete else False)
-        }
+    for coder_id in coder_ids:
+        for abs_id in abs_ids:
+            structured: bool = is_structured(df, abs_id, coder_id)
+            complete: bool = is_complete(df, abs_id, coder_id)
+            proper: bool = (is_proper(df, abs_id, coder_id) if complete else False)
+
+            data[f'{abs_id}-{coder_id}'] = {
+                'structured': structured,
+                'complete': complete,
+                'proper': proper
+            }
+
     dfa: pd.DataFrame = pd.DataFrame.from_dict(data, 
                                                orient='index', 
                                                columns=['structured', 'complete', 'proper'])
@@ -119,11 +133,13 @@ def test_significance(dep_proper: bool=False) -> float:
 
     # load the data and compile (dfc) the required view
     df: pd.DataFrame = read_datafile('./results/abstracts-results.tsv')
+    #df['fkscore'] = pd.to_numeric(df['fkscore'])
     dfc: pd.DataFrame = compile_data(df)
     
     # count the occurrences of the dependent variable stratified by the independent variable "structured"
     dependent_variable: str = 'proper' if dep_proper else 'complete'
     contingency_table = pd.crosstab(dfc['structured'], dfc[dependent_variable])
+    print(contingency_table)
     _, p, _, _ = chi2_contingency(contingency_table)
     return p
 
@@ -131,6 +147,6 @@ if __name__ == '__main__':
     # for tryout during development
     p_complete = test_significance(dep_proper=False)
     print(f'The difference in abstract completeness is {"" if p_complete < SIGNIFICANCE_LEVEL else "not "}statistically significant (p = {p_complete:.4}) for structured vs. unstructured abstracts.')
-
-    p_proper = test_significance(dep_proper=True)
-    print(f'The difference in abstract properness is {"" if p_proper < SIGNIFICANCE_LEVEL else "not "}statistically significant (p = {p_proper:.4}) for structured vs. unstructured abstracts.')
+    
+    #p_proper = test_significance(dep_proper=True)
+    #print(f'The difference in abstract properness is {"" if p_proper < SIGNIFICANCE_LEVEL else "not "}statistically significant (p = {p_proper:.4}) for structured vs. unstructured abstracts.')
