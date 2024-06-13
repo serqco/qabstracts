@@ -61,16 +61,17 @@ def df_by_abstract(primary: pd.DataFrame) -> pd.DataFrame:
     def add_wordsfraction(result: pd.DataFrame, grouping, variable: str, x: str) -> pd.DataFrame:
         """Which percentage of the abstract's total number of words pertains to the <variable>-part with value x?"""
         py_x = x.replace('-', '_')  # make name usable as a python identifier
-        prefix = "code" if variable == 'code' else ""  # topicfractions: fraction_x, codefractions: codefraction_x
-        wordcountname = f'words_{py_x}{prefix}'
+        suffix = "code" if variable == 'code' else ""
+        _infix = "_code" if variable == 'code' else ""  # topicfractions: fraction_x, codefractions: fraction_code_x
+        wordcountname = f'words_{py_x}{suffix}'
         result = pd.merge(result, grouping.query(f"{variable}=='{x}'"), 'left', on=('citekey', 'coder'))
         result = result.rename(columns={f"{variable}words": wordcountname}, errors="raise")
-        result[f'{prefix}fraction_{py_x}'] = (100 * result[wordcountname] / result.words).fillna(0)
+        result[f'fraction{_infix}_{py_x}'] = (100 * result[wordcountname] / result.words).fillna(0)
         return result
     
     def has_code(codename: str) -> bool:
         codeid = codename.replace('-', '_')  # make name usable as a python identifier
-        return res[f"codefraction_{codeid}"] > 0
+        return res[f"fraction_code_{codeid}"] > 0  # see _infix in add_wordsfraction
 
     res = add_wordsfraction(res, topicparts, 'topic', 'background')
     res = add_wordsfraction(res, topicparts, 'topic', 'gap')
@@ -255,16 +256,16 @@ def ab_missinginfofractions_values(df: pd.DataFrame) -> pt.Subsets:
                   values=lambda dfr: dfr.icount >= 3),
         pt.Values(label="Ann. method",
                   x=3.0,
-                  values=lambda dfr: dfr.fraction_a_method),
+                  values=lambda dfr: dfr.fraction_code_a_method),
         pt.Values(label="Ann. result",
                   x=4.0,
-                  values=lambda dfr: dfr.fraction_a_result),
+                  values=lambda dfr: dfr.fraction_code_a_result),
         pt.Values(label="Ann. concl.",
                   x=5.0,
-                  values=lambda dfr: dfr.fraction_a_conclusion),
+                  values=lambda dfr: dfr.fraction_code_a_conclusion),
         pt.Values(label="Ann. poss.fut.res.",
                   x=6.0,
-                  values=lambda dfr: dfr.fraction_a_fposs),
+                  values=lambda dfr: dfr.fraction_code_a_fposs),
         pt.Values(label="Und.gap",
                   x=7.0,
                   values=lambda dfr: dfr.ucount),
