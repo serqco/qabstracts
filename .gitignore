@@ -1,6 +1,7 @@
 #--- our stuff:
 *~
 conclusions/
+img/*.pdf
 prestudy/pdf/
 prestudy/testdata.git
 results/
