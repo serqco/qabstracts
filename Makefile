@@ -21,6 +21,12 @@ export:
 pdf:
 	cd tex; latexmk -pdf -bibtex qabstracts-tse
 
+pdf-nonstop:
+	cd tex; latexmk -pdf -bibtex -interaction=nonstopmode qabstracts-tse
+
+pdf-cleanfiles:
+	cd tex; rm -f *.{aux,bbl,blg,fdb_latexmk,fls,log,out,pdf}
+
 plotall:
 	$(QABSTRACTS) plot --plotall --printall $(EXPORTFILE) img
 
