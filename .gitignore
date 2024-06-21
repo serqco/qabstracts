@@ -13,6 +13,7 @@ volumes/log/
 .RData
 .Rhistory
 .DS_Store
+*.bkp
 #*#
 
 *.aux
