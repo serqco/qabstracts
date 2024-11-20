@@ -1,0 +1,230 @@
+---
+title: Sanity Check
+output:
+    md_document:
+        variant: gfm
+        number_sections: true
+---
+
+This document summarizes a number of quality issues regarding the data processing and analysis.
+They were discovered while attempting to replace the hard-coded values in the `.tex` file with inline-expressions
+(Knitr's `\Sexpr{}`), which required identifying the relevant parts in the Python datasets.
+
+# Load Data and Run Python Statistics
+
+```{r}
+## This is R
+library(reticulate)
+# Use R's reticulate to load Python modules (import qabs.dataframes as dataframes)
+py$dataframes <- import_from_path("qabs.dataframes", path = ".")
+```
+
+```{python}
+## This is Python
+import pandas as pd
+
+# Load data
+datafile = "../results/abstracts-results.tsv"
+raw = pd.read_csv(datafile, sep='\t')
+
+# Perform the statistics
+datasets = dataframes.create_all_datasets(raw)
+dataframes.create_all_subsets(datasets)
+```
+
+```{r, message=FALSE}
+## This is R
+library(dplyr)
+library(tidyr)
+
+# Make Python variables available to R, so they can be used in the following document
+for (var in names(py)) {
+  assign(var, py[[var]], envir = .GlobalEnv)
+}
+
+raw <- raw |> as_tibble()
+```
+
+## Simple Statistics and A Glimpse into the Structure
+```{r}
+n_distinct(raw$citekey) # Number of Abstracts
+raw |> head(1) |> t()
+datasets$by_abstract |> head(1) |> t()
+```
+
+# Issues that cause wrong numbers
+
+## Problem: Unclear calculation of `ignorediffs`
+There appears to be some issue with the calculation of the `ignorediffs` column.
+
+**Example:** `AtaMasHem22` has 2 sentences which Lutz annotated with `-ignorediff`.
+In the Python dataset, however, the numbers 4 (for Lutz) and 2 (for Lloyd) show up.
+```{r}
+raw |> filter(citekey == 'AtaMasHem22', code == 'ignorediff') |>
+    select(citekey, coder, codername, sidx, words, code)
+datasets$by_abstract |> filter(`_citekey` == 'AtaMasHem22') |>
+    select(`_citekey`, `_coder`, codername, ignorediffs)
+```
+
+I have no idea what might cause this.
+
+## Problem: Different Word Counts
+Several abstracts differ in their word count.
+```{r}
+datasets$by_abstract |>
+    filter(min(words) != max(words) | min(sentences) != max(sentences), .by = `_citekey`) |>
+    select(`_citekey`,  `_coder`, words, sentences) |>
+    pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = c(words, sentences))
+```
+It appears as if the coders' comments below the `---` are counted as well.
+
+## Problem: Different `fkscore`s
+A few abstracts have different `fkscore`s:
+```{r}
+datasets$by_abstract |>
+    filter(min(fkscore) < max(fkscore), .by = `_citekey`) |>
+    select(`_citekey`,  `_coder`, fkscore) |>
+    pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = fkscore, names_prefix = "fkscore_")
+```
+I have no idea what might cause this.
+
+## Problem: Calculation of `fkscore` ignores multi-codings
+Example: `XueZhoLuo22` has a double-coded sentence:
+```{r}
+raw |> filter(citekey == "XueZhoLuo22", coder == "A") |> select(citekey, coder, sidx, code, fkscore)
+```
+
+In the calculation datasets, its overall `fkscore` is given as:
+```{r}
+datasets$by_abstract |> filter(`_citekey` == "XueZhoLuo22", `_coder` == "A") |> select(`_citekey`, fkscore)
+```
+
+... which is the same as the average from the raw data:
+```{r}
+raw |> filter(citekey == "XueZhoLuo22", coder == "A") |> summarize(fkscore = mean(fkscore))
+```
+
+But sentence 5 is counted _twice_ (because of the double-coding), so it should actually be:
+```{r}
+raw |> filter(citekey == "XueZhoLuo22", coder == "A") |>
+    slice(1, .by = sidx) |>
+    summarize(fkscore = mean(fkscore))
+```
+
+I did not check where in the code the abstract-level calculation is done.
+
+
+## Problem: Improper Calculation of Fresch-Kincaid
+Consider the first four sentences of `CheHuWei22`:
+
+```
+Source code summarization is a crucial yet far from settled task for describing structured code
+snippets in natural language.
+High-quality code summaries could effectively facilitate program comprehension
+and software maintenance.
+A good code summary is supposed to have the following characteristics:
+complete
+information, correct meaning, and consistent description.
+```
+
+Calculating the FRES for each sentence individually (setting _total sentences := 1_) and calculating the average gives:
+
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/bd4916e193d2f96fa3b74ee258aaa6fe242e110e)
+
+```{r}
+example <- raw |> filter(citekey == "CheHuWei22", coder == "A", sidx >= 2, sidx <= 5) |>
+    select(words, syllables, fkscore) |> # Note: requires "syllables" column in raw data!
+    mutate(words = words + 1) |> # Fixing the word count -- see next problem!
+    mutate(fres = 206.835 - 1.015 * words / 1 - 84.6 * (syllables / words))
+example
+mean(example$fres)
+```
+
+But using the formula properly and taking all sentences into account,
+the overall score is:
+
+```{r}
+example |>
+    summarize(fres = 206.835 - 1.015 * (sum(words) / n()) - 84.6 * (sum(syllables) / sum(words)))
+```
+
+The aggregation of sentence-level `fkscores` should not be done through 
+
+## Problem: Improper Word Count
+Sentence ID 8 from `LiuLiFu22` (including its annotation) looks like this:
+
+```
+Experimen-
+tal results on java methods show that our model can outperform
+the state-of-the-art results by a large margin on method name sug-
+gestion, demonstrating the effectiveness of our proposed model.
+{{a-method,result:i1,conclusion}}
+```
+
+The logic in `qscript/annotations.py` calculates the following values:
+
+- words: 31
+- syllables: 58
+- chars: 204
+
+The export logic in `qabs/export.py` however, creates the following three entries:
+
+```{r}
+raw |> filter(citekey == "LiuLiFu22", coder == "B", sidx == 8) |>
+    select(citekey, sidx, words, chars, syllables, code, suffixes, topic)
+```
+
+We can see the following problems:
+
+- Word count was 31, but turned into 15 (three times):
+  - The overall word count is _always_ reduced by one (https://github.com/serqco/qabstracts/blob/main@%7B2024-11-20%7D/script/qabs/export.py#L89)
+  - The word count (30) is then split into _two_, even though there are _three_ codes (https://github.com/serqco/qabstracts/blob/main@%7B2024-11-20%7D/script/qabs/export.py#L93)
+- Char count was 204, but turned into 97 (three times):
+  - The overall char count is _always_ reduced by 10 (https://github.com/serqco/qabstracts/blob/main@%7B2024-11-20%7D/script/qabs/export.py#L90)
+  - The char count (194) is then split into _two_, instead of _three_ (https://github.com/serqco/qabstracts/blob/main@%7B2024-11-20%7D/script/qabs/export.py#L94)
+
+I don't know why the export logic was setup this way, but it makes all number-based analyses pretty weird.
+
+
+# Issues related to Double Coding of Abstracts
+The following issues do not lead to _wrong_ number per se, but to questionable ones.
+
+## I-Gaps and U-Gaps
+Each abstract has two `icount` and `ucount` values, which are often not the same:
+
+```{r}
+datasets$by_abstract |>
+    filter(min(icount) != max(icount) | min(ucount) != max(ucount), .by = `_citekey`) |>
+    select(`_citekey`, `_coder`, icount, ucount) |>
+    pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = c(icount, ucount))
+```
+
+A naive computation of ratios of abstracts with either type of gap ignores this (this is what appears
+to be happening for the plots, e.g., Figure 10 in the paper, with the red bar around 55%):
+
+```{r}
+sum(datasets$by_abstract$icount >= 1) / nrow(datasets$by_abstract) * 100
+```
+
+A better computation would to take the two rating into account,
+requiring that both coders saw a gap (`i_min`), at least one saw a gap (`i_max`),
+or they saw at least one gap on average (`i_mean`, e.g., 0 and 2 gaps, respectively).
+This leads to different percentages:
+
+```{r}
+datasets$by_abstract |>
+    group_by(`_citekey`) |>
+    summarize(i_min = min(icount), i_mean = mean(icount), i_max = max(icount)) |>
+    summarize(across(c(i_min, i_mean, i_max), ~sum(. >= 1) / n() * 100)) |>
+    t()
+```
+
+## Completeness and Properness
+There are a number of paper for which the coders disagree whether they are _complete_ or disagree whether they are _proper_.
+
+```{r}
+datasets$by_abstract |>
+    filter(sum(is_complete) == 1 | sum(is_proper) == 1, .by = `_citekey`) |>
+    select(`_citekey`, `_coder`, is_complete, is_proper) |>
+    pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = c(is_complete, is_proper))
+```
