@@ -42,7 +42,13 @@ raw <- raw |> as_tibble()
 ## 1.1 Simple Statistics and A Glimpse into the Structure
 
 ``` r
-n_distinct(raw$citekey) # Number of Abstracts
+(n_abstracts_raw <- n_distinct(raw$citekey))
+```
+
+    ## [1] 362
+
+``` r
+(n_abstracts_py  <- n_distinct(datasets$by_abstract$`_citekey`))
 ```
 
     ## [1] 362
@@ -58,8 +64,8 @@ raw |> head(1) |> t()
     ## coder     "B"          
     ## codername "Franz"      
     ## sidx      "2"          
-    ## words     "10"         
-    ## chars     "84"         
+    ## words     "11"         
+    ## chars     "94"         
     ## syllables "28"         
     ## fkscore   "-19.7"      
     ## code      "background" 
@@ -69,7 +75,7 @@ raw |> head(1) |> t()
     ## ucount    "0"
 
 ``` r
-datasets$by_abstract |> head(1) |> t()
+datasets$by_abstract_coding |> head(1) |> t()
 ```
 
     ##                             1            
@@ -79,10 +85,10 @@ datasets$by_abstract |> head(1) |> t()
     ## volume                      "TSE22"      
     ## codername                   "Lutz"       
     ## sentences                   "11"         
-    ## words                       "300"        
-    ## chars                       "1973"       
+    ## words                       "284"        
+    ## chars                       "1901"       
+    ## syllables                   "520"        
     ## ignorediffs                 "0"          
-    ## fkscore                     "22.64167"   
     ## codes                       "12"         
     ## utopics                     "6"          
     ## icount                      "1"          
@@ -90,38 +96,39 @@ datasets$by_abstract |> head(1) |> t()
     ## announcecount               "0"          
     ## is_struc                    "FALSE"      
     ## is_design                   "FALSE"      
-    ## words_background            "76"         
-    ## fraction_background         "25.33333"   
-    ## words_gap                   "27"         
-    ## fraction_gap                "9"          
-    ## words_objective             "49"         
-    ## fraction_objective          "16.33333"   
+    ## fkscore                     "27.91192"   
+    ## words_background            "65"         
+    ## fraction_background         "22.88732"   
+    ## words_gap                   "14"         
+    ## fraction_gap                "4.929577"   
+    ## words_objective             "51"         
+    ## fraction_objective          "17.95775"   
     ## words_design                NA           
     ## fraction_design             "0"          
-    ## words_method                "44"         
-    ## fraction_method             "14.66667"   
-    ## words_result                "88"         
-    ## fraction_result             "29.33333"   
+    ## words_method                "45"         
+    ## fraction_method             "15.84507"   
+    ## words_result                "92"         
+    ## fraction_result             "32.39437"   
     ## words_summary               NA           
     ## fraction_summary            "0"          
-    ## words_conclusion            "16"         
-    ## fraction_conclusion         "5.333333"   
+    ## words_conclusion            "17"         
+    ## fraction_conclusion         "5.985915"   
     ## words_Outlook               NA           
     ## fraction_Outlook            "0"          
     ## words_other                 NA           
     ## fraction_other              "0"          
-    ## words_backgroundcode        "76"         
-    ## fraction_code_background    "25.33333"   
-    ## words_gapcode               "27"         
-    ## fraction_code_gap           "9"          
-    ## words_objectivecode         "49"         
-    ## fraction_code_objective     "16.33333"   
-    ## words_methodcode            "44"         
-    ## fraction_code_method        "14.66667"   
-    ## words_resultcode            "88"         
-    ## fraction_code_result        "29.33333"   
-    ## words_conclusioncode        "16"         
-    ## fraction_code_conclusion    "5.333333"   
+    ## words_backgroundcode        "65"         
+    ## fraction_code_background    "22.88732"   
+    ## words_gapcode               "14"         
+    ## fraction_code_gap           "4.929577"   
+    ## words_objectivecode         "51"         
+    ## fraction_code_objective     "17.95775"   
+    ## words_methodcode            "45"         
+    ## fraction_code_method        "15.84507"   
+    ## words_resultcode            "92"         
+    ## fraction_code_result        "32.39437"   
+    ## words_conclusioncode        "17"         
+    ## fraction_code_conclusion    "5.985915"   
     ## words_a_methodcode          NA           
     ## fraction_code_a_method      "0"          
     ## words_a_resultcode          NA           
@@ -130,13 +137,55 @@ datasets$by_abstract |> head(1) |> t()
     ## fraction_code_a_conclusion  "0"          
     ## words_a_fposscode           NA           
     ## fraction_code_a_fposs       "0"          
-    ## fraction_introduction       "34.33333"   
+    ## fraction_introduction       "27.8169"    
     ## fraction_conclusion_longbg  NA           
     ## fraction_conclusion_shortbg NA           
-    ## avg_wordlength              "5.376667"   
+    ## avg_wordlength              "5.493662"   
     ## total_gaps                  "3"          
     ## is_complete                 "TRUE"       
     ## is_proper                   "FALSE"
+
+``` r
+datasets$by_abstract |> head(1) |> t()
+```
+
+    ##                             AbdBadCos22  
+    ## _citekey                    "AbdBadCos22"
+    ## venue                       "TSE"        
+    ## volume                      "TSE22"      
+    ## sentences                   "11"         
+    ## words                       "284"        
+    ## chars                       "1901"       
+    ## syllables                   "520"        
+    ## fkscore                     "27.91192"   
+    ## avg_wordlength              "5.493662"   
+    ## ignorediffs                 "0"          
+    ## codes                       "12"         
+    ## utopics                     "6"          
+    ## icount                      "0"          
+    ## ucount                      "0"          
+    ## total_gaps                  "3"          
+    ## announcecount               "0"          
+    ## fraction_introduction       "27.8169"    
+    ## fraction_background         "22.88732"   
+    ## fraction_gap                "4.929577"   
+    ## fraction_objective          "17.95775"   
+    ## fraction_design             "0"          
+    ## fraction_method             "15.84507"   
+    ## fraction_result             "32.39437"   
+    ## fraction_Outlook            "0"          
+    ## fraction_conclusion         "5.985915"   
+    ## fraction_other              "0"          
+    ## fraction_code_a_method      "0"          
+    ## fraction_code_a_result      "0"          
+    ## fraction_code_a_conclusion  "0"          
+    ## fraction_code_a_fposs       "0"          
+    ## fraction_conclusion_shortbg NA           
+    ## fraction_conclusion_longbg  NA           
+    ## is_struc                    "FALSE"      
+    ## is_design                   "FALSE"      
+    ## is_complete                 "TRUE"       
+    ## is_proper                   "TRUE"
 
 # 2 Issues that cause wrong numbers
 
@@ -159,21 +208,21 @@ raw |> filter(citekey == "AtaMasHem22") |>
     ## # A tibble: 6 × 6
     ##   citekey     coder codername  sidx words code      
     ##   <chr>       <chr> <chr>     <dbl> <dbl> <chr>     
-    ## 1 AtaMasHem22 B     Lloyd         5    28 background
-    ## 2 AtaMasHem22 B     Lloyd         6    14 background
-    ## 3 AtaMasHem22 A     Lutz          5    29 ignorediff
-    ## 4 AtaMasHem22 A     Lutz          5    27 design    
-    ## 5 AtaMasHem22 A     Lutz          6    15 ignorediff
-    ## 6 AtaMasHem22 A     Lutz          6    13 design
+    ## 1 AtaMasHem22 B     Lloyd         5    29 background
+    ## 2 AtaMasHem22 B     Lloyd         6    15 background
+    ## 3 AtaMasHem22 A     Lutz          5   NaN ignorediff
+    ## 4 AtaMasHem22 A     Lutz          5    29 design    
+    ## 5 AtaMasHem22 A     Lutz          6   NaN ignorediff
+    ## 6 AtaMasHem22 A     Lutz          6    15 design
 
 ``` r
-datasets$by_abstract |>
+datasets$by_abstract_coding |>
     filter(`_citekey` == 'AtaMasHem22') |>
     select(`_citekey`, `_coder`, codername, ignorediffs)
 ```
 
     ##      _citekey _coder codername ignorediffs
-    ## 1 AtaMasHem22      A      Lutz           4
+    ## 1 AtaMasHem22      A      Lutz           2
     ## 2 AtaMasHem22      B     Lloyd           2
 
 It looks the the number of codes each coder assigned to problematic
@@ -184,26 +233,16 @@ sentences is summed up. This count is way too much!
 Several abstracts differ in their word count.
 
 ``` r
-datasets$by_abstract |>
+datasets$by_abstract_coding |>
     filter(min(words) != max(words) | min(sentences) != max(sentences), .by = `_citekey`) |>
     select(`_citekey`,  `_coder`, words, sentences) |>
     pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = c(words, sentences))
 ```
 
-    ## # A tibble: 36 × 5
-    ##    `_citekey`  words_A words_B sentences_A sentences_B
-    ##    <chr>         <dbl>   <dbl>       <dbl>       <dbl>
-    ##  1 AtaMasHem22     378     336          11          11
-    ##  2 BöhSzeMet22     197     172           7           7
-    ##  3 CajLárGei22     278     263          20          20
-    ##  4 CheJinZho22     350     293          15          15
-    ##  5 ChoGueSil22     153     139          11          11
-    ##  6 CopAlé22        250     236          17          17
-    ##  7 EbrTusMah22     208     227          11          11
-    ##  8 FahGruBey22     329     316          19          19
-    ##  9 FouConMen22     214     239           8           8
-    ## 10 HarThuLo22      266     252          14          14
-    ## # ℹ 26 more rows
+    ## # A tibble: 1 × 5
+    ##   `_citekey` words_A words_B sentences_A sentences_B
+    ##   <chr>        <dbl>   <dbl>       <dbl>       <dbl>
+    ## 1 YanXiaLo22    137.     137           5           5
 
 Looking at a concrete example:
 
@@ -222,27 +261,27 @@ raw |> filter(citekey == "AtaMasHem22") |>
     ## # A tibble: 11 × 6
     ##    citekey      sidx words_B words_A codes_B        codes_A           
     ##    <chr>       <dbl>   <dbl>   <dbl> <chr>          <chr>             
-    ##  1 AtaMasHem22     1      23      23 background     background        
-    ##  2 AtaMasHem22     2      11      11 gap            gap               
-    ##  3 AtaMasHem22     3      18      18 objective      objective         
-    ##  4 AtaMasHem22     4      22      22 background     background        
-    ##  5 AtaMasHem22     5      28      29 background     ignorediff, design
-    ##  6 AtaMasHem22     6      14      15 background     ignorediff, design
-    ##  7 AtaMasHem22     7      17      17 background     background        
-    ##  8 AtaMasHem22     8      38      38 design         design            
-    ##  9 AtaMasHem22     9      35      35 a-design       a-design          
-    ## 10 AtaMasHem22    10      39      39 method, result method, result    
-    ## 11 AtaMasHem22    11      52      52 result         result
+    ##  1 AtaMasHem22     1      24      24 background     background        
+    ##  2 AtaMasHem22     2      12      12 gap            gap               
+    ##  3 AtaMasHem22     3      19      19 objective      objective         
+    ##  4 AtaMasHem22     4      23      23 background     background        
+    ##  5 AtaMasHem22     5      29     NaN background     ignorediff, design
+    ##  6 AtaMasHem22     6      15     NaN background     ignorediff, design
+    ##  7 AtaMasHem22     7      18      18 background     background        
+    ##  8 AtaMasHem22     8      39      39 design         design            
+    ##  9 AtaMasHem22     9      36      36 a-design       a-design          
+    ## 10 AtaMasHem22    10      20      20 method, result method, result    
+    ## 11 AtaMasHem22    11      53      53 result         result
 
 ``` r
-datasets$by_abstract |>
+datasets$by_abstract_coding |>
     filter(`_citekey` == 'AtaMasHem22') |>
     select(`_citekey`, `_coder`, words, sentences)
 ```
 
     ##      _citekey _coder words sentences
-    ## 1 AtaMasHem22      A   378        11
-    ## 2 AtaMasHem22      B   336        11
+    ## 1 AtaMasHem22      A   308        11
+    ## 2 AtaMasHem22      B   308        11
 
 Reading from the actual abstract, the word counts are different, for
 sentence 5:
@@ -284,7 +323,7 @@ See also the word-count problem below.
 A few abstracts have different `fkscore`s:
 
 ``` r
-datasets$by_abstract |>
+datasets$by_abstract_coding |>
     filter(min(fkscore) < max(fkscore), .by = `_citekey`) |>
     select(`_citekey`,  `_coder`, fkscore) |>
     pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = fkscore, names_prefix = "fkscore_")
@@ -293,11 +332,11 @@ datasets$by_abstract |>
     ## # A tibble: 5 × 3
     ##   `_citekey`  fkscore_A fkscore_B
     ##   <chr>           <dbl>     <dbl>
-    ## 1 CasZamNov22     22.8      21.6 
-    ## 2 GonRajHas22     24.9      20.1 
-    ## 3 Liu22          -11.0     -10.3 
-    ## 4 WalGhaAla22      8.25      9.06
-    ## 5 YanXiaLo22      32.5      31.2
+    ## 1 CasZamNov22     24.6      26.9 
+    ## 2 GonRajHas22     21.3      24.6 
+    ## 3 Liu22           -3.57     -2.36
+    ## 4 WalGhaAla22     17.3      18.7 
+    ## 5 YanXiaLo22      38.7      36.3
 
 I have no idea what might cause this.
 
@@ -323,11 +362,11 @@ raw |> filter(citekey == "XueZhoLuo22", coder == "A") |> select(citekey, coder, 
 In the calculation datasets, its overall `fkscore` is given as:
 
 ``` r
-datasets$by_abstract |> filter(`_citekey` == "XueZhoLuo22", `_coder` == "A") |> select(`_citekey`, fkscore)
+datasets$by_abstract_coding |> filter(`_citekey` == "XueZhoLuo22", `_coder` == "A") |> select(`_citekey`, fkscore)
 ```
 
     ##      _citekey  fkscore
-    ## 1 XueZhoLuo22 15.97143
+    ## 1 XueZhoLuo22 17.88986
 
 … which is the same as the average from the raw data:
 
@@ -383,18 +422,18 @@ example
 ```
 
     ## # A tibble: 4 × 4
-    ##   words syllables fkscore   fres
-    ##   <dbl>     <dbl>   <dbl>  <dbl>
-    ## 1    19        34    36.2  36.2 
-    ## 2    11        31   -42.7 -42.7 
-    ## 3    11        21    34.2  34.2 
-    ## 4     7        17    -5.7  -5.73
+    ##   words syllables fkscore  fres
+    ##   <dbl>     <dbl>   <dbl> <dbl>
+    ## 1    20        34    36.2  42.7
+    ## 2    12        31   -42.7 -23.9
+    ## 3    12        21    34.2  46.6
+    ## 4     8        17    -5.7  18.9
 
 ``` r
 mean(example$fres)
 ```
 
-    ## [1] 5.461528
+    ## [1] 21.09125
 
 But using the formula properly and taking all sentences into account,
 the overall score is:
@@ -407,7 +446,7 @@ example |>
     ## # A tibble: 1 × 1
     ##    fres
     ##   <dbl>
-    ## 1  13.1
+    ## 1  26.1
 
 The aggregation of sentence-level `fkscores` should not be done through
 
@@ -439,9 +478,9 @@ raw |> filter(citekey == "LiuLiFu22", coder == "B", sidx == 8) |>
     ## # A tibble: 3 × 8
     ##   citekey    sidx words chars syllables code       suffixes topic     
     ##   <chr>     <dbl> <dbl> <dbl>     <dbl> <chr>      <chr>    <chr>     
-    ## 1 LiuLiFu22     8    15    97        58 a-method   <NA>     method    
-    ## 2 LiuLiFu22     8    15    97        58 conclusion <NA>     conclusion
-    ## 3 LiuLiFu22     8    15    97        58 result     :i1      result
+    ## 1 LiuLiFu22     8  10.3    68      19.3 a-method   <NA>     method    
+    ## 2 LiuLiFu22     8  10.3    68      19.3 result     :i1      result    
+    ## 3 LiuLiFu22     8  10.3    68      19.3 conclusion <NA>     conclusion
 
 We can see the following problems:
 
@@ -471,7 +510,7 @@ Each abstract has two `icount` and `ucount` values, which are often not
 the same:
 
 ``` r
-datasets$by_abstract |>
+datasets$by_abstract_coding |>
     filter(min(icount) != max(icount) | min(ucount) != max(ucount), .by = `_citekey`) |>
     select(`_citekey`, `_coder`, icount, ucount) |>
     pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = c(icount, ucount))
@@ -500,7 +539,7 @@ Figure 10 in the paper, with the red bar around 55%):
 sum(datasets$by_abstract$icount >= 1) / nrow(datasets$by_abstract) * 100
 ```
 
-    ## [1] 55.1105
+    ## [1] 43.92265
 
 A better computation would to take the two rating into account,
 requiring that both coders saw a gap (`i_min`), at least one saw a gap
@@ -508,7 +547,7 @@ requiring that both coders saw a gap (`i_min`), at least one saw a gap
 and 2 gaps, respectively). This leads to different percentages:
 
 ``` r
-datasets$by_abstract |>
+datasets$by_abstract_coding |>
     group_by(`_citekey`) |>
     summarize(i_min = min(icount), i_mean = mean(icount), i_max = max(icount)) |>
     summarize(across(c(i_min, i_mean, i_max), ~sum(. >= 1) / n() * 100)) |>
@@ -526,25 +565,28 @@ There are a number of paper for which the coders disagree whether they
 are *complete* or disagree whether they are *proper*.
 
 ``` r
-datasets$by_abstract |>
+datasets$by_abstract_coding |>
     filter(sum(is_complete) == 1 | sum(is_proper) == 1, .by = `_citekey`) |>
     select(`_citekey`, `_coder`, is_complete, is_proper) |>
     pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = c(is_complete, is_proper))
 ```
 
-    ## # A tibble: 13 × 5
+    ## # A tibble: 16 × 5
     ##    `_citekey`  is_complete_A is_complete_B is_proper_A is_proper_B
     ##    <chr>       <lgl>         <lgl>         <lgl>       <lgl>      
     ##  1 AbdBadCos22 TRUE          TRUE          FALSE       TRUE       
     ##  2 AmnPoe22    TRUE          TRUE          FALSE       TRUE       
     ##  3 BaiJiaCap22 TRUE          TRUE          FALSE       TRUE       
-    ##  4 FahGruBey22 FALSE         TRUE          FALSE       FALSE      
-    ##  5 GerMarLat22 TRUE          TRUE          TRUE        FALSE      
-    ##  6 HeMenChe22  TRUE          TRUE          FALSE       TRUE       
-    ##  7 HuCheWan22  TRUE          FALSE         FALSE       FALSE      
-    ##  8 HuaWeiWan22 TRUE          FALSE         FALSE       FALSE      
-    ##  9 OliAssGar22 TRUE          TRUE          TRUE        FALSE      
-    ## 10 TanFeiAvg22 TRUE          TRUE          TRUE        FALSE      
-    ## 11 ValHunFig22 TRUE          FALSE         FALSE       FALSE      
-    ## 12 WuSheChe22  TRUE          TRUE          FALSE       TRUE       
-    ## 13 YuKeuXia22  TRUE          TRUE          FALSE       TRUE
+    ##  4 BarDuDav22  TRUE          TRUE          TRUE        FALSE      
+    ##  5 CorRweFra22 TRUE          TRUE          FALSE       TRUE       
+    ##  6 FahGruBey22 FALSE         TRUE          FALSE       FALSE      
+    ##  7 GerMarLat22 TRUE          TRUE          TRUE        FALSE      
+    ##  8 HeMenChe22  TRUE          TRUE          FALSE       TRUE       
+    ##  9 HuCheWan22  TRUE          FALSE         FALSE       FALSE      
+    ## 10 HuaWeiWan22 TRUE          FALSE         FALSE       FALSE      
+    ## 11 LinWilHal22 TRUE          TRUE          FALSE       TRUE       
+    ## 12 OliAssGar22 TRUE          TRUE          TRUE        FALSE      
+    ## 13 TanFeiAvg22 TRUE          TRUE          TRUE        FALSE      
+    ## 14 ValHunFig22 TRUE          FALSE         FALSE       FALSE      
+    ## 15 WuSheChe22  TRUE          TRUE          FALSE       TRUE       
+    ## 16 YuKeuXia22  TRUE          TRUE          FALSE       TRUE

@@ -47,8 +47,13 @@ raw <- raw |> as_tibble()
 
 ## Simple Statistics and A Glimpse into the Structure
 ```{r}
-n_distinct(raw$citekey) # Number of Abstracts
+(n_abstracts_raw <- n_distinct(raw$citekey))
+(n_abstracts_py  <- n_distinct(datasets$by_abstract$`_citekey`))
+```
+
+```{r}
 raw |> head(1) |> t()
+datasets$by_abstract_coding |> head(1) |> t()
 datasets$by_abstract |> head(1) |> t()
 ```
 
@@ -64,7 +69,7 @@ raw |> filter(citekey == "AtaMasHem22") |>
     filter("ignorediff" %in% code, .by = sidx) |>
     select(citekey, coder, codername, sidx, words, code) |>
     arrange(codername, sidx)
-datasets$by_abstract |>
+datasets$by_abstract_coding |>
     filter(`_citekey` == 'AtaMasHem22') |>
     select(`_citekey`, `_coder`, codername, ignorediffs)
 ```
@@ -75,7 +80,7 @@ This count is way too much!
 ## Problem: Different Word Counts
 Several abstracts differ in their word count.
 ```{r}
-datasets$by_abstract |>
+datasets$by_abstract_coding |>
     filter(min(words) != max(words) | min(sentences) != max(sentences), .by = `_citekey`) |>
     select(`_citekey`,  `_coder`, words, sentences) |>
     pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = c(words, sentences))
@@ -92,7 +97,7 @@ raw |> filter(citekey == "AtaMasHem22") |>
         .by = c(coder, sidx)
     ) |>
     pivot_wider(id_cols = c(citekey, sidx), names_from = coder, values_from = c(words, codes))
-datasets$by_abstract |>
+datasets$by_abstract_coding |>
     filter(`_citekey` == 'AtaMasHem22') |>
     select(`_citekey`, `_coder`, words, sentences)
 ```
@@ -119,7 +124,7 @@ See also the word-count problem below.
 ## Problem: Different `fkscore`s
 A few abstracts have different `fkscore`s:
 ```{r}
-datasets$by_abstract |>
+datasets$by_abstract_coding |>
     filter(min(fkscore) < max(fkscore), .by = `_citekey`) |>
     select(`_citekey`,  `_coder`, fkscore) |>
     pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = fkscore, names_prefix = "fkscore_")
@@ -134,7 +139,7 @@ raw |> filter(citekey == "XueZhoLuo22", coder == "A") |> select(citekey, coder, 
 
 In the calculation datasets, its overall `fkscore` is given as:
 ```{r}
-datasets$by_abstract |> filter(`_citekey` == "XueZhoLuo22", `_coder` == "A") |> select(`_citekey`, fkscore)
+datasets$by_abstract_coding |> filter(`_citekey` == "XueZhoLuo22", `_coder` == "A") |> select(`_citekey`, fkscore)
 ```
 
 ... which is the same as the average from the raw data:
@@ -231,7 +236,7 @@ The following issues do not lead to _wrong_ number per se, but to questionable o
 Each abstract has two `icount` and `ucount` values, which are often not the same:
 
 ```{r}
-datasets$by_abstract |>
+datasets$by_abstract_coding |>
     filter(min(icount) != max(icount) | min(ucount) != max(ucount), .by = `_citekey`) |>
     select(`_citekey`, `_coder`, icount, ucount) |>
     pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = c(icount, ucount))
@@ -250,7 +255,7 @@ or they saw at least one gap on average (`i_mean`, e.g., 0 and 2 gaps, respectiv
 This leads to different percentages:
 
 ```{r}
-datasets$by_abstract |>
+datasets$by_abstract_coding |>
     group_by(`_citekey`) |>
     summarize(i_min = min(icount), i_mean = mean(icount), i_max = max(icount)) |>
     summarize(across(c(i_min, i_mean, i_max), ~sum(. >= 1) / n() * 100)) |>
@@ -261,7 +266,7 @@ datasets$by_abstract |>
 There are a number of paper for which the coders disagree whether they are _complete_ or disagree whether they are _proper_.
 
 ```{r}
-datasets$by_abstract |>
+datasets$by_abstract_coding |>
     filter(sum(is_complete) == 1 | sum(is_proper) == 1, .by = `_citekey`) |>
     select(`_citekey`, `_coder`, is_complete, is_proper) |>
     pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = c(is_complete, is_proper))
