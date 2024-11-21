@@ -228,17 +228,11 @@ datasets$by_abstract_coding |>
     pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = c(icount, ucount))
 ```
 
-A naive computation of ratios of abstracts with either type of gap ignores this (this is what appears
-to be happening for the plots, e.g., Figure 10 in the paper, with the red bar around 55%):
-
-```{r}
-sum(datasets$by_abstract$icount >= 1) / nrow(datasets$by_abstract) * 100
-```
-
-A better computation would to take the two rating into account,
-requiring that both coders saw a gap (`i_min`), at least one saw a gap (`i_max`),
-or they saw at least one gap on average (`i_mean`, e.g., 0 and 2 gaps, respectively).
-This leads to different percentages:
+When aggregating from individual codings to a single value for each abstract,
+we need to make a decision on how to count gaps:
+Do we require that both coders saw an i-gap (`i_min`), at least one saw an i-gap (`i_max`),
+or they saw at least one i-gap on average (`i_mean`, e.g., 0 and 2+ gaps, respectively).
+Each leads to quite different percentages of abstracts with one or more i-gaps:
 
 ```{r}
 datasets$by_abstract_coding |>
@@ -248,12 +242,73 @@ datasets$by_abstract_coding |>
     t()
 ```
 
-## Completeness and Properness
-There are a number of paper for which the coders disagree whether they are _complete_ or disagree whether they are _proper_.
+The same question arises for u-gaps as well (again, percentages of abstracts with one or more such gaps):
 
 ```{r}
 datasets$by_abstract_coding |>
-    filter(sum(is_complete) == 1 | sum(is_proper) == 1, .by = `_citekey`) |>
-    select(`_citekey`, `_coder`, is_complete, is_proper) |>
-    pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = c(is_complete, is_proper))
+    group_by(`_citekey`) |>
+    summarize(u_min = min(ucount), u_mean = mean(ucount), u_max = max(ucount)) |>
+    summarize(across(c(u_min, u_mean, u_max), ~sum(. >= 1) / n() * 100)) |>
+    t()
+```
+
+## Completeness and Properness
+
+Whether or not an abstract is _complete_ can be judged differently between the two coders
+(if they don't agree on critical elements):
+
+```{r}
+datasets$by_abstract_coding |>
+    filter(sum(is_complete) == 1, .by = `_citekey`) |>
+    select(`_citekey`, `_coder`, is_complete) |>
+    pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = is_complete, names_prefix = "is_complete_")
+```
+
+There are two alternatives for how to combine the individual _completeness_ values: `AND` and `OR`.
+The percentage of _complete_ abstracts varies slightly:
+
+```{r}
+datasets$by_abstract_coding |>
+    group_by(`_citekey`) |>
+    summarize(c_and = all(is_complete), c_or = any(is_complete)) |>
+    summarize(across(c(c_and, c_or), ~sum(.) / n() * 100)) |>
+    t()
+```
+
+The number of _proper_ abstracts is more difficult to conceptualize.
+
+Example: Consider an abstract where coder A saw one i-gap (`icount=1`) and coder B saw one u-gap (`ucount=1`).
+Such an abstract would not be _proper_ for either of them.
+No matter how we combine their _properness_ values (`AND` or `OR`), the abstract will not be counted as _proper_.
+If, however, we decide to take the `min` or `mean` approach for combining A's and B's `icount` and `ucount` values,
+the abstract will have less than 1 `icount` and less than 1 `ucount` -- and thus qualify for being _proper_.
+_Whoops!_
+
+Luckily, this appears to be a theoretical issue.
+We cannot frankenstein a _proper_ abstract of any two non-proper A and B codings:
+```{r}
+datasets$by_abstract_coding |>
+    group_by(`_citekey`) |>
+    summarize( # combine A and B in best possible way
+        is_complete = any(is_complete),
+        fkscore = max(fkscore),
+        icount = min(icount),
+        announcecount = min(announcecount),
+        ucount = min(ucount),
+        ignorediffs = min(ignorediffs),
+        is_proper_none = !any(is_proper),
+        is_proper_hypo = is_complete & fkscore >= 20 & announcecount == 0 & icount == 0 & ucount == 0 & ignorediffs == 0
+    ) |>
+    filter(is_proper_none & is_proper_hypo)    
+```
+
+We can therefore disregard this issue and just focus on combining the two `is_proper` values with either `AND` or `OR`.
+We get the following percentages for _proper_ abstracts, depending on how we combine A and B codings:
+
+```{r}
+datasets$by_abstract_coding |>
+    group_by(`_citekey`) |>
+    summarize(p_and = all(is_proper), p_or = any(is_proper)) |>
+    summarize(across(c(p_and, p_or), ~sum(.) / n() * 100)) |>
+    t()
 ```
