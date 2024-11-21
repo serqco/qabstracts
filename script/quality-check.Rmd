@@ -64,7 +64,8 @@ raw |> filter(citekey == "AtaMasHem22") |>
     filter("ignorediff" %in% code, .by = sidx) |>
     select(citekey, coder, codername, sidx, words, code) |>
     arrange(codername, sidx)
-datasets$by_abstract |> filter(`_citekey` == 'AtaMasHem22') |>
+datasets$by_abstract |>
+    filter(`_citekey` == 'AtaMasHem22') |>
     select(`_citekey`, `_coder`, codername, ignorediffs)
 ```
 
@@ -79,7 +80,41 @@ datasets$by_abstract |>
     select(`_citekey`,  `_coder`, words, sentences) |>
     pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = c(words, sentences))
 ```
-It appears as if the coders' comments below the `---` are counted as well.
+
+Looking at a concrete example:
+```{r}
+raw |> filter(citekey == "AtaMasHem22") |>
+    select(citekey, coder, codername, sidx, words, code) |>
+    summarize(
+        citekey = first(citekey),
+        words = first(words),
+        codes = paste(code, collapse = ", "),
+        .by = c(coder, sidx)
+    ) |>
+    pivot_wider(id_cols = c(citekey, sidx), names_from = coder, values_from = c(words, codes))
+datasets$by_abstract |>
+    filter(`_citekey` == 'AtaMasHem22') |>
+    select(`_citekey`, `_coder`, words, sentences)
+```
+
+Reading from the actual abstract, the word counts are different, for sentence 5:
+```{r}
+library(stringr)
+
+con <- file("../abstracts/abstracts.B/AtaMasHem22.txt", open = "r")
+lines <- readLines(con, 20)
+(sidx5 <- lines[c(14, 15, 16)] |> paste(collapse = " "))
+sidx5 |> str_count("\\w+")
+```
+
+And for sentence 6:
+```{r}
+(sidx6 <- lines[18])
+sidx6 |> str_count("\\w+")
+```
+
+See also the word-count problem below.
+
 
 ## Problem: Different `fkscore`s
 A few abstracts have different `fkscore`s:

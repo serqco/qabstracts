@@ -167,7 +167,8 @@ raw |> filter(citekey == "AtaMasHem22") |>
     ## 6 AtaMasHem22 A     Lutz          6    13 design
 
 ``` r
-datasets$by_abstract |> filter(`_citekey` == 'AtaMasHem22') |>
+datasets$by_abstract |>
+    filter(`_citekey` == 'AtaMasHem22') |>
     select(`_citekey`, `_coder`, codername, ignorediffs)
 ```
 
@@ -204,8 +205,79 @@ datasets$by_abstract |>
     ## 10 HarThuLo22      266     252          14          14
     ## # ℹ 26 more rows
 
-It appears as if the coders’ comments below the `---` are counted as
-well.
+Looking at a concrete example:
+
+``` r
+raw |> filter(citekey == "AtaMasHem22") |>
+    select(citekey, coder, codername, sidx, words, code) |>
+    summarize(
+        citekey = first(citekey),
+        words = first(words),
+        codes = paste(code, collapse = ", "),
+        .by = c(coder, sidx)
+    ) |>
+    pivot_wider(id_cols = c(citekey, sidx), names_from = coder, values_from = c(words, codes))
+```
+
+    ## # A tibble: 11 × 6
+    ##    citekey      sidx words_B words_A codes_B        codes_A           
+    ##    <chr>       <dbl>   <dbl>   <dbl> <chr>          <chr>             
+    ##  1 AtaMasHem22     1      23      23 background     background        
+    ##  2 AtaMasHem22     2      11      11 gap            gap               
+    ##  3 AtaMasHem22     3      18      18 objective      objective         
+    ##  4 AtaMasHem22     4      22      22 background     background        
+    ##  5 AtaMasHem22     5      28      29 background     ignorediff, design
+    ##  6 AtaMasHem22     6      14      15 background     ignorediff, design
+    ##  7 AtaMasHem22     7      17      17 background     background        
+    ##  8 AtaMasHem22     8      38      38 design         design            
+    ##  9 AtaMasHem22     9      35      35 a-design       a-design          
+    ## 10 AtaMasHem22    10      39      39 method, result method, result    
+    ## 11 AtaMasHem22    11      52      52 result         result
+
+``` r
+datasets$by_abstract |>
+    filter(`_citekey` == 'AtaMasHem22') |>
+    select(`_citekey`, `_coder`, words, sentences)
+```
+
+    ##      _citekey _coder words sentences
+    ## 1 AtaMasHem22      A   378        11
+    ## 2 AtaMasHem22      B   336        11
+
+Reading from the actual abstract, the word counts are different, for
+sentence 5:
+
+``` r
+library(stringr)
+
+con <- file("../abstracts/abstracts.B/AtaMasHem22.txt", open = "r")
+lines <- readLines(con, 20)
+(sidx5 <- lines[c(14, 15, 16)] |> paste(collapse = " "))
+```
+
+    ## [1] "In this situation, an execution trace amounts to a multivariate time-series of input and output signals, where different states of the system correspond to different “phases” in the time-series."
+
+``` r
+sidx5 |> str_count("\\w+")
+```
+
+    ## [1] 31
+
+And for sentence 6:
+
+``` r
+(sidx6 <- lines[18])
+```
+
+    ## [1] "From an inference perspective, the challenge is to detect when these phase changes take place."
+
+``` r
+sidx6 |> str_count("\\w+")
+```
+
+    ## [1] 15
+
+See also the word-count problem below.
 
 ## 2.3 Problem: Different `fkscore`s
 
