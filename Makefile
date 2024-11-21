@@ -18,10 +18,13 @@ export:
 	$(QABSTRACTS) export $(STUDYDIR) >$(EXPORTFILE)
 	$(QABSTRACTS) extract-git-timestamps
 
-pdf:
+knit:
+	Rscript -e "library(knitr); knit('tex/qabstracts-tse.Rnw', output='tex/qabstracts-tse.tex')"
+
+pdf: knit
 	cd tex; latexmk -pdf -bibtex qabstracts-tse
 
-pdf-nonstop:
+pdf-nonstop: knit
 	cd tex; latexmk -pdf -bibtex -interaction=nonstopmode qabstracts-tse
 
 pdf-cleanfiles:

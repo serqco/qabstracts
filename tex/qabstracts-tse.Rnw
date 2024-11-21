@@ -76,6 +76,60 @@ Julian Frattini, Franz Zieris%
 
 \maketitle
 
+<<load-reticulate, echo=FALSE>>=
+################ This is R code ################
+library(reticulate)
+# Use R's reticulate to load Python modules
+#  import qabs.dataframes as dataframes
+py$dataframes <- import_from_path("qabs.dataframes", path = "../script")
+
+options(width = 45)
+knitr::opts_chunk$set(
+    echo = FALSE,    # change to TRUE to see all R code
+    results = 'hide' # change to 'markup' to see intermediate values
+) 
+@
+
+<<load-data, engine='python', echo=FALSE>>=
+################### This is Python code ################
+import pandas as pd
+
+# Load data
+datafile = "../results/abstracts-results.tsv"
+raw = pd.read_csv(datafile, sep='\t')
+
+# Perform the statistics
+datasets = dataframes.create_all_datasets(raw)
+dataframes.create_all_subsets(datasets)
+@
+
+<<import-data, echo=FALSE, message=FALSE>>=
+################ This is R code ################
+library(dplyr)
+library(glue)
+
+# Make Python variables available to R, so they can be used in the following document
+for (var in names(py)) {
+  assign(var, py[[var]], envir = .GlobalEnv)
+}
+
+# We use this dataset the most, so we provide a shorthand
+df <- datasets$by_abstract
+
+# Percentages occur often and need to be properly escaped in LaTeX
+format_percent <- function(value, accuracy = 1) {
+  scales::label_percent(accuracy)(value) |> as.character() |> stringr::str_replace("%", "\\\\%")
+}
+@
+
+<<>>=
+(n_abstracts <- n_distinct(df$`_citekey`))
+(r_complete <- sum(df$is_complete) / nrow(df))
+(r_readable_good <- sum(df$fkscore > 30) / nrow(df))
+(r_readable_normal <- sum(between(df$fkscore, 20, 30)) / nrow(df))
+(r_readable_improper <- sum(df$fkscore < 20) / nrow(df))
+@
+
 \begin{abstract}  % 100 to 200 words are allowed (but not enforced)
 \emph{Background:}
 Abstracts are a very valuable element in a software engineering research article,
@@ -88,15 +142,15 @@ and suggest guidelines for writing informative abstracts.
 Use open coding to derive concepts that explain relevant properties of abstracts
 and identify the archetypical structure of abstracts.
 Use quantitative content analysis to objectively characterize abstract structure
-over a sample of 362!!! abstracts from five presumably high-quality venues.
+over a sample of \Sexpr{n_abstracts} abstracts from five presumably high-quality venues.
 Use exploratory data analysis to find recurring issues in abstracts.
 Compare the prototypical structure to actual structures to derive
 guidelines for producing informative abstracts.
 \emph{Results:}
-Only 29\%!!! of our abstracts are complete, i.e., provide background, objective,
+Only \Sexpr{format_percent(r_complete)} of our abstracts are complete, i.e., provide background, objective,
 method, result, and conclusion information.
 For structured abstracts, the fraction is twice as big.
-Only 3\%!!! of our abstracts also have acceptable Flesh/Kincaide readability and have
+Only \Sexpr{format_percent(r_readable_good)} of our abstracts also have acceptable Flesh/Kincaide readability and have
 neither informativeness gaps nor understandability gaps or highly ambiguous sentences.
 \emph{Conclusions:}
 (1)~Even in top venues, a large majority of abstracts are far from ideal.
@@ -162,7 +216,7 @@ the quality of software engineering abstracts.
 \Todo{For Lutz: What is question 5?}
 Therefore, we continue the research by performing a repeatable
 quantitative content analysis~\cite[Ch. 7]{Krippendorff04} for number 3
-on a large sample of 362!!! presumably high-quality abstracts
+on a large sample of \Sexpr{n_abstracts} presumably high-quality abstracts
 and apply an elaborate seven-step approach for maximizing its reliability.
 
 The final stage is the statistical evaluation of the content analysis data,
@@ -568,15 +622,20 @@ Information and Software Technology (IST, an Elsevier journal).
 IST has published many very good systematic literature reviews and methods works,
 but is not \emph{generally} considered a top-quality venue.
 
+<<>>=
+(n_abstracts_per_venue <- count(df, venue) |>
+  mutate(n = n/2) |>
+  glue_data("{venue}:{n}"))
+@
+
 We wanted to draw a random sample of 100 articles per venue from the
 2022 volumes, but found that TOSEM has published only 86 articles that year,
 so we ended up at 486 articles initially.
 A few of those later had to be removed because they were other things,
 often editorials.
 Furthermore, we eventually did not need quite as much data for answering our
-questions and stopped coding after 362!!! abstracts\footnote{After abstracts 
-	were dropped, our sample is no longer perfectly balanced, with 
-  EMSE:73!!!, ICSE:74, IST:71, TOSEM:71, TSE:73 abstracts.}.
+questions and stopped coding after \Sexpr{n_abstracts} abstracts\footnote{After abstracts 
+	were dropped, our sample is no longer perfectly balanced, with \Sexpr{n_abstracts_per_venue} abstracts.}.
 Still, ours is the largest manual study of abstracts we know of.
 
 Volume downloading, sampling, and abstract extraction into publishable
@@ -780,8 +839,18 @@ we do not include those articles in our references list.
 
 \subsection{Length and Readability}
 
-Typical abstracts (the middle half) are 200 to 290 words long
-and 8 to 14 sentences long.
+<<>>=
+(typical_length_words <- df$words |>
+  quantile(c(0.25, 0.75)) |>
+  round(-1) |>
+  paste(collapse = " to "))
+(typical_length_sentences <- df$sentences |>
+  quantile(c(0.25, 0.75)) |>
+  paste(collapse = " to "))
+@
+
+Typical abstracts (the middle half) are \Sexpr{typical_length_words} words long
+and \Sexpr{typical_length_sentences} sentences long.
 Structured abstracts tend to be longer than unstructured ones.
 \ifarxiv{See Figures \ref{boxplots_words} to \ref{boxplots_avg_wordlength} for details.}
 The official word limits of
@@ -790,12 +859,28 @@ maximum 300 for IST, and
 recommended maximum 250 for TSE
 are disobeyed by more than a quarter of all articles for each of these three venues.
 
+<<>>=
+(r_readable_lt10 <- sum(df$fkscore < 10) / nrow(df))
+@
+
 For readability, see Figure~\ref{boxplots_fkscore}:
-only about 10\% of all abstracts have good readability,
-less than 40\% have normal readability,
-and a majority is improper --- almost a quarter is even below 10!
+only about \Sexpr{format_percent(r_readable_good)} of all abstracts have good readability,
+about \Sexpr{format_percent(r_readable_normal)} have normal readability,
+and a majority is improper --- almost a quarter (\Sexpr{format_percent(r_readable_lt10)}) is even below 10!
 ICSE tends to be better than the other venues,
 TOSEM is worse.
+
+<<>>=
+(venue_mean_fkscores <- df |>
+  group_by(venue) |>
+  summarize(m = mean(fkscore), mf = round(m)))
+(venue_best  <- venue_mean_fkscores |>
+  slice_max(m, n = 1) |>
+  glue_data("{venue} is best (mean {mf})"))
+(venue_worst <- venue_mean_fkscores |>
+  slice_min(m, n = 1) |>
+  glue_data("{venue} is worst (mean {mf})"))
+@
 
 \Plot{boxplots_fkscore}{%
 	Flesch-Kincaid 'reading ease' readability score, higher is better.
@@ -803,7 +888,7 @@ TOSEM is worse.
     Under 30: very difficult to read (graduate level, acceptable for abstracts).
 	Under 10: extremely difficult to read (overly difficult).
     Differences between subgroups are modest.
-	ICSE is best (mean 20), TOSEM is worst (mean 13).
+    \Sexpr{venue_best}, \Sexpr{venue_worst}.
     Structured abstracts are just as difficult as nonstructured ones
     if one ignores the ``Methods:'' etc. headings as we did here.
 }
@@ -826,14 +911,41 @@ and the \Cb{design} code will not be used.
 Artifact design discussion will then usually be coded as \Cb{method} instead.
 Mixed cases are rare and then the coders will decide which aspect has more weight.
 
+<<>>=
+(typl_frac_design <- df |>
+  filter(is_design) |>
+  mutate(across(fraction_design, ~./100)) |>
+  pull(fraction_design) |>
+  quantile(c(0.25, 0.75)) |>
+  format_percent() |>
+  paste(collapse = " to "))
+
+calc_typical_fractions <- function(x) {
+  quantile(x / 100, c(0.25, 0.75)) |>
+    format_percent() |>
+    paste(collapse = "--")
+}
+
+(typl_frac <- df |>
+  group_by(is_design) |>
+  summarize(across(
+    c(fraction_method, fraction_result),
+    calc_typical_fractions
+  )))
+@
+
 In design works, a large fraction of the abstract will be devoted to
 describing design considerations for that artifact;
-in our data: typically 16\% to 34\%!!! of the words.
+in our data: typically \Sexpr{typl_frac_design} of the words.
 The empirical study, which usually exists as well, then usually has a mere
 supporting role (validating the claims made in the artifact discussion)
 and is correspondingly given less space:
-7\%--16\% (versus 12\%--23\% for empirical works) for description of empirical method,
-12\%--24\% (versus 18\%--32\%) for description of empirical results.
+\Sexpr{typl_frac[typl_frac$is_design == TRUE, "fraction_method"]}
+(versus \Sexpr{typl_frac[typl_frac$is_design == FALSE, "fraction_method"]} for empirical works) 
+for description of empirical method,
+\Sexpr{typl_frac[typl_frac$is_design == TRUE, "fraction_result"]}
+(versus \Sexpr{typl_frac[typl_frac$is_design == FALSE, "fraction_result"]})
+for description of empirical results.
 Design work abstracts are barely longer than empirical work abstracts.
 
 
@@ -984,8 +1096,19 @@ For instance, an abstract that follows a minimal incarnation of the Archetype
 for an empirical article would be encoded as bomrc, which stands for
 the content types sequence background, objective, methods, results, conclusion.
 
+<<>>=
+(n_struc <- df |>
+  select(`_citekey`, is_design) |>
+  distinct() |>
+  left_join(datasets$ab_structures,
+    by = c("_citekey" = "citekey")) |>
+  summarize(n_distinct = n_distinct(topicstructure),
+    .by = is_design))
+@
+
 The full list of abstracts structures is too long to show it here.
-It has 95!!! entries for empirical articles and 122!!! entries for design articles.
+It has \Sexpr{n_struc[n_struc$is_design == FALSE, "n_distinct"]} entries for empirical articles and
+\Sexpr{n_struc[n_struc$is_design == TRUE, "n_distinct"]} entries for design articles.
 Most of these have only one or two instances, though;
 we restrict ourselves to the types that occur with higher frequency here.
 Note that a frequency of e.g. 2.5 simply means that the two coders did not agree.
@@ -1029,6 +1152,15 @@ It can also easily get out of hand, as confirmed by the examples bobdrmrmr and b
 
 \subsubsection{Structured Abstracts}
 
+<<>>=
+(n_struc2 <- df |>
+  select(`_citekey`, is_design) |>
+  distinct() |>
+  left_join(datasets$ab_structures, by = c("_citekey" = "citekey")) |>
+  summarize(n_distinct = n_distinct(topicstructure),
+    .by = c(is_design, is_struc)))
+@
+
 Today's conventions for structured abstracts may be a bit restrictive
 (e.g. by not accommodating the useful mrmr substructure),
 but they do result in more orderly abstracts:
@@ -1057,8 +1189,23 @@ And indeed the article in question contains this information in its
 Table 4 and therefore could and should have said
 \Pseudoquote{random sampling is rare (8\% of cases)}.
 
-Informativeness gaps appear mostly in results statements (82\% of the gaps)
-or method statements (16\% of the gaps).
+<<>>=
+(igap_loc <- raw |>
+  filter(icount > 0) |>
+  summarize(sum_icount = sum(icount),
+    .by = topic) |>
+  mutate(r_icount = sum_icount / sum(sum_icount))) 
+(igap_in_results <- igap_loc |>
+  filter(topic == "result") |>
+  pull(r_icount))
+(igap_in_method  <- igap_loc |>
+  filter(topic == "method") |>
+    pull(r_icount))
+@
+
+Informativeness gaps appear mostly
+in results statements (\Sexpr{format_percent(igap_in_results)} of the gaps)
+or method statements (\Sexpr{format_percent(igap_in_method)} of the gaps).
 Most (if not all) of them could be filled by a number.
 They tend to cluster,
 like here:
@@ -1071,8 +1218,18 @@ A better formulation could have been:
   than the well-known state-of-the-art tool MINT,
   but never lost more than 7 percentage points of balanced accuracy.}!!!
 
-More than half of all abstracts have an informativeness gap (making them improper)
-and 18\%!!! have three or more.
+<<>>=
+icounts <- df |>
+  summarize(icount = mean(icount),
+    .by = `_citekey`)
+ # use icounts instead of df for proper math
+(r_igap1 <- sum(df$icount >= 1) / nrow(df))
+(r_igap3 <- sum(df$icount >= 3) / nrow(df))
+@
+
+More than half of all abstracts (\Sexpr{format_percent(r_igap1)}) have an informativeness gap
+(making them improper)
+and \Sexpr{format_percent(r_igap3)} have three or more.
 See the leftmost two groups of Figure~\ref{nonzerofractionbar_xletgroups_missinginfofractions}
 for details.
 
@@ -1114,8 +1271,12 @@ This should have been a result statement such as the following:
 \Pseudoquote{We provide 6 guidelines. For instance, cutting off all commits before 2014
   will get rid of about 98\% of all bad commits.}
 
+<<>>=
+(r_announce <- sum(df$announcecount >= 1) / nrow(df))
+@
+
 Announcements are a waste of space and a nuisance for the reader,
-yet 24\% of all abstracts have at least one and we consider those improper.
+yet \Sexpr{format_percent(r_announce)} of all abstracts have at least one and we consider those improper.
 See groups three to six of Figure~\ref{nonzerofractionbar_xletgroups_missinginfofractions}
 for details.
 
@@ -1139,9 +1300,17 @@ this sentence has two understandability gaps and
 an average reader is not able to make sense of this statement
 which represents half of the work's results.
 
+<<>>=
+ucounts <- df |>
+  summarize(ucount = mean(ucount),
+    .by = `_citekey`)
+# use ucounts instead of df for proper math
+(r_ugap <- sum(df$ucount >= 1) / nrow(df))
+@
+
 See the rightmost group of Figure~\ref{nonzerofractionbar_xletgroups_missinginfofractions}
 for how frequent this is:
-About 17\%!!! of all abstracts have one or more understandability gaps.
+About \Sexpr{format_percent(r_ugap)} of all abstracts have one or more understandability gaps.
 The issue is most pronounced at ICSE.
 
 
@@ -1153,8 +1322,19 @@ more than one role for it is similarly likely.
 Obviously, such ambiguous formulations do not represent good abstract writing
 and we consider such abstracts to be improper.
 
-In our data, we found 74!!! such cases overall, spread over 30!!! different abstracts,
-so that 5\%!!! of all abstracts have one or more such problems.
+<<>>=
+(n_igdf <- raw |>
+  filter(code == 'ignorediff') |>
+  nrow())
+(n_igdf_a <- raw |>
+  filter(code == 'ignorediff') |>
+  pull(citekey) |>
+  n_distinct())
+(r_igdf_a <- n_igdf_a / n_abstracts)
+@
+
+In our data, we found \Sexpr{n_igdf} such cases overall, spread over \Sexpr{n_igdf_a} different abstracts,
+so that \Sexpr{format_percent(r_igdf_a)} of all abstracts have one or more such problems.
 A total of 14!!! different codes are involved.
 % The most frequent 5!!! of them cover 61\%!!! of the total:
 % design, conclusion, result, a-result, and method.
