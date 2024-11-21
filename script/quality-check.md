@@ -241,177 +241,119 @@ datasets$by_abstract |>
 The numbers are summed up correctly and the aggregated count is also
 correct.
 
-## 2.2 Problem: Different Word Counts
+## 2.2 Problem: Different Word Counts (RESOLVED)
 
-Several abstracts differ in their word count.
+Several abstracts used to differ in their word count.
 
-``` r
-datasets$by_abstract_coding |>
-    filter(min(words) != max(words) | min(sentences) != max(sentences), .by = `_citekey`) |>
-    select(`_citekey`,  `_coder`, words, sentences) |>
-    pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = c(words, sentences))
-```
-
-    ## # A tibble: 1 × 5
-    ##   `_citekey` words_A words_B sentences_A sentences_B
-    ##   <chr>        <dbl>   <dbl>       <dbl>       <dbl>
-    ## 1 YanXiaLo22    137.     137           5           5
-
-Looking at a concrete example:
+This appears to be no longer an issue, as the biggest difference are due
+to rounding errors (one coder give 2 codes, the other 3 -\> sentence
+length is divided by 2 and by 3, rounded to one decimal place -\> sums
+are 0.1 off).
 
 ``` r
-raw |> filter(citekey == "AtaMasHem22") |>
-    select(citekey, coder, codername, sidx, words, code) |>
-    summarize(
-        citekey = first(citekey),
-        words = first(words),
-        codes = paste(code, collapse = ", "),
-        .by = c(coder, sidx)
-    ) |>
-    pivot_wider(id_cols = c(citekey, sidx), names_from = coder, values_from = c(words, codes))
+assert_coder_sameness <- function(field) {
+    with_diff <- datasets$by_abstract_coding |>
+        filter(min({{field}}) != max({{field}}), .by = `_citekey`) |>
+        select(`_citekey`, `_coder`, {{field}})
+    if (nrow(with_diff) == 0) return ("No differences")
+    with_diff |>
+        pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = {{field}}) |>
+        mutate(diff = abs(A - B)) |>
+        arrange(desc(diff))
+}
+
+assert_coder_sameness(words)
 ```
 
-    ## # A tibble: 11 × 6
-    ##    citekey      sidx words_B words_A codes_B        codes_A           
-    ##    <chr>       <dbl>   <dbl>   <dbl> <chr>          <chr>             
-    ##  1 AtaMasHem22     1      24      24 background     background        
-    ##  2 AtaMasHem22     2      12      12 gap            gap               
-    ##  3 AtaMasHem22     3      19      19 objective      objective         
-    ##  4 AtaMasHem22     4      23      23 background     background        
-    ##  5 AtaMasHem22     5      29     NaN background     ignorediff, design
-    ##  6 AtaMasHem22     6      15     NaN background     ignorediff, design
-    ##  7 AtaMasHem22     7      18      18 background     background        
-    ##  8 AtaMasHem22     8      39      39 design         design            
-    ##  9 AtaMasHem22     9      36      36 a-design       a-design          
-    ## 10 AtaMasHem22    10      20      20 method, result method, result    
-    ## 11 AtaMasHem22    11      53      53 result         result
+    ## # A tibble: 1 × 4
+    ##   `_citekey`     A     B  diff
+    ##   <chr>      <dbl> <dbl> <dbl>
+    ## 1 YanXiaLo22  137.   137 0.100
+
+Let’s check all the other fields that should not be different between
+coders A and B:
 
 ``` r
-datasets$by_abstract_coding |>
-    filter(`_citekey` == 'AtaMasHem22') |>
-    select(`_citekey`, `_coder`, words, sentences)
+assert_coder_sameness(venue)
 ```
 
-    ##      _citekey _coder words sentences
-    ## 1 AtaMasHem22      A   308        11
-    ## 2 AtaMasHem22      B   308        11
-
-Reading from the actual abstract, the word counts are different, for
-sentence 5:
+    ## [1] "No differences"
 
 ``` r
-library(stringr)
-
-con <- file("../abstracts/abstracts.B/AtaMasHem22.txt", open = "r")
-lines <- readLines(con, 20)
-(sidx5 <- lines[c(14, 15, 16)] |> paste(collapse = " "))
+assert_coder_sameness(volume)
 ```
 
-    ## [1] "In this situation, an execution trace amounts to a multivariate time-series of input and output signals, where different states of the system correspond to different “phases” in the time-series."
+    ## [1] "No differences"
 
 ``` r
-sidx5 |> str_count("\\w+")
+assert_coder_sameness(sentences)
 ```
 
-    ## [1] 31
-
-And for sentence 6:
+    ## [1] "No differences"
 
 ``` r
-(sidx6 <- lines[18])
+assert_coder_sameness(chars)
 ```
 
-    ## [1] "From an inference perspective, the challenge is to detect when these phase changes take place."
+    ## # A tibble: 1 × 4
+    ##   `_citekey`     A     B  diff
+    ##   <chr>      <dbl> <dbl> <dbl>
+    ## 1 YanXiaLo22  886.   886 0.100
 
 ``` r
-sidx6 |> str_count("\\w+")
+assert_coder_sameness(syllables)
 ```
 
-    ## [1] 15
+    ## # A tibble: 1 × 4
+    ##   `_citekey`     A     B  diff
+    ##   <chr>      <dbl> <dbl> <dbl>
+    ## 1 YanXiaLo22  244.   244 0.100
 
-See also the word-count problem below.
+``` r
+assert_coder_sameness(avg_wordlength)
+```
+
+    ## # A tibble: 1 × 4
+    ##   `_citekey`     A     B    diff
+    ##   <chr>      <dbl> <dbl>   <dbl>
+    ## 1 YanXiaLo22  5.27  5.27 0.00545
+
+Note: `fkscore` should also be same – see next problem.
 
 ## 2.3 Problem: Different `fkscore`s
 
 A few abstracts have different `fkscore`s:
 
 ``` r
-datasets$by_abstract_coding |>
-    filter(min(fkscore) < max(fkscore), .by = `_citekey`) |>
-    select(`_citekey`,  `_coder`, fkscore) |>
-    pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = fkscore, names_prefix = "fkscore_")
+assert_coder_sameness(fkscore)
 ```
 
-    ## # A tibble: 5 × 3
-    ##   `_citekey`  fkscore_A fkscore_B
-    ##   <chr>           <dbl>     <dbl>
-    ## 1 CasZamNov22     24.6      26.9 
-    ## 2 GonRajHas22     21.3      24.6 
-    ## 3 Liu22           -3.57     -2.36
-    ## 4 WalGhaAla22     17.3      18.7 
-    ## 5 YanXiaLo22      38.7      36.3
+    ## # A tibble: 5 × 4
+    ##   `_citekey`      A     B  diff
+    ##   <chr>       <dbl> <dbl> <dbl>
+    ## 1 GonRajHas22 21.3  24.6   3.30
+    ## 2 YanXiaLo22  38.7  36.3   2.45
+    ## 3 CasZamNov22 24.6  26.9   2.26
+    ## 4 WalGhaAla22 17.3  18.7   1.41
+    ## 5 Liu22       -3.57 -2.36  1.21
 
 I have no idea what might cause this.
 
-## 2.4 Problem: Calculation of `fkscore` ignores multi-codings
+## 2.4 Problem: Calculation of `fkscore` ignores multi-codings (RESOLVED)
 
-Example: `XueZhoLuo22` has a double-coded sentence:
+Abstract-level `fkscore` used to be calculated by taking the mean of
+sentences’ `fkscore`, which was off for double (or triple) coded
+sentences. This is no longer an issue, since the calculation is now done
+for the whole abstract.
 
-``` r
-raw |> filter(citekey == "XueZhoLuo22", coder == "A") |> select(citekey, coder, sidx, code, fkscore)
-```
+## 2.5 Problem: Improper Calculation of Fresch-Kincaid (RESOLVED)
 
-    ## # A tibble: 7 × 5
-    ##   citekey     coder  sidx code       fkscore
-    ##   <chr>       <chr> <dbl> <chr>        <dbl>
-    ## 1 XueZhoLuo22 A         1 background    18.4
-    ## 2 XueZhoLuo22 A         2 background     6.2
-    ## 3 XueZhoLuo22 A         3 gap           16.1
-    ## 4 XueZhoLuo22 A         4 objective     12.3
-    ## 5 XueZhoLuo22 A         5 objective     30.3
-    ## 6 XueZhoLuo22 A         5 design        30.3
-    ## 7 XueZhoLuo22 A         6 result        -1.8
+Abstract-level `fkscore` used to be calculated by taking the mean of
+sentences’ `fkscore`. This is no longer an issue, since the calculation
+is now done for the whole abstract.
 
-In the calculation datasets, its overall `fkscore` is given as:
-
-``` r
-datasets$by_abstract_coding |> filter(`_citekey` == "XueZhoLuo22", `_coder` == "A") |> select(`_citekey`, fkscore)
-```
-
-    ##      _citekey  fkscore
-    ## 1 XueZhoLuo22 17.88986
-
-… which is the same as the average from the raw data:
-
-``` r
-raw |> filter(citekey == "XueZhoLuo22", coder == "A") |> summarize(fkscore = mean(fkscore))
-```
-
-    ## # A tibble: 1 × 1
-    ##   fkscore
-    ##     <dbl>
-    ## 1    16.0
-
-But sentence 5 is counted *twice* (because of the double-coding), so it
-should actually be:
-
-``` r
-raw |> filter(citekey == "XueZhoLuo22", coder == "A") |>
-    slice(1, .by = sidx) |>
-    summarize(fkscore = mean(fkscore))
-```
-
-    ## # A tibble: 1 × 1
-    ##   fkscore
-    ##     <dbl>
-    ## 1    13.6
-
-I did not check where in the code the abstract-level calculation is
-done.
-
-## 2.5 Problem: Improper Calculation of Fresch-Kincaid
-
-Consider the first four sentences of `CheHuWei22`:
+To illustrate the issue nevertheless, consider the first four sentences
+of `CheHuWei22`:
 
     Source code summarization is a crucial yet far from settled task for describing structured code
     snippets in natural language.
@@ -461,12 +403,19 @@ example |>
     ##   <dbl>
     ## 1  26.1
 
-The aggregation of sentence-level `fkscores` should not be done through
+## 2.6 Problem: Improper Word Count (RESOLVED)
 
-## 2.6 Problem: Improper Word Count
+Word counts where off in the past: Consider a sentence with 31 words
+with 1, 2, or 3 codes.
 
-Sentence ID 8 from `LiuLiFu22` (including its annotation) looks like
-this:
+| Codings | Correct Word Count | Old Word Count |
+|---------|--------------------|----------------|
+| 1       | 1 x 31             | 1 x 30         |
+| 2       | 2 x 15.5           | 2 x 30         |
+| 3       | 3 x 10.3           | 3 x 15         |
+
+This appears to be no issue anymore. As an example, consider sentence ID
+8 from `LiuLiFu22` (including its three codes) looks like this:
 
     Experimen-
     tal results on java methods show that our model can outperform
@@ -495,22 +444,7 @@ raw |> filter(citekey == "LiuLiFu22", coder == "B", sidx == 8) |>
     ## 2 LiuLiFu22     8  10.3    68      19.3 result     :i1      result    
     ## 3 LiuLiFu22     8  10.3    68      19.3 conclusion <NA>     conclusion
 
-We can see the following problems:
-
-- Word count was 31, but turned into 15 (three times):
-  - The overall word count is *always* reduced by one
-    (<https://github.com/serqco/qabstracts/blob/main@%7B2024-11-20%7D/script/qabs/export.py#L89>)
-  - The word count (30) is then split into *two*, even though there are
-    *three* codes
-    (<https://github.com/serqco/qabstracts/blob/main@%7B2024-11-20%7D/script/qabs/export.py#L93>)
-- Char count was 204, but turned into 97 (three times):
-  - The overall char count is *always* reduced by 10
-    (<https://github.com/serqco/qabstracts/blob/main@%7B2024-11-20%7D/script/qabs/export.py#L90>)
-  - The char count (194) is then split into *two*, instead of *three*
-    (<https://github.com/serqco/qabstracts/blob/main@%7B2024-11-20%7D/script/qabs/export.py#L94>)
-
-I don’t know why the export logic was setup this way, but it makes all
-number-based analyses pretty weird.
+Which is correct.
 
 # 3 Issues related to Double Coding of Abstracts
 
