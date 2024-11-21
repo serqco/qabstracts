@@ -8,6 +8,7 @@ on:
       - 'abstracts/**'
       - 'script/**'
       - 'tex/**'
+
 jobs:
   check-and-compare-codings:  # yml errors? try  https://rhysd.github.io/actionlint/
     runs-on: ubuntu-22.04
@@ -25,24 +26,40 @@ jobs:
           echo "****** full study    ********"
           echo "*****************************"
           python script/qabstracts.py check-codings abstracts && python script/qabstracts.py compare-codings abstracts
+
   process-fullstudy:
     runs-on: ubuntu-22.04
+    env:
+      REGISTRY: ghcr.io
+      IMAGE_NAME: "${{ github.repository }}-knitr-py:latest"
     steps:
       - name: check out
         uses: actions/checkout@v4
         with:
           submodules: recursive
-      - name: build
+      - name: login to GitHub registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: set up Docker
         run: |
-          pip -q install -r requirements.txt
-          make export
-          make plotall
+          docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          echo "RUN_CMD=docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}" >> $GITHUB_ENV
+
+      - name: analyze data
+        run: |
+          # We need to add /workspace as a safe directory because we are running a git command under the hood
+          ${{ env.RUN_CMD }} bash -c "git config --global --add safe.directory /workspace && make export"
+          ${{ env.RUN_CMD }} make plotall
           # We check out only the last revision -> no Git history -> no timeline data -> use pre-rendered timeline from version control
           git restore img/qabstracts_timeline_commits.pdf
           ls -l img
-          sudo apt-get update
-          sudo apt install texlive-xetex latexmk
-          make pdf
+
+      - name: knit report
+        run: ${{ env.RUN_CMD }} make pdf
+
       - name: upload PDF
         uses: actions/upload-artifact@v4
         with: 
