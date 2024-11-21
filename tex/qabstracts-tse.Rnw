@@ -51,7 +51,7 @@
 \newcounter{todonumber}
 \newcommand{\Todo}[1]{\stepcounter{todonumber}\textcolor{red}{\sffamily ((\arabic{todonumber}: #1))}}
 \newcommand{\Quote}[1]{\bgroup\itshape ``#1''\egroup}  % quote from real abstract
-\newcommand{\Pseudoquote}[1]{\bgroup\itshape ``#1''\egroup}  % quote from fictive abstract
+\newcommand{\Pseudoquote}[1]{\bgroup\itshape `#1'\egroup}  % quote from fictive abstract
 \newcommand{\QuoteCB}[1]{\Quote{#1}}  % quote from codebook
 \newcommand{\Describeboxplots}{The box shows the 25-to-75 percentile, 
 	the whiskers are 10- and 90-percentile,
@@ -135,7 +135,7 @@ format_percent <- function(value, accuracy = 1) {
 Abstracts are a very valuable element in a software engineering research article,
 but not all abstracts are as informative as they could be.
 \emph{Objective:}
-Characterize the structure of abstracts in high-quality venues,
+Characterize the structure of abstracts in high-quality SE venues,
 observe and quantify deficiencies,
 and suggest guidelines for writing informative abstracts.
 \emph{Methods:}
@@ -144,20 +144,20 @@ and identify the archetypical structure of abstracts.
 Use quantitative content analysis to objectively characterize abstract structure
 over a sample of \Sexpr{n_abstracts} abstracts from five presumably high-quality venues.
 Use exploratory data analysis to find recurring issues in abstracts.
-Compare the prototypical structure to actual structures to derive
+Compare the archetypical structure to actual structures to derive
 guidelines for producing informative abstracts.
 \emph{Results:}
-Only \Sexpr{format_percent(r_complete)} of our abstracts are complete, i.e., provide background, objective,
+Only \Sexpr{format_percent(r_complete)} of the sampled abstracts are complete, i.e., provide background, objective,
 method, result, and conclusion information.
 For structured abstracts, the fraction is twice as big.
-Only \Sexpr{format_percent(r_readable_good)} of our abstracts also have acceptable Flesh/Kincaide readability and have
-neither informativeness gaps nor understandability gaps or highly ambiguous sentences.
+Only \Sexpr{format_percent(r_readable_good)} of the abstracts also have good readability (Flesch-Kincaide score) and have
+neither informativeness gaps nor understandability gaps nor highly ambiguous sentences.
 \emph{Conclusions:}
 (1)~Even in top venues, a large majority of abstracts are far from ideal.
 (2)~Structured abstracts tend to be better than unstructured ones,
 but (3)~artifact-centric works need a different structured format.
 (4)~The community should start requiring conclusions that generalize,
-which currently are often missing.
+which currently are often missing in abstracts.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -207,21 +207,21 @@ the answer to number 4 will be derived from the answers to the other three.
 
 No firm expectations regarding questions 1 and 2 exist for engineering articles,
 so qualitative methods will have to be used for them:
-We start our research by open coding~\cite[Ch. 5]{StrCor90} in order to derive a vocabulary (a set of concepts or codes)
+We start our research by open coding~\cite[Ch. 5]{StrCor90}
+in order to derive a vocabulary (a set of concepts or codes)
 by which the nature of a particular abstract can be characterized.
 
 We intend to convince even people who are skeptical of qualitative research
-regarding our answers to questions 3, 4, and 5 and regarding the need to improve
+regarding our answers to questions 2, 3 and 4, and regarding the need to improve
 the quality of software engineering abstracts.
-\Todo{For Lutz: What is question 5?}
 Therefore, we continue the research by performing a repeatable
-quantitative content analysis~\cite[Ch. 7]{Krippendorff04} for number 3
+quantitative content analysis~\cite[Ch. 7]{Krippendorff04} for number 2
 on a large sample of \Sexpr{n_abstracts} presumably high-quality abstracts
 and apply an elaborate seven-step approach for maximizing its reliability.
 
-The final stage is the statistical evaluation of the content analysis data,
-which is again exploratory and is straightforward in both
-the questions it asks and the statistical methods it uses for answering them.
+The final stage is a statistical evaluation of the content analysis data,
+which is again exploratory and straightforward in both
+the questions it asks and the applied statistical methods.
 
 
 \subsection{Research Contributions}
@@ -230,15 +230,15 @@ Our contributions correspond to the research questions as follows:
 \begin{enumerate}
 	\item As for the structure of well-written abstracts, we present an ``abstract archetype''
 	  that describes fixed parts of the structure and degrees of freedom.
-	\item We describe and discuss !!! types of deficiencies.
-	\item We quantify the frequency of each deficiency type for the entire sample of abstracts
+	\item We describe and discuss !!! types of deficiencies,
+	  and quantify the frequency of each deficiency type for the entire sample of abstracts
 	  as well as for different subgroups of interest.
 	\item We present convincing data that structured abstracts tend to be better
 	  in several respects.
 	\item We provide data-based how-to instructions for abstracts writing for authors
 	  as well as guidance for editors and conference organizers.
 	  Software Engineering works should use structured abstracts, but
-	  need a different and more flexible template than what is used so far.\Todo{For Lutz: Which research question does this apply to? Should this be 4b?}
+	  need a different and more flexible template than what is used so far.
 \end{enumerate}
 
 
@@ -253,8 +253,8 @@ and otherwise focus on what has been done in the software engineering domain.
 
 \subsection{Abstracts Structure}
 
-Swales introduced ``genre analysis'' as a means for teaching academic reading and writing
-especially to non-native speakers~\cite{Swales90}:
+Swales~\cite{Swales90} introduced ``genre analysis'' as a means for teaching academic
+reading and writing especially to non-native speakers:
 Genres are text types;
 genre analysis means deconstructing texts (from a genre) to better understand
 their elements in
@@ -863,6 +863,7 @@ are disobeyed by more than a quarter of all articles for each of these three ven
 (r_readable_lt10 <- sum(df$fkscore < 10) / nrow(df))
 @
 
+\Todo{Figure~\ref{boxplots_fkscore} double-counts abstracts (blocks A and B)}
 For readability, see Figure~\ref{boxplots_fkscore}:
 only about \Sexpr{format_percent(r_readable_good)} of all abstracts have good readability,
 about \Sexpr{format_percent(r_readable_normal)} have normal readability,
