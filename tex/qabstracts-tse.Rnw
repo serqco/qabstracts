@@ -76,7 +76,7 @@ Julian Frattini, Franz Zieris%
 
 \maketitle
 
-<<load-reticulate, echo=FALSE>>=
+<<setup-knitr-reticulate, echo=FALSE>>=
 ################ This is R code ################
 library(reticulate)
 # Use R's reticulate to load Python modules
@@ -126,8 +126,7 @@ format_percent <- function(value, accuracy = 1) {
 (n_abstracts <- n_distinct(df$`_citekey`))
 (r_complete <- sum(df$is_complete) / nrow(df))
 (r_readable_good <- sum(df$fkscore > 30) / nrow(df))
-(r_readable_normal <- sum(between(df$fkscore, 20, 30)) / nrow(df))
-(r_readable_improper <- sum(df$fkscore < 20) / nrow(df))
+(r_proper <- sum(df$is_proper) / nrow(df))
 @
 
 \begin{abstract}  % 100 to 200 words are allowed (but not enforced)
@@ -150,8 +149,8 @@ guidelines for producing informative abstracts.
 Only \Sexpr{format_percent(r_complete)} of the sampled abstracts are complete, i.e., provide background, objective,
 method, result, and conclusion information.
 For structured abstracts, the fraction is twice as big.
-Only \Sexpr{format_percent(r_readable_good)} of the abstracts also have good readability (Flesch-Kincaide score) and have
-neither informativeness gaps nor understandability gaps nor highly ambiguous sentences.
+Only \Sexpr{format_percent(r_proper)} of the abstracts also have good readability (Flesch-Kincaid score) and have
+neither informativeness gaps nor understandability gaps or highly ambiguous sentences.
 \emph{Conclusions:}
 (1)~Even in top venues, a large majority of abstracts are far from ideal.
 (2)~Structured abstracts tend to be better than unstructured ones,
@@ -860,6 +859,7 @@ recommended maximum 250 for TSE
 are disobeyed by more than a quarter of all articles for each of these three venues.
 
 <<>>=
+(r_readable_normal <- sum(between(df$fkscore, 20, 30)) / nrow(df))
 (r_readable_lt10 <- sum(df$fkscore < 10) / nrow(df))
 @
 
@@ -1368,7 +1368,7 @@ a majority of abstracts fails this very basic quality criterion, a depressing re
 	\Describegroups}
 
 Our moderately stricter criterion of being \emph{proper} involves 
-being complete, having acceptable Flesch/Kincaid readability,
+being complete, having acceptable Flesch-Kincaid readability,
 and having neither informativeness gaps nor understandability gaps or highly ambiguous sentences.
 Given this list of criteria, improper abstracts will happen from time to time
 even for careful authors.
