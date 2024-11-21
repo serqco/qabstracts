@@ -61,8 +61,7 @@ There appears to be some issue with the calculation of the `ignorediffs` column.
 In the Python dataset, however, the numbers 4 (for Lutz) and 2 (for Lloyd) show up.
 ```{r}
 raw |> filter(citekey == "AtaMasHem22") |>
-    group_by(sidx) |>
-    filter("ignorediff" %in% code) |>
+    filter("ignorediff" %in% code, .by = sidx) |>
     select(citekey, coder, codername, sidx, words, code) |>
     arrange(codername, sidx)
 datasets$by_abstract |> filter(`_citekey` == 'AtaMasHem22') |>

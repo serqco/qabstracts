@@ -151,14 +151,12 @@ and 2 (for Lloyd) show up.
 
 ``` r
 raw |> filter(citekey == "AtaMasHem22") |>
-    group_by(sidx) |>
-    filter("ignorediff" %in% code) |>
+    filter("ignorediff" %in% code, .by = sidx) |>
     select(citekey, coder, codername, sidx, words, code) |>
     arrange(codername, sidx)
 ```
 
     ## # A tibble: 6 × 6
-    ## # Groups:   sidx [2]
     ##   citekey     coder codername  sidx words code      
     ##   <chr>       <chr> <chr>     <dbl> <dbl> <chr>     
     ## 1 AtaMasHem22 B     Lloyd         5    28 background
