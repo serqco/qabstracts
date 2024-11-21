@@ -34,26 +34,25 @@ This artefact is can be roughly split into three main components: scientific dat
 ##### Scientific Data (and Protocols)
 - `procedure.md`: Description of how the study was carried out overall.
 - `codebook.md`: The detailed and thoroughly evolved rules applied in the qualitative coding.
-- `abstracts`: The sample of abstracts used (or potentially used) in the study. Contains subdirectories `abstracts/abstracts.A`, `abstracts/abstracts.B` for the abstracts to be annotated by the coders.    
+- `abstracts/`: The sample of abstracts used (or potentially used) in the study. Contains subdirectories `abstracts/abstracts.A`, `abstracts/abstracts.B` for the abstracts to be annotated by the coders.    
   - `abstracts/sample.list` contains lines of the form "EMSE-2022/FrePetGer22.pdf" (volumename, citekey).  
   - `abstracts/sample-titles.json` maps citekeys to article titles.  
   - `abstracts/sample-who-what.txt` work status file: Which citekeys belong to which block? Who is going to code or has coded which block? Use coder firstnames or nicknames for entries here.
 - `history.md`: A rough history of the qabstracts project.
-- `prestudy`: A preliminary look at a small sample of abstracts in order to understand the domain.
-- `prestudy2`: A preliminary coding with several coders to understand coding, structure akin to `abstracts`.
-- `results`: Data files derived from the annotated abstracts and files created by statistical evaluation.
-- `volumes`: The subcorpora used in the study (as external directories). Each subcorpus is the result of a call to the `retrievelit` downloader.
-- `write`: The articles and reports eventually written about the study.
+- `prestudy/`: A preliminary look at a small sample of abstracts in order to understand the domain.
+- `prestudy2/`: A preliminary coding with several coders to understand coding, structure akin to `abstracts`.
+- `results/`: Data files derived from the annotated abstracts and files created by statistical evaluation.
+- `volumes/`: The subcorpora used in the study (as external directories). Each subcorpus is the result of a call to the `retrievelit` downloader.
 
 ##### Scripts
-- `script`: Python and R scripts for study execution, analysis, and plotting.
+- `script/`: Python and R scripts for study execution, analysis, and plotting.
 - `Makefile`: Set of commands used regularly in this project.
 - `requirements.txt`: Dependencies required for the Python virtual environment to run the included scripts.
 
 ##### LaTeX Article
-- `tex`: LaTeX files to create the article PDF.
-- `img`: Plots created by statistical evaluation and perhaps other images.
-- `events`: Files associated with updates to the LaTeX article.
+- `tex/`: LaTeX files (with some knitr) to create the article PDF.
+- `img/`: Plots created by statistical evaluation and perhaps other images.
+- `events/`: Files associated with updates to the LaTeX article.
 
 ### Notes for the Future
 
