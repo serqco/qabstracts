@@ -18,6 +18,9 @@ export:
 	$(QABSTRACTS) export $(STUDYDIR) >$(EXPORTFILE)
 	$(QABSTRACTS) extract-git-timestamps
 
+sanity:
+	Rscript -e "library(rmarkdown); render('script/quality-check.Rmd')"
+
 pdf:
 	cd tex; latexmk -pdf -bibtex qabstracts-tse
 
