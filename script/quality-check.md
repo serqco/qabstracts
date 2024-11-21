@@ -189,16 +189,18 @@ datasets$by_abstract |> head(1) |> t()
 
 # 2 Issues that cause wrong numbers
 
-## 2.1 Problem: Unclear calculation of `ignorediffs`
+## 2.1 Problem: Unclear calculation of `ignorediffs` (RESOLVED)
 
-There appears to be some issue with the calculation of the `ignorediffs`
-column.
+There was some issue with the calculation of the `ignorediffs` column.
 
 **Example:** `AtaMasHem22` has 2 sentences which Lutz annotated with
 `-ignorediff`. In the Python dataset, however, the numbers 4 (for Lutz)
-and 2 (for Lloyd) show up.
+and 2 (for Lloyd) showed up.
+
+However, this issues appears to be resolved as of now:
 
 ``` r
+# The raw data (codings)
 raw |> filter(citekey == "AtaMasHem22") |>
     filter("ignorediff" %in% code, .by = sidx) |>
     select(citekey, coder, codername, sidx, words, code) |>
@@ -216,6 +218,7 @@ raw |> filter(citekey == "AtaMasHem22") |>
     ## 6 AtaMasHem22 A     Lutz          6    15 design
 
 ``` r
+# Individual abstract-level codings
 datasets$by_abstract_coding |>
     filter(`_citekey` == 'AtaMasHem22') |>
     select(`_citekey`, `_coder`, codername, ignorediffs)
@@ -225,8 +228,18 @@ datasets$by_abstract_coding |>
     ## 1 AtaMasHem22      A      Lutz           2
     ## 2 AtaMasHem22      B     Lloyd           2
 
-It looks the the number of codes each coder assigned to problematic
-sentences is summed up. This count is way too much!
+``` r
+# Abstract-level aggregation
+datasets$by_abstract |>
+    filter(`_citekey` == 'AtaMasHem22') |>
+    select(`_citekey`, ignorediffs)
+```
+
+    ##                _citekey ignorediffs
+    ## AtaMasHem22 AtaMasHem22           2
+
+The numbers are summed up correctly and the aggregated count is also
+correct.
 
 ## 2.2 Problem: Different Word Counts
 
