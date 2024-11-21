@@ -599,3 +599,29 @@ datasets$by_abstract_coding |>
     ##           [,1]
     ## p_and 2.209945
     ## p_or  5.524862
+
+These are abstracts for which A’s and B’s coding do not lead to the same
+`is_proper` values:
+
+``` r
+datasets$by_abstract_coding |>
+    filter(sum(is_proper) == 1, .by = `_citekey`) |>
+    select(`_citekey`, `_coder`, is_proper) |>
+    pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = is_proper, names_prefix = "is_proper_")
+```
+
+    ## # A tibble: 12 × 3
+    ##    `_citekey`  is_proper_A is_proper_B
+    ##    <chr>       <lgl>       <lgl>      
+    ##  1 AbdBadCos22 FALSE       TRUE       
+    ##  2 AmnPoe22    FALSE       TRUE       
+    ##  3 BaiJiaCap22 FALSE       TRUE       
+    ##  4 BarDuDav22  TRUE        FALSE      
+    ##  5 CorRweFra22 FALSE       TRUE       
+    ##  6 GerMarLat22 TRUE        FALSE      
+    ##  7 HeMenChe22  FALSE       TRUE       
+    ##  8 LinWilHal22 FALSE       TRUE       
+    ##  9 OliAssGar22 TRUE        FALSE      
+    ## 10 TanFeiAvg22 TRUE        FALSE      
+    ## 11 WuSheChe22  FALSE       TRUE       
+    ## 12 YuKeuXia22  FALSE       TRUE

@@ -312,3 +312,11 @@ datasets$by_abstract_coding |>
     summarize(across(c(p_and, p_or), ~sum(.) / n() * 100)) |>
     t()
 ```
+
+These are abstracts for which A's and B's coding do not lead to the same `is_proper` values:
+```{r}
+datasets$by_abstract_coding |>
+    filter(sum(is_proper) == 1, .by = `_citekey`) |>
+    select(`_citekey`, `_coder`, is_proper) |>
+    pivot_wider(id_cols = `_citekey`, names_from = `_coder`, values_from = is_proper, names_prefix = "is_proper_")
+```
