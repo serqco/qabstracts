@@ -60,13 +60,17 @@ There appears to be some issue with the calculation of the `ignorediffs` column.
 **Example:** `AtaMasHem22` has 2 sentences which Lutz annotated with `-ignorediff`.
 In the Python dataset, however, the numbers 4 (for Lutz) and 2 (for Lloyd) show up.
 ```{r}
-raw |> filter(citekey == 'AtaMasHem22', code == 'ignorediff') |>
-    select(citekey, coder, codername, sidx, words, code)
+raw |> filter(citekey == "AtaMasHem22") |>
+    group_by(sidx) |>
+    filter("ignorediff" %in% code) |>
+    select(citekey, coder, codername, sidx, words, code) |>
+    arrange(codername, sidx)
 datasets$by_abstract |> filter(`_citekey` == 'AtaMasHem22') |>
     select(`_citekey`, `_coder`, codername, ignorediffs)
 ```
 
-I have no idea what might cause this.
+It looks the the number of codes each coder assigned to problematic sentences is summed up.
+This count is way too much!
 
 ## Problem: Different Word Counts
 Several abstracts differ in their word count.

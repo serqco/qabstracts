@@ -150,15 +150,23 @@ column.
 and 2 (for Lloyd) show up.
 
 ``` r
-raw |> filter(citekey == 'AtaMasHem22', code == 'ignorediff') |>
-    select(citekey, coder, codername, sidx, words, code)
+raw |> filter(citekey == "AtaMasHem22") |>
+    group_by(sidx) |>
+    filter("ignorediff" %in% code) |>
+    select(citekey, coder, codername, sidx, words, code) |>
+    arrange(codername, sidx)
 ```
 
-    ## # A tibble: 2 × 6
+    ## # A tibble: 6 × 6
+    ## # Groups:   sidx [2]
     ##   citekey     coder codername  sidx words code      
     ##   <chr>       <chr> <chr>     <dbl> <dbl> <chr>     
-    ## 1 AtaMasHem22 A     Lutz          5    29 ignorediff
-    ## 2 AtaMasHem22 A     Lutz          6    15 ignorediff
+    ## 1 AtaMasHem22 B     Lloyd         5    28 background
+    ## 2 AtaMasHem22 B     Lloyd         6    14 background
+    ## 3 AtaMasHem22 A     Lutz          5    29 ignorediff
+    ## 4 AtaMasHem22 A     Lutz          5    27 design    
+    ## 5 AtaMasHem22 A     Lutz          6    15 ignorediff
+    ## 6 AtaMasHem22 A     Lutz          6    13 design
 
 ``` r
 datasets$by_abstract |> filter(`_citekey` == 'AtaMasHem22') |>
@@ -169,7 +177,8 @@ datasets$by_abstract |> filter(`_citekey` == 'AtaMasHem22') |>
     ## 1 AtaMasHem22      A      Lutz           4
     ## 2 AtaMasHem22      B     Lloyd           2
 
-I have no idea what might cause this.
+It looks the the number of codes each coder assigned to problematic
+sentences is summed up. This count is way too much!
 
 ## 2.2 Problem: Different Word Counts
 
