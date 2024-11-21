@@ -43,7 +43,7 @@
 \newcommand{\PlotwideWidth}[3]{\PlotCustom{figure*}{#1}{tbp}{#2\textwidth}{#3}}
 % NOTE: These "classes" could be further coupled as "subclasses" to reduce duplicate code, but I believe this makes it harder to trace their individual behaviour.
 
-\newcommand{\Cb}[1]{\bgroup\scshape #1\egroup}  % typeset a code name
+\newcommand{\Cb}[1]{\bgroup\mbox{\scshape #1}\egroup}  % typeset a code name
 \newcommand{\Prg}[1]{\bgroup\ttfamily #1\egroup}  % typeset commands and script names
 \newcommand{\Art}[1]{\bgroup[#1]\egroup} % typeset article references
 \newcommand{\Sah}[1]{\bgroup\scshape #1\egroup}  % typeset a structured abstract heading
@@ -146,10 +146,11 @@ Use exploratory data analysis to find recurring issues in abstracts.
 Compare the archetypical structure to actual structures to derive
 guidelines for producing informative abstracts.
 \emph{Results:}
-Only \Sexpr{format_percent(r_complete)} of the sampled abstracts are complete, i.e., provide background, objective,
-method, result, and conclusion information.
-For structured abstracts, the fraction is twice as big.
-Only \Sexpr{format_percent(r_proper)} of the abstracts also have good readability (Flesch-Kincaid score) and have
+Only \Sexpr{format_percent(r_complete)} of the sampled abstracts are \textit{complete},
+i.e., provide background, objective, method, result, and conclusion information.
+For structured abstracts, the ratio is twice as big.
+Only \Sexpr{format_percent(r_proper)} of the abstracts are \textit{proper},
+i.e., they also good readability (Flesch-Kincaid score) and have
 neither informativeness gaps nor understandability gaps or highly ambiguous sentences.
 \emph{Conclusions:}
 (1)~Even in top venues, a large majority of abstracts are far from ideal.
@@ -170,7 +171,9 @@ which currently are often missing in abstracts.
 when reading an abstract in software engineering, even in a presumably top-quality venue,
 we often feel it is lacking important information or find it difficult to understand at all.
 
-The present article aims at substantiating this impression.
+The present article aims to substantiate this impression
+by operationalizing \emph{abstracts quality} and analyzing hundreds of abstracts,
+and to formulate constructive advice for writing better abstracts.
 
 
 %Ideally, an abstract should
@@ -195,28 +198,28 @@ We ask several questions:
 	\item What does a typical well-written abstract look like?
 	\item Which deficiencies occur? How often?
 	\item Do structured abstracts have better quality than unstructured ones?
-	\item How should software engineering abstracts be written?
+	\item How \emph{should} software engineering abstracts be written?
 \end{enumerate}
-Of these, numbers 1 and 2 should be considered exploratory,
-number 3 is hypothesis-driven (we expect a yes), and
-the answer to number 4 will be derived from the answers to the other three.
+Of these, RQ1 and RQ2 should be considered exploratory,
+RQ3 is hypothesis-driven (we expect a `yes'), and
+the answer to RQ4 will be derived from the answers to the other three.
 
 
 \subsection{Research Approach}
 
-No firm expectations regarding questions 1 and 2 exist for engineering articles,
+No firm expectations RQ1 and RQ2 exist for engineering articles,
 so qualitative methods will have to be used for them:
 We start our research by open coding~\cite[Ch. 5]{StrCor90}
 in order to derive a vocabulary (a set of concepts or codes)
 by which the nature of a particular abstract can be characterized.
 
 We intend to convince even people who are skeptical of qualitative research
-regarding our answers to questions 2, 3 and 4, and regarding the need to improve
+regarding our answers to RQ2, RQ3, and RQ4, and regarding the need to improve
 the quality of software engineering abstracts.
 Therefore, we continue the research by performing a repeatable
-quantitative content analysis~\cite[Ch. 7]{Krippendorff04} for number 2
+quantitative content analysis~\cite[Ch. 7]{Krippendorff04} for RQ2
 on a large sample of \Sexpr{n_abstracts} presumably high-quality abstracts
-and apply an elaborate seven-step approach for maximizing its reliability.
+and apply an elaborate eight-step approach for maximizing its reliability.
 
 The final stage is a statistical evaluation of the content analysis data,
 which is again exploratory and straightforward in both
@@ -234,7 +237,7 @@ Our contributions correspond to the research questions as follows:
 	  as well as for different subgroups of interest.
 	\item We present convincing data that structured abstracts tend to be better
 	  in several respects.
-	\item We provide data-based how-to instructions for abstracts writing for authors
+	\item We provide data-based how-to instructions for writing abstracts for authors
 	  as well as guidance for editors and conference organizers.
 	  Software Engineering works should use structured abstracts, but
 	  need a different and more flexible template than what is used so far.
@@ -244,24 +247,24 @@ Our contributions correspond to the research questions as follows:
 %========================================================================
 \section{Related Work}
 
-There is considerable literature on research abstracts across disciplines
-and we will not attempt to summarize it here.
-Instead, we only provide examples of the different major perspectives of those studies
+There is considerable literature on research abstracts across disciplines.
+We will not attempt to summarize it here,
+but provide examples of the different major perspectives of those studies
 and otherwise focus on what has been done in the software engineering domain.
 
 
 \subsection{Abstracts Structure}
 
-Swales~\cite{Swales90} introduced ``genre analysis'' as a means for teaching academic
+Swales~\cite{Swales90} introduced \emph{genre analysis} as a means for teaching academic
 reading and writing especially to non-native speakers:
-Genres are text types;
+Genres are text types \Todo{Such as?};
 genre analysis means deconstructing texts (from a genre) to better understand
 their elements in
 terms of their syntactical structure, content, role, and interrelationships
 (e.g., their relative position within the whole).
 
 For our purposes here, the most relevant idea from genre analysis is the notion
-of ``moves'', which are, roughly speaking, the building blocks used by the writers
+of ``moves'', which are, roughly speaking, the building blocks used by writers
 for making their overall point.
 Several studies have looked at the move structure of research abstracts
 in different fields such as
@@ -283,12 +286,12 @@ that has gradually become the norm since the 1940s \cite{SolPer04}.
 We found a similar structure for abstracts of 
 empirical works in software engineering (see Section~\ref{archetype}),
 but abstracts of artifact-centric works (tool building) do not fit this model and need
-an extended one.
+an extended one \Todo{point to a section}.
 
 
 \subsection{Abstracts Quality}\label{relatedworkquality}
 
-Several studies on abstracts focus on quality assessment,
+Several (meta-)studies on abstracts focus on quality assessment,
 most often in subfields of the biomedical domain.
 Many such studies cover articles of a homogeneous nature:
 all randomized controlled trials (controlled experiments).
@@ -321,13 +324,14 @@ Among all abstracts reporting non-significant results, studies found spin in
   and 58\% for the conclusions alone across a broad set of 
     medical controlled experiments~\cite{BouDutRav10}.
 
-Unfortunately, the methods of those studies are not applicable to a 
-broad sample of software engineering works, because
+Unfortunately, the methods of those meta-studies are not applicable to a 
+broad sample of software engineering abstracts, because
 in fields with heterogeneous study structures such as ours, the operationalization of
 \emph{quality} is less straight-forward.
 For example, spin can take many more forms in software engineering articles
 than is assumed by the studies mentioned above and it is difficult
 to decide which forms are acceptable and which are not.
+\Todo{Sounds ominous! Examples?}
 
 One approach for discussing the quality of a software engineering abstract 
 could be through comparing to a known ``good'' structure for abstracts.
@@ -338,14 +342,15 @@ that one third of the 12 analyzed abstracts is lacking move 2 (stating a purpose
 \subsection{Structured vs.\ Unstructured Abstracts}\label{relatedworkstructured}
 
 Many studies of abstracts quality do not study quality in general.
-For instance neither~\cite{DupKhoLeb03} nor~\cite{ShaHar06} reports
+For instance, neither~\cite{DupKhoLeb03} nor~\cite{ShaHar06} reports
 which of their checklist items are missing most frequently.
 Rather, their research question is the relative quality of structured
 versus unstructured abstracts.
-And in almost all of those cases, including~\cite{DupKhoLeb03} and~\cite{ShaHar06},
-the answer is: structured abstracts have fewer quality issues.\footnote{A structured abstract is one that uses a prescribed sequence of 
+A \emph{structured abstract} is one that uses a prescribed sequence of 
 intermediate headings, such as Background, Objective, Methods, Results,
-Conclusions or some similar set.}
+Conclusions or some similar set.
+In almost all of those meta-studies, including~\cite{DupKhoLeb03} and~\cite{ShaHar06},
+the answer is: structured abstracts have fewer quality issues.
 Such research can be highly influential.
 For instance, the CONSORTS report~\cite{MohHopSch12}
 (containing guidelines for reporting controlled experiments, with over 10,000 citations),
@@ -353,11 +358,11 @@ relies on such a study \cite{HarSydBlu96} to recommend structured abstracts.
 % https://journals.sagepub.com/doi/epdf/10.1177/016555159602200503
 
 In software engineering, Kitchenham proposed
-Evidence Based Software Engineering (EBSE) in 2004 \cite{KitDybJor04}.
+\emph{Evidence Based Software Engineering} (EBSE) in 2004 \cite{KitDybJor04}.
 EBSE relies a lot on Systematic Literature Reviews (SLR).
 The practicality of SLRs hinges on the informativeness of abstracts:
 Can the researcher decide quickly and reliably, whether the present article
-belongs in the study or not?
+belongs in the SLR or not?
 
 Therefore, Kitchenham performed two studies on structured abstracts
 in software engineering.
@@ -381,7 +386,7 @@ subjectively.
 Both studies use only abstracts of purely empirical studies,
 not tool-building works, 
 which have very different (and more complicated) properties
-as we will see.
+as we will see \Todo{Pointer?}.
 
 
 
@@ -431,7 +436,7 @@ Python scripts for tabulations and plots, and the manuscript of this article.
 Find it at \url{https://github.com/serqco/qabstracts/}.
 \Todo{For Lloyd (after acceptance): Make the repository public and create a Zenodo repository link to a ``release'' of the GitHub repository.}
 
-When we refer to abstracts from our sample, we use abbreviations of the first three authors' names and the year of publication, e.g. [BesMarBos22].
+When we refer to abstracts from our sample, we use abbreviations of the first three authors' names and the year of publication, e.g. \Art{BesMarBos22}.
 Refer to the repository in order to find the corresponding bibliographic information
 and the complete abstract text for the respective article.
 
@@ -449,6 +454,7 @@ our codebook contains global rules for the coding that can be summarized as foll
 \item In order to avoid excessive criticism of abstracts quality,
   we avoid coding negative properties whenever 
   an alterative, more positive interpretation is plausible as well.
+  \Todo{Example? Not as clear as rule 1 and 2.}
 \end{itemize}
 
 
@@ -505,13 +511,13 @@ We call the articles that contain at least one \Cb{design} coding in their abstr
 
 \subsubsection{Refinements: \Cb{gap, summary, fposs} etc.}
 
-At various later points during the work, we recognized a need for more granular coding
+At various later points during our study, we recognized a need for more granular coding
 in order to capture differences in abstract writing we wanted to measure.
 This led to the splitting of existing codes and the introduction of additional ones.
 We then reworked existing codings to use the new codes consistently throughout.
 
 The most important cases of such additional codes are these:
-\Cb{gap} sentences state what is unknown or not yet possible;
+\Cb{gap} sentences state what is unknown or not yet possible \Todo{\Cb{need}?};
 \Cb{summary} sentences summarize several results, but do not provide new information.
 In contrast to a \Cb{conclusion}, a summary statement does not generalize beyond the immediate results.
 \Cb{fposs}, \Cb{fneed}, \Cb{fwork} sentences occur at the end of abstracts.
@@ -566,7 +572,7 @@ Example (from \Art{LiuFenYin22}):
 \Quote{To evaluate DeepState, we conduct an extensive empirical study on popular datasets
 and prevalent RNN models containing image and text processing tasks.}
 This sentence was coded as \Cb{method:i2}, because the coder asked themselves
-\Quote{How many datasets? How many RNN models?}
+\Pseudoquote{How many datasets? How many RNN models?}
 The answers are both given in that article's Table 3: Four datasets, three models.
 The authors could and should have given that information in the abstract.
 
@@ -576,7 +582,9 @@ half-understanding of a term used in the abstract insufficient for understanding
 the abstract overall.
 Example (from \Art{CheHuWei22}):
 \Quote{Finally, we propose a new dynamic vocabulary strategy which can effectively resolve the UNK problems in code summaries.}
-This sentence was coded as \Cb{design:u1} because it is unclear from the abstract what the unintroduced concept of \Quote{UNK problems} are, and furthermore, what that means for \Quote{code summaries}.
+This sentence was coded as \Cb{design:u1} \Todo{Why not \Cb{:u2}?}
+because it is unclear from the abstract what the unintroduced concept of \Quote{UNK problems} are,
+and furthermore, what that means for \Quote{code summaries}.
 % Here are all of the other candidate "easy-to-understand examples of :u1" that I found:
 % The data were analyzed using a Bayesian independent sample t-test and **network
 % analysis**.
@@ -604,6 +612,7 @@ In the training phase, we perfected the mechanics of the coding process
 described below, in particular the very useful \Prg{compare-codings} script
 and email routine,
 and generally formed as a research team.
+\Todo{Obscure}
 
 
 \subsection{Sample}\label{meth_sample}
@@ -638,9 +647,9 @@ questions and stopped coding after \Sexpr{n_abstracts} abstracts\footnote{After 
 Still, ours is the largest manual study of abstracts we know of.
 
 Volume downloading, sampling, and abstract extraction into publishable
-and annotation-ready text files were all done automatically by the
-retrievelit\footnote{\url{https://github.com/serqco/retrievelit/}},
-select-sample, and prepare-sample scripts, respectively, except
+and annotation-ready text files were all done automatically by the scripts
+\Prg{retrievelit}\footnote{\url{https://github.com/serqco/retrievelit/}},
+\Prg{select-sample}, and \Prg{prepare-sample} -- except
 that the EMSE article format required manual abstracts cleansing.
 All these tools were purpose-built for the present study.
 
@@ -649,8 +658,8 @@ All these tools were purpose-built for the present study.
 
 We code each abstract twice, by so-called coders A~and~B.
 Abstracts are held in text files in separate directories \Prg{abstracts.A} and \Prg{abstracts.B}.
-Each sentence is followed by a line containing \Prg{\{\{\}\}} and into this pair of
-double braces the coder would enter their codings,
+Each sentence is followed by a line containing a pair of curly braces \Prg{\{\{\}\}}
+into which the coder would enter their codings,
 such as \Prg{\{\{method,result:i2\}\}} for a complex sentence that contains substantial
 amounts of method information as well as results with two informativeness gaps.
 We batch the coding in blocks of 8 abstracts each.
@@ -662,11 +671,9 @@ which we do in the following two subsections.
 
 \subsubsection{Coding}
 
-% \indent -> I don't think this is doing anything. Maybe a style issue?
 \textbf{Step~1.} When Lloyd wanted to code a block of abstracts on 2023-05-26,
-he found the next available block to be Block 17 B.
-(Lutz had coded Block 17 A previously.)
-Lloyd reserved the block in the coordination file \Prg{sample-who-what.txt}
+he found the next available block to be Block~17, which was already coded once by Lutz (``coder~A'').
+Lloyd reserved his spot as ``coder~B'' in the coordination file \Prg{sample-who-what.txt}
 and performed the coding.
 \textbf{Step~2.} He then ran \Prg{check-codings} to test his codings
 against the codebook and corrected any mistakes, such as typos.
@@ -706,21 +713,23 @@ The models' accuracy improves when application domain groups and peak staff are 
 
 
 \textbf{Step~5.} For the remaining (unresolved) report blocks, Lloyd would write an email to Lutz explaining his reasoning.
-\Todo{For Lutz: What about Step 5a? Lloyd: I don't know what 5a is.}
 \textbf{Step~6.} Lutz would read through that email and categorize the report blocks into the following cases:
 \begin{enumerate}[label=\alph*)]
-  \item Lloyd's coding is obviously correct (Lutz' own is a clerical error) or Lutz prefers Lloyds coding.
+  \item Lloyd's coding is obviously correct (and Lutz' own is a clerical error) or
+  Lutz prefers Lloyds coding.
   Lutz adjusts his coding accordingly.
-  \item Lutz finds Lloyd's coding clearly incorrect (clerical error) or Lutz prefers his own coding.
-  He would respond with an explanation of his reasoning and suggest that Lloyd either adjust his coding or add an \Cb{-ignorediff} marker to it.
-  This suffix indicates two accepted alternative interpretations of the same sentence.
-  \footnote{It also silences the \Prg{compare-codings} script for this particular report block, so that the coding difference is now officially accepted.}
+  \item Lutz finds Lloyd's coding clearly incorrect (clerical error) or
+  Lutz prefers his own coding.
+  He would respond with an explanation of his reasoning and suggest that
+  Lloyd either adjust his coding or add an \Cb{-ignorediff} marker to it.
+  This suffix indicates two accepted alternative interpretations of the same sentence.%
+  \footnote{It silences the \Prg{compare-codings} script for this particular report block, so that the coding difference is now officially accepted.}
   \item Lutz finds both codings equally acceptable.
   He would add an \Cb{-ignorediff} marker to his own and respond accordingly, explaining his reasoning.
 \end{enumerate}
 \textbf{Step~7.} Lutz would commit his corrected abstracts and send the response email.
 \textbf{Step~8.} Lloyd would read the response email and usually act on it to finish the handling of
-Block 17.
+Block~17.
 Only very rarely would he disagree with something to a degree that would make
 another round of emails necessary.
 
@@ -822,7 +831,7 @@ We identify their source by a citation key
 formed from three letters each of the first three authors' names.
 For example article 1 in block 1 in our study was written by
 Fregnan, Petrulio, Di Geronimo, and Bacchelli
-and would be identified as \Art{FrePetGer22}.
+and is thus identified as \Art{FrePetGer22}.
 
 We select those examples for the clarity of the phenomenon in question,
 not for the abstract's quality.
@@ -860,28 +869,26 @@ are disobeyed by more than a quarter of all articles for each of these three ven
 
 <<>>=
 (r_readable_normal <- sum(between(df$fkscore, 20, 30)) / nrow(df))
+(r_readable_improper <- sum(df$fkscore < 20) / nrow(df))
 (r_readable_lt10 <- sum(df$fkscore < 10) / nrow(df))
+
+(venue_mean_fkscores <- df |>
+  group_by(venue) |>
+  summarize(m = mean(fkscore), mf = round(m)))
+(venue_best  <- venue_mean_fkscores |>
+  slice_max(m, n = 1))
+(venue_worst <- venue_mean_fkscores |>
+  slice_min(m, n = 1))
 @
 
 \Todo{Figure~\ref{boxplots_fkscore} double-counts abstracts (blocks A and B)}
 For readability, see Figure~\ref{boxplots_fkscore}:
 only about \Sexpr{format_percent(r_readable_good)} of all abstracts have good readability,
 about \Sexpr{format_percent(r_readable_normal)} have normal readability,
-and a majority is improper --- almost a quarter (\Sexpr{format_percent(r_readable_lt10)}) is even below 10!
-ICSE tends to be better than the other venues,
-TOSEM is worse.
-
-<<>>=
-(venue_mean_fkscores <- df |>
-  group_by(venue) |>
-  summarize(m = mean(fkscore), mf = round(m)))
-(venue_best  <- venue_mean_fkscores |>
-  slice_max(m, n = 1) |>
-  glue_data("{venue} is best (mean {mf})"))
-(venue_worst <- venue_mean_fkscores |>
-  slice_min(m, n = 1) |>
-  glue_data("{venue} is worst (mean {mf})"))
-@
+and \Sexpr{format_percent(r_readable_improper)} are improper ---
+several (\Sexpr{format_percent(r_readable_lt10)}) are even below 10!
+\Sexpr{venue_best$venue} tends to be better than the other venues,
+\Sexpr{venue_worst$venue} is worse.
 
 \Plot{boxplots_fkscore}{%
 	Flesch-Kincaid 'reading ease' readability score, higher is better.
@@ -889,9 +896,10 @@ TOSEM is worse.
     Under 30: very difficult to read (graduate level, acceptable for abstracts).
 	Under 10: extremely difficult to read (overly difficult).
     Differences between subgroups are modest.
-    \Sexpr{venue_best}, \Sexpr{venue_worst}.
+    \Sexpr{venue_best$venue} is best (mean \Sexpr{venue_best$mf}),
+    \Sexpr{venue_worst$venue} is worst (mean \Sexpr{venue_worst$mf}).
     Structured abstracts are just as difficult as nonstructured ones
-    if one ignores the ``Methods:'' etc. headings as we did here.
+    if one ignores the ``Methods:'' etc. headings as we did for the readability analysis.
 }
 
 

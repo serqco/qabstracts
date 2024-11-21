@@ -11,7 +11,8 @@ def create_all_datasets(df: pd.DataFrame):
     datasets = argparse.Namespace()
     datasets.df = df  # the raw datafile
     datasets.df_primary1 = df_primary1(df)
-    datasets.by_abstract = df_by_abstract(datasets.df_primary1)
+    datasets.by_abstract_coding = df_by_abstract_coding(datasets.df_primary1)
+    datasets.by_abstract = df_by_abstract(datasets.by_abstract_coding)
     datasets.ab_structures = ser_ab_structures(datasets.df_primary1)
     return datasets
 
@@ -29,8 +30,8 @@ def df_primary1(df: pd.DataFrame) -> pd.DataFrame:
     return res
 
 
-def df_by_abstract(primary: pd.DataFrame) -> pd.DataFrame:
-    """A dataframe with records that aggregate data at the level of one abstract."""
+def df_by_abstract_coding(primary: pd.DataFrame) -> pd.DataFrame:
+    """A dataframe with records that aggregate data at the level of one abstract coding."""
     # ----- do basic aggregation from codings to abstracts:
     res = primary.groupby(['citekey', 'coder']) \
         .agg(_citekey=_nagg('citekey', 'min'),
@@ -41,8 +42,8 @@ def df_by_abstract(primary: pd.DataFrame) -> pd.DataFrame:
              sentences=_nagg('sidx', 'max'),
              words=_nagg('words', 'sum'), 
              chars=_nagg('chars', 'sum'), 
+             syllables=_nagg('syllables', 'sum'), 
              ignorediffs=_nagg('ignorediff', 'sum'), 
-             fkscore=_nagg('fkscore', 'mean'), 
              codes=_nagg('code', 'count'), 
              utopics=_nagg('topic', 'nunique'),
              icount=_nagg('icount', 'sum'), 
@@ -50,6 +51,17 @@ def df_by_abstract(primary: pd.DataFrame) -> pd.DataFrame:
              announcecount=_nagg('is_announce', 'sum'),
              is_struc=_nagg('is_struc', 'any'), 
              is_design=_nagg('is_design', 'any'))
+
+    # ----- sentence-level fkscores cannot be averaged, we take the full :
+    def calc_fkscore(group):
+        # ignore headers in calculation
+        filtered_group = group[~group['code'].str.startswith('h-')]
+        total_sentences = len(filtered_group)
+        total_words = filtered_group['words'].sum()
+        total_syllables = filtered_group['syllables'].sum()
+        return 206.835 - 1.015*total_words/total_sentences - 84.6*total_syllables/total_words
+    res['fkscore'] = primary.groupby(['citekey', 'coder']).apply(calc_fkscore)
+
     # ----- add derived variables:
     topicparts = primary.groupby(['citekey', 'coder', 'topic']).agg(  # num of words pertaining to topic
             topicwords=_nagg('words', 'sum'),
@@ -112,6 +124,57 @@ def df_by_abstract(primary: pd.DataFrame) -> pd.DataFrame:
                         (res['ucount'] == 0) &  # section 4.9
                         (res['ignorediffs'] == 0))  # section 4.10
                         # 4.2, 4.3 are irrelevant; we have no criteria for 4.4, 4.5, 4.7
+    return res
+
+
+def df_by_abstract(df_by_abstract_coding: pd.DataFrame) -> pd.DataFrame:
+    """A dataframe with records that aggregate data at the level of one abstract."""
+    res = df_by_abstract_coding.groupby(['_citekey']) \
+        .agg(_citekey=_nagg('_citekey', 'min'), # should be no differences from here ...
+             venue=_nagg('venue', 'min'),
+             volume=_nagg('volume', 'min'),
+             sentences=_nagg('sentences', 'max'),
+             words=_nagg('words', 'max'), 
+             chars=_nagg('chars', 'max'), 
+             syllables=_nagg('syllables', 'max'), 
+             fkscore=_nagg('fkscore', 'max'), 
+             avg_wordlength=_nagg('avg_wordlength', 'max'), # ... to here.
+             ignorediffs=_nagg('ignorediffs', 'max'), 
+             codes=_nagg('codes', 'max'), 
+             utopics=_nagg('utopics', 'max'),
+             # How to count :i and :u?
+             #  max = one coder saw an issue
+             #  min = both coders saw an issue
+             #  mean = one saw none, other saw two (or more)
+             icount=_nagg('icount', 'min'),
+             ucount=_nagg('ucount', 'min'),
+             #
+             total_gaps=_nagg('total_gaps', 'max'),
+             announcecount=_nagg('announcecount', 'max'),
+             fraction_introduction=_nagg('fraction_introduction', 'mean'),
+             fraction_background=_nagg('fraction_background', 'mean'),
+             fraction_gap=_nagg('fraction_gap', 'mean'),
+             fraction_objective=_nagg('fraction_objective', 'mean'),
+             fraction_design=_nagg('fraction_design', 'mean'),
+             fraction_method=_nagg('fraction_method', 'mean'),
+             fraction_result=_nagg('fraction_result', 'mean'),
+             fraction_Outlook=_nagg('fraction_Outlook', 'mean'),
+             fraction_conclusion=_nagg('fraction_conclusion', 'mean'),
+             fraction_other=_nagg('fraction_other', 'mean'),
+             fraction_code_a_method=_nagg('fraction_code_a_method', 'mean'),
+             fraction_code_a_result=_nagg('fraction_code_a_result', 'mean'),
+             fraction_code_a_conclusion=_nagg('fraction_code_a_conclusion', 'mean'),
+             fraction_code_a_fposs=_nagg('fraction_code_a_fposs', 'mean'),
+             fraction_conclusion_shortbg=_nagg('fraction_conclusion_shortbg', 'mean'),
+             fraction_conclusion_longbg=_nagg('fraction_conclusion_longbg', 'mean'),
+             # How to treat binary properties?
+             #  any = one satisfied coder is enough
+             #  all = both coders need to be satisfied
+             is_struc=_nagg('is_struc', 'any'),
+             is_design=_nagg('is_design', 'any'),
+             is_complete=_nagg('is_complete', 'any'),
+             is_proper=_nagg('is_proper', 'any')
+            )
     return res
 
 

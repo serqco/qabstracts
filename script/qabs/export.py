@@ -65,6 +65,7 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
     H_LEN = 10  # assumed number of chars corresponding to a h-* coding if there are multiple codings
     words = annot_sentence.words
     chars = annot_sentence.chars
+    syllables = annot_sentence.syllables
     readability = annot_sentence.fk_readability  # counted N times for N-fold encodings
     no_readability = math.nan  # what should not be included in the total abstract average
     codings = (set(abstract.annots.split_into_codings(annot_sentence.annotation)) -
@@ -75,7 +76,8 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
     for code, csuffix in codings:
         if code not in codes_done and abstract.codebook.is_extra_code(code):
             codes_done.add(code)
-            prt_record(abstract, idx, words, chars, no_readability,  # words, chars: sic?
+            prt_record(abstract, idx,
+                       math.nan, math.nan, math.nan, no_readability,
                        abstract.annots.bare_codename(code), csuffix, abstract.codebook.topic(code), 
                        math.nan, math.nan)
     # ----- process h-* codes (which count only 1 word):
@@ -83,44 +85,43 @@ def process_sentence(idx: int, annot_sentence: annot.AnnotatedSentence, abstract
         if code not in codes_done and abstract.codebook.is_heading_code(code):
             codes_done.add(code)
             prt_record(abstract, idx,
-                       1 if multiple else words, H_LEN if multiple else chars, no_readability,
+                       1 if multiple else words,
+                       H_LEN if multiple else chars,
+                       math.nan, no_readability,
                        abstract.annots.bare_codename(code), csuffix, abstract.codebook.topic(code), 
                        0, 0)
-    words -= len(codes_done)
-    chars -= H_LEN * len(codes_done)  # the approximation matters only if there are unprocessed codings left
-    remaining = len(codings) - len(codes_done)
+            words -= 1
+            chars -= H_LEN
+    remaining = len(codings) - len(codes_done) + len(set(abstract.codebook.GARBAGE_CODES))
     if remaining > 1:
-        words = words / remaining  # split length equally among remaining codes, an assumption!
-        chars = chars / remaining  # ditto
+        words = words / remaining         # split length equally among remaining codes, an assumption!
+        chars = chars / remaining         # ditto
+        syllables = syllables / remaining # ditto
     # ----- process remaining codes with no IU suffix:
-    for code, csuffix in codings:
-        if code not in codes_done and not csuffix:
-            codes_done.add(code)
-            prt_record(abstract, idx, words, chars, readability,
-                       code, csuffix, abstract.codebook.topic(code), 
-                       0, 0)
     # ----- process remaining codes with explicit or implicit IU suffix:
     for code, csuffix in codings:
         if code not in codes_done:
             codes_done.add(code)
-            assert abstract.codebook.can_have_iu_suffix(code)
-            icount, ucount = abstract.annots.get_iu_counts(csuffix)
-            prt_record(abstract, idx, words, chars, readability,
+            if csuffix:
+                assert abstract.codebook.can_have_iu_suffix(code)
+                icount, ucount = abstract.annots.get_iu_counts(csuffix)
+            else:
+                icount, ucount = 0, 0
+            prt_record(abstract, idx, words, chars, syllables, readability,
                        code, csuffix, abstract.codebook.topic(code), 
                        icount, ucount)
-
 
 def prt_head():
     """Print header line for output file. Corresponds to prt_record."""
     prt("citekey\tvenue\tvolume\tcoder\tcodername")
-    prt("sidx\twords\tchars\tfkscore")
+    prt("sidx\twords\tchars\tsyllables\tfkscore")
     prt("code\tsuffixes\ttopic\ticount\tucount", end_line=True)
 
 
-def prt_record(a: Abstract, idx: int, words: Number, chars: Number, fkscore: Number,
+def prt_record(a: Abstract, idx: int, words: Number, chars: Number, syllables: Number, fkscore: Number,
                code: str, suffixes: str, topic: str, icount: Number, ucount: Number):
     prt(f"{a.citekey}\t{a.venue}\t{a.volume}\t{a.coder_letter}\t{a.coder}")  # file-related
-    prt(f"{idx}\t{_numberish(words)}\t{_numberish(chars)}\t{_numberish(fkscore)}")  # sentence-related
+    prt(f"{idx}\t{_numberish(words)}\t{_numberish(chars)}\t{_numberish(syllables)}\t{_numberish(fkscore)}")  # sentence-related
     prt(f"{code}\t{suffixes}\t{topic}\t{_numberish(icount)}\t{_numberish(ucount)}", end_line=True)  # coding-related
 
 
