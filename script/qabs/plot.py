@@ -142,24 +142,6 @@ def plot_ab_topicstructure_freqs(df: pd.DataFrame, outputdir: str):
     plt.savefig(filename)
 
 
-def plot_qabstracts_timeline_commitsOLD(outputdir: str, all_timestamps: dict[str,list[int]]):
-    """stripplots of the timestamps of various subsets of git commits"""
-    # ----- configs of the stripplots:
-    cases = qabs.extract_git_timestamps.git_timestamp_cases
-    # ----- set up the plot:
-    plt.figure()
-    plt.yticks([y for y, l, s, f in cases], [l for y, l, s, f in cases])
-    plt.xlim(dt.date(2022, 6, 1), dt.date(2024, 4, 30))
-    # fix label frequency: https://matplotlib.org/stable/gallery/text_labels_and_annotations/date.html
-    # ----- plot the stripplots:
-    for y, label, symbol, files in cases:
-        datetimes = [dt.datetime.fromtimestamp(ts) for ts in all_timestamps[files]]
-        ys = np.random.uniform(low=y-0.2, high=y+0.2, size=len(datetimes))
-        plt.scatter(datetimes, ys, marker=f"${symbol}$", linewidths=0.1)  # noqa
-    # ----- save the plot:
-    plt.savefig(pt.plotfilename(outputdir))
-
-
 def plot_qabstracts_timeline_commits(outputdir: str, all_timestamps: dict[str,list[int]]):
     """stripplots of the timestamps of various subsets of git commits"""
     # ----- configs of the stripplots:
@@ -167,7 +149,7 @@ def plot_qabstracts_timeline_commits(outputdir: str, all_timestamps: dict[str,li
     # ----- set up the plot:
     fig, axs = plt.subplots()
     axs.set_yticks([y for y, l, s, f in cases], [l for y, l, s, f in cases])
-    axs.set_xlim(dt.date(2022, 6, 1), dt.date(2024, 4, 30))
+    axs.set_xlim(dt.date(2022, 6, 1), dt.date(2024, 12, 15))
     # fix label frequency: https://matplotlib.org/stable/gallery/text_labels_and_annotations/date.html
     axs.xaxis.set_major_locator(mdates.MonthLocator(bymonth=(1, 7)))
     axs.xaxis.set_minor_locator(mdates.MonthLocator(bymonth=range(1, 12+1)))
@@ -176,7 +158,7 @@ def plot_qabstracts_timeline_commits(outputdir: str, all_timestamps: dict[str,li
     for y, label, symbol, files in cases:
         datetimes = [dt.datetime.fromtimestamp(ts) for ts in all_timestamps[files]]
         ys = np.random.uniform(low=y-0.2, high=y+0.2, size=len(datetimes))
-        axs.scatter(datetimes, ys, marker=f"${symbol}$", linewidths=0.1)  # noqa
+        axs.scatter(datetimes, ys, marker=f"${symbol}$", linewidths=0.1, s=20)  # noqa
     # ----- save the plot:
     plt.savefig(pt.plotfilename(outputdir))
 
