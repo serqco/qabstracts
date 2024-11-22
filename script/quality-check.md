@@ -96,7 +96,7 @@ datasets$by_abstract_coding |> head(1) |> t()
     ## announcecount               "0"          
     ## is_struc                    "FALSE"      
     ## is_design                   "FALSE"      
-    ## fkscore                     "27.91192"   
+    ## fkscore                     "25.72814"   
     ## words_background            "65"         
     ## fraction_background         "22.88732"   
     ## words_gap                   "14"         
@@ -157,7 +157,7 @@ datasets$by_abstract |> head(1) |> t()
     ## words                       "284"        
     ## chars                       "1901"       
     ## syllables                   "520"        
-    ## fkscore                     "27.91192"   
+    ## fkscore                     "25.72814"   
     ## avg_wordlength              "5.493662"   
     ## ignorediffs                 "0"          
     ## codes                       "12"         
@@ -320,24 +320,19 @@ assert_coder_sameness(avg_wordlength)
 
 Note: `fkscore` should also be same – see next problem.
 
-## 2.3 Problem: Different `fkscore`s
+## 2.3 Problem: Different `fkscore`s (RESOLVED)
 
-A few abstracts have different `fkscore`s:
+A few abstracts had different `fkscore`s in the past, but now any
+difference is small and probably due to rounding errors:
 
 ``` r
 assert_coder_sameness(fkscore)
 ```
 
-    ## # A tibble: 5 × 4
-    ##   `_citekey`      A     B  diff
-    ##   <chr>       <dbl> <dbl> <dbl>
-    ## 1 GonRajHas22 21.3  24.6   3.30
-    ## 2 YanXiaLo22  38.7  36.3   2.45
-    ## 3 CasZamNov22 24.6  26.9   2.26
-    ## 4 WalGhaAla22 17.3  18.7   1.41
-    ## 5 Liu22       -3.57 -2.36  1.21
-
-I have no idea what might cause this.
+    ## # A tibble: 1 × 4
+    ##   `_citekey`     A     B   diff
+    ##   <chr>      <dbl> <dbl>  <dbl>
+    ## 1 YanXiaLo22  28.3  28.3 0.0280
 
 ## 2.4 Problem: Calculation of `fkscore` ignores multi-codings (RESOLVED)
 
@@ -597,8 +592,8 @@ datasets$by_abstract_coding |>
 ```
 
     ##           [,1]
-    ## p_and 2.209945
-    ## p_or  5.524862
+    ## p_and 1.933702
+    ## p_or  5.248619
 
 These are abstracts for which A’s and B’s coding do not lead to the same
 `is_proper` values:
@@ -625,3 +620,42 @@ datasets$by_abstract_coding |>
     ## 10 TanFeiAvg22 TRUE        FALSE      
     ## 11 WuSheChe22  FALSE       TRUE       
     ## 12 YuKeuXia22  FALSE       TRUE
+
+## 3.3 `ignorediff` is not always a problem
+
+Consider this case:
+
+``` r
+raw |>
+    filter(citekey == 'GonRajHas22', sidx == 5) |>
+    select(citekey, coder, codername, sidx, words, chars, syllables, fkscore, code, topic)
+```
+
+    ## # A tibble: 4 × 10
+    ##   citekey     coder codername  sidx words chars syllables fkscore code       topic    
+    ##   <chr>       <chr> <chr>     <dbl> <dbl> <dbl>     <dbl>   <dbl> <chr>      <chr>    
+    ## 1 GonRajHas22 B     Franz         5    29  212.      58.5   -22.7 method     method   
+    ## 2 GonRajHas22 B     Franz         5    29  212.      58.5   -22.7 objective  objective
+    ## 3 GonRajHas22 A     Lutz          5   NaN  NaN      NaN     NaN   ignorediff none     
+    ## 4 GonRajHas22 A     Lutz          5    58  423      117     -22.7 method     method
+
+This sentence is coded differently `method` vs. `objective`/`method`:
+
+> Therefore, through a case study of 9 open source software projects
+> across 30 versions, we study the relative effectiveness of SNA metrics
+> when compared to code metrics across 3 commonly used SDP contexts
+> (Within-project, Cross-version and Cross-project) and scenarios
+> (Defect-count, Defect-classification (classifying if a module is
+> defective) and Effort-aware (ranking the defective modules w.r.t to
+> the involved effort)).
+
+So, does this formulation from the article really capture the “issue”?:
+
+> The respective sentence (or sentence part) is so highly ambiguous that
+> more than one role for it is similarly likely. Obviously, such
+> ambiguous formulations do not represent good abstract writing and we
+> consider such abstracts to be *improper*.
+
+(Note: Without the double-coding, the abstract would not have any
+`objective` statement and thus be *incomplete* – but not because of
+“highly ambiguous” sentences.)
