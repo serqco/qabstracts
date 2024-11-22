@@ -4,6 +4,9 @@ STUDYDIR=abstracts
 EXPORTFILE=results/$(STUDYDIR)-results.tsv
 TIMESTAMPFILE=results/git_timestamps.json
 
+# You can call e.g. "make pdf" or "make pdf KNIT_ARGS=debug"
+KNIT_ARGS ?=
+
 all:
 	echo "There is no top-level target. Pick a specific one:"
 	grep '^[a-zA-Z][a-zA-Z0-9_-]*:' Makefile
@@ -19,7 +22,7 @@ export:
 	$(QABSTRACTS) extract-git-timestamps
 
 knit:
-	Rscript -e "library(knitr); knit('tex/qabstracts-tse.Rnw', output='tex/qabstracts-tse.tex')"
+	Rscript -e "library(knitr); knit('tex/qabstracts-tse.Rnw', output='tex/qabstracts-tse.tex')" --args $(KNIT_ARGS)
 
 pdf: knit
 	cd tex; latexmk -pdf -bibtex qabstracts-tse
