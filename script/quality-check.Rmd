@@ -217,6 +217,18 @@ raw |> filter(citekey == "LiuLiFu22", coder == "B", sidx == 8) |>
 Which is correct.
 
 
+## Erratic Abstract Structures
+
+Without changing the data or the scripts, running `make export` and `make plotall` gives different plots
+for the abstract structures.
+
+Here are three examples:
+
+| 1. | 2. | 3. |
+|----|----|----|
+| ![](str1.png) | ![](str2.png) | ![](str3.png) |
+
+
 # Issues related to Double Coding of Abstracts
 The following issues do not lead to _wrong_ number per se, but to questionable ones.
 

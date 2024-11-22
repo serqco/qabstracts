@@ -96,7 +96,7 @@ datasets$by_abstract_coding |> head(1) |> t()
     ## announcecount               "0"          
     ## is_struc                    "FALSE"      
     ## is_design                   "FALSE"      
-    ## fkscore                     "25.72814"   
+    ## fkscore                     "27.91192"   
     ## words_background            "65"         
     ## fraction_background         "22.88732"   
     ## words_gap                   "14"         
@@ -157,7 +157,7 @@ datasets$by_abstract |> head(1) |> t()
     ## words                       "284"        
     ## chars                       "1901"       
     ## syllables                   "520"        
-    ## fkscore                     "25.72814"   
+    ## fkscore                     "27.91192"   
     ## avg_wordlength              "5.493662"   
     ## ignorediffs                 "0"          
     ## codes                       "12"         
@@ -329,10 +329,14 @@ difference is small and probably due to rounding errors:
 assert_coder_sameness(fkscore)
 ```
 
-    ## # A tibble: 1 × 4
-    ##   `_citekey`     A     B   diff
-    ##   <chr>      <dbl> <dbl>  <dbl>
-    ## 1 YanXiaLo22  28.3  28.3 0.0280
+    ## # A tibble: 5 × 4
+    ##   `_citekey`      A     B  diff
+    ##   <chr>       <dbl> <dbl> <dbl>
+    ## 1 GonRajHas22 21.3  24.6   3.30
+    ## 2 YanXiaLo22  38.7  36.3   2.45
+    ## 3 CasZamNov22 24.6  26.9   2.26
+    ## 4 WalGhaAla22 17.3  18.7   1.41
+    ## 5 Liu22       -3.57 -2.36  1.21
 
 ## 2.4 Problem: Calculation of `fkscore` ignores multi-codings (RESOLVED)
 
@@ -435,11 +439,22 @@ raw |> filter(citekey == "LiuLiFu22", coder == "B", sidx == 8) |>
     ## # A tibble: 3 × 8
     ##   citekey    sidx words chars syllables code       suffixes topic     
     ##   <chr>     <dbl> <dbl> <dbl>     <dbl> <chr>      <chr>    <chr>     
-    ## 1 LiuLiFu22     8  10.3    68      19.3 a-method   <NA>     method    
-    ## 2 LiuLiFu22     8  10.3    68      19.3 result     :i1      result    
+    ## 1 LiuLiFu22     8  10.3    68      19.3 result     :i1      result    
+    ## 2 LiuLiFu22     8  10.3    68      19.3 a-method   <NA>     method    
     ## 3 LiuLiFu22     8  10.3    68      19.3 conclusion <NA>     conclusion
 
 Which is correct.
+
+## 2.7 Erratic Abstract Structures
+
+Without changing the data or the scripts, running `make export` and
+`make plotall` gives different plots for the abstract structures.
+
+Here are three examples:
+
+| 1\.           | 2\.           | 3\.           |
+|---------------|---------------|---------------|
+| ![](str1.png) | ![](str2.png) | ![](str3.png) |
 
 # 3 Issues related to Double Coding of Abstracts
 
@@ -592,8 +607,8 @@ datasets$by_abstract_coding |>
 ```
 
     ##           [,1]
-    ## p_and 1.933702
-    ## p_or  5.248619
+    ## p_and 2.209945
+    ## p_or  5.524862
 
 These are abstracts for which A’s and B’s coding do not lead to the same
 `is_proper` values:
@@ -634,8 +649,8 @@ raw |>
     ## # A tibble: 4 × 10
     ##   citekey     coder codername  sidx words chars syllables fkscore code       topic    
     ##   <chr>       <chr> <chr>     <dbl> <dbl> <dbl>     <dbl>   <dbl> <chr>      <chr>    
-    ## 1 GonRajHas22 B     Franz         5    29  212.      58.5   -22.7 method     method   
-    ## 2 GonRajHas22 B     Franz         5    29  212.      58.5   -22.7 objective  objective
+    ## 1 GonRajHas22 B     Franz         5    29  212.      58.5   -22.7 objective  objective
+    ## 2 GonRajHas22 B     Franz         5    29  212.      58.5   -22.7 method     method   
     ## 3 GonRajHas22 A     Lutz          5   NaN  NaN      NaN     NaN   ignorediff none     
     ## 4 GonRajHas22 A     Lutz          5    58  423      117     -22.7 method     method
 
