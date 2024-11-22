@@ -1543,7 +1543,7 @@ after in-Python aggregation is fix.}
 	What fraction of abstracts is \emph{proper} in the sense of 
 	Section~\ref{statisticalevaluation}?\\
     Only \Sexpr{format_percent(r_complete)} of abstracts are \emph{complete}. 
-	Only about \Sexpr{format_percent(r_complete_unstruc)} of unstructured abstracts and
+	Only about \Sexpr{format_percent(r_complete_unstruc$r_complete)} of unstructured abstracts and
   \Sexpr{format_percent(r_complete_design$r_complete)} of design article abstracts are complete.
 	Structured abstracts are much better and therefore all four supposedly top-quality venues
 	are beat by the much lower-regarded IST which requires structured abstracts.\\

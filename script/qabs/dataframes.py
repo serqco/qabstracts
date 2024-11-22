@@ -52,11 +52,11 @@ def df_by_abstract_coding(primary: pd.DataFrame) -> pd.DataFrame:
              is_struc=_nagg('is_struc', 'any'), 
              is_design=_nagg('is_design', 'any'))
 
-    # ----- sentence-level fkscores cannot be averaged, we take the full :
+    # ----- sentence-level fkscores cannot be averaged, we take the full abstract:
     def calc_fkscore(group):
         # ignore headers in calculation
         filtered_group = group[~group['code'].str.startswith('h-')]
-        total_sentences = len(filtered_group)
+        total_sentences = filtered_group['sidx'].nunique()
         total_words = filtered_group['words'].sum()
         total_syllables = filtered_group['syllables'].sum()
         return 206.835 - 1.015*total_words/total_sentences - 84.6*total_syllables/total_words
