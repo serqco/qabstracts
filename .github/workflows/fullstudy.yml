@@ -58,7 +58,7 @@ jobs:
           ls -l img
 
       - name: knit report
-        run: ${{ env.RUN_CMD }} make pdf
+        run: ${{ env.RUN_CMD }} make pdf KNIT_ARGS=debug
 
       - name: upload PDF
         uses: actions/upload-artifact@v4
