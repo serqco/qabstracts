@@ -140,14 +140,14 @@ def print_gaps_stats(codings: pd.DataFrame, abstracts: pd.DataFrame):
 
 def print_test(df: pd.DataFrame, criterion: str):
     test = calc_test(df, criterion)
-    print("Test '%s': chi2:%5.1f, p:%6.4f, df:%d" % (criterion, test.chi2, test.p, test.dof))
+    print("Test '%s': chi2:%5.1f, p:%6.4f, df:%d" % (criterion, test['chi2'], test['p'], test['dof']))
     print("          yes: total %4.1f%%, structured %4.1f%%, unstructured %4.1f%%" % 
-          (100 * (test.struc_success + test.unstruc_success) / test.total,
-           100 * test.struc_success  / test.total,
-           100 * test.unstruc_success  / test.total))
-    print(test.testdf)
+          (100 * (test['struc_success'] + test['unstruc_success']) / test['total'],
+           100 * test['struc_success'] / test['total'],
+           100 * test['unstruc_success'] / test['total']))
+    print(test['testdf'])
 
-def calc_test(df: pd.DataFrame, criterion: str):
+def calc_test(df: pd.DataFrame, criterion: str) -> dict:
     df_struc = df.query('is_struc')
     df_unstruc = df.query('not is_struc')
     total = len(df)
