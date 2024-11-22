@@ -96,7 +96,7 @@ datasets$by_abstract_coding |> head(1) |> t()
     ## announcecount               "0"          
     ## is_struc                    "FALSE"      
     ## is_design                   "FALSE"      
-    ## fkscore                     "27.91192"   
+    ## fkscore                     "25.72814"   
     ## words_background            "65"         
     ## fraction_background         "22.88732"   
     ## words_gap                   "14"         
@@ -157,7 +157,7 @@ datasets$by_abstract |> head(1) |> t()
     ## words                       "284"        
     ## chars                       "1901"       
     ## syllables                   "520"        
-    ## fkscore                     "27.91192"   
+    ## fkscore                     "25.72814"   
     ## avg_wordlength              "5.493662"   
     ## ignorediffs                 "0"          
     ## codes                       "12"         
@@ -329,14 +329,10 @@ difference is small and probably due to rounding errors:
 assert_coder_sameness(fkscore)
 ```
 
-    ## # A tibble: 5 × 4
-    ##   `_citekey`      A     B  diff
-    ##   <chr>       <dbl> <dbl> <dbl>
-    ## 1 GonRajHas22 21.3  24.6   3.30
-    ## 2 YanXiaLo22  38.7  36.3   2.45
-    ## 3 CasZamNov22 24.6  26.9   2.26
-    ## 4 WalGhaAla22 17.3  18.7   1.41
-    ## 5 Liu22       -3.57 -2.36  1.21
+    ## # A tibble: 1 × 4
+    ##   `_citekey`     A     B   diff
+    ##   <chr>      <dbl> <dbl>  <dbl>
+    ## 1 YanXiaLo22  28.3  28.3 0.0280
 
 ## 2.4 Problem: Calculation of `fkscore` ignores multi-codings (RESOLVED)
 
@@ -439,9 +435,9 @@ raw |> filter(citekey == "LiuLiFu22", coder == "B", sidx == 8) |>
     ## # A tibble: 3 × 8
     ##   citekey    sidx words chars syllables code       suffixes topic     
     ##   <chr>     <dbl> <dbl> <dbl>     <dbl> <chr>      <chr>    <chr>     
-    ## 1 LiuLiFu22     8  10.3    68      19.3 result     :i1      result    
-    ## 2 LiuLiFu22     8  10.3    68      19.3 a-method   <NA>     method    
-    ## 3 LiuLiFu22     8  10.3    68      19.3 conclusion <NA>     conclusion
+    ## 1 LiuLiFu22     8  10.3    68      19.3 conclusion <NA>     conclusion
+    ## 2 LiuLiFu22     8  10.3    68      19.3 result     :i1      result    
+    ## 3 LiuLiFu22     8  10.3    68      19.3 a-method   <NA>     method
 
 Which is correct.
 
@@ -508,6 +504,24 @@ datasets$by_abstract_coding |>
     ## i_mean 53.03867
     ## i_max  66.29834
 
+(Note: There is only a difference between `mean` and `max` if we count
+`>=1` as a gap. If it’s everything `>0`, then there is no difference
+between those two methods.)
+
+A fourth approach would be to not combine the values on abstract-level
+at all, but just consider all $2\cdot n$ abstract codings separately:
+
+``` r
+datasets$by_abstract_coding |>
+    summarize(i_mixed = sum(icount >= 1) / n() * 100) |>
+    t()
+```
+
+    ##            [,1]
+    ## i_mixed 55.1105
+
+------------------------------------------------------------------------
+
 The same question arises for u-gaps as well (again, percentages of
 abstracts with one or more such gaps):
 
@@ -523,6 +537,28 @@ datasets$by_abstract_coding |>
     ## u_min   5.248619
     ## u_mean 10.497238
     ## u_max  26.243094
+
+(Note: Again, there is only a difference between `mean` and `max` if we
+count `>=1`, not `>0`, as a gap.)
+
+A fourth approach would be to not combine the values on abstract-level
+at all, but just consider all $2\cdot n$ abstract codings separately:
+
+``` r
+datasets$by_abstract_coding |>
+    summarize(u_mixed = sum(ucount >= 1) / n() * 100) |>
+    t()
+```
+
+    ##             [,1]
+    ## u_mixed 15.74586
+
+------------------------------------------------------------------------
+
+So, what is the ‘real’ number of abstracts with an i- or u-gap? Only
+with the `min`, `mean`, or `max` process can we directly pinpoint which
+abstracts. It’s a bit harder to wrap your head around the `mixed`
+numbers.
 
 ## 3.2 Completeness and Properness
 
@@ -559,6 +595,20 @@ datasets$by_abstract_coding |>
     ##           [,1]
     ## c_and 28.45304
     ## c_or  29.55801
+
+Again, there is another alternative: Consider all $2 \cdot n$ abstract
+codings individually:
+
+``` r
+datasets$by_abstract_coding |>
+    summarize(c_mixed = sum(is_complete) / n() * 100) |>
+    t()
+```
+
+    ##             [,1]
+    ## c_mixed 29.00552
+
+------------------------------------------------------------------------
 
 The number of *proper* abstracts is more difficult to conceptualize.
 
@@ -607,8 +657,20 @@ datasets$by_abstract_coding |>
 ```
 
     ##           [,1]
-    ## p_and 2.209945
-    ## p_or  5.524862
+    ## p_and 1.933702
+    ## p_or  5.248619
+
+Again, there is another alternative: Consider all $2 \cdot n$ abstract
+codings individually:
+
+``` r
+datasets$by_abstract_coding |>
+    summarize(p_mixed = sum(is_proper) / n() * 100) |>
+    t()
+```
+
+    ##            [,1]
+    ## p_mixed 3.59116
 
 These are abstracts for which A’s and B’s coding do not lead to the same
 `is_proper` values:
@@ -649,8 +711,8 @@ raw |>
     ## # A tibble: 4 × 10
     ##   citekey     coder codername  sidx words chars syllables fkscore code       topic    
     ##   <chr>       <chr> <chr>     <dbl> <dbl> <dbl>     <dbl>   <dbl> <chr>      <chr>    
-    ## 1 GonRajHas22 B     Franz         5    29  212.      58.5   -22.7 objective  objective
-    ## 2 GonRajHas22 B     Franz         5    29  212.      58.5   -22.7 method     method   
+    ## 1 GonRajHas22 B     Franz         5    29  212.      58.5   -22.7 method     method   
+    ## 2 GonRajHas22 B     Franz         5    29  212.      58.5   -22.7 objective  objective
     ## 3 GonRajHas22 A     Lutz          5   NaN  NaN      NaN     NaN   ignorediff none     
     ## 4 GonRajHas22 A     Lutz          5    58  423      117     -22.7 method     method
 

@@ -256,6 +256,18 @@ datasets$by_abstract_coding |>
     t()
 ```
 
+(Note: There is only a difference between `mean` and `max` if we count `>=1` as a gap. If it's everything `>0`, then there is no difference between those two methods.)
+
+A fourth approach would be to not combine the values on abstract-level at all, but just consider all $2\cdot n$ abstract codings separately:
+
+```{r}
+datasets$by_abstract_coding |>
+    summarize(i_mixed = sum(icount >= 1) / n() * 100) |>
+    t()
+```
+
+---
+
 The same question arises for u-gaps as well (again, percentages of abstracts with one or more such gaps):
 
 ```{r}
@@ -265,6 +277,23 @@ datasets$by_abstract_coding |>
     summarize(across(c(u_min, u_mean, u_max), ~sum(. >= 1) / n() * 100)) |>
     t()
 ```
+
+(Note: Again, there is only a difference between `mean` and `max` if we count `>=1`, not `>0`, as a gap.)
+
+A fourth approach would be to not combine the values on abstract-level at all, but just consider all $2\cdot n$ abstract codings separately:
+
+```{r}
+datasets$by_abstract_coding |>
+    summarize(u_mixed = sum(ucount >= 1) / n() * 100) |>
+    t()
+```
+
+---
+
+So, what is the 'real' number of abstracts with an i- or u-gap?
+Only with the `min`, `mean`, or `max` process can we directly pinpoint which abstracts.
+It's a bit harder to wrap your head around the `mixed` numbers.
+
 
 ## Completeness and Properness
 
@@ -288,6 +317,16 @@ datasets$by_abstract_coding |>
     summarize(across(c(c_and, c_or), ~sum(.) / n() * 100)) |>
     t()
 ```
+
+Again, there is another alternative: Consider all $2 \cdot n$ abstract codings individually:
+
+```{r}
+datasets$by_abstract_coding |>
+    summarize(c_mixed = sum(is_complete) / n() * 100) |>
+    t()
+```
+
+---
 
 The number of _proper_ abstracts is more difficult to conceptualize.
 
@@ -324,6 +363,14 @@ datasets$by_abstract_coding |>
     group_by(`_citekey`) |>
     summarize(p_and = all(is_proper), p_or = any(is_proper)) |>
     summarize(across(c(p_and, p_or), ~sum(.) / n() * 100)) |>
+    t()
+```
+
+Again, there is another alternative: Consider all $2 \cdot n$ abstract codings individually:
+
+```{r}
+datasets$by_abstract_coding |>
+    summarize(p_mixed = sum(is_proper) / n() * 100) |>
     t()
 ```
 
