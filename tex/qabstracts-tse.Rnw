@@ -20,6 +20,8 @@
 \usepackage{enumitem}  % For letter-based lists
 \usepackage{listings}  % To show code/text as an example
 
+\usepackage{booktabs}
+
 \graphicspath{ {../img} {.} }
 \usepackage{xcolor}
 \usepackage{balance}
@@ -112,6 +114,7 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 library(glue)
+library(kableExtra)
 
 # Make Python variables available to R, so they can be used in the following document
 for (var in names(py)) {
@@ -119,7 +122,8 @@ for (var in names(py)) {
 }
 
 # We use this dataset the most, so we provide a shorthand
-df <- datasets$by_abstract
+df   <- datasets$by_abstract
+df_c <- datasets$by_abstract_coding
 
 # Percentages occur often and need to be properly escaped in LaTeX
 format_percent <- function(value, accuracy = 1) {
@@ -140,12 +144,101 @@ format_p_value <- function(p) {
 bp_prob <- c(0.1, 0.25, 0.5, 0.75, 0.9)
 @
 
+<<echo=FALSE, message=FALSE>>=
+disagreement_range <- function(df, column) {
+  df |>
+    summarize(
+      min_i = min({{ column }}),
+      max_i = max({{ column }}),
+      .by = `_citekey`
+    ) |>
+    summarize(
+      min = sum(min_i > 0),
+      max = sum(max_i > 0)
+    )
+} 
+
+ranges <- df_c |>
+  mutate(
+    n_complete_yes = is_complete,
+    n_complete_no  = !is_complete,
+    n_igap_no      = icount == 0,
+    n_igap_yes     = icount >= 1,
+    n_igap_yes3    = icount >= 3,
+    n_announce_no  = announcecount == 0,
+    n_announce_yes = announcecount >= 1,
+    n_ugap_no      = ucount == 0,
+    n_ugap_yes     = ucount >= 1,
+    n_proper_yes   = is_proper,
+    n_proper_no    = !is_proper,
+  ) |>
+  select(starts_with("n_") | `_citekey`) |>
+  reframe(across(starts_with("n_"),
+    ~disagreement_range(pick(everything()), .x),
+    .names = "{.col}")) |>
+  unnest_wider(everything(), names_sep = "_") |>
+  pivot_longer(cols = everything(),
+    names_to = c("name", ".value"),
+    names_pattern = "(.+)_([^_]+)$")
+
+stats_overview <- df_c |>
+  summarize(
+    n_read_good       = sum(fkscore > 30),
+    n_read_acceptable = sum(between(fkscore, 20, 30)),
+    n_read_improper   = sum(fkscore < 20),
+    n_complete_yes    = sum(is_complete),
+    n_complete_no     = sum(!is_complete),
+    n_igap_no         = sum(icount == 0),
+    n_igap_yes        = sum(icount >= 1),
+    n_igap_yes3       = sum(icount >= 3),
+    n_announce_no     = sum(announcecount == 0),
+    n_announce_yes    = sum(announcecount >= 1),
+    n_ugap_no         = sum(ucount == 0),
+    n_ugap_yes        = sum(ucount >= 1),
+    n_ambig_no        = sum(ignorediffs == 0),
+    n_ambig_yes       = sum(ignorediffs >= 1),
+    n_proper_yes      = sum(is_proper),
+    n_proper_no       = sum(!is_proper),
+  ) |>
+  mutate(across(everything(), ~./2)) |>
+  pivot_longer(everything()) |>
+  left_join(ranges, by = join_by(name)) |>
+  mutate(across(c(value, min, max), ~./(nrow(df_c) / 2),
+    .names = "r_{.col}"))
+
+r_stat <- function(metric) {
+  stats_overview |>
+    filter(name == metric) |>
+    pull(r_value) |>
+    format_percent()
+}
+r_min <- function(metric) {
+  stats_overview |>
+    filter(name == metric) |>
+    pull(r_min) |>
+    format_percent()
+}
+r_max <- function(metric) {
+  stats_overview |>
+    filter(name == metric) |>
+    pull(r_max) |>
+    format_percent()
+}
+r_range <- function(metric) {
+  stats_overview |>
+    filter(name == metric) |>
+    select(r_min, r_max) |>
+    mutate(across(everything(), format_percent)) |>
+    glue_data("[{r_min}, {r_max}]")
+}
+@
+
 <<>>=
 # Basic counts and ratios for our abstract
 (n_abstracts <- n_distinct(df$`_citekey`))
-(r_complete <- sum(df$is_complete) / nrow(df))
-(r_read_good <- sum(df$fkscore > 30) / nrow(df))
-(r_proper <- sum(df$is_proper) / nrow(df))
+(r_complete  <- r_stat("n_complete_yes"))
+(r_read_good <- r_stat("n_read_good"))
+(r_proper    <- r_stat("n_proper_yes"))
 @
 
 \begin{abstract}  % 100 to 200 words are allowed (but not enforced)
@@ -165,10 +258,10 @@ Use exploratory data analysis to find recurring issues in abstracts.
 Compare the archetypical structure to actual structures to derive
 guidelines for producing informative abstracts.
 \emph{Results:}
-Only \Sexpr{format_percent(r_complete)} of the sampled abstracts are \textit{complete},
+Only \Sexpr{r_complete} of the sampled abstracts are \textit{complete},
 i.e., provide background, objective, method, result, and conclusion information.
 For structured abstracts, the ratio is twice as big.
-Only \Sexpr{format_percent(r_proper)} of the abstracts are \textit{proper},
+Only \Sexpr{r_proper} of the abstracts are \textit{proper},
 i.e., they also have good readability (Flesch-Kincaid score) and have
 neither informativeness gaps nor understandability gaps or highly ambiguous sentences.
 \emph{Conclusions:}
@@ -650,7 +743,7 @@ IST has published many very good systematic literature reviews and methods works
 but is not \emph{generally} considered a top-quality venue.
 
 <<>>=
-# Abtracts per venue
+# Abstracts per venue
 (n_abstracts_per_venue <- count(df, venue) |>
   glue_data("{venue}:{n}"))
 @
@@ -802,7 +895,22 @@ We define two binary properties of abstracts:
 A \emph{complete} abstract contains all of the basic elements described in 
 Section~\ref{meth_basicparts}.
 A \emph{proper} abstract is complete and does not have any of the deficiencies
-described in the results section as making an abstract improper.
+described in the Results section as making an abstract \emph{improper}.
+
+Since we coded each abstract twice, we get potentially conflicting assessments regarding these binary properties.
+We calculate and report percentages across all \emph{codings}
+($n_C\,{=}\,\Sexpr{nrow(df_c)}$, which each count as a ``half'' abstract),
+as well as liberal and conservative percentages per \emph{abstract}
+($n_A\,{=}\,\Sexpr{nrow(df)}$),
+for which either both or just one coder is necessary to attest a deficiency.
+In the text, we report these numbers in square brackets;
+in the plots, we show them as error bars.
+When we write
+\Pseudoquote{\Sexpr{r_complete} \Sexpr{r_range("n_complete_yes")} of the abstracts are complete},
+we mean that \Sexpr{r_complete} of the \Sexpr{nrow(df_c)} abstract codings qualify
+the corresponding abstract as \emph{complete},
+and that for \Sexpr{r_min("n_complete_yes")} of the \Sexpr{nrow(df)} abstracts both coders agreed,
+while at least one coder thought so for \Sexpr{r_max("n_complete_yes")} of them.
 
 We mostly refrain from performing significance tests or computing confidence intervals,
 because most analyses are exploratory, not driven by specific expectations or theories.
@@ -866,6 +974,7 @@ we do not include those articles in our references list.
 \section{Results}
 
 \subsection{Length and Readability}
+\label{sec:result-len-read}
 
 <<>>=
 # Typical lengths of abstracts
@@ -911,9 +1020,9 @@ are disobeyed by more than a quarter of all articles for each of these three ven
 
 <<>>=
 # Readability scores
-(r_read_normal <- sum(between(df$fkscore, 20, 30)) / nrow(df))
-(r_read_improper <- sum(df$fkscore < 20) / nrow(df))
-(r_read_lt10 <- sum(df$fkscore < 10) / nrow(df))
+(r_read_normal   <- r_stat("n_read_acceptable"))
+(r_read_improper <- r_stat("n_read_improper"))
+(r_read_lt10     <- format_percent(sum(df$fkscore < 10) / nrow(df)))
 @
 
 <<>>=
@@ -925,10 +1034,10 @@ are disobeyed by more than a quarter of all articles for each of these three ven
 @
 
 For readability, see Figure~\ref{boxplots_fkscore}:
-only about \Sexpr{format_percent(r_read_good)} of all abstracts have good readability,
-about \Sexpr{format_percent(r_read_normal)} have normal readability,
-and \Sexpr{format_percent(r_read_improper)} are improper ---
-several (\Sexpr{format_percent(r_read_lt10)}) are even below 10!
+only about \Sexpr{r_read_good} of all abstracts have good readability,
+about \Sexpr{r_read_normal} have normal readability,
+and \Sexpr{r_read_improper} are improper ---
+several (\Sexpr{r_read_lt10}) are even below 10!
 \Sexpr{venue_best_fk$venue} tends to be better than the other venues,
 \Sexpr{venue_worst_fk$venue} is worse.
 
@@ -968,7 +1077,7 @@ Mixed cases are rare and then the coders will decide which aspect has more weigh
 
 <<>>=
 # Useful pivot table
-df_frac <- df |>
+df_frac <- df_c |>
   pivot_longer(
     cols = starts_with("fraction_"),
     names_to = "part",
@@ -976,7 +1085,7 @@ df_frac <- df |>
     names_transform = list(part = ~str_remove(., "fraction_"))
   )
 
-# Typical fractions for design works nd empirical works
+# Typical fractions for design works and empirical works
 typl_frac <- df_frac |>
   summarize(
     n = n(),
@@ -1010,7 +1119,7 @@ Design work abstracts are barely longer than empirical work abstracts.
 
 <<>>=
 # Are design abstracts longer than empirical abstracts?
-df |>
+df_c |>
   reframe(qs = quantile(words, bp_prob), prob = bp_prob * 100,
     n = n(), .by = is_design) |>
   pivot_wider(id_cols = c(is_design, n), values_from = qs,
@@ -1062,7 +1171,8 @@ deviations will tend to lead to a less easily understandable abstract.
 	A visual representation of the Abstracts Archetype. Note that this figure only describes the ``natural train of thought'' and not all possible abstract forms that we coded in this study. This is the recommended structure.}
 
 
-\subsection{How Not To: Inefficient Allocation of Space}\label{inefficient_allocation}
+\subsection{How Not To: Inefficient Allocation of Space}
+\label{inefficient_allocation}
 
 If one reads those abstracts, one can hardly help notice that some of them 
 spend a lot of space on \Cb{background}, although its only purpose is to situate
@@ -1096,13 +1206,13 @@ Other abstracts manage to solve the same problem in a wonderfully concise manner
 
 <<>>=
 # p75 of fraction_background per venue
-df |>
+df_c |>
   summarize(p75_bg = quantile(fraction_background, 0.75),
     .by = venue) |>
   arrange(desc(p75_bg))
 
 # abstracts with more than 1/3 background, per venue
-df |>
+df_c |>
   summarize(gt33_bg = sum(fraction_background >= 33.3)
     / n() * 100, .by = venue) |>
   arrange(desc(gt33_bg))
@@ -1117,9 +1227,9 @@ but with a long background section, it tends to become pronouncedly shorter.
 
 <<>>=
 # Background lengths structured vs. unstructured
-df |>
+df_c |>
   reframe(qs = quantile(fraction_background, bp_prob),
-    prob = bp_prob * 100, n = n(),  .by = is_struc) |>
+    prob = bp_prob * 100, n = n(), .by = is_struc) |>
   pivot_wider(id_cols = c(is_struc, n), values_from = qs,
     names_from = prob, names_prefix = "p")
 @
@@ -1150,7 +1260,8 @@ should better have said
 
 
 
-\subsection{How Not To: Missing Elements}\label{missing elements}
+\subsection{How Not To: Missing Elements}
+\label{missing_elements}
 
 Given the archetype, one way to approach an analysis of abstracts quality is to ask
 how often key parts of an abstract are missing entirely.
@@ -1198,8 +1309,16 @@ half of all---yet again very rarely in structured abstracts\footnote{Note that
   The statement put there can be (and sometimes is) something else,
   typically a \Cb{result} statement or \Cb{summary}.}.
 
+<<>>=
+r_complete
+(r_complete_range <- r_range("n_complete_yes"))
+@
 
-\subsection{How Not To: Convoluted Trains of Thought}\label{convoluted}
+Overall, only \Sexpr{r_complete} \Sexpr{r_complete_range} of all abstracts are \emph{complete}.
+
+
+\subsection{How Not To: Convoluted Trains of Thought}
+\label{convoluted}
 
 Botching the \Cb{objective} statement or leaving out important parts from an abstract
 are not the only ways for wrecking the abstract's value, however.
@@ -1335,13 +1454,13 @@ Table 4 and therefore could and should have said
 <<>>=
 (igap_loc <- raw |>
   summarize(
-    icount = max(icount), # Need same aggregator as in Python!
-    topic = first(topic),
-    .by = c(citekey, sidx)
+    icount = max(icount), # max = enough if one coder saw it
+    topic  = first(topic),
+    .by    = c(citekey, sidx)
   ) |>
   filter(icount > 0) |>
   summarize(n_igap = sum(icount), .by = topic) |>
-  mutate(f_igap = n_igap / sum(n_igap))) 
+  mutate(f_igap = n_igap / sum(n_igap)))
 (igap_in_results <- igap_loc$f_igap[igap_loc$topic == "result"])
 (igap_in_method  <- igap_loc$f_igap[igap_loc$topic == "method"])
 @
@@ -1362,14 +1481,16 @@ A better formulation could have been:
   but never lost more than 7 percentage points of balanced accuracy.}!!!
 
 <<>>=
-(r_igap1 <- sum(df$icount >= 1) / nrow(df))
-(r_igap3 <- sum(df$icount >= 3) / nrow(df))
+(r_igap1 <- r_stat("n_igap_yes"))
+(r_igap1_range <- r_range("n_igap_yes"))
+
+(r_igap3 <- r_stat("n_igap_yes3"))
+(r_igap3_range <- r_range("n_igap_yes3"))
 @
 
-\Todo{Fix formulation after in-Python icount aggregation is decided}
-More than half of all abstracts (\Sexpr{format_percent(r_igap1)}) have an informativeness gap
+More than half of all abstracts (\Sexpr{r_igap1} \Sexpr{r_igap1_range}) have an informativeness gap
 (making them \emph{improper})
-and \Sexpr{format_percent(r_igap3)} have three or more.
+and \Sexpr{r_igap3} \Sexpr{r_igap3_range} have three or more.
 See the leftmost two groups of Figure~\ref{nonzerofractionbar_xletgroups_missinginfofractions}
 for details.
 
@@ -1412,11 +1533,13 @@ This should have been a result statement such as the following:
   will get rid of about 98\% of all bad commits.}
 
 <<>>=
-(r_announce <- sum(df$announcecount >= 1) / nrow(df))
+(r_announce       <- r_stat("n_announce_yes"))
+(r_announce_range <- r_range("n_announce_yes"))
 @
 
 Announcements are a waste of space and a nuisance for the reader,
-yet \Sexpr{format_percent(r_announce)} of all abstracts have at least one and we consider those \emph{improper}.
+yet \Sexpr{r_announce} \Sexpr{r_announce_range}
+of all abstracts have at least one and we consider those \emph{improper}.
 See groups three to six of Figure~\ref{nonzerofractionbar_xletgroups_missinginfofractions}
 for details.
 
@@ -1441,7 +1564,7 @@ an average reader is not able to make sense of this statement
 which represents half of the work's results.
 
 <<>>=
-(ucount_venue <- df |>
+(ucount_venue <- df_c |>
   summarize(
     n = n(),
     n_ugap = sum(ucount >= 1),
@@ -1449,14 +1572,17 @@ which represents half of the work's results.
     .by = venue)
 )
 
-(r_ugap <- sum(ucount_venue$n_ugap) / sum(ucount_venue$n))
-
 (venue_worst_ugap <- ucount_venue |> slice_max(r_ugap))
+@
+
+<<>>=
+(r_ugap       <- r_stat("n_ugap_yes"))
+(r_ugap_range <- r_range("n_ugap_yes"))
 @
 
 See the rightmost group of Figure~\ref{nonzerofractionbar_xletgroups_missinginfofractions}
 for how frequent this is:
-About \Sexpr{format_percent(r_ugap)} of all abstracts have one or more understandability gaps.
+About \Sexpr{r_ugap} \Sexpr{r_ugap_range} of all abstracts have one or more understandability gaps.
 The issue is most pronounced at \Sexpr{venue_worst_ugap$venue}.
 
 
@@ -1497,13 +1623,14 @@ A total of \Sexpr{n_igdf_c} different codes are involved.
 
 \subsection{How Not To: Summary}\label{hownotto_summary}
 
-Summing up, a proper abstract should be \emph{complete}, i.e. it should provide at least 
+Summing up, a proper abstract should be \emph{complete}, i.e., it should provide at least 
 a minimal amount of information of types  \Cb{background} (\Cb{or gap}),
 \Cb{objective}, \Cb{methods}, \Cb{results}, and \Cb{conclusion}, the
 canonical IMRAD structure.
 
 <<>>=
 r_complete
+
 (r_complete_unstruc <- filter(df, !is_struc) |>
   summarize(n = n(), n_complete = sum(is_complete),
     r_complete = n_complete / n))
@@ -1518,6 +1645,8 @@ a majority of abstracts fails this very basic quality criterion, a depressing re
 
 <<>>=
 r_proper
+(r_proper_range <- r_range("n_proper_yes"))
+
 (proper_venue <- df |>
   summarize(
     n = n(),
@@ -1542,12 +1671,12 @@ after in-Python aggregation is fix.}
 	Sections~\ref{statisticalevaluation} and \ref{hownotto_summary}?
 	What fraction of abstracts is \emph{proper} in the sense of 
 	Section~\ref{statisticalevaluation}?\\
-    Only \Sexpr{format_percent(r_complete)} of abstracts are \emph{complete}. 
+    Only \Sexpr{r_complete} \Sexpr{r_complete_range} of abstracts are \emph{complete}. 
 	Only about \Sexpr{format_percent(r_complete_unstruc$r_complete)} of unstructured abstracts and
   \Sexpr{format_percent(r_complete_design$r_complete)} of design article abstracts are complete.
 	Structured abstracts are much better and therefore all four supposedly top-quality venues
 	are beat by the much lower-regarded IST which requires structured abstracts.\\
-	Only \Sexpr{format_percent(r_proper)} of abstracts are \emph{proper}.
+	Only \Sexpr{r_proper} \Sexpr{r_proper_range} of abstracts are \emph{proper}.
 	Here, too, structured abstracts are better than unstructured ones.
 	Our TOSEM sample has not a single proper abstract.
 	After that, ICSE is worse than all remaining subgroups considered.
@@ -1559,9 +1688,44 @@ and having neither informativeness gaps nor understandability gaps or highly amb
 Given this list of criteria, improper abstracts will happen from time to time
 even for careful authors.
 Nevertheless, we believe that a majority of abstracts could and should be \emph{proper} in this sense.
-Yet what we find is that only \Sexpr{format_percent(r_proper)} of them indeed are.
+Yet what we find is that only \Sexpr{r_proper} of them indeed are.
 % TOSEM and ICSE are still worse than that.
 We expected to find many problems in abstracts but still find this outcome astonishingly bad. 
+
+<<results="as.is">>=
+stats_overview |>
+  filter(!name %in% c("n_igap_yes3")) |>
+  mutate(across(starts_with("r_"), format_percent)) |>
+  mutate(
+    name  = stringr::str_extract(name, "[^_]+$"),
+    value = ifelse(value %% 1 == 0,
+      paste0(as.integer(value), "~~"),
+      as.character(value)),
+    value = cell_spec(value, escape = FALSE),
+    n_range = ifelse(!is.na(min), glue("[{min}, {max}]"), ""),
+    r_range = ifelse(!is.na(min), glue("[{r_min}, {r_max}]"), ""),
+  ) |>
+  select(name, value, n_range, r_value, r_range) |>
+  kbl(
+    col.names = c(), 
+    align = c("l", "r@{\\hspace{2pt}}", "r", "r@{\\hspace{2pt}}", "r"),
+    booktabs = TRUE, 
+    escape = FALSE,
+    caption = "For each coding-based quality criterion, there is a possibility for disagreement between the two codings. Numbers in brackets show the extent of that disagreement: For a negative criterion (italics),
+  the lower value denotes the number of abstracts for which \\emph{both} codings lead a negative evaluation, the higher value denotes the number of abstracts for which \\emph{at least one} coding leads to a negative evaluation."
+  ) |>
+  kable_styling() |>
+  add_header_above(c("Criterion" = 1, "Count" = 2, "Ratio" = 2), bold = TRUE) |>
+  row_spec(0, bold = TRUE) |>
+  pack_rows("Readability (Section \\ref{sec:result-len-read})", 1, 3, escape = FALSE) |>
+  pack_rows("Completeness (Section \\ref{missing_elements})", 4, 5, escape = FALSE) |>
+  pack_rows("Informativeness Gap (Section \\ref{igaps})", 6, 7, escape = FALSE) |>
+  pack_rows("Announcements (Section \\ref{announcements})", 8, 9, escape = FALSE) |>
+  pack_rows("Understandability Gap (Section \\ref{ugaps})", 10, 11, escape = FALSE) |>
+  pack_rows("Ambiguous Formulations (Section \\ref{ambiguity})", 12, 13, escape = FALSE) |>
+  pack_rows("Properness (Section \\ref{hownotto_summary})", 14, 15, escape = FALSE) |>
+  row_spec(c(3, 5, 7, 9, 11, 13, 15), italic = TRUE)
+@
 
 
 \subsection{How To: Structured Abstracts are more orderly}\label{structuredgood}
@@ -1658,13 +1822,13 @@ r_proper
 r_no_conclusion
 @
 
-Only \Sexpr{format_percent(r_complete)} of the investigated software engineering research article abstracts are 
+Only \Sexpr{r_complete} of the investigated software engineering research article abstracts are 
 \emph{complete} according to the IMRAD structure long established for abstracts in science
 (Figure~\ref{nonzerofractionbar_xletgroups_totalqualityfractions}).
 In particular, about half of all abstracts
 (\Sexpr{format_percent(r_no_conclusion$r_missing)}) never formulate a conclusion in the sense of
 a generalizing take-home message (Figure~\ref{zerofractionbar_xletgroups_topicmissingfractions}).
-Only \Sexpr{format_percent(r_proper)} of the abstracts are \emph{complete}
+Only \Sexpr{r_proper} of the abstracts are \emph{complete}
 and also fulfill modest additional criteria of 
 informativeness and understandability 
 (Figures~\ref{boxplots_fkscore} and \ref{nonzerofractionbar_xletgroups_missinginfofractions}, 

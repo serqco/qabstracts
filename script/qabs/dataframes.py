@@ -146,8 +146,8 @@ def df_by_abstract(df_by_abstract_coding: pd.DataFrame) -> pd.DataFrame:
              #  max = one coder saw an issue
              #  min = both coders saw an issue
              #  mean = one saw none, other saw two (or more)
-             icount=_nagg('icount', 'min'),
-             ucount=_nagg('ucount', 'min'),
+             icount=_nagg('icount', 'max'),
+             ucount=_nagg('ucount', 'max'),
              #
              total_gaps=_nagg('total_gaps', 'max'),
              announcecount=_nagg('announcecount', 'max'),

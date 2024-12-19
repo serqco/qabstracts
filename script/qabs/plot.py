@@ -88,14 +88,14 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
                              datasets.ab_topicfractions_values, datasets.ab_subsets)
         pt.plot_xletgroups(ctx, pt.add_boxplotlet, "box", "topicfractions",
                            "space per topic [%]", ymax=50)
-        ctx = pt.PlotContext(outputdir, "", datasets.by_abstract, height1, wideplot, 
+        ctx = pt.PlotContext(outputdir, "", datasets.by_abstract_coding, height1, wideplot,
                              datasets.ab_topicfractions0_values, datasets.ab_subsets)
-        pt.plot_xletgroups(ctx, pt.add_zerofractionbarplotlet, "zerofractionbar", "topicmissingfractions",
+        pt.plot_xletgroups(ctx, pt.add_zerofractionbarplotlet_with_errorbars, "zerofractionbar", "topicmissingfractions",
                            "how often missing [%]", ymax=100)
         # ----- frequency of a-* codes and iu gaps:
-        ctx = pt.PlotContext(outputdir, "", datasets.by_abstract, height1, wideplot, 
+        ctx = pt.PlotContext(outputdir, "", datasets.by_abstract_coding, height1, wideplot,
                              datasets.ab_missinginfofractions_values, datasets.ab_subsets)
-        pt.plot_xletgroups(ctx, pt.add_nonzerofractionbarplotlet, "nonzerofractionbar", "missinginfofractions",
+        pt.plot_xletgroups(ctx, pt.add_nonzerofractionbarplotlet_with_errorbars, "nonzerofractionbar", "missinginfofractions",
                            "how often occurring [%]", ymax=75)
         ctx = pt.PlotContext(outputdir, "", datasets.by_abstract, height1, onecolumnplot, 
                              datasets.ab_conclusionfractions_bybg_values, datasets.ab_subsets)
@@ -103,11 +103,12 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
                            "space per topic [%]", ymax=30)
         # ----- timeline:
         plot_qabstracts_timeline_commits(outputdir, datasets.timestamps)
+    
     # ----- fraction of complete and of proper abstracts:
-    ctx = pt.PlotContext(outputdir, "", datasets.by_abstract, height1, onecolumnplot,
+    ctx = pt.PlotContext(outputdir, "", datasets.by_abstract_coding, height1, onecolumnplot,
                          datasets.ab_totalqualityfractions_values, datasets.ab_subsets)
-    pt.plot_xletgroups(ctx, pt.add_nonzerofractionbarplotlet, "nonzerofractionbar", "totalqualityfractions",
-                       "how often occurring [%]", ymax=63)
+    pt.plot_xletgroups(ctx, pt.add_nonzerofractionbarplotlet_with_errorbars, "nonzerofractionbar", "totalqualityfractions",
+                       "how often occurring [%]", ymax=65)
 
 
 def plot_ab_topicstructure_freqs_design(df: pd.DataFrame, outputdir: str):
