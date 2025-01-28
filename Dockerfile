@@ -15,6 +15,9 @@ ENV PATH="/opt/venv/bin:$PATH"
 RUN install2.r reticulate
 ENV RETICULATE_PYTHON=/opt/venv/bin/python
 
+# Install kableExtra (R package)
+RUN install2.r kableExtra
+
 # Install LaTeX (parts of it are already in the base image, but just to be sure we have everything)
 RUN apt-get update && \
     apt-get install -y --no-install-recommends texlive-xetex texlive-fonts-recommended latexmk && \
