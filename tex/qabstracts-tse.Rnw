@@ -417,10 +417,10 @@ that has gradually become the norm since the 1940s \cite{SolPer04}.
 We found a similar structure for abstracts of 
 empirical works in software engineering (see Section~\ref{archetype}),
 but abstracts of artifact-centric works (tool building) do not fit this model and need
-an extended one \Todo{point to a section}.
+an extended one \ref{structure-design-articles}.
 
 
-\subsection{Abstracts Quality}\label{relatedworkquality}
+\subsection{Abstracts Quality -- What is ``good''?}\label{relatedworkquality}
 
 Several (meta-)studies on abstracts focus on quality assessment,
 most often in subfields of the biomedical domain.
@@ -459,10 +459,9 @@ Unfortunately, the methods of those meta-studies are not applicable to a
 broad sample of software engineering abstracts, because
 in fields with heterogeneous study structures such as ours, the operationalization of
 \emph{quality} is less straight-forward.
-For example, spin can take many more forms in software engineering articles
+For example, \emph{spin} can take many more forms in software engineering articles
 than is assumed by the studies mentioned above and it is difficult
 to decide which forms are acceptable and which are not.
-\Todo{Sounds ominous! Examples?}
 
 One approach for discussing the quality of a software engineering abstract 
 could be through comparing to a known ``good'' structure for abstracts.
@@ -517,7 +516,9 @@ subjectively.
 Both studies use only abstracts of purely empirical studies,
 not tool-building works, 
 which have very different (and more complicated) properties
-as we will see \Todo{Pointer?}.
+as we will see in Section~\ref{structure-design-articles}
+\Todo{That Section does not make it sound ``very different'' or ``more complicated'' --
+is there another section that I missed?}.
 
 
 
@@ -1435,7 +1436,7 @@ follow all kinds of curious structures such as, to pick an admittedly extreme ca
 \strct{bgomrcsrsc} (e.g., \Art{\Sexpr{strc_example("bgomrcsrsc")}}):
 two conclusions, two summaries, summary after conclusion.
 
-\subsubsection{Design Articles}
+\subsubsection{Design Articles}\label{structure-design-articles}
 
 \Todo{Adapt to actual plot}
 It naturally gets worse for the design articles with their more complicated structure:
