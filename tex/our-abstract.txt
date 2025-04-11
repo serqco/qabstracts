@@ -1,0 +1,17 @@
+Background:
+Abstracts are a very valuable element in a software engineering research article, but not all abstracts are as informative as they could be.
+Objective:
+Characterize the structure of abstracts in high-quality SE venues, observe and quantify deficiencies, and suggest guidelines for writing informative abstracts.
+Methods:
+Use qualitative open coding to derive concepts that explain relevant properties of abstracts and identify the archetypical structure of abstracts.
+Use quantitative content analysis to objectively characterize abstract structure of a sample of 362 abstracts from five presumably high-quality venues.
+Use exploratory data analysis to find recurring issues in abstracts.
+Compare the archetypical structure to actual structures to derive guidelines for producing informative abstracts.
+Results:
+Only 29% of the sampled abstracts are complete, i.e., provide background, objective, method, result, and conclusion information.
+For structured abstracts, the ratio is twice as big.
+Only 4% of the abstracts are proper, i.e., they also have good readability (Flesch-Kincaid score) and have neither informativeness gaps nor understandability gaps or highly ambiguous sentences.
+Conclusions:
+(1) Even in top venues, a large majority of abstracts are far from ideal.
+(2) Structured abstracts tend to be better than unstructured ones, but (3) artifact-centric works need a different structured format.
+(4) The community should start requiring conclusions that generalize, which currently are often missing in abstracts.

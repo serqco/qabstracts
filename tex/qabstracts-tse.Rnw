@@ -82,14 +82,16 @@ Julian Frattini, Franz Zieris%
 <<setup-knitr-reticulate, echo=FALSE>>=
 ################ This is R code ################
 library(reticulate)
-# Use R's reticulate to load Python modules
-#  import qabs.dataframes as dataframes
+# Use R's reticulate to load Python modules; read it as:
+# ```python
+# import qabs.dataframes as dataframes
+# ```
 py$dataframes <- import_from_path("qabs.dataframes", path = "../script")
 
 options(width = 50)
 debug_knitr <- "debug" %in% commandArgs(TRUE)
 knitr::opts_chunk$set(
-    echo    = ifelse(debug_knitr, TRUE, FALSE),     # TRUE:     see all R code
+    echo    = ifelse(debug_knitr, TRUE, FALSE),      # TRUE:     see all R code
     results = ifelse(debug_knitr, "markup", "hide"), # 'markup': see intermediate values
     size    = "scriptsize"
 ) 
@@ -99,7 +101,7 @@ knitr::opts_chunk$set(
 ################### This is Python code ################
 import pandas as pd
 
-# Load data
+# Load data (output of `make export`)
 datafile = "../results/abstracts-results.tsv"
 raw = pd.read_csv(datafile, sep='\t')
 
@@ -160,6 +162,7 @@ disagreement_range <- function(df, column) {
 
 ranges <- df_c |>
   mutate(
+    n_bg_over_third = fraction_background > 33,
     n_complete_yes = is_complete,
     n_complete_no  = !is_complete,
     n_igap_no      = icount == 0,
@@ -186,6 +189,7 @@ stats_overview <- df_c |>
     n_read_good       = sum(fkscore > 30),
     n_read_acceptable = sum(between(fkscore, 20, 30)),
     n_read_improper   = sum(fkscore < 20),
+    n_bg_over_third   = sum(fraction_background > 33),
     n_complete_yes    = sum(is_complete),
     n_complete_no     = sum(!is_complete),
     n_igap_no         = sum(icount == 0),
@@ -250,10 +254,10 @@ Characterize the structure of abstracts in high-quality SE venues,
 observe and quantify deficiencies,
 and suggest guidelines for writing informative abstracts.
 \emph{Methods:}
-Use open coding to derive concepts that explain relevant properties of abstracts
+Use qualitative open coding to derive concepts that explain relevant properties of abstracts
 and identify the archetypical structure of abstracts.
 Use quantitative content analysis to objectively characterize abstract structure
-over a sample of \Sexpr{n_abstracts} abstracts from five presumably high-quality venues.
+of a sample of \Sexpr{n_abstracts} abstracts from five presumably high-quality venues.
 Use exploratory data analysis to find recurring issues in abstracts.
 Compare the archetypical structure to actual structures to derive
 guidelines for producing informative abstracts.
@@ -280,12 +284,12 @@ which currently are often missing in abstracts.
 %========================================================================
 \section{Introduction}
 \IEEEPARstart{A}{lthough} the abstract is a super important part of any research article~\cite{Lang22},
-when reading an abstract in software engineering, even in a presumably top-quality venue,
+when reading an abstract in software engineering -- even in a presumably top-quality venue --
 we often feel it is lacking important information or find it difficult to understand at all.
 
-The present article aims to substantiate this impression
+We aim to substantiate this impression
 by operationalizing \emph{abstracts quality} and analyzing hundreds of abstracts,
-and formulates constructive advice for writing better abstracts.
+and formulate constructive advice for writing better abstracts.
 
 
 %Ideally, an abstract should
@@ -306,9 +310,9 @@ and formulates constructive advice for writing better abstracts.
 % everywhere else we repeat the question or paraphrase it.
 \noindent
 We ask several questions:
-\begin{enumerate}
+\begin{enumerate}[label=\textbf{RQ\arabic*}, leftmargin=12pt, itemindent=15pt]
 	\item What does a typical well-written abstract look like?
-	\item Which deficiencies occur? How often?
+	\item \textbf{a)} Which deficiencies occur? \textbf{b)} How often?
 	\item Do structured abstracts have better quality than unstructured ones?
 	\item How \emph{should} software engineering abstracts be written?
 \end{enumerate}
@@ -319,17 +323,17 @@ the answer to RQ4 will be derived from the answers to the other three.
 
 \subsection{Research Approach}
 
-No firm expectations regarding RQ1 and RQ2 exist for engineering articles,
+No firm expectations regarding RQ1 and RQ2a exist for engineering articles,
 so qualitative methods will have to be used for them:
-We start our research by open coding~\cite[Ch. 5]{StrCor90}
-in order to derive a vocabulary (a set of concepts or codes)
+We start our research with \emph{open coding} of software engineering abstracts
+to derive a vocabulary (a set of concepts or \emph{codes}; \cite[Ch. 5]{StrCor90})
 by which the nature of a particular abstract can be characterized.
 
-We intend to convince even people who are skeptical of qualitative research
-regarding our answers to RQ2, RQ3, and RQ4, and regarding the need to improve
+We intend to convince even readers who are skeptical of qualitative research
+regarding our answers to the research questions and the need to improve
 the quality of software engineering abstracts.
-Therefore, we continue the research by performing a repeatable
-quantitative content analysis~\cite[Ch. 7]{Krippendorff04} for RQ2
+We therefore perform a repeatable
+quantitative content analysis~\cite[Ch. 7]{Krippendorff04}
 on a large sample of \Sexpr{n_abstracts} presumably high-quality abstracts
 and apply an elaborate eight-step approach for maximizing its reliability.
 
@@ -341,16 +345,30 @@ the questions it asks and the statistical methods it applies.
 \subsection{Research Contributions}
 
 Our contributions correspond to the research questions as follows:
-\begin{enumerate}
-	\item As for the structure of well-written abstracts, we present an ``abstract archetype''
-	  that describes fixed parts of the structure and degrees of freedom.
-	\item We describe and discuss !!! types of deficiencies,
+\begin{enumerate}[label=\textbf{RQ\arabic*}, leftmargin=12pt, itemindent=15pt]
+	\item As for the structure of well-written abstracts, we present an ``abstracts archetype''
+	  that describes fixed parts of the structure and degrees of freedom
+	  (Section~\ref{archetype}).
+	\item We describe and discuss nine types of deficiencies,
 	  and quantify the frequency of each deficiency type for the entire sample of abstracts
-	  as well as for different subgroups of interest.
+	  as well as for different subgroups of interest
+    (Section~\ref{results} and Table~\ref{tab:overview}).
+	  % Deficiency Types:
+	  %  1. Readability (Sec 4.1, result-len-read)
+	  %  2. Inefficient Allocation of Space (Sec 4.4, inefficient_allocation)
+	  %  3. Murky OBJECTIVE Statements (Sec 4.5, murkyobjectives)
+	  %  4. Missing Elements (Sec 4.6, missing_elements)
+    %  5. Convoluted Trains of Thought (Sec. 4.7, convoluted)
+    %  6. Informative Gaps (Sec. 4.8.1, igaps)
+    %  7. Announcements (Sec. 4.8.2, announcements)
+    %  8. Understandability (Sec. 4.9, ugaps)
+    %  9. Ambiguity (Sec. 4.10, ambiguity)
 	\item We present convincing data that structured abstracts tend to be better
-	  in several respects.
+	  in several respects
+	  (Sections~\ref{missing_elements} \& \ref{structuredgood}).
 	\item We provide data-based how-to instructions for writing abstracts for authors
-	  as well as guidance for editors and conference organizers.
+	  as well as guidance for editors and conference organizers
+    (Section~\ref{howto-guidelines}).
 	  Software Engineering works should use structured abstracts, but
 	  need a different and more flexible template than what is used so far.
 \end{enumerate}
@@ -369,7 +387,8 @@ and otherwise focus on what has been done in the software engineering domain.
 
 Swales~\cite{Swales90} introduced \emph{genre analysis} as a means for teaching academic
 reading and writing especially to non-native speakers:
-Genres are text types \Todo{Such as?};
+Genres are ``classes of communicative events'' (e.g., \emph{the writing and reading of abstracts})
+that are owned by a ``discourse community'' (e.g., \emph{software engineering researchers});
 genre analysis means deconstructing texts (from a genre) to better understand
 their elements in
 terms of their syntactical structure, content, role, and interrelationships
@@ -972,9 +991,10 @@ we do not include those articles in our references list.
 
 %========================================================================
 \section{Results}
+\label{results}
 
 \subsection{Length and Readability}
-\label{sec:result-len-read}
+\label{result-len-read}
 
 <<>>=
 # Typical lengths of abstracts
@@ -1034,25 +1054,49 @@ are disobeyed by more than a quarter of all articles for each of these three ven
 @
 
 For readability, see Figure~\ref{boxplots_fkscore}:
-only about \Sexpr{r_read_good} of all abstracts have good readability,
-about \Sexpr{r_read_normal} have normal readability,
-and \Sexpr{r_read_improper} are improper ---
-several (\Sexpr{r_read_lt10}) are even below 10!
+only about \Sexpr{r_read_good} of all abstracts have good readability (>30),
+about \Sexpr{r_read_normal} have normal readability (20-30),
+and \Sexpr{r_read_improper} are improper (<20)---%
+more than every fifth abstract (\Sexpr{r_read_lt10}) even has a score below 10!
 \Sexpr{venue_best_fk$venue} tends to be better than the other venues,
 \Sexpr{venue_worst_fk$venue} is worse.
 
+<<>>=
+py$annot <- import_from_path("qscript.annotations", path = "../script")
+
+abstract <- readr::read_lines("our-abstract.txt") |>
+  as_tibble() |>
+  filter(!value %in% c("Background:", "Objective:", "Methods:", "Results:", "Conclusions:"))
+
+syllablecount <- function(word) {
+  py_eval(paste0("annot.AnnotatedSentence.syllablecount(\"", word, "\")"))
+}
+
+results <- abstract |>
+  rename(sentence = value) |>
+  mutate(
+    word_list      = str_split(sentence, "\\s+"),
+    word_count     = purrr::map_int(word_list, length),
+    syllable_count = purrr::map_int(word_list, ~sum(purrr::map_int(.x, syllablecount)))
+  )
+
+total_sentences <- nrow(abstract)
+total_words <- sum(results$word_count)
+total_syllables <- sum(results$syllable_count)
+our_fk_score <- 206.835 - 1.015 * total_words / total_sentences - 84.6 * total_syllables / total_words
+@
+
 \Plot{boxplots_fkscore}{%
 	Flesch-Kincaid `reading ease' readability score, higher is better.
-    Values under 50 are considered difficult to read (college-level material).
-    Under 30: very difficult to read (graduate level, acceptable for abstracts).
-	Under 10: extremely difficult to read (overly difficult).
+    Values under 50 are considered difficult to read (college-level material);
+    under 30: very difficult to read (graduate level, acceptable for abstracts);
+	  under 10: extremely difficult to read (overly difficult).
     Differences between subgroups are modest.
     \Sexpr{venue_best_fk$venue} is best (mean \Sexpr{venue_best_fk$fk_f}),
     \Sexpr{venue_worst_fk$venue} is worst (mean \Sexpr{venue_worst_fk$fk_f}).
+    The abstract of the present article has a score of~\Sexpr{round(our_fk_score, 1)}.
     Structured abstracts are just as difficult as nonstructured ones
     if one ignores the ``Methods:'' etc. headings as we did for the readability analysis.
-    The abstract of the present article has a score of 24.5.
-    % https://oscarstories.com/calculator/flesch-reading-ease/
 }
 
 
@@ -1135,7 +1179,8 @@ the \Cb{design} code is but one example.
 
 During our sensemaking process, we had a number of insights regarding
 how a well-written abstract ``ticks'', which we eventually distilled into
-the following template, which we call the software engineering abstracts archetype:
+the following template, which we call the \emph{software engineering abstracts archetype}
+(see also Figure~\ref{abstracts_archetype_fig}):
 
 \begin{enumerate}
 \item An abstract consists of three parts, in this order:
@@ -1697,7 +1742,11 @@ stats_overview |>
   filter(!name %in% c("n_igap_yes3")) |>
   mutate(across(starts_with("r_"), format_percent)) |>
   mutate(
-    name  = stringr::str_extract(name, "[^_]+$"),
+    name  = case_match(
+      name,
+      "n_bg_over_third" ~ "background > $\\frac{1}{3}$",
+      .default = stringr::str_extract(name, "[^_]+$")
+    ),
     value = ifelse(value %% 1 == 0,
       paste0(as.integer(value), "~~"),
       as.character(value)),
@@ -1711,20 +1760,22 @@ stats_overview |>
     align = c("l", "r@{\\hspace{2pt}}", "r", "r@{\\hspace{2pt}}", "r"),
     booktabs = TRUE, 
     escape = FALSE,
+    label = "overview",
     caption = "For each coding-based quality criterion, there is a possibility for disagreement between the two codings. Numbers in brackets show the extent of that disagreement: For a negative criterion (italics),
   the lower value denotes the number of abstracts for which \\emph{both} codings lead a negative evaluation, the higher value denotes the number of abstracts for which \\emph{at least one} coding leads to a negative evaluation."
   ) |>
   kable_styling() |>
   add_header_above(c("Criterion" = 1, "Count" = 2, "Ratio" = 2), bold = TRUE) |>
   row_spec(0, bold = TRUE) |>
-  pack_rows("Readability (Section \\ref{sec:result-len-read})", 1, 3, escape = FALSE) |>
-  pack_rows("Completeness (Section \\ref{missing_elements})", 4, 5, escape = FALSE) |>
-  pack_rows("Informativeness Gap (Section \\ref{igaps})", 6, 7, escape = FALSE) |>
-  pack_rows("Announcements (Section \\ref{announcements})", 8, 9, escape = FALSE) |>
-  pack_rows("Understandability Gap (Section \\ref{ugaps})", 10, 11, escape = FALSE) |>
-  pack_rows("Ambiguous Formulations (Section \\ref{ambiguity})", 12, 13, escape = FALSE) |>
-  pack_rows("Properness (Section \\ref{hownotto_summary})", 14, 15, escape = FALSE) |>
-  row_spec(c(3, 5, 7, 9, 11, 13, 15), italic = TRUE)
+  pack_rows("Readability (Section \\ref{result-len-read})", 1, 3, escape = FALSE) |>
+  pack_rows("Innefficient Allocation of Space (Section \\ref{inefficient_allocation})", 4, 4, escape = FALSE) |>
+  pack_rows("Completeness (Section \\ref{missing_elements})", 5, 6, escape = FALSE) |>
+  pack_rows("Informativeness Gap (Section \\ref{igaps})", 7, 8, escape = FALSE) |>
+  pack_rows("Announcements (Section \\ref{announcements})", 9, 10, escape = FALSE) |>
+  pack_rows("Understandability Gap (Section \\ref{ugaps})", 11, 12, escape = FALSE) |>
+  pack_rows("Ambiguous Formulations (Section \\ref{ambiguity})", 13, 14, escape = FALSE) |>
+  pack_rows("Properness (Section \\ref{hownotto_summary})", 15, 16, escape = FALSE) |>
+  row_spec(c(3, 6, 8, 10, 12, 14, 16), italic = TRUE)
 @
 
 
@@ -1853,7 +1904,7 @@ and accompanying writing instructions that suit
 engineering research would help.
 
 
-\subsection{How To: Guidelines for Well-Written Abstracts}
+\subsection{How To: Guidelines for Well-Written Abstracts}\label{howto-guidelines}
 
 \subsubsection{For Authors}
 
