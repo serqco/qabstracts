@@ -1219,14 +1219,31 @@ If one reads those abstracts, one can hardly help notice that some of them
 spend a lot of space on \Cb{background}, although its only purpose is to situate
 the objective and make it understandable.
 Here is an example from an article titled
-``!!!'':
+\emph{``Engineering Web Augmentation software: A development method for enabling end-user maintenance''} \Art{FirFirRos22}
+(all \Cb{background} plus \Cb{objective} in boldface):
 \begin{quote}
-  \Todo{Does an example pay off here? It needs a lot of space}	
-\end{quote}	
+  \Todo{All examples with high background ratio are long. Move to appendix?}
+  Nowadays, end-users are able to adapt Web applications when some of their requirements have not been taken into account by developers.
+  One possible way to do adaptations is by using Web Augmentation techniques.
+  Web Augmentation allows end-users to modify the Web sites' user interfaces once these are loaded on the clientside, i.e., in the browser.
+  They achieve these adaptations by developing and/or installing Web browser plugins
+  ("augmenters") that modify the user interface with new functionalities.
+  This particular kind of software artifacts requires special attention regarding maintenance as---in most cases---they depend on third-party resources, such
+  as HTML pages.
+  When these resources are upgraded, unexpected results during the augmentation process may occur.
+  Many communities have arisen around Web Augmentation, and today there are large repositories where developers share their augmenters; end-users may give feedback about existing augmentations and even ask for new ones.
+  Maintenance is a key phase in the augmenters' life-cycle, and currently, this task falls (as usual) on the developers.
+  \textbf{In this paper, we present a participatory approach for allowing end-users without programming skills to participate in the augmenters' maintenance phase.}
+\end{quote}
+That's 66\% of the abstract spent on the background.
 
-Other abstracts manage to solve the same problem in a wonderfully concise manner:
+Other abstracts manage to solve the same problem in a wonderfully concise manner,
+e.g., \Art{LavMor22} (12\% background):
 \begin{quote}
-	\Todo{Find example}	
+	The F-measure has been widely used as a performance metric when selecting
+binary classifiers for prediction, but it has also been widely criticized, especially given the
+availability of alternatives such as $\varphi$ (also known as Matthews Correlation Coefficient).
+  \textbf{Our goals are to (1) investigate possible issues related to the F-measure in depth and show how $\varphi$ can address them, and (2) explore the relationships between the F-measure and $\varphi$.}
 \end{quote}	
 
 \Plotwide{box_xletgroups_topicfractions}{%
