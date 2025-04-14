@@ -59,10 +59,10 @@
 \newcommand{\QuoteCB}[1]{\Quote{#1}}  % quote from codebook
 \newcommand{\Describeboxplots}{The box shows the 25-to-75 percentile, 
 	the whiskers are 10- and 90-percentile,
-	the grey bar is the median,
+	the gray bar is the median,
 	the fat dot is the mean.}
 \newcommand{\Describegroups}{The plots in each group show these different subsets of abstracts:
-	all (red); structured, non-structured (green); design, empirical (blue); EMSE, ICSE, IST, TOSEM, TSE (grey).}
+	all (red); structured, non-structured (green); design, empirical (blue); EMSE, ICSE, IST, TOSEM, TSE (gray).}
 
 \begin{document}
 
@@ -658,6 +658,7 @@ they state what future work is now possible, needed, or planned-by-the-authors.
 
 
 \subsubsection{Codes for Announcements: \Cb{a-*}}
+\label{announcement-codes}
 
 Sometimes, statements insinuate there will be certain information 
 in the article body, but do not provide any concrete information themselves.
@@ -687,6 +688,7 @@ We recognize structured abstracts by the presence of such a heading code.
 
 
 \subsubsection{Subjective Additions: \Cb{:i, :u}}
+\label{subjective-codes}
 
 The codes described so far aim at codifying repeatable properties,
 where several well-trained coders will come to the same result with high probability.
@@ -838,6 +840,7 @@ The models' accuracy improves when application domain groups and peak staff are 
 
 
 \subsubsection{Handling Disagreements}
+\label{ignorediff}
 
 \textbf{Step~5.} For the remaining (unresolved) report blocks, Lloyd would write an email to Lutz explaining his reasoning.
 \textbf{Step~6.} Lutz would read through that email and categorize the report blocks into the following cases:
@@ -938,7 +941,7 @@ rare (less than 5\%),
 not rare (5-20\%),
 common (20-35\%),
 frequent (35-50\%),
-dominant (over 50\%).\Todo{For Lutz: Find spots where these should be used but are not.}
+dominant (over 50\%).
 
 
 \subsection{Interpretation}
@@ -947,7 +950,6 @@ Our interpretation of the measurements is driven by our research interest and
 guided by our expertise as software engineering researchers who read abstracts.
 Whenever we mark a phenomenon as a weakness, we will provide a justification from that angle
 and provide an example to allow the reader to relate to the justification.
-\Todo{For Lutz: Find spots where such an example is missing.}
 
 
 \subsection{Readability Metric}
@@ -1314,8 +1316,8 @@ should better have said
 
 \Todo{Argue with lengthy email discussions.}
 
-\Todo{Anything quantitative?}
-
+\Todo{Franz looked for such examples. Only idea: look for coded suffixes. But: None of those 15 statements is clearly "murky".
+Proposal: Remove section since the criterion is not operationalized and quantified.}
 
 
 \subsection{How Not To: Missing Elements}
@@ -1325,9 +1327,13 @@ Given the archetype, one way to approach an analysis of abstracts quality is to 
 how often key parts of an abstract are missing entirely.
 This is shown in Figure~\ref{zerofractionbar_xletgroups_topicmissingfractions}.
 
+\Todo{For Lutz: Huge difference between `fraction\_code\_conlusion' (for the conclusion code only, missing in 62\%, used in text),
+and `fraction\_conclusion' (includes h-conclusion and a-conclusion, missing in 52\%, used in plot). Which do we take?}
+
 \Plotwide{zerofractionbar_xletgroups_topicmissingfractions}{%
 	How often is a topic not present at all in an abstract?\\
-	\Describegroups}
+	\Describegroups\ 
+  Error bars are due to ambiguous formulations (see Section~\ref{ignorediff}).}
 
 <<>>=
 # Missing elements
@@ -1339,29 +1345,58 @@ This is shown in Figure~\ref{zerofractionbar_xletgroups_topicmissingfractions}.
     .by = c(part, is_struc)
   ) |>
   arrange(is_struc, desc(r_missing)) |>
-  filter(part %in% c("background", "objective", "method",
-    "result", "conclusion")))
+  filter(part %in% c(
+    "background", "code_background", "code_gap",
+    "objective", "code_objective",
+    "method", "code_method",
+    "result", "code_result",
+    "conclusion", "code_conclusion",
+    "Outlook"))) |> print(n = 50)
 
-(r_no_conclusion <- missing_elements |>
-  summarize(
-    n = sum(n),
-    n_missing = sum(n_missing),
-    r_missing = n_missing / n,
-  .by = part) |>
-  filter(part == "conclusion")) 
+r_missing_element <- function(labels) {
+  missing_elements |>
+    summarize(
+      n = sum(n),
+      n_missing = sum(n_missing),
+      r_missing = n_missing / n,
+    .by = part) |>
+    filter(part %in% labels)
+}
+
+(r_no_gap        <- r_missing_element("code_gap"))
+(r_no_outlook    <- r_missing_element("Outlook"))
+(r_no_background <- r_missing_element("code_background"))
+(r_no_objective  <- r_missing_element("code_objective"))
+(r_no_method     <- r_missing_element("code_method"))
+(r_no_result     <- r_missing_element("code_result"))
+(r_no_conclusion <- r_missing_element("code_conclusion"))
 @
 
-The often-missing \Cb{gap} and \emph{Outlook} parts \Cb{fposs}, \Cb{fneed}, etc. are clearly optional,
-so it is not a problem that they are often not present.
-\Cb{background} and \Cb{objective} are hardly ever missing.
-\Todo{The scale introduced early does not have ``hardly'', only ``very rare (<5\%)''}
+% rare:     <5%
+% not rare: 5-20%
+% common:   20-35%
+% frequent: 35-50%
+% dominant: 50%
 
-\Cb{method} and \Cb{result} are sometimes missing (and this is a problem),
+The \Cb{gap} and \emph{Outlook} parts \Cb{fposs}, \Cb{fneed}, etc. are clearly optional,
+so it is not a problem that their absence is
+frequent (\Sexpr{format_percent(r_no_gap$r_missing)}) and
+dominant (\Sexpr{format_percent(r_no_outlook$r_missing)}), respectively.
+\Cb{background} and \Cb{objective} are rarely missing
+(\Sexpr{format_percent(r_no_background$r_missing)} and \Sexpr{format_percent(r_no_objective$r_missing)}).
+
+Missing \Cb{method} and \Cb{result} are not rare
+(\Sexpr{format_percent(r_no_method$r_missing)} and \Sexpr{format_percent(r_no_result$r_missing)})%
+~---~and this is a problem~---~%
 but never in structured abstracts.
 
 The shocking part of this analysis is \Cb{conclusion}, which ought to be present
 as the key take-home message in any abstract, but is in fact missing in more than
-half of all --- yet again very rarely in structured abstracts.\footnote{Note that
+half of all (\Sexpr{format_percent(r_no_conclusion$r_missing)}).
+The situation is better for structured abstracts, for which missing \Cb{conclusion}
+are still common
+(\Sexpr{format_percent(missing_elements |> filter(part == "code_conclusion", is_struc) |> pull(r_missing))}).%
+\footnote{Note that
   the prompt of having to write something after a ``Conclusion:'' keyword
   alone cannot guarantee this:
   The statement put there can be (and sometimes is) something else,
@@ -1372,7 +1407,8 @@ r_complete
 (r_complete_range <- r_range("n_complete_yes"))
 @
 
-Overall, only \Sexpr{r_complete} \Sexpr{r_complete_range} of all abstracts are \emph{complete}.
+Overall, only \Sexpr{r_complete} \Sexpr{r_complete_range} of all abstracts are \emph{complete}
+(i.e., containing all basic elements \Cb{background}, \Cb{objective}, \Cb{method}, \Cb{result}, \Cb{conclusion}).
 
 
 \subsection{How Not To: Convoluted Trains of Thought}
@@ -1383,7 +1419,7 @@ are not the only ways for wrecking the abstract's value, however.
 There are also abstracts where the train-of-thought is so convoluted
 that they become difficult to read.
 
-For quantifying this, we map each abstract to a short sequence of letters,
+For quantifying this, we map each abstract's structure to a sequence of letters,
 where each letter stands for a contiguous stretch of sentences in the abstract
 that have the same content type; the letter designates that content type.
 For instance, an abstract that follows a minimal incarnation of the Archetype
@@ -1408,15 +1444,15 @@ Note that a frequency of e.g. 2.5 simply means that the two coders did not agree
 The results are shown in
 Figure~\ref{ab_topicstructure_freqs_empir} for empirical articles and
 Figure~\ref{ab_topicstructure_freqs_design} for design articles.
-\Todo{leave out these plots to save space? Or even move entire(?) section to appendix?}
 
 \Plot{ab_topicstructure_freqs_empir}{%
   The frequency of different trains-of-thought in the abstract for empirical articles.
   The label is a string of stretch-code characters:
-  b-ackground, g-ap, o-bjective, d-esign, m-ethod, r-esult, s-ummary, c-onclusion, O-utlook.}
+  b\mbox{-}ackground, g\mbox{-}ap, o\mbox{-}bjective, d\mbox{-}esign, m\mbox{-}ethod, r\mbox{-}esult,
+  s\mbox{-}ummary, c\mbox{-}onclusion, O\mbox{-}utlook.}
 \Plot{ab_topicstructure_freqs_design}{%
   The frequency of different trains-of-thought in the abstract for design articles.
-  Same characters as before, except that d can now in fact occur.}
+  Same characters as before, except that d\mbox{-}esign can now in fact occur.}
 
 % !!!CheXiaLo22 presents five studies
 
@@ -1436,35 +1472,51 @@ strc_example <- function(structure) {
     pull(citekey) |>
     assert_exists(structure)
 }
+
+cumulative_ratio <- function(design, n) {
+  x <- df |>
+    select(`_citekey`, is_design) |>
+    distinct() |>
+    left_join(datasets$ab_structures, by = c("_citekey" = "citekey")) |>
+    filter(is_design == design) |>
+    count(topicstructure) |>
+    mutate(n = n/2) |>
+    arrange(desc(n))
+
+  sum(slice_head(x, n = n)$n) / sum(x$n)
+}
 @
 
-\Todo{Adapt to actual plot}
 Let us start with the simpler empirical articles.
-We see that the most sensible structures are also the most frequent (bars 1, 2, 3):
+We see that the most sensible structures are also the most frequent
+(bars 1, 2, 3; accounting for \Sexpr{format_percent(cumulative_ratio(FALSE, 3))} of the empirical articles):
 Archetypical with or without a \Cb{gap} statement, perhaps with an \emph{Outlook}.
 But from bar 4 on, the abstracts are more or less pathological:
-The first few are mostly missing a conclusion, later on (not shown in the figure)
+They are missing a \Cb{conclusion}, discuss their \Cb{method} before the \Cb{objective},
+and later later on (not shown in the figure)
 follow all kinds of curious structures such as, to pick an admittedly extreme case,
-\strct{bgomrcsrsc} (e.g., \Art{\Sexpr{strc_example("bgomrcsrsc")}}):
+\strct{bgomrcrsrsc} (e.g., \Art{\Sexpr{strc_example("bgomrcrsrsc")}}):
 two conclusions, two summaries, summary after conclusion.
+
+\Todo{The example TyaSibSur22 is only "weird" because in the sense that it crams results and summaries under its "Conclusion" heading -- which is also the first of the "two" conclusions. Maybe h- codes should be excluded from the structure string?}
 
 \subsubsection{Design Articles}\label{structure-design-articles}
 
-\Todo{Adapt to actual plot}
 It naturally gets worse for the design articles with their more complicated structure:
-Even the top two structures are missing a conclusion
-and we find complex repetitive structures starting at bar 5.
+The two most common structures (accounting for \Sexpr{format_percent(cumulative_ratio(TRUE, 2))} of the design articles)
+are missing a \Cb{conclusion},
+and we find complex structures with repeated \strct{mr}'s starting at bar 4.
 Not all of these are automatically bad.
-In particular, having two small empirical studies, resulting in a nice \strct{bgodmrmrc} structure
-(e.g., \Art{\Sexpr{strc_example("bgodmrmrc")}}), can make a lot of sense for the reader.
+In particular, having two small empirical studies, resulting in a nice \strct{bgodmrmr} structure
+(e.g., \Art{WuZouDou22}), can make a lot of sense for the reader.
 But this has its limits:
 An abstract with structure \strct{bodmrmrmrmr}
 (e.g., \Art{\Sexpr{strc_example("bodmrmrmrmr")}})
 is overloaded.
 It can also easily get out of hand, as confirmed by the examples
-\strct{bobdrmrmr} (e.g. \Art{\Sexpr{strc_example("bobdrmrmr")}}) and
-\strct{bomdmrmrmrsmrc} (e.g. \Art{\Sexpr{strc_example("bomdmrmrmrsmrc")}}).
-\Todo{Validate they are indeed broken.}
+\strct{bodrmrmrmrmrmr} (e.g. \Art{PisSpäBud22}) and
+\strct{bomdmrmrmrsmrc} (e.g. \Art{ValManPar22}),
+which lack a coherent \emph{Method} part.
 
 \subsubsection{Structured Abstracts}
 
@@ -1472,12 +1524,25 @@ It can also easily get out of hand, as confirmed by the examples
 ab_is_design <- distinct(select(df, `_citekey`, is_design)) |>
   left_join(datasets$ab_structures, by = c("_citekey" = "citekey"))
 
-(n_distinct_empir_struct <- ab_is_design |>
-  filter(!is_design, is_struc) |>
+design_empir_struct <- ab_is_design |> filter(!is_design, is_struc)
+design_empir_all    <- ab_is_design |> filter(!is_design)
+
+(n_distinct_empir_struct <- design_empir_struct |>
   summarize(count = n_distinct(topicstructure)))
-(n_distinct_empir_all <- ab_is_design |>
-  filter(!is_design) |>
-  summarize(count = n_distinct(topicstructure)))
+c_design_empir_struct <- nrow(design_empir_struct)
+
+set.seed(123)
+resample_counts <- replicate(
+  1000,
+  {
+    sample_n(design_empir_all, c_design_empir_struct, replace = FALSE) |>
+      distinct(topicstructure) |>
+      nrow()
+  }
+)
+
+n_distinct_empir_all <- median(resample_counts)
+n_distinct_empir_all_ci <- quantile(resample_counts, c(0.025, 0.975))
 @
 
 Today's conventions for structured abstracts may be a bit restrictive
@@ -1485,8 +1550,11 @@ Today's conventions for structured abstracts may be a bit restrictive
 but they do result in more orderly abstracts:
 There are only \Sexpr{n_distinct_empir_struct} different abstract structures
 among the \emph{structured} abstracts of empirical articles
-versus \Sexpr{n_distinct_empir_all} for empirical articles overall.
-\Todo{replace numbers by mean of same-sized samples}
+versus \Sexpr{round(n_distinct_empir_all)}
+across all empirical articles.\footnote{%
+  Median of 1,000 same-sized samples; 95\%~CI
+[\Sexpr{round(n_distinct_empir_all_ci[1])}, \Sexpr{round(n_distinct_empir_all_ci[2])}].
+}
 
 
 \subsection{How Not To: Uninformative Formulations}
@@ -1523,9 +1591,10 @@ Table 4 and therefore could and should have said
 (igap_in_method  <- igap_loc$f_igap[igap_loc$topic == "method"])
 @
 
-Informativeness gaps appear mostly
-in results statements (\Sexpr{format_percent(igap_in_results)} of the gaps)
-or method statements (\Sexpr{format_percent(igap_in_method)} of the gaps).
+Informativeness gaps (coded \Cb{:i}, see Section~\ref{subjective-codes})
+appear mostly
+in \Cb{result} statements (\Sexpr{format_percent(igap_in_results)} of the gaps)
+or \Cb{method} statements (\Sexpr{format_percent(igap_in_method)} of the gaps).
 Most (if not all) of them could be filled by a number.
 They tend to cluster,
 like here:
@@ -1536,7 +1605,7 @@ This sentence has three informativeness gaps.
 A better formulation could have been:
 \Pseudoquote{The results show that PRINS can often process logs an order of magnitude faster
   than the well-known state-of-the-art tool MINT,
-  but never lost more than 7 percentage points of balanced accuracy.}!!!
+  but never lost more than 7 percentage points of balanced accuracy.}
 
 <<>>=
 (r_igap1 <- r_stat("n_igap_yes"))
@@ -1549,30 +1618,35 @@ A better formulation could have been:
 More than half of all abstracts (\Sexpr{r_igap1} \Sexpr{r_igap1_range}) have an informativeness gap
 (making them \emph{improper})
 and \Sexpr{r_igap3} \Sexpr{r_igap3_range} have three or more.
+\Todo{Lutz: Maybe argue for the pessimistic value here?}
 See the leftmost two groups of Figure~\ref{nonzerofractionbar_xletgroups_missinginfofractions}
 for details.
 
 \Plotwide{nonzerofractionbar_xletgroups_missinginfofractions}{%
 	What fraction of abstracts has the following uninformative types of formulations?\\
-	One-or-more or three-or-more informativeness gaps (i.e. missed opportunities for being more specific).\\
-	Some sentence that only announces (instead of describing) a method, result, conclusion, or
-	possible future research.\\
-	One or more understandability gaps.\\
-	Informativeness gaps are epidemic, worse(!) for structured abstracts.
+  \Describegroups\
+  The groups are:
+	One-or-more or three-or-more informativeness gaps (i.e., missed opportunities for being more specific);
+	some sentence that only announces (instead of describing) a method, result, conclusion, or
+	possible future research;
+  one or more understandability gaps.
+  Error bars in the \emph{Inf.gap} and \emph{Und.gap} groups are due to differing coder perceptions
+  of informativeness and understandability gaps (see Section~\ref{subjective-codes});
+  error bars in the \emph{Ann.} groups are due to ambiguous formulations (see Section~\ref{ignorediff}).\\
+	Informativeness gaps are epidemic, worse(!) for structured abstracts (1st green bar).
 	Announcing is generally not rare, in particular for results, and tends to be less pronounced
-	at IST.
-	Not explaining key terms is not rare and worst at EMSE.\\
-	\Describegroups}
+	at IST (3rd gray bar).
+	Not explaining key terms is not rare and worst at EMSE (1st gray bar).\\}
 
 \subsubsection{Announcements}\label{announcements}
 
 Occasionally, a sentence will not merely miss to report some specific piece of information
 but rather fail to provide any useful information at all and merely hint at
 information to be found in the article body.
-We call such a sentence an announcement.
-\Todo{Should we cross-reference back to the respective methods section here? And elsewhere as well? Lloyd: Yes, I think so.}
+We call such a sentence an announcement
+(coded \Cb{a-*}, see Section~\ref{announcement-codes}).
 
-Example (method announcement from \Art{BesMarBos22}):
+Example (\Cb{a-method} from \Art{BesMarBos22}):
 \Quote{As a second step, this study sets out to specifically
   provide a detailed assessment of additional and in-depth analysis of technical debt management strategies based
   on an encouraging mindset and attitude from both managers and technical roles to understand how, when and by
@@ -1583,7 +1657,7 @@ Here is what the sentence could have said instead:
   developers to manage technical debt and how the developers perceive the encouragement they receive.}
 % based on BasMarBos Sections 3.2.1, 3.2.3, Table 2
 
-Example (results announcement from \Art{FliChaDye22}): %EMSE
+Example (\Cb{a-result} from \Art{FliChaDye22}): %EMSE
 \Quote{Finally we provide guidelines/best practices for researchers utilizing time-based data
 from Git repositories.} 
 This should have been a result statement such as the following:
@@ -1611,7 +1685,8 @@ still comes across.
 Sometimes, however, this is not the case:
 The uncertainty regarding the meaning of the term becomes so large
 that the sentence containing it becomes incomprehensible.
-We call such a term use an understandability gap and consider such abstracts to be improper.
+We call such a term use an understandability gap (coded \Cb{:u}, see Section~\ref{subjective-codes})
+and consider such abstracts to be \emph{improper}.
 
 Here is an example from \Art{HamMetQas22}:
 \Quote{The results of evaluating the generality of the iContractML 2.0 reference model show
@@ -1641,13 +1716,15 @@ which represents half of the work's results.
 See the rightmost group of Figure~\ref{nonzerofractionbar_xletgroups_missinginfofractions}
 for how frequent this is:
 About \Sexpr{r_ugap} \Sexpr{r_ugap_range} of all abstracts have one or more understandability gaps.
+\Todo{Lutz: Maybe argue for the pessimistic value here?}
 The issue is most pronounced at \Sexpr{venue_worst_ugap$venue}.
 
 
 \subsection{How Not To: Ambiguous Formulations}\label{ambiguity}
 
 Codings with an \Cb{-ignorediff} marker indicate cases where the coders could not agree
-despite discussion: the respective sentence (or sentence part) is so highly ambiguous that
+despite discussion (see Section~\ref{ignorediff}):
+the respective sentence (or sentence part) is so highly ambiguous that
 more than one role for it is similarly likely.
 Obviously, such ambiguous formulations do not represent good abstract writing
 and we consider such abstracts to be \emph{improper}.
@@ -1673,8 +1750,8 @@ and we consider such abstracts to be \emph{improper}.
 @
 
 In our data, we found \Sexpr{n_igdf} such cases overall, spread over \Sexpr{n_igdf_a} different abstracts,
-so that \Sexpr{format_percent(r_igdf_a)} of all abstracts have one or more such problems.
-A total of \Sexpr{n_igdf_c} different codes are involved.
+so that \Sexpr{format_percent(r_igdf_a)} of all abstracts have one or more such ambiguous sentences.
+% A total of \Sexpr{n_igdf_c} different codes are involved.
 % The most frequent 5 of them cover \Sexpr{format_percent(r_igdf_cocodes_top5)} of the total:
 % \Sexpr{igdf_cocodes_top5$code}.
 
@@ -1683,7 +1760,7 @@ A total of \Sexpr{n_igdf_c} different codes are involved.
 
 Summing up, a proper abstract should be \emph{complete}, i.e., it should provide at least 
 a minimal amount of information of types  \Cb{background} (\Cb{or gap}),
-\Cb{objective}, \Cb{methods}, \Cb{results}, and \Cb{conclusion}, the
+\Cb{objective}, \Cb{methods}, \Cb{results}, and \Cb{conclusion} --- the
 canonical IMRAD structure.
 
 <<>>=
@@ -1699,7 +1776,6 @@ r_complete
 
 However, as we see in Figure~\ref{nonzerofractionbar_xletgroups_totalqualityfractions},
 a majority of abstracts fails this very basic quality criterion, a depressing result.
-\Todo{Decide after in-Python aggregation is settled whether it's a "majority"}
 
 <<>>=
 r_proper
@@ -1721,32 +1797,34 @@ r_proper
     .by = is_struc)
 )
 @
-\Todo{Check formulations in caption of Figure \ref{nonzerofractionbar_xletgroups_totalqualityfractions}
-after in-Python aggregation is fix.}
 
 \Plot{nonzerofractionbar_xletgroups_totalqualityfractions}{%
 	What fraction of abstracts is \emph{complete} in the sense of 
 	Sections~\ref{statisticalevaluation} and \ref{hownotto_summary}?
 	What fraction of abstracts is \emph{proper} in the sense of 
 	Section~\ref{statisticalevaluation}?\\
-    Only \Sexpr{r_complete} \Sexpr{r_complete_range} of abstracts are \emph{complete}. 
+  \Describegroups\
+  Error bars for \emph{completeness} are due to ambiguous formulations (see Section~\ref{ignorediff}),
+  error bars for \emph{properness} are due to differing coder perceptions of informativeness and understandability gaps
+  (see Section~\ref{subjective-codes}).\\
+  Only \Sexpr{r_complete} \Sexpr{r_complete_range} of abstracts are \emph{complete}. 
 	Only about \Sexpr{format_percent(r_complete_unstruc$r_complete)} of unstructured abstracts and
   \Sexpr{format_percent(r_complete_design$r_complete)} of design article abstracts are complete.
 	Structured abstracts are much better and therefore all four supposedly top-quality venues
-	are beat by the much lower-regarded IST which requires structured abstracts.\\
+	are beat by the much lower-regarded IST (3rd gray bar) which requires structured abstracts.\\
 	Only \Sexpr{r_proper} \Sexpr{r_proper_range} of abstracts are \emph{proper}.
 	Here, too, structured abstracts are better than unstructured ones.
 	Our TOSEM sample has not a single proper abstract.
-	After that, ICSE is worse than all remaining subgroups considered.
-	\Describegroups}
+	After that, ICSE (2nd gray bar) is worse than all remaining subgroups considered.
+	}
 
 Our moderately stricter criterion of being \emph{proper} involves 
 being \emph{complete}, having acceptable Flesch-Kincaid readability (>20),
-and having neither informativeness gaps nor understandability gaps or highly ambiguous sentences.
+and having neither informativeness gaps nor understandability gaps nor highly ambiguous sentences.
 Given this list of criteria, improper abstracts will happen from time to time
 even for careful authors.
 Nevertheless, we believe that a majority of abstracts could and should be \emph{proper} in this sense.
-Yet what we find is that only \Sexpr{r_proper} of them indeed are.
+Yet what we find is that only \Sexpr{r_proper} \Sexpr{r_proper_range} of them indeed are.
 % TOSEM and ICSE are still worse than that.
 We expected to find many problems in abstracts but still find this outcome astonishingly bad. 
 
@@ -1889,7 +1967,7 @@ r_no_conclusion
 Only \Sexpr{r_complete} of the investigated software engineering research article abstracts are 
 \emph{complete} according to the IMRAD structure long established for abstracts in science
 (Figure~\ref{nonzerofractionbar_xletgroups_totalqualityfractions}).
-In particular, about half of all abstracts
+In particular, more than half of all abstracts
 (\Sexpr{format_percent(r_no_conclusion$r_missing)}) never formulate a conclusion in the sense of
 a generalizing take-home message (Figure~\ref{zerofractionbar_xletgroups_topicmissingfractions}).
 Only \Sexpr{r_proper} of the abstracts are \emph{complete}
