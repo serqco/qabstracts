@@ -53,12 +53,20 @@
 \renewcommand{\Art}[1]{\href{https://github.com/serqco/qabstracts/blob/main/abstracts/abstracts.raw/\string#1.txt}{\bgroup[#1]\egroup}}
 \newcommand{\Sah}[1]{\bgroup\scshape #1\egroup}  % typeset a structured abstract heading
 
+\newcommand{\codebook}{https://github.com/serqco/qabstracts/blob/main/codebook.md}
+
+% Color definitions
+\definecolor{todocolor}{rgb}{1, 0, 0}
+\definecolor{abstractcolor}{RGB}{191, 27, 73}
+\definecolor{codebkecolor}{RGB}{0, 165, 218}
+\definecolor{pseudocolor}{RGB}{0, 144, 83}
+
 \newcounter{todonumber}
-\newcommand{\Todo}[1]{\stepcounter{todonumber}\textcolor{red}{\sffamily ((\arabic{todonumber}: #1))}}
-\newcommand{\Quote}[1]{\bgroup\itshape\color{purple} ``#1''\egroup}  % quote from a specific real abstract
-\newcommand{\ExampleQuote}[1]{\bgroup\itshape ``#1''\egroup}         % generic quote from real abstract
-\newcommand{\Pseudoquote}[1]{\bgroup\itshape\color{ForestGreen} `#1'\egroup}            % quote from fictive abstract
-\newcommand{\QuoteCB}[1]{\bgroup\itshape\color{ProcessBlue} ``#1''\egroup}  % quote from codebook
+\newcommand{\Todo}[1]{\stepcounter{todonumber}\textcolor{todocolor}{\sffamily ((\arabic{todonumber}: #1))}}
+\newcommand{\Quote}[1]{\bgroup\itshape\color{abstractcolor} ``#1''\egroup}   % quote from a specific real abstract
+\newcommand{\ExampleQuote}[1]{\bgroup\itshape ``#1''\egroup}                 % generic quote from real abstract
+\newcommand{\Pseudoquote}[1]{\bgroup\itshape\color{pseudocolor} `#1'\egroup} % quote from fictive abstract
+\newcommand{\QuoteCB}[1]{\bgroup\itshape\color{codebkecolor} ``#1''\egroup}  % quote from codebook
 \newcommand{\Describeboxplots}{The box shows the 25-to-75 percentile, 
 	the whiskers are 10- and 90-percentile,
 	the gray bar is the median,
@@ -677,7 +685,7 @@ We call the articles that contain at least one \Cb{design} coding in their abstr
 ``design articles'', the others ``empirical articles''.
 
 
-\subsubsection{Refinements: \Cb{gap, summary, fposs} etc.}
+\subsubsection{Refinements: \Cb{gap}, \Cb{summary}, \Cb{fposs}, etc.}
 
 At various later points during our study, we recognized a need for more granular coding
 in order to capture differences in abstract writing we wanted to measure.
@@ -687,9 +695,9 @@ We then reworked existing codings to use the new codes consistently throughout.
 The most important cases of such additional codes are these:
 \Cb{gap} states what is unknown or not yet possible;
 \Cb{summary} summarizes several results, but do not provide new information;
-\Cb{conclusion} generalizes beyond the immediate results.
-\Cb{fposs}, \Cb{fneed}, and \Cb{fwork} sentences occur at the end of abstracts;
-they state what future work is now possible, needed, or planned-by-the-authors.
+\Cb{conclusion} generalizes beyond the immediate results;
+\Cb{fposs} and \Cb{fneed} sentences occur at the end of abstracts ---
+they state what future work is now possible or needed.
 
 
 \subsubsection{Codes for Announcements: \Cb{a-*}}
@@ -764,6 +772,70 @@ because it is unclear from the abstract what the \Quote{UNK problems} are.
 % {{conclusion:u1}}
 % In this paper, we propose **CDCS**, a novel approach for domain-specific code search.
 % {{objective:u1}}
+
+<<results="as.is", message=FALSE, echo=FALSE>>=
+code_usages <- raw |> count(topic, code) |>
+  add_row(topic = "none", code = ":i", n = raw |> filter(icount > 0) |> distinct(citekey, coder, sidx) |> nrow()) |>
+  add_row(topic = "none", code = ":u", n = raw |> filter(ucount > 0) |> distinct(citekey, coder, sidx) |> nrow())
+
+tribble(
+  ~code, ~description,
+  "background", "Context information",
+  "h-background", "Heading (e.g., \\ExampleQuote{Background:} or \\ExampleQuote{Context:})",
+  "gap", "Unknown or not-yet-possible things, leading over to \\Cb{objective}",
+  "need", "Research that needs to be done (postulated), leading over to \\Cb{objective}",
+  "objective", "Top-level research goal, interest, or question",
+  "h-objective", "Heading (e.g., \\ExampleQuote{Objective:} or \\ExampleQuote{Aim:})",
+  "design", "Design, design process or features of an artifact (e.g., software, process, method)",
+  "a-design", "\\Cb{design} announcement (e.g., \\ExampleQuote{A description of the tool is presented.})",
+  "method", "Approach or setup of an empirical (or possibly purely mathematical) study",
+  "h-method", "Heading (e.g, \\ExampleQuote{Method:})",
+  "a-method", "\\Cb{method} announcement (e.g., \\ExampleQuote{A series of experiments is conducted.})",
+  "result", "Immediate, empirical outcome of the study",
+  "h-result", "Heading (e.g, \\ExampleQuote{Results:})",
+  "a-result", "\\Cb{result} announcement (e.g., \\ExampleQuote{We identify key features.})",
+  "claim", "Non-empirical would-be \\Cb{result} statement (e.g., \\ExampleQuote{This enables highly accurate code completion.})",
+  "summary", "Summarization of results, but no new information.",
+  "conclusion", "Take-home message, less specific than one or more \\Cb{result}s.",
+  "h-conclusion", "Heading (e.g, \\ExampleQuote{Conclusions:})",
+  "a-conclusion", "\\Cb{conclusion} announcement (e.g., \\ExampleQuote{We summarize recommendations.})",
+  "fposs", "Research that is now possible.",
+  "fneed", "Future research that should be done.",
+  "a-fposs", "\\Cb{fposs} announcement (e.g., \\ExampleQuote{We propose future studies on the topic.})",
+  "a-fneed", "\\Cb{fneed} announcement (e.g., \\ExampleQuote{Our findings emphasize the need for future research.})",
+  "h-fwork", "Heading (e.g, \\ExampleQuote{Future work:})",
+  ":i", "Informativeness gap (subjective assessment, see Section~\\ref{subjective-codes})",
+  ":u", "Understandability gap (subjective assessment, see Section~\\ref{subjective-codes})",
+  "ignorediff", "Inherent ambiguity (coders agree to disagree, see Section~\\ref{ignorediff})",
+) |>
+  left_join(code_usages) |>
+  mutate(code = paste0("\\Cb{", code, "}")) |>
+  select(code, description, n) |>
+  rename(Occurrences = n) |>
+  kbl(
+    col.names = c("\\emph{Topic} / Code", "Short Description", "Occurrences"),
+    align = c("l", "l", "r"),
+    booktabs = TRUE, 
+    escape = FALSE,
+    label = "codes",
+    caption = "Topics, codes, their descriptions
+      (see our \\href{\\codebook}{codebook} for full descriptions),
+      and how often we used them to code sentences.",
+    table.envir = "table*"
+  ) |>
+  kable_styling() |>
+  row_spec(0, bold = TRUE) |>
+  pack_rows("\\emph{Background} (\\\\texttt{b})", 1, 2, escape = FALSE) |>
+  pack_rows("\\emph{Gap} (\\\\texttt{g})", 3, 4, escape = FALSE) |>
+  pack_rows("\\emph{Objective} (\\\\texttt{o})", 5, 6, escape = FALSE) |>
+  pack_rows("\\emph{Design} (\\\\texttt{d})", 7, 8, escape = FALSE) |>
+  pack_rows("\\emph{Method} (\\\\texttt{m})", 9, 11, escape = FALSE) |>
+  pack_rows("\\emph{Result} (\\\\texttt{r})", 12, 15, escape = FALSE) |>
+  pack_rows("\\emph{Summary} (\\\\texttt{s})", 16, 16, escape = FALSE) |>
+  pack_rows("\\emph{Conclusion} (\\\\texttt{c})", 17, 19, escape = FALSE) |>
+  pack_rows("\\emph{Outlook} (\\\\texttt{O})", 20, 24, escape = FALSE) |>
+  row_spec(24, hline_after = TRUE)
+@
 
 
 \subsection{Training}\label{meth_training}
@@ -859,7 +931,7 @@ obviously wrong, he would simply correct his coding.
   breakindent=0pt,
   moredelim={[s][keywordstyle]{\{\{}{\}\}}},  % Adds bold styling to our codes. Added for visual clarity
   keywordstyle=\ttfamily\bfseries\color{black},
-  basicstyle=\scriptsize\color{purple}]
+  basicstyle=\scriptsize\color{abstractcolor}]
 Empirical Effort and Schedule Estimation Models for Agile Processes in the US DoD.
 
 Estimating the cost and schedule of agile software projects is critical at an early phase to establish baseline budgets and schedules for the selection of competitive bidders.
@@ -1270,6 +1342,7 @@ Here is an example from an article titled
 (all \Cb{background} plus \Cb{objective} in boldface):
 \begin{quote}
   \Todo{All examples with high background ratio are long. Move to appendix?}
+  \color{abstractcolor}\sffamily\small
   Nowadays, end-users are able to adapt Web applications when some of their requirements have not been taken into account by developers.
   One possible way to do adaptations is by using Web Augmentation techniques.
   Web Augmentation allows end-users to modify the Web sites' user interfaces once these are loaded on the clientside, i.e., in the browser.
@@ -1307,6 +1380,7 @@ short_bg_example <- df_c |>
 Other abstracts manage to solve the same problem in a wonderfully concise manner,
 e.g., \Art{LavMor22} (\Sexpr{format_percent(short_bg_example$ratio/100)} \Cb{background}):
 \begin{quote}
+  \color{abstractcolor}\sffamily\small
 	The F-measure has been widely used as a performance metric when selecting
 binary classifiers for prediction, but it has also been widely criticized, especially given the
 availability of alternatives such as $\varphi$ (also known as Matthews Correlation Coefficient).
@@ -1315,9 +1389,10 @@ availability of alternatives such as $\varphi$ (also known as Matthews Correlati
 
 \Plotwide{box_xletgroups_topicfractions}{%
 	Per-topic distribution of the amount of space used for that topic.
-	These ``topics'' are groupings of related codes; e.g. Outlook stands for the union of
-	\Cb{fposs}, \Cb{fneed}, \Cb{fgap}, \Cb{fwork}, 
-	and all corresponding \Cb{a-*} and (theoretically) \Cb{h-*} codes.\\
+	These ``topics'' are groupings of related codes
+  (see also Table~\ref{tab:codes});
+  e.g., Outlook stands for the union of \Cb{fposs}, \Cb{fneed},
+	and all corresponding \Cb{a-*} and \Cb{h-*} codes.\\
 	\Describeboxplots
 	\Describegroups}
 
@@ -1396,7 +1471,8 @@ This is shown in Figure~\ref{zerofractionbar_xletgroups_topicmissingfractions}.
 and `fraction\_conclusion' (includes h-conclusion and a-conclusion, missing in 52\%, used in plot). Which do we take?}
 
 \Plotwide{zerofractionbar_xletgroups_topicmissingfractions}{%
-	How often is a topic not present at all in an abstract?\\
+	How often is a topic not present at all in an abstract?
+  These ``topics'' are groupings of related codes (see Table~\ref{tab:codes}).\\
 	\Describegroups\ 
   Error bars are due to ambiguous formulations (see Section~\ref{ignorediff}).}
 
@@ -1462,10 +1538,11 @@ The situation is better for structured abstracts, but missing \Cb{conclusion}
 are still common here
 (\Sexpr{format_percent(missing_elements |> filter(part == "code_conclusion", is_struc) |> pull(r_missing))}).%
 \footnote{Note that
-  the prompt of having to write something after a ``Conclusion:'' keyword
+  the prompt of having to write something after a \ExampleQuote{Conclusion:} keyword
   does not guarantee an actual \Cb{conclusion} follows:
-  The statement put there can be (and sometimes is) something else,
-  typically a \Cb{result} statement or \Cb{summary}.}
+  Often, the statement authors put there is actually
+  a \Cb{result} (an immediate empirical result)
+  or a \Cb{summary} (a mere repetition).}
 
 <<>>=
 # Fetch numbers for "complete" metric
@@ -1488,10 +1565,10 @@ that they become difficult to read.
 
 For quantifying this, we map each abstract's structure to a sequence of letters,
 where each letter stands for a contiguous stretch of sentences in the abstract
-that have the same content type; the letter designates that content type.
+that have the same topic (see Table~\ref{tab:codes}).
 For instance, an abstract that follows a minimal incarnation of the Archetype
 for an empirical article would be encoded as \strct{bomrc}, which stands for
-the content types sequence \textit{background, objective, methods, results, conclusion}.
+the topic sequence \textit{background, objective, methods, results, conclusion}.
 
 <<>>=
 # Numbers of topicstructures in empirical and design articles
@@ -1915,7 +1992,7 @@ Yet what we find is that only \Sexpr{r_proper} \Sexpr{r_proper_range} of them in
 % TOSEM and ICSE are still worse than that.
 We expected to find many problems in abstracts but still find this outcome astonishingly bad. 
 
-<<results="as.is">>=
+<<results="as.is", message=FALSE, echo=FALSE>>=
 # Compile overview table
 stats_overview |>
   filter(!name %in% c("n_igap_yes3")) |>
@@ -1923,7 +2000,10 @@ stats_overview |>
   mutate(
     name  = case_match(
       name,
-      "n_bg_over_third" ~ "background > $\\frac{1}{3}$",
+      "n_read_good" ~ "good ($fk > 30$)",
+      "n_read_acceptable" ~ "acceptable ($fk \\in [20, 30]$)",
+      "n_read_improper" ~ "improper ($fk < 20$)",
+      "n_bg_over_third" ~ "background $\\ge\\frac{1}{3}$",
       .default = stringr::str_extract(name, "[^_]+$")
     ),
     value = ifelse(value %% 1 == 0,
