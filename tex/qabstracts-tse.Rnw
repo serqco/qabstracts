@@ -23,7 +23,7 @@
 \usepackage{booktabs}
 
 \graphicspath{ {../img} {.} }
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{balance}
 \hyphenation{semi-conduc-tor IEEE-Xplore}
 
@@ -48,15 +48,17 @@
 \newcommand{\Cb}[1]{\bgroup\mbox{\scshape #1}\egroup}  % typeset a code name
 \newcommand{\Prg}[1]{\bgroup\ttfamily #1\egroup}  % typeset commands and script names
 \newcommand{\strct}[1]{\bgroup\ttfamily\bfseries #1\egroup}  % typeset an abstract structure code
-%\newcommand{\Art}[1]{\bgroup[#1]\egroup} % typeset article references
-\newcommand{\Art}[1]{\href{https://github.com/serqco/qabstracts/blob/main/abstracts/abstracts.raw/\string#1.txt}{\bgroup[#1]\egroup}}
+\newcommand{\Art}[1]{\bgroup[#1]\egroup} % typeset article references
+% Alternative article references: Link to raw abstract on GitHub
+\renewcommand{\Art}[1]{\href{https://github.com/serqco/qabstracts/blob/main/abstracts/abstracts.raw/\string#1.txt}{\bgroup[#1]\egroup}}
 \newcommand{\Sah}[1]{\bgroup\scshape #1\egroup}  % typeset a structured abstract heading
 
 \newcounter{todonumber}
 \newcommand{\Todo}[1]{\stepcounter{todonumber}\textcolor{red}{\sffamily ((\arabic{todonumber}: #1))}}
-\newcommand{\Quote}[1]{\bgroup\itshape ``#1''\egroup}  % quote from real abstract
-\newcommand{\Pseudoquote}[1]{\bgroup\itshape `#1'\egroup}  % quote from fictive abstract
-\newcommand{\QuoteCB}[1]{\Quote{#1}}  % quote from codebook
+\newcommand{\Quote}[1]{\bgroup\itshape\color{purple} ``#1''\egroup}  % quote from a specific real abstract
+\newcommand{\ExampleQuote}[1]{\bgroup\itshape ``#1''\egroup}         % generic quote from real abstract
+\newcommand{\Pseudoquote}[1]{\bgroup\itshape\color{ForestGreen} `#1'\egroup}            % quote from fictive abstract
+\newcommand{\QuoteCB}[1]{\bgroup\itshape\color{ProcessBlue} ``#1''\egroup}  % quote from codebook
 \newcommand{\Describeboxplots}{The box shows the 25-to-75 percentile, 
 	the whiskers are 10- and 90-percentile,
 	the gray bar is the median,
@@ -72,8 +74,10 @@
 \thanks{L. Prechelt is with Freie Universität Berlin, Germany},
 Lloyd Montgomery%
 \thanks{L. Montgomery is with University of Hamburg, Germany},  % Our university prefers the English name in publications
-Julian Frattini, Franz Zieris%
-\thanks{J. Frattini and F. Zieris are with BTH, Karlskrona, Sweden}}
+Julian Frattini%
+\thanks{J. Frattini is with Chalmers University of Technology, Gothenberg, Sweden},
+Franz Zieris%
+\thanks{F. Zieris is with Blekinge Institute of Technology (BTH), Karlskrona, Sweden}}
 
 \markboth{IEEE Transactions on Software Engineering}%
 {How (Not) To Write a Software Engineering Abstract}
@@ -81,25 +85,36 @@ Julian Frattini, Franz Zieris%
 \maketitle
 
 <<setup-knitr-reticulate, echo=FALSE>>=
-################ This is R code ################
+################################################################################
+# This document contains a number of code blocks wrapped in  <<>>=  and  @  .
+# These are "knitr" blocks, containing R and Python code snippets which provide
+# many numbers for the manuscript that otherwise would have to be painstakingly
+# copied and updated by hand.
+#
+# `make knit' creates a normal TeX file, `make pdf' creates the PDF
+################################################################################
+
+################ R code ################
 library(reticulate)
-# Use R's reticulate to load Python modules; read it as:
+# Use R's reticulate to load Python modules.
+# Read the following statement as:
 # ```python
 # import qabs.dataframes as dataframes
 # ```
 py$dataframes <- import_from_path("qabs.dataframes", path = "../script")
 
-options(width = 50)
+options(width = 50) # Reduced width to fit two-column layout
 debug_knitr <- "debug" %in% commandArgs(TRUE)
 knitr::opts_chunk$set(
     echo    = ifelse(debug_knitr, TRUE, FALSE),      # TRUE:     see all R code
     results = ifelse(debug_knitr, "markup", "hide"), # 'markup': see intermediate values
     size    = "scriptsize"
-) 
+)
+########################################
 @
 
 <<load-data, engine='python', echo=FALSE>>=
-################### This is Python code ################
+################### Python code ################
 import pandas as pd
 
 # Load data (output of `make export`)
@@ -109,12 +124,14 @@ raw = pd.read_csv(datafile, sep='\t')
 # Perform the statistics
 datasets = dataframes.create_all_datasets(raw)
 dataframes.create_all_subsets(datasets)
+################################################
 @
 
 <<import-data, echo=FALSE, message=FALSE>>=
-################ This is R code ################
+################ R code ################
 library(dplyr)
 library(tidyr)
+library(purrr)
 library(stringr)
 library(glue)
 library(kableExtra)
@@ -124,15 +141,18 @@ for (var in names(py)) {
   assign(var, py[[var]], envir = .GlobalEnv)
 }
 
-# We use this dataset the most, so we provide a shorthand
+# We use these datasets the most, so we provide shorthands
 df   <- datasets$by_abstract
 df_c <- datasets$by_abstract_coding
+@
 
+<<define-helpers, echo=FALSE, message=FALSE>>=
 # Percentages occur often and need to be properly escaped in LaTeX
 format_percent <- function(value, accuracy = 1) {
   scales::label_percent(accuracy)(value |> as.numeric()) |> as.character() |> stringr::str_replace("%", "\\\\%")
 }
 
+# The reported precision of p-values depends on its magnitude
 format_p_value <- function(p) {
   case_when(
     p < 0.001 ~ "p<0.001",
@@ -143,11 +163,9 @@ format_p_value <- function(p) {
   )
 }
 
-# Quantiles shown in boxplots
+# Quantiles shown in Python-generated boxplots (helpful for referring to the same values)
 bp_prob <- c(0.1, 0.25, 0.5, 0.75, 0.9)
-@
 
-<<echo=FALSE, message=FALSE>>=
 disagreement_range <- function(df, column) {
   df |>
     summarize(
@@ -161,6 +179,7 @@ disagreement_range <- function(df, column) {
     )
 } 
 
+# Formatted ranges of quality criteria
 ranges <- df_c |>
   mutate(
     n_bg_over_third = fraction_background > 33,
@@ -185,6 +204,7 @@ ranges <- df_c |>
     names_to = c("name", ".value"),
     names_pattern = "(.+)_([^_]+)$")
 
+# Formatted quality criteria (overall values and ranges)
 stats_overview <- df_c |>
   summarize(
     n_read_good       = sum(fkscore > 30),
@@ -211,24 +231,28 @@ stats_overview <- df_c |>
   mutate(across(c(value, min, max), ~./(nrow(df_c) / 2),
     .names = "r_{.col}"))
 
+# Helper functions to access quality criteria values
 r_stat <- function(metric) {
   stats_overview |>
     filter(name == metric) |>
     pull(r_value) |>
     format_percent()
 }
+# ... pessimistic values
 r_min <- function(metric) {
   stats_overview |>
     filter(name == metric) |>
     pull(r_min) |>
     format_percent()
 }
+# ... optimistic values
 r_max <- function(metric) {
   stats_overview |>
     filter(name == metric) |>
     pull(r_max) |>
     format_percent()
 }
+# ... and range between pessimistic and optimistic values
 r_range <- function(metric) {
   stats_overview |>
     filter(name == metric) |>
@@ -246,8 +270,14 @@ r_range <- function(metric) {
 (r_proper    <- r_stat("n_proper_yes"))
 @
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                ARTICLE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+% Note: Make sure to update `our-abstract.txt'.
+%       That's the basis for calculating our own FK score.
 \begin{abstract}  % 100 to 200 words are allowed (but not enforced)
 \emph{Background:}
 Abstracts are a very valuable element in a software engineering research article,
@@ -289,6 +319,11 @@ which currently are often missing in abstracts.
 \IEEEPARstart{A}{lthough} the abstract is a super important part of any research article~\cite{Lang22},
 when reading an abstract in software engineering --- even in a presumably top-quality venue ---
 we often feel it is lacking important information or find it difficult to understand at all.
+
+\Todo{For Lutz: Where would be a good place for \cite{ShiGalMil24},
+survey among ``science and health academics and researchers'', n=139:
+``98.6\% of the sample read the abstract first because it provides an
+overview of the paper and facilitates a decision on continuing to read on or not''}
 
 We aim to substantiate this impression
 by operationalizing \emph{abstracts quality} and analyzing hundreds of abstracts,
@@ -604,7 +639,7 @@ These represent, respectively: context information, the study goal or question,
 empirical approach, empirical outcomes, and a take-home message that generalizes beyond the results.
 
 Each code in the codebook is defined by a short verbal explanation.
-For example, \Cb{method} is defined as
+For example, we defined \Cb{method} as
 \QuoteCB{information about the approach or setup of an empirical (or possibly purely mathematical) study}.
 The initial definitions were made more and more precise and unambiguous by later
 codebook refinements.
@@ -681,7 +716,8 @@ but, alas, we learn nothing about those sources' nature or number or impact.
 
 We use \Cb{h-*} codes for the headings used in structured abstracts.
 These codes are conceptual, i.e., for instance
-\Quote{Aim:}, \Quote{Goal:}, \Quote{Objective:}, \Quote{Question:}, and their plural forms
+\ExampleQuote{Aim:}, \ExampleQuote{Goal:}, \ExampleQuote{Objective:}, \ExampleQuote{Question:},
+and their plural forms
 would all be coded as \Cb{h-objective}.
 Likewise, there are \Cb{h-background}, \Cb{h-method}, and so on.
 We recognize structured abstracts by the presence of such a heading code.
@@ -761,7 +797,7 @@ IST has published many very good systematic literature reviews and methods works
 but is not \emph{generally} considered a top-quality venue.
 
 <<>>=
-# Abstracts per venue
+# Coded abstracts per venue
 (n_abstracts_per_venue <- count(df, venue) |>
   glue_data("{venue}:{n}"))
 @
@@ -786,7 +822,7 @@ All these tools were purpose-built for the present study.
 \subsection{Coding Process}\label{meth_coding}
 
 We coded each abstract twice, by so-called coders A~and~B.
-Abstracts are held in text files in separate directories \Prg{abstracts.A} and \Prg{abstracts.B}.
+Abstracts are held in text files in separate directories \Prg{abstracts.A/} and \Prg{abstracts.B/}.
 Each sentence is followed by a line containing a pair of curly braces \Prg{\{\{\}\}}
 into which the coder would enter their codings,
 such as \Prg{\{\{method,result:i2\}\}} (for a complex sentence that contains substantial
@@ -822,7 +858,8 @@ obviously wrong, he would simply correct his coding.
   breaklines=true,
   breakindent=0pt,
   moredelim={[s][keywordstyle]{\{\{}{\}\}}},  % Adds bold styling to our codes. Added for visual clarity
-  basicstyle=\scriptsize]
+  keywordstyle=\ttfamily\bfseries\color{black},
+  basicstyle=\scriptsize\color{purple}]
 Empirical Effort and Schedule Estimation Models for Agile Processes in the US DoD.
 
 Estimating the cost and schedule of agile software projects is critical at an early phase to establish baseline budgets and schedules for the selection of competitive bidders.
@@ -936,7 +973,7 @@ The one exception from this rule is the comparison of
 structured versus unstructured abstracts (Section~\ref{structuredgood}).
 
 Most phenomena we report are gradual by nature.
-In this spirit, we often use the following verbal terms for frequencies:
+In this spirit, we use the following verbal terms for frequencies:
 rare (less than 5\%),
 not rare (5-20\%),
 common (20-35\%),
@@ -1038,9 +1075,9 @@ are disobeyed by more than a quarter of all articles for each of these three ven
 
 <<>>=
 # Readability scores
-(r_read_normal   <- r_stat("n_read_acceptable"))
+(r_read_normal <- r_stat("n_read_acceptable"))
 (r_read_improper <- r_stat("n_read_improper"))
-(r_read_lt10     <- format_percent(sum(df$fkscore < 10) / nrow(df)))
+(r_read_lt10 <- format_percent(sum(df$fkscore < 10) / nrow(df)))
 @
 
 <<>>=
@@ -1060,11 +1097,13 @@ more than every fifth abstract (\Sexpr{r_read_lt10}) even has a score below 10.
 \Sexpr{venue_worst_fk$venue} is worse.
 
 <<>>=
+# Calculate our own abstract's FK score
 py$annot <- import_from_path("qscript.annotations", path = "../script")
 
 abstract <- readr::read_lines("our-abstract.txt") |>
   as_tibble() |>
-  filter(!value %in% c("Background:", "Objective:", "Methods:", "Results:", "Conclusions:"))
+  filter(!value %in% c("Background:", "Objective:", "Methods:",
+                       "Results:", "Conclusions:"))
 
 syllablecount <- function(word) {
   py_eval(paste0("annot.AnnotatedSentence.syllablecount(\"", word, "\")"))
@@ -1074,14 +1113,15 @@ results <- abstract |>
   rename(sentence = value) |>
   mutate(
     word_list      = str_split(sentence, "\\s+"),
-    word_count     = purrr::map_int(word_list, length),
-    syllable_count = purrr::map_int(word_list, ~sum(purrr::map_int(.x, syllablecount)))
+    word_count     = map_int(word_list, length),
+    syllable_count = map_int(word_list, ~sum(map_int(.x, syllablecount)))
   )
 
-total_sentences <- nrow(abstract)
-total_words <- sum(results$word_count)
-total_syllables <- sum(results$syllable_count)
-our_fk_score <- 206.835 - 1.015 * total_words / total_sentences - 84.6 * total_syllables / total_words
+our_sentences <- nrow(abstract)
+our_words <- sum(results$word_count)
+our_syllables <- sum(results$syllable_count)
+(our_fk_score <- 206.835 - 1.015 * our_words / our_sentences -
+                84.6 * our_syllables / our_words)
 @
 
 \Plot{boxplots_fkscore}{%
@@ -1092,7 +1132,7 @@ our_fk_score <- 206.835 - 1.015 * total_words / total_sentences - 84.6 * total_s
     Differences between subgroups are modest.
     \Sexpr{venue_best_fk$venue} is best (mean \Sexpr{venue_best_fk$fk_f}),
     \Sexpr{venue_worst_fk$venue} is worst (mean \Sexpr{venue_worst_fk$fk_f}).
-    The abstract of the present article has a score of~\Sexpr{round(our_fk_score, 1)}.
+    The abstract of the present article has a score of~\Sexpr{round(our_fk_score)}.
     Structured abstracts are just as difficult as nonstructured ones
     if one ignores the ``Methods:'' etc. headings as we did for the readability analysis.
 }
@@ -1118,7 +1158,7 @@ Artifact design discussions were then usually coded as \Cb{method} instead.
 Mixed cases are rare and there the two coders decided which aspect has more weight.
 
 <<>>=
-# Useful pivot table
+# Typical topic fractions for design works and empirical works
 df_frac <- df_c |>
   pivot_longer(
     cols = starts_with("fraction_"),
@@ -1127,7 +1167,6 @@ df_frac <- df_c |>
     names_transform = list(part = ~str_remove(., "fraction_"))
   )
 
-# Typical fractions for design works and empirical works
 typl_frac <- df_frac |>
   summarize(
     n = n(),
@@ -1135,8 +1174,9 @@ typl_frac <- df_frac |>
     p75 = quantile(value, 0.75, na.rm = TRUE),
     .by = c(is_design, part)
   )
-typl_frac |> print(n = 2)
+typl_frac |> print(n = 5)
 
+# Helper function for typical topic fractions
 fmt_typl_frac <- function(design, part_name, glue = "--") {
   typl_frac |>
     filter(is_design == design, part == part_name) |>
@@ -1161,7 +1201,7 @@ Design article abstracts are barely longer than empirical article abstracts.
 
 <<>>=
 # Are design abstracts longer than empirical abstracts?
-df_c |>
+df |>
   reframe(qs = quantile(words, bp_prob), prob = bp_prob * 100,
     n = n(), .by = is_design) |>
   pivot_wider(id_cols = c(is_design, n), values_from = qs,
@@ -1237,10 +1277,28 @@ Here is an example from an article titled
   Maintenance is a key phase in the augmenters' life-cycle, and currently, this task falls (as usual) on the developers.
   \textbf{In this paper, we present a participatory approach for allowing end-users without programming skills to participate in the augmenters' maintenance phase.}
 \end{quote}
-That's 66\% of the abstract spent on the background.
+<<>>=
+# Fetch concrete numbers for example abstract
+long_bg_example <- df_c |>
+  filter(`_citekey` == 'FirFirRos22') |>
+  slice_head(n=1) |>
+  select(words_backgroundcode, fraction_code_background) |>
+  rename(words = words_backgroundcode, ratio = fraction_code_background)
+@
+That's \Sexpr{long_bg_example$words} words spent on \Cb{background}
+(\Sexpr{format_percent(long_bg_example$ratio/100)} of the abstract)
+before the \Cb{objective} is formulated.
 
+<<>>=
+# Fetch concrete numbers for example abstract
+short_bg_example <- df_c |>
+  filter(`_citekey` == 'LavMor22') |>
+  slice_head(n=1) |>
+  select(words_backgroundcode, fraction_code_background) |>
+  rename(words = words_backgroundcode, ratio = fraction_code_background)
+@
 Other abstracts manage to solve the same problem in a wonderfully concise manner,
-e.g., \Art{LavMor22} (12\% background):
+e.g., \Art{LavMor22} (\Sexpr{format_percent(short_bg_example$ratio/100)} background):
 \begin{quote}
 	The F-measure has been widely used as a performance metric when selecting
 binary classifiers for prediction, but it has also been widely criticized, especially given the
@@ -1336,7 +1394,7 @@ and `fraction\_conclusion' (includes h-conclusion and a-conclusion, missing in 5
   Error bars are due to ambiguous formulations (see Section~\ref{ignorediff}).}
 
 <<>>=
-# Missing elements
+# Missing elements in abstracts
 (missing_elements <- df_frac |>
   summarize(
     n = n(),
@@ -1388,27 +1446,29 @@ dominant (\Sexpr{format_percent(r_no_outlook$r_missing)}), respectively.
 Missing \Cb{method} and \Cb{result} are not rare
 (\Sexpr{format_percent(r_no_method$r_missing)} and \Sexpr{format_percent(r_no_result$r_missing)})%
 ~---~and this is a problem~---~%
-but never in structured abstracts.
+but they are always present in structured abstracts.
 
 The shocking part of this analysis is \Cb{conclusion}, which ought to be present
 as the key take-home message in any abstract, but is in fact missing in more than
 half of all (\Sexpr{format_percent(r_no_conclusion$r_missing)}).
-The situation is better for structured abstracts, for which missing \Cb{conclusion}
-are still common
+The situation is better for structured abstracts, but missing \Cb{conclusion}
+are still common here
 (\Sexpr{format_percent(missing_elements |> filter(part == "code_conclusion", is_struc) |> pull(r_missing))}).%
 \footnote{Note that
   the prompt of having to write something after a ``Conclusion:'' keyword
-  alone cannot guarantee this:
+  does not guarantee an actual \Cb{conclusion} follows:
   The statement put there can be (and sometimes is) something else,
   typically a \Cb{result} statement or \Cb{summary}.}
 
 <<>>=
-r_complete
+# Fetch numbers for "complete" metric
+(r_complete <- r_stat("n_complete_yes"))
 (r_complete_range <- r_range("n_complete_yes"))
 @
 
 Overall, only \Sexpr{r_complete} \Sexpr{r_complete_range} of all abstracts are \emph{complete}
-(i.e., containing all basic elements \Cb{background}, \Cb{objective}, \Cb{method}, \Cb{result}, \Cb{conclusion}).
+in the sense that they contain all basic elements
+\Cb{background} (or \Cb{gap}), \Cb{objective}, \Cb{method}, \Cb{result}, and \Cb{conclusion}.
 
 
 \subsection{How Not To: Convoluted Trains of Thought}
@@ -1427,6 +1487,7 @@ for an empirical article would be encoded as \strct{bomrc}, which stands for
 the content types sequence \textit{background, objective, methods, results, conclusion}.
 
 <<>>=
+# Numbers of topicstructures in empirical and design articles
 (n_struc <- df |>
   select(`_citekey`, is_design) |>
   distinct() |>
@@ -1440,10 +1501,10 @@ It has \Sexpr{n_struc[n_struc$is_design == FALSE, "n_distinct"]} entries for emp
 \Sexpr{n_struc[n_struc$is_design == TRUE, "n_distinct"]} entries for design articles.
 Most of these have only one or two instances, though;
 we restrict ourselves to the types that occur with higher frequency here.
-Note that a frequency of e.g. 2.5 simply means that the two coders did not agree.
 The results are shown in
 Figure~\ref{ab_topicstructure_freqs_empir} for empirical articles and
 Figure~\ref{ab_topicstructure_freqs_design} for design articles.
+(Fractional frequencies such as $7.5$ mean that the two coders did not agree.)
 
 \Plot{ab_topicstructure_freqs_empir}{%
   The frequency of different trains-of-thought in the abstract for empirical articles.
@@ -1460,11 +1521,15 @@ Figure~\ref{ab_topicstructure_freqs_design} for design articles.
 \subsubsection{Empirical Articles}
 
 <<>>=
+# Helper functions for topicstructure discussion
+
+# (temporary)
 assert_exists <- function(x, what) {
   if (length(x) == 0) paste0("\\Todo{", what, " does not exist}")
   else x
 }
 
+# (temporary)
 strc_example <- function(structure) {
   datasets$ab_structures |>
     filter(topicstructure == structure) |>
@@ -1477,7 +1542,7 @@ cumulative_ratio <- function(design, n) {
   x <- df |>
     select(`_citekey`, is_design) |>
     distinct() |>
-    left_join(datasets$ab_structures, by = c("_citekey" = "citekey")) |>
+    left_join(datasets$ab_structures, c("_citekey" = "citekey")) |>
     filter(is_design == design) |>
     count(topicstructure) |>
     mutate(n = n/2) |>
@@ -1511,7 +1576,7 @@ In particular, having two small empirical studies, resulting in a nice \strct{bg
 (e.g., \Art{WuZouDou22}), can make a lot of sense for the reader.
 But this has its limits:
 An abstract with structure \strct{bodmrmrmrmr}
-(e.g., \Art{\Sexpr{strc_example("bodmrmrmrmr")}})
+(e.g., \Art{ZhoCheHao22})
 is overloaded.
 It can also easily get out of hand, as confirmed by the examples
 \strct{bodrmrmrmrmrmr} (e.g. \Art{PisSpäBud22}) and
@@ -1521,28 +1586,34 @@ which lack a coherent \emph{Method} part.
 \subsubsection{Structured Abstracts}
 
 <<>>=
+# How many different topicstructures?
 ab_is_design <- distinct(select(df, `_citekey`, is_design)) |>
   left_join(datasets$ab_structures, by = c("_citekey" = "citekey"))
 
 design_empir_struct <- ab_is_design |> filter(!is_design, is_struc)
 design_empir_all    <- ab_is_design |> filter(!is_design)
 
+# Empirical and structured: Just count
 (n_distinct_empir_struct <- design_empir_struct |>
-  summarize(count = n_distinct(topicstructure)))
+  summarize(count = n_distinct(topicstructure)) |>
+  pull(count))
+
+# All empirical: Take same-size sample of abstract and count there
 c_design_empir_struct <- nrow(design_empir_struct)
 
 set.seed(123)
 resample_counts <- replicate(
   1000,
   {
-    sample_n(design_empir_all, c_design_empir_struct, replace = FALSE) |>
+    sample_n(design_empir_all, c_design_empir_struct,
+        replace = FALSE) |>
       distinct(topicstructure) |>
       nrow()
   }
 )
 
-n_distinct_empir_all <- median(resample_counts)
-n_distinct_empir_all_ci <- quantile(resample_counts, c(0.025, 0.975))
+(n_distinct_empir_all <- median(resample_counts))
+(n_distinct_empir_all_ci <- quantile(resample_counts, c(0.025, 0.975)))
 @
 
 Today's conventions for structured abstracts may be a bit restrictive
@@ -1575,9 +1646,10 @@ If at this point the reader expects the work contains something more
 concrete than \Quote{rare}, this is an informativeness gap.
 And indeed the article in question contains this information in its
 Table 4 and therefore could and should have said
-\Pseudoquote{random sampling is rare (8\% of cases)}.
+\Pseudoquote{random sampling is rare \textbf{(8\% of cases)}}.
 
 <<>>=
+# Where are the most igaps?
 (igap_loc <- raw |>
   summarize(
     icount = max(icount), # max = enough if one coder saw it
@@ -1597,17 +1669,18 @@ in \Cb{result} statements (\Sexpr{format_percent(igap_in_results)} of the gaps)
 or \Cb{method} statements (\Sexpr{format_percent(igap_in_method)} of the gaps).
 Most (if not all) of them could be filled by a number.
 They tend to cluster,
-like here:
+like in \Art{ShiBiaBri22}: %EMSE
 \Quote{The results show that PRINS can process large logs much faster
   than a publicly available and well-known state-of-the-art tool,
-  without significantly compromising the accuracy of inferred models.} \Art{ShiBiaBri22} %EMSE
+  without significantly compromising the accuracy of inferred models.}
 This sentence has three informativeness gaps.
 A better formulation could have been:
-\Pseudoquote{The results show that PRINS can often process logs an order of magnitude faster
-  than the well-known state-of-the-art tool MINT,
-  but never lost more than 7 percentage points of balanced accuracy.}
+\Pseudoquote{The results show that PRINS can often process logs \textbf{an order of magnitude} faster
+  than the well-known state-of-the-art tool \textbf{MINT},
+  but \textbf{never lost more than 7 percentage points} of balanced accuracy.}
 
 <<>>=
+# Fetch values for 1+ and for 3+ igaps metrics
 (r_igap1 <- r_stat("n_igap_yes"))
 (r_igap1_range <- r_range("n_igap_yes"))
 
@@ -1665,6 +1738,7 @@ This should have been a result statement such as the following:
   will get rid of about 98\% of all bad commits.}
 
 <<>>=
+# Fetch values for announcement metric
 (r_announce       <- r_stat("n_announce_yes"))
 (r_announce_range <- r_range("n_announce_yes"))
 @
@@ -1697,6 +1771,7 @@ an average reader is not able to make sense of this statement
 which represents half of the work's results.
 
 <<>>=
+# ugaps per venue
 (ucount_venue <- df_c |>
   summarize(
     n = n(),
@@ -1709,6 +1784,7 @@ which represents half of the work's results.
 @
 
 <<>>=
+# Fetch values for ugap metric
 (r_ugap       <- r_stat("n_ugap_yes"))
 (r_ugap_range <- r_range("n_ugap_yes"))
 @
@@ -1730,10 +1806,11 @@ Obviously, such ambiguous formulations do not represent good abstract writing
 and we consider such abstracts to be \emph{improper}.
 
 <<>>=
+# Count ignorediffs
 (n_igdf <- raw |> filter('ignorediff' == code) |>
-    summarize(n = n_distinct(citekey, sidx)))
+    summarize(n = n_distinct(citekey, sidx)) |> pull(n))
 (n_igdf_a <- raw |> filter(code == 'ignorediff') |>
-  summarize(n = n_distinct(citekey)))
+  summarize(n = n_distinct(citekey)) |> pull(n))
 (r_igdf_a <- n_igdf_a / n_abstracts)
 
 (igdf_cocodes <- raw |>
@@ -1764,7 +1841,8 @@ a minimal amount of information of types  \Cb{background} (\Cb{or gap}),
 canonical IMRAD structure.
 
 <<>>=
-r_complete
+# Fetch values for completeness metric
+(r_complete <- r_stat("n_complete_yes"))
 
 (r_complete_unstruc <- filter(df, !is_struc) |>
   summarize(n = n(), n_complete = sum(is_complete),
@@ -1778,7 +1856,8 @@ However, as we see in Figure~\ref{nonzerofractionbar_xletgroups_totalqualityfrac
 a majority of abstracts fails this very basic quality criterion, a depressing result.
 
 <<>>=
-r_proper
+# Fetch values for properness metric
+(r_proper <- r_stat("n_proper_yes"))
 (r_proper_range <- r_range("n_proper_yes"))
 
 (proper_venue <- df |>
@@ -1829,6 +1908,7 @@ Yet what we find is that only \Sexpr{r_proper} \Sexpr{r_proper_range} of them in
 We expected to find many problems in abstracts but still find this outcome astonishingly bad. 
 
 <<results="as.is">>=
+# Compile overview table
 stats_overview |>
   filter(!name %in% c("n_igap_yes3")) |>
   mutate(across(starts_with("r_"), format_percent)) |>
@@ -1852,20 +1932,36 @@ stats_overview |>
     booktabs = TRUE, 
     escape = FALSE,
     label = "overview",
-    caption = "For each coding-based quality criterion, there is a possibility for disagreement between the two codings. Numbers in brackets show the extent of that disagreement: For a negative criterion (italics),
-  the lower value denotes the number of abstracts for which \\emph{both} codings lead a negative evaluation, the higher value denotes the number of abstracts for which \\emph{at least one} coding leads to a negative evaluation."
+    caption = "For each coding-based quality criterion,
+      there is a possibility for disagreement between the
+      two codings. Numbers in brackets show the extent of
+      that disagreement: For a negative criterion (italics),
+      the lower value denotes the number of abstracts for
+      which \\emph{both} codings lead a negative evaluation,
+      the higher value denotes the number of abstracts for
+      which \\emph{at least one} coding leads to a negative
+      evaluation."
   ) |>
   kable_styling() |>
-  add_header_above(c("Criterion" = 1, "Count" = 2, "Ratio" = 2), bold = TRUE) |>
+  add_header_above(c("Criterion" = 1, "Count" = 2, "Ratio" = 2),
+    bold = TRUE) |>
   row_spec(0, bold = TRUE) |>
-  pack_rows("Readability (Section \\ref{result-len-read})", 1, 3, escape = FALSE) |>
-  pack_rows("Innefficient Allocation of Space (Section \\ref{inefficient_allocation})", 4, 4, escape = FALSE) |>
-  pack_rows("Completeness (Section \\ref{missing_elements})", 5, 6, escape = FALSE) |>
-  pack_rows("Informativeness Gap (Section \\ref{igaps})", 7, 8, escape = FALSE) |>
-  pack_rows("Announcements (Section \\ref{announcements})", 9, 10, escape = FALSE) |>
-  pack_rows("Understandability Gap (Section \\ref{ugaps})", 11, 12, escape = FALSE) |>
-  pack_rows("Ambiguous Formulations (Section \\ref{ambiguity})", 13, 14, escape = FALSE) |>
-  pack_rows("Properness (Section \\ref{hownotto_summary})", 15, 16, escape = FALSE) |>
+  pack_rows("Readability
+    (Section \\ref{result-len-read})", 1, 3, escape = FALSE) |>
+  pack_rows("Inefficient Allocation of Space
+    (Section \\ref{inefficient_allocation})", 4, 4, escape = FALSE) |>
+  pack_rows("Completeness
+    (Section \\ref{missing_elements})", 5, 6, escape = FALSE) |>
+  pack_rows("Informativeness Gap
+    (Section \\ref{igaps})", 7, 8, escape = FALSE) |>
+  pack_rows("Announcements
+    (Section \\ref{announcements})", 9, 10, escape = FALSE) |>
+  pack_rows("Understandability Gap
+    (Section \\ref{ugaps})", 11, 12, escape = FALSE) |>
+  pack_rows("Ambiguous Formulations
+    (Section \\ref{ambiguity})", 13, 14, escape = FALSE) |>
+  pack_rows("Properness
+    (Section \\ref{hownotto_summary})", 15, 16, escape = FALSE) |>
   row_spec(c(3, 6, 8, 10, 12, 14, 16), italic = TRUE)
 @
 
@@ -1879,16 +1975,17 @@ Therefore, we perform two statistical hypothesis tests here that compare
 structured to unstructured abstracts.
 
 <<>>=
+# Run significance tests (implemented in Python)
 sig.test <- import_from_path("qabs.printstats", path = "../script")
 sig.complete <- sig.test$calc_test(df, "is_complete")
 sig.proper <- sig.test$calc_test(df, "is_proper")
 @
 
 We find that structured abstracts are significantly more often \emph{complete}
-($\chi^2=\Sexpr{sig.complete$chi2 |> round(1)}, \Sexpr{sig.complete$p |> format_p_value()}$).
+($\chi^2=\Sexpr{round(sig.complete$chi2, 1)}, \Sexpr{format_p_value(sig.complete$p)}$).
 For \emph{properness}, the absolute numbers are so low that statistical significance
 is not achieved
-($\chi^2=\Sexpr{sig.proper$chi2 |> round(1)}, \Sexpr{sig.proper$p |> format_p_value()}$)
+($\chi^2=\Sexpr{round(sig.proper$chi2, 1)}, \Sexpr{format_p_value(sig.proper$p)}$)
 despite the trend visible in the
 relative difference of the two green bars in the right half of
 Figure~\ref{nonzerofractionbar_xletgroups_totalqualityfractions}.
@@ -1959,6 +2056,7 @@ scientific reputation had articles with better abstracts.
 \subsection{Too Few Abstracts Have Good Quality}
 
 <<>>=
+# Fetch values of metrics relevant for conclusions
 r_complete
 r_proper
 r_no_conclusion
@@ -1982,9 +2080,12 @@ Sections~\ref{murkyobjectives} and \ref{convoluted}).
 This low abstracts quality exists despite the fact that we analyzed only venues
 supposed to have high quality.
 
-This is deplorable, because for most readers of a typical article, 
-the abstract is all they will ever look at.\Todo{reference needed}
-With the above level of abstracts quality, they will get far less 
+This is deplorable, because for the vast majority readers of a typical article,
+the abstract is the first part they read \cite{ShiGalMil24} --- and often the only.
+Futhermore, indexes and search engines such as \emph{Scopus AI}\footnote{%
+  \url{https://www.elsevier.com/products/scopus/scopus-ai}
+} rely heavily on abstracts.
+With the above level of abstracts quality, readers will get far less
 well informed than they could have been and the spread of knowledge
 will be slowed down accordingly, needlessly wasting public money.
 
@@ -2117,10 +2218,23 @@ Contact him at lloyd.montgomery@uni-hamburg.de.
 \end{IEEEbiography}  
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{julian-frattini.jpg}}]{Julian Frattini}
+\Todo{now holds a PhD degree and is no longer}
 is a PhD student at the Department of Software Engineering at Blekinge Institute of Technology (BTH). 
 His research under the supervision of Prof. Daniel Mendez focuses on requirements quality, aiming to operationalize the concept of "good-enough requirements engineering." 
 Julian served as the proceedings chair of the 30th International Working Conference on Requirements Engineering: Foundation for Software Quality (REFSQ'24) and publicity chair of the 32nd IEEE International Requirements Engineering conference (RE'24), and is co-organizing the 8th International Workshop on Crowd-Based Requirements Engineering (CrowdRE'24) and the Eleventh International Workshop on Artificial Intelligence and Requirements Engineering (AIRE'24) at RE'24. 
 He is on the program committees of REFSQ, International Conference on the Quality of Information and Communications Technology (QUATIC), and NLP4RE, and regularly reviews for the Requirements Engineering journal (REJ), the Information and Software Technology journal (IST), and the Journal of Systems and Software (JSS).
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{franz-zieris.jpg}}]{Franz Zieris}
+received a PhD from Freie Universität Berlin for qualitative research on pair programming in industy.
+He then spent 2.5 years in industry as software architect and business analyst.
+He is now an Associate Senior Lecturer at the Department of Software Engineering at Blekinge Institute of Technology (BTH),
+where his research focuses on continuous software engineering and distributed software engineering.
+Franz is on the program committes of the Internal Conference on Agile Software Development (XP)
+and International Conference on Cooperative and Human Aspects (CHASE),
+and regularly reviews for Empirical Software Engineering (EMSE),
+the Journal of Systems and Software (JSS),
+and Information and Software Technology (IST).
 \end{IEEEbiography}
 
 %\begin{IEEEbiographynophoto}{Jane Doe} 
