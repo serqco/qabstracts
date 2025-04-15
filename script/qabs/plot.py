@@ -150,7 +150,7 @@ def plot_qabstracts_timeline_commits(outputdir: str, all_timestamps: dict[str,li
     # ----- set up the plot:
     fig, axs = plt.subplots()
     axs.set_yticks([y for y, l, s, f in cases], [l for y, l, s, f in cases])
-    axs.set_xlim(dt.date(2022, 6, 1), dt.date(2024, 12, 15))
+    axs.set_xlim(dt.date(2022, 6, 1), dt.date(2025, 1, 15))
     # fix label frequency: https://matplotlib.org/stable/gallery/text_labels_and_annotations/date.html
     axs.xaxis.set_major_locator(mdates.MonthLocator(bymonth=(1, 7)))
     axs.xaxis.set_minor_locator(mdates.MonthLocator(bymonth=range(1, 12+1)))

@@ -15,7 +15,7 @@ git_timestamp_cases = [  # y, label, symbol, files
     (4.0, "training", "T", "prestudy2/abstracts.?"),
     (3.0, "coding", "A", "abstracts/abstracts.A"),
     (2.8, "", "B", "abstracts/abstracts.B"),
-    (2.0, "stat. eval.", "E", "script/qabs/plot.py script/qabs/printstats.py"),
+    (2.0, "stat. eval.", "E", "script/qabs/dataframes.py script/qabs/plot.py script/qabs/printstats.py script/qscript/annotations.py"),
 ]
 
 
