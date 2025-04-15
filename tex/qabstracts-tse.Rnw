@@ -1083,9 +1083,12 @@ are disobeyed by more than a quarter of all articles for each of these three ven
 <<>>=
 # Readability by venue
 (venue_mean_fkscores <- df |>
-  summarize(n = n(), fk = mean(fkscore), fk_f = round(fk), .by = venue))
-(venue_best_fk  <- venue_mean_fkscores |> slice_max(fk, with_ties = FALSE))
-(venue_worst_fk <- venue_mean_fkscores |> slice_min(fk, with_ties = FALSE))
+  summarize(n = n(), fk = mean(fkscore), fk_f = round(fk),
+    .by = venue))
+(venue_best_fk  <- venue_mean_fkscores |> slice_max(fk,
+  with_ties = FALSE))
+(venue_worst_fk <- venue_mean_fkscores |> slice_min(fk,
+  with_ties = FALSE))
 @
 
 For readability, see Figure~\ref{boxplots_fkscore}:
@@ -1098,15 +1101,17 @@ more than every fifth abstract (\Sexpr{r_read_lt10}) even has a score below 10.
 
 <<>>=
 # Calculate our own abstract's FK score
-py$annot <- import_from_path("qscript.annotations", path = "../script")
+py$annot <- import_from_path("qscript.annotations",
+  path = "../script")
 
 abstract <- readr::read_lines("our-abstract.txt") |>
   as_tibble() |>
   filter(!value %in% c("Background:", "Objective:", "Methods:",
                        "Results:", "Conclusions:"))
 
-syllablecount <- function(word) {
-  py_eval(paste0("annot.AnnotatedSentence.syllablecount(\"", word, "\")"))
+sylcount <- function(word) {
+  paste0("annot.AnnotatedSentence.syllablecount(\"", word, "\")") |>
+    py_eval()
 }
 
 results <- abstract |>
@@ -1114,7 +1119,7 @@ results <- abstract |>
   mutate(
     word_list      = str_split(sentence, "\\s+"),
     word_count     = map_int(word_list, length),
-    syllable_count = map_int(word_list, ~sum(map_int(.x, syllablecount)))
+    syllable_count = map_int(word_list, ~sum(map_int(.x, sylcount)))
   )
 
 our_sentences <- nrow(abstract)
@@ -1283,7 +1288,8 @@ long_bg_example <- df_c |>
   filter(`_citekey` == 'FirFirRos22') |>
   slice_head(n=1) |>
   select(words_backgroundcode, fraction_code_background) |>
-  rename(words = words_backgroundcode, ratio = fraction_code_background)
+  rename(words = words_backgroundcode,
+    ratio = fraction_code_background)
 @
 That's \Sexpr{long_bg_example$words} words spent on \Cb{background}
 (\Sexpr{format_percent(long_bg_example$ratio/100)} of the abstract)
@@ -1295,10 +1301,11 @@ short_bg_example <- df_c |>
   filter(`_citekey` == 'LavMor22') |>
   slice_head(n=1) |>
   select(words_backgroundcode, fraction_code_background) |>
-  rename(words = words_backgroundcode, ratio = fraction_code_background)
+  rename(words = words_backgroundcode,
+    ratio = fraction_code_background)
 @
 Other abstracts manage to solve the same problem in a wonderfully concise manner,
-e.g., \Art{LavMor22} (\Sexpr{format_percent(short_bg_example$ratio/100)} background):
+e.g., \Art{LavMor22} (\Sexpr{format_percent(short_bg_example$ratio/100)} \Cb{background}):
 \begin{quote}
 	The F-measure has been widely used as a performance metric when selecting
 binary classifiers for prediction, but it has also been widely criticized, especially given the
@@ -1598,7 +1605,7 @@ design_empir_all    <- ab_is_design |> filter(!is_design)
   summarize(count = n_distinct(topicstructure)) |>
   pull(count))
 
-# All empirical: Take same-size sample of abstract and count there
+# All empirical: Take same-size sample of abstract and count
 c_design_empir_struct <- nrow(design_empir_struct)
 
 set.seed(123)
@@ -1613,7 +1620,8 @@ resample_counts <- replicate(
 )
 
 (n_distinct_empir_all <- median(resample_counts))
-(n_distinct_empir_all_ci <- quantile(resample_counts, c(0.025, 0.975)))
+(n_distinct_empir_all_ci <- quantile(resample_counts,
+  c(0.025, 0.975)))
 @
 
 Today's conventions for structured abstracts may be a bit restrictive
@@ -1928,7 +1936,8 @@ stats_overview |>
   select(name, value, n_range, r_value, r_range) |>
   kbl(
     col.names = c(), 
-    align = c("l", "r@{\\hspace{2pt}}", "r", "r@{\\hspace{2pt}}", "r"),
+    align = c("l", "r@{\\hspace{2pt}}",
+              "r", "r@{\\hspace{2pt}}", "r"),
     booktabs = TRUE, 
     escape = FALSE,
     label = "overview",
