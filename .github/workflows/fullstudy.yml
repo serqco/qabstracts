@@ -67,6 +67,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with: 
           name: 'qabstracts-tse'
-          path: |
-            'tex/qabstracts-tse-debug.pdf'
-            'tex/qabstracts-tse.pdf'
+          path: 'tex/qabstracts-tse*.pdf'
