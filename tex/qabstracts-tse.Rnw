@@ -288,66 +288,50 @@ r_range <- function(metric) {
 %       That's the basis for calculating our own FK score.
 \begin{abstract}  % 100 to 200 words are allowed (but not enforced)
 \emph{Background:}
-Abstracts are a very valuable element in a software engineering research article,
+Abstracts are a particularly valuable element in a software engineering research article,
 but not all abstracts are as informative as they could be.
 \emph{Objective:}
-Characterize the structure of abstracts in high-quality SE venues,
-observe and quantify deficiencies,
-and suggest guidelines for writing informative abstracts.
+Characterize the structure of abstracts in high-quality software engineering venues.
+Observe and quantify deficiencies.
+Suggest guidelines for writing informative abstracts.
 \emph{Methods:}
 Use qualitative open coding to derive concepts that explain relevant properties of abstracts
 and identify the archetypical structure of abstracts.
 Use quantitative content analysis to objectively characterize abstract structure
 of a sample of \Sexpr{n_abstracts} abstracts from five presumably high-quality venues.
 Use exploratory data analysis to find recurring issues in abstracts.
-Compare the archetypical structure to actual structures to derive
-guidelines for producing informative abstracts.
+Compare the archetypical structure to actual structures.
+Infer guidelines for producing informative abstracts.
 \emph{Results:}
 Only \Sexpr{r_complete} of the sampled abstracts are \textit{complete},
 i.e., provide background, objective, method, result, and conclusion information.
 For structured abstracts, the ratio is twice as big.
 Only \Sexpr{r_proper} of the abstracts are \textit{proper},
-i.e., they also have good readability (Flesch-Kincaid score) and have
-neither informativeness gaps nor understandability gaps or highly ambiguous sentences.
+i.e., they also have good readability (Flesch-Kincaid score) and have no 
+informativeness gaps, understandability gaps, nor highly ambiguous sentences.
 \emph{Conclusions:}
 (1)~Even in top venues, a large majority of abstracts are far from ideal.
-(2)~Structured abstracts tend to be better than unstructured ones,
-but (3)~artifact-centric works need a different structured format.
+(2)~Structured abstracts tend to be better than unstructured ones.
+(3)~artifact-centric works need a different structured format.
 (4)~The community should start requiring conclusions that generalize,
 which currently are often missing in abstracts.
 \end{abstract}
 
 \begin{IEEEkeywords}
-!!!.
+qualitative analysis, quantitative analysis, guidelines
 \end{IEEEkeywords}
 
 
 %========================================================================
 \section{Introduction}
-\IEEEPARstart{A}{lthough} the abstract is a super important part of any research article~\cite{Lang22},
+\IEEEPARstart{A}{lthough} the abstract is a super important part of any 
+research article~\cite{Lang22,ShiGalMil24},
 when reading an abstract in software engineering --- even in a presumably top-quality venue ---
 we often feel it is lacking important information or find it difficult to understand at all.
 
-\Todo{For Lutz: Where would be a good place for \cite{ShiGalMil24},
-survey among ``science and health academics and researchers'', n=139:
-``98.6\% of the sample read the abstract first because it provides an
-overview of the paper and facilitates a decision on continuing to read on or not''}
-
 We aim to substantiate this impression
-by operationalizing \emph{abstracts quality} and analyzing hundreds of abstracts,
-and formulate constructive advice for writing better abstracts.
-
-
-%Ideally, an abstract should
-%situate the work within software engineering,
-%motivate and state the issue addressed by it,
-%describe the methods applied,
-%report empirical results,
-%and formulate a useful take-home message.
-%With the possible exception of discussing related work,
-%this is much the same agenda as for the article itself,
-%just with much less detail;
-%getting it right is no easy task.
+by operationalizing \emph{abstracts quality} and analyzing hundreds of abstracts.
+We want to formulate constructive advice for writing better abstracts.
 
 
 \subsection{Research Questions}
@@ -362,9 +346,9 @@ We ask several questions:
 	\item[RQ3] Do structured abstracts have better quality than unstructured ones?
 	\item[RQ4] How \emph{should} software engineering abstracts be written?
 \end{description}
-Of these, RQ1 and RQ2 should be considered exploratory,
-RQ3 is hypothesis-driven (we expect a `yes'), and
-the answer to RQ4 will be derived from the answers to the other three.
+We consider RQ1 and RQ2 to be exploratory.
+RQ3 is hypothesis-driven; we expect a `yes'.
+The answer to RQ4 will be derived from the answers to the other three.
 
 
 \subsection{Research Approach}
@@ -380,11 +364,11 @@ regarding our answers to the research questions and the need to improve
 the quality of software engineering abstracts.
 We therefore perform a repeatable
 quantitative content analysis~\cite[Ch. 7]{Krippendorff04}
-on a large sample of \Sexpr{n_abstracts} presumably high-quality abstracts
-and apply an elaborate eight-step approach for maximizing its reliability.
+on a large sample of \Sexpr{n_abstracts} presumably high-quality abstracts.
+We apply an elaborate eight-step approach for maximizing reliability.
 
 The final stage is a statistical evaluation of the content analysis data,
-which is again exploratory and straightforward in both
+which is again exploratory and straightforward in
 the questions it asks and the statistical methods it applies.
 
 
@@ -395,27 +379,26 @@ Our contributions correspond to the research questions as follows:
 	\item[RQ1] As for the structure of well-written abstracts, we present an ``abstracts archetype''
 	  that describes fixed parts of the structure and degrees of freedom
 	  (Section~\ref{archetype}).
-	\item[RQ2] We describe and discuss nine types of deficiencies,
-	  and quantify the frequency of each deficiency type for the entire sample of abstracts
+	\item[RQ2] We describe and discuss eight types of deficiencies;
+	  we quantify the frequency of each deficiency type for the entire sample of abstracts
 	  as well as for different subgroups of interest
     (Section~\ref{results} and Table~\ref{tab:overview}).
 	  % Deficiency Types:
 	  %  1. Readability (Sec 4.1, result-len-read)
 	  %  2. Inefficient Allocation of Space (Sec 4.4, inefficient_allocation)
-	  %  3. Murky OBJECTIVE Statements (Sec 4.5, murkyobjectives)
-	  %  4. Missing Elements (Sec 4.6, missing_elements)
-    %  5. Convoluted Trains of Thought (Sec. 4.7, convoluted)
-    %  6. Informative Gaps (Sec. 4.8.1, igaps)
-    %  7. Announcements (Sec. 4.8.2, announcements)
-    %  8. Understandability (Sec. 4.9, ugaps)
-    %  9. Ambiguity (Sec. 4.10, ambiguity)
+	  %  3. Missing Elements (Sec 4.6, missing_elements)
+    %  4. Convoluted Trains of Thought (Sec. 4.7, convoluted)
+    %  5. Informative Gaps (Sec. 4.8.1, igaps)
+    %  6. Announcements (Sec. 4.8.2, announcements)
+    %  7. Understandability (Sec. 4.9, ugaps)
+    %  8. Ambiguity (Sec. 4.10, ambiguity)
 	\item[RQ3] We present convincing data that structured abstracts tend to be better
 	  in several respects
 	  (Sections~\ref{missing_elements} \& \ref{structuredgood}).
-	\item[RQ4] We provide data-based how-to instructions for writing abstracts for authors
-	  as well as guidance for editors and conference organizers
+	\item[RQ4] We provide data-based how-to instructions for writing abstracts for authors;
+	  we provide guidance for editors and conference organizers
     (Section~\ref{howto-guidelines}).
-	  Software Engineering works should use structured abstracts, but
+	  Software engineering works should use structured abstracts, but
 	  need a different and more flexible template than what is used so far.
 \end{description}
 
