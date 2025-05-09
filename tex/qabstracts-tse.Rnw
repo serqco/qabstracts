@@ -48,9 +48,8 @@
 \newcommand{\Cb}[1]{\bgroup\mbox{\scshape #1}\egroup}  % typeset a code name
 \newcommand{\Prg}[1]{\bgroup\ttfamily #1\egroup}  % typeset commands and script names
 \newcommand{\strct}[1]{\bgroup\ttfamily\bfseries #1\egroup}  % typeset an abstract structure code
-\newcommand{\Art}[1]{\bgroup[#1]\egroup} % typeset article references
-% Alternative article references: Link to raw abstract on GitHub
-\renewcommand{\Art}[1]{\href{https://github.com/serqco/qabstracts/blob/main/abstracts/abstracts.raw/\string#1.txt}{\bgroup[#1]\egroup}}
+\newcommand{\Art}[1]{\href{https://github.com/serqco/qabstracts/blob/main/abstracts/abstracts.raw/\string#1.txt}{\bgroup[#1]\egroup}}
+\newcommand{\Repo}[2]{\href{https://github.com/serqco/qabstracts/blob/main/\string#2}{#1}}
 \newcommand{\Sah}[1]{\bgroup\scshape #1\egroup}  % typeset a structured abstract heading
 
 \newcommand{\codebook}{https://github.com/serqco/qabstracts/blob/main/codebook.md}
@@ -58,7 +57,7 @@
 % Color definitions
 \definecolor{todocolor}{rgb}{1, 0, 0}
 \definecolor{abstractcolor}{RGB}{191, 27, 73}
-\definecolor{codebkecolor}{RGB}{0, 165, 218}
+\definecolor{codebkecolor}{RGB}{0, 16, 218}
 \definecolor{pseudocolor}{RGB}{0, 144, 83}
 
 \newcounter{todonumber}
@@ -266,7 +265,7 @@ r_range <- function(metric) {
     filter(name == metric) |>
     select(r_min, r_max) |>
     mutate(across(everything(), format_percent)) |>
-    glue_data("[{r_min}, {r_max}]")
+    glue_data("[{r_min}, {r_max}]")  # TODO: change into a plus/minus format with only 1 number
 }
 @
 
@@ -284,19 +283,20 @@ r_range <- function(metric) {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-% Note: Make sure to update `our-abstract.txt'.
-%       That's the basis for calculating our own FK score.
+% Note: Make sure to update `our-abstract.txt', from which our own FK score gets calculated in 
+%       the caption of Fig. 3.
+%       The headers "Background:" etc. must be on a line of their own with no additional whitespace.
 \begin{abstract}  % 100 to 200 words are allowed (but not enforced)
 \emph{Background:}
-Abstracts are a particularly valuable element in a software engineering research article,
-but not all abstracts are as informative as they could be.
+Abstracts are a particularly valuable element in a software engineering research article.
+However, not all abstracts are as informative as they could be.
 \emph{Objective:}
 Characterize the structure of abstracts in high-quality software engineering venues.
 Observe and quantify deficiencies.
 Suggest guidelines for writing informative abstracts.
 \emph{Methods:}
-Use qualitative open coding to derive concepts that explain relevant properties of abstracts
-and identify the archetypical structure of abstracts.
+Use qualitative open coding to derive concepts that explain relevant properties of abstracts.
+Identify the archetypical structure of abstracts.
 Use quantitative content analysis to objectively characterize abstract structure
 of a sample of \Sexpr{n_abstracts} abstracts from five presumably high-quality venues.
 Use exploratory data analysis to find recurring issues in abstracts.
@@ -312,7 +312,7 @@ informativeness gaps, understandability gaps, nor highly ambiguous sentences.
 \emph{Conclusions:}
 (1)~Even in top venues, a large majority of abstracts are far from ideal.
 (2)~Structured abstracts tend to be better than unstructured ones.
-(3)~artifact-centric works need a different structured format.
+(3)~Artifact-centric works need a different structured format.
 (4)~The community should start requiring conclusions that generalize,
 which currently are often missing in abstracts.
 \end{abstract}
@@ -569,17 +569,16 @@ as shown in Figure~\ref{qabstracts_timeline_commits}:
 Codebook development, which started first and is described in Sections~\ref{meth_codingrules}
 and \ref{meth_codebook},
 defined the rules and target concepts of the counting.
-Training was for developing a joint understanding of the codebook and also contributed
-greatly to the codebook's early evolution;
-it is described in Section~\ref{meth_training}.
+Training (Section~\ref{meth_training}) was for developing a joint understanding of the codebook.
+It also contributed greatly to the codebook's early evolution.
 Coding worked on a large sample of abstracts from top-quality venues described in
 Section~\ref{meth_sample} and produced the count data subsequently used in the statistical analysis.
 Our coding process and our subsequent statistical evaluation are
 described in Sections~\ref{meth_coding} and \ref{statisticalevaluation}.
 
 Overall, we consider our study to be a \emph{qualitative} one,
-but note that both coding and statistical evaluation
-are compatible with a \emph{positivist} epistemology (aiming for ``objective'' results),
+but coding and statistical evaluation are also largely
+compatible with a \emph{positivist} epistemology (aiming for ``objective'' results),
 such that the final interpretation is done on a solid \emph{quantitative} foundation.
 
 
@@ -620,7 +619,8 @@ our codebook contains global rules for the coding that can be summarized as foll
 
 \subsubsection{\Cb{background}, \Cb{objective}, \Cb{method}, \Cb{result}, \Cb{conclusion}}\label{meth_basicparts}
 
-The codebook was initialized with concepts for the five sections commonly used
+The \Repo{codebook}{codebook.md} 
+was initialized with concepts for the five sections commonly used
 in a structured abstract:\footnote{In Krippendorff's terminology, this is an ``established theories'' justification
 of analytical constructs~\cite[Section 9.2.3]{Krippendorff04}.}
 \Cb{background, objective, method, result, conclusion}.
@@ -657,7 +657,7 @@ Rather, their focus is the design of some artifact, most often a tool,
 sometimes a method or something else.
 Much of the abstract is then spent on design considerations, design decisions,
 techniques applied in implementation, and so on.
-Such artifact-centric studies, although they also usually contain an empirical study,
+Such artifact-centric studies, although they also usually also contain an empirical study,
 are quite different in nature from purely empirical studies;
 we therefore introduced the code \Cb{design} to mark such material.\footnote{\Cb{design} has
   the most detailed definition of all our codes: 170 words.}
@@ -675,8 +675,8 @@ We then reworked existing codings to use the new codes consistently throughout.
 
 The most important cases of such additional codes are these:
 \Cb{gap} states what is unknown or not yet possible;
-\Cb{summary} summarizes several results, but do not provide new information;
-\Cb{conclusion} generalizes beyond the immediate results;
+\Cb{summary} summarizes several results, but does not provide new information
+(whereas \Cb{conclusion} generalizes beyond the immediate results);
 \Cb{fposs} and \Cb{fneed} sentences occur at the end of abstracts ---
 they state what future work is now possible or needed.
 
@@ -684,8 +684,8 @@ they state what future work is now possible or needed.
 \subsubsection{Codes for Announcements: \Cb{a-*}}
 \label{announcement-codes}
 
-Sometimes, statements insinuate there will be certain information 
-in the article body, but do not provide any concrete information themselves.
+Sometimes, a statement in an abstract insinuates there will be certain information 
+in the article body, but does not provide any concrete information itself.
 We call such statements ``announcements'' and use codes with an \Cb{a-*} prefix for them.
 For example, here is an \Cb{a-method} (method announcement) from \Art{BesMarBos22}:
 \Quote{As a second step, this study sets out to specifically
@@ -709,7 +709,7 @@ These codes are conceptual, i.e., for instance
 and their plural forms
 would all be coded as \Cb{h-objective}.
 Likewise, there are \Cb{h-background}, \Cb{h-method}, and so on.
-We recognize structured abstracts by the presence of such a heading code.
+We consider an abstract to be structured if it has at least one such heading code.
 
 
 \subsubsection{Subjective Additions: \Cb{:i, :u}}
@@ -732,17 +732,19 @@ Example (from \Art{LiuFenYin22}):
 and prevalent RNN models containing image and text processing tasks.}
 This sentence was coded as \Cb{method:i2}, because the coder asked themselves
 \Pseudoquote{How many datasets? How many RNN models?}
-The answers to both are given in that article's Table 3 (four datasets, three models),
-but the authors could and should have given that information in the abstract.
+The answers to both are given in that article's Table 3: four datasets, three models.
+The authors could and should have given that information in the abstract.
 
 Understandability gaps (coded as \Cb{:u})
-are spots in a sentence where the coder finds their usual intuitive
-half-understanding of a term used in the abstract insufficient for understanding
-the abstract overall.
+are spots in a sentence where the coder encountered a term they did not know
+and found that the intuitive partial understanding they could muster for that term
+to be insufficient for understanding the abstract overall.
 Example (from \Art{CheHuWei22}):
-\Quote{Finally, we propose a new dynamic vocabulary strategy which can effectively resolve the UNK problems in code summaries.}
+\Quote{Finally, we propose a new dynamic vocabulary strategy which can effectively resolve the 
+  UNK problems in code summaries.}
 This sentence was coded as \Cb{design:u1}
-because it is unclear from the abstract what the \Quote{UNK problems} are.
+because it is unclear from the abstract what these apparently important \Quote{UNK problems} are
+supposed to be.
 % Here are all of the other candidate "easy-to-understand examples of :u1" that I found:
 % The data were analyzed using a Bayesian independent sample t-test and **network
 % analysis**.
@@ -839,12 +841,12 @@ In the training phase, we perfected the mechanics of the coding process
 We decided not to aim for a broad selection of all software engineering research,
 but rather concentrate on what is presumably the highest quality material:
 The ICSE technical research track,
-the three journals allowed for journal-first presentations at ICSE
-(i.e., Empirical Software Engineering \textit{EMSE},
-ACM Transactions on Software Engineering and Methodology \textit{TOSEM},
-IEEE Transactions on Software Engineering \textit{TSE}).
+the three journals allowed for journal-first presentations at ICSE,
+i.e., Empirical Software Engineering (\textit{EMSE}),
+ACM Transactions on Software Engineering and Methodology (\textit{TOSEM}),
+IEEE Transactions on Software Engineering (\textit{TSE}).
 Since we expected to find that structured abstracts had better quality
-than unstructured ones, we added a fifth venue that required structured abstracts:
+than unstructured ones, we added a fifth venue that \emph{requires} structured abstracts:
 Information and Software Technology (\textit{IST}, an Elsevier journal).
 IST has published many very good systematic literature reviews and methods works,
 but is not \emph{generally} considered a top-quality venue.
@@ -868,15 +870,17 @@ Volume downloading, sampling, and abstract extraction into publishable
 and annotation-ready text files were all done automatically by the scripts
 \Prg{retrievelit}\footnote{\url{https://github.com/serqco/retrievelit/}},
 \Prg{select-sample}, and \Prg{prepare-sample} --- except
-that the EMSE article format required manual abstracts cleansing.
+that the EMSE article format required manual cleansing.
 All these tools were purpose-built for the present study.
 
 
 \subsection{Coding Process}\label{meth_coding}
 
 We coded each abstract twice, by so-called coders A~and~B.
-Abstracts are held in text files in separate directories \Prg{abstracts.A/} and \Prg{abstracts.B/}.
-Each sentence is followed by a line containing a pair of curly braces \Prg{\{\{\}\}}
+Abstracts are held in text files in separate directories 
+\Repo{\Prg{abstracts.A/}}{abstracts/abstracts.A} and 
+\Repo{\Prg{abstracts.B/}}{abstracts/abstracts.B}.
+Each sentence is followed by a line containing a pair of double curly braces \Prg{\{\{\}\}}
 into which the coder would enter their codings,
 such as \Prg{\{\{method,result:i2\}\}} (for a complex sentence that contains substantial
 amounts of method information as well as results with two informativeness gaps).
@@ -891,17 +895,22 @@ which we do in the following two subsections.
 
 \textbf{Step~1.} When Lloyd wanted to code a block of abstracts on 2023-05-26,
 he found the next available block to be Block~17, which was already coded once by Lutz (``coder~A'').
-Lloyd reserved his spot as ``coder~B'' in the coordination file \Prg{sample-who-what.txt}
-and performed the coding.
-\textbf{Step~2.} He then ran the \Prg{check-codings} script to test his codings
-against the codebook and corrected any mistakes, such as typos.
-\textbf{Step~3.} He then ran \Prg{compare-codings} to compare his codings against Lutz'.
+Lloyd reserved his spot as ``coder~B'' in the coordination file 
+\Repo{\Prg{sample-who-what.txt}}{abstracts/sample-who-what.txt}
+and performed the coding.\\
+\textbf{Step~2.} He then ran the 
+\Repo{\Prg{check-codings}}{script/qscript/cmd/check_codings.py} 
+script to test his codings against the codebook and corrected any mistakes, such as typos.\\
+\textbf{Step~3.} He then ran 
+\Repo{\Prg{compare-codings}}{script/qscript/cmd/compare_codings.py}
+to compare his codings against Lutz'.
 This script creates one \emph{report block} for each sentence where the codings
 of coders A and B are not compatible.
-Compatible means: Differing at most in the subjective suffixes \Cb{:i} and \Cb{:u}, but not in the codes
-(and not by more than one in the numbers of informativeness gaps and understandability gaps).
+We define codings to be compatible if they differ 
+at most in the subjective suffixes \Cb{:i} and \Cb{:u}, but not in the codes
+(and also not by more than one in the numbers of informativeness gaps and understandability gaps).
 If Lloyd found a report block where Lutz' coding was obviously correct and his own
-obviously wrong, he would simply correct his coding.
+obviously wrong, he would simply correct his coding.\\
 \textbf{Step~4.} He would then commit his coded abstracts into git.
 
 \begin{lstlisting}[language={},
@@ -932,7 +941,8 @@ The models' accuracy improves when application domain groups and peak staff are 
 \subsubsection{Handling Disagreements}
 \label{ignorediff}
 
-\textbf{Step~5.} For the remaining (unresolved) report blocks, Lloyd would write an email to Lutz explaining his reasoning.
+\textbf{Step~5.} For the remaining (unresolved) report blocks, 
+Lloyd would write an email to Lutz explaining his reasoning.\\
 \textbf{Step~6.} Lutz would read through that email and categorize the report blocks into the following cases:
 \begin{enumerate}[label=\alph*)]
   \item Lloyd's coding is obviously correct
@@ -944,14 +954,16 @@ The models' accuracy improves when application domain groups and peak staff are 
   He would respond with an explanation of his reasoning and suggest that
   Lloyd either adjust his coding or add an \Cb{-ignorediff} marker to it.
   This suffix indicates two accepted alternative interpretations of the same sentence.%
-  \footnote{It silences the \Prg{compare-codings} script for this particular report block, so that the coding difference is now officially accepted.}
+  \footnote{It silences the 
+    \Repo{\Prg{compare-codings}}{script/qscript/cmd/compare_codings.py}
+    script for this particular report block, so that the coding difference is now officially accepted.}
   \item Lutz finds both codings equally acceptable.
   He would add an \Cb{-ignorediff} marker to his own and respond accordingly, explaining his reasoning.
 \end{enumerate}
-\textbf{Step~7.} Lutz would commit his corrected abstracts and send the response email.
+\textbf{Step~7.} Lutz would commit his corrected abstracts and send the response email.\\
 \textbf{Step~8.} Lloyd would read the response email and usually act on it to finish the handling of
 Block~17.
-Only very rarely would he disagree with something to a degree that would make
+Only rarely would he disagree with something to a degree that would make
 another round of emails necessary.
 
 \begin{figure*}[tbp]%
@@ -985,10 +997,10 @@ In contrast, our above-described procedure has two effects:
 	  or strangely formulated that even our careful code definitions do not lead
 	  to a canonical judgment.
 	  These spots, which will be marked by a \Cb{-ignorediff} annotation in our data,
-	  should clearly be considered to be badly written --- which is great,
-	  because that is what our study is interested in.
+	  should clearly be considered to be badly written.
+	  In this manner, our coding produces additional findings of a relevant type.
 \end{enumerate}
-Note that, technically speaking, our procedure also leads to a 100\% perfect inter-coder agreement,
+Note that, technically speaking, our procedure also leads to a 100\% inter-coder agreement,
 because even the cases of \Cb{-ignorediff} indicate that
 the coders agree on multiple plausible interpretations of one sentence.
 
@@ -1003,17 +1015,17 @@ We define two binary properties of abstracts:
 A \emph{complete} abstract contains all of the basic elements described in 
 Section~\ref{meth_basicparts}.
 A \emph{proper} abstract is complete and does not have any of the deficiencies
-described in the Results section as making an abstract \emph{improper}.
+described in Section~\ref{results} as making an abstract \emph{improper}.
 
 Since we coded each abstract twice, we get potentially conflicting assessments regarding these binary properties.
 We calculate and report percentages across all \emph{codings}
 ($n_C\,{=}\,\Sexpr{nrow(df_c)}$, which each count as a ``half'' abstract),
 as well as lenient and conservative percentages per \emph{abstract}
 ($n_A\,{=}\,\Sexpr{nrow(df)}$),
-for which either both or just one coder is necessary to attest a deficiency.
+for which either both or just one coder are necessary to attest a deficiency, respectively.
 In the text, we report these numbers in square brackets;
 in the plots, we show them as error bars.
-When we write
+When we write  % TODO: adapt to plus/minus format with only 1 number
 \Pseudoquote{\Sexpr{r_complete} \Sexpr{r_range("n_complete_yes")} of the abstracts are complete},
 we mean that \Sexpr{r_complete} of the \Sexpr{nrow(df_c)} abstract codings qualify
 the corresponding abstract as \emph{complete},
@@ -1031,7 +1043,7 @@ rare (less than 5\%),
 not rare (5-20\%),
 common (20-35\%),
 frequent (35-50\%),
-dominant (over 50\%).
+dominant (over 50\%).  \Todo{Are 'frequent' and 'dominant' used at least once? The others are.} 
 
 
 \subsection{Interpretation}

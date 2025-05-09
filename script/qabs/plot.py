@@ -101,14 +101,14 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
                              datasets.ab_conclusionfractions_bybg_values, datasets.ab_subsets)
         pt.plot_xletgroups(ctx, pt.add_boxplotlet, "box", "conclusionfractions",
                            "space per topic [%]", ymax=30)
-        # ----- timeline:
-        plot_qabstracts_timeline_commits(outputdir, datasets.timestamps)
+        # ----- fraction of complete and of proper abstracts:
+        ctx = pt.PlotContext(outputdir, "", datasets.by_abstract_coding, height1, onecolumnplot,
+                             datasets.ab_totalqualityfractions_values, datasets.ab_subsets)
+        pt.plot_xletgroups(ctx, pt.add_nonzerofractionbarplotlet_with_errorbars, "nonzerofractionbar", "totalqualityfractions",
+                           "how often occurring [%]", ymax=65)
+    # ----- timeline:
+    plot_qabstracts_timeline_commits(outputdir, datasets.timestamps, height1, 1.85*onecolumnplot)  # we scale it in TeX
     
-    # ----- fraction of complete and of proper abstracts:
-    ctx = pt.PlotContext(outputdir, "", datasets.by_abstract_coding, height1, onecolumnplot,
-                         datasets.ab_totalqualityfractions_values, datasets.ab_subsets)
-    pt.plot_xletgroups(ctx, pt.add_nonzerofractionbarplotlet_with_errorbars, "nonzerofractionbar", "totalqualityfractions",
-                       "how often occurring [%]", ymax=65)
 
 
 def plot_ab_topicstructure_freqs_design(df: pd.DataFrame, outputdir: str):
@@ -143,12 +143,12 @@ def plot_ab_topicstructure_freqs(df: pd.DataFrame, outputdir: str):
     plt.savefig(filename)
 
 
-def plot_qabstracts_timeline_commits(outputdir: str, all_timestamps: dict[str,list[int]]):
+def plot_qabstracts_timeline_commits(outputdir: str, all_timestamps: dict[str,list[int]], height: float, width: float):
     """stripplots of the timestamps of various subsets of git commits"""
     # ----- configs of the stripplots:
     cases = qabs.extract_git_timestamps.git_timestamp_cases
     # ----- set up the plot:
-    fig, axs = plt.subplots()
+    fig, axs = plt.subplots(figsize=(width, height))
     axs.set_yticks([y for y, l, s, f in cases], [l for y, l, s, f in cases])
     axs.set_xlim(dt.date(2022, 6, 1), dt.date(2025, 1, 15))
     # fix label frequency: https://matplotlib.org/stable/gallery/text_labels_and_annotations/date.html
@@ -158,7 +158,7 @@ def plot_qabstracts_timeline_commits(outputdir: str, all_timestamps: dict[str,li
     # ----- plot the stripplots:
     for y, label, symbol, files in cases:
         datetimes = [dt.datetime.fromtimestamp(ts) for ts in all_timestamps[files]]
-        ys = np.random.uniform(low=y-0.2, high=y+0.2, size=len(datetimes))
+        ys = np.random.uniform(low=y-0.3, high=y+0.3, size=len(datetimes))
         axs.scatter(datetimes, ys, marker=f"${symbol}$", linewidths=0.1, s=20)  # noqa
     # ----- save the plot:
     plt.savefig(pt.plotfilename(outputdir))
