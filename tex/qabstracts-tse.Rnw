@@ -70,7 +70,7 @@
 	the whiskers are 10- and 90-percentile,
 	the gray bar is the median,
 	the fat dot is the mean.}
-\newcommand{\Describegroups}{The plots in each group show these different subsets of abstracts:
+\newcommand{\Describegroups}{The plots in each group show these different subsets of abstracts from left to right:
 	all (red); structured, non-structured (green); design, empirical (blue); EMSE, ICSE, IST, TOSEM, TSE (gray).}
 
 \begin{document}
@@ -266,6 +266,7 @@ r_range <- function(metric) {
     select(r_min, r_max) |>
     mutate(across(everything(), format_percent)) |>
     glue_data("[{r_min}, {r_max}]")  # TODO: change into a plus/minus format with only 1 number
+    # glue_data("$\\pm${round(r_max-r_min, ifelse(r_max-r_min < 7.5, 1, 0))}")  # make work for percent!
 }
 @
 
@@ -1132,11 +1133,11 @@ Typical abstracts (the middle half) are \Sexpr{typical_length_words} words long
 and \Sexpr{typical_length_sentences} sentences long.
 Structured abstracts tend to be longer than unstructured ones.
 \ifarxiv{See Figures \ref{boxplots_words} to \ref{boxplots_avg_wordlength} for details.}
-The official word limits of
-150--250 for EMSE,
+Some venues have official abstract length limits:
+150--250 words for EMSE,
 maximum 300 for IST, and
-recommended maximum 250 for TSE
-are disobeyed by more than a quarter of all articles for each of these three venues.
+recommended maximum 250 for TSE.
+These limits are disobeyed by more than a quarter of all articles for each of these three venues.
 
 <<>>=
 # Readability scores
@@ -1223,9 +1224,9 @@ reproducibility and replicability for DL studies on SE tasks.} (from \Art{LiuGao
 
 The first puts the artifact at the center, so this is a design article.
 The second puts empirical results at the center, so this is an empirical article
-and the \Cb{design} code will \emph{not} be used.
-Artifact design discussions were then usually coded as \Cb{method} instead.
-Mixed cases are rare and there the two coders decided which aspect has more weight.
+and the \Cb{design} code will \emph{not} subsequently be used.
+Artifact design discussions are then usually coded as \Cb{method} instead.
+In mixed cases, which are rare, the two coders would decide which aspect has more weight.
 
 <<>>=
 # Typical topic fractions for design works and empirical works
@@ -1256,9 +1257,9 @@ fmt_typl_frac <- function(design, part_name, glue = "--") {
 @
 
 In design articles, a large fraction of the abstract will be devoted to
-describing design considerations for that artifact;
-in our data: typically \Sexpr{fmt_typl_frac(TRUE, "design", " to ")} of the words.
-The empirical study, which usually exists as well, then usually has a mere
+describing design considerations for that artifact -- typically 
+\Sexpr{fmt_typl_frac(TRUE, "design", " to ")} of the words in our data.
+The empirical study, which commonly exists as well, then usually has a mere
 supporting role (validating the claims made in the artifact discussion)
 and is correspondingly given less space:
 \Sexpr{fmt_typl_frac(TRUE, "method")}
@@ -1287,7 +1288,7 @@ the \Cb{design} code is but one example.
 
 During our sensemaking process, we had a number of insights regarding
 how a well-written abstract ``ticks'', which we eventually distilled into
-the following template, which we call the \emph{software engineering abstracts archetype}
+the following template, which we call the \emph{SERQco software engineering abstracts archetype}
 (see also Figure~\ref{abstracts_archetype_fig}):
 
 \begin{enumerate}
@@ -1304,30 +1305,35 @@ the following template, which we call the \emph{software engineering abstracts a
    method description (\Cb{method}), followed by results description (\Cb{result}).
    Sometimes, this sequence occurs twice in a row, very rarely more.
 \item For a design article, design description (\Cb{design}, see below) precedes the structure
-   described in the previous point.
+   described in the previous item.
 % \item Occasionally (but infrequently), \emph{Study Description} will end with a study summary (\Cb{summary}).
 \item After the \Cb{conclusion}, the \emph{Outlook} talks about future research and states
    what could now be done (\Cb{fposs}, for future possibilities),
    what should now be done (\Cb{fneed}),
    what the authors themselves intend to do (\Cb{fwork}), or
    what is still not known (\Cb{fgap}).
-   Several statements of each type may occur, in no particular order.
+   Several statements of each type may occur (including none), in no particular order.
+   In most cases, the space devoted to \emph{Outlook} would be more informative if spent on
+   \emph{Study Description}.
 \end{enumerate}
 
-The archetype describes all variants of abstracts that have a natural train of thought,
-deviations will tend to lead to a less easily understandable abstract.
-\Todo{Provide IMRAD-based justification}
+The archetype describes all variants of abstracts that have a natural train of thought.
+It is an engineering-specific generalization of the well-known IMRAD structure \cite{SolPer04}.
+Deviations from the archetype will tend to lead to a less easily understandable abstract.
 
-\Todo{Find short, good, unstructured example and mark it up. Lloyd: Perhaps not necessary now that we have the Archetype figure ...?}
+\Todo{Find short, good, unstructured example and mark it up?}
 
 \PlotWidth{abstracts_archetype_fig}{.8}{%
-	A visual representation of the Abstracts Archetype. Note that this figure only describes the ``natural train of thought'' and not all possible abstract forms that we coded in this study. This is the recommended structure.}
+	A visual representation of the SERQco abstracts archetype. 
+	Note that this figure only describes the ``natural train of thought'' and not all possible abstract forms 
+	that we coded in this study. 
+	This is the recommended structure.}
 
 
 \subsection{How Not To: Inefficient Allocation of Space}
 \label{inefficient_allocation}
 
-If one reads those abstracts, one can hardly help notice that some of them 
+If one reads the abstracts in our sample, one can hardly help notice that some of them 
 spend a lot of space on \Cb{background}, although its only purpose is to situate
 the objective and make it understandable.
 Here is an example from an article titled
@@ -1412,10 +1418,12 @@ df_c |>
 @
 
 As we can see in the Background group of boxplots in Figure~\ref{box_xletgroups_topicfractions},
-some venues have a quarter of articles that spend one third or more of the abstract space
-on background. This leads to deficiencies later on, as we can see in
-Figure~\ref{box_xletgroups_conclusionfractions}:
-The conclusion is the potentially most useful part of the abstract --- the take-home message ---
+all venues that do not require structured abstract, have a quarter of articles or more 
+that spend over 30% of the abstract space
+on background. 
+As we can see in Figure~\ref{box_xletgroups_conclusionfractions},
+this leads to deficiencies later on:
+The conclusion is the potentially most useful part of the abstract, the take-home message,
 but with a long background section, it tends to become pronouncedly shorter.
 
 <<>>=
@@ -1430,38 +1438,12 @@ df_c |>
 Background lengths are more benign for structured abstracts.
 
 
-\subsection{How Not To: Murky \Cb{objective} statements}\label{murkyobjectives}
-
-The \Cb{objective} statement is the key means by with an abstract communicates
-to the reader what the work is all about. 
-Getting it wrong is therefore probably the single biggest mistake to make
-for the abstract writer.
-
-We saw a number of near-incomprehensible cases in our sample.
-For instance
-\Todo{horrible objectives statement example 1}
-should better have said
-\Todo{appropriate replacement for example 1}.
-And
-\Todo{horrible objectives statement example 2}
-should better have said
-\Todo{appropriate replacement for example 2}.
-
-\Todo{Argue with lengthy email discussions.}
-
-\Todo{Franz looked for such examples. Only idea: look for coded suffixes. But: None of those 15 statements is clearly "murky".
-Proposal: Remove section since the criterion is not operationalized and quantified.}
-
-
 \subsection{How Not To: Missing Elements}
 \label{missing_elements}
 
 Given the archetype, one way to approach an analysis of abstracts quality is to ask
 how often key parts of an abstract are missing entirely.
 This is shown in Figure~\ref{zerofractionbar_xletgroups_topicmissingfractions}.
-
-\Todo{For Lutz: Huge difference between `fraction\_code\_conlusion' (for the conclusion code only, missing in 62\%, used in text),
-and `fraction\_conclusion' (includes h-conclusion and a-conclusion, missing in 52\%, used in plot). Which do we take?}
 
 \Plotwide{zerofractionbar_xletgroups_topicmissingfractions}{%
 	How often is a topic not present at all in an abstract?
@@ -1520,22 +1502,24 @@ dominant (\Sexpr{format_percent(r_no_outlook$r_missing)}), respectively.
 (\Sexpr{format_percent(r_no_background$r_missing)} and \Sexpr{format_percent(r_no_objective$r_missing)}).
 
 Missing \Cb{method} and \Cb{result} are not rare
-(\Sexpr{format_percent(r_no_method$r_missing)} and \Sexpr{format_percent(r_no_result$r_missing)})%
-~---~and this is a problem~---~%
-but they are always present in structured abstracts.
+(\Sexpr{format_percent(r_no_method$r_missing)} and \Sexpr{format_percent(r_no_result$r_missing)}),
+which we find alarming.
+Both are always present in our structured abstracts.
 
 The shocking part of this analysis is \Cb{conclusion}, which ought to be present
 as the key take-home message in any abstract, but is in fact missing in more than
-half of all (\Sexpr{format_percent(r_no_conclusion$r_missing)}).
+half of all (\Sexpr{format_percent(r_no_conclusion$r_missing)}).\footnote{This value is higher
+  than the 'all' bar in Figure~\ref{zerofractionbar_xletgroups_topicmissingfractions},
+  because that bar shrinks when an \Cb{h-conclusion} or \Cb{a-conclusion} appears,
+  but those do not serve the \Cb{conclusion} purpose.}
 The situation is better for structured abstracts, but missing \Cb{conclusion}
 are still common here
 (\Sexpr{format_percent(missing_elements |> filter(part == "code_conclusion", is_struc) |> pull(r_missing))}).%
-\footnote{Note that
-  the prompt of having to write something after a \ExampleQuote{Conclusion:} keyword
-  does not guarantee an actual \Cb{conclusion} follows:
-  Often, the statement authors put there is actually
-  a \Cb{result} (an immediate empirical result)
-  or a \Cb{summary} (a mere repetition).}
+\footnote{The prompt of having to write something after a \ExampleQuote{Conclusion:} keyword
+  cannot guarantee an actual \Cb{conclusion}:
+  Dominantly, the statement authors put there is actually
+  a \Cb{result} (an immediate empirical result),
+  a \Cb{summary} (a mere repetition) or still something else.}
 
 <<>>=
 # Fetch numbers for "complete" metric
@@ -1551,11 +1535,8 @@ in the sense that they contain all basic elements
 \subsection{How Not To: Convoluted Trains of Thought}
 \label{convoluted}
 
-Botching the \Cb{objective} statement or leaving out important parts from an abstract
-are not the only ways for wrecking the abstract's value, however.
-There are also abstracts where the train-of-thought is so convoluted
+There are also abstracts where the train-of-thought is so tangled
 that they become difficult to read.
-
 For quantifying this, we map each abstract's structure to a sequence of letters,
 where each letter stands for a contiguous stretch of sentences in the abstract
 that have the same topic (see Table~\ref{tab:codes}).
@@ -1577,7 +1558,9 @@ The full list of abstracts structures is too long to show it here.
 It has \Sexpr{n_struc[n_struc$is_design == FALSE, "n_distinct"]} entries for empirical articles and
 \Sexpr{n_struc[n_struc$is_design == TRUE, "n_distinct"]} entries for design articles.
 Most of these have only one or two instances, though;
-we restrict ourselves to the types that occur with higher frequency here.
+we restrict ourselves to the types that occur with higher frequency here\footnote{One reason
+  for the large number of types is the frequent violation of \Cb{h-xyz} codes:
+  If \Cb{h-xyz} is not followed by \Cb{xyz}, this will lead to two letters in the string.}
 The results are shown in
 Figure~\ref{ab_topicstructure_freqs_empir} for empirical articles and
 Figure~\ref{ab_topicstructure_freqs_design} for design articles.
@@ -1635,12 +1618,11 @@ We see that the most sensible structures are also the most frequent
 Archetypical with or without a \Cb{gap} statement, perhaps with an \emph{Outlook}.
 But from bar 4 on, the abstracts are more or less pathological:
 They are missing a \Cb{conclusion}, discuss their \Cb{method} before the \Cb{objective},
-and later later on (not shown in the figure)
+and later on (not shown in the figure)
 follow all kinds of curious structures such as, to pick an admittedly extreme case,
-\strct{bgomrcrsrsc} (e.g., \Art{\Sexpr{strc_example("bgomrcrsrsc")}}):
+\strct{bgomrcrsrsc} \Art{\Sexpr{strc_example("bgomrcrsrsc")}}:
 two conclusions, two summaries, summary after conclusion.
 
-\Todo{The example TyaSibSur22 is only "weird" because in the sense that it crams results and summaries under its "Conclusion" heading -- which is also the first of the "two" conclusions. Maybe h- codes should be excluded from the structure string?}
 
 \subsubsection{Design Articles}\label{structure-design-articles}
 
@@ -2157,8 +2139,8 @@ informativeness and understandability
 Section~\ref{ambiguity}).
 We define and quantify further quality issues not included in the above number 
 (Figures~\ref{box_xletgroups_topicfractions}, \ref{box_xletgroups_conclusionfractions}, 
-\ref{nonzerofractionbar_xletgroups_missinginfofractions}, 
-Sections~\ref{murkyobjectives} and \ref{convoluted}).
+\ref{nonzerofractionbar_xletgroups_missinginfofractions}, and
+Section~\ref{convoluted}).
 This low abstracts quality exists despite the fact that we analyzed only venues
 supposed to have high quality.
 
@@ -2198,10 +2180,9 @@ detail or evidence.
     (see Section~\ref{inefficient_allocation}).
   \item Decide on your main contribution. 
     Is your article a design article or an empirical one?
-    Write an \Sah{Objective} that expresses both succinctly 
-    (see Sections \ref{design} and \ref{murkyobjectives}).
+    Write an \Sah{Objective} that expresses the type and your specific goal succinctly.
     If your background information contains a corresponding \Sah{Gap} statement,
-    mark it as such.
+    clearly phrase it as such.
   \item If your work is a design article, 
     write a \Sah{Design} section.
     Cover all key ideas (typically two to four), avoid non-key information.
