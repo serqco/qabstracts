@@ -408,14 +408,14 @@ Our contributions correspond to the research questions as follows:
 
 There is considerable literature on research abstracts across disciplines.
 We will not attempt to summarize it here,
-but provide examples of the different major perspectives of those studies
-and otherwise focus on what has been done in the software engineering domain.
+but provide examples of the different major perspectives of those studies.
+We otherwise focus on what has been done in the software engineering domain.
 
 
 \subsection{Abstracts Structure}
 
 Swales~\cite{Swales90} introduced \emph{genre analysis} as a means for teaching academic
-reading and writing especially to non-native speakers:
+reading and writing, especially to non-native speakers:
 Genres are ``classes of communicative events'' (e.g., \emph{the writing and reading of abstracts})
 that are owned by a ``discourse community'' (e.g., \emph{software engineering researchers});
 genre analysis means deconstructing texts (from a genre) to better understand
@@ -431,13 +431,13 @@ in different fields such as
 applied linguistics~\cite{DosSantos96} or
 protozoology~\cite{CroOpp06}.
 Despite the differences of research content, they find very similar moves,
-such as this five-move structure~\cite{CroOpp06}:
+typically the following five-move structure~\cite{CroOpp06}:
 \begin{quote}
 	(1)~situate the research within the scientific community;
 	(2)~introduce the research by describing the main features or presenting its purpose;
 	(3)~describe the methodology;
 	(4)~state the results;
-	(5)~draw conclusions or suggests practical applications.
+	(5)~draw conclusions or suggest practical applications.
 \end{quote}
 This reflects, in slightly extended form, the IMRAD structure 
 (Introduction, Methods, Results, and Discussion) of the body of scientific articles
@@ -454,12 +454,13 @@ an extended one \ref{structure-design-articles}.
 Several (meta-)studies on abstracts focus on quality assessment,
 most often in subfields of the biomedical domain.
 Many such studies cover articles of a homogeneous nature:
-all randomized controlled trials (controlled experiments).
-This allows formulating very specific expectations regarding what information should be
+randomized controlled trials (controlled experiments).
+This allows formulating specific expectations regarding what information should be
 presented in an abstract and allows performing the analysis in checklist fashion,
 for example:
 In clinical dermatology, \cite{DupKhoLeb03} used a 30-item checklist on 197 abstracts
-  for computing a 0-to-1 score and found mean scores between 0.64 and 0.78 for their various subgroups.
+  for computing a 0-to-1 completeness score and found mean scores between 
+  0.64 and 0.78 for their various subgroups.
 In dental medicine, \cite{ShaHar06} used a 29-item checklist on 100 abstracts
   and found a mean score of only 0.54.
   % suggests an 8-move structure for structured abstracts:
@@ -487,14 +488,14 @@ Among all abstracts reporting non-significant results, studies found spin in
 Unfortunately, the methods of those meta-studies are not applicable to a 
 broad sample of software engineering abstracts, because
 in fields with heterogeneous study structures such as ours, the operationalization of
-\emph{quality} is less straight-forward.
+\emph{quality} is less straightforward.
 For example, \emph{spin} can take many more forms in software engineering articles
-than is assumed by the studies mentioned above and it is difficult
+than is assumed by the studies mentioned above. It is difficult
 to decide which forms are acceptable and which are not.
 
 One approach for discussing the quality of a software engineering abstract 
 could be through comparing to a known ``good'' structure for abstracts.
-For instance~\cite{CroOpp06} remarks
+For instance,~\cite{CroOpp06} remarks
 that one third of the 12 analyzed abstracts is lacking move 2 (stating a purpose).
 
 
@@ -505,7 +506,7 @@ For instance, neither~\cite{DupKhoLeb03} nor~\cite{ShaHar06} reports
 which of their checklist items are missing most frequently.
 Rather, their research question is the relative quality of structured
 versus unstructured abstracts.
-A \emph{structured abstract} is one that uses a prescribed sequence of 
+Definition: A \emph{structured abstract} is one that uses a prescribed sequence of 
 intermediate headings, such as Background, Objective, Methods, Results,
 Conclusions or some similar set.
 In almost all of those meta-studies, including~\cite{DupKhoLeb03} and~\cite{ShaHar06},
@@ -543,11 +544,8 @@ completeness score by 6.6 and the clarity score by 3.0.
 70\% of the subjects also preferred the structured format
 subjectively.
 Both studies use only abstracts of purely empirical studies,
-not tool-building works, 
-which have very different (and more complicated) properties
-as we will see in Section~\ref{structure-design-articles}
-\Todo{For Lutz: That Section does not make it sound ``very different'' or ``more complicated''. What did you have in mind?}.
-
+not tool-building works, for which structured abstracts require and extended form
+as we will see in Section~\ref{structure-design-articles}.
 
 
 %========================================================================
