@@ -13,12 +13,13 @@ These artefacts can be found permanently at the following DOI: !!! Zenodo of Git
 
 Lutz Prechelt - prechelt@inf.fu-berlin.de  
 Lloyd Montgomery - lloyd.montgomery@uni-hamburg.de  
-Julian Frattini - julian.frattini@bth.se  
+Julian Frattini - julian.frattini@chalmers.se  
 Franz Zieris - franz.zieris@bth.se  
 
 L. Prechelt is with Freie Universität Berlin, Germany  
 L. Montgomery is with University of Hamburg, Germany  
-J. Frattini and F. Zieris are with BTH, Karlskrona, Sweden  
+J. Frattini is with Chalmers University of Technology and Gothenburg University, Sweden
+F. Zieris is with BTH, Karlskrona, Sweden  
 
 **Article Title**: How (Not) To Write a Software Engineering Abstract
 

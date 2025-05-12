@@ -82,7 +82,7 @@
 Lloyd Montgomery%
 \thanks{L. Montgomery is with University of Hamburg, Germany},  % Our university prefers the English name in publications
 Julian Frattini%
-\thanks{J. Frattini is with Chalmers University of Technology, Gothenberg, Sweden},
+\thanks{J. Frattini is with Chalmers University of Technology and University of Gothenburg, Sweden},
 Franz Zieris%
 \thanks{F. Zieris is with Blekinge Institute of Technology (BTH), Karlskrona, Sweden}}
 
@@ -2271,6 +2271,7 @@ Contact him at prechelt@inf.fu-berlin.de.
 \end{IEEEbiography}
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{lloyd-montgomery.jpg}}]{Lloyd Montgomery}
+\Todo{now holds a PhD degree and, no longer,}
 is a PhD student at the University of Hamburg, working under Prof. Dr. Walid Maalej.
 Currently, his primary research area is the quality of issue tracking systems, with other interests such as empirical software engineering, non-technical factors in software engineering, and science communication.
 He won the RE'17 best paper award for his machine learning design science research with IBM customer support.
@@ -2281,11 +2282,12 @@ Contact him at lloyd.montgomery@uni-hamburg.de.
 \end{IEEEbiography}  
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{julian-frattini.jpg}}]{Julian Frattini}
-\Todo{now holds a PhD degree and is no longer}
-is a PhD student at the Department of Software Engineering at Blekinge Institute of Technology (BTH). 
-His research under the supervision of Prof. Daniel Mendez focuses on requirements quality, aiming to operationalize the concept of "good-enough requirements engineering." 
-Julian served as the proceedings chair of the 30th International Working Conference on Requirements Engineering: Foundation for Software Quality (REFSQ'24) and publicity chair of the 32nd IEEE International Requirements Engineering conference (RE'24), and is co-organizing the 8th International Workshop on Crowd-Based Requirements Engineering (CrowdRE'24) and the Eleventh International Workshop on Artificial Intelligence and Requirements Engineering (AIRE'24) at RE'24. 
-He is on the program committees of REFSQ, International Conference on the Quality of Information and Communications Technology (QUATIC), and NLP4RE, and regularly reviews for the Requirements Engineering journal (REJ), the Information and Software Technology journal (IST), and the Journal of Systems and Software (JSS).
+obtained his Ph.D. degree under the mentorship of Prof. Daniel Mendez at the Blekinge Institute of Technology (BTH), Sweden, and is currently a postdoctoral researcher at the Chalmers University of Technology and University of Gothenburg, Sweden.
+He contributes research to the field of requirements artifact quality with the notion of ``good-enough requirements engineering'' as well as to the field of software engineering research methodology.
+Julian has served the community as proceedings chair of the 30th International Working Conference on Requirements Engineering: Foundation for Software Quality (REFSQ'24) and publicity chair of the 32nd IEEE International Requirements Engineering conference (RE'24), 
+organizer of the 8th International Workshop on Crowd-Based Requirements Engineering (CrowdRE'24) and the Eleventh International Workshop on Artificial Intelligence and Requirements Engineering (AIRE'24) at RE'24, and open science co-chair at REFSQ'25.
+He is on the program committees of RE, REFSQ, the International Conference on Evaluation and Assessment in Software Engineering (EASE), the International Symposium on Empirical Software Engineering and Measurement (ESEM), the International Conference on the Quality of Information and Communications Technology (QUATIC), 
+and NLP4RE, and regularly reviews for the journals Transaction on Software Engineering (TSE), Transactions on Software Engineering and Methodology (TOSEM), Empirical Software Engineering (EMSE), Requirements Engineering (REJ), Information and Software Technology (IST), and the Journal of Systems and Software (JSS).
 \end{IEEEbiography}
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{franz-zieris.jpg}}]{Franz Zieris}
