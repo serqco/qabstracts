@@ -1504,55 +1504,14 @@ in the sense that they contain all basic elements
 \Cb{background} (or \Cb{gap}), \Cb{objective}, \Cb{method}, \Cb{result}, and \Cb{conclusion}.
 
 
-\subsection{How Not To: Convoluted Trains of Thought}
-\label{convoluted}
-
-There are also abstracts where the train-of-thought is so tangled
-that they become difficult to read.
-For quantifying this, we map each abstract's structure to a sequence of letters,
-where each letter stands for a contiguous stretch of sentences in the abstract
-that have the same topic (see Table~\ref{tab:codes}).
-For instance, an abstract that follows a minimal incarnation of the Archetype
-for an empirical article would be encoded as \strct{bomrc}, which stands for
-the topic sequence \textit{background, objective, methods, results, conclusion}.
-
 <<>>=
 # Numbers of topicstructures in empirical and design articles
 (n_struc <- df |>
   select(`_citekey`, is_design) |>
   distinct() |>
-  left_join(datasets$ab_structures, by = c("_citekey" = "citekey")) |>
-  summarize(n = n(), n_distinct = n_distinct(topicstructure),
-    .by = is_design))
-@
+  left_join(datasets$ab_structures, by = c("_citekey" = "citekey", "is_design")) |>
+  summarize(n = n(), n_distinct = n_distinct(topicstructure), .by = is_design))
 
-The full list of abstracts structures is too long to show it here.
-It has \Sexpr{n_struc[n_struc$is_design == FALSE, "n_distinct"]} entries for empirical articles and
-\Sexpr{n_struc[n_struc$is_design == TRUE, "n_distinct"]} entries for design articles.
-Most of these have only one or two instances, though;
-we restrict ourselves to the types that occur with higher frequency here\footnote{One reason
-  for the large number of types is the frequent violation of \Cb{h-xyz} codes:
-  If \Cb{h-xyz} is not followed by \Cb{xyz}, this will lead to two letters in the string.}
-The results are shown in
-Figure~\ref{ab_topicstructure_freqs_empir} for empirical articles and
-Figure~\ref{ab_topicstructure_freqs_design} for design articles.
-(Fractional frequencies such as $7.5$ mean that the two coders did not agree.)
-
-\Plot{ab_topicstructure_freqs_empir}{%
-  The frequency of different trains-of-thought in the abstract for empirical articles.
-  The label is a string of stretch-code characters:
-  b\mbox{-}ackground, g\mbox{-}ap, o\mbox{-}bjective, d\mbox{-}esign, m\mbox{-}ethod, r\mbox{-}esult,
-  s\mbox{-}ummary, c\mbox{-}onclusion, O\mbox{-}utlook.}
-\Plot{ab_topicstructure_freqs_design}{%
-  The frequency of different trains-of-thought in the abstract for design articles.
-  Same characters as before, except that d\mbox{-}esign can now in fact occur.}
-
-% !!!CheXiaLo22 presents five studies
-
-
-\subsubsection{Empirical Articles}
-
-<<>>=
 # Helper functions for topicstructure discussion
 
 # (temporary)
@@ -1574,7 +1533,7 @@ cumulative_ratio <- function(design, n) {
   x <- df |>
     select(`_citekey`, is_design) |>
     distinct() |>
-    left_join(datasets$ab_structures, c("_citekey" = "citekey")) |>
+    left_join(datasets$ab_structures, c("_citekey" = "citekey", "is_design")) |>
     filter(is_design == design) |>
     count(topicstructure) |>
     mutate(n = n/2) |>
@@ -1582,82 +1541,197 @@ cumulative_ratio <- function(design, n) {
 
   sum(slice_head(x, n = n)$n) / sum(x$n)
 }
-@
 
-Let us start with the simpler empirical articles.
-We see that the most sensible structures are also the most frequent
-(bars 1, 2, 3; accounting for \Sexpr{format_percent(cumulative_ratio(FALSE, 3))} of the empirical articles):
-Archetypical with or without a \Cb{gap} statement, perhaps with an \emph{Outlook}.
-But from bar 4 on, the abstracts are more or less pathological:
-They are missing a \Cb{conclusion}, discuss their \Cb{method} before the \Cb{objective},
-and later on (not shown in the figure)
-follow all kinds of curious structures such as, to pick an admittedly extreme case,
-\strct{bgomrcrsrsc} \Art{\Sexpr{strc_example("bgomrcrsrsc")}}:
-two conclusions, two summaries, summary after conclusion.
-
-
-\subsubsection{Design Articles}\label{structure-design-articles}
-
-It naturally gets worse for the design articles with their more complicated structure:
-The two most common structures (accounting for \Sexpr{format_percent(cumulative_ratio(TRUE, 2))} of the design articles)
-are missing a \Cb{conclusion},
-and we find complex structures with repeated \strct{mr}'s starting at bar 4.
-Not all of these are automatically bad.
-In particular, having two small empirical studies, resulting in a nice \strct{bgodmrmr} structure
-(e.g., \Art{WuZouDou22}), can make a lot of sense for the reader.
-But this has its limits:
-An abstract with structure \strct{bodmrmrmrmr}
-(e.g., \Art{ZhoCheHao22})
-is overloaded.
-It can also easily get out of hand, as confirmed by the examples
-\strct{bodrmrmrmrmrmr} (e.g. \Art{PisSpäBud22}) and
-\strct{bomdmrmrmrsmrc} (e.g. \Art{ValManPar22}),
-which lack a coherent \emph{Method} part.
-
-\subsubsection{Structured Abstracts}
-
-<<>>=
 # How many different topicstructures?
 ab_is_design <- distinct(select(df, `_citekey`, is_design)) |>
-  left_join(datasets$ab_structures, by = c("_citekey" = "citekey"))
+  left_join(datasets$ab_structures, by = c("_citekey" = "citekey", "is_design"))
 
-design_empir_struct <- ab_is_design |> filter(!is_design, is_struc)
-design_empir_all    <- ab_is_design |> filter(!is_design)
+design_empir_struc <- ab_is_design |> filter(!is_design, is_struc)
+design_empir_nonstruc    <- ab_is_design |> filter(!is_design, !is_struc)
 
 # Empirical and structured: Just count
-(n_distinct_empir_struct <- design_empir_struct |>
+(n_distinct_empir_struct <- design_empir_struc |>
   summarize(count = n_distinct(topicstructure)) |>
   pull(count))
 
 # All empirical: Take same-size sample of abstract and count
-c_design_empir_struct <- nrow(design_empir_struct)
+c_design_empir_struc <- nrow(design_empir_struc)
 
 set.seed(123)
 resample_counts <- replicate(
   1000,
   {
-    sample_n(design_empir_all, c_design_empir_struct,
+    sample_n(design_empir_nonstruc, c_design_empir_struc,
         replace = FALSE) |>
       distinct(topicstructure) |>
       nrow()
   }
 )
 
-(n_distinct_empir_all <- median(resample_counts))
-(n_distinct_empir_all_ci <- quantile(resample_counts,
-  c(0.025, 0.975)))
+(n_distinct_empir_nonstruc <- mean(resample_counts))
+(n_distinct_empir_nonstruc_ci <- quantile(resample_counts, c(0.025, 0.975)))
+
 @
+
+\subsection{How Not To: Confusing abstracts}
+\label{confusing}
+
+Any deviation from the natural train of thought of the abstracts archetype
+will tend to increase the reader's cognitive load.
+If this happens, we call the abstract's train of thought convoluted.
+
+For investigating this issue, we map each abstract's structure to a sequence of letters,
+where each letter stands for a contiguous stretch of sentences in the abstract
+that have the same topic (see Table~\ref{tab:codes}).\footnote{However, if a, say, 
+  \Cb{h-conclusion} is followed by, say, a \Cb{summary} (which is a common style), 
+  this would lead to a topicletter string that looks more complicated than the abstract actually reads.
+  We find this misleading and hence exclude \Cb{h-*} codes from the topicletter string.}
+For instance, an abstract that follows a minimal incarnation of the archetype
+for an empirical article would be encoded as \strct{bomrc}, which stands for
+the topic sequence \textit{background, objective, methods, results, conclusion}.
+Non-minimal incarnations allow for many different structures but
+even complex structures (with long strings) \emph{can} be easy to read.
+Other structures, however, can be problematic.
+The full list of abstracts structures is too long to discuss it here:
+It has \Sexpr{n_struc[!n_struc$is_design, "n_distinct"]} entries for empirical articles and
+\Sexpr{n_struc[n_struc$is_design, "n_distinct"]} for design articles.
+
+We have found no simple criterion to reliably diagnose which of these to consider convoluted
+and which not, so this section will only provide examples and does not quantify
+how many abstracts are actually convoluted.
+Furthermore, even abstracts that \emph{do} conform to the archetype
+can be confusing for semantic reasons.
+We will include examples of this type as well. 
+
+Abstract structures with more than two instances are shown in 
+Figure~\ref{ab_topicstructure_freqs_empir} for empirical articles and
+Figure~\ref{ab_topicstructure_freqs_design} for design articles.
+(Fractional frequencies such as $2.5$ mean that the two coders did not agree.)
+
+\Plot{ab_topicstructure_freqs_empir}{%
+  The frequency of different trains-of-thought in the abstract for empirical articles.
+  The label is a string of stretch-code characters:
+  b\mbox{-}ackground, g\mbox{-}ap, o\mbox{-}bjective, d\mbox{-}esign, m\mbox{-}ethod, r\mbox{-}esult,
+  s\mbox{-}ummary, c\mbox{-}onclusion, O\mbox{-}utlook.}
+\Plot{ab_topicstructure_freqs_design}{%
+  The frequency of different trains-of-thought in the abstract for design articles.
+  Same characters as before, except that d\mbox{-}esign can now in fact occur.}
+
+
+\subsubsection{Structured Abstracts}
+
+Structured abstracts help reduce confusion in two ways:
+They standardize the order in which ideas are presented, so readers know what to expect when.
+And their subheadings announce specifically what is to come next, which avoids many ambiguities.
 
 Today's conventions for structured abstracts may be a bit restrictive
 (e.g. by not accommodating the useful \strct{mrmr} substructure),
-but they do result in more orderly abstracts:
+but they do indeed result in more orderly abstracts:
 There are only \Sexpr{n_distinct_empir_struct} different abstract structures
-among the \emph{structured} abstracts of empirical articles
-versus \Sexpr{round(n_distinct_empir_all)}
-across all empirical articles.\footnote{%
-  Median of 1,000 same-sized samples; 95\%~CI
-[\Sexpr{round(n_distinct_empir_all_ci[1])}, \Sexpr{round(n_distinct_empir_all_ci[2])}].
-}
+for the \Sexpr{c_design_empir_struc} structured abstracts of empirical articles,
+but \Sexpr{round(n_distinct_empir_nonstruc)} different abstract structures on average
+for a random sample of the same size of the non-structured abstracts of empirical articles.
+% \footnote{95\%~CI
+%   [\Sexpr{round(n_distinct_empir_nonstruc_ci[1])}, \Sexpr{round(n_distinct_empir_nonstruc_ci[2])}].}
+
+The orderliness of a structured abstract may not help, however, if the supposed structure is broken.
+We have seen only few cases of this for empirical articles, 
+but once in a while some piece of information appears not where it should
+(such as \Cb{Background} in the \Sah{Objective} section in \Art{LiaGaoXia22})
+or authors appear to have added the subheadings to an already written nonstructured abstract
+without rewriting it, so that lots of sections contain information of the wrong type
+(as in \Art{SelOunSai22}).
+
+The latter of these occurs in design articles as well (as in \Art{GeFanQia22}).
+The former is even unavoidable for a design article, as no proper place for design information
+exists in today's conventional structured abstract section list.
+
+% #confusing LiaGaoXia22(e, struc, background in h-objective section)
+% #confusing SelOunSai22(e, struc, misplaced info in several sections),
+% #confusing GeFanQia22(d+struc with bad fit),
+
+
+\subsubsection{Empirical Articles}
+
+As we see in Figure~\ref{ab_topicstructure_freqs_empir},
+there are only 8 among the \Sexpr{n_distinct_empir_struct} different abstract structures of empirical works
+that occur more than twice.
+Of these, bars 5, 6, 7 show abstracts with a non-archetypical train of thought:
+They mix \Cb{method} and \Cb{objective} 
+(\strct{bmomrc} and \strct{bgmorc})
+% \strct{bmomrc}: \Art{ForStoZim22}, \Art{NolShaGao22}, \Art{PapGroSub22}, \Art{RahImtSto22}, 
+% \strct{bgmorc}: \Art{LiPenXia22}, \Art{MasHodBli22}, \Art{WanZhaZha22})
+or have a trailing \Cb{result} after the \Cb{conclusion} 
+(\strct{bgomrcr}).
+
+When we annotated the abstracts, we kept notes on remarkable cases of all kinds.
+Combing through those notes, we can look for patterns of actually confusing abstracts.
+For the empirical works, 
+there are some abstracts with information that is partially out-of-place or mis-shaped 
+and will increase cognitive load for readers, 
+but they are diverse and hardly worth calling a common pattern; for example:
+\Cb{method} before \Cb{objective} (\Art{PreMohVil22}),
+additional \Cb{background} late in the abstract (\Art{UddGuéKho22}),
+a sudden second objective in the very last sentence (\Art{DanPlaHer22}),
+an objective that sounds like from a design work (\Art{GaoZhuZha22}),
+repeating (in different words) the objective where a conclusion should be (\Art{AhmMerBah22}),
+or mixing present tense and past tense such that results sound as if they were conclusions (\Art{ValHunFig22}).
+
+% #confusing AhmMerBah22(e, repeats o in different words instead of a conclusion)
+% #confusing DanPlaHer22(e, new 2nd o in last sentence),
+% #confusing GaoZhuZha22(e, but objective sounds like d),
+% #confusing PreMohVil22(e, method before objective),
+% #confusing UddGuéKho22(e, background later in abstract to explain study history),
+% #confusing ValHunFig22(e, mixing present+past tense so that results sound like concls),
+% #notused   MaMocZar22(e/d, struc, conclusion in objective section)
+
+
+\subsubsection{Design Articles}\label{structure-design-articles}
+
+As we see in Figure~\ref{ab_topicstructure_freqs_design},
+many of the common structures of design works lack some expected parts, 
+most often a conclusion, which is missing for all bars except numbers 3, 8, and 10.
+Yet in terms of the \emph{order} of things, only two structures deviate from the archetype:
+\strct{bodm} (bar 9) and 
+\strct{bgodcm} (bar 10),
+both of which curiously end with \Cb{method} information.
+Having multiple \strct{mr} pairs is more common for design works than it is for empirical works.
+
+As for truly confusing abstracts, the most conspicuous pattern is an unclear answer to the
+most fundamental question: Is this a design work or an empirical work?
+This issue occurs in various forms:
+a clear design \Cb{objective}, but a solely empirical \Cb{conclusion} (\Art{CorRweFra22}),
+the \Cb{objective} is phrased like for an empirical work, but the \Cb{conclusion} makes clear it is a design work (\Art{BocSchApe22}, \Art{SuFanChe22}),
+a clear design \Cb{objective}, but not a single \Cb{design} statement follows (\Art{FirFirRos22}, \Art{HerFerGal22}),
+there are two \Cb{objective} statements, placed non-continguously, and the first is clearly empirical (\Art{MadNagBir22}),
+or many statements throughout have an unclear role (\Art{NaeAla22}).
+
+% #confusing CorRweFra22(d objective, e conclusion),
+% #confusing FirFirRos22(d objective, but no d stmts),
+% #confusing BocSchApe22(e->d, obj sounds like e, but the conclusion makes it clearly d),
+% #confusing HerFerGal22(d with no design, only a-design),
+% #confusing MadNagBir22(d, first of two non-contiguous objectives is clearly e),
+% #confusing SuFanChe22(d, but objective can also be read like e),
+% #confusing NaeAla22(d, many sentences have unclear role),
+
+Of course, cases of misplaced information occur in design works as well, e.g.
+a \Cb{result} in the middle of a very long \Cb{background} section (\Art{NiuWuNie22}),
+\Cb{background} placed behind \Cb{objective}, which makes it sound a lot like a \Cb{result} (\Art{LuLiLiu22}),
+\Cb{method} and \Cb{result} placed after \Cb{h-conclusion} (\Art{HumKho22}, \Art{ImrDam22}).
+
+% #confusing NiuWuNie22(d, result in the very long background section),
+% #confusing LuLiLiu22(d, background after objective risks confusion with result)
+% #confusing HumKho22(d, struc, with m and r after h-conclusion),
+% #confusing ImrDam22(d, struc, again with m and r after h-conclusion),
+
+Other peculiarities appear in design works that we have not seen in empirical works, e.g.
+an \Cb{objective} that is difficult to recognize as such (\Art{TiaLiPia22}),
+formulating a \Cb{conclusion} without ever presenting a \Cb{result} (\Art{LiaHanLi22}),
+or a sequence of \Cb{objective}, \Cb{objective}, \Cb{design}+\Cb{result} phrased as a first{\ldots}then{\ldots}finally structure (\Art{GueLarChe22}).
+
+% #confusing LiaHanLi22(d, conclusion without results),
+% #confusing GueLarChe22(d, obj,obj,design+result phrased as first-then-finally),
+% #confusing TiaLiPia22(d, objective is difficult to recognize as such),
 
 
 \subsection{How Not To: Uninformative Formulations}
