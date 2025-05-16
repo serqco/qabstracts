@@ -1887,7 +1887,7 @@ of what certain terms in the abstract mean.
 In a good abstract, the \emph{approximate} meaning of a statement using such a term
 still comes across.
 Sometimes, however, this is not the case:
-The uncertainty regarding the meaning of the term becomes so large
+The uncertainty regarding the meaning of the term weighs so much
 that the sentence containing it becomes incomprehensible.
 We call such a term use an understandability gap (coded \Cb{:u}, see Section~\ref{subjective-codes})
 and consider such abstracts to be \emph{improper}.
@@ -1897,7 +1897,7 @@ Here is an example from \Art{HamMetQas22}:
   that it is 91.7\% lucid and 72.2\% laconic.} 
 Neither of the terms ``lucid'' or ``laconic'' have been introduced before, so that
 this sentence has two understandability gaps and
-an average reader is not able to make sense of this statement
+an average reader is not able to make sense of this important statement
 which represents half of the work's results.
 
 <<>>=
@@ -1931,7 +1931,7 @@ The issue is most pronounced at \Sexpr{venue_worst_ugap$venue}.
 Codings with an \Cb{-ignorediff} marker indicate cases where the coders could not agree
 despite discussion (see Section~\ref{ignorediff}):
 the respective sentence (or sentence part) is so highly ambiguous that
-more than one role for it is similarly likely.
+more than one role for it is plausible.
 Obviously, such ambiguous formulations do not represent good abstract writing
 and we consider such abstracts to be \emph{improper}.
 
@@ -2103,9 +2103,9 @@ stats_overview |>
 \subsection{How To: Structured Abstracts are more orderly}\label{structuredgood}
 
 This study is mostly exploratory.
-Our only clear expectation at the start was that structured abstracts would be
-somehow better (whatever that was going to mean) than unstructured ones.
-Therefore, we perform two statistical hypothesis tests here that compare
+Our only clear expectation at the start was that structured abstracts would tend to be
+better (whatever that was going to mean) than unstructured ones.
+Therefore, we perform two statistical hypothesis tests that compare
 structured to unstructured abstracts.
 
 <<>>=
@@ -2209,8 +2209,8 @@ informativeness and understandability
 Section~\ref{ambiguity}).
 We define and quantify further quality issues not included in the above number 
 (Figures~\ref{box_xletgroups_topicfractions}, \ref{box_xletgroups_conclusionfractions}, 
-\ref{nonzerofractionbar_xletgroups_missinginfofractions}, and
-Section~\ref{convoluted}).
+\ref{nonzerofractionbar_xletgroups_missinginfofractions}, and non-quantitative
+Section~\ref{confusing}).
 This low abstracts quality exists despite the fact that we analyzed only venues
 supposed to have high quality.
 
@@ -2232,25 +2232,27 @@ engineering research would help.
 
 \subsection{How To: Guidelines for Well-Written Abstracts}\label{howto-guidelines}
 
-\subsubsection{For Authors}
+\subsubsection{For Authors}\label{guidelinesauthors}
 
 The steps cross-reference the article sections that supply 
 detail or evidence.
 
 \begin{enumerate}
-  \item Write a structured abstract, not a free-flowing one 
-    (see Section~\ref{structuredgood}).
-    Take care to avoid announcements (see Section~\ref{announcements}),
+  \item Write a structured abstract, not a free-flowing one (see Section~\ref{structuredgood}) 
+    and follow the archetype (Sections~\ref{archetype}).
+    If the venue requires structured abstracts in an unsuitable format, protest.
+  \item Take care to avoid announcements (see Section~\ref{announcements}),
     understandability gaps (see Section~\ref{ugaps}),
     and sentences with an unclear role (see Section~\ref{ambiguity}).
-    Provide helpful detail, perhaps simplified, if it consumes barely any space
+    Provide helpful detail, perhaps simplified, if it requires only little space
     (see Section~\ref{igaps}).
-  \item Write a \Sah{Background} section that provides just enough context
+  \item Write a short \Sah{Background} section that provides just enough context
     and motivation to understand the subsequent \Sah{Objective} 
     (see Section~\ref{inefficient_allocation}).
   \item Decide on your main contribution. 
     Is your article a design article or an empirical one?
-    Write an \Sah{Objective} that expresses the type and your specific goal succinctly.
+    Write an \Sah{Objective} that expresses the type and your specific goal succinctly
+    (see Section~\ref{confusing}).
     If your background information contains a corresponding \Sah{Gap} statement,
     clearly phrase it as such.
   \item If your work is a design article, 
@@ -2261,7 +2263,7 @@ detail or evidence.
     use two or three combined \Sah{Method and Results} sections.
     Each of these will typically be a single sentence of the form
     ``We do-this-and-that and find this-and-that.''
-    (see Section~\ref{convoluted}).
+    (see Section~\ref{confusing}).
     Otherwise write separate \Sah{Methods} and \Sah{Results} sections
     as follows.
   \item Write a \Sah{Methods} section that explains what you have done
@@ -2279,9 +2281,9 @@ detail or evidence.
     What do we now know that we did not know before?
     The broader the conclusion, the higher the relevance of your work,
     but the lower its credibility. 
-    Find a formulation with relevance and good enough credibility.
-    Expect to later be proven wrong for some of your works, but not for many
-    (see Section~\ref{inefficient_allocation}).
+    Find a formulation with good relevance and good-enough credibility.
+    Do not be a coward (see Section~\ref{missing_elements}):
+    Dare to later be proven wrong for a few of your works.
   \item An outlook on future possibilities \emph{can} be part of your \Sah{Conclusion},
     but is usually better left to the body of your article.
 \end{enumerate}
@@ -2290,23 +2292,23 @@ detail or evidence.
 
 \subsubsection{For Venues}
 
-Structured abstracts are not currently used widely in software engineering.
-In their usual form, which does not suit design articles, 
-this is understandable, even appropriate.
+Structured abstracts are not currently used widely in software engineering, presumably
+because their usual form does not suit design articles. 
 
-In the above extended form, however, 
-(allowing \Sah{Gap} statements, 
-allowing \Sah{Design} sections, 
-allowing multiple \Sah{Methods and Results} sections) 
+In a suitably extended form, however, 
 structured abstracts promise better abstracts quality than a free-style format
 because our results strongly suggest that a structured format is helpful for 
 completeness. Previous results show that it is also helpful for understandability.
-Therefore, venues should require structured abstracts in our new,
-engineering-ready format.
+Therefore, venues should require structured abstracts in such a new,
+engineering-ready format as described by 
+Table~\ref{tab:codes} and Sections~\ref{archetype} and \ref{guidelinesauthors}:
+allowing \Sah{Gap} statements, 
+allowing \Sah{Design} sections, and  
+allowing multiple \Sah{Methods and Results} sections.
 
 For your call for papers, feel free to copy the above text,
 point your readers to the online version,\footnote{\url{https://github.com/serqco/qabstracts/blob/main/rec_abs_structure.md}}
-or point authors to this article for the underlying evidence.
+perhaps point authors to this article for the underlying evidence.
 
 
 %========================================================================
