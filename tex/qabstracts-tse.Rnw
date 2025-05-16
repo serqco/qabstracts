@@ -2109,6 +2109,22 @@ stats_overview |>
 @
 
 
+\subsection{How To: Proper Abstracts}\label{howto_proper}
+
+Indeed, the proper abstracts are so few, we can list them here completely.
+\begin{itemize} % #nonknitr
+\item Empirical works with structured abstract:
+  \Art{AmnPoe22}, \Art{LavMor22}, \Art{TanFeiAvg22}, \Art{YuKeuXia22}.
+\item Empirical works with non-structured abstract:
+  \Art{AbdBadCos22}, \Art{CinCooPas22}, \Art{HeMenChe22}, \Art{LinWilHal22}, \Art{OliAssGar22}, 
+\Art{UddAlaSer22}, \Art{WanZhaZha22}.
+\item Design works with structured abstract:
+  \Art{BaiJiaCap22}, \Art{WuSheChe22}.
+\item Design works with non-structured abstract:
+  \Art{BarDuDav22}, \Art{CorRweFra22}, \Art{GalEwaJun22}, \Art{GerMarLat22}, \Art{HanMeh22}, \Art{YeGuMar22}.
+\end{itemize}
+
+
 \subsection{How To: Structured Abstracts are more orderly}\label{structuredgood}
 
 This study is mostly exploratory.
