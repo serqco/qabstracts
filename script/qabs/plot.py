@@ -61,11 +61,9 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
     height1 = 60/25.4
     wideplot = tse_pagewidth_mm/25.4
     onecolumnplot = tse_columnwidth_mm/25.4
-    # ----- topicstructure plots:
-    plot_ab_topicstructure_freqs_design(datasets.ab_structures, outputdir)
-    plot_ab_topicstructure_freqs_empir(datasets.ab_structures, outputdir)
-    plot_ab_topicstructure_freqs_empir_structured(datasets.ab_structures, outputdir)
     if plotall:
+        # ----- timeline:
+        plot_qabstracts_timeline_commits(outputdir, datasets.timestamps, height1, 1.85*onecolumnplot)  # we scale it in TeX
         # ----- boxplots counts:
         ctx = pt.PlotContext(outputdir, "", datasets.by_abstract, 
                              60/25.4, tse_pagewidth_mm/25.4, datasets.ab_subsets)
@@ -92,6 +90,10 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
                              datasets.ab_topicfractions0_values, datasets.ab_subsets)
         pt.plot_xletgroups(ctx, pt.add_zerofractionbarplotlet_with_errorbars, "zerofractionbar", "topicmissingfractions",
                            "how often missing [%]", ymax=100)
+        # ----- topicstructure plots:
+        plot_ab_topicstructure_freqs_design(datasets.ab_structures, outputdir)
+        plot_ab_topicstructure_freqs_empir(datasets.ab_structures, outputdir)
+        plot_ab_topicstructure_freqs_empir_structured(datasets.ab_structures, outputdir)
         # ----- frequency of a-* codes and iu gaps:
         ctx = pt.PlotContext(outputdir, "", datasets.by_abstract_coding, height1, wideplot,
                              datasets.ab_missinginfofractions_values, datasets.ab_subsets)
@@ -106,10 +108,7 @@ def create_all_plots(plotall: bool, datasets: argparse.Namespace, outputdir: str
                              datasets.ab_totalqualityfractions_values, datasets.ab_subsets)
         pt.plot_xletgroups(ctx, pt.add_nonzerofractionbarplotlet_with_errorbars, "nonzerofractionbar", "totalqualityfractions",
                            "how often occurring [%]", ymax=65)
-        # ----- timeline:
-        plot_qabstracts_timeline_commits(outputdir, datasets.timestamps, height1, 1.85*onecolumnplot)  # we scale it in TeX
     
-
 
 def plot_ab_topicstructure_freqs_design(df: pd.DataFrame, outputdir: str):
     design_df = df.loc[df['topicstructure'].str.contains('d')]
