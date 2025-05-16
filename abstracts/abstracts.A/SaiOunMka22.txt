@@ -36,4 +36,6 @@ demonstrate the effectiveness of SKIPCI in providing relevant CI skip commit rec
 projects from practitioner's point of view.
 {{result}}
 ---
-This abstract follows a pattern a see a lot where the objective is preceded by listing a painpoint in practice, but not explicitly listing the "gap". The "gap" is presumed to be that we want to solve this project and currently no one has done it, or needs more progress.
+This abstract follows a pattern we see a lot where the objective is preceded by listing a painpoint in practice, 
+but not explicitly listing the "gap". 
+The "gap" is presumed to be that we want to solve this project and currently no one has done it, or needs more progress.

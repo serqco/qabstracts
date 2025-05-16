@@ -4,7 +4,8 @@
 % - https://bjoern.brembs.net/2016/01/even-without-retractions-top-journals-publish-the-least-reliable-science/
 % - check consistent use of \Cb, \Sah, \Art and of \Quote, \Pseudoquote, \QuoteCB
 % - discuss pointers from https://statistically-funny.blogspot.com/2023/06/a-study-in-misplaced-scientific-flair.html
-% https://absolutelymaybe.plos.org/2023/12/31/5-things-we-learned-about-peer-review-in-2023/#5
+%   https://absolutelymaybe.plos.org/2023/12/31/5-things-we-learned-about-peer-review-in-2023/#5
+% - make github repo public, create Zenodo repo
 
 \documentclass[10pt,journal,compsoc]{IEEEtran}
 
@@ -19,7 +20,7 @@
 \usepackage{graphicx}
 \usepackage{enumitem}  % For letter-based lists
 \usepackage{listings}  % To show code/text as an example
-
+%\usepackage{dblfloatfix} % helps with placement of figure*
 \usepackage{booktabs}
 
 \graphicspath{ {../img} {.} }
@@ -32,6 +33,9 @@
 
 % ----- Custom Plot Commands to Control Shared Attributes
 % Most generic shared attributes
+\renewcommand{\textfraction}{0.2}
+\renewcommand{\topfraction}{0.8}
+\renewcommand{\bottomfraction}{0.8}
 \newcommand{\PlotCustom}[5]{%
 	\begin{#1}[#3]%
 		\centering\includegraphics[width=#4]{#2}%
@@ -45,12 +49,13 @@
 \newcommand{\PlotwideWidth}[3]{\PlotCustom{figure*}{#1}{tbp}{#2\textwidth}{#3}}
 % NOTE: These "classes" could be further coupled as "subclasses" to reduce duplicate code, but I believe this makes it harder to trace their individual behaviour.
 
-\newcommand{\Cb}[1]{\bgroup\mbox{\scshape #1}\egroup}  % typeset a code name
-\newcommand{\Prg}[1]{\bgroup\ttfamily #1\egroup}  % typeset commands and script names
-\newcommand{\strct}[1]{\bgroup\ttfamily\bfseries #1\egroup}  % typeset an abstract structure code
+\newcommand{\Cb}[1]{\bgroup\mbox{\scshape #1}\egroup}  % codebook entry name
+\newcommand{\Prg}[1]{\bgroup\ttfamily #1\egroup}  % commands and script names
+\newcommand{\strct}[1]{\bgroup\ttfamily\bfseries #1\egroup}  % abstract structure topicletter string
+% link to an article sample annotated abstract:
 \newcommand{\Art}[1]{\href{https://github.com/serqco/qabstracts/blob/main/abstracts/abstracts.raw/\string#1.txt}{\bgroup[#1]\egroup}}
 \newcommand{\Repo}[2]{\href{https://github.com/serqco/qabstracts/blob/main/\string#2}{#1}}
-\newcommand{\Sah}[1]{\bgroup\scshape #1\egroup}  % typeset a structured abstract heading
+\newcommand{\Sah}[1]{\bgroup\scshape #1\egroup}  % structured abstract heading
 
 \newcommand{\codebook}{https://github.com/serqco/qabstracts/blob/main/codebook.md}
 
@@ -388,7 +393,7 @@ Our contributions correspond to the research questions as follows:
 	  %  1. Readability (Sec 4.1, result-len-read)
 	  %  2. Inefficient Allocation of Space (Sec 4.4, inefficient_allocation)
 	  %  3. Missing Elements (Sec 4.6, missing_elements)
-    %  4. Convoluted Trains of Thought (Sec. 4.7, convoluted)
+    %  4. Confusing abstracts (Sec. 4.7, confusing)
     %  5. Informative Gaps (Sec. 4.8.1, igaps)
     %  6. Announcements (Sec. 4.8.2, announcements)
     %  7. Understandability (Sec. 4.9, ugaps)
@@ -591,12 +596,10 @@ It includes all versions of the
 codebook, handling procedure, coded abstracts, Python scripts for automation,
 Python scripts for tabulations and plots, and the manuscript of this article.
 Find it at \url{https://github.com/serqco/qabstracts/}.
-\Todo{For Lloyd (after acceptance): Make the repository public and create a Zenodo repository link to a ``release'' of the GitHub repository.}
 
 When we refer to abstracts from our sample, we use abbreviations of the first three authors' names and the year of publication,
-e.g., \Art{BesMarBos22}.
-Refer to the repository in order to find the corresponding bibliographic information
-and the complete abstract text for the respective article.
+e.g., \Art{BesMarBos22}. Such strings are hyperlinks to the annotated abstract in our GitHub repository.
+Refer to the repository in order to find the corresponding bibliographic information.
 
 
 \subsection{General Coding Rules}\label{meth_codingrules}
@@ -1044,7 +1047,7 @@ rare (less than 5\%),
 not rare (5-20\%),
 common (20-35\%),
 frequent (35-50\%),
-dominant (over 50\%).  \Todo{Are 'frequent' and 'dominant' used at least once? The others are.} 
+dominant (over 50\%). 
 
 
 \subsection{Interpretation}
@@ -1288,7 +1291,9 @@ the \Cb{design} code is but one example.
 
 During our sensemaking process, we had a number of insights regarding
 how a well-written abstract ``ticks'', which we eventually distilled into
-the following template, which we call the \emph{SERQco software engineering abstracts archetype}
+the following template, which we call the 
+\emph{SERQco software engineering abstracts archetype}\footnote{SERQco is the
+  Software Engineering Research Quality Coalition}
 (see also Figure~\ref{abstracts_archetype_fig}):
 
 \begin{enumerate}
@@ -1395,6 +1400,13 @@ availability of alternatives such as $\varphi$ (also known as Matthews Correlati
 	\Describeboxplots
 	\Describegroups}
 
+% This figure we shifted up to get a reasonable layout, see below:
+\Plotwide{zerofractionbar_xletgroups_topicmissingfractions}{%
+	How often is a topic not present at all in an abstract?
+  These ``topics'' are groupings of related codes (see Table~\ref{tab:codes}).\\
+	\Describegroups\ 
+  Error bars are due to ambiguous formulations (see Section~\ref{ignorediff}).}
+
 \Plot{box_xletgroups_conclusionfractions}{%
 	Comparison of the amounts of remaining space devoted to the conclusion for abstracts
 	with a rather short background section (lowest quarter) vs those
@@ -1445,11 +1457,8 @@ Given the archetype, one way to approach an analysis of abstracts quality is to 
 how often key parts of an abstract are missing entirely.
 This is shown in Figure~\ref{zerofractionbar_xletgroups_topicmissingfractions}.
 
-\Plotwide{zerofractionbar_xletgroups_topicmissingfractions}{%
-	How often is a topic not present at all in an abstract?
-  These ``topics'' are groupings of related codes (see Table~\ref{tab:codes}).\\
-	\Describegroups\ 
-  Error bars are due to ambiguous formulations (see Section~\ref{ignorediff}).}
+% Logically, Figure zerofractionbar_xletgroups_topicmissingfractions belongs here
+% We include it earlier for layout reasons, as otherwise figures appear too late.
 
 <<>>=
 # Missing elements in abstracts
@@ -1519,7 +1528,7 @@ are still common here
   cannot guarantee an actual \Cb{conclusion}:
   Dominantly, the statement authors put there is actually
   a \Cb{result} (an immediate empirical result),
-  a \Cb{summary} (a mere repetition) or still something else.}
+  a \Cb{summary} (a result repetition) or still something else.}
 
 <<>>=
 # Fetch numbers for "complete" metric
@@ -1690,7 +1699,7 @@ across all empirical articles.\footnote{%
 
 \subsection{How Not To: Uninformative Formulations}
 
-A milder way of reducing the usefulness of an abstract is using formulations that
+Another way of reducing the usefulness of an abstract is using formulations that
 fail to provide information that, at this point, would be useful to the reader and
 could be provided using only very few additional words.
 
@@ -2099,7 +2108,7 @@ could never scale to the hundreds of abstracts we look at here,
 and, whichever operationalization it chose,
 it would be imperfect and controversial.
 We therefore decided to analyze properties of abstracts
-that are arguably problematic, although we cannot say just how
+that are \emph{arguably} problematic, although we cannot say just how
 problematic in each case, resulting in count statistics only.
 
 External validity is the degree to which the results generalize
@@ -2110,7 +2119,7 @@ we studied, perhaps a bit less for ICSE because of its
 varying location and hence more varying authors.
 Whether it also generalizes to other venues
 we cannot know, but we would be surprised if venues of lower
-scientific reputation had articles with better abstracts.
+scientific reputation had articles with much better abstracts.
 
 
 %========================================================================
@@ -2144,16 +2153,16 @@ Section~\ref{convoluted}).
 This low abstracts quality exists despite the fact that we analyzed only venues
 supposed to have high quality.
 
-This is deplorable, because for the vast majority readers of a typical article,
-the abstract is the first part they read \cite{ShiGalMil24} --- and often the only.
-Futhermore, indexes and search engines such as \emph{Scopus AI}\footnote{%
+This is deplorable, because for the vast majority of readers,
+the abstract is the first part they read \cite{ShiGalMil24} --- and often the only part.
+Futhermore, scientific indexes and specialized search engines such as \emph{Scopus AI}\footnote{%
   \url{https://www.elsevier.com/products/scopus/scopus-ai}
 } rely heavily on abstracts.
 With the above level of abstracts quality, readers will get far less
 well informed than they could have been and the spread of knowledge
 will be slowed down accordingly, needlessly wasting public money.
 
-We conclude the software engineering research community should pay
+We conclude that the software engineering research community should pay
 more attention to abstract-writing.
 Presumably, introducing a structured abstract format 
 and accompanying writing instructions that suit 
