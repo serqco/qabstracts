@@ -2343,8 +2343,7 @@ Contact him at prechelt@inf.fu-berlin.de.
 \end{IEEEbiography}
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{lloyd-montgomery.jpg}}]{Lloyd Montgomery}
-\Todo{now holds a PhD degree and, no longer,}
-is a PhD student at the University of Hamburg, working under Prof. Dr. Walid Maalej.
+received his PhD from the University of Hamburg, Germany, working under Prof. Dr. Walid Maalej.
 Currently, his primary research area is the quality of issue tracking systems, with other interests such as empirical software engineering, non-technical factors in software engineering, and science communication.
 He won the RE'17 best paper award for his machine learning design science research with IBM customer support.
 Lloyd's academic service record includes serving as the IST Publicity Chair, RE'23 Publicity Chair, NLP4RE'22 Workshop Co-Chair, and RE'21 Artefact Co-Chair.
