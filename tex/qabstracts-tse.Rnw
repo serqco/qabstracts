@@ -2354,16 +2354,16 @@ Contact him at lloyd.montgomery@uni-hamburg.de.
 \end{IEEEbiography}  
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{julian-frattini.jpg}}]{Julian Frattini}
-obtained his Ph.D. degree from the Blekinge Institute of Technology, Sweden, and is currently a postdoctoral researcher at the Chalmers University of Technology and University of Gothenburg, Sweden.
+(julian.frattini@chalmers.se) obtained his Ph.D. degree from Blekinge Institute of Technology (BTH), Sweden, and is currently a postdoctoral researcher at Chalmers University of Technology and University of Gothenburg, Sweden.
 He contributes research to requirements engineering with his work on requirements artifact quality, as well as to the field of software engineering research methodology with a particular interest in statistical causal inference and Bayesian data analysis.
-Julian served in the organizing committees of REFSQ'24, RE'24, AIRE'24, CrowdRE'24, REFSQ'25, and AIRE'25, and is the publicity co-chair of the IST journal.
-He is on the program committees of RE, REFSQ, EASE, ESEM, QUATIC, and NLP4RE, and regularly reviews for the journals TSE, TOSEM, EMSE, REJ, IST, and JSS.
+Julian served on the organizing committees of REFSQ, RE, AIRE, and CrowdRE, and is the publicity co-chair of the IST journal.
+He is on the program committees of RE, REFSQ, EASE, ESEM, QUATIC, and NLP4RE, and reviews for the journals TSE, TOSEM, EMSE, REJ, IST, and JSS.
 \end{IEEEbiography}
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{franz-zieris.jpg}}]{Franz Zieris}
 received a PhD from Freie Universität Berlin for qualitative research on pair programming in industy.
 He then spent 2.5 years in industry as software architect and business analyst.
-He is now an Associate Senior Lecturer at the Department of Software Engineering at Blekinge Institute of Technology (BTH),
+He is now an Associate Senior Lecturer at the Department of Software Engineering at BTH,
 where his research focuses on continuous software engineering and distributed software engineering.
 Franz is on the program committes of the Internal Conference on Agile Software Development (XP)
 and International Conference on Cooperative and Human Aspects (CHASE),
