@@ -181,12 +181,13 @@ def df_by_abstract(df_by_abstract_coding: pd.DataFrame) -> pd.DataFrame:
 def ser_ab_structures(df: pd.DataFrame) -> pd.DataFrame:
     strucs = df[df['topic'] != 'other'] \
         .sort_values(['sidx', 'code']) \
-        .groupby(['citekey', 'coder'])[['citekey', 'coder', 'topic', 'is_struc']] \
+        .groupby(['citekey', 'coder'])[['citekey', 'coder', 'topic', 'is_struc', 'is_design']] \
         .aggregate(
             citekey=_nagg('citekey', 'min'),
             coder=_nagg('coder', 'min'),
             topicstructure=_nagg('topic', topicletters),
-            is_struc=_nagg('is_struc', 'any'))
+            is_struc=_nagg('is_struc', 'any'),
+            is_design = _nagg('is_design', 'any'))
     return strucs
 
 

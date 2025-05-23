@@ -4,7 +4,8 @@
 % - https://bjoern.brembs.net/2016/01/even-without-retractions-top-journals-publish-the-least-reliable-science/
 % - check consistent use of \Cb, \Sah, \Art and of \Quote, \Pseudoquote, \QuoteCB
 % - discuss pointers from https://statistically-funny.blogspot.com/2023/06/a-study-in-misplaced-scientific-flair.html
-% https://absolutelymaybe.plos.org/2023/12/31/5-things-we-learned-about-peer-review-in-2023/#5
+%   https://absolutelymaybe.plos.org/2023/12/31/5-things-we-learned-about-peer-review-in-2023/#5
+% - make github repo public, create Zenodo repo
 
 \documentclass[10pt,journal,compsoc]{IEEEtran}
 
@@ -19,7 +20,7 @@
 \usepackage{graphicx}
 \usepackage{enumitem}  % For letter-based lists
 \usepackage{listings}  % To show code/text as an example
-
+%\usepackage{dblfloatfix} % helps with placement of figure*
 \usepackage{booktabs}
 
 \graphicspath{ {../img} {.} }
@@ -32,6 +33,9 @@
 
 % ----- Custom Plot Commands to Control Shared Attributes
 % Most generic shared attributes
+\renewcommand{\textfraction}{0.2}
+\renewcommand{\topfraction}{0.8}
+\renewcommand{\bottomfraction}{0.8}
 \newcommand{\PlotCustom}[5]{%
 	\begin{#1}[#3]%
 		\centering\includegraphics[width=#4]{#2}%
@@ -45,12 +49,13 @@
 \newcommand{\PlotwideWidth}[3]{\PlotCustom{figure*}{#1}{tbp}{#2\textwidth}{#3}}
 % NOTE: These "classes" could be further coupled as "subclasses" to reduce duplicate code, but I believe this makes it harder to trace their individual behaviour.
 
-\newcommand{\Cb}[1]{\bgroup\mbox{\scshape #1}\egroup}  % typeset a code name
-\newcommand{\Prg}[1]{\bgroup\ttfamily #1\egroup}  % typeset commands and script names
-\newcommand{\strct}[1]{\bgroup\ttfamily\bfseries #1\egroup}  % typeset an abstract structure code
+\newcommand{\Cb}[1]{\bgroup\mbox{\scshape #1}\egroup}  % codebook entry name
+\newcommand{\Prg}[1]{\bgroup\ttfamily #1\egroup}  % commands and script names
+\newcommand{\strct}[1]{\bgroup\ttfamily\bfseries #1\egroup}  % abstract structure topicletter string
+% link to an article sample annotated abstract:
 \newcommand{\Art}[1]{\href{https://github.com/serqco/qabstracts/blob/main/abstracts/abstracts.raw/\string#1.txt}{\bgroup[#1]\egroup}}
 \newcommand{\Repo}[2]{\href{https://github.com/serqco/qabstracts/blob/main/\string#2}{#1}}
-\newcommand{\Sah}[1]{\bgroup\scshape #1\egroup}  % typeset a structured abstract heading
+\newcommand{\Sah}[1]{\bgroup\scshape #1\egroup}  % structured abstract heading
 
 \newcommand{\codebook}{https://github.com/serqco/qabstracts/blob/main/codebook.md}
 
@@ -388,7 +393,7 @@ Our contributions correspond to the research questions as follows:
 	  %  1. Readability (Sec 4.1, result-len-read)
 	  %  2. Inefficient Allocation of Space (Sec 4.4, inefficient_allocation)
 	  %  3. Missing Elements (Sec 4.6, missing_elements)
-    %  4. Convoluted Trains of Thought (Sec. 4.7, convoluted)
+    %  4. Confusing abstracts (Sec. 4.7, confusing)
     %  5. Informative Gaps (Sec. 4.8.1, igaps)
     %  6. Announcements (Sec. 4.8.2, announcements)
     %  7. Understandability (Sec. 4.9, ugaps)
@@ -591,12 +596,10 @@ It includes all versions of the
 codebook, handling procedure, coded abstracts, Python scripts for automation,
 Python scripts for tabulations and plots, and the manuscript of this article.
 Find it at \url{https://github.com/serqco/qabstracts/}.
-\Todo{For Lloyd (after acceptance): Make the repository public and create a Zenodo repository link to a ``release'' of the GitHub repository.}
 
 When we refer to abstracts from our sample, we use abbreviations of the first three authors' names and the year of publication,
-e.g., \Art{BesMarBos22}.
-Refer to the repository in order to find the corresponding bibliographic information
-and the complete abstract text for the respective article.
+e.g., \Art{BesMarBos22}. Such strings are hyperlinks to the annotated abstract in our GitHub repository.
+Refer to the repository in order to find the corresponding bibliographic information.
 
 
 \subsection{General Coding Rules}\label{meth_codingrules}
@@ -1044,7 +1047,7 @@ rare (less than 5\%),
 not rare (5-20\%),
 common (20-35\%),
 frequent (35-50\%),
-dominant (over 50\%).  \Todo{Are 'frequent' and 'dominant' used at least once? The others are.} 
+dominant (over 50\%). 
 
 
 \subsection{Interpretation}
@@ -1288,7 +1291,9 @@ the \Cb{design} code is but one example.
 
 During our sensemaking process, we had a number of insights regarding
 how a well-written abstract ``ticks'', which we eventually distilled into
-the following template, which we call the \emph{SERQco software engineering abstracts archetype}
+the following template, which we call the 
+\emph{SERQco software engineering abstracts archetype}\footnote{SERQco is the
+  Software Engineering Research Quality Coalition}
 (see also Figure~\ref{abstracts_archetype_fig}):
 
 \begin{enumerate}
@@ -1321,7 +1326,6 @@ The archetype describes all variants of abstracts that have a natural train of t
 It is an engineering-specific generalization of the well-known IMRAD structure \cite{SolPer04}.
 Deviations from the archetype will tend to lead to a less easily understandable abstract.
 
-\Todo{Find short, good, unstructured example and mark it up?}
 
 \PlotWidth{abstracts_archetype_fig}{.8}{%
 	A visual representation of the SERQco abstracts archetype. 
@@ -1330,30 +1334,6 @@ Deviations from the archetype will tend to lead to a less easily understandable 
 	This is the recommended structure.}
 
 
-\subsection{How Not To: Inefficient Allocation of Space}
-\label{inefficient_allocation}
-
-If one reads the abstracts in our sample, one can hardly help notice that some of them 
-spend a lot of space on \Cb{background}, although its only purpose is to situate
-the objective and make it understandable.
-Here is an example from an article titled
-\emph{``Engineering Web Augmentation software: A development method for enabling end-user maintenance''} \Art{FirFirRos22}
-(all \Cb{background} plus \Cb{objective} in boldface):
-\begin{quote}
-  \Todo{All examples with high background ratio are long. Move to appendix?}
-  \color{abstractcolor}\sffamily\small
-  Nowadays, end-users are able to adapt Web applications when some of their requirements have not been taken into account by developers.
-  One possible way to do adaptations is by using Web Augmentation techniques.
-  Web Augmentation allows end-users to modify the Web sites' user interfaces once these are loaded on the clientside, i.e., in the browser.
-  They achieve these adaptations by developing and/or installing Web browser plugins
-  ("augmenters") that modify the user interface with new functionalities.
-  This particular kind of software artifacts requires special attention regarding maintenance as---in most cases---they depend on third-party resources, such
-  as HTML pages.
-  When these resources are upgraded, unexpected results during the augmentation process may occur.
-  Many communities have arisen around Web Augmentation, and today there are large repositories where developers share their augmenters; end-users may give feedback about existing augmentations and even ask for new ones.
-  Maintenance is a key phase in the augmenters' life-cycle, and currently, this task falls (as usual) on the developers.
-  \textbf{In this paper, we present a participatory approach for allowing end-users without programming skills to participate in the augmenters' maintenance phase.}
-\end{quote}
 <<>>=
 # Fetch concrete numbers for example abstract
 long_bg_example <- df_c |>
@@ -1363,28 +1343,17 @@ long_bg_example <- df_c |>
   rename(words = words_backgroundcode,
     ratio = fraction_code_background)
 @
-That's \Sexpr{long_bg_example$words} words spent on \Cb{background}
-(\Sexpr{format_percent(long_bg_example$ratio/100)} of the abstract)
-before the \Cb{objective} is formulated.
 
-<<>>=
-# Fetch concrete numbers for example abstract
-short_bg_example <- df_c |>
-  filter(`_citekey` == 'LavMor22') |>
-  slice_head(n=1) |>
-  select(words_backgroundcode, fraction_code_background) |>
-  rename(words = words_backgroundcode,
-    ratio = fraction_code_background)
-@
-Other abstracts manage to solve the same problem in a wonderfully concise manner,
-e.g., \Art{LavMor22} (\Sexpr{format_percent(short_bg_example$ratio/100)} \Cb{background}):
-\begin{quote}
-  \color{abstractcolor}\sffamily\small
-	The F-measure has been widely used as a performance metric when selecting
-binary classifiers for prediction, but it has also been widely criticized, especially given the
-availability of alternatives such as $\varphi$ (also known as Matthews Correlation Coefficient).
-  \textbf{Our goals are to (1) investigate possible issues related to the F-measure in depth and show how $\varphi$ can address them, and (2) explore the relationships between the F-measure and $\varphi$.}
-\end{quote}	
+
+\subsection{How Not To: Inefficient Allocation of Space}
+\label{inefficient_allocation}
+
+If one reads the abstracts in our sample, one can hardly help notice that some of them 
+spend a lot of space on \Cb{background}, although its only purpose is to situate
+the objective and make it understandable.
+For example, \Art{FirFirRos22} spends \Sexpr{format_percent(long_bg_example$ratio/100)} of the abstract
+for explaining their rather niche application domain in some detail
+rather than just naming it and letting interested readers look up the rest in the article body.
 
 \Plotwide{box_xletgroups_topicfractions}{%
 	Per-topic distribution of the amount of space used for that topic.
@@ -1394,6 +1363,13 @@ availability of alternatives such as $\varphi$ (also known as Matthews Correlati
 	and all corresponding \Cb{a-*} and \Cb{h-*} codes.\\
 	\Describeboxplots
 	\Describegroups}
+
+% This figure we shifted up to get a reasonable layout, see below:
+\Plotwide{zerofractionbar_xletgroups_topicmissingfractions}{%
+	How often is a topic not present at all in an abstract?
+  These ``topics'' are groupings of related codes (see Table~\ref{tab:codes}).\\
+	\Describegroups\ 
+  Error bars are due to ambiguous formulations (see Section~\ref{ignorediff}).}
 
 \Plot{box_xletgroups_conclusionfractions}{%
 	Comparison of the amounts of remaining space devoted to the conclusion for abstracts
@@ -1418,9 +1394,8 @@ df_c |>
 @
 
 As we can see in the Background group of boxplots in Figure~\ref{box_xletgroups_topicfractions},
-all venues that do not require structured abstract, have a quarter of articles or more 
-that spend over 30% of the abstract space
-on background. 
+all venues that do not require structured abstracts have at least a quarter of articles 
+that spend over 30\% of the abstract space on background. 
 As we can see in Figure~\ref{box_xletgroups_conclusionfractions},
 this leads to deficiencies later on:
 The conclusion is the potentially most useful part of the abstract, the take-home message,
@@ -1445,11 +1420,8 @@ Given the archetype, one way to approach an analysis of abstracts quality is to 
 how often key parts of an abstract are missing entirely.
 This is shown in Figure~\ref{zerofractionbar_xletgroups_topicmissingfractions}.
 
-\Plotwide{zerofractionbar_xletgroups_topicmissingfractions}{%
-	How often is a topic not present at all in an abstract?
-  These ``topics'' are groupings of related codes (see Table~\ref{tab:codes}).\\
-	\Describegroups\ 
-  Error bars are due to ambiguous formulations (see Section~\ref{ignorediff}).}
+% Logically, Figure zerofractionbar_xletgroups_topicmissingfractions belongs here
+% We include it earlier for layout reasons, as otherwise figures appear too late.
 
 <<>>=
 # Missing elements in abstracts
@@ -1519,7 +1491,7 @@ are still common here
   cannot guarantee an actual \Cb{conclusion}:
   Dominantly, the statement authors put there is actually
   a \Cb{result} (an immediate empirical result),
-  a \Cb{summary} (a mere repetition) or still something else.}
+  a \Cb{summary} (a result repetition) or still something else.}
 
 <<>>=
 # Fetch numbers for "complete" metric
@@ -1532,55 +1504,14 @@ in the sense that they contain all basic elements
 \Cb{background} (or \Cb{gap}), \Cb{objective}, \Cb{method}, \Cb{result}, and \Cb{conclusion}.
 
 
-\subsection{How Not To: Convoluted Trains of Thought}
-\label{convoluted}
-
-There are also abstracts where the train-of-thought is so tangled
-that they become difficult to read.
-For quantifying this, we map each abstract's structure to a sequence of letters,
-where each letter stands for a contiguous stretch of sentences in the abstract
-that have the same topic (see Table~\ref{tab:codes}).
-For instance, an abstract that follows a minimal incarnation of the Archetype
-for an empirical article would be encoded as \strct{bomrc}, which stands for
-the topic sequence \textit{background, objective, methods, results, conclusion}.
-
 <<>>=
 # Numbers of topicstructures in empirical and design articles
 (n_struc <- df |>
   select(`_citekey`, is_design) |>
   distinct() |>
-  left_join(datasets$ab_structures, by = c("_citekey" = "citekey")) |>
-  summarize(n = n(), n_distinct = n_distinct(topicstructure),
-    .by = is_design))
-@
+  left_join(datasets$ab_structures, by = c("_citekey" = "citekey", "is_design")) |>
+  summarize(n = n(), n_distinct = n_distinct(topicstructure), .by = is_design))
 
-The full list of abstracts structures is too long to show it here.
-It has \Sexpr{n_struc[n_struc$is_design == FALSE, "n_distinct"]} entries for empirical articles and
-\Sexpr{n_struc[n_struc$is_design == TRUE, "n_distinct"]} entries for design articles.
-Most of these have only one or two instances, though;
-we restrict ourselves to the types that occur with higher frequency here\footnote{One reason
-  for the large number of types is the frequent violation of \Cb{h-xyz} codes:
-  If \Cb{h-xyz} is not followed by \Cb{xyz}, this will lead to two letters in the string.}
-The results are shown in
-Figure~\ref{ab_topicstructure_freqs_empir} for empirical articles and
-Figure~\ref{ab_topicstructure_freqs_design} for design articles.
-(Fractional frequencies such as $7.5$ mean that the two coders did not agree.)
-
-\Plot{ab_topicstructure_freqs_empir}{%
-  The frequency of different trains-of-thought in the abstract for empirical articles.
-  The label is a string of stretch-code characters:
-  b\mbox{-}ackground, g\mbox{-}ap, o\mbox{-}bjective, d\mbox{-}esign, m\mbox{-}ethod, r\mbox{-}esult,
-  s\mbox{-}ummary, c\mbox{-}onclusion, O\mbox{-}utlook.}
-\Plot{ab_topicstructure_freqs_design}{%
-  The frequency of different trains-of-thought in the abstract for design articles.
-  Same characters as before, except that d\mbox{-}esign can now in fact occur.}
-
-% !!!CheXiaLo22 presents five studies
-
-
-\subsubsection{Empirical Articles}
-
-<<>>=
 # Helper functions for topicstructure discussion
 
 # (temporary)
@@ -1602,7 +1533,7 @@ cumulative_ratio <- function(design, n) {
   x <- df |>
     select(`_citekey`, is_design) |>
     distinct() |>
-    left_join(datasets$ab_structures, c("_citekey" = "citekey")) |>
+    left_join(datasets$ab_structures, c("_citekey" = "citekey", "is_design")) |>
     filter(is_design == design) |>
     count(topicstructure) |>
     mutate(n = n/2) |>
@@ -1610,87 +1541,202 @@ cumulative_ratio <- function(design, n) {
 
   sum(slice_head(x, n = n)$n) / sum(x$n)
 }
-@
 
-Let us start with the simpler empirical articles.
-We see that the most sensible structures are also the most frequent
-(bars 1, 2, 3; accounting for \Sexpr{format_percent(cumulative_ratio(FALSE, 3))} of the empirical articles):
-Archetypical with or without a \Cb{gap} statement, perhaps with an \emph{Outlook}.
-But from bar 4 on, the abstracts are more or less pathological:
-They are missing a \Cb{conclusion}, discuss their \Cb{method} before the \Cb{objective},
-and later on (not shown in the figure)
-follow all kinds of curious structures such as, to pick an admittedly extreme case,
-\strct{bgomrcrsrsc} \Art{\Sexpr{strc_example("bgomrcrsrsc")}}:
-two conclusions, two summaries, summary after conclusion.
-
-
-\subsubsection{Design Articles}\label{structure-design-articles}
-
-It naturally gets worse for the design articles with their more complicated structure:
-The two most common structures (accounting for \Sexpr{format_percent(cumulative_ratio(TRUE, 2))} of the design articles)
-are missing a \Cb{conclusion},
-and we find complex structures with repeated \strct{mr}'s starting at bar 4.
-Not all of these are automatically bad.
-In particular, having two small empirical studies, resulting in a nice \strct{bgodmrmr} structure
-(e.g., \Art{WuZouDou22}), can make a lot of sense for the reader.
-But this has its limits:
-An abstract with structure \strct{bodmrmrmrmr}
-(e.g., \Art{ZhoCheHao22})
-is overloaded.
-It can also easily get out of hand, as confirmed by the examples
-\strct{bodrmrmrmrmrmr} (e.g. \Art{PisSpäBud22}) and
-\strct{bomdmrmrmrsmrc} (e.g. \Art{ValManPar22}),
-which lack a coherent \emph{Method} part.
-
-\subsubsection{Structured Abstracts}
-
-<<>>=
 # How many different topicstructures?
 ab_is_design <- distinct(select(df, `_citekey`, is_design)) |>
-  left_join(datasets$ab_structures, by = c("_citekey" = "citekey"))
+  left_join(datasets$ab_structures, by = c("_citekey" = "citekey", "is_design"))
 
-design_empir_struct <- ab_is_design |> filter(!is_design, is_struc)
-design_empir_all    <- ab_is_design |> filter(!is_design)
+design_empir_struc <- ab_is_design |> filter(!is_design, is_struc)
+design_empir_nonstruc    <- ab_is_design |> filter(!is_design, !is_struc)
 
 # Empirical and structured: Just count
-(n_distinct_empir_struct <- design_empir_struct |>
+(n_distinct_empir_struct <- design_empir_struc |>
   summarize(count = n_distinct(topicstructure)) |>
   pull(count))
 
 # All empirical: Take same-size sample of abstract and count
-c_design_empir_struct <- nrow(design_empir_struct)
+c_design_empir_struc <- nrow(design_empir_struc)
 
 set.seed(123)
 resample_counts <- replicate(
   1000,
   {
-    sample_n(design_empir_all, c_design_empir_struct,
+    sample_n(design_empir_nonstruc, c_design_empir_struc,
         replace = FALSE) |>
       distinct(topicstructure) |>
       nrow()
   }
 )
 
-(n_distinct_empir_all <- median(resample_counts))
-(n_distinct_empir_all_ci <- quantile(resample_counts,
-  c(0.025, 0.975)))
+(n_distinct_empir_nonstruc <- mean(resample_counts))
+(n_distinct_empir_nonstruc_ci <- quantile(resample_counts, c(0.025, 0.975)))
+
 @
+
+\subsection{How Not To: Confusing abstracts}
+\label{confusing}
+
+Any deviation from the natural train of thought of the abstracts archetype
+will tend to increase the reader's cognitive load.
+If this happens, we call the abstract's train of thought convoluted.
+
+For investigating this issue, we map each abstract's structure to a sequence of letters,
+where each letter stands for a contiguous stretch of sentences in the abstract
+that have the same topic (see Table~\ref{tab:codes}).\footnote{However, if a, say, 
+  \Cb{h-conclusion} is followed by, say, a \Cb{summary} (which is a common style), 
+  this would lead to a topicletter string that looks more complicated than the abstract actually reads.
+  We find this misleading and hence exclude \Cb{h-*} codes from the topicletter string.}
+For instance, an abstract that follows a minimal incarnation of the archetype
+for an empirical article would be encoded as \strct{bomrc}, which stands for
+the topic sequence \textit{background, objective, methods, results, conclusion}.
+Non-minimal incarnations allow for many different structures but
+even complex structures (with long strings) \emph{can} be easy to read.
+Other structures, however, can be problematic.
+The full list of abstracts structures is too long to discuss it here:
+It has \Sexpr{n_struc[!n_struc$is_design, "n_distinct"]} entries for empirical articles and
+\Sexpr{n_struc[n_struc$is_design, "n_distinct"]} for design articles.
+
+We have found no simple criterion to reliably diagnose which of these to consider convoluted
+and which not, so this section will only provide examples and does not quantify
+how many abstracts are actually convoluted.
+Furthermore, even abstracts that \emph{do} conform to the archetype
+can be confusing for semantic reasons.
+We will include examples of this type as well. 
+
+Abstract structures with more than two instances are shown in 
+Figure~\ref{ab_topicstructure_freqs_empir} for empirical articles and
+Figure~\ref{ab_topicstructure_freqs_design} for design articles.
+(Fractional frequencies such as $2.5$ mean that the two coders did not agree.)
+
+\Plot{ab_topicstructure_freqs_empir}{%
+  The frequency of different trains-of-thought in the abstract for empirical articles.
+  The label is a string of stretch-code characters:
+  b\mbox{-}ackground, g\mbox{-}ap, o\mbox{-}bjective, d\mbox{-}esign, m\mbox{-}ethod, r\mbox{-}esult,
+  s\mbox{-}ummary, c\mbox{-}onclusion, O\mbox{-}utlook.}
+\Plot{ab_topicstructure_freqs_design}{%
+  The frequency of different trains-of-thought in the abstract for design articles.
+  Same characters as before, except that d\mbox{-}esign can now in fact occur.}
+
+
+\subsubsection{Structured Abstracts}
+
+Structured abstracts help reduce confusion in two ways:
+They standardize the order in which ideas are presented, so readers know what to expect when.
+And their subheadings announce specifically what is to come next, which avoids many ambiguities.
 
 Today's conventions for structured abstracts may be a bit restrictive
 (e.g. by not accommodating the useful \strct{mrmr} substructure),
-but they do result in more orderly abstracts:
+but they do indeed result in more orderly abstracts:
 There are only \Sexpr{n_distinct_empir_struct} different abstract structures
-among the \emph{structured} abstracts of empirical articles
-versus \Sexpr{round(n_distinct_empir_all)}
-across all empirical articles.\footnote{%
-  Median of 1,000 same-sized samples; 95\%~CI
-[\Sexpr{round(n_distinct_empir_all_ci[1])}, \Sexpr{round(n_distinct_empir_all_ci[2])}].
-}
+for the \Sexpr{c_design_empir_struc} structured abstracts of empirical articles,
+but \Sexpr{round(n_distinct_empir_nonstruc)} different abstract structures on average
+for a random sample of the same size of the non-structured abstracts of empirical articles.
+% \footnote{95\%~CI
+%   [\Sexpr{round(n_distinct_empir_nonstruc_ci[1])}, \Sexpr{round(n_distinct_empir_nonstruc_ci[2])}].}
+
+The orderliness of a structured abstract may not help, however, if the supposed structure is broken.
+We have seen only few cases of this for empirical articles, 
+but once in a while some piece of information appears not where it should
+(such as \Cb{Background} in the \Sah{Objective} section in \Art{LiaGaoXia22})
+or authors appear to have added the subheadings to an already written nonstructured abstract
+without rewriting it, so that lots of sections contain information of the wrong type
+(as in \Art{SelOunSai22}).
+
+The latter of these occurs in design articles as well (as in \Art{GeFanQia22}).
+The former is even unavoidable for a design article, as no proper place for design information
+exists in today's conventional structured abstract section list.
+
+% #confusing LiaGaoXia22(e, struc, background in h-objective section)
+% #confusing SelOunSai22(e, struc, misplaced info in several sections),
+% #confusing GeFanQia22(d+struc with bad fit),
+
+
+\subsubsection{Empirical Articles}
+
+As we see in Figure~\ref{ab_topicstructure_freqs_empir},
+there are only 8 among the \Sexpr{n_distinct_empir_struct} different abstract structures of empirical works
+that occur more than twice.
+Of these, bars 5, 6, 7 show abstracts with a non-archetypical train of thought:
+They mix \Cb{method} and \Cb{objective} 
+(\strct{bmomrc} and \strct{bgmorc})
+% \strct{bmomrc}: \Art{ForStoZim22}, \Art{NolShaGao22}, \Art{PapGroSub22}, \Art{RahImtSto22}, 
+% \strct{bgmorc}: \Art{LiPenXia22}, \Art{MasHodBli22}, \Art{WanZhaZha22})
+or have a trailing \Cb{result} after the \Cb{conclusion} 
+(\strct{bgomrcr}).
+
+When we annotated the abstracts, we kept notes on remarkable cases of all kinds.
+Combing through those notes, we can look for patterns of actually confusing abstracts.
+For the empirical works, 
+there are some abstracts with information that is partially out-of-place or mis-shaped 
+and will increase cognitive load for readers, 
+but they are diverse and hardly worth calling a common pattern; for example:
+\Cb{method} before \Cb{objective} (\Art{PreMohVil22}),
+additional \Cb{background} late in the abstract (\Art{UddGuéKho22}),
+a sudden second objective in the very last sentence (\Art{DanPlaHer22}),
+an objective that sounds like from a design work (\Art{GaoZhuZha22}),
+repeating (in different words) the objective where a conclusion should be (\Art{AhmMerBah22}),
+or mixing present tense and past tense such that results sound as if they were conclusions (\Art{ValHunFig22}).
+
+% #confusing AhmMerBah22(e, repeats o in different words instead of a conclusion)
+% #confusing DanPlaHer22(e, new 2nd o in last sentence),
+% #confusing GaoZhuZha22(e, but objective sounds like d),
+% #confusing PreMohVil22(e, method before objective),
+% #confusing UddGuéKho22(e, background later in abstract to explain study history),
+% #confusing ValHunFig22(e, mixing present+past tense so that results sound like concls),
+% #notused   MaMocZar22(e/d, struc, conclusion in objective section)
+
+
+\subsubsection{Design Articles}\label{structure-design-articles}
+
+As we see in Figure~\ref{ab_topicstructure_freqs_design},
+many of the common structures of design works lack some expected parts, 
+most often a conclusion, which is missing for all bars except numbers 3, 8, and 10.
+Yet in terms of the \emph{order} of things, only two structures deviate from the archetype:
+\strct{bodm} (bar 9) and 
+\strct{bgodcm} (bar 10),
+both of which curiously end with \Cb{method} information.
+Having multiple \strct{mr} pairs is more common for design works than it is for empirical works.
+
+As for truly confusing abstracts, the most conspicuous pattern is an unclear answer to the
+most fundamental question: Is this a design work or an empirical work?
+This issue occurs in various forms:
+a clear design \Cb{objective}, but a solely empirical \Cb{conclusion} (\Art{CorRweFra22}),
+the \Cb{objective} is phrased like for an empirical work, but the \Cb{conclusion} makes clear it is a design work (\Art{BocSchApe22}, \Art{SuFanChe22}),
+a clear design \Cb{objective}, but not a single \Cb{design} statement follows (\Art{FirFirRos22}, \Art{HerFerGal22}),
+there are two \Cb{objective} statements, placed non-continguously, and the first is clearly empirical (\Art{MadNagBir22}),
+or many statements throughout have an unclear role (\Art{NaeAla22}).
+
+% #confusing CorRweFra22(d objective, e conclusion),
+% #confusing FirFirRos22(d objective, but no d stmts),
+% #confusing BocSchApe22(e->d, obj sounds like e, but the conclusion makes it clearly d),
+% #confusing HerFerGal22(d with no design, only a-design),
+% #confusing MadNagBir22(d, first of two non-contiguous objectives is clearly e),
+% #confusing SuFanChe22(d, but objective can also be read like e),
+% #confusing NaeAla22(d, many sentences have unclear role),
+
+Of course, cases of misplaced information occur in design works as well, e.g.
+a \Cb{result} in the middle of a very long \Cb{background} section (\Art{NiuWuNie22}),
+\Cb{background} placed behind \Cb{objective}, which makes it sound a lot like a \Cb{result} (\Art{LuLiLiu22}),
+\Cb{method} and \Cb{result} placed after \Cb{h-conclusion} (\Art{HumKho22}, \Art{ImrDam22}).
+
+% #confusing NiuWuNie22(d, result in the very long background section),
+% #confusing LuLiLiu22(d, background after objective risks confusion with result)
+% #confusing HumKho22(d, struc, with m and r after h-conclusion),
+% #confusing ImrDam22(d, struc, again with m and r after h-conclusion),
+
+Other peculiarities appear in design works that we have not seen in empirical works, e.g.
+an \Cb{objective} that is difficult to recognize as such (\Art{TiaLiPia22}),
+formulating a \Cb{conclusion} without ever presenting a \Cb{result} (\Art{LiaHanLi22}),
+or a sequence of \Cb{objective}, \Cb{objective}, \Cb{design}+\Cb{result} phrased as a first{\ldots}then{\ldots}finally structure (\Art{GueLarChe22}).
+
+% #confusing LiaHanLi22(d, conclusion without results),
+% #confusing GueLarChe22(d, obj,obj,design+result phrased as first-then-finally),
+% #confusing TiaLiPia22(d, objective is difficult to recognize as such),
 
 
 \subsection{How Not To: Uninformative Formulations}
 
-A milder way of reducing the usefulness of an abstract is using formulations that
+Another way of reducing the usefulness of an abstract is using formulations that
 fail to provide information that, at this point, would be useful to the reader and
 could be provided using only very few additional words.
 
@@ -1810,6 +1856,30 @@ See groups three to six of Figure~\ref{nonzerofractionbar_xletgroups_missinginfo
 for details.
 
 
+\subsection{How To: Information-Rich Formulations}
+
+Some authors manage to pack large amounts of relevant information into a sentence.
+This most often occurs for \Cb{method} or \Cb{result} information.
+
+Consider this \Cb{method} sentence:
+\Quote{Therefore, through a case study of 9 open source software projects across 30 versions, 
+  we study the relative effectiveness of SNA metrics when compared to code metrics across 
+  3 commonly used SDP contexts (Within-project, Cross-version and Cross-project) 
+  and scenarios (Defect-count, Defect-classification (classifying if a module is defective) and Effort-aware (ranking
+the defective modules w.r.t to the involved effort)).} (\Art{GonRajHas22})
+
+This sentence is difficult to read, but pays back for the effort by being \emph{enormously} informative.
+ 
+Or consider this well-designed \Cb{method}+\Cb{result} sentence:
+\Quote{We evaluate the three versions on a set of 299 data constraints from 15 real-world Java
+  systems, and find that they improve method-level link recovery
+  by 30\%, 70\%, and 163\%, in terms of true positives within the first
+  10 results, compared to their text-retrieval-based baseline.} (\Art{FloPerWei22})
+
+Easily readable, related information is kept together, and the meaning of results is explained precisely.
+We wished more authors would write like this!
+
+
 \subsection{How Not To: Undefined Important Terms}\label{ugaps}
 
 It is normal that the reader of an abstract has only a fuzzy understanding
@@ -1817,7 +1887,7 @@ of what certain terms in the abstract mean.
 In a good abstract, the \emph{approximate} meaning of a statement using such a term
 still comes across.
 Sometimes, however, this is not the case:
-The uncertainty regarding the meaning of the term becomes so large
+The uncertainty regarding the meaning of the term weighs so much
 that the sentence containing it becomes incomprehensible.
 We call such a term use an understandability gap (coded \Cb{:u}, see Section~\ref{subjective-codes})
 and consider such abstracts to be \emph{improper}.
@@ -1827,7 +1897,7 @@ Here is an example from \Art{HamMetQas22}:
   that it is 91.7\% lucid and 72.2\% laconic.} 
 Neither of the terms ``lucid'' or ``laconic'' have been introduced before, so that
 this sentence has two understandability gaps and
-an average reader is not able to make sense of this statement
+an average reader is not able to make sense of this important statement
 which represents half of the work's results.
 
 <<>>=
@@ -1861,7 +1931,7 @@ The issue is most pronounced at \Sexpr{venue_worst_ugap$venue}.
 Codings with an \Cb{-ignorediff} marker indicate cases where the coders could not agree
 despite discussion (see Section~\ref{ignorediff}):
 the respective sentence (or sentence part) is so highly ambiguous that
-more than one role for it is similarly likely.
+more than one role for it is plausible.
 Obviously, such ambiguous formulations do not represent good abstract writing
 and we consider such abstracts to be \emph{improper}.
 
@@ -2033,9 +2103,9 @@ stats_overview |>
 \subsection{How To: Structured Abstracts are more orderly}\label{structuredgood}
 
 This study is mostly exploratory.
-Our only clear expectation at the start was that structured abstracts would be
-somehow better (whatever that was going to mean) than unstructured ones.
-Therefore, we perform two statistical hypothesis tests here that compare
+Our only clear expectation at the start was that structured abstracts would tend to be
+better (whatever that was going to mean) than unstructured ones.
+Therefore, we perform two statistical hypothesis tests that compare
 structured to unstructured abstracts.
 
 <<>>=
@@ -2099,7 +2169,7 @@ could never scale to the hundreds of abstracts we look at here,
 and, whichever operationalization it chose,
 it would be imperfect and controversial.
 We therefore decided to analyze properties of abstracts
-that are arguably problematic, although we cannot say just how
+that are \emph{arguably} problematic, although we cannot say just how
 problematic in each case, resulting in count statistics only.
 
 External validity is the degree to which the results generalize
@@ -2110,7 +2180,7 @@ we studied, perhaps a bit less for ICSE because of its
 varying location and hence more varying authors.
 Whether it also generalizes to other venues
 we cannot know, but we would be surprised if venues of lower
-scientific reputation had articles with better abstracts.
+scientific reputation had articles with much better abstracts.
 
 
 %========================================================================
@@ -2139,21 +2209,21 @@ informativeness and understandability
 Section~\ref{ambiguity}).
 We define and quantify further quality issues not included in the above number 
 (Figures~\ref{box_xletgroups_topicfractions}, \ref{box_xletgroups_conclusionfractions}, 
-\ref{nonzerofractionbar_xletgroups_missinginfofractions}, and
-Section~\ref{convoluted}).
+\ref{nonzerofractionbar_xletgroups_missinginfofractions}, and non-quantitative
+Section~\ref{confusing}).
 This low abstracts quality exists despite the fact that we analyzed only venues
 supposed to have high quality.
 
-This is deplorable, because for the vast majority readers of a typical article,
-the abstract is the first part they read \cite{ShiGalMil24} --- and often the only.
-Futhermore, indexes and search engines such as \emph{Scopus AI}\footnote{%
+This is deplorable, because for the vast majority of readers,
+the abstract is the first part they read \cite{ShiGalMil24} --- and often the only part.
+Futhermore, scientific indexes and specialized search engines such as \emph{Scopus AI}\footnote{%
   \url{https://www.elsevier.com/products/scopus/scopus-ai}
 } rely heavily on abstracts.
 With the above level of abstracts quality, readers will get far less
 well informed than they could have been and the spread of knowledge
 will be slowed down accordingly, needlessly wasting public money.
 
-We conclude the software engineering research community should pay
+We conclude that the software engineering research community should pay
 more attention to abstract-writing.
 Presumably, introducing a structured abstract format 
 and accompanying writing instructions that suit 
@@ -2162,25 +2232,27 @@ engineering research would help.
 
 \subsection{How To: Guidelines for Well-Written Abstracts}\label{howto-guidelines}
 
-\subsubsection{For Authors}
+\subsubsection{For Authors}\label{guidelinesauthors}
 
 The steps cross-reference the article sections that supply 
 detail or evidence.
 
 \begin{enumerate}
-  \item Write a structured abstract, not a free-flowing one 
-    (see Section~\ref{structuredgood}).
-    Take care to avoid announcements (see Section~\ref{announcements}),
+  \item Write a structured abstract, not a free-flowing one (see Section~\ref{structuredgood}) 
+    and follow the archetype (Sections~\ref{archetype}).
+    If the venue requires structured abstracts in an unsuitable format, protest.
+  \item Take care to avoid announcements (see Section~\ref{announcements}),
     understandability gaps (see Section~\ref{ugaps}),
     and sentences with an unclear role (see Section~\ref{ambiguity}).
-    Provide helpful detail, perhaps simplified, if it consumes barely any space
+    Provide helpful detail, perhaps simplified, if it requires only little space
     (see Section~\ref{igaps}).
-  \item Write a \Sah{Background} section that provides just enough context
+  \item Write a short \Sah{Background} section that provides just enough context
     and motivation to understand the subsequent \Sah{Objective} 
     (see Section~\ref{inefficient_allocation}).
   \item Decide on your main contribution. 
     Is your article a design article or an empirical one?
-    Write an \Sah{Objective} that expresses the type and your specific goal succinctly.
+    Write an \Sah{Objective} that expresses the type and your specific goal succinctly
+    (see Section~\ref{confusing}).
     If your background information contains a corresponding \Sah{Gap} statement,
     clearly phrase it as such.
   \item If your work is a design article, 
@@ -2191,7 +2263,7 @@ detail or evidence.
     use two or three combined \Sah{Method and Results} sections.
     Each of these will typically be a single sentence of the form
     ``We do-this-and-that and find this-and-that.''
-    (see Section~\ref{convoluted}).
+    (see Section~\ref{confusing}).
     Otherwise write separate \Sah{Methods} and \Sah{Results} sections
     as follows.
   \item Write a \Sah{Methods} section that explains what you have done
@@ -2209,9 +2281,9 @@ detail or evidence.
     What do we now know that we did not know before?
     The broader the conclusion, the higher the relevance of your work,
     but the lower its credibility. 
-    Find a formulation with relevance and good enough credibility.
-    Expect to later be proven wrong for some of your works, but not for many
-    (see Section~\ref{inefficient_allocation}).
+    Find a formulation with good relevance and good-enough credibility.
+    Do not be a coward (see Section~\ref{missing_elements}):
+    Dare to later be proven wrong for a few of your works.
   \item An outlook on future possibilities \emph{can} be part of your \Sah{Conclusion},
     but is usually better left to the body of your article.
 \end{enumerate}
@@ -2220,23 +2292,23 @@ detail or evidence.
 
 \subsubsection{For Venues}
 
-Structured abstracts are not currently used widely in software engineering.
-In their usual form, which does not suit design articles, 
-this is understandable, even appropriate.
+Structured abstracts are not currently used widely in software engineering, presumably
+because their usual form does not suit design articles. 
 
-In the above extended form, however, 
-(allowing \Sah{Gap} statements, 
-allowing \Sah{Design} sections, 
-allowing multiple \Sah{Methods and Results} sections) 
+In a suitably extended form, however, 
 structured abstracts promise better abstracts quality than a free-style format
 because our results strongly suggest that a structured format is helpful for 
 completeness. Previous results show that it is also helpful for understandability.
-Therefore, venues should require structured abstracts in our new,
-engineering-ready format.
+Therefore, venues should require structured abstracts in such a new,
+engineering-ready format as described by 
+Table~\ref{tab:codes} and Sections~\ref{archetype} and \ref{guidelinesauthors}:
+allowing \Sah{Gap} statements, 
+allowing \Sah{Design} sections, and  
+allowing multiple \Sah{Methods and Results} sections.
 
 For your call for papers, feel free to copy the above text,
 point your readers to the online version,\footnote{\url{https://github.com/serqco/qabstracts/blob/main/rec_abs_structure.md}}
-or point authors to this article for the underlying evidence.
+perhaps point authors to this article for the underlying evidence.
 
 
 %========================================================================

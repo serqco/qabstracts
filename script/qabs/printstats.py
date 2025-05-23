@@ -8,16 +8,16 @@ import qscript.plottypes as pt
 
 
 def print_all_stats(args: argparse.Namespace, datasets: argparse.Namespace, outputdir: str):
+    print_abstracts_structures_counts(datasets.ab_structures)
     if args.printall:
         print_abtype_table(datasets.by_abstract)
         if args.withoutdesignworks:
             comment_out_design_works(args.withoutdesignworks, datasets.by_abstract)
         print_abstracts_with_canonical_structure(datasets.ab_structures)
-        print_abstracts_structures_counts(datasets.ab_structures)
         print_gaps_stats(datasets.df_primary1, datasets.by_abstract)
         print_ignorediff_stats(datasets.df_primary1, datasets.by_abstract)
-    print_test(datasets.by_abstract, 'is_complete')
-    print_test(datasets.by_abstract, 'is_proper')
+        print_test(datasets.by_abstract, 'is_complete')
+        print_test(datasets.by_abstract, 'is_proper')
 
 
 def comment_out_design_works(samplewhowhatfile: str, df: pd.DataFrame):
@@ -68,6 +68,7 @@ def print_abtype_table(df: pd.DataFrame):
     print(res2/2)
     print("Total:", len(df), "codings of abstracts, ", len(df)//2, "abstracts")
 
+
 def print_abstracts_with_canonical_structure(df):
     _printheader()
     canonical_structure = 'bgomrc'
@@ -77,17 +78,34 @@ def print_abstracts_with_canonical_structure(df):
 
 
 def print_abstracts_structures_counts(df):
+    def show_this(abstract, interest):
+        strucsign = 's' if abstract.is_struc else ' '
+        interestsign = '!' if abstract.topicstructure in interest else ' '
+        print(f"  {abstract.citekey}\t{strucsign}{interestsign}\t{abstract.topicstructure}")
+
     _printheader()
     alltypes = df.topicstructure.value_counts().index
     alltypes_structured = df.loc[df.is_struc].topicstructure.value_counts().index
     for_empir = [t for t in alltypes if "d" not in t]
     for_empir_struc = [t for t in alltypes_structured if "d" not in t]
     for_design = [t for t in alltypes if "d" in t]
+    empir_interest = {'bgmorc', 'bmomrc', 'bgomrcr'}
+    design_interest = {'bodm', 'bgodcm'}
     print(f"#abstracts structures empirical:\n{for_empir}")
     print(f"#abstracts structures empirical (structured only):\n{for_empir_struc}")
     print(f"#abstracts structures design:\n{for_design}")
     print(f"#abstracts structures: empirical {len(for_empir)}, "
           f"empirical structured {len(for_empir_struc)}, design {len(for_design)}")
+    print("longest topic structures (empirical articles, len 10+)")
+    for i in range(len(df)):
+        abstract = df.iloc[i]
+        if not abstract.is_design and (len(abstract.topicstructure) > 9 or abstract.topicstructure in empir_interest):
+            show_this(abstract, empir_interest)
+    print("longest topic structures (design articles, len 11+)")
+    for i in range(len(df)):
+        abstract = df.iloc[i]
+        if abstract.is_design and (len(abstract.topicstructure) > 10 or abstract.topicstructure in design_interest):
+            show_this(abstract, design_interest)
 
 
 def print_ignorediff_stats(codings: pd.DataFrame, abstracts: pd.DataFrame):
