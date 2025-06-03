@@ -161,7 +161,14 @@ df_c <- datasets$by_abstract_coding
 <<define-helpers, echo=FALSE, message=FALSE>>=
 # Percentages occur often and need to be properly escaped in LaTeX
 format_percent <- function(value, accuracy = 1) {
-  scales::label_percent(accuracy)(value |> as.numeric()) |> as.character() |> stringr::str_replace("%", "\\\\%")
+  scales::label_percent(accuracy)(as.numeric(value)) |>
+    as.character() |>
+    stringr::str_replace("%", "\\\\%")
+}
+
+# Small values get an extra decimal
+format_percent_flex <- function(value) {
+  format_percent(value, ifelse(value < 0.03, 0.1, 1))
 }
 
 # The reported precision of p-values depends on its magnitude
@@ -170,7 +177,7 @@ format_p_value <- function(p) {
     p < 0.001 ~ "p<0.001",
     p < 0.01  ~ "p<0.01",
     p < 0.05  ~ "p<0.05",
-    p < 0.1  ~ "p<0.1",
+    p < 0.1   ~ "p<0.1",
     .default = sprintf("p=%.2f", p)
   )
 }
@@ -268,10 +275,11 @@ r_max <- function(metric) {
 r_range <- function(metric) {
   stats_overview |>
     filter(name == metric) |>
-    select(r_min, r_max) |>
-    mutate(across(everything(), format_percent)) |>
-    glue_data("[{r_min}, {r_max}]")  # TODO: change into a plus/minus format with only 1 number
-    # glue_data("$\\pm${round(r_max-r_min, ifelse(r_max-r_min < 7.5, 1, 0))}")  # make work for percent!
+    mutate(r_width = (r_max-r_min)/2) |>
+    select(r_value, r_min, r_max, r_width) |>
+    mutate(across(everything(), format_percent_flex)) |>
+    #glue_data("[{r_min}, {r_max}]")  # as interval
+    glue_data("$\\pm${r_width}")     # as plus/minus
 }
 @
 
@@ -1027,9 +1035,8 @@ We calculate and report percentages across all \emph{codings}
 as well as lenient and conservative percentages per \emph{abstract}
 ($n_A\,{=}\,\Sexpr{nrow(df)}$),
 for which either both or just one coder are necessary to attest a deficiency, respectively.
-In the text, we report these numbers in square brackets;
-in the plots, we show them as error bars.
-When we write  % TODO: adapt to plus/minus format with only 1 number
+We report these numbers with $\pm$ in the text and as error bars in the plots.
+When we write
 \Pseudoquote{\Sexpr{r_complete} \Sexpr{r_range("n_complete_yes")} of the abstracts are complete},
 we mean that \Sexpr{r_complete} of the \Sexpr{nrow(df_c)} abstract codings qualify
 the corresponding abstract as \emph{complete},
@@ -2041,7 +2048,6 @@ We expected to find many problems in abstracts but still find this outcome aston
 # Compile overview table
 stats_overview |>
   filter(!name %in% c("n_igap_yes3")) |>
-  mutate(across(starts_with("r_"), format_percent)) |>
   mutate(
     name  = case_match(
       name,
@@ -2055,8 +2061,12 @@ stats_overview |>
       paste0(as.integer(value), "~~"),
       as.character(value)),
     value = cell_spec(value, escape = FALSE),
-    n_range = ifelse(!is.na(min), glue("[{min}, {max}]"), ""),
-    r_range = ifelse(!is.na(min), glue("[{r_min}, {r_max}]"), ""),
+    r_value = format_percent_flex(r_value),
+    n_width = ifelse(!is.na(min), (max-min)/2, ""),
+    n_range = ifelse(!is.na(min), glue("$\\pm${n_width}"), ""),
+    r_width = ifelse(!is.na(min), (r_max-r_min)/2, ""),
+    r_width = ifelse(!is.na(min), format_percent_flex(r_width), ""),
+    r_range = ifelse(!is.na(min), glue("$\\pm${r_width}"), ""),
   ) |>
   select(name, value, n_range, r_value, r_range) |>
   kbl(
@@ -2068,10 +2078,9 @@ stats_overview |>
     label = "overview",
     caption = "For each coding-based quality criterion,
       there is a possibility for disagreement between the
-      two codings. Numbers in brackets show the extent of
-      that disagreement: For a negative criterion (italics),
+      two codings: For a negative criterion (italics),
       the lower value denotes the number of abstracts for
-      which \\emph{both} codings lead a negative evaluation,
+      which \\emph{both} codings lead to a negative evaluation,
       the higher value denotes the number of abstracts for
       which \\emph{at least one} coding leads to a negative
       evaluation."
