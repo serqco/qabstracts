@@ -169,7 +169,7 @@ format_percent <- function(value, accuracy = 1) {
 
 # Small values get an extra decimal
 format_percent_flex <- function(value) {
-  format_percent(value, ifelse(value < 0.03, 0.1, 1))
+  format_percent(value, ifelse(value < 0.05, 0.1, 1))
 }
 
 # The reported precision of p-values depends on its magnitude
@@ -279,7 +279,6 @@ r_range <- function(metric) {
     mutate(r_width = (r_max-r_min)/2) |>
     select(r_value, r_min, r_max, r_width) |>
     mutate(across(everything(), format_percent_flex)) |>
-    #glue_data("[{r_min}, {r_max}]")  # as interval
     glue_data("$\\pm${r_width}")     # as plus/minus
 }
 @
@@ -2064,9 +2063,10 @@ stats_overview |>
     r_value = format_percent_flex(r_value),
     n_width = ifelse(!is.na(min), (max-min)/2, ""),
     n_range = ifelse(!is.na(min), glue("$\\pm${n_width}"), ""),
-    r_width = ifelse(!is.na(min), (r_max-r_min)/2, ""),
-    r_width = ifelse(!is.na(min), format_percent_flex(r_width), ""),
-    r_range = ifelse(!is.na(min), glue("$\\pm${r_width}"), ""),
+    # r_width = ifelse(!is.na(min), format_percent_flex((r_max-r_min))/2, ""),
+    # r_range = ifelse(!is.na(min), glue("$\\pm${r_width}"), ""),
+    r_value = min,
+    r_range = max,
   ) |>
   select(name, value, n_range, r_value, r_range) |>
   kbl(
