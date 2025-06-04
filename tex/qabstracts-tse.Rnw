@@ -1742,7 +1742,7 @@ or a sequence of \Cb{objective}, \Cb{objective}, \Cb{design}+\Cb{result} phrased
 % #confusing TiaLiPia22(d, objective is difficult to recognize as such),
 
 
-\subsection{How Not To: Uninformative Formulations}
+\subsection{How Not To: Uninformative Formulations}\label{uninformative}
 
 Another way of reducing the usefulness of an abstract is using formulations that
 fail to provide information that, at this point, would be useful to the reader and
@@ -1861,30 +1861,6 @@ yet \Sexpr{r_announce} \Sexpr{r_announce_range}
 of all abstracts have at least one and we consider those \emph{improper}.
 See groups three to six of Figure~\ref{nonzerofractionbar_xletgroups_missinginfofractions}
 for details.
-
-
-\subsection{How To: Information-Rich Formulations}
-
-Some authors manage to pack large amounts of relevant information into a sentence.
-This most often occurs for \Cb{method} or \Cb{result} information.
-
-Consider this \Cb{method} sentence:
-\Quote{Therefore, through a case study of 9 open source software projects across 30 versions, 
-  we study the relative effectiveness of SNA metrics when compared to code metrics across 
-  3 commonly used SDP contexts (Within-project, Cross-version and Cross-project) 
-  and scenarios (Defect-count, Defect-classification (classifying if a module is defective) and Effort-aware (ranking
-the defective modules w.r.t to the involved effort)).} (\Art{GonRajHas22})
-
-This sentence is difficult to read, but pays back for the effort by being \emph{enormously} informative.
- 
-Or consider this well-designed \Cb{method}+\Cb{result} sentence:
-\Quote{We evaluate the three versions on a set of 299 data constraints from 15 real-world Java
-  systems, and find that they improve method-level link recovery
-  by 30\%, 70\%, and 163\%, in terms of true positives within the first
-  10 results, compared to their text-retrieval-based baseline.} (\Art{FloPerWei22})
-
-Easily readable, related information is kept together, and the meaning of results is explained precisely.
-We wished more authors would write like this!
 
 
 \subsection{How Not To: Undefined Important Terms}\label{ugaps}
@@ -2121,6 +2097,31 @@ Indeed, the proper abstracts are so few, we can list them here completely.
 \item Design works with non-structured abstract:
   \Art{BarDuDav22}, \Art{CorRweFra22}, \Art{GalEwaJun22}, \Art{GerMarLat22}, \Art{HanMeh22}, \Art{YeGuMar22}.
 \end{itemize}
+
+
+\subsection{How To: Information-Rich Formulations}
+
+When avoiding the uninformative formulations of Section~\ref{uninformative},
+some authors manage to pack large amounts of relevant information into a sentence.
+This most often occurs for \Cb{method} or \Cb{result} information.
+
+Consider this \Cb{method} sentence:
+\Quote{Therefore, through a case study of 9 open source software projects across 30 versions, 
+  we study the relative effectiveness of SNA metrics when compared to code metrics across 
+  3 commonly used SDP contexts (Within-project, Cross-version and Cross-project) 
+  and scenarios (Defect-count, Defect-classification (classifying if a module is defective) and Effort-aware (ranking
+the defective modules w.r.t to the involved effort)).} (\Art{GonRajHas22})
+
+This sentence is complex, but pays back for the reading effort by being \emph{enormously} informative.
+ 
+Or consider this well-designed \Cb{method}+\Cb{result} sentence:
+\Quote{We evaluate the three versions on a set of 299 data constraints from 15 real-world Java
+  systems, and find that they improve method-level link recovery
+  by 30\%, 70\%, and 163\%, in terms of true positives within the first
+  10 results, compared to their text-retrieval-based baseline.} (\Art{FloPerWei22})
+
+Easily readable, related information is kept together, and the meaning of results is explained precisely.
+We wished more authors would write like this!
 
 
 \subsection{How To: Structured Abstracts are more orderly}\label{structuredgood}
