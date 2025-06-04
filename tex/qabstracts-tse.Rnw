@@ -2046,7 +2046,6 @@ We expected to find many problems in abstracts but still find this outcome aston
 # Compile overview table
 stats_overview |>
   filter(!name %in% c("n_igap_yes3")) |>
-  mutate(across(starts_with("r_"), format_percent)) |>
   mutate(
     name  = case_match(
       name,
@@ -2063,10 +2062,9 @@ stats_overview |>
     r_value = format_percent_flex(r_value),
     n_width = ifelse(!is.na(min), (max-min)/2, ""),
     n_range = ifelse(!is.na(min), glue("$\\pm${n_width}"), ""),
-    # r_width = ifelse(!is.na(min), format_percent_flex((r_max-r_min))/2, ""),
-    # r_range = ifelse(!is.na(min), glue("$\\pm${r_width}"), ""),
-    r_value = min,
-    r_range = max,
+    r_width = ifelse(!is.na(min), (r_max-r_min)/2, ""),
+    r_width = ifelse(!is.na(min), format_percent_flex(r_width), ""),
+    r_range = ifelse(!is.na(min), glue("$\\pm${r_width}"), ""),
   ) |>
   select(name, value, n_range, r_value, r_range) |>
   kbl(
