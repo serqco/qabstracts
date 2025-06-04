@@ -1,5 +1,6 @@
 % Article about SE abstracts quality (qabstracts) for IEEE Trans. on Software Engineering
 % \Todo:
+% - upon data or criteria changes, check hardcoded stuff marked by #nonknitr
 % - decide which part of figure discussion belongs into caption and which into the body text
 % - https://bjoern.brembs.net/2016/01/even-without-retractions-top-journals-publish-the-least-reliable-science/
 % - check consistent use of \Cb, \Sah, \Art and of \Quote, \Pseudoquote, \QuoteCB
@@ -53,7 +54,7 @@
 \newcommand{\Prg}[1]{\bgroup\ttfamily #1\egroup}  % commands and script names
 \newcommand{\strct}[1]{\bgroup\ttfamily\bfseries #1\egroup}  % abstract structure topicletter string
 % link to an article sample annotated abstract:
-\newcommand{\Art}[1]{\href{https://github.com/serqco/qabstracts/blob/main/abstracts/abstracts.raw/\string#1.txt}{\bgroup[#1]\egroup}}
+\newcommand{\Art}[1]{\href{https://github.com/serqco/qabstracts/blob/main/abstracts/abstracts.A/\string#1.txt}{\bgroup[#1]\egroup}}
 \newcommand{\Repo}[2]{\href{https://github.com/serqco/qabstracts/blob/main/\string#2}{#1}}
 \newcommand{\Sah}[1]{\bgroup\scshape #1\egroup}  % structured abstract heading
 
@@ -1037,7 +1038,7 @@ as well as lenient and conservative percentages per \emph{abstract}
 for which either both or just one coder are necessary to attest a deficiency, respectively.
 We report these numbers with $\pm$ in the text and as error bars in the plots.
 When we write
-\Pseudoquote{\Sexpr{r_complete} \Sexpr{r_range("n_complete_yes")} of the abstracts are complete},
+\Pseudoquote{\Sexpr{r_complete}\Sexpr{r_range("n_complete_yes")} of the abstracts are complete},
 we mean that \Sexpr{r_complete} of the \Sexpr{nrow(df_c)} abstract codings qualify
 the corresponding abstract as \emph{complete},
 and that for \Sexpr{r_min("n_complete_yes")} of the \Sexpr{nrow(df)} abstracts both coders agreed,
@@ -1506,7 +1507,7 @@ are still common here
 (r_complete_range <- r_range("n_complete_yes"))
 @
 
-Overall, only \Sexpr{r_complete} \Sexpr{r_complete_range} of all abstracts are \emph{complete}
+Overall, only \Sexpr{r_complete}\Sexpr{r_complete_range} of all abstracts are \emph{complete}
 in the sense that they contain all basic elements
 \Cb{background} (or \Cb{gap}), \Cb{objective}, \Cb{method}, \Cb{result}, and \Cb{conclusion}.
 
@@ -1591,7 +1592,7 @@ For investigating this issue, we map each abstract's structure to a sequence of 
 where each letter stands for a contiguous stretch of sentences in the abstract
 that have the same topic (see Table~\ref{tab:codes}).\footnote{However, if a, say, 
   \Cb{h-conclusion} is followed by, say, a \Cb{summary} (which is a common style), 
-  this would lead to a topicletter string that looks more complicated than the abstract actually reads.
+  this would result in a topicletter string that looks more complicated than the abstract actually reads.
   We find this misleading and hence exclude \Cb{h-*} codes from the topicletter string.}
 For instance, an abstract that follows a minimal incarnation of the archetype
 for an empirical article would be encoded as \strct{bomrc}, which stands for
@@ -1645,7 +1646,7 @@ The orderliness of a structured abstract may not help, however, if the supposed 
 We have seen only few cases of this for empirical articles, 
 but once in a while some piece of information appears not where it should
 (such as \Cb{Background} in the \Sah{Objective} section in \Art{LiaGaoXia22})
-or authors appear to have added the subheadings to an already written nonstructured abstract
+or authors appear to have added the subheadings to an already written non-structured abstract
 without rewriting it, so that lots of sections contain information of the wrong type
 (as in \Art{SelOunSai22}).
 
@@ -1661,7 +1662,8 @@ exists in today's conventional structured abstract section list.
 \subsubsection{Empirical Articles}
 
 As we see in Figure~\ref{ab_topicstructure_freqs_empir},
-there are only 8 among the \Sexpr{n_distinct_empir_struct} different abstract structures of empirical works
+there are only 8 % #nonknitr
+among the \Sexpr{n_distinct_empir_struct} different abstract structures of empirical works
 that occur more than twice.
 Of these, bars 5, 6, 7 show abstracts with a non-archetypical train of thought:
 They mix \Cb{method} and \Cb{objective} 
@@ -1801,10 +1803,9 @@ A better formulation could have been:
 (r_igap3_range <- r_range("n_igap_yes3"))
 @
 
-More than half of all abstracts (\Sexpr{r_igap1} \Sexpr{r_igap1_range}) have an informativeness gap
+More than half of all abstracts (\Sexpr{r_igap1}\Sexpr{r_igap1_range}) have an informativeness gap
 (making them \emph{improper})
-and \Sexpr{r_igap3} \Sexpr{r_igap3_range} have three or more.
-\Todo{Lutz: Maybe argue for the pessimistic value here?}
+and \Sexpr{r_igap3}\Sexpr{r_igap3_range} have three or more.
 See the leftmost two groups of Figure~\ref{nonzerofractionbar_xletgroups_missinginfofractions}
 for details.
 
@@ -1928,8 +1929,7 @@ which represents half of the work's results.
 
 See the rightmost group of Figure~\ref{nonzerofractionbar_xletgroups_missinginfofractions}
 for how frequent this is:
-About \Sexpr{r_ugap} \Sexpr{r_ugap_range} of all abstracts have one or more understandability gaps.
-\Todo{Lutz: Maybe argue for the pessimistic value here?}
+About \Sexpr{r_ugap}\Sexpr{r_ugap_range} of all abstracts have one or more understandability gaps.
 The issue is most pronounced at \Sexpr{venue_worst_ugap$venue}.
 
 
@@ -2023,16 +2023,15 @@ a majority of abstracts fails this very basic quality criterion, a depressing re
   Error bars for \emph{completeness} are due to ambiguous formulations (see Section~\ref{ignorediff}),
   error bars for \emph{properness} are due to differing coder perceptions of informativeness and understandability gaps
   (see Section~\ref{subjective-codes}).\\
-  Only \Sexpr{r_complete} \Sexpr{r_complete_range} of abstracts are \emph{complete}. 
+  Only \Sexpr{r_complete}\Sexpr{r_complete_range} of abstracts are \emph{complete}. 
 	Only about \Sexpr{format_percent(r_complete_unstruc$r_complete)} of unstructured abstracts and
   \Sexpr{format_percent(r_complete_design$r_complete)} of design article abstracts are complete.
 	Structured abstracts are much better and therefore all four supposedly top-quality venues
 	are beat by the much lower-regarded IST (3rd gray bar) which requires structured abstracts.\\
-	Only \Sexpr{r_proper} \Sexpr{r_proper_range} of abstracts are \emph{proper}.
+	Only \Sexpr{r_proper}\Sexpr{r_proper_range} of abstracts are \emph{proper}.
 	Here, too, structured abstracts are better than unstructured ones.
 	Our TOSEM sample has not a single proper abstract.
-	After that, ICSE (2nd gray bar) is worse than all remaining subgroups considered.
-	}
+}
 
 Our moderately stricter criterion of being \emph{proper} involves 
 being \emph{complete}, having acceptable Flesch-Kincaid readability (>20),
@@ -2040,7 +2039,7 @@ and having neither informativeness gaps nor understandability gaps nor highly am
 Given this list of criteria, improper abstracts will happen from time to time
 even for careful authors.
 Nevertheless, we believe that a majority of abstracts could and should be \emph{proper} in this sense.
-Yet what we find is that only \Sexpr{r_proper} \Sexpr{r_proper_range} of them indeed are.
+Yet what we find is that only \Sexpr{r_proper}\Sexpr{r_proper_range} of them indeed are.
 % TOSEM and ICSE are still worse than that.
 We expected to find many problems in abstracts but still find this outcome astonishingly bad. 
 
@@ -2048,6 +2047,7 @@ We expected to find many problems in abstracts but still find this outcome aston
 # Compile overview table
 stats_overview |>
   filter(!name %in% c("n_igap_yes3")) |>
+  mutate(across(starts_with("r_"), format_percent)) |>
   mutate(
     name  = case_match(
       name,
@@ -2080,9 +2080,9 @@ stats_overview |>
       there is a possibility for disagreement between the
       two codings: For a negative criterion (italics),
       the lower value denotes the number of abstracts for
-      which \\emph{both} codings lead to a negative evaluation,
+      which \\emph{both} codings indicate a negative evaluation,
       the higher value denotes the number of abstracts for
-      which \\emph{at least one} coding leads to a negative
+      which \\emph{at least one} coding indicates a negative
       evaluation."
   ) |>
   kable_styling() |>
@@ -2313,7 +2313,6 @@ detail or evidence.
     but is usually better left to the body of your article.
 \end{enumerate}
 
-\Todo{Take a good short design work abstract and show it in this format?}
 
 \subsubsection{For Venues}
 
