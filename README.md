@@ -94,6 +94,7 @@ is licensed under CC BY 4.0; see file `LICENSE-DATA`.
 - Plots modified? 
   Then run `make extract-git-timestamps plotall pdf`.
 - Article accepted/published? 
-  Then update article data in Section 2 of the present file.
+  Then update article data in Section 2 of the present file and
+  bring `recommended_abstracts_structure.md` in line with the respective part of the article.
 - Switch between journal version and arXiv version?
   Then set `\ifarxiv` accordingly in `tex/*.Rnw`.
