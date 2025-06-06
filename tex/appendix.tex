@@ -24,29 +24,32 @@ that is only summarized in the article proper.
 
 \Plot{ab_topicstructure_freqs_empir_structured}{%
   The frequency of different trains-of-thought in the abstract for empirical articles
-  using a structured abstract format.
-  The "Method:" etc. subheadings are ignored for structured abstracts in all three plots.}
+  using a structured abstract format.}
 
 
 \Plot{boxplots_icount}{%
-  A majority of abstracts has one or more ``informativeness gaps´´.
+  Frequency of informativeness gaps: A majority of abstracts has one or more of them.
   The problem tends to be smaller in structured abstracts.}
 \Plot{boxplots_ucount}{%
-  Some abstracts have understandability gaps where an important concept is not explained at all.
-  !!!}
+  Frequency of understandability gaps: 
+  Some abstracts have such spots where an important concept is not explained at all.}
 
 \Plot{boxplots_fraction_introduction}{%
-	Authors invest about a third of the space into the introduction:
+	Authors tend to invest a lot of the abstract's space (about a third) into the introduction:
 	background/context information and perhaps explaining a research gap.
-	Structured abstracts tend to have less of this???}
+	This is less pronounced in structured abstracts.}
 \Plot{boxplots_fraction_conclusion}{%
-	Many abstracts offer no conclusion, i.e., no explicit generalization of the immediate result.
+    Fraction of the abstract's space that gets invested into the conclusion.
+	Discussion: The conclusion is (or could and should be) the key takeaway for the reader, so 
+	a good abstract should probably spend enough space (perhaps about 10\%?) on the conclusion.
+	As we see here, very many articles offer less.
+	Many abstracts offer no conclusion at all.
 	This is worst at ICSE (with over 75\%)
 	and best at IST, which is the only venue where a majority of articles formulates a generalization.}
 
 \Plot{lowess_gaps_by_fracintro}{%
-	This plot checks the expectation that spending much space on background
+	This plot explores the expectation that spending much space on background
 	will correlate with more i and u gaps.
-	This is not the case.
+	This does not appear to be the case.
 	Each dot is one coding of an abstract, 
 	the line is a locally weighted linear regression.}
