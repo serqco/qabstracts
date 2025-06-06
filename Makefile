@@ -19,7 +19,9 @@ compare-codings:
 
 export:
 	$(QABSTRACTS) export $(STUDYDIR) >$(EXPORTFILE)
-	$(QABSTRACTS) extract-git-timestamps
+
+extract-git-timestamps:
+	$(QABSTRACTS) extract-git-timestamps  # requires the full git repo!
 
 knit:
 	Rscript -e "library(knitr); knit('tex/qabstracts-tse.Rnw', output='tex/qabstracts-tse.tex')" --args $(KNIT_ARGS)
@@ -40,4 +42,4 @@ plot:
 	$(QABSTRACTS) plot $(EXPORTFILE) img
 
 printall:
-	$(QABSTRACTS) plot --printall $(EXPORTFILE) img
+	$(QABSTRACTS) plot --printall $(EXPORTFILE) img  # mostly obsolete: now covered by knitr
