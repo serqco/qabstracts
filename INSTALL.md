@@ -9,6 +9,9 @@ Ditto for the R code.
 
 ### Installation Instructions
 
+Clone this repository with submodules or else you will be missing the `script/qscript` directory
+and the scripts will not execute successfully.
+
 Install Python, pip, R, knitr, and tidyverse:  
 `sudo apt install python3 python3-pip python-is-python3 r-base r-cran-knitr r-cran-tidyverse`
 
