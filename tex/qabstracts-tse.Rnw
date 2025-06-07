@@ -2334,7 +2334,7 @@ allowing \Sah{Design} sections, and
 allowing multiple \Sah{Methods and Results} sections.
 
 For your call for papers, feel free to copy the above text,
-point your readers to the online version,\footnote{\url{https://github.com/serqco/qabstracts/blob/main/recommended_abstracts_structure.md}}
+point your readers to the online version,\footnote{\url{https://github.com/serqco/qabstracts/blob/main/serqco-abstracts-structure.md}}
 perhaps point authors to this article for the underlying evidence.
 
 
