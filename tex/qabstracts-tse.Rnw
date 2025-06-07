@@ -1,6 +1,7 @@
 % Article about SE abstracts quality (qabstracts) for IEEE Trans. on Software Engineering
+% Some of the examples of abstracts with problematic properties that are mentioned are marked by 
+% #nongood or #confusing
 % \Todo:
-% - upon data or criteria changes, check hardcoded stuff marked by #nonknitr
 % - decide which part of figure discussion belongs into caption and which into the body text
 % - https://bjoern.brembs.net/2016/01/even-without-retractions-top-journals-publish-the-least-reliable-science/
 % - check consistent use of \Cb, \Sah, \Art and of \Quote, \Pseudoquote, \QuoteCB
@@ -1667,8 +1668,8 @@ that occur more than twice.
 Of these, bars 5, 6, 7 show abstracts with a non-archetypical train of thought:
 They mix \Cb{method} and \Cb{objective} 
 (\strct{bmomrc} and \strct{bgmorc})
-% \strct{bmomrc}: \Art{ForStoZim22}, \Art{NolShaGao22}, \Art{PapGroSub22}, \Art{RahImtSto22}, 
-% \strct{bgmorc}: \Art{LiPenXia22}, \Art{MasHodBli22}, \Art{WanZhaZha22})
+% #nongood \strct{bmomrc}: \Art{ForStoZim22}, \Art{NolShaGao22}, \Art{PapGroSub22}, \Art{RahImtSto22}, 
+% #nongood \strct{bgmorc}: \Art{LiPenXia22}, \Art{MasHodBli22}, \Art{WanZhaZha22})
 or have a trailing \Cb{result} after the \Cb{conclusion} 
 (\strct{bgomrcr}).
 
@@ -1678,12 +1679,13 @@ For the empirical works,
 there are some abstracts with information that is partially out-of-place or mis-shaped 
 and will increase cognitive load for readers, 
 but they are diverse and hardly worth calling a common pattern; for example:
-\Cb{method} before \Cb{objective} (\Art{PreMohVil22}),
-additional \Cb{background} late in the abstract (\Art{UddGuéKho22}),
-a sudden second objective in the very last sentence (\Art{DanPlaHer22}),
-an objective that sounds like from a design work (\Art{GaoZhuZha22}),
-repeating (in different words) the objective where a conclusion should be (\Art{AhmMerBah22}),
-or mixing present tense and past tense such that results sound as if they were conclusions (\Art{ValHunFig22}).
+\Cb{method} before \Cb{objective} (\Art{PreMohVil22}),  % #nongood
+additional \Cb{background} late in the abstract (\Art{UddGuéKho22}),  % #nongood
+a sudden second objective in the very last sentence (\Art{DanPlaHer22}),  % #nongood
+an objective that sounds like from a design work (\Art{GaoZhuZha22}),  % #nongood
+repeating (in different words) the objective where a conclusion should be (\Art{AhmMerBah22}),  % #nongood
+or mixing present tense and past tense such that results sound 
+as if they were conclusions (\Art{ValHunFig22}).  % #nongood
 
 % #confusing AhmMerBah22(e, repeats o in different words instead of a conclusion)
 % #confusing DanPlaHer22(e, new 2nd o in last sentence),
@@ -1708,11 +1710,12 @@ Having multiple \strct{mr} pairs is more common for design works than it is for 
 As for truly confusing abstracts, the most conspicuous pattern is an unclear answer to the
 most fundamental question: Is this a design work or an empirical work?
 This issue occurs in various forms:
-a clear design \Cb{objective}, but a solely empirical \Cb{conclusion} (\Art{CorRweFra22}),
-the \Cb{objective} is phrased like for an empirical work, but the \Cb{conclusion} makes clear it is a design work (\Art{BocSchApe22}, \Art{SuFanChe22}),
-a clear design \Cb{objective}, but not a single \Cb{design} statement follows (\Art{FirFirRos22}, \Art{HerFerGal22}),
-there are two \Cb{objective} statements, placed non-continguously, and the first is clearly empirical (\Art{MadNagBir22}),
-or many statements throughout have an unclear role (\Art{NaeAla22}).
+a clear design \Cb{objective}, but a solely empirical \Cb{conclusion} (\Art{CorRweFra22}),  % #nongood
+the \Cb{objective} is phrased like for an empirical work, 
+but the \Cb{conclusion} makes clear it is a design work (\Art{BocSchApe22}, \Art{SuFanChe22}),  % #nongood
+a clear design \Cb{objective}, but not a single \Cb{design} statement follows (\Art{FirFirRos22}, \Art{HerFerGal22}),  % #nongood
+there are two \Cb{objective} statements, placed non-continguously, and the first is clearly empirical (\Art{MadNagBir22}),  % #nongood
+or many statements throughout have an unclear role (\Art{NaeAla22}).  % #nongood
 
 % #confusing CorRweFra22(d objective, e conclusion),
 % #confusing FirFirRos22(d objective, but no d stmts),
@@ -1723,9 +1726,9 @@ or many statements throughout have an unclear role (\Art{NaeAla22}).
 % #confusing NaeAla22(d, many sentences have unclear role),
 
 Of course, cases of misplaced information occur in design works as well, e.g.
-a \Cb{result} in the middle of a very long \Cb{background} section (\Art{NiuWuNie22}),
-\Cb{background} placed behind \Cb{objective}, which makes it sound a lot like a \Cb{result} (\Art{LuLiLiu22}),
-\Cb{method} and \Cb{result} placed after \Cb{h-conclusion} (\Art{HumKho22}, \Art{ImrDam22}).
+a \Cb{result} in the middle of a very long \Cb{background} section (\Art{NiuWuNie22}),  % #nongood!!!
+\Cb{background} placed behind \Cb{objective}, which makes it sound a lot like a \Cb{result} (\Art{LuLiLiu22}),  % #nongood!!!
+\Cb{method} and \Cb{result} placed after \Cb{h-conclusion} (\Art{HumKho22}, \Art{ImrDam22}).  % #nongood
 
 % #confusing NiuWuNie22(d, result in the very long background section),
 % #confusing LuLiLiu22(d, background after objective risks confusion with result)
@@ -1733,9 +1736,9 @@ a \Cb{result} in the middle of a very long \Cb{background} section (\Art{NiuWuNi
 % #confusing ImrDam22(d, struc, again with m and r after h-conclusion),
 
 Other peculiarities appear in design works that we have not seen in empirical works, e.g.
-an \Cb{objective} that is difficult to recognize as such (\Art{TiaLiPia22}),
-formulating a \Cb{conclusion} without ever presenting a \Cb{result} (\Art{LiaHanLi22}),
-or a sequence of \Cb{objective}, \Cb{objective}, \Cb{design}+\Cb{result} phrased as a first{\ldots}then{\ldots}finally structure (\Art{GueLarChe22}).
+an \Cb{objective} that is difficult to recognize as such (\Art{TiaLiPia22}),  % #nongood!!!
+formulating a \Cb{conclusion} without ever presenting a \Cb{result} (\Art{LiaHanLi22}),  % #nongood!!!
+or a sequence of \Cb{objective}, \Cb{objective}, \Cb{design}+\Cb{result} phrased as a first{\ldots}then{\ldots}finally structure (\Art{GueLarChe22}).  % #nongood
 
 % #confusing LiaHanLi22(d, conclusion without results),
 % #confusing GueLarChe22(d, obj,obj,design+result phrased as first-then-finally),
@@ -1755,7 +1758,7 @@ We call them informativeness gaps and announcements, respectively.
 \subsubsection{Informativeness Gaps}\label{igaps}
 
 Look at the following result statement:
-\Quote{random sampling is rare} \Art{BalRal22}. %EMSE
+\Quote{random sampling is rare} \Art{BalRal22}.  % #nongood
 If at this point the reader expects the work contains something more
 concrete than \Quote{rare}, this is an informativeness gap.
 And indeed the article in question contains this information in its
@@ -1783,7 +1786,7 @@ in \Cb{result} statements (\Sexpr{format_percent(igap_in_results)} of the gaps)
 or \Cb{method} statements (\Sexpr{format_percent(igap_in_method)} of the gaps).
 Most (if not all) of them could be filled by a number.
 They tend to cluster,
-like in \Art{ShiBiaBri22}: %EMSE
+like in \Art{ShiBiaBri22}:  % #nongood
 \Quote{The results show that PRINS can process large logs much faster
   than a publicly available and well-known state-of-the-art tool,
   without significantly compromising the accuracy of inferred models.}
@@ -1832,7 +1835,7 @@ information to be found in the article body.
 We call such a sentence an announcement
 (coded \Cb{a-*}, see Section~\ref{announcement-codes}).
 
-Example (\Cb{a-method} from \Art{BesMarBos22}):
+Example (\Cb{a-method} from \Art{BesMarBos22}):  % #nongood
 \Quote{As a second step, this study sets out to specifically
   provide a detailed assessment of additional and in-depth analysis of technical debt management strategies based
   on an encouraging mindset and attitude from both managers and technical roles to understand how, when and by
@@ -1843,7 +1846,7 @@ Here is what the sentence could have said instead:
   developers to manage technical debt and how the developers perceive the encouragement they receive.}
 % based on BasMarBos Sections 3.2.1, 3.2.3, Table 2
 
-Example (\Cb{a-result} from \Art{FliChaDye22}): %EMSE
+Example (\Cb{a-result} from \Art{FliChaDye22}):  % #nongood
 \Quote{Finally we provide guidelines/best practices for researchers utilizing time-based data
 from Git repositories.} 
 This should have been a result statement such as the following:
@@ -1875,7 +1878,7 @@ that the sentence containing it becomes incomprehensible.
 We call such a term use an understandability gap (coded \Cb{:u}, see Section~\ref{subjective-codes})
 and consider such abstracts to be \emph{improper}.
 
-Here is an example from \Art{HamMetQas22}:
+Here is an example from \Art{HamMetQas22}:  % #nongood
 \Quote{The results of evaluating the generality of the iContractML 2.0 reference model show
   that it is 91.7\% lucid and 72.2\% laconic.} 
 Neither of the terms ``lucid'' or ``laconic'' have been introduced before, so that
@@ -2270,6 +2273,7 @@ detail or evidence.
     and sentences with an unclear role (see Section~\ref{ambiguity}).
     Provide helpful detail, perhaps simplified, if it requires only little space
     (see Section~\ref{igaps}).
+    Keep your sentences short.
   \item Write a short \Sah{Background} section that provides just enough context
     and motivation to understand the subsequent \Sah{Objective} 
     (see Section~\ref{inefficient_allocation}).
