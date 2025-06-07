@@ -91,6 +91,8 @@ is licensed under CC BY 4.0; see file `LICENSE-DATA`.
 
 - Abstract changed? 
   Then update `tex/our_abstract.txt`.
+- Data or criteria modified?
+ Then check hardcoded stuff marked by `#nonknitr` in the `*.Rnw`
 - Plots modified? 
   Then run `make extract-git-timestamps plotall pdf`.
 - Article accepted/published? 
