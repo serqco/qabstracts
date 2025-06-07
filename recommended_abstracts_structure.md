@@ -1,10 +1,20 @@
-# Recommended Abstract Structure
+# SERCco Recommended Abstract Structure
 
-These recommendations for writing abstracts come from the empirical work presented in this repository.
+SERQco is the Software Engineering Research Quality Coalition (https://serqco.github.io)
+
+These recommendations for writing abstracts come from the empirical work described in
+
+Lutz Prechelt, Franz Zieris, Lloyd Montgomery, Julian Frattini:
+How (Not) To Write a Software Engineering Abstract.
+ArXiv, June 2025
+
+
+## Recommendation
 
 1. Write a structured abstract, not a free-flowing one. 
    Take care to avoid announcements, understandability gaps, and sentences with an unclear role. 
    Provide helpful detail, perhaps simplified, if it consumes barely any space.
+   Keep your sentences short.
 2. Write a **Background** section that provides just enough context and motivation to understand 
    the subsequent **Objective**.
 3. Decide on your main contribution. 
