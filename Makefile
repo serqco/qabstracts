@@ -4,8 +4,21 @@ STUDYDIR=abstracts
 EXPORTFILE=results/$(STUDYDIR)-results.tsv
 TIMESTAMPFILE=results/git_timestamps.json
 
+ZENODO_ZIP=zenodo/qabstracts-zenodo.zip
+ZENODO_FILES=README.md codebook.md history.md INSTALL.md LICENSE LICENSE-DATA \
+    Makefile procedure.md requirements.txt serqco-abstracts-structure.md \
+    abstracts \
+    img \
+    prestudy/abstracts.A prestudy/abstracts.B prestudy/abstracts.raw \
+    prestudy/explain-the-study-2022-08-31.txt prestudy/README.md \
+    prestudy2 \
+    script \
+    tex/qabstracts-tse.Rnw tex/qabstracts-tse.tex tex/qabstracts-tse.pdf \
+    tex/our-abstract.txt tex/appendix.tex tex/*.jpg tex/special.bib
+
 # You can call e.g. "make pdf" or "make pdf KNIT_ARGS=debug"
 KNIT_ARGS ?=
+
 
 all:
 	echo "There is no top-level target. Pick a specific one:"
@@ -43,3 +56,7 @@ plot:
 
 printall:
 	$(QABSTRACTS) plot --printall $(EXPORTFILE) img  # mostly obsolete: now covered by knitr
+
+zip:
+	rm -rf $(ZENODO_ZIP) script/.pytest_cache  # clean, to avoid unwanted content
+	zip -r -q $(ZENODO_ZIP) $(ZENODO_FILES) 
