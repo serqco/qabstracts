@@ -11,7 +11,7 @@ tex/*.pdf
 tex/relatedworks/
 volumes/*/*.pdf
 volumes/log/
-zenodo/
+zip/
 .RData
 .Rhistory
 .DS_Store

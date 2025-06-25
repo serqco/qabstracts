@@ -4,7 +4,7 @@ STUDYDIR=abstracts
 EXPORTFILE=results/$(STUDYDIR)-results.tsv
 TIMESTAMPFILE=results/git_timestamps.json
 
-ZENODO_ZIP=zenodo/qabstracts-zenodo.zip
+ZENODO_ZIP=zip/qabstracts-zenodo.zip
 ZENODO_FILES=README.md codebook.md history.md INSTALL.md LICENSE LICENSE-DATA \
     Makefile procedure.md requirements.txt serqco-abstracts-structure.md \
     abstracts \
@@ -15,6 +15,9 @@ ZENODO_FILES=README.md codebook.md history.md INSTALL.md LICENSE LICENSE-DATA \
     script \
     tex/qabstracts-tse.Rnw tex/qabstracts-tse.tex tex/qabstracts-tse.pdf \
     tex/our-abstract.txt tex/appendix.tex tex/*.jpg tex/special.bib
+ARXIV_ZIP=zip/qabstracts-arxiv.zip
+ARXIV_FILES=img tex/qabstracts-tse.tex tex/qabstracts-tse.bbl tex/*.jpg
+TSE_ZIP=zip/qabstracts-tse.zip
 
 # You can call e.g. "make pdf" or "make pdf KNIT_ARGS=debug"
 KNIT_ARGS ?=
@@ -57,6 +60,16 @@ plot:
 printall:
 	$(QABSTRACTS) plot --printall $(EXPORTFILE) img  # mostly obsolete: now covered by knitr
 
-zip:
+zip: zenodo_zip arxiv_zip
+
+zenodo_zip:
 	rm -rf $(ZENODO_ZIP) script/.pytest_cache  # clean, to avoid unwanted content
 	zip -r -q $(ZENODO_ZIP) $(ZENODO_FILES) 
+
+arxiv_zip:
+	rm -rf $(ARXIV_ZIP)
+	zip -r -q -j $(ARXIV_ZIP) $(ARXIV_FILES)
+
+tse_zip:
+	rm -rf $(TSE_ZIP)
+	zip -r -q -j $(TSE_ZIP) $(ARXIV_FILES)  # PDF file is needed, but uploaded separately
