@@ -1,10 +1,8 @@
 #--- our stuff:
 *~
 conclusions/
-img/*.pdf
 prestudy/pdf/
 prestudy/testdata.git
-results/
 tex/*.tex
 tex/*.out
 tex/*.pdf
