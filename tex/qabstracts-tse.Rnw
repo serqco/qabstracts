@@ -1,13 +1,12 @@
 % Article about SE abstracts quality (qabstracts) for IEEE Trans. on Software Engineering
 % Some of the examples of abstracts with problematic properties that are mentioned are marked by 
 % #nongood or #confusing
-% \Todo:
+% Further things to possibly consider:  TODO
 % - decide which part of figure discussion belongs into caption and which into the body text
 % - https://bjoern.brembs.net/2016/01/even-without-retractions-top-journals-publish-the-least-reliable-science/
 % - check consistent use of \Cb, \Sah, \Art and of \Quote, \Pseudoquote, \QuoteCB
 % - discuss pointers from https://statistically-funny.blogspot.com/2023/06/a-study-in-misplaced-scientific-flair.html
 %   https://absolutelymaybe.plos.org/2023/12/31/5-things-we-learned-about-peer-review-in-2023/#5
-% - make github repo public, create Zenodo repo
 
 \documentclass[10pt,journal,compsoc]{IEEEtran}
 
@@ -25,13 +24,13 @@
 %\usepackage{dblfloatfix} % helps with placement of figure*
 \usepackage{booktabs}
 
-\graphicspath{ {../img} {.} }
+\graphicspath{ {../img} {img} {.} {tex} }  % workdir can be 'tex' or 'tex/..' or flattened dir structure
 \usepackage[dvipsnames]{xcolor}
 \usepackage{balance}
 \hyphenation{semi-conduc-tor IEEE-Xplore}
 
-\newcommand{\ifarxiv}[1]{#1}  % activate this for the ArXiv version of the document
-%\newcommand{\ifarxiv}[1]{}  % activate this for the journal version of the document
+%\newcommand{\ifwithappendix}[1]{#1}  % activate this for the long version of the document (with appendix)
+\newcommand{\ifwithappendix}[1]{}  % activate this for the journal version of the document (no appendix)
 
 % ----- Custom Plot Commands to Control Shared Attributes
 % Most generic shared attributes
@@ -603,8 +602,11 @@ We publish not only the outcome of our study, but also most parts of its develop
 execution history in full detail: as a git version repository.
 It includes all versions of the
 codebook, handling procedure, coded abstracts, Python scripts for automation,
-Python scripts for tabulations and plots, and the manuscript of this article.
+Python scripts for tabulations and plots, and the manuscript of this article in 
+Knitr LaTeX format (that is, with automated computation of most of the numbers in the text).
 Find it at \url{https://github.com/serqco/qabstracts/}.
+A snapshot of the most important files is available at Zenodo as
+\cite{PreMonFra25}.
 
 When we refer to abstracts from our sample, we use abbreviations of the first three authors' names and the year of publication,
 e.g., \Art{BesMarBos22}. Such strings are hyperlinks to the annotated abstract in our GitHub repository.
@@ -1143,7 +1145,7 @@ df |>
 Typical abstracts (the middle half) are \Sexpr{typical_length_words} words long
 and \Sexpr{typical_length_sentences} sentences long.
 Structured abstracts tend to be longer than unstructured ones.
-\ifarxiv{See Figures \ref{boxplots_words} to \ref{boxplots_avg_wordlength} for details.}
+\ifwithappendix{See Figures \ref{boxplots_words} to \ref{boxplots_avg_wordlength} for details.}
 Some venues have official abstract length limits:
 150--250 words for EMSE,
 maximum 300 for IST, and
@@ -2398,14 +2400,8 @@ the Journal of Systems and Software (JSS),
 and Information and Software Technology (IST).
 \end{IEEEbiography}
 
-%\begin{IEEEbiographynophoto}{Jane Doe} 
-%Biography text here without a photo.
-%\end{IEEEbiographynophoto}
 
-%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig1.png}}]{IEEE Publications Technology Team}
-%In this paragraph you can place your educational, professional background and research and other interests.\end{IEEEbiography}
-
-\ifarxiv{\input{appendix}}
+\ifwithappendix{\input{appendix}}
 
 \end{document}
 
