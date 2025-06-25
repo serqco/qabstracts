@@ -1,5 +1,8 @@
 # qabstracts: Quality of scientific abstracts
 
+This is a work of the Software Engineering Research Quality Coalition (SERQco)  
+https://serqco.github.io/
+
 
 ### 1. Summary of Artefacts
 
@@ -14,9 +17,6 @@ These artefacts include
 - the source code of the article
 - a Makefile
 
-These artefacts can be found permanently at the following DOI: TODO!!! Zenodo of GitHub Release Here
-(Use the version-agnostic DOI, not the version-specific DOI)
-
 
 ### 2. Author and Article Details
 
@@ -30,10 +30,16 @@ Franz Zieris <franz.zieris@bth.se>, BTH, Karlskrona, Sweden
 **Article Abstract**: see file tex/our_abstract.txt
 
 **Please cite this work as**:  
-TODO!!!
+Lutz Prechelt, Lloyd Montgomery, Julian Frattini, Franz Zieris:
+How (Not) To Write a Software Engineering Abstract.
+arxiv.org, June 2025
 
 
 ### 3. Description of Artefacts
+
+Snapshot: DOI: 10.5281/zenodo.15736253  
+Full history: https://github.com/serqco/qabstracts
+
 
 ##### 3.1 Scientific Data (and Protocols)
 
@@ -68,7 +74,7 @@ TODO!!!
 - `requirements.txt`: Dependencies required for the Python virtual environment to run the included scripts.
   You must do the setup of your venv manually.
 - `tex/*.Rnw`: Article source file, includes snippets of R script for study analysis.
-- 
+
 
 ##### 3.3 Article source
 
@@ -99,11 +105,12 @@ is licensed under CC BY 4.0; see file `LICENSE-DATA`.
 - Abstract changed? 
   Then update `tex/our_abstract.txt`.
 - Data or criteria modified?
- Then check hardcoded stuff marked by `#nonknitr` in the `*.Rnw`
+  Then check hardcoded stuff marked by `#nonknitr` in the `*.Rnw`
 - Plots modified? 
   Then run `make extract-git-timestamps plotall pdf`.
+- Received reviews for article submission?
+  Then work through TODO markers in tex/*.Rnw as well.
 - Article accepted/published? 
-  Then update article data in Section 2 of the present file and
-  bring `recommended_abstracts_structure.md` in line with the respective part of the article.
-- Switch between journal version and arXiv version?
-  Then set `\ifarxiv` accordingly in `tex/*.Rnw`.
+  - update article data in Section 2 of the present file
+  - bring `recommended_abstracts_structure.md` in line with the respective part of the article
+  - execute https://journals.ieeeauthorcenter.ieee.org/become-an-ieee-journal-author/publishing-ethics/guidelines-and-policies/submission-and-peer-review-policies/#electronic-posting
