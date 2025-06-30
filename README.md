@@ -32,7 +32,7 @@ Franz Zieris <franz.zieris@bth.se>, BTH, Karlskrona, Sweden
 **Please cite this work as**:  
 Lutz Prechelt, Lloyd Montgomery, Julian Frattini, Franz Zieris:
 How (Not) To Write a Software Engineering Abstract.
-arxiv.org, June 2025
+http://arxiv.org/abs/2506.21634, June 2025
 
 
 ### 3. Description of Artefacts
